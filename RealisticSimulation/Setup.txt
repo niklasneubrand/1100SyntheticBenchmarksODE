@@ -1,0 +1,20 @@
+
+
+arInit
+arLoadModel
+arLoadData
+arLoadData
+...
+arCompileAll
+
+arLoadPars
+arPlot(true)
+
+%arSave(NameOfSimulationData)
+%arFit
+
+% arPlot
+
+% arFitLHS(100)
+% arPlotChi2s
+
