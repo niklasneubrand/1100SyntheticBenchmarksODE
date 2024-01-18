@@ -25,8 +25,8 @@ function [iMainCond, exitFlag] = arFindMainCondition(iModel, qFit, qSimu)
 
 
 arguments
-    iModel (1,1) double = 1
-    qFit (1,1) logical = true
+    iModel (1,1) double {mustBeInteger, mustBePositive} = 1
+    qFit (1,1) logical = false
     qSimu (1,1) logical = true
 end
 
@@ -58,20 +58,13 @@ if length(shortConds)==1
 end
 
 % find conditions with most dynamic states
-nDynStates = zeros(1, nConds);
+nDynamicStates = zeros(1, nConds);
 for iCond = shortConds
-    xFineSimu = ar.model(iModel).condition(iCond).xFineSimu;
-    for iState = 1:size(xFineSimu, 2)
-        dataRange = range(xFineSimu(:, iState));  % range of simulated dynamics
-        normedDataRange = dataRange/max(xFineSimu(:, iState));  % normalized range
-        constTol = 1e-8;  % tolerance to decide if dynamics are considered constant
-        if (abs(dataRange) > constTol && abs(normedDataRange) > constTol && isfinite(normedDataRange))
-            nDynStates(iCond) = nDynStates(iCond) + 1;
-        end
-    end
+    qDynamicState = arCondDynamicStates(iModel, iCond, false, false);
+    nDynamicStates(iCond) = sum(qDynamicState);
 end
-maxDynStatesCond = find(nDynStates == max(nDynStates));
-if length(maxDynStatesCond )== 1
+maxDynStatesCond = find(nDynamicStates == max(nDynamicStates));
+if length(maxDynStatesCond) == 1
     iMainCond = maxDynStatesCond;
     exitFlag = 'mostDynamicStates';
     return
@@ -99,6 +92,7 @@ if length(maxDataCond) == 1
     iMainCond = maxDataCond;
     exitFlag = 'mostDataPoints';
 else
+    % give up and take the first condition of the remaining subset
     iMainCond = maxDataCond(1);
     exitFlag = 'firstRemaining';
 end
