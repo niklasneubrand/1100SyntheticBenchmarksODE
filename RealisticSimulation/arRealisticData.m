@@ -1,82 +1,54 @@
-function arRealisticData(randomSeed)
-
+function arRealisticData(projectName, rngSeed)
 
 arguments
-    randomSeed (1,:) = 'shuffle'
+    projectName (1,:) char = 'Realistic001'
+    rngSeed (1,:) = 'shuffle'
 end
 
-global ar
+global ar  %#ok<*GVMIS>
 
 %% simulate data
-for m=1:length(ar.model.data)
+for m = 1:length(ar.model)
     % arSimuData arguments:
     % jplot=[]  -> loop through all plots (hence through all data sets)
     % tT=[]     -> time points from ar, already set in arRealisticTimesRTF
-    arSimuData(m, [], [], randomSeed);
+    arSimuData(m, [], [], rngSeed);
 end
 
-%% overwrite experimental error bars (have to be fitted)
-for m=1:length(ar.model)
-    for d=1:length(ar.model(m).data)
+%% modify the simulated data
+for m = 1:length(ar.model)
+    for d = 1:length(ar.model(m).data)
+
+        % overwrite time-points that should not have been simulated
+        if isfield(ar.model(m).data(d), 'tT')
+            for iObs = 1:size(ar.model(m).data(d).yExp, 2)
+                tSimu = ar.model(m).data(d).tT(:, iObs);
+                tSimu = tSimu(~isnan(tSimu));
+                for iExp = 1:length(ar.model(m).data(d).tExp)
+                    % if tExp is not in tSimu -> remove the simulated data point
+                    if ~ismember(ar.model(m).data(d).tExp(iExp), tSimu)
+                        ar.model(m).data(d).yExp(iExp, iObs) = NaN;
+                    end
+                end
+            end
+        end
+
+        % overwrite experimental error bars (have to be fitted)
         ar.model(m).data(d).yExpStd = nan(size(ar.model(m).data(d).yExp));
     end
 end
 
 
 %% save the data as xls files
-for m=1:length(ar.model)
-    for d=1:length(ar.model(m).data)
-        
+for m = 1:length(ar.model)
+    for d = 1:length(ar.model(m).data)
         header = ['t', ar.model(m).data(d).y];
         data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
-        filePath = fullfile('Data', sprintf('RealisticData_M%d_D%d.xls', m, d));
+        filePath = fullfile('Data', sprintf('%s_M%d_C%d.xls', projectName, m, d));
         writecell([header; data], filePath);
-        
     end
 end
 
 arLink();
 
 end
-
-
-
-%% deprectated code snippets
-
-%% 1. loading tT from file
-% load time points from file
-% tT = readmatrix(sprintf('RealisticDesign/TimePoints_M%d_D%d.txt', m, d));
-% ar.model(m).data(d).tT = tT;
-
-% tT still would have to be tranformed into the right format:
-% y = nan(size(tT));
-% y(~isnan(tT)) = 1;
-% [tExp,yExp] = artExpToVector(tT,y);
-% ar.model(m).data(d).tExp = tExp;
-
-
-%% 2. The function "artExpToVector" also replaces small y values by thresholds.
-%     I do not understand how it works (the logic is strange).
-%     Since restructuring the code a call to this function is not necessary anymore.
-%     But if we would like to call this function anyways, we would have to
-%     modify the data format of the simulated data in the following way:
-
-% % transform simulated data back to tT format
-% y = nan(size(tT));
-% for i = 1:size(tT,2)
-%     y(~isnan(tT(:, i)), i) = yExp(~isnan(yExp(:, i)), i);
-% end
-        
-% % transform simulatedc data from tT format to tExp format
-% [tExp,yExp] = artExpToVector(tT,y);
-        
-% writecell(...
-%     [['t', ar.model(m).data(d).y];num2cell([tExp,yExp])], ...
-%     fullfile('Data', sprintf('RealisticData_M%d_D%d.xls', m, d)));
-
-        
-%% 3. write data to ar structure (this is already done in arRealisticTimesRTF and arSimuData)
-% ar.model(m).data(d).tExp = tExp;                % simulated time points
-% ar.model(m).data(d).tT = tT;                    % simulated time points
-% ar.model(m).data(d).yExp = yExp;                % simulated data
-% ar.model(m).data(d).yExpStd = nan(size(yExp));  % errors have to be fitted

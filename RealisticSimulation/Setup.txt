@@ -1,5 +1,3 @@
-
-
 arInit
 arLoadModel
 arLoadData

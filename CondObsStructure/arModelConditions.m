@@ -16,7 +16,7 @@ condStruct = struct();
 
 % replacements for the whole model
 globalReplace = [ar.model(iModel).p, ar.model(iModel).fp'];
-globalReplace = globalReplace(~strcmp(globalReplace(:,1), globalReplace(:,2)), :);
+globalReplace = globalReplace(~strcmp(globalReplace(:, 1), globalReplace(:, 2)), :);
 condStruct.globalReplace = globalReplace;
 
 % model condition specific replacements
@@ -34,6 +34,5 @@ for c = 1:length(ar.model(iModel).condition)
     % add to struct
     condStruct.condReplace(c) = {condReplace};
 end
-
 
 end

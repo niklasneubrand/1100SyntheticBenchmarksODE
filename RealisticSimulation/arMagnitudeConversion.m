@@ -1,4 +1,4 @@
-function convertt = arMagnitudeConversion(iModel, iData)
+function convertt = arMagnitudeConversion(m, d)
 
 % Magnitude_Conversion.m:
 %   Switch order of magnitude of time in range 0-1000
@@ -8,14 +8,14 @@ function convertt = arMagnitudeConversion(iModel, iData)
 %   or <-10^-3 (if negative sign)
 
 arguments
-    iModel (1,1) double {mustBeInteger,mustBePositive} = 1
-    iData (1,1) double {mustBeInteger,mustBePositive} = 1
+    m (1,1) double {mustBeInteger,mustBePositive} = 1
+    d (1,1) double {mustBeInteger,mustBePositive} = 1
 end
 
 global ar
 
-tFine = ar.model(iModel).data(iData).tFine;
-y = ar.model(iModel).data(iData).yFineSimu;
+tFine = ar.model(m).data(d).tFine;
+y = ar.model(m).data(d).yFineSimu;
 
 converty = ones(size(y,2),1);
 for i=1:size(y,2)
@@ -25,33 +25,16 @@ for i=1:size(y,2)
     end
 end
 
-% delete points of steady-state tail
-% Estimate overall tRange and convertt between 50 and 600
-convertt = ones(size(y,2),1);
-% dt_end = ones(size(y,2),1).*max(tFine);
-t = repmat(tFine,1,size(y,2));
-for i=1:size(y,2)
-    for j=size(y,1)-1:-1:2
-        if abs(y(j+1,i)-y(j-1,i))/max(y(:,i)) < 10^(-6)
-            y(j+1,i) = nan;
-            t(j+1,i) = nan;
-        else
-            break
-        end
-    end
-    % dt_end(i)=tFine(j);
-    tRange = max(t(:,i));
-    if tRange < 10
-        convertt(i) = round(100/tRange,1,'significant');
-    end
-    if tRange > 100
-        convertt(i) = round(100/tRange,1,'significant');   % so tRange is shorten to range(t) = 100;
-    end
-    t(:,i) = t(:,i) .* convertt(i);
+% Set overall tRange to values between 10 and 100
+tMax = max(tFine);
+factor = 1;
+if tMax < 10 || tMax > 100
+    factor = round(100/tMax, 1, 'significant');
 end
+convertt = factor*ones(size(y, 2), 1);
 
-ar.model(iModel).data(iData).tFine = t;
-ar.model(iModel).data(iData).yFineSimu = y;
+ar.model(m).data(d).tFine = tFine*convertt(1);
+ar.model(m).data(d).yFineSimu = y;
 
 end
 

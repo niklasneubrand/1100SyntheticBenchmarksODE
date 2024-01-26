@@ -1,4 +1,4 @@
-function arNewRealisticDesign(loadPattern, qSetConds, qSetPars, qSetTime, qSetData, randomSeed)
+function arNewRealisticDesign(projectName, options)
 
 % TODO:
 % - create arRealisticConds (optional)
@@ -7,60 +7,120 @@ function arNewRealisticDesign(loadPattern, qSetConds, qSetPars, qSetTime, qSetDa
 %   'default', 'simulate', name of a file to load
 
 arguments
-    loadPattern (1,1) string = "Basis"
-    qSetConds (1,1) logical = false
-    qSetPars (1,1) logical = true
-    qSetTime (1,1) logical = true
-    qSetData (1,1) logical = true
-    randomSeed (1,:) = 'shuffle'
+    projectName (1,:) char
+    options.loadPattern (1,:) char = 'None'
+    options.qLogObs (1,1) logical = false
+    options.qSetConds (1,1) logical = true
+    options.qSetPars (1,1) logical = true
+    options.qSetTime (1,1) logical = true
+    options.qSetData (1,1) logical = true
+    options.rngSeed (1,:) = 'shuffle'    
 end
 
-global ar
+global ar  %#ok<*GVMIS>
+
+%% Setup the random number generator
+if strcmp(options.rngSeed, 'shuffle')
+    rng('shuffle')
+    options.rngSeed = randi(2^32-1);
+end
+rng(options.rngSeed);
 
 %% Load benchmark model
-modelLoaded = arLoadLatest(loadPattern);
-if ~modelLoaded
-    error('No Model found. Did you compile one?\n')
-end
-
-
-%% Set Conditions/Observables
-% currently use conds and obs from the actual ar struct
-if qSetConds
-    % arRealisticConds();  % TODO: create
+if options.loadPattern == "None"
+    if isfield(ar, 'model')
+        arFprintf(1, 'Use model from workspace.\n')
+    else
+        error('No model loaded. Please load a model or specify a load pattern.\n')
+    end
 else
-    % use the observables from the loaded model
+    arFprintf(1, 'Load latest model with pattern "%s".\n', options.loadPattern)
+    modelLoaded = arLoadLatest(options.loadPattern);
+    if modelLoaded
+        arFprintf(1, 'Model loaded sucessfully.\n')
+    else
+        error('No model found for pattern "%s".\n', options.loadPattern)
+    end
 end
 
+% update "ar.model.path"
+% it is set incorrectly if model folder was changed after compilation
+ar.model.path = fullfile(pwd(), 'Models');
+
+%% Create new project folder
+projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
+arCreateRealisticProject(projectName, projectPath, options.rngSeed);
 
 %% Modify the model parameters and bounds
-if qSetPars
-    ar.pBestOriginal = ar.p;
+if options.qSetPars
     % multiply parameters by random factor in [1/2, 2]
-    newParams = arRealisticParams(2, 'log-uniform', randomSeed);
-    ar.p = newParams;
+    newParams = arRealisticParams(2, 'log-uniform', options.rngSeed);
+    ar.p = round(newParams, 3, 'significant');
     arFprintf(1, 'Parameters randomized realistically.\n')
-    % TODO: could be more realistic by considering the kind of parameter
 else
     % use the parameters from the loaded model
+    arFprintf(1, 'Use parameters from loaded model.\n')  
 end
 % set bounds to +-3 orders of magnitude around the parameters
 arSetParsBounds(3);
 
-
-%% Use RTF fits to set realistic time points
-
-if qSetTime
-    arRealisticTimesRTF(randomSeed);
+%% Set Conditions/Observables
+if options.qSetConds
+    for m = 1:length(ar.model)
+        condStruct = arModelConditions(m);
+        obsStruct = arDrawObservables(m, options.qLogObs);
+        arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+                            obsStruct, condStruct, m)
+        auxFilesDir = fullfile(projectPath, "Auxillary");
+        save(fullfile(auxFilesDir, sprintf("condStruct_M%i", m)), "condStruct");
+        save(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
+    end
 else
-    % use the time points from the loaded model
+    % use the observables from the loaded model
+    % not possible at the moment
+    % need function that writes the data definition files
+    % e.g. by creating a dummy obsStruct
 end
 
-%% Simulate realistic data
-if qSetData
-    arRealisticData(randomSeed);
-else
-    % use the data from the loaded model
+resultsFolder = sprintf('%s__%s__newParams', ar.info.name, projectName);
+arSave(resultsFolder, false, false);
+movefile(fullfile('Results', resultsFolder), ...
+         fullfile(projectPath, 'Results', resultsFolder));
+
+
+%% Set up the new model
+oldPath = cd(projectPath);
+
+try
+    fprintf('Compiling the new model structure.\n')
+    SetupAuxillary;
+    
+    %% Use RTF fits to set realistic time points
+    if options.qSetTime
+        arRealisticTimesRTF(options.rngSeed);
+    else
+        % use the time points from the loaded model
+    end
+    
+    %% Simulate realistic data
+    if options.qSetData
+        arRealisticData(projectName, options.rngSeed);
+    else
+        % use the data from the loaded model
+    end
+
+    fprintf('Compiling the final realistically simulated model with data.\n')
+    Setup;
+
+    % clean up the project folder -> remove auxillary files
+    movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));
+
+    cd(oldPath);
+
+catch ME
+    cd(oldPath);
+    warning('Error while setting up the new model.\n')
+    rethrow(ME)
 end
 
 end
