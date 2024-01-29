@@ -100,7 +100,7 @@ nConds = length(ar.model(m).condition);
 
 % for each observable draw a roandom column with replacement
 % from the condition-observable distribution matrix
-obsDistrDir = fullfile(ar.info.path, 'ConditionStructure');
+obsDistrDir = fullfile(ar.info.path, 'CondObsStructure');
 mkdir(obsDistrDir);
 obsDistrFile = fullfile(obsDistrDir, sprintf('CondObsMatrix_M%i', m));
 try

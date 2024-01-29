@@ -76,10 +76,16 @@ if options.qSetConds
         save(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
     end
 else
-    % use the observables from the loaded model
-    % not possible at the moment
-    % need function that writes the data definition files
-    % e.g. by creating a dummy obsStruct
+    % use data *.def files from loaded model
+    % -> exact same observables
+    % -> also covers the data conditions (not included in the simulations)
+    % for m = 1:length(ar.model)
+    %     for d = 1:length(ar.model(m).data)
+    %         datafile = fullfile(ar.model(m).data(d).path, ...
+    %                             sprintf('%s.def', ar.model(m).data(d).name));
+    %         copyfile(datafile, fullfile(projectPath, 'Data'));
+    %     end
+    % end
 end
 
 resultsFolder = sprintf('%s__%s__newParams', ar.info.name, projectName);
@@ -119,7 +125,7 @@ try
 
 catch ME
     cd(oldPath);
-    warning('Error while setting up the new model.\n')
+    warning('Error while setting up the new model.')
     rethrow(ME)
 end
 

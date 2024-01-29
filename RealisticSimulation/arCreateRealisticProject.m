@@ -9,12 +9,13 @@ mkdir(fullfile(projectPath, 'Auxillary'));
 
 % copy model *.def files
 for m = 1:length(ar.model)
-    modelfile = fullfile(ar.model(m).path, [ar.model(m).name '.def']);
+    modelfile = fullfile(ar.model(m).path, ...
+                         sprintf('%s.def', ar.model(m).name));
     copyfile(modelfile, fullfile(projectPath, 'Models'));
 end
 
 % modify model *.def files -> remove observables, parameter, etc.
-arCreateRealisicModelDef(fullfile(projectPath, 'Models'), rngSeed);
+arCreateRealisticModelDef(fullfile(projectPath, 'Models'), rngSeed);
 
 % create a setup file for the new model
 arCreateRealisticSetup(projectName, projectPath, rngSeed);
@@ -27,7 +28,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function arCreateRealisicModelDef(modelsDir, rngSeed)
+function arCreateRealisticModelDef(modelsDir, rngSeed)
 
 % find all *.def files in the models directory
 defFiles = dir(fullfile(modelsDir, '*.def'));
