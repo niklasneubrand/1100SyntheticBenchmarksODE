@@ -3,9 +3,6 @@ function arWriteDataDefFiles(projectName, projectPath, rngSeed, obsStruct, condS
 
 global ar  %#ok<*GVMIS>
 
-% set rng seed
-rng(rngSeed);
-
 % create data folder
 if ~exist(fullfile(projectPath, 'Data'), 'dir')
     mkdir(fullfile(projectPath, 'Data'))
@@ -20,13 +17,16 @@ for c = 1:length(ar.model.condition)
 
     fprintf(fileID, '%s\n', 'DESCRIPTION') ;
     fprintf(fileID, '"Realisticly set observables for model condition %i"\n', c);
-    fprintf(fileID, "%% Identifier: %s \n", projectName);
-    fprintf(fileID, "%% Identifier: %i \n\n", rngSeed);
+    fprintf(fileID, '"Identifier: %s"\n', projectName);
+    fprintf(fileID, '"Random seed: %i"\n\n', rngSeed);
 
     fprintf(fileID, '\n%s\n', 'PREDICTOR') ;
-    fprintf(fileID, '\n%s\t%s\t%s\t%s\t%i\t%i\n', ...
-            'time', 'T', 'n/a', 'time', 0, ar.model.tLim(2)) ;
-    fprintf(fileID, '\n%s\n', 'INPUTS') ;
+    tLimModel = ar.model.tLim(2);
+    tLimCond = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
+    tLim = max(tLimModel, tLimCond);
+    fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\n\n', ...
+            'time', 'T', 'n/a', 'time', 0, tLim) ;
+    fprintf(fileID, '%s\n', 'INPUTS') ;
 
     %% Observables
     obsNames = cell(1, obsStruct.nObs);
@@ -75,8 +75,7 @@ for c = 1:length(ar.model.condition)
     for iObs = 1:obsStruct.nObs
         % check if observable should appear in this condition
         if ~isnan(obsStruct.CondObsMatrix(c, iObs))
-            fprintf(fileID, '%s_obs\tsd%i_%s\n', obsNames{iObs}, ...
-                    obsStruct.CondObsMatrix(c, iObs), obsNames{iObs});
+            fprintf(fileID, '%s_obs\tsd%i_%s\n', obsNames{iObs}, c, obsNames{iObs});
         end
     end
 
@@ -93,13 +92,11 @@ for c = 1:length(ar.model.condition)
     fprintf(fileID, '\n%s\n', 'PARAMETERS') ;
     % error parameters
     for iObs = 1:obsStruct.nObs
-        iParam = obsStruct.CondObsMatrix(c, iObs);
         % check if observable should appear in this condition
-        if ~isnan(iParam)
-            sd = obsStruct.stdObs{iObs}(iParam);
+        if ~isnan(obsStruct.CondObsMatrix(c, iObs))
+            sd = obsStruct.stdObs(c, iObs);
             fprintf(fileID, 'sd%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
-                    obsStruct.CondObsMatrix(c, iObs), ...s
-                    obsNames{iObs}, sd, 1, 1, floor(sd-2), ceil(sd+2));
+                    c, obsNames{iObs}, sd, 1, 1, floor(sd-2), ceil(sd+2));
         end
     end
 

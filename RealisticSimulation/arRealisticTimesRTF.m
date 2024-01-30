@@ -53,6 +53,11 @@ for m = 1:length(ar.model)
     % Determine the time points for data generation
     for d = 1:length(ar.model(m).data)
         arSetTimePoints(rtfParamsAll{d}, m, d, timeRescaleFactorsAll{d}, rngSeed);
+        if isnumeric(rngSeed)
+            % change seed for next data set
+            % -> time-points drawn independently
+            rngSeed = rngSeed + 1;
+        end
     end
     
 end

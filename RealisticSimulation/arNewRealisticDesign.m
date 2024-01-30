@@ -31,7 +31,7 @@ if options.loadPattern == "None"
     if isfield(ar, 'model')
         arFprintf(1, 'Use model from workspace.\n')
     else
-        error('No model loaded. Please load a model or specify a load pattern.\n')
+        error('No model loaded. Please load a model or specify a load pattern.')
     end
 else
     arFprintf(1, 'Load latest model with pattern "%s".\n', options.loadPattern)
@@ -68,7 +68,7 @@ arSetParsBounds(3);
 if options.qSetConds
     for m = 1:length(ar.model)
         condStruct = arModelConditions(m);
-        obsStruct = arDrawObservables(m, options.qLogObs);
+        obsStruct = arDrawObservables(m, options.rngSeed, options.qLogObs);
         arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
                             obsStruct, condStruct, m)
         auxFilesDir = fullfile(projectPath, "Auxillary");
@@ -104,6 +104,7 @@ try
     %% Use RTF fits to set realistic time points
     if options.qSetTime
         arRealisticTimesRTF(options.rngSeed);
+        arSave(sprintf('%s__%s__newTimes', ar.info.name, projectName), false, false)
     else
         % use the time points from the loaded model
     end

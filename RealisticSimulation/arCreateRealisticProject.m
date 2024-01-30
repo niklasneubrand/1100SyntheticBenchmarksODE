@@ -100,7 +100,7 @@ fileID = fopen(fullfile(projectPath, "Setup.m"), "w");
 
 fprintf(fileID, "%% Setup file for the benchmark model %s \n", ar.info.name);
 fprintf(fileID, "%% Identifier: %s \n", projectName);
-fprintf(fileID, "%% Identifier: %i \n\n", rngSeed);
+fprintf(fileID, "%% Random seed: %i \n\n", rngSeed);
 fprintf(fileID, "%% Initialize the d2d toolbox \n");
 fprintf(fileID, "arInit();\n\n");
 

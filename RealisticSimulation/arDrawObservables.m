@@ -1,14 +1,18 @@
-function obsStruct = arDrawObservables(m, qLogObs, qRemoveConstObs)
+function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qRemoveConstObs)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
 arguments
     m (1,1) double {mustBeInteger, mustBePositive} = 1
+    rngSeed (1,:) = 'shuffle'
     qLogObs (1,1) logical = false
     qRemoveConstObs (1,1) logical = false
 end
 
 global ar  %#ok<*GVMIS>
+
+%% Set random number generator
+rng(rngSeed);
 
 %% Find the dynamical states of the main model condition
 states = ar.model(m).x;                                 % all species names
@@ -254,20 +258,22 @@ idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (su
 % draw the std of the error model for all observables from mixed-effect model
 % see Eq. (2.8) in Egert_2023 (DOI: 10.3934/mbe.2023467)
 % but coefficients are different!
-stdObs = cell(1, nObs);
-stdObsIndpt = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
-for iObs = 1:nObs
-    nParams = max(CondObsMatrix(:, iObs), [], "omitnan");
-    stdObs{iObs} = stdObsIndpt(1:nParams, iObs)';
-    for iParam = 1:nParams
-        % the following replaces the code frome Janine:
-        % stdObs(~idLog) = stdObs(~idLog) + log10(mean(yFineSimu(:, ~idLog), "omitnan"));
-        % i am not quite sure why this is done
-        % i think: the linear model describes the relative, not absolute error.
-        % therefore we have to include the mean value of the dynamics
-        idParam = find(CondObsMatrix(:, iObs) == iParam);
-        yFineSimu = vertcat(yFineSimuAll{idParam});
-        stdObs{iObs}(iParam) = stdObs{iObs}(iParam) + log10(median(yFineSimu(:, iObs), "omitnan"));
+stdObs = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
+for c = 1:nConds
+    yFineSimu = yFineSimuAll{c};
+    for iObs = 1:nObs
+        if isfinite(CondObsMatrix(c, iObs)) && ~idLog(iObs)
+            % observable is defined and not on log scale
+            % -> calculate the mean magnitude of the observable
+            %    to transform relative to absolute error
+            traj = yFineSimu(isfinite(yFineSimu(:, iObs)), iObs);
+            meanMagnitude = log10((max(traj)+min(traj))/2);
+            if isfinite(meanMagnitude)
+                % only possible if meanMagnitude is not NaN or Inf
+                % this would be the case if the observable is always zero or negative
+                stdObs(c, iObs) = stdObs(c, iObs) + meanMagnitude;
+            end
+        end
     end
 end
 

@@ -12,7 +12,16 @@ for m = 1:length(ar.model)
     % arSimuData arguments:
     % jplot=[]  -> loop through all plots (hence through all data sets)
     % tT=[]     -> time points from ar, already set in arRealisticTimesRTF
-    arSimuData(m, [], [], rngSeed);
+    % arSimuData(m, [], [], rngSeed);
+    
+    % do the data simulation
+    for jplot = 1:length(ar.model(m).plot)
+        arSimuData(m, jplot, [], rngSeed);
+        if isnumeric(rngSeed)
+            % change seed for next data set
+            rngSeed = rngSeed + 1;
+        end
+    end
 end
 
 %% modify the simulated data
