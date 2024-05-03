@@ -6,6 +6,14 @@ end
 
 global ar  %#ok<*GVMIS>
 
+% load RTF package
+rtfPath = fullfile(ar.info.ar_path, 'Examples', 'ToyModels', ...
+                   'TransientFunction', 'TransientFUnction_library');
+checkRTF = which('arFitTransientFunction2');
+if isempty(checkRTF)
+    addpath(rtfPath);
+end
+
 for m = 1:length(ar.model)
     
     % initialize data structures
@@ -35,6 +43,10 @@ for m = 1:length(ar.model)
     ar = arDeepCopy(arBackup);
     
     % Handle failed fits -> interpolated RTF parameters from successful fits
+    if all([qFitSuccessAll{:}])
+        error('All RTF fits failed in all conditions. No realistic time points can be assigned.');
+    end
+    
     for d = 1:length(ar.model(m).data)
         if all(~qFitSuccessAll{d})
             warning('All RTF fits failed in condition %i. Interpolate RTF parameters from successful fits in all other conditions.', d);
@@ -42,7 +54,7 @@ for m = 1:length(ar.model)
             qFitSuccessJoined = horzcat(qFitSuccessAll{:});
             replaceParams = median(rtfParamsJoined{qFitSuccessJoined, :}, 1);
             rtfParamsAll{d}{~qFitSuccessAll{d}, :} = repmat(replaceParams, sum(~qFitSuccessAll{d}), 1);
-            
+
         elseif any(~qFitSuccessAll{d})
             warning('Some RTF fits failed in condition %i. Interpolate RTF parameters from sucessful fits in this condition.', d);
             replaceParams = median(rtfParamsAll{d}{qFitSuccessAll{d}, :}, 1);
@@ -61,6 +73,10 @@ for m = 1:length(ar.model)
     end
     
 end
+
+
+% unload RTF package
+rmpath(rtfPath);
 
 end
 
@@ -119,7 +135,8 @@ for i = 1:nObs
     
 end
 
-writetable([array2table(yname'), rtfParams], sprintf('Auxillary/rtfParams_M%d_D%d.txt', m, d));
+writetable([array2table(yname'), rtfParams], ...
+           sprintf('Auxillary/rtfParams_M%d_D%d.txt', m, d));
 
 end
 

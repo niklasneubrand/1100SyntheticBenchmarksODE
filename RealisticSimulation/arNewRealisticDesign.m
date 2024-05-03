@@ -119,6 +119,9 @@ try
     fprintf('Compiling the final realistically simulated model with data.\n')
     Setup;
 
+    % Export the model to PEtab
+    arExportPEtab();
+
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));
 
