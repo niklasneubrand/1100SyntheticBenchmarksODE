@@ -259,6 +259,7 @@ idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (su
 % see Eq. (2.8) in Egert_2023 (DOI: 10.3934/mbe.2023467)
 % but coefficients are different!
 stdObs = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
+stdObs(isnan(CondObsMatrix)) = NaN;  % set std to NaN for unobserved observables
 for c = 1:nConds
     yFineSimu = yFineSimuAll{c};
     for iObs = 1:nObs
@@ -276,6 +277,7 @@ for c = 1:nConds
         end
     end
 end
+
 
 % bundel results in a struct
 obsStruct = struct();

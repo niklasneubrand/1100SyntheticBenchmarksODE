@@ -92,7 +92,9 @@ if qPlot
 
     % ticks & tick labels
     xticks(1:nCols);
+    uniqStateSets = strrep(uniqStateSets, '+', '\newline');
     xticklabels(uniqStateSets)
+    xtickangle(0)
     yticks(1:nRows);
     set(gca(), 'TickLength', [0,0]);
 
