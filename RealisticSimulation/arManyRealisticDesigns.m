@@ -2,7 +2,7 @@ function arManyRealisticDesigns(iSimus, options)
 
 arguments
     iSimus (1,:) double {mustBeInteger, mustBePositive}
-    options.loadPattern (1,:) char = 'None'
+    options.loadPattern (1,:) char = 'Base'
     options.rngSeed (1,:) = 'shuffle'
     options.qLogObs (1,1) logical = false
     options.qSetConds (1,1) logical = true
@@ -25,14 +25,12 @@ if ~isempty(warnMsg)
 end
 % make sure the paths are set correctly
 ar.info.path = pwd();
-ar.model.path = fullfile(pwd(), 'Models');
+for m = 1:length(ar.model)
+    ar.model(m).path = fullfile(pwd(), 'Models');
+end
 
 %% extract the condition-observable structure
 arCondObsStructure()
-
-% nameformat for the projects
-nSimus = max(iSimus); 
-nameFmt = sprintf('Realistic%%0%id', floor(log10(nSimus))+1);
 
 % set the random seed
 if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
@@ -42,6 +40,10 @@ else
     startSeed = options.rngSeed;
 end
 
+% nameformat for the projects
+nSimus = max(iSimus); 
+nameFmt = sprintf('%s_Realistic%%0%id', ar.info.name, floor(log10(nSimus))+1);
+
 %% run the simulations
 for iSimu = iSimus
 
@@ -50,10 +52,13 @@ for iSimu = iSimus
     % initialize the log file
     projectDir = fullfile(pwd(), 'RealisticSimulation', projectName);
     mkdir(projectDir);
-    logFile = fullfile(projectDir, sprintf('Realistic%d.log', iSimu));
+    logFile = fullfile(projectDir, sprintf([nameFmt '.log'], iSimu));
     diary(logFile);
 
     options.rngSeed = startSeed + iSimu - 1;
+
+    % save the options
+    save(fullfile(projectDir, 'Auxillary', 'RealisticDesignOptions.mat'), 'options');
 
     % reshape the options for handing them to "arNewRealisticDesign"
     optionNames = fieldnames(options);

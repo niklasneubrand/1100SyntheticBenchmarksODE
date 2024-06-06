@@ -45,7 +45,9 @@ end
 
 % update "ar.model.path"
 % it is set incorrectly if model folder was changed after compilation
-ar.model.path = fullfile(pwd(), 'Models');
+for m = 1:length(ar.model)
+    ar.model(m).path = fullfile(pwd(), 'Models');
+end
 
 %% Create new project folder
 projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
@@ -120,7 +122,7 @@ try
     Setup;
 
     % Export the model to PEtab
-    arExportPEtab();
+    arExportPEtab_new();
 
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));

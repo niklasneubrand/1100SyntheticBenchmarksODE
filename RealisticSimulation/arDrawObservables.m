@@ -45,6 +45,8 @@ nComp = min(nComp, nObs);                       % upper bound for nComp
 compSize = round(obs.compadd(randRow));         % corresp. size of compounds
 compSize = min(compSize, nStates);              % upper bound
 compSize = max(compSize, 2);                    % lower bound
+% the number of unique compounds is limited to the possible number of combinations
+nComp = min(nComp, nchoosek(nStates, compSize));  % upper bound for nComp
 idComp = [];                                    % initialize compound indices
 nDirect = nObs - nComp;                         % number of directly observed variables
 idDirect = sort(randperm(nStates, nDirect));    % indices for directly observed states
@@ -57,15 +59,11 @@ if nComp > 0
     [~, idComp] = sort(rand(nComp, nStates), 2);    % nComp many permutations of state indices
     idComp = idComp(:, 1:compSize);            % only keep the first compSize indices
     idComp = unique(sort(idComp, 2), 'rows');  % remove possible duplicate compounds
-    if size(idComp, 1) < nComp
+    while size(idComp, 1) < nComp
         % if not enough compounds (i.e. there were duplicates): draw again
         [~, idComp2] = sort(rand(nComp, nStates), 2);
         idComp2 = idComp2(:, 1:compSize);
         idComp = unique([idComp; sort(idComp2, 2)], 'rows');
-        if size(idComp, 1) < nComp
-            % if still not enough compounds: accept and reduce nComp
-            nComp = size(idComp, 1);
-        end
     end
     if size(idComp, 1) > nComp
         % if too many compounds, randomly select a subset of size nComp
@@ -86,7 +84,7 @@ else
     pLog = 0;
 end
 
-% Draw how many variables have scale, offset and init
+% Draw how many variables have scale and offset
 if pLog > 0.5
     % over 50% of observables are on log scale
     % -> draw number of scale, offset and init as if all were on log scale
@@ -118,6 +116,7 @@ CondObsMatrix = CondObsMatrix(:, randomCols);
 
 % conditions without observables
 % -> use observables from random other condition (with replacement)
+% maybe it would be more realistic to use only *one* other observable
 qEmptyCond = sum(CondObsMatrix, 2, "omitnan") == 0;
 nEmptyConds = sum(qEmptyCond);
 idReplace = find(~qEmptyCond);
@@ -171,6 +170,9 @@ for c = 1:nConds
     % observables
     yFineSimu = yFineSimuAll{c};
     for iObs = 1:nObs
+        %% here the is a bug: somtimes iObs exceeds array bounds.
+        % I hope it is fixed now by limiting the number of compounds to the
+        % number of possible unique compounds (nStates choose compSize)
         dataRange = range(yFineSimu(:, iObs));  % range of simulated dynamics
         normedDataRange = dataRange/max(yFineSimu(:, iObs));  % normalized range
         dynTol = 1e-8;  % tolerance for dynamics

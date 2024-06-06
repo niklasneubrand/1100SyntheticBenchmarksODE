@@ -43,7 +43,7 @@ for m = 1:length(ar.model)
     ar = arDeepCopy(arBackup);
     
     % Handle failed fits -> interpolated RTF parameters from successful fits
-    if all([qFitSuccessAll{:}])
+    if all(~[qFitSuccessAll{:}])
         error('All RTF fits failed in all conditions. No realistic time points can be assigned.');
     end
     

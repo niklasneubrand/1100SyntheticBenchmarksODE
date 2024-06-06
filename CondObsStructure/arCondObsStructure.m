@@ -28,7 +28,7 @@ end
 % Save figures to file
 fileName = fullfile(ar.info.path, 'CondObsStructure', ...
                     sprintf('ObsModelStructure_%s.fig', ar.info.name));
-savefig(h, fileName)
+savefig(h(:), fileName)
 close all
 
 end

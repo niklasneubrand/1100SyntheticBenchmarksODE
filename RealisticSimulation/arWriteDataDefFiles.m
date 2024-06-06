@@ -9,7 +9,7 @@ if ~exist(fullfile(projectPath, 'Data'), 'dir')
 end
 
 % write def files for all conditions
-for c = 1:length(ar.model.condition)
+for c = 1:length(ar.model(m).condition)
 
     % create *.def file
     filename = sprintf('%s_M%i_C%i.def', projectName, m, c);
@@ -21,7 +21,7 @@ for c = 1:length(ar.model.condition)
     fprintf(fileID, '"Random seed: %i"\n\n', rngSeed);
 
     fprintf(fileID, '\n%s\n', 'PREDICTOR') ;
-    tLimModel = ar.model.tLim(2);
+    tLimModel = ar.model(m).tLim(2);
     tLimCond = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
     tLim = max(tLimModel, tLimCond);
     fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\n\n', ...
