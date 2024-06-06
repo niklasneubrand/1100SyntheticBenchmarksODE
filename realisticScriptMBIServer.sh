@@ -2,8 +2,8 @@
 
 # define the directories
 script_dir=$(pwd)
-modelSet=all_lhsok
-modelSet_dir=$script_dir/../../Benchmark_Models/$modelSet
+modelSet=fast10
+modelSet_dir=$script_dir/../Benchmark_Models/$modelSet
 
 echo "jobs submitted:"
 
@@ -25,6 +25,6 @@ for folder in $modelSet_dir/*/; do
     echo "    "$folder_name
 
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "lhsLogging('$folder_name'); exit()" </dev/null >/dev/null 2>&1 &
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder_name'); arManyRealisticDesigns(); exit()" </dev/null >/dev/null 2>&1 &
 
 done
