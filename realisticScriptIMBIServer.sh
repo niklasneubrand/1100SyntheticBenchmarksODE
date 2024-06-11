@@ -23,8 +23,14 @@ for folder in $modelSet_dir/*/; do
 
     # Return the folder name
     echo "    "$folder_name
+    
+    # cd folder
 
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit()" </dev/null >/dev/null 2>&1 &
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1); exit();" </dev/null >realisticSimultion.log 2>&1 &
+    # nohup matlab-R2021a -r "disp('success');initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit()" </dev/null >/dev/null 2>&1 &
+    # nohup matlab-2021a -nosplash <realisticIMBIServer.m >simulations_log.log &
+    
+    # cd ..
 
 done

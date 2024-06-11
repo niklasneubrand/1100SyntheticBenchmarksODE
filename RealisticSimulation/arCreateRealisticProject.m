@@ -122,10 +122,10 @@ fprintf(fileID, "%% Compile the project \n");
 fprintf(fileID, "arCompileAll(); \n\n");
 
 fprintf(fileID, "%% Set the parameters \n");
-fprintf(fileID, "arLoadPars('%s__%s__newParams');\n\n", ar.info.name, projectName);
+fprintf(fileID, "arLoadPars('%s__newParams');\n\n", projectName);
 
 fprintf(fileID, "%% Save the project \n");
-fprintf(fileID, "arSave('%s__%s__Final', false, true); \n\n", ar.info.name, projectName);
+fprintf(fileID, "arSave('%s__Final', false, true); \n\n", projectName);
 
 fclose(fileID);
 
@@ -158,10 +158,10 @@ fprintf(fileID, "%% Compile the project \n");
 fprintf(fileID, "arCompileAll(); \n\n");
 
 fprintf(fileID, "%% Set the parameters \n");
-fprintf(fileID, "arLoadPars('%s__%s__newParams');\n\n", ar.info.name, projectName);
+fprintf(fileID, "arLoadPars('%s__newParams');\n\n", projectName);
 
 fprintf(fileID, "%% Save the project \n");
-fprintf(fileID, "arSave('%s__%s__newObs', false, false); \n\n", ar.info.name, projectName);
+fprintf(fileID, "arSave('%s__newObs', false, false); \n\n", projectName);
 
 fclose(fileID);
 

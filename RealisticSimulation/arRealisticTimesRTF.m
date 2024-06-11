@@ -8,7 +8,7 @@ global ar  %#ok<*GVMIS>
 
 % load RTF package
 rtfPath = fullfile(ar.info.ar_path, 'Examples', 'ToyModels', ...
-                   'TransientFunction', 'TransientFUnction_library');
+                   'TransientFunction', 'TransientFunction_library');
 checkRTF = which('arFitTransientFunction2');
 if isempty(checkRTF)
     addpath(rtfPath);
