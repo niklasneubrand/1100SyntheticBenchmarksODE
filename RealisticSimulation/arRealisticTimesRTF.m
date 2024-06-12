@@ -129,8 +129,9 @@ for i = 1:nObs
         res = arFitTransientFunction2(dat, figFile);
         rtfParams{i,:} = res.pRescaled;
         qFitSuccess(i) = true;
-    catch
+    catch ME
         qFitSuccess(i) = false;
+        disp(getReport(ME, 'extended', 'hyperlinks', 'on'));
     end
     
 end
