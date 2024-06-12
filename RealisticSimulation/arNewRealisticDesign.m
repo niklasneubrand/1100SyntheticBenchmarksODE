@@ -123,7 +123,7 @@ try
     Setup;
 
     % Export the model to PEtab
-    arExportPEtab_new();
+    arExportPEtab();
 
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));
