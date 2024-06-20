@@ -2,13 +2,13 @@
 
 # define the directories
 script_dir=$(pwd)
-modelSet=fast10
+modelSet=all_lhsok_V1
 modelSet_dir=$script_dir/Benchmark_Models/$modelSet
 
 echo "jobs submitted:"
 
 # Loop over all model folders in the modelSet directory
-for folder in $modelSet_dir/*/; do
+for folder in "$modelSet_dir"/*/; do
 
     # Remove the trailing slash from the folder name
     folder=${folder%/}
@@ -16,10 +16,10 @@ for folder in $modelSet_dir/*/; do
     # Get the folder name without the path
     folder_name=$(basename "$folder")
 
-    # Skip the folders staring with '0'
-    #if [[ $folder_name == 0* ]]; then
-    #    continue
-    #fi
+    # Skip the folders starting with '0'
+    if [[ $folder_name == 0* ]]; then
+        continue
+    fi
 
     # Return the folder name
     echo "    "$folder_name
@@ -27,7 +27,7 @@ for folder in $modelSet_dir/*/; do
     # cd folder
 
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1); exit();" </dev/null >realisticSimultion.log 2>&1 &
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit();" </dev/null >realisticSimultion_$modelSet.log 2>&1 &
     # nohup matlab-R2021a -r "disp('success');initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit()" </dev/null >/dev/null 2>&1 &
     # nohup matlab-2021a -nosplash <realisticIMBIServer.m >simulations_log.log &
     
