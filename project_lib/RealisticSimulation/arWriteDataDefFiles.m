@@ -91,12 +91,30 @@ for c = 1:length(ar.model(m).condition)
     %% Parameters
     fprintf(fileID, '\n%s\n', 'PARAMETERS') ;
     % error parameters
+    fprintf(fileID, '// Error parameters\n');
     for iObs = 1:obsStruct.nObs
         % check if observable should appear in this condition
         if ~isnan(obsStruct.CondObsMatrix(c, iObs))
             sd = obsStruct.stdObs(c, iObs);
             fprintf(fileID, 'sd%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
                     c, obsNames{iObs}, sd, 1, 1, floor(sd-2), ceil(sd+2));
+        end
+    end
+    fprintf(fileID, '// Scale and offset parameters (if not definied in previous data.def file)\n');
+    for iObs = 1:obsStruct.nObs
+        % check if observable should appear in this condition
+        if ~isnan(obsStruct.CondObsMatrix(c, iObs))
+            % check if shared parameter is already defined
+            if c==1 || (obsStruct.CondObsMatrix(c-1, iObs)~=obsStruct.CondObsMatrix(c, iObs))
+                if any(obsStruct.idScale==iObs)
+                    fprintf(fileID, 'scale%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
+                            obsStruct.CondObsMatrix(c, iObs), obsNames{iObs}, 0, 1, 1, -5, 5);
+                end
+                if any(obsStruct.idOffset==iObs)
+                    fprintf(fileID, 'offset%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
+                        obsStruct.CondObsMatrix(c, iObs), obsNames{iObs}, 0, 1, 1, -5, 5);
+                end
+            end
         end
     end
 

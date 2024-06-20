@@ -262,6 +262,9 @@ idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (su
 % but coefficients are different!
 stdObs = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
 stdObs(isnan(CondObsMatrix)) = NaN;  % set std to NaN for unobserved observables
+obsRange = NaN(nConds, nObs);
+obsMean = NaN(nConds,nObs);
+obsMedian = NaN(nConds, nObs);
 for c = 1:nConds
     yFineSimu = yFineSimuAll{c};
     for iObs = 1:nObs
@@ -270,7 +273,10 @@ for c = 1:nConds
             % -> calculate the mean magnitude of the observable
             %    to transform relative to absolute error
             traj = yFineSimu(isfinite(yFineSimu(:, iObs)), iObs);
-            meanMagnitude = log10((max(traj)+min(traj))/2);
+            obsRange(c, iObs) = log10((max(traj)+min(traj))/2);
+            obsMean(c, iObs) = log10(mean(traj));
+            obsMedian(c, iObs) = log10(median(traj));
+            meanMagnitude = log10(median(traj));
             if isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
                 % this would be the case if the observable is always zero or negative
@@ -294,6 +300,9 @@ obsStruct.idScale = idScale;
 obsStruct.idOffset = idOffset;
 obsStruct.CondObsMatrix = CondObsMatrix;
 obsStruct.stdObs = stdObs;
+obsStruct.obsRange = obsRange;
+obsStruct.obsMean = obsMean;
+obsStruct.obsMedian = obsMedian;
 
 fprintf('Observables drawn realistically.\n')
 

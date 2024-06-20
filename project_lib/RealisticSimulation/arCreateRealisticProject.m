@@ -30,6 +30,8 @@ end
 
 function arCreateRealisticModelDef(modelsDir, rngSeed)
 
+global ar
+
 % find all *.def files in the models directory
 defFiles = dir(fullfile(modelsDir, '*.def'));
 modelsDir = defFiles.folder;
@@ -38,7 +40,7 @@ defFileNames = {defFiles.name};
 % headings that occur in a def file
 defFileHeads = ["DESCRIPTION", "PREDICTOR", "COMPARTMENTS", "STATES", ...
     "INPUTS", "REACTIONS", "ODES", "DERIVED", ...
-    "OBSERVABLES", "ERRORS", "SUBSTITUSTIONS", "CONDITIONS"];
+    "OBSERVABLES", "ERRORS", "SUBSTITUSTIONS", "CONDITIONS", "PARAMETERS"];
 
 % loop over all *.def files
 for i = 1:length(defFileNames)
@@ -66,11 +68,32 @@ for i = 1:length(defFileNames)
         headings = ["DESCRIPTION" headings];
         sections = [description sections];
     end
+    % remove observables and errors (will be specified in data *.def files)
     if any(headings=="OBSERVABLES")
         sections{find(headings=="OBSERVABLES")+1} = [newline newline];
     end
     if any(headings=="ERRORS")
         sections{find(headings=="ERRORS")+1} = [newline newline];
+    end
+
+    % create new parameter section (only include dynamic parameters)
+    newParamSection = newline;
+    for ip = 1:length(ar.p)
+        if ar.qDynamic(ip)
+            % ar.pExternLabels   ar.pExtern    ar.qFitExtern    ar.qLog10Extern    ar.lbExtern    ar.ubExtern
+            newParam = sprintf('%s\t%f\t%i\t%i\t%f\t%f', ...
+            ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
+            newParamSection = [newParamSection newParam newline];
+        end
+    end    
+
+    if any(headings=="PARAMETERS")
+        % if there is already a parameters section, replace it
+        sections{find(headings=="PARAMETERS")+1} = newParamSection;
+    else
+        % if there was no parameters section, add it at the end
+        headings = [headings; "PARAMETERS"];
+        sections = [sections; newParamSection];
     end
     
     % re-join the sections
