@@ -40,11 +40,19 @@ for iRow = 1:nRows
     end
 end
 
+paramSets = {};
 for iCol = 1:nCols
-    colUniqParamSets = unique([paramsMat{:, iCol}], 'stable');
+    paramSets = [paramSets, paramsMat{:, iCol}];
+end
+
+% 'global' indices, not just column-wise
+uniqParamSets = unique(paramSets, 'stable');
+
+for iCol = 1:nCols
+    % colUniqParamSets = unique([paramsMat{:, iCol}], 'stable');
     for iRow=1:nRows
         for iEntry=1:length(paramsMat{iRow, iCol})
-            colUniqIndex = find(paramsMat{iRow, iCol}{iEntry} == colUniqParamSets);
+            colUniqIndex = find(paramsMat{iRow, iCol}{iEntry} == uniqParamSets);
             uniqIndicesMat{iRow, iCol} = [uniqIndicesMat{iRow, iCol}, colUniqIndex];
         end
     end
@@ -73,9 +81,21 @@ end
 
 %% Plot the data
 if qPlot
-    
+
     image = imagesc(heatMapData);
-    colormap(lines(max(heatMapData(:))))
+
+    nColors = max(heatMapData(:));
+    colors = parula(nColors);
+    % colormap(lines(max(heatMapData(:))))
+    % colors = colors(randperm(size(colors, 1)), :);
+    % shift every second row by half of the colormap
+    shift = mod((2:2:nColors) + ceil(nColors/2), nColors);
+    if any(shift == 0)
+        shift(shift == 0) = nColors;
+    end
+    colors(2:2:nColors, :) = colors(shift, :);
+    colormap(colors)
+    colorbar();
     set(image, 'AlphaData', ~isnan(heatMapData))
 
     % text labels

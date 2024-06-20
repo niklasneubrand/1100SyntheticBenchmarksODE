@@ -54,7 +54,10 @@ for m = 1:length(ar.model)
         header = ['t', ar.model(m).data(d).y];
         data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
         filePath = fullfile('Data', sprintf('%s_M%d_C%d.xls', projectName, m, d));
-        writecell([header; data], filePath);
+        % there are some encoding problems when running simulations on the IMBI cluster (Linux)
+        % therefore, go back to the old xlswrite function
+        % writecell([header; data], filePath);
+        xlswrite(filePath, [header; data]);
     end
 end
 

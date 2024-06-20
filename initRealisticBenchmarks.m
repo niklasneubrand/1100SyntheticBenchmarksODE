@@ -1,7 +1,10 @@
 % restore the matlab path (d2d, projects, ...)
-userpath("reset");
+% userpath("reset");
 addpath(userpath());
-startup;
+try
+    startup;
+catch
+end
 
 % RTF specific
 arInit();
@@ -13,6 +16,4 @@ addpath(rtfPath)
 
 % project specific
 realisticDir = fileparts(mfilename('fullpath'));
-addpath(fullfile(realisticDir, 'RealisticSimulation'))
-addpath(fullfile(realisticDir, 'CondObsStructure'))
-addpath(fullfile(realisticDir, 'Plots'))
+addpath(genpath(fullfile(realisticDir, 'project_lib')));
