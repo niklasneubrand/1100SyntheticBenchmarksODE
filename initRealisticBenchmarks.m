@@ -1,5 +1,5 @@
 % restore the matlab path (d2d, projects, ...)
-% userpath("reset");
+userpath("reset");
 addpath(userpath());
 try
     startup;

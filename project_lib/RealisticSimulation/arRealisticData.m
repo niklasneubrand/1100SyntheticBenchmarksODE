@@ -51,13 +51,14 @@ end
 %% save the data as xls files
 for m = 1:length(ar.model)
     for d = 1:length(ar.model(m).data)
+        % there are encoding problems on the IMBI cluster (Linux)
+        % fix: save data as .csv, not .xls
         header = ['t', ar.model(m).data(d).y];
         data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
-        filePath = fullfile('Data', sprintf('%s_M%d_C%d.xls', projectName, m, d));
-        % there are some encoding problems when running simulations on the IMBI cluster (Linux)
-        % therefore, go back to the old xlswrite function
-        % writecell([header; data], filePath);
-        xlswrite(filePath, [header; data]);
+        filePath = fullfile('Data', sprintf('%s_M%d_C%d.csv', projectName, m, d));
+        
+     
+        writecell([header; data], filePath);
     end
 end
 
