@@ -13,6 +13,20 @@ end
 
 global ar
 
+% set the random seed
+if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
+    rng('shuffle');
+    startSeed = randi(2^32-1);
+else
+    startSeed = options.rngSeed;
+end
+
+% save the input arguments
+auxDir = fullfile(pwd(), 'RealisticSimulation', 'Auxillary');
+mkdir(auxDir);
+startTime = datetime('now', 'Format', 'yyyy-MM-dd_HH-mm-ss');
+save(fullfile(auxDir, ['arManyRealisticDesigns__Inputs__' startTime]), 'iSimus', 'options');
+
 %% compile the base model (if necessary)
 loadStatus = arLoadLatest(options.loadPattern);
 if ~loadStatus
@@ -30,16 +44,8 @@ end
 %% extract the condition-observable structure
 arCondObsStructure()
 
-% set the random seed
-if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
-    rng('shuffle');
-    startSeed = randi(2^32-1);
-else
-    startSeed = options.rngSeed;
-end
-
 % nameformat for the projects
-nSimus = max(iSimus); 
+nSimus = max(iSimus);
 nameFmt = sprintf('%s_Realistic%%0%id', ar.info.name, floor(log10(nSimus))+1);
 
 %% run the simulations

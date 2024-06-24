@@ -73,11 +73,14 @@ for iRow=1:nRows
     end
 end
 
+
+% global indices instead of column-wise
 for iCol=1:nCols
     nonEmpty = (heatMapLabels(:, iCol)~="");
     [~, ~, uniqLabelIndices] = unique(heatMapLabels(nonEmpty, iCol), 'stable');
     heatMapData(nonEmpty, iCol) = uniqLabelIndices;
 end
+
 
 %% Plot the data
 if qPlot

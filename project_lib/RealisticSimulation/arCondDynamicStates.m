@@ -1,11 +1,10 @@
-function qDynamicState = arCondDynamicStates(iModel, iCond, qFit, qSimu, dynTol)
+function qDynamicState = arCondDynamicStates(iModel, iCond, qFit, dynTol)
 % arCondDynamicStates  Checks which states show dynamics in a model condition.
 %
 %  Inputs:
 %   iModel      index of the model in the ar struct
 %   iCond       index of in ar.model.condition
 %   qFit        flag: should the model be fitted before the check?
-%   qSimu       flag: should the model be simulated before the check?
 %   dynTol      tolerance for the dynamics check
 %
 %  Outputs:
@@ -19,7 +18,6 @@ arguments
     iModel (1,1) double {mustBeInteger, mustBePositive} = 1
     iCond (1,1) double {mustBeInteger, mustBePositive} = 1
     qFit (1,1) logical = false
-    qSimu (1,1) logical = true
     dynTol (1,1) double {mustBePositive} = 1e-8
 end
 
@@ -28,8 +26,16 @@ global ar  %#ok<*GVMIS>
 if qFit
     arFit();  % fit the model -> best parameters
 end
-if qSimu
-    arSimu(false, true, true);  % simulate -> dynamics available
+% simulate the model to get the dynamics
+try
+    arSimu(false, true, true);
+catch
+    try
+        arSimu(false, false, true)
+    catch ME
+        msgText = getReport(ME, "extended", "hyperlinks", "on");
+        warning('Error in arSimu: %s', msgText)
+    end
 end
 
 % check the dynamics

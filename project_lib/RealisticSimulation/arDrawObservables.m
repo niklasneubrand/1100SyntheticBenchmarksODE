@@ -14,18 +14,30 @@ global ar  %#ok<*GVMIS>
 %% Set random number generator
 rng(rngSeed);
 
-%% Find the dynamical states of the main model condition
-states = ar.model(m).x;                                 % all species names
-cMain = arFindMainCondition(m, false, false);           % index of main condition
-xFineSimu = ar.model(m).condition(cMain).xFineSimu;     % species trajectories
-qDynamicState = arCondDynamicStates(m, cMain, false, true);
-states(~qDynamicState) = [];                            % remove constant states
-nStates = length(states);
+%% Simulate the model to get the dynamics
+try
+    arSimu(false, true, true);
+catch
+    try
+        arSimu(false, false, true)
+    catch ME
+        msgText = getReport(ME, "extended", "hyperlinks", "on");
+        warning('Error in arSimu: %s', msgText)
+    end
+end
 
-if nStates == 0
+%% Find the dynamical states of the main model condition
+cMain = arFindMainCondition(m, false, false); % index of main condition
+qMainDynState = arCondDynamicStates(m, cMain);
+idMainDynStates = 1:length(ar.model(m).x);
+idMainDynStates = idMainDynStates(qMainDynState); % indices related to all states
+mainDynStates = ar.model(m).x(qMainDynState); % names of non-constant states
+nMainDynStates = length(mainDynStates);
+
+if nMainDynStates == 0
     error('Only constant species found, no dynamics.')
-elseif nStates < 5
-    warning('Only found %d dynamic species. A minimum of 5 is required.', nStates)
+elseif nMainDynStates < 5
+    warning('Only found %d dynamic species. A minimum of 5 is required.', nMainDynStates)
 end
 
 %% Draw observables for main condition
@@ -33,46 +45,41 @@ end
 load(fullfile(fileparts(mfilename('fullpath')), 'ObservableDraw.mat'), 'obs');
 
 % Draw number of all observables
-randRow = randi(length(obs.obs));       % random row in obs table
-nObs = round(obs.obs(randRow)*nStates); % corresp. number of observables
-nObs = min(nObs, nStates);              % upper bound for nObs
-nObs = max(nObs, 1);                    % lower bound for nObs
+randRow = randi(length(obs.obs));               % random row in obs table
+nObs = round(obs.obs(randRow)*nMainDynStates);  % corresp. number of observables
+nObs = min(nObs, nMainDynStates);               % upper bound for nObs
+nObs = max(nObs, 1);                            % lower bound for nObs
 
 % draw number of compounds and directly observed variables
 randRow = randi(length(obs.comp));              % random row in obs table
 nComp = round(obs.comp(randRow)*nObs);          % corresp. number of compounds
 nComp = min(nComp, nObs);                       % upper bound for nComp
 compSize = round(obs.compadd(randRow));         % corresp. size of compounds
-compSize = min(compSize, nStates);              % upper bound
+compSize = min(compSize, nMainDynStates);       % upper bound
 compSize = max(compSize, 2);                    % lower bound
 % the number of unique compounds is limited to the possible number of combinations
-nComp = min(nComp, nchoosek(nStates, compSize));  % upper bound for nComp
+nComp = min(nComp, nchoosek(nMainDynStates, compSize)); % upper bound for nComp
 idComp = [];                                    % initialize compound indices
 nDirect = nObs - nComp;                         % number of directly observed variables
-idDirect = sort(randperm(nStates, nDirect));    % indices for directly observed states
+idDirect = sort(randperm(nMainDynStates, nDirect)); % indices for directly observed states
 
 % Draw the compound composition
 % In this implementation all compounds have the same length. Could be improved.
 if nComp > 0
     % create idComp, a matrix where each row represents a compound.
     % The matrix entries are state indices.
-    [~, idComp] = sort(rand(nComp, nStates), 2);    % nComp many permutations of state indices
-    idComp = idComp(:, 1:compSize);            % only keep the first compSize indices
-    idComp = unique(sort(idComp, 2), 'rows');  % remove possible duplicate compounds
+    [~, idComp] = sort(rand(nComp, nMainDynStates), 2); % nComp many permutations of state indices
+    idComp = idComp(:, 1:compSize); % only keep the first compSize indices
+    idComp = unique(sort(idComp, 2), 'rows'); % remove possible duplicate compounds
     while size(idComp, 1) < nComp
         % if not enough compounds (i.e. there were duplicates): draw again
-        [~, idComp2] = sort(rand(nComp, nStates), 2);
+        [~, idComp2] = sort(rand(nComp, nMainDynStates), 2);
         idComp2 = idComp2(:, 1:compSize);
         idComp = unique([idComp; sort(idComp2, 2)], 'rows');
     end
     if size(idComp, 1) > nComp
         % if too many compounds, randomly select a subset of size nComp
         idComp = idComp(randperm(size(idComp, 1), nComp), :);
-    end
-    % calculate the simulated dynamics of the compounds
-    compFineSimu = zeros(size(xFineSimu, 1), nComp);
-    for icadd = 1:compSize
-        compFineSimu = compFineSimu + xFineSimu(:, idComp(:, icadd));
     end
 end
 
@@ -135,7 +142,7 @@ xFineSimuAll = cell(1, nConds);
 yFineSimuAll = cell(1, nConds);
 for c = 1:nConds
     % Get the simulated data for the states
-    xFineSimu = ar.model(m).condition(c).xFineSimu;  % species trajectories
+    xFineSimu = ar.model(m).condition(c).xFineSimu(:, qMainDynState);  % species trajectories
     xFineSimuAll{c} = xFineSimu;
     % Get the simulated data for the drawn observables
     if nComp == 0
@@ -151,37 +158,6 @@ for c = 1:nConds
     end
 end
 
-% check if states and observables show dynamics or are constant
-qDynamicState = false(nConds, nStates);
-qDynamicObs = false(nConds, nObs);
-for c = 1:nConds
-    
-    % states
-    xFineSimu = xFineSimuAll{c};
-    for iState = 1:nStates
-        dataRange = range(xFineSimu(:, iState));  % range of simulated dynamics
-        normedDataRange = dataRange/max(xFineSimu(:, iState));  % normalized range
-        dynTol = 1e-8;  % tolerance for dynamics
-        qDynamicState(c, iState) = (abs(dataRange) > dynTol);
-        qDynamicState(c, iState) = qDynamicState(c, iState) && (abs(normedDataRange) > dynTol);
-        qDynamicState(c, iState) = qDynamicState(c, iState) && isfinite(normedDataRange);
-    end
-    
-    % observables
-    yFineSimu = yFineSimuAll{c};
-    for iObs = 1:nObs
-        %% here the is a bug: somtimes iObs exceeds array bounds.
-        % I hope it is fixed now by limiting the number of compounds to the
-        % number of possible unique compounds (nStates choose compSize)
-        dataRange = range(yFineSimu(:, iObs));  % range of simulated dynamics
-        normedDataRange = dataRange/max(yFineSimu(:, iObs));  % normalized range
-        dynTol = 1e-8;  % tolerance for dynamics
-        qDynamicObs(c, iObs) = (abs(dataRange) > dynTol);
-        qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && (abs(normedDataRange) > dynTol);
-        qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && isfinite(normedDataRange);
-    end
-end
-
 if qRemoveConstObs
     % for each condition: remove observables that are constant
     % But a condition must have at least one observable!
@@ -191,6 +167,37 @@ if qRemoveConstObs
     % 
     % This heuristic procedure can be considered unrealistic.
     % therefore it is deactivated by default.
+
+    % first: find constant states and observables
+    qDynamicState = false(nConds, nMainDynStates);
+    qDynamicObs = false(nConds, nObs);
+    for c = 1:nConds
+
+        % states
+        xFineSimu = xFineSimuAll{c};
+        for iState = 1:nMainDynStates
+            dataRange = range(xFineSimu(:, iState));  % range of simulated dynamics
+            normedDataRange = dataRange/max(xFineSimu(:, iState));  % normalized range
+            dynTol = 1e-8;  % tolerance for dynamics
+            qDynamicState(c, iState) = (abs(dataRange) > dynTol);
+            qDynamicState(c, iState) = qDynamicState(c, iState) && (abs(normedDataRange) > dynTol);
+            qDynamicState(c, iState) = qDynamicState(c, iState) && isfinite(normedDataRange);
+        end
+
+        % observables
+        yFineSimu = yFineSimuAll{c};
+        for iObs = 1:nObs
+            %% here the is a bug: somtimes iObs exceeds array bounds.
+            % I hope it is fixed now by limiting the number of compounds to the
+            % number of possible unique compounds (nStates choose compSize)
+            dataRange = range(yFineSimu(:, iObs));  % range of simulated dynamics
+            normedDataRange = dataRange/max(yFineSimu(:, iObs));  % normalized range
+            dynTol = 1e-8;  % tolerance for dynamics
+            qDynamicObs(c, iObs) = (abs(dataRange) > dynTol);
+            qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && (abs(normedDataRange) > dynTol);
+            qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && isfinite(normedDataRange);
+        end
+    end
 
     % remove observables that are constant
     CondObsMatrix(~qDynamicObs) = NaN;
@@ -241,7 +248,6 @@ if qRemoveConstObs
             CondObsMatrix(iAdd, iObs) = 1;
         end
     end
-
 end
 
 % rename the indices in CondObsMatrix to remove skipped numbers
@@ -289,7 +295,7 @@ end
 
 % bundel results in a struct
 obsStruct = struct();
-obsStruct.states = states;
+obsStruct.states = mainDynStates;
 obsStruct.nObs = nObs;
 obsStruct.nDirect = nDirect;
 obsStruct.nComp = nComp;
@@ -376,7 +382,7 @@ end
 % find conditions with most dynamic states
 nDynamicStates = zeros(1, nConds);
 for c = shortConds
-    qDynamicState = arCondDynamicStates(m, c, false, false);
+    qDynamicState = arCondDynamicStates(m, c, false);
     nDynamicStates(c) = sum(qDynamicState);
 end
 maxDynStatesCond = find(nDynamicStates == max(nDynamicStates));
