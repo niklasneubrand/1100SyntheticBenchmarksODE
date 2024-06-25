@@ -10,7 +10,7 @@ mkdir(fullfile(projectPath, 'Auxillary'));
 % copy model *.def files
 for m = 1:length(ar.model)
     modelfile = fullfile(ar.model(m).path, ...
-                         sprintf('%s.def', ar.model(m).name));
+        sprintf('%s.def', ar.model(m).name));
     copyfile(modelfile, fullfile(projectPath, 'Models'));
 end
 
@@ -44,9 +44,6 @@ defFileHeads = ["DESCRIPTION", "PREDICTOR", "COMPARTMENTS", "STATES", ...
 
 % loop over all *.def files
 for i = 1:length(defFileNames)
-    % in principle this works, but there are "encoding" issues regarding tabs and line breaks
-    % this has to be fixed
-    
     % read the *.def file
     defFile = fullfile(modelsDir, defFileNames{i});
     file_content = fileread(defFile);
@@ -75,18 +72,18 @@ for i = 1:length(defFileNames)
     if any(headings=="ERRORS")
         sections{find(headings=="ERRORS")+1} = [newline newline];
     end
-
+    
     % create new parameter section (only include dynamic parameters)
     newParamSection = newline;
     for ip = 1:length(ar.p)
         if ar.qDynamic(ip)
             % ar.pExternLabels   ar.pExtern    ar.qFitExtern    ar.qLog10Extern    ar.lbExtern    ar.ubExtern
             newParam = sprintf('%s\t%f\t%i\t%i\t%f\t%f', ...
-            ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
+                ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
             newParamSection = [newParamSection newParam newline];
         end
-    end    
-
+    end
+    
     if any(headings=="PARAMETERS")
         % if there is already a parameters section, replace it
         sections{find(headings=="PARAMETERS")+1} = newParamSection;
@@ -94,6 +91,19 @@ for i = 1:length(defFileNames)
         % if there was no parameters section, add it at the end
         headings = [headings; "PARAMETERS"];
         sections = [sections; newParamSection];
+    end
+    
+    % ensure proper linebreak formatting for each section
+    sections{1} = '';
+    for j = length(sections):-1:2
+        sectionText = strtrim(sections{j});
+        if isempty(sectionText)
+            % remove empty sections
+            sections(j) = [];
+            headings(j-1) = [];
+        else
+            sections{j} = [newline sectionText newline newline newline];
+        end
     end
     
     % re-join the sections
