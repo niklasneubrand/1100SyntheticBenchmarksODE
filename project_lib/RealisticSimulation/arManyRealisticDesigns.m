@@ -22,17 +22,26 @@ else
 end
 
 % save the input arguments
-auxDir = fullfile(pwd(), 'RealisticSimulation', 'Auxillary');
-mkdir(auxDir);
+infoDir = fullfile(pwd(), 'RealisticSimulation', 'InfoManySimus');
+mkdir(infoDir);
 startTime = datetime('now', 'Format', 'yyyy-MM-dd_HH-mm-ss');
-save(fullfile(auxDir, ['arManyRealisticDesigns__Inputs__' startTime]), 'iSimus', 'options');
+save(fullfile(infoDir, ['arManyRealisticDesigns__Inputs__' startTime]), 'iSimus', 'options');
 
 %% compile the base model (if necessary)
 loadStatus = arLoadLatest(options.loadPattern);
 if ~loadStatus
     arFprintf(1, "Compiling the base model...\n");
-    Setup;
-%   arFitLHS(100);
+    % find setup file and execute it
+    files = {dir().name};
+    setupFile = files(~cellfun(@isempty, regexpi(files, '.*setup.*\.m$')));
+    if isempty(setupFile)
+        error('No setup file found.')
+    elseif length(setupFile) > 1
+        error('Multiple setup files found.')
+    else
+        setupFile = setupFile{1};
+    end
+    eval(setupFile(1:end-2));
     arSave(options.loadPattern);
 end
 % make sure the paths are set correctly
@@ -48,8 +57,21 @@ arCondObsStructure()
 nSimus = max(iSimus);
 nameFmt = sprintf('%s_Realistic%%0%id', ar.info.name, floor(log10(nSimus))+1);
 
+% collect statistics about simulation success
+simuReport = struct();
+simuReport.projectName = arrayfun(@(x) sprintf(nameFmt, x), ...
+                                  iSimus, 'UniformOutput', false);
+simuReport.success = false(size(iSimus));
+simuReport.error = cell(size(iSimus));
+simuReport.startTime = NaT(size(iSimus));
+simuReport.endTime = NaT(size(iSimus));
+simuReport.duration = NaT(size(iSimus));
+
+
 %% run the simulations
 for iSimu = iSimus
+
+    simuReport.startTime(iSimu) = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
 
     projectName = sprintf(nameFmt, iSimu);
 
@@ -76,13 +98,21 @@ for iSimu = iSimus
     % run the realistic simulation
     try
         arNewRealisticDesign(projectName, passOptions{:});
+        simuReport.success(iSimu) = true;
     catch ME
         report = getReport(ME);
         warning(report);
+        simuReport.error{iSimu} = report;
     end
 
     diary("off");
 
+    simuReport.endTime(iSimu) = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
+    simuReport.duration(iSimu) = simuReport.endTime(iSimu) - simuReport.startTime(iSimu);
 end
+
+% save the simulation report
+simuReport = struct2table(simuReport);
+writetable(simuReport, fullfile(infoDir, ['arManyRealisticDesigns__Report__' startTime '.csv']));
 
 end

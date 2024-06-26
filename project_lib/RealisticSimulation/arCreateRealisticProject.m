@@ -98,9 +98,10 @@ for i = 1:length(defFileNames)
     for j = length(sections):-1:2
         sectionText = strtrim(sections{j});
         if isempty(sectionText)
+            sections{j} = [newline newline newline];
             % remove empty sections
-            sections(j) = [];
-            headings(j-1) = [];
+            % sections(j) = [];
+            % headings(j-1) = [];
         else
             sections{j} = [newline sectionText newline newline newline];
         end

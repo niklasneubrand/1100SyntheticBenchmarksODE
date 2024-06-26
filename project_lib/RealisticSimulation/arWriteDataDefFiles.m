@@ -18,20 +18,20 @@ for c = 1:length(ar.model(m).condition)
     fprintf(fileID, '%s\n', 'DESCRIPTION') ;
     fprintf(fileID, '"Realisticly set observables for model condition %i"\n', c);
     fprintf(fileID, '"Identifier: %s"\n', projectName);
-    fprintf(fileID, '"Random seed: %i"\n\n', rngSeed);
+    fprintf(fileID, '"Random seed: %i"\n', rngSeed);
 
-    fprintf(fileID, '\n%s\n', 'PREDICTOR') ;
+    fprintf(fileID, '\n\n%s\n', 'PREDICTOR') ;
     tLimModel = ar.model(m).tLim(2);
     tLimCond = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
     tLim = max(tLimModel, tLimCond);
-    fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\n\n', ...
+    fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\n', ...
             'time', 'T', 'n/a', 'time', 0, tLim) ;
-    fprintf(fileID, '%s\n', 'INPUTS') ;
+    fprintf(fileID, '\n\n%s\n', 'INPUTS') ;
 
     %% Observables
     obsNames = cell(1, obsStruct.nObs);
     obsExprs = cell(1, obsStruct.nObs);
-    fprintf(fileID, '\n%s\n', 'OBSERVABLES') ;
+    fprintf(fileID, '\n\n%s\n', 'OBSERVABLES') ;
     for iObs = 1:obsStruct.nObs
         % check if observable iObs should be created in condition c
         if ~isnan(obsStruct.CondObsMatrix(c, iObs))
@@ -71,7 +71,7 @@ for c = 1:length(ar.model(m).condition)
     end
 
     %% Error models
-    fprintf(fileID, '\n%s\n', 'ERRORS') ;
+    fprintf(fileID, '\n\n%s\n', 'ERRORS') ;
     for iObs = 1:obsStruct.nObs
         % check if observable should appear in this condition
         if ~isnan(obsStruct.CondObsMatrix(c, iObs))
@@ -80,16 +80,16 @@ for c = 1:length(ar.model(m).condition)
     end
 
     %% Conditions
-    fprintf(fileID, '\n%s\n', 'CONDITIONS') ;
+    fprintf(fileID, '\n\n%s\n', 'CONDITIONS') ;
     replace = condStruct.condReplace{c};
     for iRep = 1:size(replace, 1)
         fprintf(fileID, '%s\t"%s"\n', replace{iRep, :});
     end
 
-    fprintf(fileID, '\n%s\n', 'RANDOM') ;
+    fprintf(fileID, '\n\n%s\n', 'RANDOM') ;
 
     %% Parameters
-    fprintf(fileID, '\n%s\n', 'PARAMETERS') ;
+    fprintf(fileID, '\n\n%s\n', 'PARAMETERS') ;
     % error parameters
     fprintf(fileID, '// Error parameters\n');
     for iObs = 1:obsStruct.nObs
@@ -100,7 +100,7 @@ for c = 1:length(ar.model(m).condition)
                     c, obsNames{iObs}, sd, 1, 1, floor(sd-2), ceil(sd+2));
         end
     end
-    fprintf(fileID, '// Scale and offset parameters (if not definied in previous data.def file)\n');
+    fprintf(fileID, '\n// Scale and offset parameters (if not definied in previous data.def file)\n');
     for iObs = 1:obsStruct.nObs
         % check if observable should appear in this condition
         if ~isnan(obsStruct.CondObsMatrix(c, iObs))
