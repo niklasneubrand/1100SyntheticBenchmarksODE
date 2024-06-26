@@ -282,7 +282,7 @@ for c = 1:nConds
             obsRange(c, iObs) = log10((max(traj)+min(traj))/2);
             obsMean(c, iObs) = log10(mean(traj));
             obsMedian(c, iObs) = log10(median(traj));
-            meanMagnitude = log10(median(traj));
+            meanMagnitude = log10(mean(traj));
             if isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
                 % this would be the case if the observable is always zero or negative
