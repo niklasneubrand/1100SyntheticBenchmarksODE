@@ -11,7 +11,8 @@ mkdir(fullfile(projectPath, 'Auxillary'));
 for m = 1:length(ar.model)
     modelfile = fullfile(ar.model(m).path, ...
         sprintf('%s.def', ar.model(m).name));
-    copyfile(modelfile, fullfile(projectPath, 'Models'));
+        newName = sprintf('%s_M%i.def', projectName, m);
+    copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 end
 
 % modify model *.def files -> remove observables, parameter, etc.
@@ -132,7 +133,7 @@ global ar %#ok<*GVMIS>
 %% Create the final setup file
 fileID = fopen(fullfile(projectPath, "Setup.m"), "w");
 
-fprintf(fileID, "%% Setup file for the benchmark model %s \n", ar.info.name);
+fprintf(fileID, "%% Setup file for realistic simulation of benchmark model %s \n", ar.info.name);
 fprintf(fileID, "%% Identifier: %s \n", projectName);
 fprintf(fileID, "%% Random seed: %i \n\n", rngSeed);
 fprintf(fileID, "%% Initialize the d2d toolbox \n");
@@ -140,7 +141,7 @@ fprintf(fileID, "arInit();\n\n");
 
 fprintf(fileID, "%% Load the models \n");
 for m = 1:length(ar.model)
-    fprintf(fileID, "arLoadModel('%s'); \n", ar.model(m).name);
+    fprintf(fileID, "arLoadModel('%s_M%i'); \n", projectName, m);
 end
 fprintf(fileID, "\n");
 
@@ -167,16 +168,16 @@ fclose(fileID);
 %% Create the auxillary setup file
 fileID = fopen(fullfile(projectPath, "SetupAuxillary.m"), "w");
 
-fprintf(fileID, "%% Auxillary setup file for the benchmark model %s \n", ar.info.name);
+fprintf(fileID, "%% Auxillary setup file for realistic simulation of benchmark model %s \n", ar.info.name);
 fprintf(fileID, "%% Identifier: %s \n", projectName);
-fprintf(fileID, "%% Identifier: %i \n\n", rngSeed);
+fprintf(fileID, "%% Random Seed: %i \n\n", rngSeed);
 
 fprintf(fileID, "%% Initialize the d2d toolbox \n");
 fprintf(fileID, "arInit();\n\n");
 
 fprintf(fileID, "%% Load the models \n");
 for m = 1:length(ar.model)
-    fprintf(fileID, "arLoadModel('%s'); \n", ar.model(m).name);
+    fprintf(fileID, "arLoadModel('%s_M%i'); \n", projectName, m);
 end
 fprintf(fileID, "\n");
 

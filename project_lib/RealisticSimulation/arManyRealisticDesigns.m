@@ -22,10 +22,11 @@ else
 end
 
 % save the input arguments
-infoDir = fullfile(pwd(), 'RealisticSimulation', 'InfoManySimus');
+infoDir = fullfile(pwd(), 'RealisticSimulation', 'info_manyRS');
 mkdir(infoDir);
-startTime = datetime('now', 'Format', 'yyyy-MM-dd_HH-mm-ss');
-save(fullfile(infoDir, ['arManyRealisticDesigns__Inputs__' startTime]), 'iSimus', 'options');
+tStart_manyRS = datetime('now', 'Format', 'yyyy-MM-dd_HH-mm-ss');
+save(fullfile(infoDir, sprintf('options_manyRS_%s', tStart_manyRS)), 'iSimus', 'options');
+
 
 %% compile the base model (if necessary)
 loadStatus = arLoadLatest(options.loadPattern);
@@ -54,24 +55,30 @@ end
 arCondObsStructure()
 
 % nameformat for the projects
-nSimus = max(iSimus);
-nameFmt = sprintf('%s_Realistic%%0%id', ar.info.name, floor(log10(nSimus))+1);
+nDigits = floor(log10(max(iSimus)))+1;
+baseNameShort = split(ar.info.name, '_');
+baseNameShort = baseNameShort{1};
+nameFmt = sprintf('%s_RS%%0%id', baseNameShort, nDigits);
 
 % collect statistics about simulation success
-simuReport = struct();
-simuReport.projectName = arrayfun(@(x) sprintf(nameFmt, x), ...
-                                  iSimus, 'UniformOutput', false);
-simuReport.success = false(size(iSimus));
-simuReport.error = cell(size(iSimus));
-simuReport.startTime = NaT(size(iSimus));
-simuReport.endTime = NaT(size(iSimus));
-simuReport.duration = NaT(size(iSimus));
+projectNames = arrayfun(@(x) sprintf(nameFmt, x), ...
+    iSimus(:), 'UniformOutput', false);
+nSimus = length(iSimus);
+success = false(nSimus, 1);
+error = cell(nSimus, 1);
+startTime = cell(nSimus, 1);
+endTime = cell(nSimus, 1);
+duration = cell(nSimus, 1);
 
 
 %% run the simulations
-for iSimu = iSimus
+for idx = 1:nSimus
+    % explanation of indices:
+    % idx starts at 1 and counts the number of simulations
+    % iSimus can be any numbers proved by the user (e.g. 5:10)
+    iSimu = iSimus(idx);   
 
-    simuReport.startTime(iSimu) = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
+    tStart = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
 
     projectName = sprintf(nameFmt, iSimu);
 
@@ -85,7 +92,7 @@ for iSimu = iSimus
 
     % save the options
     mkdir(fullfile(projectDir, 'Auxillary'));
-    save(fullfile(projectDir, 'Auxillary', 'RealisticDesignOptions.mat'), 'options');
+    save(fullfile(projectDir, 'Auxillary', 'options_RS.mat'), 'options');
 
     % reshape the options for handing them to "arNewRealisticDesign"
     optionNames = fieldnames(options);
@@ -98,21 +105,24 @@ for iSimu = iSimus
     % run the realistic simulation
     try
         arNewRealisticDesign(projectName, passOptions{:});
-        simuReport.success(iSimu) = true;
+        success(idx) = true;
     catch ME
         report = getReport(ME);
         warning(report);
-        simuReport.error{iSimu} = report;
+        error{idx} = report;
     end
 
     diary("off");
-
-    simuReport.endTime(iSimu) = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
-    simuReport.duration(iSimu) = simuReport.endTime(iSimu) - simuReport.startTime(iSimu);
+    
+    tEnd = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
+    runtime = tEnd - tStart;
+    startTime{idx} = char(tStart);
+    endTime{idx} = char(tEnd);
+    duration{idx} = char(runtime);
 end
 
 % save the simulation report
-simuReport = struct2table(simuReport);
-writetable(simuReport, fullfile(infoDir, ['arManyRealisticDesigns__Report__' startTime '.csv']));
+simuReport = table(projectNames, success, startTime, endTime, duration, error);
+writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%s.csv', tStart_manyRS)));
 
 end

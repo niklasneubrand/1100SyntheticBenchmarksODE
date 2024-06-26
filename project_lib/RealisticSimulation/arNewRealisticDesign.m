@@ -130,6 +130,7 @@ try
 
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));
+    delete(fullfile("Models", "TransientFunction.def"));
 
     cd(oldPath);
 
