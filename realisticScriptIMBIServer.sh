@@ -1,14 +1,38 @@
 #!/bin/bash
 
-# define the directories
-script_dir=$(pwd)
-modelSet=all_lhsok_V1
-modelSet_dir=$script_dir/Benchmark_Models/$modelSet
+# This script is used to run the realistic benchmarks on the IMBI server
 
-echo "jobs submitted:"
+# define the directories
+real_dir=$(pwd)
+baseSet=all_lhsok
+baseSet_dir=$real_dir/BaseModels/$baseSet
+
+# user input for the results folder
+echo "Enter the name of the results folder: "
+read resultsVersion
+
+# define the results directory
+modelSet=$baseSet"V"$resultsVersion
+reults_dir=$real_dir/RS_IMBI/$modelSet
+
+# check if a compiled version of the model exists
+# to do this check if the folder $modelSet_dir"_compiled" exists
+if [ -d $baseSet_dir"_compiled" ]; then
+    # if the folder exists, copy the compiled models to the Results folder
+    cp -r $baseSet_dir"_compiled" $results_dir
+else
+    # if the folder does not exist, compile the models
+    # compile the models and copy them with "arCompileBaseModels.m"
+    matlab-R2021a -r "initRealisticBenchmarks; arCompileBaseModels('$baseSet_dir', '$results_dir'); exit;"
+fi
+
+
+## Run the Simulations for each model
+
+echo "jobs submitted: " $modelSet"/"
 
 # Loop over all model folders in the modelSet directory
-for folder in "$modelSet_dir"/*/; do
+for folder in "$reults_dir"/*/; do
 
     # Remove the trailing slash from the folder name
     folder=${folder%/}
@@ -23,14 +47,8 @@ for folder in "$modelSet_dir"/*/; do
 
     # Return the folder name
     echo "    "$folder_name
-    
-    # cd folder
 
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit();" </dev/null >realisticSimultion_$modelSet.log 2>&1 &
-    # nohup matlab-R2021a -r "disp('success');initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit()" </dev/null >/dev/null 2>&1 &
-    # nohup matlab-2021a -nosplash <realisticIMBIServer.m >simulations_log.log &
-    
-    # cd ..
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit();" </dev/null >/dev/null 2>&1 &
 
 done
