@@ -1,6 +1,7 @@
 # Ignore all content in these folders
 /IMBI_Cluster
 /Local_Results
+/Benchmark_Models
 /tests
 /archive
 
