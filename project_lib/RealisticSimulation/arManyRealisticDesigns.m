@@ -2,9 +2,9 @@ function arManyRealisticDesigns(iSimus, options)
 
 arguments
     iSimus (1,:) double {mustBeInteger, mustBePositive}
-    options.loadPattern (1,:) char = 'Base'
+    options.loadPattern (1,:) char = 'normal'
     options.rngSeed (1,:) = 'shuffle'
-    options.qLogObs (1,1) logical = false
+    options.qLogObs (1,1) logical = true
     options.qSetConds (1,1) logical = true
     options.qSetPars (1,1) logical = true
     options.qSetTime (1,1) logical = true

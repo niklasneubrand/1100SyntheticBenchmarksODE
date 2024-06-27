@@ -44,6 +44,11 @@ for m = 1:length(ar.model)
 
         % overwrite experimental error bars (have to be fitted)
         ar.model(m).data(d).yExpStd = nan(size(ar.model(m).data(d).yExp));
+
+        % make sure the data on the correct scale (lin or log)
+        % always store data on the lin scale!
+        log10Obs = logical(ar.model(m).data(d).logplotting);
+        ar.model(m).data(d).yExp(:, log10Obs) = 10.^ar.model(m).data(d).yExp(:, log10Obs);
     end
 end
 

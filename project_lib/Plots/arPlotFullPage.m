@@ -92,7 +92,7 @@ for jp = 1:length(ar.model(m).plot)
         % Copy titles and add shortcuts for log, scale, and offset
         titleString = get(get(axesHandles(i), 'Title'), 'String');
         addTitle = '';
-        if contains(ar.model(m).data(ar.model(m).plot(jp).dLink).fy(i), 'log')
+        if ar.model(m).data(ar.model(m).plot(jp).dLink).logplotting(i)
             addTitle = [addTitle 'L'];
         end
         if contains(ar.model(m).data(ar.model(m).plot(jp).dLink).fy(i), 'scale')
@@ -141,7 +141,7 @@ set(newFig, 'Position', [0, 0, width_cm, height_cm]);
 if qExport
     fileName = sprintf('%s_%s.pdf', ar.info.name, 'arPlotFullPage');
     exportgraphics(newFig, fileName,'ContentType','vector');
-    close all
+    % close all
 end
 
 end
