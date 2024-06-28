@@ -97,9 +97,9 @@ arCompileAll;
 addpath('Helper');
 
 % Tight equilibration tolerances
-ar.config.eq_tol=1e-10;
-% ar.config.atol = 1e-8;
-% ar.config.rtol = 1e-8;
+ar.config.eq_tol = 1e-10;
+ar.config.atol = 1e-8;
+ar.config.rtol = 1e-8;
 dataSets;
 
 % Pre-equilibration settings (use a steady state condition to equilibrate the system)
@@ -109,10 +109,10 @@ arSteadyState(1,arFindCondition(ar,'steady'),'all');
 arDisableData('steadystate_steadystate');
 
 %% settings
-% ar.config.optimizer = 5;
-% ar.config.optim.TolX = 1e-8;
-% ar.config.optim.MaxIter = 1000;
-% ar.config.optim.Display = 'iter';
+ar.config.optimizer = 5;
+ar.config.optim.TolX = 1e-8;
+ar.config.optim.MaxIter = 1000;
+ar.config.optim.Display = 'iter';
 ar.config.fiterrors = 1;
 
 arLoadPars('finalized_model');
