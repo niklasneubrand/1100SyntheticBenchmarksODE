@@ -10,6 +10,7 @@ arguments
     projectName (1,:) char
     options.loadPattern (1,:) char = 'normal'
     options.qLogObs (1,1) logical = true
+    options.qShareObsParams (1,1) logical = false
     options.qSetConds (1,1) logical = true
     options.qSetPars (1,1) logical = true
     options.qSetTime (1,1) logical = true

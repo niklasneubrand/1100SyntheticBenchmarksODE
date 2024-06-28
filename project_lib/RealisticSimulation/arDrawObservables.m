@@ -1,4 +1,4 @@
-function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qRemoveConstObs)
+function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qShareObsParams, qRemoveConstObs)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
@@ -6,6 +6,7 @@ arguments
     m (1,1) double {mustBeInteger, mustBePositive} = 1
     rngSeed (1,:) = 'shuffle'
     qLogObs (1,1) logical = false
+    qShareObsParams (1,1) logical = false
     qRemoveConstObs (1,1) logical = false
 end
 
@@ -29,8 +30,6 @@ end
 %% Find the dynamical states of the main model condition
 cMain = arFindMainCondition(m, false, false); % index of main condition
 qMainDynState = arCondDynamicStates(m, cMain);
-idMainDynStates = 1:length(ar.model(m).x);
-idMainDynStates = idMainDynStates(qMainDynState); % indices related to all states
 mainDynStates = ar.model(m).x(qMainDynState); % names of non-constant states
 nMainDynStates = length(mainDynStates);
 
@@ -131,7 +130,7 @@ randomRows = randi(nConds-nEmptyConds, 1, nEmptyConds);
 idReplace = idReplace(randomRows);
 CondObsMatrix(qEmptyCond, :) = CondObsMatrix(idReplace, :);
 
-% shift indices to avoid shared parameters
+% shift indices to avoid shared parameters between observables
 indexShift = max(CondObsMatrix(~qEmptyCond, :), [], 1);
 indexShift = repmat(indexShift, nEmptyConds, 1);
 CondObsMatrix(qEmptyCond, :) = CondObsMatrix(qEmptyCond, :) + indexShift;
@@ -256,6 +255,12 @@ for iObs = 1:nObs
     nonNan = isfinite(col);
     [~, ~, colIndices] = unique(col(nonNan), "stable");
     CondObsMatrix(nonNan, iObs) = colIndices;
+end
+
+% if desired: simplify the CondObsMatrix by removing all shared parameters
+if ~qShareObsParams
+    simpleCondObsMatrix = repmat(1:nConds, nObs, 1)';
+    CondObsMatrix(isfinite(CondObsMatrix)) = simpleCondObsMatrix(isfinite(CondObsMatrix));
 end
 
 % draw indices for log, scale and offset
