@@ -5,7 +5,6 @@
 /tests
 /archive
 
-/BaseModels/**_compiled
 # /RS_IMBI
 # /RS_local
 
@@ -13,16 +12,17 @@
 pthreadGC2.dll
 pthreadVC2.dll
 
-*.mexa64
-*.mexw64
-
+# compiled files with "arCompileAllSetups"
+**/Results/*normal
 **/CheckSums/
 **/Compiled/
+*.mexa64
+*.mexw64
 
 # Ignore Results directories under any RealisticSimulation
 # except those that end with __Final
 **/RealisticSimulation/**/Results/
-!**/RealisticSimulation/**/Results/**__Final/
+!**/RealisticSimulation/**/Results/*__Final/
 
 # ignore certain other files
 project_lib/RealisticSimulation/arDrawObservablesNew.m

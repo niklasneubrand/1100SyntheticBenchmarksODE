@@ -2,38 +2,25 @@
 
 # This script is used to run the realistic benchmarks on the IMBI server
 
-# define the directories
+# Define the base directory
 real_dir=$(pwd)
-baseSet=all_lhsok
-baseSet_dir=$real_dir/BaseModels/$baseSet
+baseSet="all_lhsok"
+baseSet_dir="$real_dir/BaseModels/$baseSet"
 
-# user input for the results folder
-echo "Enter the name of the results folder: "
-read resultsVersion
+# Create the results directory
+read -p "Enter the version number of the simulation (e.g. 1): " resultsVersion
+modelSet="${baseSet}_V${resultsVersion}"
+results_dir="$real_dir/RS_IMBI/$modelSet"
+mkdir -p "$results_dir"
 
-# define the results directory
-modelSet=$baseSet"V"$resultsVersion
-reults_dir=$real_dir/RS_IMBI/$modelSet
+# Copy the base models to the results directory
+echo "Copying base models..."
+cp -r "$compiled_dir/"* "$results_dir/"
 
-# check if a compiled version of the model exists
-# to do this check if the folder $modelSet_dir"_compiled" exists
-if [ -d $baseSet_dir"_compiled" ]; then
-    # if the folder exists, copy the compiled models to the Results folder
-    cp -r $baseSet_dir"_compiled" $results_dir
-else
-    # if the folder does not exist, compile the models
-    # compile the models and copy them with "arCompileBaseModels.m"
-    matlab-R2021a -r "initRealisticBenchmarks; arCompileBaseModels('$baseSet_dir', '$results_dir'); exit;"
-fi
-
-
-## Run the Simulations for each model
-
-echo "jobs submitted: " $modelSet"/"
+echo "Start simulations for problems: $modelSet/"
 
 # Loop over all model folders in the modelSet directory
-for folder in "$reults_dir"/*/; do
-
+for folder in "$results_dir"/*/; do
     # Remove the trailing slash from the folder name
     folder=${folder%/}
 
@@ -46,9 +33,9 @@ for folder in "$reults_dir"/*/; do
     fi
 
     # Return the folder name
-    echo "    "$folder_name
-
+    echo "    $folder_name"
+    # echo $folder
+	
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:20); exit();" </dev/null >/dev/null 2>&1 &
-
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50); exit();" </dev/null >/dev/null 2>&1 &
 done
