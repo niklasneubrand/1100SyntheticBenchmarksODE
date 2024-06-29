@@ -69,8 +69,8 @@ if(svantje_stattic)
     arLoadData('braun/hep_2012_01_10_Stattic_Stat3_Inhibitor_DR', 1, [], true);
     arLoadData('braun/hep_2012_01_23_Stattic_Stat3_Inhibitor_TC', 1, [], true);
     d1 = length(ar.model(1).data)+1; 
-	 arLoadData('braun/hep_2012_01_23_Stattic_Stat3_Inhibitor', 1, [], true);
-	 d2 = length(ar.model(1).data); for d=d1:d2; arMakeMeanAndStd(1,d); end
+	arLoadData('braun/hep_2012_01_23_Stattic_Stat3_Inhibitor', 1, [], true);
+	d2 = length(ar.model(1).data); for d=d1:d2; arMakeMeanAndStd(1,d); end
     arLoadData('braun/hep_2012_02_14_Stattic_Stat3_Inhibitor_TC', 1, [], true);
     arLoadData('braun/hep_2012_04_10_Stattic_Stat3_Inhibitor_TC', 1, [], true);
     arLoadData('braun/hep_2012_05_02_Stattic_Stat3_Inhibitor_40', 1, [], true);
