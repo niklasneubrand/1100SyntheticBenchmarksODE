@@ -18,11 +18,7 @@ arSetPars(ar.pLabel(strncmp('scale',ar.pLabel,5)),ones(1,150)*1,ones(1,150),ones
 arSetPars('SFK_inhibition_ratio',-1,1,1,-10,0)
 
 %Structural non-identifiabilities and model reductions
-if(load_final)
-    arSetPars({'ApoER2_Dab1_act','init_ApoER2_Dab1'},[6 0],[2 2],ones(1,2),[-2 -2],[7 3]);
-else
-    arSetPars({'init_pbApoER2','init_pSFK_Int','offset_Dab1_ExpReelinStim','offset_pDab1_ExpReelin_DR','SFK_activation'},[0  0 0 0 3],[2 2 2 2 2],[1 1 0 0 1],[-3 -3 -3 -3 -3],[3 3 3 3 5])
-end
+arSetPars({'ApoER2_Dab1_act','init_ApoER2_Dab1'},[6 0],[2 2],ones(1,2),[-2 -2],[7 3]);
 
 %Use standard deviations from data sheet
 ar.config.fiterrors=-1;
