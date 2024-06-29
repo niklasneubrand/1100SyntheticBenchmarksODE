@@ -32,7 +32,7 @@ mkdir -p "$results_dir"
 
 # Copy the base models to the results directory
 echo "Copying base models..."
-cp -r "$compiled_dir/"* "$results_dir/"
+cp -r "$baseSet_dir/"* "$results_dir/"
 
 
 ## Run the simulations
@@ -54,5 +54,5 @@ for folder in "$results_dir"/*/; do
     # echo $folder
 	
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50); exit();" </dev/null >/dev/null 2>&1 &
+    # nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50); exit();" </dev/null >/dev/null 2>&1 &
 done
