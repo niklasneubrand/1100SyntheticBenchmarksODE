@@ -12,7 +12,7 @@ function newParams = arRealisticParams(amplitude, distribution, rngSeed)
 %                   (default: 2)
 %    distribution   'log-uniform' or 'log-normal'
 %                   (default: 'log-uniform')
-%    rngSeed     seed for the random number generator
+%    rngSeed        seed for the random number generator
 %                   (default: 'shuffle', i.e., based on the current time)
 %
 %  Interpretation of distributions:
@@ -45,11 +45,6 @@ end
 
 
 %% calculate new parameters
-% NOTE:
-% The double negation logical( is used as a shortcut to convert
-% integers to logicals: logical(0 == false, logical(1 == true
-
-
 newParams = ar.p;
 
 % apply factors to log10 and linear parameters

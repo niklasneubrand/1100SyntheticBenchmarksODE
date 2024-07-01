@@ -27,6 +27,11 @@ if strcmp(options.rngSeed, 'shuffle')
 end
 rng(options.rngSeed);
 
+%% save the options for reproducibility
+projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
+mkdir(fullfile(projectPath, 'Auxillary'));
+save(fullfile(projectPath, 'Auxillary', 'options_RS.mat'), 'options');
+
 %% Load benchmark model
 if options.loadPattern == "None"
     if isfield(ar, 'model')
@@ -45,13 +50,12 @@ else
 end
 
 % update "ar.model.path"
-% it is set incorrectly if model folder was changed after compilation
+% it is set incorrectly if model folder was moved after compilation
 for m = 1:length(ar.model)
     ar.model(m).path = fullfile(pwd(), 'Models');
 end
 
 %% Create new project folder
-projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
 arCreateRealisticProject(projectName, projectPath, options.rngSeed);
 
 %% Modify the model parameters and bounds

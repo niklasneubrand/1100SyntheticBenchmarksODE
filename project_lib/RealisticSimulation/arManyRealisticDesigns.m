@@ -91,10 +91,6 @@ for idx = 1:nSimus
 
     options.rngSeed = startSeed + iSimu - 1;
 
-    % save the options
-    mkdir(fullfile(projectDir, 'Auxillary'));
-    save(fullfile(projectDir, 'Auxillary', 'options_RS.mat'), 'options');
-
     % reshape the options for handing them to "arNewRealisticDesign"
     optionNames = fieldnames(options);
     passOptions = cell(1, 2*length(optionNames));
@@ -107,9 +103,12 @@ for idx = 1:nSimus
     try
         arNewRealisticDesign(projectName, passOptions{:});
         success(idx) = true;
+        error{idx} = '';
     catch ME
         report = getReport(ME);
         warning(report);
+        % remove line breaks from error message (for csv file)
+        report = strrep(report, newline, ' ');
         error{idx} = report;
     end
 
