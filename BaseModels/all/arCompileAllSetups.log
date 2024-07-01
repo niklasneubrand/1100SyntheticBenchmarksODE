@@ -1,0 +1,43 @@
+The following setup files were found and will be subsequently used for compiling: 
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Bachmann_MSB2011/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Becker_Science2010/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Beer_MolBiosyst2014/Setup_IndiBac.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Boehm_JProteomeRes2014/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Borghans_BiophysChem_1997/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Brannmark_JBC2010/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Bruno_Carotines_JExpBio2016/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Chen_MSB2009/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Crauste_ImmuneCells_CellSystems2017/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Elowitz_Nature2000/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Fiedler_BMC2016/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Fujita_SciSignal2010/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Isensee_JCB2018/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Lucarelli_TGFb_2017/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Merkle_JAK2STAT5_PCB2016/SetupFinal.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Raia_CancerResearch2011/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Reelin_PONE2017/Setup_final.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Schwen_InsulinMouseHepatocytes_PlosOne2014/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Sneyd_PNAS2002/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Sobotta_Frontiers2017/Setup_Core.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Swameye_PNAS2003/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Weber_BMC2015/Setup.m
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Zheng_PNAS2012/Setup_Zheng.m
+
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Bachmann_MSB2011/Setup.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Becker_Science2010/Setup.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Beer_MolBiosyst2014/Setup_IndiBac.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Boehm_JProteomeRes2014/Setup.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Borghans_BiophysChem_1997/Setup.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Brannmark_JBC2010/Setup.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Bruno_Carotines_JExpBio2016/Setup.m will be executed ...
+
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Chen_MSB2009/Setup.m will be executed ...
+

@@ -1,0 +1,374 @@
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 223)
+In arInit>arInitMain (line 28)
+In arInit (line 17)
+In Setup (line 3)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory . [OK]
+[Warning: There is a newer version available on github! Please check
+http://www.data2dynamics.org for updates or run "arUpdateD2D".] 
+[> In arCheckVersion (line 50)
+In arInit>arInitMain (line 58)
+In arInit (line 17)
+In Setup (line 3)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+loading model #1, from file Models/Complex_ModelSelectionProfile.def...
+
+loading data #1, from file Data/MSPL2_complexes_all_hepa16_no_single_complex.def...dose-response to init_TGFb
+loading data #1, from file Data/MSPL2_complexes_all_hepa16_no_single_complex.xls...
+local random effect #1:
+	              nExpID = 2
+local condition #1:
+	           init_TGFb = 0
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	            S4IP_tS4 ->    1 data-points assigned
+	           S23IP_tS2 ->    2 data-points assigned
+	           S23IP_tS3 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	             S3IP_S2 ->    0 data-points assigned
+	            S3IP_pS2 ->    0 data-points assigned
+	           S3IP_ppS2 ->    0 data-points assigned
+	            S23IP_S2 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	             S2IP_S3 ->    0 data-points assigned
+	            S2IP_pS3 ->    0 data-points assigned
+	           S2IP_ppS3 ->    0 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+local condition #2:
+	           init_TGFb = 0.1
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	            S4IP_tS4 ->    1 data-points assigned
+	           S23IP_tS2 ->    2 data-points assigned
+	           S23IP_tS3 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	             S3IP_S2 ->    0 data-points assigned
+	            S3IP_pS2 ->    0 data-points assigned
+	           S3IP_ppS2 ->    0 data-points assigned
+	            S23IP_S2 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	             S2IP_S3 ->    0 data-points assigned
+	            S2IP_pS3 ->    0 data-points assigned
+	           S2IP_ppS3 ->    0 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+local condition #3:
+	           init_TGFb = 1
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	            S4IP_tS4 ->    1 data-points assigned
+	           S23IP_tS2 ->    2 data-points assigned
+	           S23IP_tS3 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	             S3IP_S2 ->    1 data-points assigned
+	            S3IP_pS2 ->    1 data-points assigned
+	           S3IP_ppS2 ->    1 data-points assigned
+	            S23IP_S2 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	             S2IP_S3 ->    1 data-points assigned
+	            S2IP_pS3 ->    1 data-points assigned
+	           S2IP_ppS3 ->    1 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+
+loading data #4, from file Data/MSPL2_PL_hepa16_pS2_pS3_time_course.def...
+loading data #4, from file Data/MSPL2_PL_hepa16_pS2_pS3_time_course.xls...
+local random effect #1:
+	              nExpID = 5
+local condition #1:
+	           init_TGFb = 1
+	            S23IP_S2 ->   19 data-points assigned
+	           S23IP_pS2 ->   19 data-points assigned
+	          S23IP_ppS2 ->   19 data-points assigned
+	            S23IP_S3 ->   13 data-points assigned
+	           S23IP_pS3 ->   13 data-points assigned
+	          S23IP_ppS3 ->   13 data-points assigned
+
+loading data #5, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16.def...
+loading data #5, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16.xls...
+local random effect #1:
+	              nExpID = 1
+local condition #1:
+	           init_TGFb = 0
+	           S23IP_tS2 ->   18 data-points assigned
+	            S4IP_tS4 ->   18 data-points assigned
+
+loading data #6, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16_ratios.def...
+loading data #6, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16_ratios.xls...
+local random effect #1:
+	              nExpID = 10
+local condition #1:
+	           init_TGFb = 1
+	           S23IP_tS2 ->   13 data-points assigned
+	           S23IP_tS3 ->   13 data-points assigned
+
+loading data #7, from file Data/PL_PN_TGFbR_hepa16.def...
+loading data #7, from file Data/PL_PN_TGFbR_hepa16.xls...
+local random effect #1:
+	              nExpID = 11
+local condition #1:
+	           init_TGFb = 0
+	               TGFbR ->    7 data-points assigned
+
+loading data #8, from file Data/gene_expression_OE.def...
+loading data #8, from file Data/gene_expression_OE.xls...
+local random effect #1:
+	              nExpID = 100
+local condition #1:
+	           init_TGFb = 0
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 208.41
+	                 Ski ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Skil ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	              Dnmt3a ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Sox4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                 Jun ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Smad7 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Klf10 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Bmp4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	              Cxcl15 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Dusp5 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Tgfa ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Pdk4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #2:
+	           init_TGFb = 0
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #3:
+	           init_TGFb = 0
+	               S2tot = 142.34
+	               S3tot = 227.744
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #4:
+	           init_TGFb = 0
+	               S2tot = 284.68
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #5:
+	           init_TGFb = 1
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 208.41
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #6:
+	           init_TGFb = 1
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #7:
+	           init_TGFb = 1
+	               S2tot = 142.34
+	               S3tot = 227.744
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #8:
+	           init_TGFb = 1
+	               S2tot = 284.68
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+
+loading data #16, from file Data/MSPL2_complexes_all_hepa16_time_course.def...
+loading data #16, from file Data/MSPL2_complexes_all_hepa16_time_course.xls...
+local random effect #1:
+	              nExpID = 6
+local condition #1:
+	           S23IP_tS2 no data, removed
+	           S23IP_tS3 no data, removed
+	           S23IP_tS4 no data, removed
+	             S3IP_S2 no data, removed
+	            S3IP_pS2 no data, removed
+	           S3IP_ppS2 no data, removed
+	            S23IP_S2 no data, removed
+	           S23IP_pS2 no data, removed
+	          S23IP_ppS2 no data, removed
+	             S2IP_S3 no data, removed
+	            S2IP_pS3 no data, removed
+	           S2IP_ppS3 no data, removed
+	            S23IP_S3 no data, removed
+	           S23IP_pS3 no data, removed
+	          S23IP_ppS3 no data, removed
+	           init_TGFb = 1
+	               S2tot = 142.34
+	             init_S3 = S3tot
+	               S4tot = 69.47
+	            S2IP_tS2 ->    3 data-points assigned
+	            S2IP_tS3 ->    3 data-points assigned
+	            S2IP_tS4 ->    3 data-points assigned
+	            S3IP_tS2 ->    6 data-points assigned
+	            S3IP_tS3 ->    6 data-points assigned
+	            S3IP_tS4 ->    6 data-points assigned
+	            S4IP_tS2 ->    6 data-points assigned
+	            S4IP_tS3 ->    6 data-points assigned
+	            S4IP_tS4 ->    6 data-points assigned
+	             S2IP_S2 ->    3 data-points assigned
+	            S2IP_pS2 ->    3 data-points assigned
+	           S2IP_ppS2 ->    3 data-points assigned
+
+calculating model m1, Complex_ModelSelectionProfile...
+calculating condition m1 c1, Complex_ModelSelectionProfile...
+calculating condition m1 c2, Complex_ModelSelectionProfile...
+calculating condition m1 c3, Complex_ModelSelectionProfile...
+calculating condition m1 c4, Complex_ModelSelectionProfile...
+calculating condition m1 c5, Complex_ModelSelectionProfile...
+calculating condition m1 c6, Complex_ModelSelectionProfile...
+calculating condition m1 c7, Complex_ModelSelectionProfile...
+calculating condition m1 c8, Complex_ModelSelectionProfile...
+calculating condition m1 c9, Complex_ModelSelectionProfile...
+calculating condition m1 c10, Complex_ModelSelectionProfile...
+calculating condition m1 c11, Complex_ModelSelectionProfile...
+calculating condition m1 c12, Complex_ModelSelectionProfile...
+[Warning:
+/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Part2/Lucarelli_TGFb_2017/Setup.m
+failed !!!!!!!!!] 
+[> In arCompileAllSetups (line 150)] 
+[Warning: Invalid file identifier. Use fopen to generate a valid file
+identifier.] 
+[> In arCompileAllSetups (line 151)] 
+{Error using cd
+Unable to change current folder to
+'/dsk/home/neubrand/d2d/projects/RealisticBenchmarkModels/BaseModels/all/Part2/Merkle_JAK2STAT5_PCB2016'
+(Name is nonexistent or not a folder).
+
+Error in arCompileAllSetups (line 83)
+            cd(pathstr);
+} 
