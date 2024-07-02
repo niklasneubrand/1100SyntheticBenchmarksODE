@@ -17,17 +17,16 @@ global ar
 % set the random seed
 if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
     rng('shuffle');
-    startSeed = randi(2^32-1);
-else
-    startSeed = options.rngSeed;
+    options.rngSeed = randi(2^32-1);
 end
+% save the start seed for later reference (rngSeed will be different for each simulation)
+startSeed = options.rngSeed;
 
 % save the input arguments
 infoDir = fullfile(pwd(), 'RealisticSimulation', 'info_manyRS');
 mkdir(infoDir);
 tStart_manyRS = datetime('now', 'Format', 'yyyy-MM-dd_HH-mm-ss');
-save(fullfile(infoDir, sprintf('options_manyRS_%s', tStart_manyRS)), 'iSimus', 'options');
-
+save(fullfile(infoDir, sprintf('options_manyRS_%s', tStart_manyRS)), 'options');
 
 %% compile the base model (if necessary)
 loadStatus = arLoadLatest(options.loadPattern);
@@ -70,7 +69,6 @@ error = cell(nSimus, 1);
 startTime = cell(nSimus, 1);
 endTime = cell(nSimus, 1);
 duration = cell(nSimus, 1);
-
 
 %% run the simulations
 for idx = 1:nSimus

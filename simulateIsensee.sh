@@ -7,5 +7,5 @@ folder="{$folder}/RS_IMBI/all_no_Chen_V1/Isensee_JCB2018"
 for i in {8..50}
 do
     # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); simulateIsensee($i:$i); exit();" </dev/null >/dev/null 2>&1 &
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); simulateIsensee($i); exit();" </dev/null >/dev/null 2>&1 &
 done
