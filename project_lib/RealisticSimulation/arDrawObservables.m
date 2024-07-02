@@ -293,6 +293,16 @@ for c = 1:nConds
                 % this would be the case if the observable is always zero or negative
                 stdObs(c, iObs) = stdObs(c, iObs) + meanMagnitude;
             end
+
+            % we have to introduce a minimum value for the std
+            % otherwise arCalcSimu throws an error
+            % the condition is: 0 >! 2*log(ystd) + ar.config.add_c ==> ystd > exp(-ar.config.add_c/2)
+            minStd = exp(-ar.config.add_c/2);
+            orderOfMag = floor(log10(minStd));
+            % round the significand upwards
+            minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
+            stdObs(c, iObs) = max(stdObs(c, iObs), minStd);
+
         end
     end
 end

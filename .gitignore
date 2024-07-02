@@ -5,8 +5,8 @@
 /tests
 /archive
 
-# /RS_IMBI
-# /RS_local
+/RS_IMBI
+/RS_local
 
 ## Ignore parts of the d2d project folders
 pthreadGC2.dll
