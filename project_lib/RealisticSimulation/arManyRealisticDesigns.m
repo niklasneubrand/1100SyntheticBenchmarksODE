@@ -55,7 +55,8 @@ end
 arCondObsStructure()
 
 % nameformat for the projects
-nDigits = floor(log10(max(iSimus)))+1;
+% nDigits = floor(log10(max(iSimus)))+1;
+nDigits = 2;
 baseNameShort = split(ar.info.name, '_');
 baseNameShort = baseNameShort{1};
 nameFmt = sprintf('%s_RS%%0%id', baseNameShort, nDigits);
