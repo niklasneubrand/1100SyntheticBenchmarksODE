@@ -43,7 +43,8 @@ for c = 1:length(ar.model(m).condition)
             else
                 % compounds
                 iComp = iObs - obsStruct.nDirect;
-                compName = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '_add_');
+                compName = sprintf('Compound_%i', iComp);
+                % compName = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '_add_');
                 if length(compName) > 63
                     compName = compName(1:63);
                 end

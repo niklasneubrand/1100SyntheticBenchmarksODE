@@ -271,11 +271,10 @@ idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (su
 % draw the std of the error model for all observables from mixed-effect model
 % see Eq. (2.8) in Egert_2023 (DOI: 10.3934/mbe.2023467)
 % but coefficients are different!
-stdObs = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
-stdObs(isnan(CondObsMatrix)) = NaN;  % set std to NaN for unobserved observables
-obsRange = NaN(nConds, nObs);
-obsMean = NaN(nConds,nObs);
-obsMedian = NaN(nConds, nObs);
+stdObsRaw = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
+stdObsRaw(isnan(CondObsMatrix)) = NaN;  % set std to NaN for unobserved observables
+stdObs = stdObsRaw;
+obsMean = NaN(nConds, nObs);
 for c = 1:nConds
     yFineSimu = yFineSimuAll{c};
     for iObs = 1:nObs
@@ -284,10 +283,8 @@ for c = 1:nConds
             % -> calculate the mean magnitude of the observable
             %    to transform relative to absolute error
             traj = yFineSimu(isfinite(yFineSimu(:, iObs)), iObs);
-            obsRange(c, iObs) = log10((max(traj)+min(traj))/2);
-            obsMean(c, iObs) = log10(mean(traj));
-            obsMedian(c, iObs) = log10(median(traj));
-            meanMagnitude = log10(mean(traj));
+            meanMagnitude = log10(mean(traj, 'omitnan'));
+            obsMean(c, iObs) = meanMagnitude;
             if isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
                 % this would be the case if the observable is always zero or negative
@@ -302,7 +299,6 @@ for c = 1:nConds
             % round the significand upwards
             minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
             stdObs(c, iObs) = max(stdObs(c, iObs), minStd);
-
         end
     end
 end
@@ -320,10 +316,9 @@ obsStruct.idLog = idLog;
 obsStruct.idScale = idScale;
 obsStruct.idOffset = idOffset;
 obsStruct.CondObsMatrix = CondObsMatrix;
+obsStruct.stdObsRaw = stdObsRaw;
 obsStruct.stdObs = stdObs;
-obsStruct.obsRange = obsRange;
 obsStruct.obsMean = obsMean;
-obsStruct.obsMedian = obsMedian;
 
 fprintf('Observables drawn realistically.\n')
 

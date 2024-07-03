@@ -113,6 +113,16 @@ try
     if options.qSetTime
         arRealisticTimesRTF(options.rngSeed);
         arSave(sprintf('%s__newTimes', projectName), false, false)
+
+        % update the error models based on new time points
+        for m = 1:length(ar.model)
+            load(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
+            obsStruct = arUpdateErrorParams(m, obsStruct);
+            arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+                            obsStruct, condStruct, m)
+            save(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
+        end
+
     else
         % use the time points from the loaded model
     end
