@@ -60,7 +60,7 @@ for m = 1:length(ar.model)
         % fix: save data as .csv, not .xls
         header = ['t', ar.model(m).data(d).y];
         data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
-        filePath = fullfile('Data', sprintf('%s_M%d_C%d.csv', projectName, m, d));
+        filePath = fullfile('Data', sprintf('%s_C%d.csv', projectName, d));
         
      
         writecell([header; data], filePath);

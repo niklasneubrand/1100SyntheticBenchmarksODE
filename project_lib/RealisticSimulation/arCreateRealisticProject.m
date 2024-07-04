@@ -175,7 +175,7 @@ fprintf(fileID, "arInit();\n\n");
 
 fprintf(fileID, "%% Load the models \n");
 for m = 1:length(ar.model)
-    fprintf(fileID, "arLoadModel('%s); \n", projectName);
+    fprintf(fileID, "arLoadModel('%s'); \n", projectName);
 end
 fprintf(fileID, "\n");
 
