@@ -18,38 +18,28 @@ for m = 1:length(ar.model)
     
     % initialize data structures
     timeRescaleFactorsAll = cell(1, length(ar.model(m).data));
-    rtfParamsAll = cell(1, length(ar.model(m).data));
-    qFitSuccessAll = cell(1, length(ar.model(m).data));
     
     % we do not know the time-scales exactly becvause of randomized parameters
     % 1. for fast dynamics: increase resolution of simulation
-    ar.config.nFinePoints = 4*ar.config.nFinePoints;
+    ar.config.nFinePoints = 2*ar.config.nFinePoints;
     % 2. for slow dynamics: increase total simulation time
     for d = 1:length(ar.model(m).data)
-        ar.model(m).data(d).tLim(2) = 4*ar.model(m).data(d).tLim(2);
+        ar.model(m).data(d).tLim(2) = 2*ar.model(m).data(d).tLim(2);
     end
     arLink();
 
     % Siumlate model dynamics for RTF fits
     arSimu(false, true, true);
-    arBackup = arDeepCopy(ar);
+    arBackup = arDeepCopy(ar); % arTransientFit overwrites ar -> save a copy of ar
     
+    % Convert orders of magnitude (be compatible with RTF param bounds)
     for d = 1:length(ar.model(m).data)
-        
-        ar = arDeepCopy(arBackup);
-        
-        % Convert orders of magnitude (be compatible with RTF param bounds)
         timeRescaleFactorsAll{d} = arMagnitudeConversion(m, d);
-        
-        % Fit Transient Function
-        % arTransientFit overwrites ar -> save a copy of ar
-        % this could be optimized by reducing the number of times the
-        % global ar struct is copied and exchanged. But not a priority.
-        [rtfParamsAll{d}, qFitSuccessAll{d}] = arTransientPars(m, d);
-        
     end
-    
-    ar = arDeepCopy(arBackup);
+
+    % Fit Transient Function
+    [rtfParamsAll, qFitSuccessAll] = arTransientPars(m);
+    ar = arDeepCopy(arBackup); % restore ar from backup
     
     % Handle failed fits -> interpolated RTF parameters from successful fits
     if all(~[qFitSuccessAll{:}])
@@ -95,58 +85,80 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function [rtfParams, qFitSuccess] = arTransientPars(m, d)
+function [rtfParamsAll, qFitSuccessAll] = arTransientPars(m)
 
 arguments
     m (1,1) double {mustBeInteger,mustBePositive} = 1
-    d (1,1) double {mustBeInteger,mustBePositive} = 1
 end
 
 global ar %#ok<*GVMIS>
 
-y = ar.model(m).data(d).yFineSimu;
-t = ar.model(m).data(d).tFine;
-yname = ar.model(m).data(d).y;
-nObs = size(y, 2);
+%% extract trajectories from ar struct
+nConds = length(ar.model(m).data);
+tAll = {ar.model.data.tFine};
+yAll = {ar.model.data.yFineSimu};
+yNamesAll = {ar.model.data.y};
 
-ar.config.fiterrors = 1;  % ignore errors of biomodel data file
+% ignore errors of biomodel data file
+% is this relevant here? -> arFitTransientFunction2 inits a new ar struct
+ar.config.fiterrors = 1;
 
-% create data structures for results
+%% data structure for results
+rtfParamsAll = cell(1, nConds);
+qFitSuccessAll = cell(1, nConds);
 pLabel = {'amp_sust', 'amp_trans', ...
-    'offset_TF', 'sd_TF', 'signum_TF', ...
-    'timescale_sust', 'timescale_trans', ...
-    'toffset_TF'};
-rtfParams = table('Size', [nObs, 8], ...
-    'VariableTypes', repmat("double", 1, 8), ...
-    'VariableNames', pLabel);
-qFitSuccess = false(1, nObs);
+        'offset_TF', 'sd_TF', 'signum_TF', ...
+        'timescale_sust', 'timescale_trans', ...
+        'toffset_TF'};
 
-for iObs = 1:nObs
+%% loop through all trajectories and fit RTF
+for c = 1:nConds
     
-    dat.tExp = t(:,1);
-    if iObs>1 && size(t,2)>1
-        dat.tExp = t(:,iObs);
+    % extract data of this condition
+    t = tAll{c};
+    y = yAll{c};
+    yname = yNamesAll{c};
+    nObs = size(y, 2);
+
+    % create data structure for results of this condition
+    
+    rtfParams = table('Size', [nObs, 8], ...
+        'VariableTypes', repmat("double", 1, 8), ...
+        'VariableNames', pLabel);
+    qFitSuccess = false(1, nObs);
+
+
+    for iObs = 1:nObs
+    
+        dat.tExp = t(:,1);
+        if iObs>1 && size(t,2)>1
+            dat.tExp = t(:,iObs);
+        end
+        dat.yExp = y(:,iObs);
+        dat.ystd = nan(size(dat.yExp));
+        
+        figuresPath = fullfile(pwd(), 'Auxillary');
+        mkdir(figuresPath);
+        
+        try
+            figFile = fullfile(figuresPath, sprintf('rtfFit_C%d_%s', c, yname{iObs}));
+            res = arFitTransientFunction2(dat, figFile);
+            rtfParams{iObs,:} = res.pRescaled;
+            qFitSuccess(iObs) = true;
+        catch ME
+            qFitSuccess(iObs) = false;
+            disp(getReport(ME, 'extended', 'hyperlinks', 'on'));
+        end
+        
     end
-    dat.yExp = y(:,iObs);
-    dat.ystd = nan(size(dat.yExp));
+
+    rtfParamsAll{c} = rtfParams;
+    qFitSuccessAll{c} = qFitSuccess;
     
-    figuresPath = fullfile(pwd(), 'Auxillary');
-    mkdir(figuresPath);
-    
-    try
-        figFile = fullfile(figuresPath, sprintf('rtfFit_M%d_D%d_%s', m, d, yname{iObs}));
-        res = arFitTransientFunction2(dat, figFile);
-        rtfParams{iObs,:} = res.pRescaled;
-        qFitSuccess(iObs) = true;
-    catch ME
-        qFitSuccess(iObs) = false;
-        disp(getReport(ME, 'extended', 'hyperlinks', 'on'));
-    end
+    writetable([array2table(yname'), rtfParams], ...
+               sprintf('Auxillary/rtfParams_M%d_C%d.csv', m, c));    
     
 end
-
-writetable([array2table(yname'), rtfParams], ...
-           sprintf('Auxillary/rtfParams_M%d_D%d.txt', m, d));
 
 end
 
@@ -221,7 +233,7 @@ ar.model(m).data(d).yExpStd = nan(size(yExp)); % errors have to be fitted
 
 arLink();
 
-writematrix(tT, sprintf('Auxillary/TimePoints_C%d.txt', d));
+writematrix(tT, sprintf('Auxillary/TimePoints_C%d.csv', d));
 fprintf('Realistic time Points are assigned.\n');
 
 end

@@ -36,7 +36,7 @@ t = repmat(ar.model(m).data(d).tFine, 1, size(y, 2));
 convertt = ones(1, size(y, 2));
 for iObs=1:size(y, 2)
     for jT=size(y, 1)-1:-1:minPoints
-        if abs(y(jT+1, iObs) - y(jT-1, iObs))/max(y(:, iObs)) < 10^(-6)
+        if abs(y(jT+1, iObs) - y(jT-1, iObs))/max(y(:, iObs)) < 10^(-3)
             y(jT+1, iObs) = nan;
             t(jT+1, iObs) = nan;
         else
