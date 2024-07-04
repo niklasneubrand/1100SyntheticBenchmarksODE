@@ -121,25 +121,25 @@ rtfParams = table('Size', [nObs, 8], ...
     'VariableNames', pLabel);
 qFitSuccess = false(1, nObs);
 
-for i = 1:nObs
+for iObs = 1:nObs
     
     dat.tExp = t(:,1);
-    if i>1 && size(t,2)>1
-        dat.tExp = t(:,i);
+    if iObs>1 && size(t,2)>1
+        dat.tExp = t(:,iObs);
     end
-    dat.yExp = y(:,i);
+    dat.yExp = y(:,iObs);
     dat.ystd = nan(size(dat.yExp));
     
     figuresPath = fullfile(pwd(), 'Auxillary');
     mkdir(figuresPath);
     
     try
-        figFile = fullfile(figuresPath, sprintf('rtfFit_M%d_D%d_%s', m, d, yname{i}));
+        figFile = fullfile(figuresPath, sprintf('rtfFit_M%d_D%d_%s', m, d, yname{iObs}));
         res = arFitTransientFunction2(dat, figFile);
-        rtfParams{i,:} = res.pRescaled;
-        qFitSuccess(i) = true;
+        rtfParams{iObs,:} = res.pRescaled;
+        qFitSuccess(iObs) = true;
     catch ME
-        qFitSuccess(i) = false;
+        qFitSuccess(iObs) = false;
         disp(getReport(ME, 'extended', 'hyperlinks', 'on'));
     end
     
@@ -154,14 +154,13 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function tT = arSetTimePoints(transPars, m, d, convertt, folder_name, rngSeed)
+function tT = arSetTimePoints(transPars, m, d, convertt, rngSeed)
 
 arguments
     transPars (:,:) table
     m (1,1) double {mustBeInteger, mustBePositive} = 1
     d (1,1) double {mustBeInteger, mustBePositive} = 1
-    convertt (:,:) double {mustBeNumeric, mustBePositive} = 1
-    folder_name (1,:) char {mustBeText} = ''
+    convertt (1,:) double {mustBeNumeric, mustBePositive} = 1
     rngSeed (1,:) = 'shuffle'
 end
 
@@ -198,7 +197,7 @@ for k = 1:length(T)
     tT(1:n(k),k) = (lambda(k).*x+(1-lambda(k)).*x.*((exp(log(2)*x)-1).^potenz(k))).*T(k);
 end
 
-tT = tT./convertt'; % biomodel was scaled to range(t)>10 || <100
+tT = tT./convertt; % biomodel was scaled to range(t)>10 || <100
 
 %tT = round(tT,2,'significant');
 mag = 10.^(8:-1:-8);
@@ -222,7 +221,7 @@ ar.model(m).data(d).yExpStd = nan(size(yExp)); % errors have to be fitted
 
 arLink();
 
-writematrix(tT, sprintf('Auxillary/TimePoints_M%d_D%d.txt', m, d));
+writematrix(tT, sprintf('Auxillary/TimePoints_C%d.txt', d));
 fprintf('Realistic time Points are assigned.\n');
 
 end
@@ -253,11 +252,11 @@ end
 % Order data all in one matrix
 T = unique(sort(tT(~isnan(tT(:)))));
 yExp = nan(size(T,1),size(tT,2));
-for i=1:size(y,1)
-    for j=1:size(y,2)
-        for k=1:size(T,1)
-            if tT(i,j)==T(k)
-                yExp(k,j) = y(i,j);
+for it=1:size(y,1)
+    for iObs=1:size(y,2)
+        for jt=1:size(T,1)
+            if tT(it,iObs)==T(jt)
+                yExp(jt,iObs) = y(it,iObs);
             end
         end
     end

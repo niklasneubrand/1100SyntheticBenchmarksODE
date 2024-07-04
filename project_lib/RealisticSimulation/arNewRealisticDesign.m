@@ -108,6 +108,7 @@ oldPath = cd(projectPath);
 try
     fprintf('Compiling the new model structure.\n')
     SetupAuxillary;
+    arSave(sprintf('%s__Auxillary', projectName), false, false)
     
     %% Use RTF fits to set realistic time points
     if options.qSetTime
