@@ -1,5 +1,7 @@
-function arWriteDataDefFiles(projectName, projectPath, rngSeed, obsStruct, condStruct, m)
+function arWriteDataDefFiles(projectName, projectPath, rngSeed, obsStruct, condStruct)
 % Write obs in RealisticData.def
+
+m=1;
 
 global ar  %#ok<*GVMIS>
 
@@ -12,7 +14,7 @@ end
 for c = 1:length(ar.model(m).condition)
 
     % create *.def file
-    filename = sprintf('%s_M%i_C%i.def', projectName, m, c);
+    filename = sprintf('%s_C%i.def', projectName, c);
     fileID = fopen(fullfile(projectPath, 'Data', filename), 'w');
 
     fprintf(fileID, '%s\n', 'DESCRIPTION') ;
@@ -43,10 +45,11 @@ for c = 1:length(ar.model(m).condition)
             else
                 % compounds
                 iComp = iObs - obsStruct.nDirect;
-                compName = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '_add_');
-                if length(compName) > 63
-                    compName = compName(1:63);
-                end
+                % compName = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '_add_');
+                % if length(compName) > 63
+                %     compName = compName(1:63);
+                % end
+                compName = sprintf('Compound_%i', iComp);
                 obsNames{iObs} = compName;
                 obsExprs{iObs} = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '+');
             end

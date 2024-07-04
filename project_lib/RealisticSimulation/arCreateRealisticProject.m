@@ -7,13 +7,11 @@ mkdir(fullfile(projectPath, 'Models'));
 mkdir(fullfile(projectPath, 'Data'));
 mkdir(fullfile(projectPath, 'Auxillary'));
 
-% copy model *.def files
-for m = 1:length(ar.model)
-    modelfile = fullfile(ar.model(m).path, ...
-        sprintf('%s.def', ar.model(m).name));
-        newName = sprintf('%s_M%i.def', projectName, m);
-    copyfile(modelfile, fullfile(projectPath, 'Models', newName));
-end
+% copy model *.def file
+modelfile = fullfile(ar.model.path, ...
+    sprintf('%s.def', ar.model.name));
+    newName = sprintf('%s.def', projectName);
+copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 
 % modify model *.def files -> remove observables, parameter, etc.
 arCreateRealisticModelDef(fullfile(projectPath, 'Models'), rngSeed);
@@ -141,14 +139,14 @@ fprintf(fileID, "arInit();\n\n");
 
 fprintf(fileID, "%% Load the models \n");
 for m = 1:length(ar.model)
-    fprintf(fileID, "arLoadModel('%s_M%i'); \n", projectName, m);
+    fprintf(fileID, "arLoadModel('%s'); \n", projectName);
 end
 fprintf(fileID, "\n");
 
 fprintf(fileID, "%% Load the data \n");
 for m = 1:length(ar.model)
     for c = 1:length(ar.model(m).condition)
-        fprintf(fileID, "arLoadData('%s_M%i_C%i', %i); \n", projectName, m, c, m);
+        fprintf(fileID, "arLoadData('%s_C%i', 1); \n", projectName, c);
     end
 end
 fprintf(fileID, "\n");
@@ -177,14 +175,14 @@ fprintf(fileID, "arInit();\n\n");
 
 fprintf(fileID, "%% Load the models \n");
 for m = 1:length(ar.model)
-    fprintf(fileID, "arLoadModel('%s_M%i'); \n", projectName, m);
+    fprintf(fileID, "arLoadModel('%s); \n", projectName);
 end
 fprintf(fileID, "\n");
 
 fprintf(fileID, "%% Load the data \n");
 for m = 1:length(ar.model)
     for c = 1:length(ar.model(m).condition)
-        fprintf(fileID, "arLoadData('%s_M%i_C%i', %i); \n", projectName, m, c, m);
+        fprintf(fileID, "arLoadData('%s_C%i', 1); \n", projectName, c);
     end
 end
 fprintf(fileID, "\n");

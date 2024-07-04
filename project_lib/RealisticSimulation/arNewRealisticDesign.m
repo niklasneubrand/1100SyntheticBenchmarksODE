@@ -20,6 +20,11 @@ end
 
 global ar  %#ok<*GVMIS>
 
+%% Only allow for problems witha  single model.def file!!
+if length(ar.model) > 1
+    error('Only one model.def file allowed for RS pipeline.')
+end
+
 %% Setup the random number generator
 if strcmp(options.rngSeed, 'shuffle')
     rng('shuffle')
@@ -51,9 +56,7 @@ end
 
 % update "ar.model.path"
 % it is set incorrectly if model folder was moved after compilation
-for m = 1:length(ar.model)
-    ar.model(m).path = fullfile(pwd(), 'Models');
-end
+ar.model.path = fullfile(pwd(), 'Models');
 
 %% Create new project folder
 arCreateRealisticProject(projectName, projectPath, options.rngSeed);
@@ -73,15 +76,13 @@ arSetParsBounds(3);
 
 %% Set Conditions/Observables
 if options.qSetConds
-    for m = 1:length(ar.model)
-        condStruct = arModelConditions(m);
-        obsStruct = arDrawObservables(m, options.rngSeed, options.qLogObs);
+        condStruct = arModelConditions();
+        obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs);
         arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                            obsStruct, condStruct, m)
+                            obsStruct, condStruct)
         auxFilesDir = fullfile(projectPath, "Auxillary");
-        save(fullfile(auxFilesDir, sprintf("condStruct_M%i", m)), "condStruct");
-        save(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
-    end
+        save(fullfile(auxFilesDir, "condStruct"), "condStruct");
+        save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
 else
     % use data *.def files from loaded model
     % -> exact same observables
