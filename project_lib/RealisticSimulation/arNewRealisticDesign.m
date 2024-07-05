@@ -35,7 +35,7 @@ rng(options.rngSeed);
 %% save the options for reproducibility
 projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
 mkdir(fullfile(projectPath, 'Auxillary'));
-save(fullfile(projectPath, 'Auxillary', 'options_RS.mat'), 'options');
+save(fullfile(projectPath, 'Auxillary', sprintf('options_%s', projectName)), 'options');
 
 %% Load benchmark model
 if options.loadPattern == "None"
@@ -117,14 +117,13 @@ try
         arSave(sprintf('%s__newTimes', projectName), false, false)
 
         % update the error models based on new time points
-        for m = 1:length(ar.model)
-            load(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
-            obsStruct = arUpdateErrorParams(m, obsStruct);
-            arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                            obsStruct, condStruct, m)
-            save(fullfile(auxFilesDir, sprintf("obsStruct_M%i", m)), "obsStruct");
-        end
-
+        
+        load(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
+        obsStruct = arUpdateErrorParams(1, obsStruct);
+        arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+                        obsStruct, condStruct)
+        save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
+        
     else
         % use the time points from the loaded model
     end
@@ -143,7 +142,7 @@ try
     arExportPEtab();
 
     % Plot the observables
-    arPlotFullPage();
+    arPlotFullPage(); close all;
 
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));

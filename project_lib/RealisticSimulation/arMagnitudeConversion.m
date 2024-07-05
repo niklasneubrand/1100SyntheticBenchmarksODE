@@ -10,8 +10,8 @@ function convertt = arMagnitudeConversion(m, d, minPoints, minPointFraction)
 arguments
     m (1,1) double {mustBeInteger,mustBePositive} = 1
     d (1,1) double {mustBeInteger,mustBePositive} = 1
-    minPoints (1,1) double {mustBeInteger,mustBePositive} = 100
-    minPointFraction (1,1) double {mustBeNumeric} = 0.1
+    minPoints (1,1) double {mustBeInteger,mustBePositive} = 30
+    minPointFraction (1,1) double {mustBeNumeric} = 0.05
 end
 
 global ar
@@ -36,7 +36,7 @@ t = repmat(ar.model(m).data(d).tFine, 1, size(y, 2));
 convertt = ones(1, size(y, 2));
 for iObs=1:size(y, 2)
     for jT=size(y, 1)-1:-1:minPoints
-        if abs(y(jT+1, iObs) - y(jT-1, iObs))/max(y(:, iObs)) < 10^(-3)
+        if abs(y(jT+1, iObs) - y(jT-1, iObs))/max(y(:, iObs)) < 10^(-6)
             y(jT+1, iObs) = nan;
             t(jT+1, iObs) = nan;
         else

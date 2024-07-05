@@ -16,23 +16,29 @@ end
 
 for m = 1:length(ar.model)
     
-    % initialize data structures
-    timeRescaleFactorsAll = cell(1, length(ar.model(m).data));
-    
-    % we do not know the time-scales exactly becvause of randomized parameters
-    % 1. for fast dynamics: increase resolution of simulation
-    ar.config.nFinePoints = 2*ar.config.nFinePoints;
-    % 2. for slow dynamics: increase total simulation time
+    arBackup = arDeepCopy(ar); % arTransientFit overwrites ar -> save a copy of ar
+
+    % we do not know the time-scales exactly because of randomized parameters
+    % -> extend the time range for RTF fitting
+    % if I increased the time range more, I had the impression that fitting performance degraded
+    % for similar reasons, i did not increase the number of time points
     for d = 1:length(ar.model(m).data)
-        ar.model(m).data(d).tLim(2) = 2*ar.model(m).data(d).tLim(2);
+        ar.model(m).data(d).tLim(2) = 1.5*ar.model(m).data(d).tLim(2);
     end
+
+    % transform all observables to lin scale for RTF fitting
+    for d = 1:length(ar.model(m).data)
+        ar.model(m).data(d).logplotting(:) = 0;
+        ar.model(m).data(d).logfitting(:) = 0;
+    end
+
     arLink();
 
     % Siumlate model dynamics for RTF fits
     arSimu(false, true, true);
-    arBackup = arDeepCopy(ar); % arTransientFit overwrites ar -> save a copy of ar
-    
+       
     % Convert orders of magnitude (be compatible with RTF param bounds)
+    timeRescaleFactorsAll = cell(1, length(ar.model(m).data));
     for d = 1:length(ar.model(m).data)
         timeRescaleFactorsAll{d} = arMagnitudeConversion(m, d);
     end
