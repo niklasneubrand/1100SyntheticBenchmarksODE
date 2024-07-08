@@ -154,8 +154,10 @@ fprintf(fileID, "\n");
 fprintf(fileID, "%% Compile the project \n");
 fprintf(fileID, "arCompileAll(); \n\n");
 
-fprintf(fileID, "%% Set the parameters \n");
-fprintf(fileID, "arLoadPars('%s__newParams');\n\n", projectName);
+% the correct parameters are all in the *.def files
+% __newParams on the other hand, contains also old parameters
+% fprintf(fileID, "%% Set the parameters \n");
+% fprintf(fileID, "arLoadPars('%s__newParams');\n\n", projectName);
 
 fprintf(fileID, "%% Save the project \n");
 fprintf(fileID, "arSave('%s__Final', false, true); \n\n", projectName);
