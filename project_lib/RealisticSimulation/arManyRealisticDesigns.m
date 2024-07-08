@@ -25,8 +25,7 @@ startSeed = options.rngSeed;
 % save the input arguments
 infoDir = fullfile(pwd(), 'RealisticSimulation', 'info_manyRS');
 mkdir(infoDir);
-tStart_manyRS = datetime('now', 'Format', 'yyyy-MM-dd_HH-mm-ss');
-save(fullfile(infoDir, sprintf('options_manyRS_%s', tStart_manyRS)), 'options');
+save(fullfile(infoDir, sprintf('options_manyRS_%i', startSeed)), 'options');
 
 %% compile the base model (if necessary)
 loadStatus = arLoadLatest(options.loadPattern);
@@ -122,6 +121,6 @@ end
 
 % save the simulation report
 simuReport = table(projectNames, success, startTime, endTime, duration, error);
-writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%s.csv', tStart_manyRS)));
+writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%i.csv', startSeed)), "WriteMode", "append");
 
 end
