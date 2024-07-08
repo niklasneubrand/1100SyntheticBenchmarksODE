@@ -23,7 +23,7 @@ end
 startSeed = options.rngSeed;
 
 % save the input arguments
-infoDir = fullfile(pwd(), 'RealisticSimulation', 'info_manyRS');
+infoDir = fullfile(pwd(), 'RealisticSimulation', '0_info_manyRS');
 mkdir(infoDir);
 save(fullfile(infoDir, sprintf('options_manyRS_%i', startSeed)), 'options');
 
