@@ -27,14 +27,6 @@ bcry	->	bio + ohb10	CUSTOM "kc2*bcry"	"ReactionName"
 ohb10	->	ohbio 	    	CUSTOM "kc4*ohb10"	"ReactionName"
 zea	->	ohb10 + ohbio 	CUSTOM "k5*zea"		"ReactionName"
 
-//ODES
-//"kb1*bcar"	
-//"kb2*b10"	
-//"kc1*bcry"	
-//"kc2*bcry"	
-//"kc4*ohb10"	
-//"k5*zea"	
-
 DERIVED
         
 OBSERVABLES
