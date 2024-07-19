@@ -58,9 +58,6 @@ end
 % it is set incorrectly if model folder was moved after compilation
 ar.model.path = fullfile(pwd(), 'Models');
 
-%% Create new project folder
-arCreateRealisticProject(projectName, projectPath, options.rngSeed);
-
 %% Modify the model parameters and bounds
 if options.qSetPars
     % multiply parameters by random factor in [1/2, 2]
@@ -73,6 +70,9 @@ else
 end
 % set bounds to +-3 orders of magnitude around the parameters
 arSetParsBounds(3);
+
+%% Create new project folder
+arCreateRealisticProject(projectName, projectPath, options.rngSeed);
 
 %% Set Conditions/Observables
 if options.qSetConds
