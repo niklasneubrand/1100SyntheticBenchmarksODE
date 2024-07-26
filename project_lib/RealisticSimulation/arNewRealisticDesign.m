@@ -15,15 +15,14 @@ arguments
     options.qSetPars (1,1) logical = true
     options.qSetTime (1,1) logical = true
     options.qSetData (1,1) logical = true
+    options.includeCustomSettings (1,1) logical = false
     options.rngSeed (1,:) = 'shuffle'    
 end
 
 global ar  %#ok<*GVMIS>
 
-%% Only allow for problems witha  single model.def file!!
-if length(ar.model) > 1
-    error('Only one model.def file allowed for RS pipeline.')
-end
+%% initilize d2d
+arInit();
 
 %% Setup the random number generator
 if strcmp(options.rngSeed, 'shuffle')
@@ -38,20 +37,17 @@ mkdir(fullfile(projectPath, 'Auxillary'));
 save(fullfile(projectPath, 'Auxillary', sprintf('options_%s', projectName)), 'options');
 
 %% Load benchmark model
-if options.loadPattern == "None"
-    if isfield(ar, 'model')
-        arFprintf(1, 'Use model from workspace.\n')
-    else
-        error('No model loaded. Please load a model or specify a load pattern.')
-    end
+arFprintf(1, 'Load latest model with pattern "%s".\n', options.loadPattern)
+modelLoaded = arLoadLatest(options.loadPattern);
+if modelLoaded
+    arFprintf(1, 'Model loaded sucessfully.\n')
 else
-    arFprintf(1, 'Load latest model with pattern "%s".\n', options.loadPattern)
-    modelLoaded = arLoadLatest(options.loadPattern);
-    if modelLoaded
-        arFprintf(1, 'Model loaded sucessfully.\n')
-    else
-        error('No model found for pattern "%s".\n', options.loadPattern)
-    end
+    error('No model found for pattern "%s".\n', options.loadPattern)
+end
+
+% Only allow for problems witha single model.def file!!
+if length(ar.model) > 1
+    error('Only one model.def file allowed for RS pipeline.')
 end
 
 % update "ar.model.path"
@@ -71,18 +67,15 @@ end
 % set bounds to +-3 orders of magnitude around the parameters
 arSetParsBounds(3);
 
-%% Create new project folder
-arCreateRealisticProject(projectName, projectPath, options.rngSeed);
-
 %% Set Conditions/Observables
 if options.qSetConds
-        condStruct = arModelConditions();
-        obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs);
-        arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                            obsStruct, condStruct)
-        auxFilesDir = fullfile(projectPath, "Auxillary");
-        save(fullfile(auxFilesDir, "condStruct"), "condStruct");
-        save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
+    condStruct = arModelConditions();
+    obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs);
+    arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+                        obsStruct, condStruct)
+    auxFilesDir = fullfile(projectPath, "Auxillary");
+    save(fullfile(auxFilesDir, "condStruct"), "condStruct");
+    save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
 else
     % use data *.def files from loaded model
     % -> exact same observables
@@ -95,6 +88,9 @@ else
     %     end
     % end
 end
+
+%% Create new project folder
+arCreateRealisticProject(projectName, projectPath, options.rngSeed, includeCustomSettings);
 
 resultsFolder = sprintf('%s__newParams', projectName);
 arSave(resultsFolder, false, false);
@@ -117,11 +113,10 @@ try
         arSave(sprintf('%s__newTimes', projectName), false, false)
 
         % update the error models based on new time points
-        
         load(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
         obsStruct = arUpdateErrorParams(1, obsStruct);
         arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                        obsStruct, condStruct)
+                            obsStruct, condStruct)
         save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
         
     else

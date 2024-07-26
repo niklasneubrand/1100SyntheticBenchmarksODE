@@ -23,11 +23,12 @@ for c = 1:length(ar.model(m).condition)
     fprintf(fileID, '"Random seed: %i"\n', rngSeed);
 
     fprintf(fileID, '\n\n%s\n', 'PREDICTOR') ;
-    tLimModel = ar.model(m).tLim(2);
-    tLimCond = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
-    tLim = max(tLimModel, tLimCond);
+    % tLimModel = ar.model(m).tLim(2);
+    % tLimCond = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
+    % tLim = max(tLimModel, tLimCond);
+    tLim = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
     fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\n', ...
-            'time', 'T', 'n/a', 'time', 0, tLim) ;
+            'time', 'T', 'n/a', 'time', 0, tLim);
     fprintf(fileID, '\n\n%s\n', 'INPUTS') ;
 
     %% Observables

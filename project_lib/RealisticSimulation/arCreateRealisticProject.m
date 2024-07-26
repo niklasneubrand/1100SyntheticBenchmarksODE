@@ -1,4 +1,4 @@
-function arCreateRealisticProject(projectName, projectPath, rngSeed)
+function arCreateRealisticProject(projectName, projectPath, rngSeed, includeCustomSettings)
 
 global ar  %#ok<*GVMIS>
 
@@ -17,7 +17,7 @@ copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 arCreateRealisticModelDef(fullfile(projectPath, 'Models'), rngSeed);
 
 % create a setup file for the new model
-arCreateRealisticSetup(projectName, projectPath, rngSeed);
+arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings);
 
 end
 
@@ -77,7 +77,7 @@ for i = 1:length(defFileNames)
     for ip = 1:length(ar.p)
         if ar.qDynamic(ip)
             % ar.pExternLabels   ar.pExtern    ar.qFitExtern    ar.qLog10Extern    ar.lbExtern    ar.ubExtern
-            newParam = sprintf('%s\t%f\t%i\t%i\t%f\t%f', ...
+            newParam = sprintf('%s\t%.3g\t%i\t%i\t%i\t%i', ...
                 ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
             newParamSection = [newParamSection newParam newline];
         end
@@ -118,15 +118,18 @@ end
 end
 
 
-function arCreateRealisticSetup(projectName, projectPath, rngSeed)
-
-arguments
-    projectName (1,1) string
-    projectPath (1,1) string
-    rngSeed (1,1) double
-end
+function arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings)
 
 global ar %#ok<*GVMIS>
+
+projectName = string(projectName);
+projectPath = string(projectPath);
+
+if includeCustomSettings
+    customSettings = arCustomSettings();
+else
+    customSettings = struct();
+end
 
 %% Create the final setup file
 fileID = fopen(fullfile(projectPath, "Setup.m"), "w");
@@ -150,6 +153,14 @@ for m = 1:length(ar.model)
     end
 end
 fprintf(fileID, "\n");
+
+if ~isempty(fieldnames(customSettings))
+    fprintf(fileID, "%% Custom settings \n");
+    if isfield(customSettings, 'add_c')
+        fprintf(fileID, "ar.config.add_c = %i; \n", customSettings.add_c);
+    end
+    fprintf(fileID, "\n");
+end
 
 fprintf(fileID, "%% Compile the project \n");
 fprintf(fileID, "arCompileAll(); \n\n");
@@ -188,6 +199,14 @@ for m = 1:length(ar.model)
     end
 end
 fprintf(fileID, "\n");
+
+if ~isempty(fieldnames(customSettings))
+    fprintf(fileID, "%% Custom settings \n");
+    if isfield(customSettings, 'add_c')
+        fprintf(fileID, "ar.config.add_c = %i; \n", customSettings.add_c);
+    end
+    fprintf(fileID, "\n");
+end
 
 fprintf(fileID, "%% Compile the project \n");
 fprintf(fileID, "arCompileAll(); \n\n");

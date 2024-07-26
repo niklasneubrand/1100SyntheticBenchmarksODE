@@ -34,10 +34,8 @@ for c = 1:nConds
             % we have to introduce a minimum value for the std
             % otherwise arCalcSimu throws an error
             % the condition is: 0 >! 2*log(ystd) + ar.config.add_c ==> ystd > exp(-ar.config.add_c/2)
-            minStd = exp(-ar.config.add_c/2);
-            orderOfMag = floor(log10(minStd));
-            % round the significand upwards
-            minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
+            minStd = -ar.config.add_c/2*log10(exp(1));
+            minStd = ceil(minStd);  % round upwards to ensure the inequality holds
             obsStruct.stdObs(c, iCol) = max(obsStruct.stdObs(c, iCol), minStd);
         end
     end

@@ -10,6 +10,7 @@ arguments
     options.qSetPars (1,1) logical = true
     options.qSetTime (1,1) logical = true
     options.qSetData (1,1) logical = true  
+    options.includeCustomSettings (1,1) logical = false
 end
 
 global ar

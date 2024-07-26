@@ -23,7 +23,7 @@ for m = 1:length(ar.model)
     % if I increased the time range more, I had the impression that fitting performance degraded
     % for similar reasons, i did not increase the number of time points
     for d = 1:length(ar.model(m).data)
-        ar.model(m).data(d).tLim(2) = 1.5*ar.model(m).data(d).tLim(2);
+        ar.model(m).data(d).tLim(2) = 2*ar.model(m).data(d).tLim(2);
     end
 
     % transform all observables to lin scale for RTF fitting
@@ -208,6 +208,14 @@ T =      10.^(1.58 +0.00151*transPars.toffset_TF -0.0046/nx +0.016/ny -0.019*tra
 n = round(10.^(1.02 -0.00029*transPars.toffset_TF +0.0016/nx -0.014/ny +0.015*transPars.amp_trans +0.037*transPars.timescale_sust +0.059*transPars.timescale_trans -0.03*sust_times_trans +randn(size(transPars,1),1)*0.02)); % 0.2
 lambda =  0.616 -0.00015*transPars.toffset_TF -0.0039/nx +0.0063/ny -0.006*transPars.amp_sust -0.006*transPars.amp_trans -0.014*transPars.timescale_sust -0.044*transPars.timescale_trans     +randn(size(transPars,1),1)*0.01;
 potenz =  1.73 +0.0073/nx -0.013/ny +0.031*transPars.amp_trans +0.08*transPars.timescale_sust +0.098*transPars.timescale_trans -0.035*sust_times_trans +randn(size(transPars,1),1)*0.04;
+
+% limit T based on the time range of the original model
+% tMax = max([ar.model(m).data(:).tLim]);
+% tMax = max(tMax, ar.model.tLim(2));
+tMax = ar.model.data(d).tLim(2);
+tMax = 2 * tMax;  % extend possible time-range due to randomized parameters
+tMax = convertt * tMax;
+T = min(T, tMax);
 
 tT = nan(max(n),length(T));
 for k = 1:length(T)

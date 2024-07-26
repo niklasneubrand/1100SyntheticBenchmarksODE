@@ -291,18 +291,29 @@ for c = 1:nConds
                 stdObs(c, iObs) = stdObs(c, iObs) + meanMagnitude;
             end
 
-            % we have to introduce a minimum value for the std
-            % otherwise arCalcSimu throws an error
-            % the condition is: 0 >! 2*log(ystd) + ar.config.add_c ==> ystd > exp(-ar.config.add_c/2)
-            minStd = exp(-ar.config.add_c/2);
-            orderOfMag = floor(log10(minStd));
-            % round the significand upwards
-            minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
-            stdObs(c, iObs) = max(stdObs(c, iObs), minStd);
+            % % we have to introduce a minimum value for the std
+            % % otherwise arCalcSimu throws an error
+            % % the condition is: 0 >! 2*log(ystd) + ar.config.add_c ==> ystd > exp(-ar.config.add_c/2)
+            % minStd = exp(-ar.config.add_c/2);
+            % orderOfMag = floor(log10(minStd));
+            % % round the significand upwards
+            % minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
+            % stdObs(c, iObs) = max(stdObs(c, iObs), minStd);
         end
     end
 end
 
+% check if we have to increase the add_c parameter
+minStdObs = min(stdObs(:));
+add_c = -2.0*log(minStdObs);            % exact relation for required add_c
+add_c = add_c + 10;                     % add some margin (corresponding to 5 orders of magnitude in std)
+add_c = ceil(add_c/10)*10;              % round to next 10 (to get a nice number)
+add_c = min(add_c, 100);                % maximum value for add_c
+add_c = max(add_c, ar.config.add_c);    % minimum value for add_c
+
+if add_c ~= ar.config.add_c
+    ar.config.add_c = add_c;
+end
 
 % bundel results in a struct
 obsStruct = struct();
