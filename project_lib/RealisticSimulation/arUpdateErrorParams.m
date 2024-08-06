@@ -6,7 +6,7 @@ global ar
 arSimu(false, false, true)
 
 % get the number of observables and conditions
-newTemplate = createTemplate(false, false);
+newTemplate = createTemplate(false, false, false);
 nTC = newTemplate.nTC;
 nDR = newTemplate.nDR;
 nExp = nTC + nDR;
@@ -17,7 +17,7 @@ obsStruct.obsMeanOld = obsStruct.obsMean;
 obsStruct.stdObsOld = obsStruct.stdObs;
 
 % reset stdObs to the raw values
-obsStruct.stdObs = obsStruct.stdObsRaw;
+% obsStruct.stdObs = obsStruct.stdObsRaw;
 
 
 % get the data
@@ -38,11 +38,11 @@ for ex = 1:nExp
             iObs = sum(0~=obsStruct.CondObsMatrix(ex, 1:iCol));
             traj = ySimu(:, iObs);
             meanMagnitude = log10(mean(traj, 'omitnan'));
-            obsStruct.obsMean(ex, iObs) = meanMagnitude;
+            obsStruct.obsMean(ex, iCol) = meanMagnitude;
             if isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
                 % this would be the case if the observable is always zero or negative
-                obsStruct.stdObs(ex, iObs) = obsStruct.stdObs(ex, iObs) + meanMagnitude;
+                obsStruct.stdObs(ex, iCol) = obsStruct.stdObsRaw(ex, iCol) + meanMagnitude;
             end
 
             % also update the paramter in the ar struct

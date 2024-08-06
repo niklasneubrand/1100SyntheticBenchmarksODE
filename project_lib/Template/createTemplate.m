@@ -1,8 +1,9 @@
-function template = createTemplate(qCondObsMatrix, qPlot)
+function template = createTemplate(qCondObsMatrix, qPlot, qSave2File)
 
 arguments
     qCondObsMatrix (1,1) logical = true
     qPlot (1,1) logical = false
+    qSave2File (1,1) logical = true
 end
 
 global ar  %#ok<*GVMIS>
@@ -113,8 +114,10 @@ if qCondObsMatrix
 end
 
 %% save the template
-[~] = mkdir('RS_Template');
-save(fullfile('RS_Template', 'RS_Template.mat'), 'template');
+if qSave2File
+    [~] = mkdir('RS_Template');
+    save(fullfile('RS_Template', 'RS_Template.mat'), 'template');
+end
 
 end
 

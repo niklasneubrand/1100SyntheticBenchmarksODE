@@ -55,7 +55,7 @@ end
 
 %% save the data as xls files
 
-newTemplate = createTemplate(false, false);
+newTemplate = createTemplate(false, false, false);
 nTC = newTemplate.nTC;
 nDR = newTemplate.nDR;
 
