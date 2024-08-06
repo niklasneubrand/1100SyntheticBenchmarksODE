@@ -1,4 +1,4 @@
-function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qShareObsParams, qRemoveConstObs)
+function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qRemoveConstObs, template)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
@@ -6,8 +6,8 @@ arguments
     m (1,1) double {mustBeInteger, mustBePositive} = 1
     rngSeed (1,:) = 'shuffle'
     qLogObs (1,1) logical = false
-    qShareObsParams (1,1) logical = false
     qRemoveConstObs (1,1) logical = false
+    template (1,1) struct = createTemplate()
 end
 
 global ar  %#ok<*GVMIS>
@@ -17,14 +17,11 @@ rng(rngSeed);
 
 %% Simulate the model to get the dynamics
 try
-    arSimu(false, true, true);
-catch
-    try
-        arSimu(false, false, true)
-    catch ME
-        msgText = getReport(ME, "extended", "hyperlinks", "on");
-        warning('Error in arSimu: %s', msgText)
-    end
+    arSimu(false, true, true);  % fine points
+    arSimu(false, false, true); % experimental
+catch ME
+    msgText = getReport(ME, "extended", "hyperlinks", "on");
+    warning('Error in arSimu: %s', msgText)
 end
 
 %% Find the dynamical states of the main model condition
@@ -104,58 +101,80 @@ else
 end
 
 %% Distribute observables to all conditions
-nConds = length(ar.model(m).condition);
 
 % for each observable draw a roandom column with replacement
 % from the condition-observable distribution matrix
-obsDistrDir = fullfile(ar.info.path, 'CondObsStructure');
-mkdir(obsDistrDir);
-obsDistrFile = fullfile(obsDistrDir, sprintf('CondObsMatrix_M%i', m));
-try
-    load(obsDistrFile, 'CondObsMatrix');
-catch
-    [~, ~, ~, CondObsMatrix] = arStatesParamMatrix(m, 'condition', false);
-    save(obsDistrFile, 'CondObsMatrix');
-end
+CondObsMatrix = template.condObsMatrix;
 randomCols = randi(size(CondObsMatrix, 2), 1, nObs);
 CondObsMatrix = CondObsMatrix(:, randomCols);
 
 % conditions without observables
-% -> use observables from random other condition (with replacement)
-% maybe it would be more realistic to use only *one* other observable
+% add a random observable to the condition
 qEmptyCond = sum(CondObsMatrix, 2, "omitnan") == 0;
 nEmptyConds = sum(qEmptyCond);
-idReplace = find(~qEmptyCond);
-randomRows = randi(nConds-nEmptyConds, 1, nEmptyConds);
-idReplace = idReplace(randomRows);
-CondObsMatrix(qEmptyCond, :) = CondObsMatrix(idReplace, :);
+randObs = randi(nObs, 1, nEmptyConds);
+CondObsMatrix(qEmptyCond, randObs) = 1;
 
-% shift indices to avoid shared parameters between observables
-indexShift = max(CondObsMatrix(~qEmptyCond, :), [], 1);
-indexShift = repmat(indexShift, nEmptyConds, 1);
-CondObsMatrix(qEmptyCond, :) = CondObsMatrix(qEmptyCond, :) + indexShift;
+% parameter indices
+paramIndices = NaN(size(CondObsMatrix));
+for iObs = 1:nObs
+    column = CondObsMatrix(:, iObs);
+    nParams = sum(column, "omitnan");
+    paramIndices(column==1, iObs) = 1:nParams;
+end
 
+% get the simulated dynamics for the observables
+nTC = template.nTC;
+nDR = template.nDR;
+nExp = nTC + nDR;
+xSimuAll = cell(1, nExp);
+ySimuAll = cell(1, nExp);
 
-% get the simulated dynamics for states and drawn observables
-xFineSimuAll = cell(1, nConds);
-yFineSimuAll = cell(1, nConds);
-for c = 1:nConds
+% time-courses
+for tc = 1:nTC
     % Get the simulated data for the states
+    c = template.timeCourse(tc).cLink;
     xFineSimu = ar.model(m).condition(c).xFineSimu(:, qMainDynState);  % species trajectories
-    xFineSimuAll{c} = xFineSimu;
+    xSimuAll{tc} = xFineSimu;
     % Get the simulated data for the drawn observables
     if nComp == 0
         % there are only directly observed states
-        yFineSimuAll{c} = xFineSimu(:, idDirect);
+        ySimuAll{tc} = xFineSimu(:, idDirect);
     else
         % there are also compounds
         compFineSimu = zeros(size(xFineSimu, 1), nComp);
         for iComp = 1:nComp
             compFineSimu(:, iComp) = sum(xFineSimu(:, idComp(iComp, :)), 2);
         end
-        yFineSimuAll{c} = [xFineSimu(:, idDirect) compFineSimu];
+        ySimuAll{tc} = [xFineSimu(:, idDirect) compFineSimu];
     end
 end
+
+% dose-responses
+for dr = 1:nDR
+    % a dose-response is linked to multiple conditions
+    cLink = template.doseResponse(dr).cLink;
+
+    % Get the simulated data for the states (at the experiments time points)
+    xExpSimu = [];
+    for c = cLink
+        xExpSimu = [xExpSimu; ar.model(m).condition(c).xExpSimu(:, qMainDynState)];
+    end 
+    xSimuAll{nTC + dr} = xExpSimu;
+    % Get the simulated data for the drawn observables
+    if nComp == 0
+        % there are only directly observed states
+        ySimuAll{nTC + dr} = xExpSimu(:, idDirect);
+    else
+        % there are also compounds
+        compExpSimu = zeros(size(xExpSimu, 1), nComp);
+        for iComp = 1:nComp
+            compExpSimu(:, iComp) = sum(xExpSimu(:, idComp(iComp, :)), 2);
+        end
+        ySimuAll{nTC + dr} = [xExpSimu(:, idDirect) compExpSimu];
+    end
+end
+
 
 if qRemoveConstObs
     % for each condition: remove observables that are constant
@@ -173,7 +192,7 @@ if qRemoveConstObs
     for c = 1:nConds
 
         % states
-        xFineSimu = xFineSimuAll{c};
+        xFineSimu = xSimuAll{c};
         for iState = 1:nMainDynStates
             dataRange = range(xFineSimu(:, iState));  % range of simulated dynamics
             normedDataRange = dataRange/max(xFineSimu(:, iState));  % normalized range
@@ -184,13 +203,13 @@ if qRemoveConstObs
         end
 
         % observables
-        yFineSimu = yFineSimuAll{c};
+        ySimu = ySimuAll{c};
         for iObs = 1:nObs
             %% here the is a bug: somtimes iObs exceeds array bounds.
             % I hope it is fixed now by limiting the number of compounds to the
             % number of possible unique compounds (nStates choose compSize)
-            dataRange = range(yFineSimu(:, iObs));  % range of simulated dynamics
-            normedDataRange = dataRange/max(yFineSimu(:, iObs));  % normalized range
+            dataRange = range(ySimu(:, iObs));  % range of simulated dynamics
+            normedDataRange = dataRange/max(ySimu(:, iObs));  % normalized range
             dynTol = 1e-8;  % tolerance for dynamics
             qDynamicObs(c, iObs) = (abs(dataRange) > dynTol);
             qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && (abs(normedDataRange) > dynTol);
@@ -209,7 +228,7 @@ if qRemoveConstObs
                 % -> add a random one to the condition
                 iAdd = find(qDynamicObs(c, :));
                 iAdd = iAdd(randi(length(iAdd)));
-                CondObsMatrix(c, iAdd) = CondObsMatrix(c, iAdd) + max(CondObsMatrix(:, iAdd));
+                CondObsMatrix(c, iAdd) = 1;
                 
             elseif any(qDynamicState(c, :))
                 % at least one state shows dynamics
@@ -219,7 +238,7 @@ if qRemoveConstObs
                 if ismember(iAdd, idDirect)
                     % observable is already defined -> find corresp. field in CondObsMatrix
                     iObs = find(idDirect == iAdd);
-                    CondObsMatrix(c, iObs) = CondObsMatrix(c, iObs) + max(CondObsMatrix(:, iObs));
+                    CondObsMatrix(c, iObs) = 1;
                 else
                     % add a completely new observable to the simulation
                     nObs = nObs + 1;
@@ -249,20 +268,6 @@ if qRemoveConstObs
     end
 end
 
-% rename the indices in CondObsMatrix to remove skipped numbers
-for iObs = 1:nObs
-    col = CondObsMatrix(:, iObs);
-    nonNan = isfinite(col);
-    [~, ~, colIndices] = unique(col(nonNan), "stable");
-    CondObsMatrix(nonNan, iObs) = colIndices;
-end
-
-% if desired: simplify the CondObsMatrix by removing all shared parameters
-if ~qShareObsParams
-    simpleCondObsMatrix = repmat(1:nConds, nObs, 1)';
-    CondObsMatrix(isfinite(CondObsMatrix)) = simpleCondObsMatrix(isfinite(CondObsMatrix));
-end
-
 % draw indices for log, scale and offset
 idLog = binornd(1, pLog, 1, nObs);                      % logical for log scale (1) or lin scale (0)
 idScale = sort(randperm(nObs, nScale));                 % scaled observables
@@ -271,24 +276,24 @@ idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (su
 % draw the std of the error model for all observables from mixed-effect model
 % see Eq. (2.8) in Egert_2023 (DOI: 10.3934/mbe.2023467)
 % but coefficients are different!
-stdObsRaw = -0.96 + randn(1)*0.3 + randn(nConds, nObs)*0.014;
-stdObsRaw(isnan(CondObsMatrix)) = NaN;  % set std to NaN for unobserved observables
+stdObsRaw = -0.96 + randn(1)*0.3 + randn(nExp, nObs)*0.014;
+stdObsRaw(CondObsMatrix==0) = NaN;  % set std to NaN for unobserved observables
 stdObs = stdObsRaw;
-obsMean = NaN(nConds, nObs);
-for c = 1:nConds
-    yFineSimu = yFineSimuAll{c};
+obsMean = NaN(nExp, nObs);
+for ex = 1:nExp
+    ySimu = ySimuAll{ex};
     for iObs = 1:nObs
-        if isfinite(CondObsMatrix(c, iObs)) && ~idLog(iObs)
+        if CondObsMatrix(ex, iObs)>0 && ~idLog(iObs)
             % observable is defined and not on log scale
             % -> calculate the mean magnitude of the observable
             %    to transform relative to absolute error
-            traj = yFineSimu(isfinite(yFineSimu(:, iObs)), iObs);
+            traj = ySimu(isfinite(ySimu(:, iObs)), iObs);
             meanMagnitude = log10(mean(traj, 'omitnan'));
-            obsMean(c, iObs) = meanMagnitude;
+            obsMean(ex, iObs) = meanMagnitude;
             if isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
                 % this would be the case if the observable is always zero or negative
-                stdObs(c, iObs) = stdObs(c, iObs) + meanMagnitude;
+                stdObs(ex, iObs) = stdObs(ex, iObs) + meanMagnitude;
             end
 
             % % we have to introduce a minimum value for the std
@@ -298,7 +303,7 @@ for c = 1:nConds
             % orderOfMag = floor(log10(minStd));
             % % round the significand upwards
             % minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
-            % stdObs(c, iObs) = max(stdObs(c, iObs), minStd);
+            % stdObs(ex, iObs) = max(stdObs(ex, iObs), minStd);
         end
     end
 end
@@ -327,9 +332,13 @@ obsStruct.idLog = idLog;
 obsStruct.idScale = idScale;
 obsStruct.idOffset = idOffset;
 obsStruct.CondObsMatrix = CondObsMatrix;
+obsStruct.paramIndices = paramIndices;
 obsStruct.stdObsRaw = stdObsRaw;
 obsStruct.stdObs = stdObs;
 obsStruct.obsMean = obsMean;
+
+% create observable names and expressions
+obsStruct = arCreateObsNames(obsStruct);
 
 fprintf('Observables drawn realistically.\n')
 
@@ -439,5 +448,46 @@ else
     iMainCond = maxDataCond(1);
     exitFlag = 'firstRemaining';
 end
+
+end
+
+
+function obsStruct = arCreateObsNames(obsStruct)
+
+% create observable names and expressions
+obsNames = cell(1, obsStruct.nObs);
+obsExprs = cell(1, obsStruct.nObs);
+for iObs = 1:obsStruct.nObs
+    if iObs <= obsStruct.nDirect
+        % directly observed states
+        idObs = obsStruct.idDirect(iObs);
+        obsNames{iObs} = sprintf('%s_Obs', obsStruct.states{idObs});
+        obsExprs(iObs) = obsStruct.states(idObs);
+    else
+        % compounds
+        iComp = iObs - obsStruct.nDirect;
+        % compName = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '_add_');
+        % if length(compName) > 63
+        %     compName = compName(1:63);
+        % end
+        compName = sprintf('Compound_%i_Obs', iComp);
+        obsNames{iObs} = compName;
+        obsExprs{iObs} = strjoin(obsStruct.states(obsStruct.idComp(iComp, :)), '+');
+    end
+    % scale and offset parameters
+    if any(obsStruct.idScale==iObs)
+        % introduce scaling parameter
+        obsExprs{iObs} = sprintf('scale%s_%s*(%s)', ...
+                                 '%i', obsNames{iObs}, obsExprs{iObs});
+        if any(obsStruct.idOffset==iObs)
+            % introduce offset parameter
+            obsExprs{iObs} = sprintf('offset%s_%s+%s', ...
+                                     '%i', obsNames{iObs}, obsExprs{iObs});
+        end
+    end
+end
+
+obsStruct.obsNames = obsNames;
+obsStruct.obsExprs = obsExprs;
 
 end

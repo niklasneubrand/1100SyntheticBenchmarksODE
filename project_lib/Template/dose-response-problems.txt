@@ -1,0 +1,225 @@
+Search "PREDICTOR-DOSERESPONSE" (112 hits in 112 files of 356 searched) [RegEx]
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Data\CFUE_DoseResp_30min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Data\CFUE_DoseResp_7min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Data\CFUE_DoseResp_CIS_90min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Data\CFUE_DoseResp_pSTAT5_10min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Data\CFUE_DoseResp_pSTAT5_10min_fine.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Brannmark_JBC2010\Data\DoseResponse.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  insulin_dose_1
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Lucarelli_TGFb_2017\Data\MSPL2_complexes_all_hepa16_no_single_complex.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE	init_TGFb
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\CFUE\DoseResp_30min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\CFUE\DoseResp_7min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\CFUE\DoseResp_CIS_90min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\CFUE\DoseResp_pSTAT5_10min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\CFUE\DoseResp_pSTAT5_10min_fine.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838\MS_DR_pSTAT5.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838-H838EpoR_IB_DR_pJAK2-pEpoR.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838-H838EpoR_L1_IB_DR_pJAK2-pEpoR.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR\IB_DR_pJAK2-EpoR.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR\IB_DR_pJAK2-pEpoR-pSTAT5_1_epo.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR\IB_DR_pJAK2-pEpoR-pSTAT5_2_epo.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR\IB_DR_SOCS3.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR\MS_DR_pSTAT5.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR_L1\IB_DR_pJAK2-EpoR.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR_L1\IB_DR_pJAK2-pEpoR-pSTAT5_1_epo.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR_L1\IB_DR_pJAK2-pEpoR-pSTAT5_2_epo.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR_L1\IB_DR_SOCS3.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838EpoR_L1\MS_DR_pSTAT5.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Data\H838_L1\MS_DR_pSTAT5.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\DoseResp_30min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\DoseResp_7min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\DoseResp_CIS_90min.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\DoseResp_pSTAT5_10min_fine.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\H838-H838EpoR_L1_IB_DR_pJAK2-pEpoR.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\IB_DR_pJAK2-EpoR.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\IB_DR_pJAK2-pEpoR-pSTAT5_1_epo.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\IB_DR_pJAK2-pEpoR-pSTAT5_2_epo.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\IB_DR_SOCS3.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\Results\20240702T175605_arCompileAllSetups_normal\Backup\E205317376687F12A156C3CDFE60D1ED\Data\MS_DR_pSTAT5.def (1 hit)
+	Line  6: PREDICTOR-DOSERESPONSE  epo_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Reelin_PONE2017\Data\Reelin_DR.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE Reelin_input
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__4-ABnOH_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__4-ABnOH_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__Rp8_Br_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__Rp8_Br_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__Rp8_pCPT_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__Rp8_pCPT_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__Rp_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150302_Drg345-343_CycNuc__Rp_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__4-ABnOH_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__4-ABnOH_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__Rp8_Br_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__Rp8_Br_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__Rp8_pCPT_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__Rp8_pCPT_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__Rp_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Data\JI09_150330_Drg353-351_CycNuc__Rp_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__4-ABnOH_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__4-ABnOH_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__Rp8_Br_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__Rp8_Br_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__Rp8_pCPT_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__Rp8_pCPT_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__Rp_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150302_Drg345-343_CycNuc__Rp_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_time
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__4-ABnOH_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__4-ABnOH_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  fourABnOH_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__Rp8_Br_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__Rp8_Br_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_Br_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__Rp8_pCPT_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__Rp8_pCPT_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp8_pCPT_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__Rp_cAMPS_pAB_and_ctrl.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Isensee_JCB2018\Results\20240703T135058_arCompileAllSetups_normal\Backup\F541D0D363A98C253B29BDCEE89E62BB\Data\JI09_150330_Drg353-351_CycNuc__Rp_cAMPS_pAB_and_Fsk.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE  Rp_cAMPS_pAB_level
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\bohl\hep_2005_02_14_DoseResponse_T15min.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\bohl\hep_2005_11_22_DoseResponseUntil120ng.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\bohl\hep_2007_04_04_DoseResponse_3TP.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2011_06_06_qPCR_140109_IL6DR_1h.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2012_02_14_qPCR_140224_IL6DR_Inh_1h_Socs3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2012_04_10_qPCR_140224_IL6DR_Inh_1h_Socs3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2013_10_14_qPCR_140109_IL6DR_1h.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2013_10_14_qPCR_140224_IL6DR_Inh_1h_Socs3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2013_10_21_qPCR_140109_IL6DR_1h.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2014_04_22_qPCR_140526_IL6DR_Rux_6h_SOCS3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2014_04_22_qPCR_140604_IL6DR_Rux_24h_SOCS3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2014_04_28_IL6DR_Rux_1h_SOCS3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2014_05_19_qPCR_140526_IL6DR_Rux_6h_SOCS3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\app\hep_2014_05_19_qPCR_140604_IL6DR_Rux_24h_SOCS3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2011_06_06_qPCR_140109_IL6DR_1h_CXCL10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2013_10_14_qPCR_140109_IL6DR_1h_CXCL10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2013_10_21_qPCR_140109_IL6DR_1h_CXCL10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2014_01_13_IL6DR_6h_Replicate1.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2014_01_13_IL6DR_6h_Replicate2.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2014_01_13_IL6DR_6h_Replicate3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2014_01_27_IL6DR_24h_Replicate1.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2014_01_27_IL6DR_24h_Replicate2.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\calibration\hep_2014_01_27_IL6DR_24h_Replicate3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2011_12_12_Stattic_Stat3_Inhibitor_DR.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_stattic
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2012_01_10_Stattic_Stat3_Inhibitor_DR.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_stattic
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2012_01_23_Stattic_Stat3_Inhibitor.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2012_05_02_Stattic_Stat3_Inhibitor_40.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_stattic
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2012_05_02_Stattic_Stat3_Inhibitor_60.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_stattic
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2013_06_03_Ruxolitinib.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_ruxolitinib
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2013_06_17_Ruxolitinib.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_ruxolitinib
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2013_11_04_Stattic_Ruxolitinib_Inhibitor.def (1 hit)
+	Line  7: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\hep_2013_11_12_Stattic_Ruxolitinib_Inhibitor.def (1 hit)
+	Line  8: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_1h\hep_2013_10_14_qPCR_140224_IL6DR_Inh_1h_Cxcl10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_1h\hep_2014_04_28_IL6DR_Rux_1h_CXCL10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_24h\hep_2014_04_22_qPCR_140604_IL6DR_Rux_24h_APP.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_24h\hep_2014_05_19_qPCR_140604_IL6DR_Rux_24h_APP.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_6h\hep_2014_04_22_qPCR_140526_IL6DR_Rux_6h_APP.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_6h\hep_2014_05_19_qPCR_140526_IL6DR_Rux_6h_APP.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_triple\2015-04-13_triple_treatment_replicate1.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_triple\2015-04-13_triple_treatment_replicate2.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Ruxolitinib_triple\2015-04-13_triple_treatment_replicate3.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Stattic_1h\hep_2012_02_14_qPCR_140224_IL6DR_Inh_1h_Cxcl10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6
+  C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow\Sobotta_Frontiers2017\Data\braun\validation\Stattic_1h\hep_2012_04_10_qPCR_140224_IL6DR_Inh_1h_Cxcl10.def (1 hit)
+	Line  3: PREDICTOR-DOSERESPONSE input_il6

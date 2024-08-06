@@ -26,7 +26,7 @@ arLoadData('experiment_2',1);
 arCompileAll;
 
 %% Set pre-equilibration
-arSteadyState(1,arFindCondition(ar,'experiment_0'),1:length(ar.model.condition));
+arSteadyState(1,arFindCondition(ar,'experiment_0'),'all');
 
 %% Parameter settings
 % Note: The parameter values and bounds are set to reproduce the
@@ -39,6 +39,13 @@ arSteadyState(1,arFindCondition(ar,'experiment_0'),1:length(ar.model.condition))
 
 arLoadPars('bestFit')
 arFindInputs;
+
+%% Custom d2d settings
+% experiment_0 was mot solved smoothly with standard settings
+ar.config.rtol = 1e-9;
+ar.config.atol = 1e-9;
+
+
 %% Visualization
 arSimu(true,true,true);
 % arPlot;

@@ -19,8 +19,13 @@ arLoadData('DoseResponse',1);
 arCompileAll;
 
 %% Set pre-equilibration
-arSteadyState(1,arFindCondition(ar,'DoseResponse','insulin_dose_1',0),1:length(ar.model.condition));
+arSteadyState(1,arFindCondition(ar,'DoseResponse','insulin_dose_1',0),'all');
 arSimu(true,true,true);
+
+% %% Custom settings
+% % condition 3 was not solved precisely with standard settings
+% ar.config.rtol = 1e-9;
+% ar.config.atol = 1e-9;
 
 %% Set parameters
 arLoadPars('bestFit')

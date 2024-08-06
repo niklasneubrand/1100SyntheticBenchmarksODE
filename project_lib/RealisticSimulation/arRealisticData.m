@@ -29,7 +29,7 @@ for m = 1:length(ar.model)
     for d = 1:length(ar.model(m).data)
 
         % overwrite time-points that should not have been simulated
-        if isfield(ar.model(m).data(d), 'tT')
+        if isfield(ar.model(m).data(d), 'tT') && ~isempty(ar.model(m).data(d).tT)
             for iObs = 1:size(ar.model(m).data(d).yExp, 2)
                 tSimu = ar.model(m).data(d).tT(:, iObs);
                 tSimu = tSimu(~isnan(tSimu));
@@ -54,18 +54,54 @@ end
 
 
 %% save the data as xls files
-for m = 1:length(ar.model)
-    for d = 1:length(ar.model(m).data)
-        % there are encoding problems on the IMBI cluster (Linux)
-        % fix: save data as .csv, not .xls
-        header = ['t', ar.model(m).data(d).y];
-        data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
-        filePath = fullfile('Data', sprintf('%s_C%d.csv', projectName, d));
-        
-     
-        writecell([header; data], filePath);
-    end
+
+newTemplate = createTemplate(false, false);
+nTC = newTemplate.nTC;
+nDR = newTemplate.nDR;
+
+
+% time-course data
+for tc = 1:nTC
+
+    m = 1;
+    d = newTemplate.timeCourse(tc).dLink;
+
+    header = [{ar.model.t}, ar.model(m).data(d).y];
+    data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
+    filePath = fullfile('Data', sprintf('%s_TC%d.csv', projectName, tc));    
+    writecell([header; data], filePath);
+
 end
+
+% dose-response data
+
+for dr = 1:nDR
+
+    m = 1;
+    d = newTemplate.doseResponse(dr).dLink;
+
+    tVar = {ar.model.t};
+    respVar = {newTemplate.doseResponse(dr).response_parameter};
+    obs = ar.model(m).data(d).y;
+    header = [tVar, respVar, obs];
+
+    % response value
+    respVal = [];
+    for id = 1:length(d)
+        val = newTemplate.doseResponse(dr).values(id);
+        nRep = newTemplate.doseResponse(dr).nReplica(id);
+        respVal = [respVal; repmat(val, nRep, 1)];
+    end
+
+    tExp = vertcat(ar.model(m).data(d).tExp);
+    yExp = vertcat(ar.model(m).data(d).yExp);
+    data = num2cell([tExp, respVal, yExp]);
+
+    filePath = fullfile('Data', sprintf('%s_DR%d.csv', projectName, dr));
+    writecell([header; data], filePath);
+
+end
+
 
 arLink();
 

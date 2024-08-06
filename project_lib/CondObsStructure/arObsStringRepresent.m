@@ -1,14 +1,14 @@
-function [stateStrings, paramsStrings] = arObsStringRepresent(iMod, setting, index)
+function [stateStrings, paramsStrings] = arObsStringRepresent(m, setting, index)
 
 arguments
-    iMod (1,1) double  = 1
+    m (1,1) double  = 1
     setting (1,1) string = "all"
-    index (1,1) double  = NaN
+    index (1,:) double  = NaN
 end
 
 global ar
 
-if ~strcmp(setting, 'all') && isnan(index)
+if ~strcmp(setting, 'all') && any(isnan(index))
     setting = 'all';
     warning('No index provided. Switching to setting ''all''.');
 end
@@ -17,21 +17,21 @@ end
 % for the given setting
 switch setting
     case 'all'
-        fy = unique(vertcat(ar.model(iMod).data(:).fy));
-        py = unique(vertcat(ar.model(iMod).data(:).py));
+        fy = unique(vertcat(ar.model(m).data(:).fy));
+        py = unique(vertcat(ar.model(m).data(:).py));
     case {'condition', 'cond', 'c'}
-        fy = unique(vertcat(ar.model(iMod).data(ar.model(iMod).condition(index).dLink).fy));
-        py = unique(vertcat(ar.model(iMod).data(ar.model(iMod).condition(index).dLink).py));
+        fy = unique(vertcat(ar.model(m).data([ar.model(m).condition(index).dLink]).fy));
+        py = unique(vertcat(ar.model(m).data([ar.model(m).condition(index).dLink]).py));
     case {'data', 'd'}
-        fy = unique(vertcat(ar.model(iMod).data(index).fy));
-        py = unique(vertcat(ar.model(iMod).data(index).py));
+        fy = unique(vertcat(ar.model(m).data(index).fy));
+        py = unique(vertcat(ar.model(m).data(index).py));
     otherwise
         error('Unknown setting. Use ''all'', ''condition'' or ''data''.')
 end
 
-xModel = ar.model(iMod).x;
-zModel = ar.model(iMod).z;
-fzModel = ar.model(iMod).fz;
+xModel = ar.model(m).x;
+zModel = ar.model(m).z;
+fzModel = ar.model(m).fz;
 
 % characterize the obersvables in the condition
 [~, ~, ~, params] = arObsParamRelation(fy, py, zModel, fzModel);

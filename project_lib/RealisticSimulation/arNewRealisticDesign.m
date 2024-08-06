@@ -69,12 +69,19 @@ arSetParsBounds(3);
 
 %% Set Conditions/Observables
 if options.qSetConds
-    condStruct = arModelConditions();
-    obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs);
-    arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                        obsStruct, condStruct)
     auxFilesDir = fullfile(projectPath, "Auxillary");
-    save(fullfile(auxFilesDir, "condStruct"), "condStruct");
+    try
+        load(fullfile(auxFilesDir, "template"), "template");
+    catch
+        template = createTemplate();
+        save(fullfile(auxFilesDir, "template"), "template");
+    end
+    obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs, ... 
+        false, template);
+    arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+        obsStruct, template, 'auxillary');
+    arWriteAuxillaryData(projectName, projectPath, obsStruct, template);
+    
     save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
 else
     % use data *.def files from loaded model
@@ -90,7 +97,7 @@ else
 end
 
 %% Create new project folder
-arCreateRealisticProject(projectName, projectPath, options.rngSeed, includeCustomSettings);
+arCreateRealisticProject(projectName, projectPath, options.rngSeed, options.includeCustomSettings, template);
 
 resultsFolder = sprintf('%s__newParams', projectName);
 arSave(resultsFolder, false, false);
@@ -105,18 +112,18 @@ oldPath = cd(projectPath);
 try
     fprintf('Compiling the new model structure.\n')
     SetupAuxillary;
-    arSave(sprintf('%s__Auxillary', projectName), false, false)
     
     %% Use RTF fits to set realistic time points
     if options.qSetTime
         arRealisticTimesRTF(options.rngSeed);
+        arRealisticTimesDR(options.rngSeed, template);
         arSave(sprintf('%s__newTimes', projectName), false, false)
 
         % update the error models based on new time points
         load(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
         obsStruct = arUpdateErrorParams(1, obsStruct);
         arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                            obsStruct, condStruct)
+                            obsStruct, template)
         save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
         
     else
@@ -137,10 +144,12 @@ try
     arExportPEtab();
 
     % Plot the observables
-    arPlotFullPage(); close all;
+    arPlot();
+    % arPlotFullPage(); close all;
 
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));
+    movefile(fullfile('Data', '*_auxillary.*'), 'Auxillary')
     delete(fullfile("Models", "TransientFunction.def"));
 
     cd(oldPath);

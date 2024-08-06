@@ -38,9 +38,15 @@ for m = 1:length(ar.model)
     arSimu(false, true, true);
        
     % Convert orders of magnitude (be compatible with RTF param bounds)
-    timeRescaleFactorsAll = cell(1, length(ar.model(m).data));
+    nTC = sum([ar.model(m).data.doseresponse] == 0);
+    timeRescaleFactorsAll = cell(1, nTC);
+    tc = 0;
     for d = 1:length(ar.model(m).data)
-        timeRescaleFactorsAll{d} = arMagnitudeConversion(m, d);
+        if ar.model(m).data(d).doseresponse
+            continue;
+        end
+        tc = tc + 1;
+        timeRescaleFactorsAll{tc} = arMagnitudeConversion(m, d);
     end
 
     % Fit Transient Function
@@ -52,24 +58,29 @@ for m = 1:length(ar.model)
         error('All RTF fits failed in all conditions. No realistic time points can be assigned.');
     end
     
-    for d = 1:length(ar.model(m).data)
-        if all(~qFitSuccessAll{d})
-            warning('All RTF fits failed in condition %i. Interpolate RTF parameters from successful fits in all other conditions.', d);
+    for tc = 1:nTC
+        if all(~qFitSuccessAll{tc})
+            warning('All RTF fits failed for time course condition %i. Interpolate RTF parameters from successful fits in all other time course conditions.', tc);
             rtfParamsJoined = vertcat(rtfParamsAll{:});
             qFitSuccessJoined = horzcat(qFitSuccessAll{:});
             replaceParams = median(rtfParamsJoined{qFitSuccessJoined, :}, 1);
-            rtfParamsAll{d}{~qFitSuccessAll{d}, :} = repmat(replaceParams, sum(~qFitSuccessAll{d}), 1);
+            rtfParamsAll{tc}{~qFitSuccessAll{tc}, :} = repmat(replaceParams, sum(~qFitSuccessAll{tc}), 1);
 
-        elseif any(~qFitSuccessAll{d})
-            warning('Some RTF fits failed in condition %i. Interpolate RTF parameters from sucessful fits in this condition.', d);
-            replaceParams = median(rtfParamsAll{d}{qFitSuccessAll{d}, :}, 1);
-            rtfParamsAll{d}{~qFitSuccessAll{d}, :} = repmat(replaceParams, sum(~qFitSuccessAll{d}), 1);
+        elseif any(~qFitSuccessAll{tc})
+            warning('Some RTF fits failed for time course condition %i. Interpolate RTF parameters from sucessful fits in this condition.', tc);
+            replaceParams = median(rtfParamsAll{tc}{qFitSuccessAll{tc}, :}, 1);
+            rtfParamsAll{tc}{~qFitSuccessAll{tc}, :} = repmat(replaceParams, sum(~qFitSuccessAll{tc}), 1);
         end
     end
     
     % Determine the time points for data generation
+    tc = 0;
     for d = 1:length(ar.model(m).data)
-        arSetTimePoints(rtfParamsAll{d}, m, d, timeRescaleFactorsAll{d}, rngSeed);
+        if ar.model(m).data(d).doseresponse
+            continue;
+        end
+        tc = tc + 1;
+        arSetTimePoints(rtfParamsAll{tc}, m, d, timeRescaleFactorsAll{tc}, rngSeed);
         if isnumeric(rngSeed)
             % change seed for next data set
             % -> time-points drawn independently
@@ -100,7 +111,9 @@ end
 global ar %#ok<*GVMIS>
 
 %% extract trajectories from ar struct
-nConds = length(ar.model(m).data);
+nTC = sum([ar.model(m).data.doseresponse] == 0);
+nData = length(ar.model(m).data);
+doseresponseAll = [ar.model(m).data.doseresponse];
 tAll = {ar.model.data.tFine};
 yAll = {ar.model.data.yFineSimu};
 yNamesAll = {ar.model.data.y};
@@ -110,20 +123,27 @@ yNamesAll = {ar.model.data.y};
 ar.config.fiterrors = 1;
 
 %% data structure for results
-rtfParamsAll = cell(1, nConds);
-qFitSuccessAll = cell(1, nConds);
+rtfParamsAll = cell(1, nTC);
+qFitSuccessAll = cell(1, nTC);
 pLabel = {'amp_sust', 'amp_trans', ...
         'offset_TF', 'sd_TF', 'signum_TF', ...
         'timescale_sust', 'timescale_trans', ...
         'toffset_TF'};
 
-%% loop through all trajectories and fit RTF
-for c = 1:nConds
+%% loop through all time-course trajectories and fit RTF
+tc = 0;
+for d = 1:nData
+
+    % skip dose-response data
+    if doseresponseAll(d)
+        continue;
+    end
+    tc = tc + 1;
     
     % extract data of this condition
-    t = tAll{c};
-    y = yAll{c};
-    yname = yNamesAll{c};
+    t = tAll{d};
+    y = yAll{d};
+    yname = yNamesAll{d};
     nObs = size(y, 2);
 
     % create data structure for results of this condition
@@ -147,7 +167,7 @@ for c = 1:nConds
         mkdir(figuresPath);
         
         try
-            figFile = fullfile(figuresPath, sprintf('rtfFit_C%d_%s', c, yname{iObs}));
+            figFile = fullfile(figuresPath, sprintf('rtfFit_TC%d_%s', tc, yname{iObs}));
             res = arFitTransientFunction2(dat, figFile);
             rtfParams{iObs,:} = res.pRescaled;
             qFitSuccess(iObs) = true;
@@ -158,11 +178,11 @@ for c = 1:nConds
         
     end
 
-    rtfParamsAll{c} = rtfParams;
-    qFitSuccessAll{c} = qFitSuccess;
+    rtfParamsAll{tc} = rtfParams;
+    qFitSuccessAll{tc} = qFitSuccess;
     
     writetable([array2table(yname'), rtfParams], ...
-               sprintf('Auxillary/rtfParams_M%d_C%d.csv', m, c));    
+               sprintf('Auxillary/rtfParams_TC%d.csv', tc));    
     
 end
 
@@ -247,7 +267,8 @@ ar.model(m).data(d).yExpStd = nan(size(yExp)); % errors have to be fitted
 
 arLink();
 
-writematrix(tT, sprintf('Auxillary/TimePoints_C%d.csv', d));
+tc = sum([ar.model.data(1:d).doseresponse]==0);
+writematrix(tT, sprintf('Auxillary/TimePoints_TC%d.csv', tc));
 fprintf('Realistic time Points are assigned.\n');
 
 end

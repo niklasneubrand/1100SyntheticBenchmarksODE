@@ -10,7 +10,7 @@ arguments
     options.qSetPars (1,1) logical = true
     options.qSetTime (1,1) logical = true
     options.qSetData (1,1) logical = true  
-    options.includeCustomSettings (1,1) logical = false
+    options.includeCustomSettings (1,1) logical = true
 end
 
 global ar
@@ -51,8 +51,6 @@ for m = 1:length(ar.model)
     ar.model(m).path = fullfile(pwd(), 'Models');
 end
 
-%% extract the condition-observable structure
-arCondObsStructure()
 
 % nameformat for the projects
 % nDigits = floor(log10(max(iSimus)))+1;

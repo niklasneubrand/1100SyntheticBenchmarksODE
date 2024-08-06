@@ -7,8 +7,8 @@ arCompileAll;
 % set parameters for parameter estimation and optimization
 ar.lb(:)   = -5;
 ar.ub(:)   = 5;
-% ar.config.atol = 1e-8;
-% ar.config.rtol = 1e-8;
+ar.config.atol = 1e-8;
+ar.config.rtol = 1e-8;
 % ar.config.optim.TolFun = 1e-8;
 % ar.config.optim.TolX = 1e-8;
 ar.config.maxsteps = 1e5;

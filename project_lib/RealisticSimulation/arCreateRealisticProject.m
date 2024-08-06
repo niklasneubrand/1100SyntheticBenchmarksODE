@@ -1,4 +1,4 @@
-function arCreateRealisticProject(projectName, projectPath, rngSeed, includeCustomSettings)
+function arCreateRealisticProject(projectName, projectPath, rngSeed, includeCustomSettings, template)
 
 global ar  %#ok<*GVMIS>
 
@@ -17,7 +17,7 @@ copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 arCreateRealisticModelDef(fullfile(projectPath, 'Models'), rngSeed);
 
 % create a setup file for the new model
-arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings);
+arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, template);
 
 end
 
@@ -118,7 +118,7 @@ end
 end
 
 
-function arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings)
+function arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, template)
 
 global ar %#ok<*GVMIS>
 
@@ -126,7 +126,7 @@ projectName = string(projectName);
 projectPath = string(projectPath);
 
 if includeCustomSettings
-    customSettings = arCustomSettings();
+    customSettings = template.customSettings;
 else
     customSettings = struct();
 end
@@ -146,29 +146,47 @@ for m = 1:length(ar.model)
 end
 fprintf(fileID, "\n");
 
-fprintf(fileID, "%% Load the data \n");
 for m = 1:length(ar.model)
-    for c = 1:length(ar.model(m).condition)
-        fprintf(fileID, "arLoadData('%s_C%i', 1); \n", projectName, c);
+    % load time-course data
+    if template.nTC > 0
+        fprintf(fileID, "%% Load the time-course data \n");
+        for tc = 1:template.nTC
+            fprintf(fileID, "arLoadData('%s_TC%i', 1); \n", projectName, tc);
+        end
+    end
+    % load dose-response data
+    if template.nDR > 0
+        fprintf(fileID, "\n%% Load the dose-response data \n");
+        for dr = 1:template.nDR
+            fprintf(fileID, "arLoadData('%s_DR%i', 1); \n", projectName, dr);
+        end
     end
 end
 fprintf(fileID, "\n");
 
+fprintf(fileID, "%% Compile the project \n");
+fprintf(fileID, "arCompileAll(); \n\n");
+
 if ~isempty(fieldnames(customSettings))
     fprintf(fileID, "%% Custom settings \n");
-    if isfield(customSettings, 'add_c')
-        fprintf(fileID, "ar.config.add_c = %i; \n", customSettings.add_c);
+    for field = fieldnames(customSettings)'
+        fprintf(fileID, "ar.config.%s = %i; \n", field{1}, customSettings.(field{1}));
     end
     fprintf(fileID, "\n");
 end
 
-fprintf(fileID, "%% Compile the project \n");
-fprintf(fileID, "arCompileAll(); \n\n");
-
-% the correct parameters are all in the *.def files
-% __newParams on the other hand, contains also old parameters
-% fprintf(fileID, "%% Set the parameters \n");
-% fprintf(fileID, "arLoadPars('%s__newParams');\n\n", projectName);
+if template.useEvents
+    fprintf(fileID, "%% Pre-equilibration and Events \n");
+    if template.findInputs
+        fprintf(fileID, "arFindInputs(); \n");
+    end
+    if template.useSteadyState
+        for ss = 1:length(template.steadyState)
+            fprintf(fileID, "%s \n", template.steadyState(ss).setupCall);
+        end
+    end
+    fprintf(fileID, "\n");
+end
 
 fprintf(fileID, "%% Save the project \n");
 fprintf(fileID, "arSave('%s__Final', false, true); \n\n", projectName);
@@ -181,7 +199,7 @@ fileID = fopen(fullfile(projectPath, "SetupAuxillary.m"), "w");
 
 fprintf(fileID, "%% Auxillary setup file for realistic simulation of benchmark model %s \n", ar.info.name);
 fprintf(fileID, "%% Identifier: %s \n", projectName);
-fprintf(fileID, "%% Random Seed: %i \n\n", rngSeed);
+fprintf(fileID, "%% Random seed: %i \n\n", rngSeed);
 
 fprintf(fileID, "%% Initialize the d2d toolbox \n");
 fprintf(fileID, "arInit();\n\n");
@@ -192,30 +210,53 @@ for m = 1:length(ar.model)
 end
 fprintf(fileID, "\n");
 
-fprintf(fileID, "%% Load the data \n");
 for m = 1:length(ar.model)
-    for c = 1:length(ar.model(m).condition)
-        fprintf(fileID, "arLoadData('%s_C%i', 1); \n", projectName, c);
+    % load time-course data
+    if template.nTC > 0
+        fprintf(fileID, "%% Load the time-course data \n");
+        for tc = 1:template.nTC
+            fprintf(fileID, "arLoadData('%s_TC%i_auxillary', 1); \n", projectName, tc);
+        end
+    end
+    % load dose-response data
+    if template.nDR > 0
+        fprintf(fileID, "\n%% Load the dose-response data \n");
+        for dr = 1:template.nDR
+            fprintf(fileID, "arLoadData('%s_DR%i_auxillary', 1); \n", projectName, dr);
+        end
     end
 end
 fprintf(fileID, "\n");
 
+fprintf(fileID, "%% Compile the project \n");
+fprintf(fileID, "arCompileAll(); \n\n");
+
 if ~isempty(fieldnames(customSettings))
     fprintf(fileID, "%% Custom settings \n");
-    if isfield(customSettings, 'add_c')
-        fprintf(fileID, "ar.config.add_c = %i; \n", customSettings.add_c);
+    for field = fieldnames(customSettings)'
+        fprintf(fileID, "ar.config.%s = %i; \n", field{1}, customSettings.(field{1}));
     end
     fprintf(fileID, "\n");
 end
 
-fprintf(fileID, "%% Compile the project \n");
-fprintf(fileID, "arCompileAll(); \n\n");
+if template.useEvents
+    fprintf(fileID, "%% Pre-equilibration and Events \n");
+    if template.findInputs
+        fprintf(fileID, "arFindInputs(); \n");
+    end
+    if template.useSteadyState
+        for ss = 1:length(template.steadyState)
+            fprintf(fileID, "%s \n", template.steadyState(ss).setupCall);
+        end
+    end
+    fprintf(fileID, "\n");
+end
 
 fprintf(fileID, "%% Set the parameters \n");
 fprintf(fileID, "arLoadPars('%s__newParams');\n\n", projectName);
 
 fprintf(fileID, "%% Save the project \n");
-fprintf(fileID, "arSave('%s__newObs', false, false); \n\n", projectName);
+fprintf(fileID, "arSave('%s__Auxillary', false, false); \n\n", projectName);
 
 fclose(fileID);
 
