@@ -1,0 +1,67 @@
+The following setup files were found and will be subsequently used for compiling: 
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Becker_Science2010\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Beer_MolBiosyst2014\Setup_IndiBac.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Boehm_JProteomeRes2014\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Borghans_BiophysChem_1997\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Brannmark_JBC2010\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bruno_Carotines_JExpBio2016\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Crauste_ImmuneCells_CellSystems2017\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Elowitz_Nature2000\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Fiedler_BMC2016\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Fujita_SciSignal2010\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Lucarelli_TGFb_2017\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\SetupFinal.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Raia_CancerResearch2011\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Reelin_PONE2017\Setup_final.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Schwen_InsulinMouseHepatocytes_PlosOne2014\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Sneyd_PNAS2002\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Swameye_PNAS2003\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Weber_BMC2015\Setup.m
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Zheng_PNAS2012\Setup_Zheng.m
+
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bachmann_MSB2011\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Becker_Science2010\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Beer_MolBiosyst2014\Setup_IndiBac.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Boehm_JProteomeRes2014\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Borghans_BiophysChem_1997\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Brannmark_JBC2010\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Bruno_Carotines_JExpBio2016\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Crauste_ImmuneCells_CellSystems2017\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Elowitz_Nature2000\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Fiedler_BMC2016\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Fujita_SciSignal2010\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Lucarelli_TGFb_2017\Setup.m will be executed ...
+
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Lucarelli_TGFb_2017\Setup.m failed !!!!!!!!! 
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Merkle_JAK2STAT5_PCB2016\SetupFinal.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Raia_CancerResearch2011\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Reelin_PONE2017\Setup_final.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Schwen_InsulinMouseHepatocytes_PlosOne2014\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Sneyd_PNAS2002\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Swameye_PNAS2003\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Weber_BMC2015\Setup.m will be executed ...
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\all_fast\Zheng_PNAS2012\Setup_Zheng.m will be executed ...
+
