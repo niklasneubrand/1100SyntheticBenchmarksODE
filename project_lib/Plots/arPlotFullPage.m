@@ -66,6 +66,14 @@ for jp = 1:length(ar.model(m).plot)
     % Get the existing figure and its axes handles
     oldFig = ar.model(m).plot(jp).fighandel_y;
     axesHandles = findall(oldFig, 'type', 'axes'); % Find all axes handles in the existing figure
+    axesHandles = flip(axesHandles); % Reverse the order of the axes handles
+
+    % get the x-Lable for the plot
+    xLabels = cell(length(axesHandles), 1);
+    for i = 1:length(axesHandles)
+        xLabels{i} = get(get(axesHandles(i), 'XLabel'), 'String');
+    end
+    xLabel = xLabels{~cellfun(@isempty, xLabels)};
 
     % Create new subplots layout in the new figure
     for i = 1:length(axesHandles)
@@ -75,36 +83,51 @@ for jp = 1:length(ar.model(m).plot)
         
         % Copy the original axes' children to the new subplot
         children = copyobj(get(axesHandles(i), 'Children'), ax);
+        children = flip(children); % Reverse the order of the children
+
+        % Copy the legend
+        dispNames = get(children, 'DisplayName');
+        if any(~cellfun(@isempty, dispNames))
+            legend(ax, dispNames, "Box", "off", "Location", "southwest");
+        end
         
         % Change the color of line objects
         for jC = 1:length(children)
             if strcmp(children(jC).Type, 'line') && strcmp(children(jC).LineStyle, 'none')
                 set(children(jC), 'Color', colors(jp, :));
                 set(children(jC), 'MarkerSize', 10);
-            if strcmp(children(jC).Type, 'line') && strcmp(children(jC).LineStyle, '-')
+            elseif strcmp(children(jC).Type, 'line') && strcmp(children(jC).LineStyle, '-')
                 set(children(jC), 'LineWidth', 0.1);
-            end
+            elseif strcmp(children(jC).Type, 'line') && strcmp(children(jC).LineStyle, '--')
+                delete(children(jC));
             elseif strcmp(children(jC).Type, 'text')
                 delete(children(jC));
             end
-        end
+        end        
 
         % Copy titles and add shortcuts for log, scale, and offset
         titleString = get(get(axesHandles(i), 'Title'), 'String');
         addTitle = '';
-        if ar.model(m).data(ar.model(m).plot(jp).dLink).logplotting(i)
+    
+        qLog = vertcat(ar.model(m).data(ar.model(m).plot(jp).dLink).logplotting);
+        fys = [ar.model(m).data(ar.model(m).plot(jp).dLink).fy];
+
+        if qLog(1, i)
             addTitle = [addTitle 'L'];
         end
-        if contains(ar.model(m).data(ar.model(m).plot(jp).dLink).fy(i), 'scale')
+        if contains(fys{i, 1}, 'scale')
             addTitle = [addTitle 'S'];
         end
-        if contains(ar.model(m).data(ar.model(m).plot(jp).dLink).fy(i), 'offset')
+        if contains(fys{i, 1}, 'offset')
             addTitle = [addTitle, 'O'];
         end
         if ~isempty(addTitle)
             titleString = [titleString, ' [', addTitle, ']'];
         end
         title(ax, titleString, "FontSize", 10);
+
+        % set x label
+        xlabel(ax, xLabel, "FontSize", 8);
     
         % Set axes limits and grid
         xlim(ax, get(axesHandles(i), 'XLim'));
@@ -125,8 +148,8 @@ for jp = 1:length(ar.model(m).plot)
 end
 
 % x- and y labels
-xlabel(tiles, sprintf('%s [%s]', ar.model(m).tUnits{[3, 2]}), ...
-    "FontSize", figFontSize)
+% xlabel(tiles, sprintf('%s [%s]', ar.model(m).tUnits{[3, 2]}), ...
+%     "FontSize", figFontSize)
 % ylabel(tiles, 'a.u.')
 
 % figure title
