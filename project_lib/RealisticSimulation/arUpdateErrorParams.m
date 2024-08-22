@@ -6,9 +6,9 @@ global ar
 arSimu(false, false, true)
 
 % get the number of observables and conditions
-newTemplate = createTemplate(false, false, false);
-nTC = newTemplate.nTC;
-nDR = newTemplate.nDR;
+RSTemplateNew = arCreateRSTemplate(false, false, false);
+nTC = RSTemplateNew.nTC;
+nDR = RSTemplateNew.nDR;
 nExp = nTC + nDR;
 nObsTotal = size(obsStruct.stdObsRaw, 2);
 
@@ -26,7 +26,7 @@ for tc = 1:nTC
     ySimuAll{tc} = ar.model(m).data(tc).yExpSimu;
 end
 for dr = 1:nDR
-    d = newTemplate.doseResponse(dr).dLink;
+    d = RSTemplateNew.doseResponse(dr).dLink;
     ySimuAll{nTC + dr} = vertcat(ar.model(m).data(d).yExpSimu);
 end
 

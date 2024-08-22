@@ -55,16 +55,16 @@ end
 
 %% save the data as xls files
 
-newTemplate = createTemplate(false, false, false);
-nTC = newTemplate.nTC;
-nDR = newTemplate.nDR;
+RSTemplateNew = arCreateRSTemplate(false, false, false);
+nTC = RSTemplateNew.nTC;
+nDR = RSTemplateNew.nDR;
 
 
 % time-course data
 for tc = 1:nTC
 
     m = 1;
-    d = newTemplate.timeCourse(tc).dLink;
+    d = RSTemplateNew.timeCourse(tc).dLink;
 
     header = [{ar.model.t}, ar.model(m).data(d).y];
     data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
@@ -74,22 +74,21 @@ for tc = 1:nTC
 end
 
 % dose-response data
-
 for dr = 1:nDR
 
     m = 1;
-    d = newTemplate.doseResponse(dr).dLink;
+    d = RSTemplateNew.doseResponse(dr).dLink;
 
     tVar = {ar.model.t};
-    respVar = {newTemplate.doseResponse(dr).response_parameter};
+    respVar = {RSTemplateNew.doseResponse(dr).response_parameter};
     obs = ar.model(m).data(d).y;
     header = [tVar, respVar, obs];
 
     % response value
     respVal = [];
     for id = 1:length(d)
-        val = newTemplate.doseResponse(dr).values(id);
-        nRep = newTemplate.doseResponse(dr).nReplica(id);
+        val = RSTemplateNew.doseResponse(dr).values(id);
+        nRep = RSTemplateNew.doseResponse(dr).nReplica(id);
         respVal = [respVal; repmat(val, nRep, 1)];
     end
 

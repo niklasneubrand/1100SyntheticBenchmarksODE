@@ -1,4 +1,4 @@
-function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qRemoveConstObs, template)
+function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qRemoveConstObs, RSTemplate)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
@@ -7,7 +7,7 @@ arguments
     rngSeed (1,:) = 'shuffle'
     qLogObs (1,1) logical = false
     qRemoveConstObs (1,1) logical = false
-    template (1,1) struct = createTemplate()
+    RSTemplate (1,1) struct = arCreateRSTemplate()
 end
 
 global ar  %#ok<*GVMIS>
@@ -104,7 +104,7 @@ end
 
 % for each observable draw a roandom column with replacement
 % from the condition-observable distribution matrix
-CondObsMatrix = template.condObsMatrix;
+CondObsMatrix = RSTemplate.condObsMatrix;
 randomCols = randi(size(CondObsMatrix, 2), 1, nObs);
 CondObsMatrix = CondObsMatrix(:, randomCols);
 
@@ -124,8 +124,8 @@ for iObs = 1:nObs
 end
 
 % get the simulated dynamics for the observables
-nTC = template.nTC;
-nDR = template.nDR;
+nTC = RSTemplate.nTC;
+nDR = RSTemplate.nDR;
 nExp = nTC + nDR;
 xSimuAll = cell(1, nExp);
 ySimuAll = cell(1, nExp);
@@ -133,7 +133,7 @@ ySimuAll = cell(1, nExp);
 % time-courses
 for tc = 1:nTC
     % Get the simulated data for the states
-    c = template.timeCourse(tc).cLink;
+    c = RSTemplate.timeCourse(tc).cLink;
     xFineSimu = ar.model(m).condition(c).xFineSimu(:, qMainDynState);  % species trajectories
     xSimuAll{tc} = xFineSimu;
     % Get the simulated data for the drawn observables
@@ -153,7 +153,7 @@ end
 % dose-responses
 for dr = 1:nDR
     % a dose-response is linked to multiple conditions
-    cLink = template.doseResponse(dr).cLink;
+    cLink = RSTemplate.doseResponse(dr).cLink;
 
     % Get the simulated data for the states (at the experiments time points)
     xExpSimu = [];

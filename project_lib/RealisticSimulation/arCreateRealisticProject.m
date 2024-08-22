@@ -1,4 +1,4 @@
-function arCreateRealisticProject(projectName, projectPath, rngSeed, includeCustomSettings, template)
+function arCreateRealisticProject(projectName, projectPath, rngSeed, includeCustomSettings, RSTemplate)
 
 global ar  %#ok<*GVMIS>
 
@@ -17,7 +17,7 @@ copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 arCreateRealisticModelDef(fullfile(projectPath, 'Models'), rngSeed);
 
 % create a setup file for the new model
-arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, template);
+arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, RSTemplate);
 
 end
 
@@ -77,7 +77,7 @@ for i = 1:length(defFileNames)
     for ip = 1:length(ar.p)
         if ar.qDynamic(ip)
             % ar.pExternLabels   ar.pExtern    ar.qFitExtern    ar.qLog10Extern    ar.lbExtern    ar.ubExtern
-            newParam = sprintf('%s\t%.3g\t%i\t%i\t%i\t%i', ...
+            newParam = sprintf('%s\t%.5g\t%i\t%i\t%i\t%i', ...
                 ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
             newParamSection = [newParamSection newParam newline];
         end
@@ -118,7 +118,7 @@ end
 end
 
 
-function arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, template)
+function arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, RSTemplate)
 
 global ar %#ok<*GVMIS>
 
@@ -126,7 +126,7 @@ projectName = string(projectName);
 projectPath = string(projectPath);
 
 if includeCustomSettings
-    customSettings = template.customSettings;
+    customSettings = RSTemplate.customSettings;
 else
     customSettings = struct();
 end
@@ -148,16 +148,16 @@ fprintf(fileID, "\n");
 
 for m = 1:length(ar.model)
     % load time-course data
-    if template.nTC > 0
+    if RSTemplate.nTC > 0
         fprintf(fileID, "%% Load the time-course data \n");
-        for tc = 1:template.nTC
+        for tc = 1:RSTemplate.nTC
             fprintf(fileID, "arLoadData('%s_TC%i', 1); \n", projectName, tc);
         end
     end
     % load dose-response data
-    if template.nDR > 0
+    if RSTemplate.nDR > 0
         fprintf(fileID, "\n%% Load the dose-response data \n");
-        for dr = 1:template.nDR
+        for dr = 1:RSTemplate.nDR
             fprintf(fileID, "arLoadData('%s_DR%i', 1); \n", projectName, dr);
         end
     end
@@ -175,14 +175,14 @@ if ~isempty(fieldnames(customSettings))
     fprintf(fileID, "\n");
 end
 
-if template.useEvents
+if RSTemplate.useEvents
     fprintf(fileID, "%% Pre-equilibration and Events \n");
-    if template.findInputs
+    if RSTemplate.findInputs
         fprintf(fileID, "arFindInputs(); \n");
     end
-    if template.useSteadyState
-        for ss = 1:length(template.steadyState)
-            fprintf(fileID, "%s \n", template.steadyState(ss).setupCall);
+    if RSTemplate.useSteadyState
+        for ss = 1:length(RSTemplate.steadyState)
+            fprintf(fileID, "%s \n", RSTemplate.steadyState(ss).setupCall);
         end
     end
     fprintf(fileID, "\n");
@@ -212,16 +212,16 @@ fprintf(fileID, "\n");
 
 for m = 1:length(ar.model)
     % load time-course data
-    if template.nTC > 0
+    if RSTemplate.nTC > 0
         fprintf(fileID, "%% Load the time-course data \n");
-        for tc = 1:template.nTC
+        for tc = 1:RSTemplate.nTC
             fprintf(fileID, "arLoadData('%s_TC%i_auxillary', 1); \n", projectName, tc);
         end
     end
     % load dose-response data
-    if template.nDR > 0
+    if RSTemplate.nDR > 0
         fprintf(fileID, "\n%% Load the dose-response data \n");
-        for dr = 1:template.nDR
+        for dr = 1:RSTemplate.nDR
             fprintf(fileID, "arLoadData('%s_DR%i_auxillary', 1); \n", projectName, dr);
         end
     end
@@ -239,14 +239,14 @@ if ~isempty(fieldnames(customSettings))
     fprintf(fileID, "\n");
 end
 
-if template.useEvents
+if RSTemplate.useEvents
     fprintf(fileID, "%% Pre-equilibration and Events \n");
-    if template.findInputs
+    if RSTemplate.findInputs
         fprintf(fileID, "arFindInputs(); \n");
     end
-    if template.useSteadyState
-        for ss = 1:length(template.steadyState)
-            fprintf(fileID, "%s \n", template.steadyState(ss).setupCall);
+    if RSTemplate.useSteadyState
+        for ss = 1:length(RSTemplate.steadyState)
+            fprintf(fileID, "%s \n", RSTemplate.steadyState(ss).setupCall);
         end
     end
     fprintf(fileID, "\n");

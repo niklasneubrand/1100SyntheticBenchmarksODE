@@ -62,14 +62,23 @@ for m = 1:length(ar.model)
         if all(~qFitSuccessAll{tc})
             warning('All RTF fits failed for time course condition %i. Interpolate RTF parameters from successful fits in all other time course conditions.', tc);
             rtfParamsJoined = vertcat(rtfParamsAll{:});
+            timeRescaleJoined = horzcat(timeRescaleFactorsAll{:});
             qFitSuccessJoined = horzcat(qFitSuccessAll{:});
+            % RTF params
             replaceParams = median(rtfParamsJoined{qFitSuccessJoined, :}, 1);
             rtfParamsAll{tc}{~qFitSuccessAll{tc}, :} = repmat(replaceParams, sum(~qFitSuccessAll{tc}), 1);
+            % time rescale factors
+            replaceScale = median(timeRescaleJoined(qFitSuccessJoined));
+            timeRescaleFactorsAll{tc}(~qFitSuccessAll{tc}) = replaceScale;
 
         elseif any(~qFitSuccessAll{tc})
             warning('Some RTF fits failed for time course condition %i. Interpolate RTF parameters from sucessful fits in this condition.', tc);
+            % RTF params
             replaceParams = median(rtfParamsAll{tc}{qFitSuccessAll{tc}, :}, 1);
             rtfParamsAll{tc}{~qFitSuccessAll{tc}, :} = repmat(replaceParams, sum(~qFitSuccessAll{tc}), 1);
+            % time rescale factors
+            replaceScale = median(timeRescaleFactorsAll{tc}(qFitSuccessAll{tc}));
+            timeRescaleFactorsAll{tc}(~qFitSuccessAll{tc}) = replaceScale;
         end
     end
     
@@ -234,7 +243,7 @@ potenz =  1.73 +0.0073/nx -0.013/ny +0.031*transPars.amp_trans +0.08*transPars.t
 % tMax = max(tMax, ar.model.tLim(2));
 tMax = ar.model.data(d).tLim(2);
 tMax = 2 * tMax;  % extend possible time-range due to randomized parameters
-tMax = convertt * tMax;
+tMax = convertt' * tMax;
 T = min(T, tMax);
 
 tT = nan(max(n),length(T));

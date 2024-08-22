@@ -1,4 +1,4 @@
-function arWriteDataDefFiles(projectName, projectPath, rngSeed, obsStruct, template, suffix)
+function arWriteDataDefFiles(projectName, projectPath, rngSeed, obsStruct, RSTemplate, suffix)
 % Write obs in RealisticData.def
 
 global ar  %#ok<*GVMIS>
@@ -10,8 +10,8 @@ else
 end
 
 m=1;
-nTC = template.nTC;
-nDR = template.nDR;
+nTC = RSTemplate.nTC;
+nDR = RSTemplate.nDR;
 nExp = nTC + nDR;
 
 % get observables
@@ -34,19 +34,19 @@ for idx = 1:nExp
         cNumber = sprintf('time course %i', idx);
         predictor_add = '';
 
-        c = template.timeCourse(idx).cLink;
+        c = RSTemplate.timeCourse(idx).cLink;
         tLim = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
 
-        replace = template.timeCourse(idx).condReplace;
+        replace = RSTemplate.timeCourse(idx).condReplace;
         
     else
         filename = sprintf('%s_DR%i%s.def', projectName, idx - nTC, suffix);
         cNumber = sprintf('dose response %i', idx - nTC);
-        predictor_add = sprintf('-DOSERESPONSE %s', template.doseResponse(idx - nTC).response_parameter);
+        predictor_add = sprintf('-DOSERESPONSE %s', RSTemplate.doseResponse(idx - nTC).response_parameter);
 
-        tLim = ceil(template.doseResponse(idx - nTC).tExp*1.1);
+        tLim = ceil(RSTemplate.doseResponse(idx - nTC).tExp*1.1);
 
-        replace = template.doseResponse(idx - nTC).condReplaceRest;
+        replace = RSTemplate.doseResponse(idx - nTC).condReplaceRest;
     end
 
     %% create *.def file
@@ -108,7 +108,7 @@ for idx = 1:nExp
         % check if observable should appear in this condition
         if ~isnan(obsStruct.paramIndices(idx, iObs))
             sd = obsStruct.stdObs(idx, iObs);
-            fprintf(fileID, 'sd%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
+            fprintf(fileID, 'sd%i_%s\t%.5g\t%i\t%i\t%i\t%i\n', ...
                     obsStruct.paramIndices(idx, iObs), obsNames{iObs}, sd, 1, 1, floor(sd-2), ceil(sd+2));
         end
     end
@@ -117,11 +117,11 @@ for idx = 1:nExp
         % check if observable should appear in this condition
         if ~isnan(obsStruct.paramIndices(idx, iObs))
             if any(obsStruct.idScale==iObs)
-                fprintf(fileID, 'scale%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
+                fprintf(fileID, 'scale%i_%s\t%.5g\t%i\t%i\t%i\t%i\n', ...
                         obsStruct.paramIndices(idx, iObs), obsNames{iObs}, 0, 1, 1, -5, 5);
             end
             if any(obsStruct.idOffset==iObs)
-                fprintf(fileID, 'offset%i_%s\t%f\t%i\t%i\t%i\t%i\n', ...
+                fprintf(fileID, 'offset%i_%s\t%.5g\t%i\t%i\t%i\t%i\n', ...
                     obsStruct.paramIndices(idx, iObs), obsNames{iObs}, 0, 1, 1, -5, 5);
             end
         end

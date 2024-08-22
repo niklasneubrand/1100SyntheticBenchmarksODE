@@ -1,10 +1,10 @@
-function arWriteAuxillaryData(projectName, projectPath, obsStruct, template)
+function arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate)
 
 global ar  %#ok<GVMIS>
 
 obsNames = obsStruct.obsNames;
-nTC = template.nTC;
-nDR = template.nDR;
+nTC = RSTemplate.nTC;
+nDR = RSTemplate.nDR;
 
 %% dummy data for time courses (for convenience)
 for tc = 1:nTC
@@ -17,7 +17,7 @@ for tc = 1:nTC
     % table content
     nObs = length(obs);
     dummyCell = num2cell(1+rand(1, nObs+1));
-    tLim = max([ar.model.data(template.timeCourse(tc).dLink).tLim], [], 'all');
+    tLim = max([ar.model.data(RSTemplate.timeCourse(tc).dLink).tLim], [], 'all');
     dummyCell(:, 1) = {tLim};
 
     % create table and store to file
@@ -34,11 +34,11 @@ end
 for dr = 1:nDR
 
     % get the data link(s)
-    d = template.doseResponse(dr).dLink;
+    d = RSTemplate.doseResponse(dr).dLink;
 
     % table header
     tVar = {ar.model.t};
-    respVar = {template.doseResponse(dr).response_parameter};
+    respVar = {RSTemplate.doseResponse(dr).response_parameter};
     obs = obsNames(~isnan(obsStruct.paramIndices(nTC + dr, :)));
     tableHeader = [tVar, respVar, obs];
 
@@ -46,8 +46,8 @@ for dr = 1:nDR
     nData = length(d);
     nObs = length(obs);
     dummyCell = cell(nData, nObs+2);
-    dummyCell(:, 1) = {template.doseResponse(dr).tExp};
-    dummyCell(:, 2) = num2cell(template.doseResponse(dr).values');
+    dummyCell(:, 1) = {RSTemplate.doseResponse(dr).tExp};
+    dummyCell(:, 2) = num2cell(RSTemplate.doseResponse(dr).values');
     dummyCell(:, 3:end) = num2cell(1+rand(nData, nObs));
 
     % create table and store to file

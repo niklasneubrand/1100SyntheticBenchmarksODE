@@ -1,42 +1,43 @@
-function arRealisticTimesDR(rngSeed, templateOld)
+function arRealisticTimesDR(rngSeed, RSTemplateOld)
 
 global ar %#ok<GVMIS>
 
 % change the random number generator seed to get samples independent of the TC data
 if isnumeric(rngSeed)
-    rngSeed = rngSeed + templateOld.nTC + 1;
+    rngSeed = rngSeed + RSTemplateOld.nTC + 1;
     rng(rngSeed);
 end
 
 %% ranomize time-points and replicate number for dose-response data
 % for the time points
 amplitude = 2;
-factors = amplitude.^(1 - 2*rand(1, templateOld.nDR));
+factors = amplitude.^(1 - 2*rand(1, RSTemplateOld.nDR));
 
 % Poisson: lambda = mean and lambda = variance
 % I want to draw data around repMaean with variance repVar
 % to do this I add a offset to the Poisson distributed values
+% repMean = mean([RSTemplateOld.doseResponse(:).nReplica]);
+% repVar = var([RSTemplateOld.doseResponse(:).nReplica]);
+% lambda = repVar;
+% offset = max(1, repMean - lambda);  % offset must be positive
+% RSTemplateOld.doseResponse(dr).nReplica = offset + poissrnd(lambda, 1, nDoses);
 
-repMean = mean([templateOld.doseResponse(:).nReplica]);
-repVar = var([templateOld.doseResponse(:).nReplica]);
-lambda = repVar;
-offset = max(1, repMean - lambda);  % offset must be positive
-
-for dr = 1:templateOld.nDR
+for dr = 1:RSTemplateOld.nDR
     % multiply times with random factors between 1/2 and 2 from log-uniform distribution
-    templateOld.doseResponse(dr).tExp = templateOld.doseResponse(dr).tExp * factors(dr);
-    templateOld.doseResponse(dr).tExp = ceil(round(templateOld.doseResponse(dr).tExp, 2, 'significant'));
+    RSTemplateOld.doseResponse(dr).tExp = RSTemplateOld.doseResponse(dr).tExp * factors(dr);
+    RSTemplateOld.doseResponse(dr).tExp = ceil(round(RSTemplateOld.doseResponse(dr).tExp, 2, 'significant'));
 
-    % draw random number of replicas from Poisson distribution
-    nDoses = length(templateOld.doseResponse(dr).nReplica);
-    templateOld.doseResponse(dr).nReplica = offset + poissrnd(lambda, 1, nDoses);
+    % draw random number of replicas from the RSTemplate (with replacement)
+    nDoses = length(RSTemplateOld.doseResponse(dr).nReplica);
+    randInd = randi(nDoses, 1, nDoses);
+    RSTemplateOld.doseResponse(dr).nReplica = RSTemplateOld.doseResponse(dr).nReplica(randInd);
 end
 
-%% the templateOld cannot be used to assign the timepoints
-% the dLink is based on the templateOld model not the newly compiled data
-% therefore, calculate template for the new model
+%% the RSTemplateOld cannot be used to assign the timepoints
+% the dLink is based on the RSTemplateOld model not the newly compiled data
+% therefore, calculate RSTemplate for the new model
 
-templateNew = createTemplate(false, false);
+templateNew = arCreateRSTemplate(false, false);
 
 for dr = 1:templateNew.nDR
 
@@ -44,8 +45,8 @@ for dr = 1:templateNew.nDR
     d = templateNew.doseResponse(dr).dLink;
 
     % randomized time point and number of replicas
-    tExp = templateOld.doseResponse(dr).tExp;
-    nReplica = templateOld.doseResponse(dr).nReplica;
+    tExp = RSTemplateOld.doseResponse(dr).tExp;
+    nReplica = RSTemplateOld.doseResponse(dr).nReplica;
 
     % set the time points and dummy data
     for id = 1:length(d)

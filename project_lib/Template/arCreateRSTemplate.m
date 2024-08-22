@@ -1,4 +1,4 @@
-function template = createTemplate(qCondObsMatrix, qPlot, qSave2File)
+function RSTemplate = arCreateRSTemplate(qCondObsMatrix, qPlot, qSave2File)
 
 arguments
     qCondObsMatrix (1,1) logical = true
@@ -8,16 +8,16 @@ end
 
 global ar  %#ok<*GVMIS>
 
-template = struct();
+RSTemplate = struct();
 
 %% analyze conditions
 condStruct = arModelConditions();
-template.condStruct = condStruct;
+RSTemplate.condStruct = condStruct;
 
 %% analyze data
 nData = length(ar.model.data);
-template.timeCourse = struct();
-template.doseResponse = struct();
+RSTemplate.timeCourse = struct([]);
+RSTemplate.doseResponse = struct([]);
 
 % decide condition types (time-course TC, dose-response DR, or both)
 tc = 0;
@@ -33,90 +33,90 @@ for d = 1:nData
         tc = tc + 1;
 
         % condition link
-        template.timeCourse(tc).cLink = c;
-        template.timeCourse(tc).dLink = d;
-        template.timeCourse(tc).condReplace = condStruct.condReplace{c};
+        RSTemplate.timeCourse(tc).cLink = c;
+        RSTemplate.timeCourse(tc).dLink = d;
+        RSTemplate.timeCourse(tc).condReplace = condStruct.condReplace{c};
     
     % dose-response data
     else
         dr = dr + 1;
 
         % condition and data link(s)
-        template.doseResponse(dr).cLink = c;
-        template.doseResponse(dr).dLink = d;
+        RSTemplate.doseResponse(dr).cLink = c;
+        RSTemplate.doseResponse(dr).dLink = d;
 
         % response parameter
         response_parameter = ar.model.data(d).response_parameter;
-        template.doseResponse(dr).response_parameter = response_parameter;
+        RSTemplate.doseResponse(dr).response_parameter = response_parameter;
 
         % get the response variable's value
         qResponse = strcmp(ar.model.data(d).pold, response_parameter);
-        template.doseResponse(dr).values = double(arSym(ar.model.data(d).fp(qResponse)));
+        RSTemplate.doseResponse(dr).values = double(arSym(ar.model.data(d).fp(qResponse)));
 
         % get the time point(s)
         tExp = ar.model.data(d).tExp;
-        template.doseResponse(dr).tExp = tExp(1);
-        template.doseResponse(dr).nReplica = length(tExp);
+        RSTemplate.doseResponse(dr).tExp = tExp(1);
+        RSTemplate.doseResponse(dr).nReplica = length(tExp);
 
         % set the replacements for remaining parameters
         condRep = condStruct.condReplace{c};
         qResp = strcmp(condRep(:, 1), response_parameter);
         condRep = condRep(~qResp, :);
-        template.doseResponse(dr).condReplaceRest = condRep;
+        RSTemplate.doseResponse(dr).condReplaceRest = condRep;
 
     end
 end
 
 % merge data in a meaningful way
-template = mergeTimecourse(template);
-template = mergeDoseresponse(template);
-template.nTC = length(template.timeCourse);
-template.nDR = length(template.doseResponse);
-template.nExp = template.nTC + template.nDR;
+RSTemplate = mergeTimecourse(RSTemplate);
+RSTemplate = mergeDoseresponse(RSTemplate);
+RSTemplate.nTC = length(RSTemplate.timeCourse);
+RSTemplate.nDR = length(RSTemplate.doseResponse);
+RSTemplate.nExp = RSTemplate.nTC + RSTemplate.nDR;
 
 %% analyze steady states and events
-template.findInputs = ~isempty(ar.model.u);
-template.useSteadyState = ~isempty(ar.model.ss_condition);
-template.useEvents = ar.config.useEvents && (template.findInputs || template.useSteadyState);
-template.steadyState = struct();
-if template.useEvents
+RSTemplate.findInputs = ~isempty(ar.model.u);
+RSTemplate.useSteadyState = isfield(ar.model, 'ss_condition');
+RSTemplate.useEvents = ar.config.useEvents && (RSTemplate.findInputs || RSTemplate.useSteadyState);
+RSTemplate.steadyState = struct([]);
+if RSTemplate.useSteadyState
     for s = 1:length(ar.model.ss_condition)
-        template.steadyState(s).source = ar.model.ss_condition(s).src;
+        RSTemplate.steadyState(s).source = ar.model.ss_condition(s).src;
         targets = ar.model.ss_condition(s).ssLink;
         if length(targets) == length(ar.model.condition)
             targets = 'all';
-            template.steadyState(s).target = 'all';
+            RSTemplate.steadyState(s).target = 'all';
         else
             targets = mat2str(targets);
-            template.steadyState(s).target = targets;
+            RSTemplate.steadyState(s).target = targets;
         end
         ssIgnore = ar.model.ss_condition(s).ssIgnore;
-        template.steadyState(s).ignoreStates = ar.model.xNames(ssIgnore);
-        template.steadyState(s).tStart = ar.model.ss_condition(s).tstart;
+        RSTemplate.steadyState(s).ignoreStates = ar.model.xNames(ssIgnore);
+        RSTemplate.steadyState(s).tStart = ar.model.ss_condition(s).tstart;
 
         % create the function call for the setup file
         setupCall = sprintf('arSteadyState(1, %i, ''%s'', {%s}, %i);', ...
-            template.steadyState(s).source, ...
+            RSTemplate.steadyState(s).source, ...
             targets, ...
-            strjoin(template.steadyState(s).ignoreStates, ', '), ...
-            template.steadyState(s).tStart);
+            strjoin(RSTemplate.steadyState(s).ignoreStates, ', '), ...
+            RSTemplate.steadyState(s).tStart);
 
-        template.steadyState(s).setupCall = setupCall;
+        RSTemplate.steadyState(s).setupCall = setupCall;
     end
 end
 
 %% custom d2d configs
-template.customSettings = arConfigDiff2Default();
+RSTemplate.customSettings = arConfigDiff2Default();
 
 %% create condition-observable matrix
 if qCondObsMatrix
-    template = createCondObsMatrix(template, qPlot);
+    RSTemplate = createCondObsMatrix(RSTemplate, qPlot);
 end
 
-%% save the template
+%% save the RSTemplate
 if qSave2File
     [~] = mkdir('RS_Template');
-    save(fullfile('RS_Template', 'RS_Template.mat'), 'template');
+    save(fullfile('RS_Template', 'RS_RSTemplate.mat'), 'RSTemplate');
 end
 
 end
@@ -124,22 +124,27 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function template = mergeTimecourse(template)
+function RSTemplate = mergeTimecourse(RSTemplate)
 
-oldTimecourse = template.timeCourse;
+% return if there are no time course conditions
+if isempty(RSTemplate.timeCourse)
+    return
+end
+
+oldTimecourse = RSTemplate.timeCourse;
 
 % merge time-course data according to cLink
 condis = unique([oldTimecourse.cLink]);
 
-template.timeCourse = struct();
+RSTemplate.timeCourse = struct();
 
 for idx=1:length(condis)
     c = condis(idx);
     qTC = ([oldTimecourse.cLink]==c);
     cOld = find(qTC, 1);
-    template.timeCourse(idx).cLink = c;
-    template.timeCourse(idx).dLink = [oldTimecourse(qTC).dLink];
-    template.timeCourse(idx).condReplace = oldTimecourse(cOld).condReplace;
+    RSTemplate.timeCourse(idx).cLink = c;
+    RSTemplate.timeCourse(idx).dLink = [oldTimecourse(qTC).dLink];
+    RSTemplate.timeCourse(idx).condReplace = oldTimecourse(cOld).condReplace;
 end
 
 end
@@ -147,9 +152,14 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function template = mergeDoseresponse(template)
+function RSTemplate = mergeDoseresponse(RSTemplate)
 
-oldDoseResponse = template.doseResponse;
+% return if there are no dose response conditions
+if isempty(RSTemplate.doseResponse)
+    return
+end
+
+oldDoseResponse = RSTemplate.doseResponse;
 
 % create a string of characteristics for each DR
 for dr = 1:length(oldDoseResponse)
@@ -164,16 +174,16 @@ checkStrings = {oldDoseResponse.checkString};
 [~, drOld, drUnique] = unique(checkStrings, "stable");
 
 % merge DRs
-template.doseResponse = struct();
+RSTemplate.doseResponse = struct();
 for dr = 1:max(drUnique)
     qDR = (drUnique==dr);
-    template.doseResponse(dr).cLink = [oldDoseResponse(qDR).cLink];
-    template.doseResponse(dr).dLink = [oldDoseResponse(qDR).dLink];
-    template.doseResponse(dr).condReplaceRest = oldDoseResponse(drOld(dr)).condReplaceRest;
-    template.doseResponse(dr).response_parameter = oldDoseResponse(drOld(dr)).response_parameter;
-    template.doseResponse(dr).values = [oldDoseResponse(qDR).values];
-    template.doseResponse(dr).tExp = oldDoseResponse(drOld(dr)).tExp;
-    template.doseResponse(dr).nReplica = [oldDoseResponse(qDR).nReplica];
+    RSTemplate.doseResponse(dr).cLink = [oldDoseResponse(qDR).cLink];
+    RSTemplate.doseResponse(dr).dLink = [oldDoseResponse(qDR).dLink];
+    RSTemplate.doseResponse(dr).condReplaceRest = oldDoseResponse(drOld(dr)).condReplaceRest;
+    RSTemplate.doseResponse(dr).response_parameter = oldDoseResponse(drOld(dr)).response_parameter;
+    RSTemplate.doseResponse(dr).values = [oldDoseResponse(qDR).values];
+    RSTemplate.doseResponse(dr).tExp = oldDoseResponse(drOld(dr)).tExp;
+    RSTemplate.doseResponse(dr).nReplica = [oldDoseResponse(qDR).nReplica];
 end
 
 end
@@ -181,21 +191,21 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function template = createCondObsMatrix(template, qPlot)
+function RSTemplate = createCondObsMatrix(RSTemplate, qPlot)
 
 m = 1;
 [allStateSets, ~] = arObsStringRepresent(m, 'all');
 uniqStateSets = unique(allStateSets);
 nCols = length(uniqStateSets);
 
-nTC = length(template.timeCourse);
-nDR = length(template.doseResponse);
+nTC = length(RSTemplate.timeCourse);
+nDR = length(RSTemplate.doseResponse);
 nRows = nTC + nDR;
 
 condObsMatrix = zeros(nRows, nCols);
 
 for tc = 1:nTC
-    [rowStateSets, ~] = arObsStringRepresent(m, 'data', template.timeCourse(tc).dLink);
+    [rowStateSets, ~] = arObsStringRepresent(m, 'data', RSTemplate.timeCourse(tc).dLink);
     for iCol = 1:nCols
         if ismember(uniqStateSets(iCol), rowStateSets)
             condObsMatrix(tc, iCol) = 1;
@@ -204,7 +214,7 @@ for tc = 1:nTC
 end
 
 for dr = 1:nDR
-    [rowStateSets, ~] = arObsStringRepresent(m, 'data', template.doseResponse(dr).dLink);
+    [rowStateSets, ~] = arObsStringRepresent(m, 'data', RSTemplate.doseResponse(dr).dLink);
     for iCol = 1:nCols
         if ismember(uniqStateSets(iCol), rowStateSets)
             condObsMatrix(nTC + dr, iCol) = 1;
@@ -212,7 +222,7 @@ for dr = 1:nDR
     end
 end
 
-template.condObsMatrix = condObsMatrix;
+RSTemplate.condObsMatrix = condObsMatrix;
 
 if qPlot
 

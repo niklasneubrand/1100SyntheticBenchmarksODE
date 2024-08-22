@@ -1,11 +1,5 @@
 function arNewRealisticDesign(projectName, options)
 
-% TODO:
-% - create arRealisticConds (optional)
-% - improve arRealisticTimesRTF (optional)
-% - use switches instead of booleans for qSet*, e.g.
-%   'default', 'simulate', name of a file to load
-
 arguments
     projectName (1,:) char
     options.loadPattern (1,:) char = 'normal'
@@ -71,16 +65,16 @@ arSetParsBounds(3);
 if options.qSetConds
     auxFilesDir = fullfile(projectPath, "Auxillary");
     try
-        load(fullfile(auxFilesDir, "template"), "template");
+        load(fullfile(auxFilesDir, "RSTemplate"), "RSTemplate");
     catch
-        template = createTemplate();
-        save(fullfile(auxFilesDir, "template"), "template");
+        RSTemplate = arCreateRSTemplate();
+        save(fullfile(auxFilesDir, "RSTemplate"), "RSTemplate");
     end
     obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs, ... 
-        false, template);
+        false, RSTemplate);
     arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-        obsStruct, template, 'auxillary');
-    arWriteAuxillaryData(projectName, projectPath, obsStruct, template);
+        obsStruct, RSTemplate, 'auxillary');
+    arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate);
     
     save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
 else
@@ -97,7 +91,7 @@ else
 end
 
 %% Create new project folder
-arCreateRealisticProject(projectName, projectPath, options.rngSeed, options.includeCustomSettings, template);
+arCreateRealisticProject(projectName, projectPath, options.rngSeed, options.includeCustomSettings, RSTemplate);
 
 resultsFolder = sprintf('%s__newParams', projectName);
 arSave(resultsFolder, false, false);
@@ -116,14 +110,14 @@ try
     %% Use RTF fits to set realistic time points
     if options.qSetTime
         arRealisticTimesRTF(options.rngSeed);
-        arRealisticTimesDR(options.rngSeed, template);
+        arRealisticTimesDR(options.rngSeed, RSTemplate);
         arSave(sprintf('%s__newTimes', projectName), false, false)
 
         % update the error models based on new time points
         load(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
         obsStruct = arUpdateErrorParams(1, obsStruct);
         arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                            obsStruct, template)
+                            obsStruct, RSTemplate)
         save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
         
     else
