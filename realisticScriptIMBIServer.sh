@@ -2,7 +2,7 @@
 
 # This script is used to run the realistic benchmarks on the IMBI server
 
-## Define the directory of the bas models
+## Define the directory of the base models
 real_dir=$(pwd)
 baseModels_dir="$real_dir/BaseModels"
 
@@ -54,5 +54,5 @@ for folder in "$results_dir"/*/; do
     # echo $folder
 	
     # Collect Data by calling MATLAB script lhsLogging.m
-    # nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50); exit();" </dev/null >/dev/null 2>&1 &
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50); exit();" </dev/null >/dev/null 2>&1 &
 done
