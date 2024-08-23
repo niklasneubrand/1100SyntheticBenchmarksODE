@@ -20,9 +20,9 @@
 %% Compile model
 arInit
 arLoadModel('model_A');
-arLoadData('experiment_0',1); % Condition introduced for steady state equlibration
-arLoadData('experiment_1',1);
-arLoadData('experiment_2',1);
+arLoadData('experiment_0',1,[],1); % Condition introduced for steady state equlibration
+arLoadData('experiment_1',1,[],1);
+arLoadData('experiment_2',1,[],1);
 arCompileAll;
 
 %% Set pre-equilibration
@@ -41,9 +41,10 @@ arLoadPars('bestFit')
 arFindInputs;
 
 %% Custom d2d settings
-% experiment_0 was mot solved smoothly with standard settings
+% experiment_0 was not solved smoothly with standard settings
 ar.config.rtol = 1e-9;
 ar.config.atol = 1e-9;
+ar.config.maxsteps = 1e5;
 
 
 %% Visualization
