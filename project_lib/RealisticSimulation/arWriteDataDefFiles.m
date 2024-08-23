@@ -31,7 +31,7 @@ for idx = 1:nExp
     %% set values for time course or dose response
     if idx <= nTC
         filename = sprintf('%s_TC%i%s.def', projectName, idx, suffix);
-        cNumber = sprintf('time course %i', idx);
+        cNumber = sprintf('time course, %i', idx);
         predictor_add = '';
 
         c = RSTemplate.timeCourse(idx).cLink;
@@ -41,7 +41,7 @@ for idx = 1:nExp
         
     else
         filename = sprintf('%s_DR%i%s.def', projectName, idx - nTC, suffix);
-        cNumber = sprintf('dose response %i', idx - nTC);
+        cNumber = sprintf('dose response, %i', idx - nTC);
         predictor_add = sprintf('-DOSERESPONSE %s', RSTemplate.doseResponse(idx - nTC).response_parameter);
 
         tLim = ceil(RSTemplate.doseResponse(idx - nTC).tExp*1.1);
@@ -53,9 +53,11 @@ for idx = 1:nExp
     fileID = fopen(fullfile(projectPath, 'Data', filename), 'w');
 
     fprintf(fileID, '%s\n', 'DESCRIPTION') ;
-    fprintf(fileID, '"Realisticly set observables for %s"\n', cNumber);
-    fprintf(fileID, '"Identifier: %s"\n', projectName);
-    fprintf(fileID, '"Random seed: %i"\n', rngSeed);
+    fprintf(fileID, '"Realisticly Set Observables"\n');
+    fprintf(fileID, '"Original project:\t%s"\n', RSTemplate.originalName);
+    fprintf(fileID, '"RS project name:\t%s"\n', projectName);
+    fprintf(fileID, '"Random seed:\t\t%010i"\n', rngSeed);
+    fprintf(fileID, '"Data type, index:\t%s"\n', cNumber);
 
     %% Predictor
 

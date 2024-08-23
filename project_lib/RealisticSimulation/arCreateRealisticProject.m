@@ -14,7 +14,7 @@ modelfile = fullfile(ar.model.path, ...
 copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 
 % modify model *.def files -> remove observables, parameter, etc.
-arCreateRealisticModelDef(fullfile(projectPath, 'Models'), rngSeed);
+arCreateRealisticModelDef(fullfile(projectPath, 'Models'), projectName, rngSeed);
 
 % create a setup file for the new model
 arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, RSTemplate);
@@ -27,7 +27,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function arCreateRealisticModelDef(modelsDir, rngSeed)
+function arCreateRealisticModelDef(modelsDir, projectName, rngSeed)
 
 global ar
 
@@ -53,11 +53,13 @@ for i = 1:length(defFileNames)
     % modify sections
     description = ['"This is a modified copy of the original model definition file."' newline ...
         '"The original observables and errors have been removed."' newline ...
-        '"New, realistically drawn observables are defined in the data definition files."' newline ...
-        sprintf('"The random seed is: %i."', rngSeed)];
+        '"New, realistically drawn observables are defined in the data definition files."' newline newline...
+        sprintf('"Original project:\t%s"', ar.info.name) newline ...
+        sprintf('"RS project name:\t%s"', projectName) newline ...
+        sprintf('"Random seed:\t\t%010i."', rngSeed)];
     if any(headings=="DESCRIPTION")
         originalDescription = [sections{find(headings=="DESCRIPTION")+1}];
-        description = [originalDescription description newline newline];
+        description = [description newline newline '"Original description:"' newline originalDescription newline newline];
         sections{find(headings=="DESCRIPTION")+1} = description;
     else
         description = [description newline];
@@ -134,9 +136,11 @@ end
 %% Create the final setup file
 fileID = fopen(fullfile(projectPath, "Setup.m"), "w");
 
-fprintf(fileID, "%% Setup file for realistic simulation of benchmark model %s \n", ar.info.name);
-fprintf(fileID, "%% Identifier: %s \n", projectName);
-fprintf(fileID, "%% Random seed: %i \n\n", rngSeed);
+fprintf(fileID, "%% Setup File For Realistic Simulation\n");
+fprintf(fileID, "%% Original project:\t%s \n", ar.info.name);
+fprintf(fileID, "%% RS project name:\t%s \n", projectName);
+fprintf(fileID, "%% Random seed:\t\t%010i \n\n", rngSeed);
+
 fprintf(fileID, "%% Initialize the d2d toolbox \n");
 fprintf(fileID, "arInit();\n\n");
 
@@ -197,9 +201,10 @@ fclose(fileID);
 %% Create the auxillary setup file
 fileID = fopen(fullfile(projectPath, "SetupAuxillary.m"), "w");
 
-fprintf(fileID, "%% Auxillary setup file for realistic simulation of benchmark model %s \n", ar.info.name);
-fprintf(fileID, "%% Identifier: %s \n", projectName);
-fprintf(fileID, "%% Random seed: %i \n\n", rngSeed);
+fprintf(fileID, "%% Auxillary Setup File For Realistic Simulation\n");
+fprintf(fileID, "%% Original project:\t%s \n", ar.info.name);
+fprintf(fileID, "%% RS project name:\t%s \n", projectName);
+fprintf(fileID, "%% Random seed:\t\t%010i \n\n", rngSeed);
 
 fprintf(fileID, "%% Initialize the d2d toolbox \n");
 fprintf(fileID, "arInit();\n\n");

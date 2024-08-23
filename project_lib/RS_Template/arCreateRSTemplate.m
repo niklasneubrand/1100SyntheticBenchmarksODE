@@ -10,6 +10,9 @@ global ar  %#ok<*GVMIS>
 
 RSTemplate = struct();
 
+%% name of the project
+RSTemplate.originalName = ar.info.name;
+
 %% analyze conditions
 condStruct = arModelConditions();
 RSTemplate.condStruct = condStruct;
