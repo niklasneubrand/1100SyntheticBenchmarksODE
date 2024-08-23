@@ -35,6 +35,9 @@ echo "Copying base models..."
 cp -r "$baseSet_dir/"* "$results_dir/"
 
 
+# Set the start seed manually
+modelIndex=0
+
 ## Run the simulations
 echo "Start simulations for problems: $modelSet/"
 for folder in "$results_dir"/*/; do
@@ -52,7 +55,11 @@ for folder in "$results_dir"/*/; do
     # Return the folder name
     echo "    $folder_name"
     # echo $folder
-	
-    # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50); exit();" </dev/null >/dev/null 2>&1 &
+
+    # Set the start seed
+    modelIndex=$((modelIndex + 1))
+    startSeed=$((100000*modelIndex))
+
+    # Run simulations
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arManyRealisticDesigns(1:50, 'rngSeed', $startSeed); exit();" </dev/null >/dev/null 2>&1 &
 done
