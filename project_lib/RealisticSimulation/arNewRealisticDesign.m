@@ -10,7 +10,8 @@ arguments
     options.qSetTime (1,1) logical = true
     options.qSetData (1,1) logical = true
     options.includeCustomSettings (1,1) logical = false
-    options.rngSeed (1,:) = 'shuffle'    
+    options.rngSeed (1,:) = 'shuffle'
+    options.seedStep (1,:) double = 1000
 end
 
 global ar  %#ok<*GVMIS>

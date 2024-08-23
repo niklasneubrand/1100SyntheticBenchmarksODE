@@ -23,6 +23,7 @@ if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
 end
 % save the start seed for later reference (rngSeed will be different for each simulation)
 startSeed = options.rngSeed;
+seedStep = options.seedStep;
 
 % save the input arguments
 infoDir = fullfile(pwd(), 'RealisticSimulation', '0_info_manyRS');
@@ -87,7 +88,7 @@ for idx = 1:nSimus
     logFile = fullfile(projectDir, sprintf([nameFmt '.log'], iSimu));
     diary(logFile);
 
-    options.rngSeed = startSeed + options.seedStep*(iSimu - 1);
+    options.rngSeed = startSeed + seedStep*(iSimu - 1);
 
     % reshape the options for handing them to "arNewRealisticDesign"
     optionNames = fieldnames(options);
