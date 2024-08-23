@@ -4,7 +4,7 @@ arguments
     iSimus (1,:) double {mustBeInteger, mustBePositive}
     options.loadPattern (1,:) char = 'normal'
     options.rngSeed (1,:) = 'shuffle'
-    options.seedStep (1,1) double = 100
+    options.seedStep (1,1) double = 1000
     options.qLogObs (1,1) logical = true
     options.qShareObsParams (1,1) logical = false
     options.qSetConds (1,1) logical = true
