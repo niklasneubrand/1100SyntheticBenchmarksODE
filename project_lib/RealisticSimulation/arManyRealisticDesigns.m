@@ -4,6 +4,7 @@ arguments
     iSimus (1,:) double {mustBeInteger, mustBePositive}
     options.loadPattern (1,:) char = 'normal'
     options.rngSeed (1,:) = 'shuffle'
+    options.seedStep (1,1) double = 100
     options.qLogObs (1,1) logical = true
     options.qShareObsParams (1,1) logical = false
     options.qSetConds (1,1) logical = true
@@ -86,7 +87,7 @@ for idx = 1:nSimus
     logFile = fullfile(projectDir, sprintf([nameFmt '.log'], iSimu));
     diary(logFile);
 
-    options.rngSeed = startSeed + iSimu - 1;
+    options.rngSeed = startSeed + options.seedStep*(iSimu - 1);
 
     % reshape the options for handing them to "arNewRealisticDesign"
     optionNames = fieldnames(options);
