@@ -20,7 +20,7 @@
 %% Compile model
 arInit
 arLoadModel('model_A');
-arLoadData('experiment_0',1,[],1); % Condition introduced for steady state equlibration
+arLoadData('experiment_0',1); % Condition introduced for steady state equlibration
 arLoadData('experiment_1',1,[],1);
 arLoadData('experiment_2',1,[],1);
 arCompileAll;
