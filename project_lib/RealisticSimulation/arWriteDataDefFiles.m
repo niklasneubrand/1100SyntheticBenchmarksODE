@@ -72,9 +72,9 @@ for idx = 1:nExp
         % check if observable iObs should be created
         if ~isnan(obsStruct.paramIndices(idx, iObs))
             pIdx = obsStruct.paramIndices(idx, iObs);
-            if any(obsStruct.idLog==iObs)
+            if ismember(iObs, obsStruct.idScale) && ismember(iObs, obsStruct.idOffset)
                 expr = sprintf(obsExprs{iObs}, pIdx, pIdx);
-            elseif any(obsStruct.idScale==iObs)
+            elseif ismember(iObs, obsStruct.idScale) && ~ismember(iObs, obsStruct.idOffset)
                 expr = sprintf(obsExprs{iObs}, pIdx);
             else
                 expr = obsExprs{iObs};
