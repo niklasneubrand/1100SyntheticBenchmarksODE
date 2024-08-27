@@ -8,7 +8,7 @@ folders = folders(3:end);
 folderDirs = {folders.folder};
 folderNames = {folders.name};
 
-baseModelsSlowDir = fullfile(startDir, '..', '..', 'BaseModels', 'slow';
+baseModelsSlowDir = fullfile(startDir, '..', '..', 'BaseModels', 'slow');
 folders = dir(baseModelsSlowDir);
 folders = folders(3:end);
 folderDirs = [folderDirs, {folders.folder}];
