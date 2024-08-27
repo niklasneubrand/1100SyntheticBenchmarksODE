@@ -3,6 +3,8 @@ function arNewRealisticDesign(projectName, options)
 arguments
     projectName (1,:) char
     options.loadPattern (1,:) char = 'normal'
+    options.inclDynRatio (1,1) double = 0
+    options.replaceConstObs (1,:) char = 'all'
     options.qLogObs (1,1) logical = true
     options.qShareObsParams (1,1) logical = false
     options.qSetConds (1,1) logical = true
@@ -71,8 +73,8 @@ if options.qSetConds
         RSTemplate = arCreateRSTemplate();
         save(fullfile(auxFilesDir, "RSTemplate"), "RSTemplate");
     end
-    obsStruct = arDrawObservables(1, options.rngSeed, options.qLogObs, ... 
-        false, RSTemplate);
+    obsStruct = arDrawObservables(1, options.rngSeed, ...
+        options.inclDynRatio, options.replaceConstObs, options.qLogObs, RSTemplate);
     arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
         obsStruct, RSTemplate, 'auxillary');
     arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate);

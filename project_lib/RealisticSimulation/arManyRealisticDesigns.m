@@ -5,6 +5,8 @@ arguments
     options.loadPattern (1,:) char = 'normal'
     options.rngSeed (1,:) = 'shuffle'
     options.seedStep (1,1) double = 1000
+    options.inclDynRatio (1,1) double = 0
+    options.replaceConstObs (1,:) char = 'all'
     options.qLogObs (1,1) logical = true
     options.qShareObsParams (1,1) logical = false
     options.qSetConds (1,1) logical = true

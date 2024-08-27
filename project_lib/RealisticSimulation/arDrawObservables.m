@@ -1,12 +1,13 @@
-function obsStruct = arDrawObservables(m, rngSeed, qLogObs, qRemoveConstObs, RSTemplate)
+function obsStruct = arDrawObservables(m, rngSeed, inclDynRatio, replaceConstObs, qLogObs, RSTemplate)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
 arguments
     m (1,1) double {mustBeInteger, mustBePositive} = 1
     rngSeed (1,:) = 'shuffle'
+    inclDynRatio (1, 1) double = 0
+    replaceConstObs (1,:) char = 'all'
     qLogObs (1,1) logical = false
-    qRemoveConstObs (1,1) logical = false
     RSTemplate (1,1) struct = arCreateRSTemplate()
 end
 
@@ -25,11 +26,10 @@ catch ME
 end
 
 %% Decide which states to include (remove states that are constant in too many conditions)
-inclRatio = 0.2;                                    % minimal ratio of dynamical experiments for state inclusion
-ratioDynStates = arDynCondStates(1, RSTemplate, 1); % for each state, ration of experiments with dynamics
-qInclState = ratioDynStates >= inclRatio;           % include states with sufficient ratio of dynamic conditions
-inclStates = ar.model(m).x(qInclState);             % names of included states
-nInclStates = length(inclStates);                   % number of included states
+[~, ratioDynStates] = arDynCondStates(1, RSTemplate, 1);    % for each state, ration of experiments with dynamics
+qInclState = ratioDynStates >= inclDynRatio;                % include states with sufficient ratio of dynamic conditions
+inclStates = ar.model(m).x(qInclState); % names of included states
+nInclStates = length(inclStates);       % number of included states
 
 if nInclStates == 0
     error('Only constant species found, no dynamics.')
@@ -52,13 +52,14 @@ randRow = randi(length(obs.comp));              % random row in obs table
 nComp = round(obs.comp(randRow)*nObs);          % corresp. number of compounds
 nComp = min(nComp, nObs);                       % upper bound for nComp
 compSize = round(obs.compadd(randRow));         % corresp. size of compounds
-compSize = min(compSize, nInclStates);       % upper bound
+compSize = min(compSize, nInclStates);          % upper bound
 compSize = max(compSize, 2);                    % lower bound
 % the number of unique compounds is limited to the possible number of combinations
 nComp = min(nComp, nchoosek(nInclStates, compSize)); % upper bound for nComp
 idComp = [];                                    % initialize compound indices
-nDirect = nObs - nComp;                         % number of directly observed variables
-idDirect = sort(randperm(nInclStates, nDirect)); % indices for directly observed states
+nDirect = nObs - nComp;                                 % number of directly observed variables
+idDirect = sort(randperm(nInclStates, nDirect));        % indices for directly observed states
+idUnobservedState = setdiff(1:nInclStates, idDirect);   % indices for unobserved states
 
 % Draw the compound composition
 % In this implementation all compounds have the same length. Could be improved.
@@ -101,29 +102,6 @@ else
     nOffset = round(obs.offnonlogrel(randi(length(obs.offnonlogrel)))*nScale);
 end
 
-%% Distribute observables to all conditions
-
-% for each observable draw a roandom column with replacement
-% from the condition-observable distribution matrix
-CondObsMatrix = RSTemplate.condObsMatrix;
-randomCols = randi(size(CondObsMatrix, 2), 1, nObs);
-CondObsMatrix = CondObsMatrix(:, randomCols);
-
-% conditions without observables
-% add a random observable to the condition
-qEmptyCond = sum(CondObsMatrix, 2, "omitnan") == 0;
-nEmptyConds = sum(qEmptyCond);
-randObs = randi(nObs, 1, nEmptyConds);
-CondObsMatrix(qEmptyCond, randObs) = 1;
-
-% parameter indices
-paramIndices = NaN(size(CondObsMatrix));
-for iObs = 1:nObs
-    column = CondObsMatrix(:, iObs);
-    nParams = sum(column, "omitnan");
-    paramIndices(column==1, iObs) = 1:nParams;
-end
-
 % get the simulated dynamics for the observables
 nTC = RSTemplate.nTC;
 nDR = RSTemplate.nDR;
@@ -156,10 +134,11 @@ for dr = 1:nDR
     % a dose-response is linked to multiple conditions
     cLink = RSTemplate.doseResponse(dr).cLink;
 
-    % Get the simulated data for the states (at the experiments time points)
+    % Get the simulated data for the states (at the experimental time points)
     xExpSimu = [];
     for c = cLink
-        xExpSimu = [xExpSimu; ar.model(m).condition(c).xExpSimu(:, qInclState)];
+        tIdx = find(RSTemplate.doseResponse(dr).tExp==ar.model.condition(c).tExp);
+        xExpSimu = [xExpSimu; ar.model(m).condition(c).xExpSimu(tIdx, qInclState)];
     end 
     xSimuAll{nTC + dr} = xExpSimu;
     % Get the simulated data for the drawn observables
@@ -176,79 +155,87 @@ for dr = 1:nDR
     end
 end
 
+%% Distribute observables to all conditions
 
-if qRemoveConstObs
-    % for each condition: remove observables that are constant
-    % But a condition must have at least one observable!
-    % if there are no observables left, we add one.
-    % this is done by drawing a random observable (if there are any)
-    % or a random state.
-    % 
-    % This heuristic procedure can be considered unrealistic.
-    % therefore it is deactivated by default.
+% for each observable draw a roandom column with replacement
+% from the condition-observable distribution matrix
+CondObsMatrix = RSTemplate.condObsMatrix;
+randomCols = randi(size(CondObsMatrix, 2), 1, nObs);
+CondObsMatrix = CondObsMatrix(:, randomCols);
 
-    % first: find constant states and observables
-    qDynamicState = false(nConds, nInclStates);
-    qDynamicObs = false(nConds, nObs);
-    for c = 1:nConds
+% check which observables show dynamics
+dynTol = 1e-8;
+qDynamicState = checkCurveDynamics(xSimuAll, dynTol);
+qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
 
-        % states
-        xFineSimu = xSimuAll{c};
-        for iState = 1:nInclStates
-            dataRange = range(xFineSimu(:, iState));  % range of simulated dynamics
-            normedDataRange = dataRange/max(xFineSimu(:, iState));  % normalized range
-            dynTol = 1e-8;  % tolerance for dynamics
-            qDynamicState(c, iState) = (abs(dataRange) > dynTol);
-            qDynamicState(c, iState) = qDynamicState(c, iState) && (abs(normedDataRange) > dynTol);
-            qDynamicState(c, iState) = qDynamicState(c, iState) && isfinite(normedDataRange);
-        end
+switch replaceConstObs
+    case 'no'
+        % keep all observables, no replacements
+        removeObs = false(size(condObsMatrix));
+        addObs = zeros(size(condObsMatrix, 1));
 
-        % observables
-        ySimu = ySimuAll{c};
-        for iObs = 1:nObs
-            %% here the is a bug: somtimes iObs exceeds array bounds.
-            % I hope it is fixed now by limiting the number of compounds to the
-            % number of possible unique compounds (nStates choose compSize)
-            dataRange = range(ySimu(:, iObs));  % range of simulated dynamics
-            normedDataRange = dataRange/max(ySimu(:, iObs));  % normalized range
-            dynTol = 1e-8;  % tolerance for dynamics
-            qDynamicObs(c, iObs) = (abs(dataRange) > dynTol);
-            qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && (abs(normedDataRange) > dynTol);
-            qDynamicObs(c, iObs) = qDynamicObs(c, iObs) && isfinite(normedDataRange);
-        end
-    end
+    case 'minimal'
+        % remove constant observables, add a random observable if necessary,
+        % i.e. if all observables are constant for a experiment
+        removeObs = ~qDynamicObs;
+        addObs = double(any(removeObs, 2));
 
-    % remove observables that are constant
-    CondObsMatrix(~qDynamicObs) = NaN;
+    case 'all'
+        % remove constant observables, add a new random observables
+        % for each removed one
+        removeObs = ~qDynamicObs;
+        addObs = sum(removeObs, 2);
 
-    % check again if all conditions have at least one observable
-    for c = 1:nConds
-        if sum(CondObsMatrix(c, :), "omitnan") == 0
-            if any(qDynamicObs(c, :))
-                % at least one drawn observable shows dynamics
-                % -> add a random one to the condition
-                iAdd = find(qDynamicObs(c, :));
+    otherwise
+        error('Unknown value for replaceConstObs: %s', replaceConstObs)
+end
+
+
+if any(removeObs, "all")
+    % remove the observables
+    CondObsMatrix(removeObs) = 0;
+
+    % if any observables were removed, we potentially have to add new ones
+
+    % check if all experiments have at least one observable
+    for exp = 1:nExp
+        for iObs = 1:addObs(exp)
+
+            % logical vector for observables not yet included in this experiment
+            expUnobservedObs = CondObsMatrix(exp, :)==0;
+
+            if any(qDynamicObs(exp, expUnobservedObs))
+                % at least one of the existing observable shows dynamics
+                % -> use one of these observables
+                iAdd = find(qDynamicObs(exp, expUnobservedObs));
                 iAdd = iAdd(randi(length(iAdd)));
-                CondObsMatrix(c, iAdd) = 1;
+                idExpUnobserved = find(expUnobservedObs);
+                iAdd = idExpUnobserved(iAdd);
+                CondObsMatrix(exp, iAdd) = 1;
                 
-            elseif any(qDynamicState(c, :))
-                % at least one state shows dynamics
-                % -> add a random observable to the condition
-                iAdd = find(qDynamicState(c, :));
+            elseif any(qDynamicState(exp, idUnobservedState))
+                % at least one unobserved state shows dynamics
+                % -> use one of these states as observable
+                iAdd = find(qDynamicState(exp, idUnobservedState));
                 iAdd = iAdd(randi(length(iAdd)));
-                if ismember(iAdd, idDirect)
-                    % observable is already defined -> find corresp. field in CondObsMatrix
-                    iObs = find(idDirect == iAdd);
-                    CondObsMatrix(c, iObs) = 1;
-                else
-                    % add a completely new observable to the simulation
-                    nObs = nObs + 1;
-                    nDirect = nDirect + 1;
-                    idDirect = [idDirect, iAdd];
-                    CondObsMatrix = [NaN(nConds, 1), CondObsMatrix];
-                    CondObsMatrix(c, 1) = 1;
+                iAdd = idUnobservedState(iAdd);
+
+                % update indices
+                nObs = nObs + 1;
+                nDirect = nDirect + 1;
+                idDirect = [idDirect, iAdd];
+                idUnobservedState = setdiff(idUnobservedState, iAdd);
+
+                % add a new column to CondObsMatrix
+                CondObsMatrix = [CondObsMatrix(:, 1:nDirect-1), zeros(nExp, 1), CondObsMatrix(:, nDirect:end)];
+                CondObsMatrix(exp, nDirect) = 1;
+
+                % add the new observable to the simulated data and update dynamic flags
+                for ex = 1:nExp
+                    ySimuAll{ex} = [ySimuAll{ex}(:, 1:nDirect-1), xSimuAll{ex}(:, iAdd), ySimuAll{ex}(:, nDirect:end)];
                 end
-                
+                qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
+
             else
                 % no dynamics at all
                 error('No dynamics found in condition %d.', c)
@@ -261,18 +248,52 @@ if qRemoveConstObs
     for iObs = 1:nObs
         if sum(CondObsMatrix(:, iObs), "omitnan") == 0
             % observable does not appear in any condition
-            % -> add it to a random condition
-            iAdd = find(qDynamicObs(:, iObs));
-            iAdd = iAdd(randi(length(iAdd)));
-            CondObsMatrix(iAdd, iObs) = 1;
+            % -> remove the observable
+
+            % update indices
+            nObs = nObs - 1;
+            if iObs <= nDirect
+                % directly observed state
+                nDirect = nDirect - 1;
+                idDirect(iObs) = [];
+            else
+                % compound
+                nComp = nComp - 1;
+                idComp(iObs+nDirect) = [];
+            end
+
+            % remove the column from CondObsMatrix
+            CondObsMatrix(:, iObs) = [];
+
+            % remove the observable from the simulated data and update dynamic flags
+            for ex = 1:nExp
+                ySimuAll{ex}(:, iObs) = [];
+            end
+            qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
+
         end
     end
+end
+
+% parameter indices
+paramIndices = NaN(size(CondObsMatrix));
+for iObs = 1:nObs
+    column = CondObsMatrix(:, iObs);
+    nParams = sum(column, "omitnan");
+    paramIndices(column==1, iObs) = 1:nParams;
 end
 
 % draw indices for log, scale and offset
 idLog = binornd(1, pLog, 1, nObs);                      % logical for log scale (1) or lin scale (0)
 idScale = sort(randperm(nObs, nScale));                 % scaled observables
 idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (subset of scaled)
+
+% remaining problem: if an observable can become zero or negative, we cannot use a log scale
+% exception if only zero at t=0
+for ex = 1:nExp
+    ySimuLog = ySimuAll{ex}(:, logical(idLog));
+    idLog(any(ySimuLog(1,:)<0) | any(ySimuLog(2:end,:)<=0, 1)) = 0;
+end
 
 % draw the std of the error model for all observables from mixed-effect model
 % see Eq. (2.8) in Egert_2023 (DOI: 10.3934/mbe.2023467)
@@ -297,14 +318,6 @@ for ex = 1:nExp
                 stdObs(ex, iObs) = stdObs(ex, iObs) + meanMagnitude;
             end
 
-            % % we have to introduce a minimum value for the std
-            % % otherwise arCalcSimu throws an error
-            % % the condition is: 0 >! 2*log(ystd) + ar.config.add_c ==> ystd > exp(-ar.config.add_c/2)
-            % minStd = exp(-ar.config.add_c/2);
-            % orderOfMag = floor(log10(minStd));
-            % % round the significand upwards
-            % minStd = ceil(minStd/10^orderOfMag)*10^orderOfMag;
-            % stdObs(ex, iObs) = max(stdObs(ex, iObs), minStd);
         end
     end
 end
@@ -340,10 +353,6 @@ obsStruct.obsMean = obsMean;
 
 % create observable names and expressions
 obsStruct = arCreateObsNames(obsStruct);
-
-% add main condition and flag
-obsStruct.cMain = cMain;
-obsStruct.mainCondFlag = mainCondFlag;
 
 fprintf('Observables drawn realistically.\n')
 
@@ -392,5 +401,41 @@ end
 
 obsStruct.obsNames = obsNames;
 obsStruct.obsExprs = obsExprs;
+
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function qDynamic = checkCurveDynamics(trajectories, rtol)
+% checkCurveDynamics  Check if a curve shows dynamics.
+%
+%  Inputs:
+%   trajectories    matrix of size nPoints x nCurves
+%   rtol            relative tolerance for the dynamics check
+%
+%  Outputs:
+%   qDynamic        logical vector of length nCurves, indicating which
+%                   curves show dynamics
+%
+%  Method:
+%    Compare change of curve (normalized by max value) to the tolerance value.
+%
+%  Note:
+%    This method is not robust for noisy or divergent (with Infs) trajectories.
+%    It is intended for smooth and well-behaved trajectories.
+%    We apply the function only to simulated trajectores. So it should be fine.
+
+if iscell(trajectories)
+    qDynamic = cellfun(@(x) checkCurveDynamics(x, rtol), trajectories, ...
+        'UniformOutput', false);
+    try
+        qDynamic = vertcat(qDynamic{:});
+    end
+    return
+end
+
+relRange = range(trajectories)./max(trajectories);
+qDynamic = (relRange > rtol);
 
 end
