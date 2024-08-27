@@ -1,5 +1,7 @@
 %% collect the data from the ar structs
 
+startDir = pwd();
+
 baseModelsFastDir = "C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\fast";
 folders = dir(baseModelsFastDir);
 folders = folders(3:end);
