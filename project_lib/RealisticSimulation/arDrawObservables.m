@@ -25,12 +25,11 @@ catch ME
 end
 
 %% Decide which states to include (remove states that are constant in too many conditions)
-inclRatio = 0.5;  % ratio of conditions with dynamics to include a state
-qDynStates = arCondDynamicStates(m, "all");
-ratioDynStates = mean(qDynStates, 1);       % for each state, ration of conditions with dynamics
-qInclState = ratioDynStates >= inclRatio;   % include states with sufficient ratio of dynamic conditions
-inclStates = ar.model(m).x(qInclState);     % names of non-constant states
-nInclStates = length(inclStates);
+inclRatio = 0.2;                                    % minimal ratio of dynamical experiments for state inclusion
+ratioDynStates = arDynCondStates(1, RSTemplate, 1); % for each state, ration of experiments with dynamics
+qInclState = ratioDynStates >= inclRatio;           % include states with sufficient ratio of dynamic conditions
+inclStates = ar.model(m).x(qInclState);             % names of included states
+nInclStates = length(inclStates);                   % number of included states
 
 if nInclStates == 0
     error('Only constant species found, no dynamics.')
