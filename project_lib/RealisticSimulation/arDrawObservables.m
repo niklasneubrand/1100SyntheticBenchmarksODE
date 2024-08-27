@@ -168,36 +168,38 @@ dynTol = 1e-8;
 qDynamicState = checkCurveDynamics(xSimuAll, dynTol);
 qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
 
+
+% remove constant observables (if desired)
 switch replaceConstObs
     case 'no'
         % keep all observables, no replacements
-        removeObs = false(size(condObsMatrix));
+        removeConstObs = false(size(condObsMatrix));
         addObs = zeros(size(condObsMatrix, 1));
 
     case 'minimal'
         % remove constant observables, add a random observable if necessary,
         % i.e. if all observables are constant for a experiment
-        removeObs = ~qDynamicObs;
-        addObs = double(any(removeObs, 2));
+        removeConstObs = CondObsMatrix & ~qDynamicObs;
+        addObs = double(any(removeConstObs, 2));
 
     case 'all'
         % remove constant observables, add a new random observables
         % for each removed one
-        removeObs = ~qDynamicObs;
-        addObs = sum(removeObs, 2);
+        removeConstObs = CondObsMatrix & ~qDynamicObs;
+        addObs = sum(removeConstObs, 2);
 
     otherwise
         error('Unknown value for replaceConstObs: %s', replaceConstObs)
 end
+CondObsMatrix(removeConstObs) = 0;
 
+% check if observables have to be added (experiments without observables)
+% need to be careful that replaced observables are not counted multiple times
+addOneMore = addObs==0 & sum(CondObsMatrix, 2)==0;
+addObs(addOneMore) = addObs(addOneMore) + 1;
 
-if any(removeObs, "all")
-    % remove the observables
-    CondObsMatrix(removeObs) = 0;
-
-    % if any observables were removed, we potentially have to add new ones
-
-    % check if all experiments have at least one observable
+% add new observables to the necessary experiments
+if sum(addObs, "all") > 0
     for exp = 1:nExp
         for iObs = 1:addObs(exp)
 
@@ -243,35 +245,34 @@ if any(removeObs, "all")
             
         end
     end
+end
 
-    % check if every observable appears in at least on condition
-    for iObs = 1:nObs
-        if sum(CondObsMatrix(:, iObs), "omitnan") == 0
-            % observable does not appear in any condition
-            % -> remove the observable
+% check if every observable appears in at least on condition
+for iObs = 1:nObs
+    if sum(CondObsMatrix(:, iObs), "omitnan") == 0
+        % observable does not appear in any condition
+        % -> remove the observable
 
-            % update indices
-            nObs = nObs - 1;
-            if iObs <= nDirect
-                % directly observed state
-                nDirect = nDirect - 1;
-                idDirect(iObs) = [];
-            else
-                % compound
-                nComp = nComp - 1;
-                idComp(iObs+nDirect) = [];
-            end
-
-            % remove the column from CondObsMatrix
-            CondObsMatrix(:, iObs) = [];
-
-            % remove the observable from the simulated data and update dynamic flags
-            for ex = 1:nExp
-                ySimuAll{ex}(:, iObs) = [];
-            end
-            qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
-
+        % update indices
+        nObs = nObs - 1;
+        if iObs <= nDirect
+            % directly observed state
+            nDirect = nDirect - 1;
+            idDirect(iObs) = [];
+        else
+            % compound
+            nComp = nComp - 1;
+            idComp(iObs+nDirect) = [];
         end
+
+        % remove the column from CondObsMatrix
+        CondObsMatrix(:, iObs) = [];
+
+        % remove the observable from the simulated data and update dynamic flags
+        for ex = 1:nExp
+            ySimuAll{ex}(:, iObs) = [];
+        end
+        qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
     end
 end
 
