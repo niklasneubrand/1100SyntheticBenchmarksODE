@@ -24,16 +24,18 @@ catch ME
     warning('Error in arSimu: %s', msgText)
 end
 
-%% Find the dynamical states of the main model condition
-cMain = arFindMainCondition(m, false, false); % index of main condition
-qMainDynState = arCondDynamicStates(m, cMain);
-mainDynStates = ar.model(m).x(qMainDynState); % names of non-constant states
-nMainDynStates = length(mainDynStates);
+%% Decide which states to include (remove states that are constant in too many conditions)
+inclRatio = 0.5;  % ratio of conditions with dynamics to include a state
+qDynStates = arCondDynamicStates(m, "all");
+ratioDynStates = mean(qDynStates, 1);       % for each state, ration of conditions with dynamics
+qInclState = ratioDynStates >= inclRatio;   % include states with sufficient ratio of dynamic conditions
+inclStates = ar.model(m).x(qInclState);     % names of non-constant states
+nInclStates = length(inclStates);
 
-if nMainDynStates == 0
+if nInclStates == 0
     error('Only constant species found, no dynamics.')
-elseif nMainDynStates < 5
-    warning('Only found %d dynamic species. A minimum of 5 is required.', nMainDynStates)
+elseif nInclStates < 5
+    warning('Only found %d dynamic species. A minimum of 5 is required.', nInclStates)
 end
 
 %% Draw observables for main condition
@@ -42,8 +44,8 @@ load(fullfile(fileparts(mfilename('fullpath')), 'ObservableDraw.mat'), 'obs');
 
 % Draw number of all observables
 randRow = randi(length(obs.obs));               % random row in obs table
-nObs = round(obs.obs(randRow)*nMainDynStates);  % corresp. number of observables
-nObs = min(nObs, nMainDynStates);               % upper bound for nObs
+nObs = round(obs.obs(randRow)*nInclStates);  % corresp. number of observables
+nObs = min(nObs, nInclStates);               % upper bound for nObs
 nObs = max(nObs, 1);                            % lower bound for nObs
 
 % draw number of compounds and directly observed variables
@@ -51,25 +53,25 @@ randRow = randi(length(obs.comp));              % random row in obs table
 nComp = round(obs.comp(randRow)*nObs);          % corresp. number of compounds
 nComp = min(nComp, nObs);                       % upper bound for nComp
 compSize = round(obs.compadd(randRow));         % corresp. size of compounds
-compSize = min(compSize, nMainDynStates);       % upper bound
+compSize = min(compSize, nInclStates);       % upper bound
 compSize = max(compSize, 2);                    % lower bound
 % the number of unique compounds is limited to the possible number of combinations
-nComp = min(nComp, nchoosek(nMainDynStates, compSize)); % upper bound for nComp
+nComp = min(nComp, nchoosek(nInclStates, compSize)); % upper bound for nComp
 idComp = [];                                    % initialize compound indices
 nDirect = nObs - nComp;                         % number of directly observed variables
-idDirect = sort(randperm(nMainDynStates, nDirect)); % indices for directly observed states
+idDirect = sort(randperm(nInclStates, nDirect)); % indices for directly observed states
 
 % Draw the compound composition
 % In this implementation all compounds have the same length. Could be improved.
 if nComp > 0
     % create idComp, a matrix where each row represents a compound.
     % The matrix entries are state indices.
-    [~, idComp] = sort(rand(nComp, nMainDynStates), 2); % nComp many permutations of state indices
+    [~, idComp] = sort(rand(nComp, nInclStates), 2); % nComp many permutations of state indices
     idComp = idComp(:, 1:compSize); % only keep the first compSize indices
     idComp = unique(sort(idComp, 2), 'rows'); % remove possible duplicate compounds
     while size(idComp, 1) < nComp
         % if not enough compounds (i.e. there were duplicates): draw again
-        [~, idComp2] = sort(rand(nComp, nMainDynStates), 2);
+        [~, idComp2] = sort(rand(nComp, nInclStates), 2);
         idComp2 = idComp2(:, 1:compSize);
         idComp = unique([idComp; sort(idComp2, 2)], 'rows');
     end
@@ -134,7 +136,7 @@ ySimuAll = cell(1, nExp);
 for tc = 1:nTC
     % Get the simulated data for the states
     c = RSTemplate.timeCourse(tc).cLink;
-    xFineSimu = ar.model(m).condition(c).xFineSimu(:, qMainDynState);  % species trajectories
+    xFineSimu = ar.model(m).condition(c).xFineSimu(:, qInclState);  % species trajectories
     xSimuAll{tc} = xFineSimu;
     % Get the simulated data for the drawn observables
     if nComp == 0
@@ -158,7 +160,7 @@ for dr = 1:nDR
     % Get the simulated data for the states (at the experiments time points)
     xExpSimu = [];
     for c = cLink
-        xExpSimu = [xExpSimu; ar.model(m).condition(c).xExpSimu(:, qMainDynState)];
+        xExpSimu = [xExpSimu; ar.model(m).condition(c).xExpSimu(:, qInclState)];
     end 
     xSimuAll{nTC + dr} = xExpSimu;
     % Get the simulated data for the drawn observables
@@ -187,13 +189,13 @@ if qRemoveConstObs
     % therefore it is deactivated by default.
 
     % first: find constant states and observables
-    qDynamicState = false(nConds, nMainDynStates);
+    qDynamicState = false(nConds, nInclStates);
     qDynamicObs = false(nConds, nObs);
     for c = 1:nConds
 
         % states
         xFineSimu = xSimuAll{c};
-        for iState = 1:nMainDynStates
+        for iState = 1:nInclStates
             dataRange = range(xFineSimu(:, iState));  % range of simulated dynamics
             normedDataRange = dataRange/max(xFineSimu(:, iState));  % normalized range
             dynTol = 1e-8;  % tolerance for dynamics
@@ -322,7 +324,7 @@ end
 
 % bundel results in a struct
 obsStruct = struct();
-obsStruct.states = mainDynStates;
+obsStruct.states = inclStates;
 obsStruct.nObs = nObs;
 obsStruct.nDirect = nDirect;
 obsStruct.nComp = nComp;
@@ -340,6 +342,10 @@ obsStruct.obsMean = obsMean;
 % create observable names and expressions
 obsStruct = arCreateObsNames(obsStruct);
 
+% add main condition and flag
+obsStruct.cMain = cMain;
+obsStruct.mainCondFlag = mainCondFlag;
+
 fprintf('Observables drawn realistically.\n')
 
 end
@@ -348,108 +354,6 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% AUXILLARY FUNCTIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-function [iMainCond, exitFlag] = arFindMainCondition(m, qFit, qSimu)
-% arFindMainCondition  Finds the most relevent condition in ar.model
-%
-%   Inputs:
-%    m     Index of the model to be used
-%    qFit       Logical indicating if the model should be fitted
-%    qSimu      Logical indicating if the model should be simulated
-%
-%   Outputs:
-%    iMainCond  Index of the most relevent condition in ar.model
-%    exitFlag   String indicating the reason for the choice of iMainCond
-%
-%   The function searches the most relevant condition in ar.model
-%   by a hirarchy of criteria. This means the next criterium is only
-%   applied to those conditions that rank best in the previous criteria.
-
-%   The criteria are:
-%    0. Only one condition exists
-%    1. Fewest replacements (closest to wild type condition)
-%    2. Most dynamic states (condition does not disable large parts of the model)
-%    3. Most observables (condition has most experiments)
-%    4. Most data points (condition has most data points)
-%    5. First condition of remaining the subset
-%
-
-
-arguments
-    m (1,1) double {mustBeInteger, mustBePositive} = 1
-    qFit (1,1) logical = false
-    qSimu (1,1) logical = true
-end
-
-% load the model
-global ar  %#ok<*GVMIS>
-if qFit
-    arFit();  % fit the model -> best parameters
-end
-if qSimu
-    arSimu(false, true, true);  % simulate -> dynamics available
-end
-
-% check if model has multiple conditions
-nConds = length(ar.model(m).condition);
-if nConds == 1
-    iMainCond = 1;
-    exitFlag = 'singleCondition';
-    return
-end
-
-% find conditions with fewest replacements (closest to WT)
-condStruct = arModelConditions(m);
-nRepl = cellfun(@length, condStruct.condReplace);
-shortConds = find(nRepl == min(nRepl));
-if length(shortConds)==1
-    iMainCond = shortConds;
-    exitFlag = 'fewestReplacements';
-    return
-end
-
-% find conditions with most dynamic states
-nDynamicStates = zeros(1, nConds);
-for c = shortConds
-    qDynamicState = arCondDynamicStates(m, c, false);
-    nDynamicStates(c) = sum(qDynamicState);
-end
-maxDynStatesCond = find(nDynamicStates == max(nDynamicStates));
-if length(maxDynStatesCond) == 1
-    iMainCond = maxDynStatesCond;
-    exitFlag = 'mostDynamicStates';
-    return
-end
-
-% find conditions with most observables
-nObs = zeros(1, nConds);
-for c = maxDynStatesCond
-    nObs(c) = length(vertcat(ar.model(m).data(ar.model(m).condition(c).dLink).fy));
-end
-maxObsCond = find(nObs == max(nObs));
-if length(maxObsCond) == 1
-    iMainCond = maxObsCond;
-    exitFlag = 'mostObservables';
-    return
-end
-
-% find condition with most data points
-nData = zeros(1, nConds);
-for c = maxObsCond
-    nData(c) = numel(ar.model(m).data(ar.model(m).condition(c).dLink).yExp);
-end
-maxDataCond = find(nData == max(nData));
-if length(maxDataCond) == 1
-    iMainCond = maxDataCond;
-    exitFlag = 'mostDataPoints';
-else
-    % give up and take the first condition of the remaining subset
-    iMainCond = maxDataCond(1);
-    exitFlag = 'firstRemaining';
-end
-
-end
 
 
 function obsStruct = arCreateObsNames(obsStruct)
