@@ -5,6 +5,16 @@ catch
     collectDataRatioDynStates
 end
 
+%% define a cutoff
+% we choose a default cutoff of 0.25
+% this value seems to offer a good compromise between
+% a) removing constant states
+% b) keeping a sufficient number states (even for the small models with
+%    many constant states, e.g. Bruno)
+% Interestingly, this relatively small cutoff already removes a large
+% number of states for some models (e.g. Isensee)
+inclRatioFinal = 0.25;
+
 %% plot the results
 % We introduce the variable 'inclRatio' to filter out states that do not show
 % dynamics in less than 'inclRatio' of the experiments.
@@ -38,6 +48,10 @@ for ii=1:length(dynStates)
         'LineWidth', 1.5, 'LineStyle', ls)
     hold on
 end
+
+xline(inclRatioFinal, 'LineWidth', 2, 'Color', 'k', ...
+    'DisplayName', 'Chosen Cutoff')
+
 hold off
 
 xlim([0, 1])
@@ -80,6 +94,10 @@ for ii=1:length(dynStates)
         'LineWidth', 1.5, 'LineStyle', ls)
     hold on
 end
+
+xline(inclRatioFinal, 'LineWidth', 2, 'Color', 'k', ...
+    'DisplayName', 'Chosen Cutoff')
+
 hold off
 
 xlim([0, 1])
@@ -122,6 +140,10 @@ for ii=1:length(dynStates)
         'LineWidth', 1.5, 'LineStyle', ls)
     hold on
 end
+
+xline(inclRatioFinal, 'LineWidth', 2, 'Color', 'k', ...
+    'DisplayName', 'Chosen Cutoff')
+
 hold off
 
 xlim([0, 1])
