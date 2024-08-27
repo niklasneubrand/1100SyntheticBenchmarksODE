@@ -2,13 +2,13 @@
 
 startDir = pwd();
 
-baseModelsFastDir = "C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\fast";
+baseModelsFastDir = fullfile(startDir, '..', '..', 'BaseModels', 'fast');
 folders = dir(baseModelsFastDir);
 folders = folders(3:end);
 folderDirs = {folders.folder};
 folderNames = {folders.name};
 
-baseModelsSlowDir = "C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\slow";
+baseModelsSlowDir = fullfile(startDir, '..', '..', 'BaseModels', 'slow';
 folders = dir(baseModelsSlowDir);
 folders = folders(3:end);
 folderDirs = [folderDirs, {folders.folder}];
