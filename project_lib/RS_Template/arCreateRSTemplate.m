@@ -118,8 +118,8 @@ end
 
 %% save the RSTemplate
 if qSave2File
-    [~] = mkdir('RS_Template');
-    save(fullfile('RS_Template', 'RS_RSTemplate.mat'), 'RSTemplate');
+    [~] = mkdir('RSTemplate');
+    save(fullfile('RSTemplate', 'RSTemplate.mat'), 'RSTemplate');
 end
 
 end

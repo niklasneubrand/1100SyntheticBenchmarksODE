@@ -12,6 +12,9 @@
 pthreadGC2.dll
 pthreadVC2.dll
 
+# ignore RSTemplate in Base Models
+/BaseModels/**/**/RSTemplate
+
 # compiled files with "arCompileAllSetups"
 **/Results/*normal
 **/CheckSums/
