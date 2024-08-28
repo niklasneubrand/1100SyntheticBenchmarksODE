@@ -7,10 +7,7 @@ arguments
     options.replaceConstObs (1,:) char = 'all'
     options.qLogObs (1,1) logical = true
     options.qShareObsParams (1,1) logical = false
-    options.qSetConds (1,1) logical = true
     options.qSetPars (1,1) logical = true
-    options.qSetTime (1,1) logical = true
-    options.qSetData (1,1) logical = true
     options.includeCustomSettings (1,1) logical = false
     options.rngSeed (1,:) = 'shuffle'
     options.seedStep (1,:) double = 1000
@@ -65,33 +62,23 @@ end
 arSetParsBounds(3);
 
 %% Set Conditions/Observables
-if options.qSetConds
-    auxFilesDir = fullfile(projectPath, "Auxillary");
-    try
-        load(fullfile(auxFilesDir, "RSTemplate"), "RSTemplate");
-    catch
-        RSTemplate = arCreateRSTemplate();
-        save(fullfile(auxFilesDir, "RSTemplate"), "RSTemplate");
+auxFilesDir = fullfile(projectPath, "Auxillary");
+try
+    load(fullfile("RSTemplate", "RSTemplate.mat"), "RSTemplate");
+    if ~isfield(RSTemplate, 'condObsMatrix')
+        error('RSTemplate is not complete. Calculate it again.')
     end
-    obsStruct = arDrawObservables(1, options.rngSeed, ...
-        options.inclDynRatio, options.replaceConstObs, options.qLogObs, RSTemplate);
-    arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-        obsStruct, RSTemplate, 'auxillary');
-    arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate);
-    
-    save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
-else
-    % use data *.def files from loaded model
-    % -> exact same observables
-    % -> also covers the data conditions (not included in the simulations)
-    % for m = 1:length(ar.model)
-    %     for d = 1:length(ar.model(m).data)
-    %         datafile = fullfile(ar.model(m).data(d).path, ...
-    %                             sprintf('%s.def', ar.model(m).data(d).name));
-    %         copyfile(datafile, fullfile(projectPath, 'Data'));
-    %     end
-    % end
+catch
+    RSTemplate = arCreateRSTemplate(true, true, true);
 end
+obsStruct = arDrawObservables(1, options.rngSeed, ...
+    options.inclDynRatio, options.replaceConstObs, options.qLogObs, RSTemplate);
+arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+    obsStruct, RSTemplate, 'auxillary');
+arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate);
+
+save(fullfile(auxFilesDir, "RSTemplate_BaseModel"), "RSTemplate");
+save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
 
 %% Create new project folder
 arCreateRealisticProject(projectName, projectPath, options.rngSeed, options.includeCustomSettings, RSTemplate);
@@ -110,29 +97,20 @@ try
     fprintf('Compiling the new model structure.\n')
     SetupAuxillary;
     
-    %% Use RTF fits to set realistic time points
-    if options.qSetTime
-        arRealisticTimesRTF(options.rngSeed);
-        arRealisticTimesDR(options.rngSeed, RSTemplate);
-        arSave(sprintf('%s__newTimes', projectName), false, false)
+    %% Generate realistic time points
+    arRealisticTimesRTF(options.rngSeed);
+    arRealisticTimesDR(options.rngSeed, RSTemplate);
+    arSave(sprintf('%s__newTimes', projectName), false, false)
 
-        % update the error models based on new time points
-        load(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
-        obsStruct = arUpdateErrorParams(1, obsStruct);
-        arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
-                            obsStruct, RSTemplate)
-        save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
-        
-    else
-        % use the time points from the loaded model
-    end
-    
+    % update the error models based on new time points
+    load(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
+    obsStruct = arUpdateObsParams(1, obsStruct);
+    arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
+                        obsStruct, RSTemplate)
+    save(fullfile(auxFilesDir, sprintf("obsStruct_%s", projectName)), "obsStruct");
+
     %% Simulate realistic data
-    if options.qSetData
-        arRealisticData(projectName, options.rngSeed);
-    else
-        % use the data from the loaded model
-    end
+    arRealisticData(projectName, options.rngSeed);
 
     fprintf('Compiling the final realistically simulated model with data.\n')
     Setup;
@@ -142,7 +120,7 @@ try
 
     % Plot the observables
     arPlot();
-    % arPlotFullPage(); close all;
+    arPlotFullPage(); close all;
 
     % clean up the project folder -> remove auxillary files
     movefile("SetupAuxillary.m", fullfile("Auxillary", "SetupAuxillary.m"));

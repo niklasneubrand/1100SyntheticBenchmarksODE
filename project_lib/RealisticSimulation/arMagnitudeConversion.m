@@ -53,7 +53,7 @@ for iObs=1:size(y, 2)
 end
 
 % Attention:
-% before rescaling tFine is shared between al observables (size nTimes x 1)
+% before rescaling tFine is shared between all observables (size nTimes x 1)
 % after rescaling tFine is differet for all observables (size nTimes x nObs) 
 ar.model(m).data(d).tFine = t;
 

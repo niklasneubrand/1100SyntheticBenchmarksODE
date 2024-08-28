@@ -9,10 +9,7 @@ arguments
     options.replaceConstObs (1,:) char = 'all'
     options.qLogObs (1,1) logical = true
     options.qShareObsParams (1,1) logical = false
-    options.qSetConds (1,1) logical = true
     options.qSetPars (1,1) logical = true
-    options.qSetTime (1,1) logical = true
-    options.qSetData (1,1) logical = true  
     options.includeCustomSettings (1,1) logical = true
 end
 
