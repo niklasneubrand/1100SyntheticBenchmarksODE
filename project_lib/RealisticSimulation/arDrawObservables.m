@@ -264,7 +264,7 @@ for iObs = nObs:-1:1
         else
             % compound
             nComp = nComp - 1;
-            idComp(iObs+nDirect) = [];
+            idComp(iObs-nDirect, :) = [];
         end
 
         % remove the column from CondObsMatrix

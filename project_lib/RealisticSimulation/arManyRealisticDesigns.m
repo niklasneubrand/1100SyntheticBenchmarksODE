@@ -58,13 +58,14 @@ for m = 1:length(ar.model)
     ar.model(m).path = fullfile(pwd(), 'Models');
 end
 
-
 % nameformat for the projects
 % nDigits = floor(log10(max(iSimus)))+1;
 nDigits = 2;
 baseNameShort = split(ar.info.name, '_');
 baseNameShort = baseNameShort{1};
 nameFmt = sprintf('%s_RS%%0%id', baseNameShort, nDigits);
+
+nSimus = length(iSimus);
 
 %% run the simulations
 for idx = 1:nSimus
@@ -75,7 +76,7 @@ for idx = 1:nSimus
 
     tStart = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
 
-    projectName = sprintf(nameFmt, iSimu);
+    projectName = string(sprintf(nameFmt, iSimu));
 
     % initialize the log file
     projectDir = fullfile(pwd(), 'RealisticSimulation', projectName);
@@ -97,27 +98,27 @@ for idx = 1:nSimus
     try
         arNewRealisticDesign(projectName, passOptions{:});
         success = true;
-        error{idx} = '';
+        error = "";
     catch ME
         report = getReport(ME);
         warning(report);
         % remove line breaks from error message (for csv file)
         success = false;
         report = strrep(report, newline, ' ');
-        error{idx} = report;
+        error = string(report);
     end
 
     diary("off");
     
     tEnd = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
     runtime = tEnd - tStart;
-    startTime = char(tStart);
-    endTime = char(tEnd);
-    duration = char(runtime);
+    startTime = string(tStart);
+    endTime = string(tEnd);
+    duration = string(runtime);
 
     % save the simulation report
     simuReport = table(projectName, success, startTime, endTime, duration, error);
-    writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%i.csv', startSeed)), "WriteMode", "append");
+    writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%010i.csv', startSeed)), "WriteMode", "append");
 end
 
 end
