@@ -23,10 +23,11 @@ catch ME
 end
 
 %% Decide which states to include (remove states that are constant in too many conditions)
-[~, ratioDynStates] = arDynCondStates(1, RSTemplate, 1);    % for each state, ration of experiments with dynamics
-qInclState = ratioDynStates >= options.inclDynRatio;                % include states with sufficient ratio of dynamic conditions
-inclStates = ar.model(m).x(qInclState); % names of included states
-nInclStates = length(inclStates);       % number of included states
+[qDynamicStates, ratioDynStates] = arDynCondStates(1, RSTemplate, 1);  % for each state, ration of experiments with dynamics
+qInclState = ratioDynStates >= options.inclDynRatio;  % include states with sufficient ratio of dynamic conditions
+inclStates = ar.model(m).x(qInclState);  % names of included states
+nInclStates = length(inclStates);  % number of included states
+nInclDynStatesMean = mean(sum(qDynamicStates(:, qInclState), 2));  % mean number of included, dynamic states per experiment
 
 if nInclStates == 0
     error('Only constant species found, no dynamics.')
@@ -40,8 +41,8 @@ load(fullfile(fileparts(mfilename('fullpath')), 'ObservableDraw.mat'), 'obs');
 
 % Draw number of all observables
 randRow = randi(length(obs.obs));               % random row in obs table
-nObs = round(obs.obs(randRow)*nInclStates);  % corresp. number of observables
-nObs = min(nObs, nInclStates);               % upper bound for nObs
+nObs = round(obs.obs(randRow)*nInclDynStatesMean);  % corresp. number of observables
+nObs = min(nObs, nInclStates);                  % upper bound for nObs
 nObs = max(nObs, 1);                            % lower bound for nObs
 
 % draw number of compounds and directly observed variables
@@ -249,7 +250,7 @@ if sum(addObs, "all") > 0
 end
 
 % check if every observable appears in at least on condition
-for iObs = 1:nObs
+for iObs = nObs:-1:1
     if sum(CondObsMatrix(:, iObs), "omitnan") == 0
         % observable does not appear in any condition
         % -> remove the observable
