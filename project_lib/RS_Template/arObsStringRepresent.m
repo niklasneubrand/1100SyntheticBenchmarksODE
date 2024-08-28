@@ -17,24 +17,26 @@ end
 switch setting
     case 'all'
         fy = unique(vertcat(ar.model(m).data(:).fy));
+        py = unique(vertcat(ar.model(m).data(:).py));
     case {'condition', 'cond', 'c'}
         fy = unique(vertcat(ar.model(m).data([ar.model(m).condition(index).dLink]).fy));
+        py = unique(vertcat(ar.model(m).data(index).py));
     case {'data', 'd'}
         fy = unique(vertcat(ar.model(m).data(index).fy));
+        py = unique(vertcat(ar.model(m).data(index).py));
     case {'expData'}
         qExpData = [ar.model(m).data(index).ndata]>0;
         fy = vertcat(ar.model(m).data(index).fy);
         fy = unique(fy(qExpData));
+        py = unique(vertcat(ar.model(m).data(index).py));
     case 'allExpData'
         qExpData = [ar.model(m).data(:).ndata]>0;
         fy = vertcat(ar.model(m).data(:).fy);
         fy = unique(fy(qExpData));
+        py = unique(vertcat(ar.model(m).data(:).py));
     otherwise
         error('Unknown setting. Use ''all'', ''condition'' or ''data''.')
 end
-
-% all observable parameters
-py = unique(vertcat(ar.model(m).data(:).py));
 
 xModel = ar.model(m).x;
 zModel = ar.model(m).z;

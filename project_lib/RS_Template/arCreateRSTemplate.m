@@ -77,6 +77,16 @@ RSTemplate.nTC = length(RSTemplate.timeCourse);
 RSTemplate.nDR = length(RSTemplate.doseResponse);
 RSTemplate.nExp = RSTemplate.nTC + RSTemplate.nDR;
 
+% add plot links
+for tc = 1:RSTemplate.nTC
+    pLink = arFindPlot(ar, {ar.model.data(RSTemplate.timeCourse(tc).dLink).name});
+    RSTemplate.timeCourse(tc).pLink = pLink;
+end
+for dr = 1:RSTemplate.nDR
+    pLink = arFindPlot(ar, {ar.model.data(RSTemplate.doseResponse(dr).dLink).name});
+    RSTemplate.doseResponse(dr).pLink = pLink;
+end
+
 %% analyze steady states and events
 RSTemplate.findInputs = ~isempty(ar.model.u);
 RSTemplate.useSteadyState = isfield(ar.model, 'ss_condition');
@@ -84,7 +94,37 @@ RSTemplate.useEvents = ar.config.useEvents && (RSTemplate.findInputs || RSTempla
 RSTemplate.steadyState = struct([]);
 if RSTemplate.useSteadyState
     for s = 1:length(ar.model.ss_condition)
-        RSTemplate.steadyState(s).source = ar.model.ss_condition(s).src;
+        
+        % c index of source in original ar struct
+        srcCond = ar.model.ss_condition(s).src;
+        
+        % identify the corresponding experiment
+        % start with tiome courses
+        srcTC = find([RSTemplate.timeCourse(:).cLink]==srcCond);
+        if length(srcTC) == 1
+            % exactly one TC found -> we are done
+            srcFind = sprintf('arFindCondition(ar, ''TC%i'')', srcTC);
+        elseif length(srcTC) > 1
+            warning('Multiple TC share a condition. This is not intended.')
+        elseif isempty(srcTC)
+            % the source is not a time course
+            % search the dose response experiments
+            for dr = 1:RSTemplate.nDR
+                srcDR = find([RSTemplate.doseResponse(dr).cLink]==srcCond);
+                if length(srcDR) == 1
+                    % exactly one DR found -> we are done
+                    response_parameter = RSTemplate.doseResponse(dr).response_parameter;
+                    value = RSTemplate.doseResponse(dr).values(srcDR);
+                    srcFind = sprintf('arFindCondition(ar, ''DR%i'', ''%s'', %i)', dr, response_parameter, value);
+                    break
+                elseif length(srcDR) > 1
+                    warning('Multiple DR share a condition. This is not intended.')
+                end
+            end
+        end
+        RSTemplate.steadyState(s).sourceFind = srcFind;
+
+        % set the target conditions
         targets = ar.model.ss_condition(s).ssLink;
         if length(targets) == length(ar.model.condition)
             targets = 'all';
@@ -93,13 +133,15 @@ if RSTemplate.useSteadyState
             targets = mat2str(targets);
             RSTemplate.steadyState(s).target = targets;
         end
+
+        % set the remaining input arguments for the function call
         ssIgnore = ar.model.ss_condition(s).ssIgnore;
         RSTemplate.steadyState(s).ignoreStates = ar.model.xNames(ssIgnore);
         RSTemplate.steadyState(s).tStart = ar.model.ss_condition(s).tstart;
 
         % create the function call for the setup file
-        setupCall = sprintf('arSteadyState(1, %i, ''%s'', {%s}, %i);', ...
-            RSTemplate.steadyState(s).source, ...
+        setupCall = sprintf('arSteadyState(1, %s, ''%s'', {%s}, %i);', ...
+            RSTemplate.steadyState(s).sourceFind, ...
             targets, ...
             strjoin(RSTemplate.steadyState(s).ignoreStates, ', '), ...
             RSTemplate.steadyState(s).tStart);
@@ -115,6 +157,9 @@ RSTemplate.customSettings = arConfigDiff2Default();
 if qCondObsMatrix
     RSTemplate = createCondObsMatrix(RSTemplate, qPlot);
 end
+
+%% sort the fields and subfields
+RSTemplate = sortStruct(RSTemplate);
 
 %% save the RSTemplate
 if qSave2File
