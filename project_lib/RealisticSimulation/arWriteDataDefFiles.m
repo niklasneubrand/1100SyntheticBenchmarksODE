@@ -81,7 +81,7 @@ for idx = 1:nExp
             end
             fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\t%s\n', ...
                     obsNames{iObs}, 'C', 'n/a', 'conc.', 0, ...
-                    obsStruct.idLog(iObs), expr);
+                    obsStruct.qLog(iObs), expr);
         end
     end
 
@@ -110,8 +110,10 @@ for idx = 1:nExp
         % check if observable should appear in this condition
         if ~isnan(obsStruct.paramIndices(idx, iObs))
             sd = obsStruct.stdObs(idx, iObs);
+            lb = floor(sd) - 2;
+            ub = ceil(sd) + 2;
             fprintf(fileID, 'sd%i_%s\t%.5g\t%i\t%i\t%i\t%i\n', ...
-                    obsStruct.paramIndices(idx, iObs), obsNames{iObs}, sd, 1, 1, floor(sd-2), ceil(sd+2));
+                    obsStruct.paramIndices(idx, iObs), obsNames{iObs}, sd, 1, 1, lb, ub);
         end
     end
     fprintf(fileID, '\n// Scale and offset parameters\n');
@@ -123,8 +125,11 @@ for idx = 1:nExp
                         obsStruct.paramIndices(idx, iObs), obsNames{iObs}, 0, 1, 1, -5, 5);
             end
             if any(obsStruct.idOffset==iObs)
+                offset = obsStruct.offsetVal(idx, iObs);
+                lb = floor(offset) - 2;
+                ub = ceil(offset) + 2;
                 fprintf(fileID, 'offset%i_%s\t%.5g\t%i\t%i\t%i\t%i\n', ...
-                    obsStruct.paramIndices(idx, iObs), obsNames{iObs}, 0, 1, 1, -5, 5);
+                    obsStruct.paramIndices(idx, iObs), obsNames{iObs}, offset, 1, 1, lb, ub);
             end
         end
     end
