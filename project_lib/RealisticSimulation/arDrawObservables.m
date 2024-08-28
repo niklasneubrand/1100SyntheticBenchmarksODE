@@ -18,8 +18,8 @@ rng(rngSeed);
 
 %% Simulate the model to get the dynamics
 try
-    arSimu(false, true, true);  % fine points
-    arSimu(false, false, true); % experimental
+    arSimu(true, true, true);  % fine points
+    arSimu(true, false, true); % experimental
 catch ME
     msgText = getReport(ME, "extended", "hyperlinks", "on");
     warning('Error in arSimu: %s', msgText)
@@ -239,8 +239,12 @@ if sum(addObs, "all") > 0
                 qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
 
             else
-                % no dynamics at all
-                error('No dynamics found in condition %d.', c)
+                % no observable or state shows dynamics in this experiment
+                % -> keep at least one constant observable
+                iAdd = find(removeConstObs(exp, :));
+                iAdd = iAdd(randi(length(iAdd)));
+                removeConstObs(exp, iAdd) = 0;
+                CondObsMatrix(exp, iAdd) = 1;
             end
             
         end
@@ -285,15 +289,15 @@ for iObs = 1:nObs
 end
 
 % draw indices for log, scale and offset
-idLog = binornd(1, pLog, 1, nObs);                      % logical for log scale (1) or lin scale (0)
+qLog = logical(binornd(1, pLog, 1, nObs));              % logical for log scale (1) or lin scale (0)
 idScale = sort(randperm(nObs, nScale));                 % scaled observables
 idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (subset of scaled)
 
 % remaining problem: if an observable can become zero or negative, we cannot use a log scale
 % exception if only zero at t=0
 for ex = 1:nExp
-    ySimuLog = ySimuAll{ex}(:, logical(idLog));
-    idLog(any(ySimuLog(1,:)<0) | any(ySimuLog(2:end,:)<=0, 1)) = 0;
+    ySimuLog = ySimuAll{ex}(:, qLog);
+    qLog(any(ySimuLog(1,:)<0) | any(ySimuLog(2:end,:)<=0, 1)) = false;
 end
 
 % draw the std of the error model for all observables from mixed-effect model
@@ -306,14 +310,14 @@ obsMean = NaN(nExp, nObs);
 for ex = 1:nExp
     ySimu = ySimuAll{ex};
     for iObs = 1:nObs
-        if CondObsMatrix(ex, iObs)>0 && ~idLog(iObs)
-            % observable is defined and not on log scale
+        if CondObsMatrix(ex, iObs)>0
+            % observable should be measured
             % -> calculate the mean magnitude of the observable
             %    to transform relative to absolute error
             traj = ySimu(isfinite(ySimu(:, iObs)), iObs);
             meanMagnitude = log10(mean(traj, 'omitnan'));
             obsMean(ex, iObs) = meanMagnitude;
-            if isfinite(meanMagnitude)
+            if ~qLog(iObs) && isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
                 % this would be the case if the observable is always zero or negative
                 stdObs(ex, iObs) = stdObs(ex, iObs) + meanMagnitude;
@@ -335,6 +339,13 @@ if add_c ~= ar.config.add_c
     ar.config.add_c = add_c;
 end
 
+% define true values for offset parameters
+% The offset should be 2 order of magnitude smaller than the mean magnitude.
+% This way the observable is not shifted too much.
+% And the offset does not interfere with calculation of the error model.
+offsetVal = nan(nExp, nObs);
+offsetVal(:, idOffset) = floor(obsMean(:, idOffset)-2);
+
 % bundel results in a struct
 obsStruct = struct();
 obsStruct.states = inclStates;
@@ -343,7 +354,7 @@ obsStruct.nDirect = nDirect;
 obsStruct.nComp = nComp;
 obsStruct.idDirect = idDirect;
 obsStruct.idComp = idComp;
-obsStruct.idLog = idLog;
+obsStruct.qLog = qLog;
 obsStruct.idScale = idScale;
 obsStruct.idOffset = idOffset;
 obsStruct.CondObsMatrix = CondObsMatrix;
@@ -351,9 +362,13 @@ obsStruct.paramIndices = paramIndices;
 obsStruct.stdObsRaw = stdObsRaw;
 obsStruct.stdObs = stdObs;
 obsStruct.obsMean = obsMean;
+obsStruct.offsetVal = offsetVal;
 
 % create observable names and expressions
 obsStruct = arCreateObsNames(obsStruct);
+
+% sort the fields
+obsStruct = sortStruct(obsStruct);
 
 fprintf('Observables drawn realistically.\n')
 
