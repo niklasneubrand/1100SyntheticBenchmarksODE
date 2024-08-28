@@ -10,18 +10,18 @@ end
 RSDefault = struct();
 
 % base model
-RSDefault.loadPattern = 'normal';
-RSDefault.includeCustomSettings = true;
+RSDefault.loadPattern = 'normal';           % pattern to load the model
+RSDefault.includeCustomSettings = true;     % copy custom settings from base model (or use default ar.config)
 
 % randomization
-RSDefault.rngSeed = 'shuffle';
-RSDefault.seedStep = 1000;
-RSDefault.qSetPars = true;
+RSDefault.rngSeed = 'shuffle';              % seed for random number generator (or 'shuffle' for random seed)
+RSDefault.seedStep = 1000;                  % in arManyRealisticDesigns, increase seed by this amount for next RS
+RSDefault.qSetPars = true;                  % set random parameters
 
 % observable options
-RSDefault.inclDynRatio = 0;
-RSDefault.replaceConstObs = 'all';
-RSDefault.qLogObs = true;
+RSDefault.inclDynRatio = 0;                 % threshold for dynamical ratio (0 to include all [even const] states)
+RSDefault.replaceConstObs = 'all';          % replace constant observables with new obs ('no', 'minimal', 'all')
+RSDefault.qLogObs = true;                   % draw randomly if observables are on log scale 
 
 
 %% Set missing fields to default values
