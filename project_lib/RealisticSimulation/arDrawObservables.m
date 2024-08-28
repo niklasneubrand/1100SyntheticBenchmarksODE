@@ -1,20 +1,17 @@
-function obsStruct = arDrawObservables(m, rngSeed, inclDynRatio, replaceConstObs, qLogObs, RSTemplate)
+function obsStruct = arDrawObservables(m, options, RSTemplate)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
 arguments
     m (1,1) double {mustBeInteger, mustBePositive} = 1
-    rngSeed (1,:) = 'shuffle'
-    inclDynRatio (1, 1) double = 0
-    replaceConstObs (1,:) char = 'all'
-    qLogObs (1,1) logical = false
+    options (1,1) struct = struct()
     RSTemplate (1,1) struct = arCreateRSTemplate()
 end
 
+%% initialize d2d and RS options
 global ar  %#ok<*GVMIS>
-
-%% Set random number generator
-rng(rngSeed);
+options = arSetDefaultRSOptions(options);
+rng(options.rngSeed);
 
 %% Simulate the model to get the dynamics
 try
@@ -27,7 +24,7 @@ end
 
 %% Decide which states to include (remove states that are constant in too many conditions)
 [~, ratioDynStates] = arDynCondStates(1, RSTemplate, 1);    % for each state, ration of experiments with dynamics
-qInclState = ratioDynStates >= inclDynRatio;                % include states with sufficient ratio of dynamic conditions
+qInclState = ratioDynStates >= options.inclDynRatio;                % include states with sufficient ratio of dynamic conditions
 inclStates = ar.model(m).x(qInclState); % names of included states
 nInclStates = length(inclStates);       % number of included states
 
@@ -82,7 +79,7 @@ if nComp > 0
 end
 
 % Draw ratio of variables on log scale
-if qLogObs
+if options.qLogObs
     randRow = randi(length(obs.logobs));  % random row in obs table
     pLog = obs.logobs(randRow);  % corresp. percentage of log observables
 else
@@ -170,7 +167,7 @@ qDynamicObs = checkCurveDynamics(ySimuAll, dynTol);
 
 
 % remove constant observables (if desired)
-switch replaceConstObs
+switch options.replaceConstObs
     case 'no'
         % keep all observables, no replacements
         removeConstObs = false(size(condObsMatrix));
@@ -189,7 +186,7 @@ switch replaceConstObs
         addObs = sum(removeConstObs, 2);
 
     otherwise
-        error('Unknown value for replaceConstObs: %s', replaceConstObs)
+        error('Unknown value for option replaceConstObs: %s', options.replaceConstObs)
 end
 CondObsMatrix(removeConstObs) = 0;
 

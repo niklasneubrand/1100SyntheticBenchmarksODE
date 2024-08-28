@@ -2,20 +2,26 @@ function arManyRealisticDesigns(iSimus, options)
 
 arguments
     iSimus (1,:) double {mustBeInteger, mustBePositive}
-    options.loadPattern (1,:) char = 'normal'
-    options.rngSeed (1,:) = 'shuffle'
-    options.seedStep (1,1) double = 1000
-    options.inclDynRatio (1,1) double = 0
-    options.replaceConstObs (1,:) char = 'all'
-    options.qLogObs (1,1) logical = true
-    options.qShareObsParams (1,1) logical = false
-    options.qSetPars (1,1) logical = true
-    options.includeCustomSettings (1,1) logical = true
+    % base model
+    options.loadPattern (1,:) char
+    options.includeCustomSettings (1,1) logical
+    % randomization
+    options.rngSeed (1,:)
+    options.seedStep (1,1) double
+    options.qSetPars (1,1) logical
+    % observable options
+    options.inclDynRatio (1,1) double
+    options.replaceConstObs (1,:) char
+    options.qLogObs (1,1) logical
 end
 
 global ar
 
-% set the random seed
+% set default options
+options = arSetDefaultRSOptions(options);
+
+% if seed is 'shuffle', draw a random seed and save it
+% this ensures both randomnes and reproducibility
 if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
     rng('shuffle');
     options.rngSeed = randi(2^32-1);

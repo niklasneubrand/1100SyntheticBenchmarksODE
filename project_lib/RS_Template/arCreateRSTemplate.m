@@ -321,8 +321,8 @@ if qPlot
     xlabel(t, 'observables');
 
     % save the figure
-    [~] = mkdir('RS_Template');
-    savefig(fullfile('RS_Template', 'condObsMatrix.fig'));
+    [~] = mkdir('RSTemplate');
+    savefig(fullfile('RSTemplate', 'condObsMatrix.fig'));
 end
 
 end

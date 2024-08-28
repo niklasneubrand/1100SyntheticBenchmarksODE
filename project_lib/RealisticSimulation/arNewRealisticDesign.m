@@ -2,28 +2,33 @@ function arNewRealisticDesign(projectName, options)
 
 arguments
     projectName (1,:) char
-    options.loadPattern (1,:) char = 'normal'
-    options.inclDynRatio (1,1) double = 0
-    options.replaceConstObs (1,:) char = 'all'
-    options.qLogObs (1,1) logical = true
-    options.qShareObsParams (1,1) logical = false
-    options.qSetPars (1,1) logical = true
-    options.includeCustomSettings (1,1) logical = false
-    options.rngSeed (1,:) = 'shuffle'
-    options.seedStep (1,:) double = 1000
+    % base model
+    options.loadPattern (1,:) char
+    options.includeCustomSettings (1,1) logical
+    % randomization
+    options.rngSeed (1,:)
+    options.seedStep (1,1) double
+    options.qSetPars (1,1) logical
+    % observable options
+    options.inclDynRatio (1,1) double
+    options.replaceConstObs (1,:) char
+    options.qLogObs (1,1) logical
 end
 
-global ar  %#ok<*GVMIS>
+% set default options
+options = arSetDefaultRSOptions(options);
 
-%% initilize d2d
-arInit();
-
-%% Setup the random number generator
-if strcmp(options.rngSeed, 'shuffle')
-    rng('shuffle')
+% if seed is 'shuffle', draw a random seed and save it
+% this ensures both randomnes and reproducibility
+if ischar(options.rngSeed) && strcmp(options.rngSeed, 'shuffle')
+    rng('shuffle');
     options.rngSeed = randi(2^32-1);
 end
 rng(options.rngSeed);
+
+%% initilize d2d
+global ar  %#ok<*GVMIS>
+arInit();
 
 %% save the options for reproducibility
 projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
@@ -71,8 +76,7 @@ try
 catch
     RSTemplate = arCreateRSTemplate(true, true, true);
 end
-obsStruct = arDrawObservables(1, options.rngSeed, ...
-    options.inclDynRatio, options.replaceConstObs, options.qLogObs, RSTemplate);
+obsStruct = arDrawObservables(1, options, RSTemplate);
 arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
     obsStruct, RSTemplate, 'auxillary');
 arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate);
@@ -92,7 +96,6 @@ movefile(fullfile('Results', resultsFolder), ...
 
 %% Set up the new model
 oldPath = cd(projectPath);
-
 try
     fprintf('Compiling the new model structure.\n')
     SetupAuxillary;
