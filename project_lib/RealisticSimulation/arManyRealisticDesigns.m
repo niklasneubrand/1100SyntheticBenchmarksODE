@@ -66,16 +66,6 @@ baseNameShort = split(ar.info.name, '_');
 baseNameShort = baseNameShort{1};
 nameFmt = sprintf('%s_RS%%0%id', baseNameShort, nDigits);
 
-% collect statistics about simulation success
-projectNames = arrayfun(@(x) sprintf(nameFmt, x), ...
-    iSimus(:), 'UniformOutput', false);
-nSimus = length(iSimus);
-success = false(nSimus, 1);
-error = cell(nSimus, 1);
-startTime = cell(nSimus, 1);
-endTime = cell(nSimus, 1);
-duration = cell(nSimus, 1);
-
 %% run the simulations
 for idx = 1:nSimus
     % explanation of indices:
@@ -106,12 +96,13 @@ for idx = 1:nSimus
     % run the realistic simulation
     try
         arNewRealisticDesign(projectName, passOptions{:});
-        success(idx) = true;
+        success = true;
         error{idx} = '';
     catch ME
         report = getReport(ME);
         warning(report);
         % remove line breaks from error message (for csv file)
+        success = false;
         report = strrep(report, newline, ' ');
         error{idx} = report;
     end
@@ -120,13 +111,13 @@ for idx = 1:nSimus
     
     tEnd = datetime('now', 'Format', 'yyyy-MM-dd HH:mm:ss');
     runtime = tEnd - tStart;
-    startTime{idx} = char(tStart);
-    endTime{idx} = char(tEnd);
-    duration{idx} = char(runtime);
-end
+    startTime = char(tStart);
+    endTime = char(tEnd);
+    duration = char(runtime);
 
-% save the simulation report
-simuReport = table(projectNames, success, startTime, endTime, duration, error);
-writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%i.csv', startSeed)), "WriteMode", "append");
+    % save the simulation report
+    simuReport = table(projectName, success, startTime, endTime, duration, error);
+    writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%i.csv', startSeed)), "WriteMode", "append");
+end
 
 end
