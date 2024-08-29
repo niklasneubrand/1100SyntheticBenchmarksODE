@@ -21,9 +21,15 @@ arSetPars('SFK_inhibition_ratio',-1,1,1,-10,0)
 arSetPars({'ApoER2_Dab1_act','init_ApoER2_Dab1'},[6 0],[2 2],ones(1,2),[-2 -2],[7 3]);
 
 %Use standard deviations from data sheet
-ar.config.fiterrors=-1;
-ar.config.ploterrors=1;
-ar.config.maxsteps = 1e5;  % original 1e4
+ar.config.fiterrors = -1;
+ar.config.ploterrors = 1;
+ar.config.maxsteps = 1e5;   % original 1e4
+
+% the order of magnitude for states X varies largely
+% this causes problems for solving the states with small values
+% -> use vector tolerances
+ar.config.atolV = true;
+ar.config.atolV_Sens = true;
 
 arSetParsPattern('sd_',-1,0,1,-5,3)
 arLoadPars('BestFit')
