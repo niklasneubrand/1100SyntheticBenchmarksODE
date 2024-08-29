@@ -182,7 +182,7 @@ for d = 1:nData
         dat.ystd = nan(size(dat.yExp));
         
         figuresPath = fullfile(pwd(), 'Auxillary');
-        mkdir(figuresPath);
+        [~] = mkdir(figuresPath);
         
         try
             figFile = fullfile(figuresPath, sprintf('rtfFit_TC%d_%s', tc, yname{iObs}));
