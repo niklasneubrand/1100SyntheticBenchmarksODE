@@ -35,7 +35,16 @@ for m = 1:length(ar.model)
     arLink();
 
     % Siumlate model dynamics for RTF fits
-    arSimu(true, true, true);
+    [simuSuccess, configSuccess, errReport] = arSimuMultiTries(true, true, true);
+    if simuSuccess
+        % replace the previous configs by the successful configs
+        configs = fieldnames(configSuccess);
+        for i = 1:length(configs)
+            ar.config.(configs{i}) = configSuccess.(configs{i});
+        end
+    else
+        error('arSimuMultiTries failed: %s.', errReport)
+    end
        
     % Convert orders of magnitude (be compatible with RTF param bounds)
     nTC = sum([ar.model(m).data.doseresponse] == 0);

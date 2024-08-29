@@ -3,7 +3,17 @@ function obsStruct = arUpdateObsParams(m, obsStruct)
 global ar
 
 % simulate the model at new time points
-arSimu(true, false, true)
+[simuSuccess, configSuccess, errReport] = arSimuMultiTries(true, false, true);
+if simuSuccess
+    % replace the previous configs by the successful configs
+    configs = fieldnames(configSuccess);
+    for i = 1:length(configs)
+        ar.config.(configs{i}) = configSuccess.(configs{i});
+    end
+else
+    error('arSimuMultiTries failed: %s.', errReport)
+end
+       
 
 % get the number of observables and conditions
 RSTemplateNew = arCreateRSTemplate(false, false, false);

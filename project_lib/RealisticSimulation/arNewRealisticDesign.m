@@ -76,7 +76,7 @@ try
 catch
     RSTemplate = arCreateRSTemplate(true, true, true);
 end
-obsStruct = arDrawObservables(1, options, RSTemplate);
+[obsStruct, RSTemplate] = arDrawObservables(1, options, RSTemplate);
 arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...
     obsStruct, RSTemplate, 'auxillary');
 arWriteAuxillaryData(projectName, projectPath, obsStruct, RSTemplate);
