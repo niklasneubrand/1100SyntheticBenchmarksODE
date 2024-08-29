@@ -81,7 +81,7 @@ obsStruct.offsetVal(:, obsStruct.idOffset) = floor(obsStruct.obsMean(:, obsStruc
 % pdate values in ar struct
 for ex = 1:nExp
     for iObs = 1:nObsTotal
-        if ismember(iObs, obsStruct.idOffset)
+        if obsStruct.CondObsMatrix(ex, iObs)>0 && ismember(iObs, obsStruct.idOffset)
             pName = sprintf('offset%i_%s', obsStruct.paramIndices(ex, iObs), obsStruct.obsNames{iObs});
             val = obsStruct.offsetVal(ex, iObs);
             lb = floor(val) - 2;
