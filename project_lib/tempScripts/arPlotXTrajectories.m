@@ -3,7 +3,7 @@ function arPlotXTrajectories()
 global ar
 
 % simulate model on fine grid
-arSimu(0,1,1);
+arSimu(1,1,1);
 
 
 global ar

@@ -35,7 +35,7 @@ for m = 1:length(ar.model)
     arLink();
 
     % Siumlate model dynamics for RTF fits
-    arSimu(false, true, true);
+    arSimu(true, true, true);
        
     % Convert orders of magnitude (be compatible with RTF param bounds)
     nTC = sum([ar.model(m).data.doseresponse] == 0);

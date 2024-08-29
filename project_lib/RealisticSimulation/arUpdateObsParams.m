@@ -3,7 +3,7 @@ function obsStruct = arUpdateObsParams(m, obsStruct)
 global ar
 
 % simulate the model at new time points
-arSimu(false, false, true)
+arSimu(true, false, true)
 
 % get the number of observables and conditions
 RSTemplateNew = arCreateRSTemplate(false, false, false);
