@@ -56,6 +56,9 @@ for d = 1:nData
         qResponse = strcmp(ar.model.data(d).pold, response_parameter);
         RSTemplate.doseResponse(dr).values = double(arSym(ar.model.data(d).fp(qResponse)));
 
+        % add the observable names (make distinction of different DRs easier)
+        RSTemplate.doseResponse(dr).yNames = ar.model.data(d).yNames;
+
         % get the time point(s)
         tExp = ar.model.data(d).tExp;
         RSTemplate.doseResponse(dr).tExp = tExp(1);
@@ -213,8 +216,9 @@ oldDoseResponse = RSTemplate.doseResponse;
 for dr = 1:length(oldDoseResponse)
     response = oldDoseResponse(dr).response_parameter;
     tExp = oldDoseResponse(dr).tExp;
+    obsNames = strjoin(oldDoseResponse(dr).yNames, '-');
     condRepStr = [oldDoseResponse(dr).condReplaceRest{:}];
-    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s', response, tExp, condRepStr);
+    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s_%s', response, tExp, obsNames, condRepStr);
 end
 
 % find unique DRs
