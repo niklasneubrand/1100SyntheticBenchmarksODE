@@ -1,9 +1,12 @@
-function [simuSuccess, configSuccess, errReport] = arSimuMultiTries(sensi, fine, dynamics)
+function [simuSuccess, configSuccess, errReport] = arSimuMultiTries(sensi, fine, dynamics, options)
 
 arguments
     sensi (1,:) logical = true              % by default: true
     fine (1,:) logical = [true, false]      % by default: simulate boths
     dynamics (1,:) logical = true           % by default: simulate dynamics
+    options.nCVRestart (1,1) double         % by default: use value from ar.config (if not set, use 10)
+    options.tolFactor (1,1) double = 2      % by default: increase tolerances by factor of 2
+    options.stepsFactor (1,1) double = 2    % by default: increase maxsteps by 20%
 end
 
 global ar
@@ -17,11 +20,16 @@ configOld.atolV_Sens = ar.config.atolV_Sens;
 configOld.maxsteps = ar.config.maxsteps;
 qPositiveX = {ar.model(:).qPositiveX};
 
-if(~isfield(ar.config, 'nCVRestart') || isnan(ar.config.nCVRestart))
-    nCVRestart = 10;
-else
+
+%% set options for heuristic methods
+if isfield(options, 'nCVRestart')
+    nCVRestart = options.nCVRestart;
+elseif isfield(ar.config, 'nCVRestart') || ~isnan(ar.config.nCVRestart)
     nCVRestart = ar.config.nCVRestart;
+else
+    nCVRestart = 10;
 end
+
 
 % flags for heuristic methods
 allowNegativeX = 0;
@@ -111,15 +119,16 @@ for iTry = 1:nCVRestart
             end
             if increaseMaxsteps
                 % why 20%?
-                ar.config.maxsteps = (1.2)*ar.config.maxsteps;
-                arFprintf(1, 'Increase maxsteps by 20%% (now: %0.2e).\n', ar.config.maxsteps)
+                ar.config.maxsteps = options.stepsFactor*ar.config.maxsteps;
+                arFprintf(1, 'Increase maxsteps by factor %3.2f (now: %0.2e).\n', ...
+                    options.stepsFactor, ar.config.maxsteps)
             end
             if increaseTols
                 % why 5%?
-                ar.config.atol = (1.05)*ar.config.atol;
-                ar.config.rtol = (1.05)*ar.config.rtol;
-                arFprintf(1, 'Increase tolerances by 5%% (now: atol=%0.2e, rtol=%0.2e).\n', ...
-                    ar.config.atol, ar.config.rtol)
+                ar.config.atol = options.tolFactor*ar.config.atol;
+                ar.config.rtol = options.tolFactor*ar.config.rtol;
+                arFprintf(1, 'Increase tolerances by factor %3.2f (now: atol=%0.2e, rtol=%0.2e).\n', ...
+                    options.tolFactor, ar.config.atol, ar.config.rtol)
             end
             
         end

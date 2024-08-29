@@ -14,9 +14,7 @@ arInit();
 
 % create models folder
 modelPath = fullfile(ar.info.path, 'Models');
-if ~exist(modelPath, 'dir')
-    mkdir(modelPath)
-end
+[~] = mkdir(modelPath);
 
 % add the transient function library to the path
 rtfPath = fullfile(ar.info.ar_path, ...

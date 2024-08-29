@@ -32,7 +32,7 @@ arInit();
 
 %% save the options for reproducibility
 projectPath = fullfile(pwd(), 'RealisticSimulation', projectName);
-mkdir(fullfile(projectPath, 'Auxillary'));
+[~] = mkdir(fullfile(projectPath, 'Auxillary'));
 save(fullfile(projectPath, 'Auxillary', sprintf('options_%s', projectName)), 'options');
 
 %% Load benchmark model

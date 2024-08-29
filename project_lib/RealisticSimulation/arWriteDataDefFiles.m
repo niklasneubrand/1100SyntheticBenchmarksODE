@@ -20,9 +20,7 @@ obsExprs = obsStruct.obsExprs;
 
 
 % create data folder
-if ~exist(fullfile(projectPath, 'Data'), 'dir')
-    mkdir(fullfile(projectPath, 'Data'))
-end
+[~] = mkdir(fullfile(projectPath, 'Data'));
 
 
 % write def files for all time courses
