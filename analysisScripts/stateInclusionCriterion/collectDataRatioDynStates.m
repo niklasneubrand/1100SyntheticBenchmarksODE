@@ -76,8 +76,8 @@ function [qDynamicCurves, ratioDynCurves] = arDynCondStates(m, RSTemplate, qSimu
     %% simulate the model to get the dynamics
     if qSimu
         try
-            arSimu(false, true, true)   % fine dynamics for time courses
-            arSimu(false, false, true)  % tExp for dose responses curves
+            arSimu(true, true, true)   % fine dynamics for time courses
+            arSimu(true, false, true)  % tExp for dose responses curves
         catch ME
             msgText = getReport(ME, "extended", "hyperlinks", "on");
             warning('Error in arSimu: %s', msgText)

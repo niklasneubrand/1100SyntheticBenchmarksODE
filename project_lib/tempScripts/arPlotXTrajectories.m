@@ -3,7 +3,11 @@ function arPlotXTrajectories()
 global ar
 
 % simulate model on fine grid
-arSimu(1,1,1);
+% simulate the model at new time points
+[simuSuccess, ~, errReport] = arSimuMultiTries(true, true, true);
+if ~simuSuccess
+    error('arSimuMultiTries failed: %s.', errReport)
+end
 
 
 global ar

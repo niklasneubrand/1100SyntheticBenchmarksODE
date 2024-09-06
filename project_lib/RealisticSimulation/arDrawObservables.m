@@ -1,4 +1,4 @@
-function obsStruct = arDrawObservables(m, options, RSTemplate)
+function [obsStruct, RSTemplate] = arDrawObservables(m, options, RSTemplate)
 %OBSERVABLES Define Observables
 %   Detailed explanation goes here
 
@@ -13,17 +13,23 @@ global ar  %#ok<*GVMIS>
 options = arSetDefaultRSOptions(options);
 rng(options.rngSeed);
 
-%% Simulate the model to get the dynamics
-try
-    arSimu(true, true, true);  % fine points
-    arSimu(true, false, true); % experimental
-catch ME
-    msgText = getReport(ME, "extended", "hyperlinks", "on");
-    warning('Error in arSimu: %s', msgText)
+%% Simulate the model to get the dynamics (fine and exp time points)
+[simuSuccess, configSuccess, errReport] = arSimuMultiTries(true, [true, false], true);
+if simuSuccess
+    % replace the previous configs by the successful configs
+    configs = fieldnames(configSuccess);
+    for i = 1:length(configs)
+        ar.config.(configs{i}) = configSuccess.(configs{i});
+    end
+    % update custom configs in RSTemplate
+    newRStemplate = arCreateRSTemplate(false, false, false);
+    RSTemplate.customSettings = newRStemplate.customSettings;
+else
+    error('arSimuMultiTries failed: %s.', errReport)
 end
 
 %% Decide which states to include (remove states that are constant in too many conditions)
-[qDynamicStates, ratioDynStates] = arDynCondStates(1, RSTemplate, 1);  % for each state, ration of experiments with dynamics
+[qDynamicStates, ratioDynStates] = arDynCondStates(1, RSTemplate);  % for each state, ration of experiments with dynamics
 qInclState = ratioDynStates >= options.inclDynRatio;  % include states with sufficient ratio of dynamic conditions
 inclStates = ar.model(m).x(qInclState);  % names of included states
 nInclStates = length(inclStates);  % number of included states
@@ -238,10 +244,18 @@ if sum(addObs, "all") > 0
 
             else
                 % no observable or state shows dynamics in this experiment
-                % -> keep at least one constant observable
-                iAdd = find(removeConstObs(exp, :));
-                iAdd = iAdd(randi(length(iAdd)));
-                removeConstObs(exp, iAdd) = 0;
+                % -> add a constant observable
+                if any(removeConstObs(exp, :))
+                    % add again one of the previously removed observables
+                    iAdd = find(removeConstObs(exp, :));
+                    iAdd = iAdd(randi(length(iAdd)));
+                    removeConstObs(exp, iAdd) = 0;
+                else
+                    % no observables has been removed before but addOneMore
+                    % is true, i.e. exp had no observables in the first
+                    % place -> add a random preexisting observable
+                    iAdd = randi(nObs);
+                end
                 CondObsMatrix(exp, iAdd) = 1;
             end
             
@@ -327,7 +341,7 @@ end
 
 % check if we have to increase the add_c parameter
 minStdObs = min(stdObs(:));
-add_c = -2.0*log(minStdObs);            % exact relation for required add_c
+add_c = -2.0*log(10^minStdObs);            % exact relation for required add_c
 add_c = add_c + 10;                     % add some margin (corresponding to 5 orders of magnitude in std)
 add_c = ceil(add_c/10)*10;              % round to next 10 (to get a nice number)
 add_c = min(add_c, 100);                % maximum value for add_c
@@ -335,6 +349,7 @@ add_c = max(add_c, ar.config.add_c);    % minimum value for add_c
 
 if add_c ~= ar.config.add_c
     ar.config.add_c = add_c;
+    RSTemplate.customSettings.add_c = add_c; % needed in arCreateRealisticProject
 end
 
 % define true values for offset parameters
@@ -420,13 +435,12 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [qDynamicCurves, ratioDynCurves] = arDynCondStates(m, RSTemplate, qSimu, dynTol)
+function [qDynamicCurves, ratioDynCurves] = arDynCondStates(m, RSTemplate, dynTol)
 % arDynCondStates  Check which curves show dynamics in a model condition.
 %
 %  Inputs:
 %   m           index of the model in the ar struct
 %   RSTemplate  struct with information about TC and DR experiments (see arCreateRSTemplate)
-%   qSimu       logical flag to simulate the model before checking the dynamics
 %   dynTol      tolerance for the dynamics check
 %
 %  Outputs:
@@ -442,25 +456,12 @@ function [qDynamicCurves, ratioDynCurves] = arDynCondStates(m, RSTemplate, qSimu
 arguments
     m (1,1) double {mustBeInteger, mustBePositive} = 1
     RSTemplate (1,1) struct = arCreateRSTemplate(true, false, false)
-    qSimu (1,1) logical = false
     dynTol (1,1) double {mustBePositive} = 1e-8
 end
 
 global ar
 
-%% simulate the model to get the dynamics
-if qSimu
-    try
-        arSimu(true, true, true)   % fine dynamics for time courses
-        arSimu(true, false, true)  % tExp for dose responses curves
-    catch ME
-        msgText = getReport(ME, "extended", "hyperlinks", "on");
-        warning('Error in arSimu: %s', msgText)
-    end
-end
-
 %% collect the state curves predicted by the model for each experiment
-
 curvesAll = cell(1, RSTemplate.nExp);
 % time course data (simulated time response)
 for tc = 1:RSTemplate.nTC

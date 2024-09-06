@@ -5,10 +5,7 @@ if ~exist('folder','var') || isempty(folder)
 end
 
 if iscell(fit)
-    if ~isdir(folder)
-        mkdir(folder);
-    end
-    
+    [~] = mkdir(folder);
     for i=1:length(fit)
         try
             plotFitTransient(fit{i});

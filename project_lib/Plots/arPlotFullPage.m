@@ -11,7 +11,7 @@ global ar
 % Create all the plots
 ar.model(m).qPlotYs(:) = 1;
 ar.config.useNewPlots = 1;
-arPlot();
+arPlot([],[],[],true);
 
 if length(ar.model(m).plot) >= 20 || sum([ar.model(m).plot(:).ny]) >= 100
     layout = 'flow';

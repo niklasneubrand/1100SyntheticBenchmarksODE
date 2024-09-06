@@ -32,7 +32,7 @@ seedStep = options.seedStep;
 
 % save the input arguments
 infoDir = fullfile(pwd(), 'RealisticSimulation', '0_info_manyRS');
-mkdir(infoDir);
+[~] = mkdir(infoDir);
 save(fullfile(infoDir, sprintf('options_manyRS_%i', startSeed)), 'options');
 
 %% compile the base model (if necessary)
@@ -80,7 +80,7 @@ for idx = 1:nSimus
 
     % initialize the log file
     projectDir = fullfile(pwd(), 'RealisticSimulation', projectName);
-    mkdir(projectDir);
+    [~] = mkdir(projectDir);
     logFile = fullfile(projectDir, sprintf([nameFmt '.log'], iSimu));
     diary(logFile);
 

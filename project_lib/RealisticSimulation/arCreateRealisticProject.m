@@ -2,10 +2,10 @@ function arCreateRealisticProject(projectName, projectPath, rngSeed, includeCust
 
 global ar  %#ok<*GVMIS>
 
-mkdir(projectPath);
-mkdir(fullfile(projectPath, 'Models'));
-mkdir(fullfile(projectPath, 'Data'));
-mkdir(fullfile(projectPath, 'Auxillary'));
+[~] = mkdir(projectPath);
+[~] = mkdir(fullfile(projectPath, 'Models'));
+[~] = mkdir(fullfile(projectPath, 'Data'));
+[~] = mkdir(fullfile(projectPath, 'Auxillary'));
 
 % copy model *.def file
 modelfile = fullfile(ar.model.path, ...

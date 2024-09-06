@@ -1,5 +1,5 @@
-function newParams = arRealisticParams(amplitude, distribution, rngSeed)
-% ARREALISTICPARAMS  sets the dynamic parameters to realistic values
+function [newParams, factors] = arRandomRealisticParams(amplitude, distribution, rngSeed)
+% ARRANDOMREALISTICPAREMS  sets the dynamic parameters to realistic values
 %
 %  Description:
 %   * The original parameters are multiplied with a random factor.
@@ -22,6 +22,7 @@ function newParams = arRealisticParams(amplitude, distribution, rngSeed)
 %                   i.e., exponent is normally distr. with mean 0 and std log10(amplitude)
 %  Outputs:
 %    newParams      new parameters
+%    factors        factors used for the randomization
 % 
 
 arguments
@@ -47,17 +48,13 @@ end
 %% calculate new parameters
 newParams = ar.p;
 
+%% which parameters to modify
+qRandomize = ar.qDynamic==1 & ar.qFit==1;           % dynamic and fitted
+qRandomize = qRandomize & (ar.qLog10==1 | ar.p~=0); % not vanishing
+factors(~qRandomize) = 1;
+
 % apply factors to log10 and linear parameters
-newParams(logical(ar.qLog10)) = newParams(logical(ar.qLog10)) + log10(factors(logical(ar.qLog10)));
-newParams(~ar.qLog10) = newParams(~ar.qLog10) .* factors(~ar.qLog10);
-
-% do not modify vanishing parameters
-newParams(~ar.qLog10 & ar.p==0) = 0;
-
-% only modify dynamic parameters
-newParams(~ar.qDynamic) = ar.p(~ar.qDynamic);
-
-% only modify fitted parameters
-newParams(~ar.qFit) = ar.p(~ar.qFit);
+newParams(ar.qLog10==1) = newParams(ar.qLog10==1) + log10(factors(ar.qLog10==1));
+newParams(ar.qLog10==0) = newParams(ar.qLog10==0) .* factors(ar.qLog10==0);
 
 end
