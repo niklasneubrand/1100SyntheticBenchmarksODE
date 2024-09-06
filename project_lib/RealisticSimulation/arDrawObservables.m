@@ -41,7 +41,7 @@ elseif nInclStates < 5
     warning('Only found %d dynamic species. A minimum of 5 is required.', nInclStates)
 end
 
-%% Draw observables for main condition
+%% Draw observable composition
 % load the table with the statistical information about the observables
 load(fullfile(fileparts(mfilename('fullpath')), 'ObservableDraw.mat'), 'obs');
 
@@ -85,28 +85,7 @@ if nComp > 0
     end
 end
 
-% Draw ratio of variables on log scale
-if options.qLogObs
-    randRow = randi(length(obs.logobs));  % random row in obs table
-    pLog = obs.logobs(randRow);  % corresp. percentage of log observables
-else
-    pLog = 0;
-end
-
-% Draw how many variables have scale and offset
-if pLog > 0.5
-    % over 50% of observables are on log scale
-    % -> draw number of scale, offset and init as if all were on log scale
-    nScale = round(obs.scalog(randi(length(obs.scalog)))*nObs);
-    nOffset = round(obs.offlogrel(randi(length(obs.offlogrel)))*nScale);
-else
-    % less than 50% of observables are on log scale
-    % -> draw number of scale, offset and init as if all were on non-log scale
-    nScale = round(obs.scanonlog(randi(length(obs.scanonlog)))*nObs);
-    nOffset = round(obs.offnonlogrel(randi(length(obs.offnonlogrel)))*nScale);
-end
-
-% get the simulated dynamics for the observables
+%% get the simulated dynamics for the observables
 nTC = RSTemplate.nTC;
 nDR = RSTemplate.nDR;
 nExp = nTC + nDR;
@@ -300,6 +279,30 @@ for iObs = 1:nObs
     paramIndices(column==1, iObs) = 1:nParams;
 end
 
+
+%% Consider Parameters (log, scale, offset, init) for Observables
+
+% Draw ratio of variables on log scale
+if options.qLogObs
+    randRow = randi(length(obs.logobs));  % random row in obs table
+    pLog = obs.logobs(randRow);  % corresp. percentage of log observables
+else
+    pLog = 0;
+end
+
+% Draw how many variables have scale and offset
+if pLog > 0.5
+    % over 50% of observables are on log scale
+    % -> draw number of scale, offset and init as if all were on log scale
+    nScale = round(obs.scalog(randi(length(obs.scalog)))*nObs);
+    nOffset = round(obs.offlogrel(randi(length(obs.offlogrel)))*nScale);
+else
+    % less than 50% of observables are on log scale
+    % -> draw number of scale, offset and init as if all were on non-log scale
+    nScale = round(obs.scanonlog(randi(length(obs.scanonlog)))*nObs);
+    nOffset = round(obs.offnonlogrel(randi(length(obs.offnonlogrel)))*nScale);
+end
+
 % draw indices for log, scale and offset
 qLog = logical(binornd(1, pLog, 1, nObs));              % logical for log scale (1) or lin scale (0)
 idScale = sort(randperm(nObs, nScale));                 % scaled observables
@@ -359,7 +362,7 @@ end
 offsetVal = nan(nExp, nObs);
 offsetVal(:, idOffset) = floor(obsMean(:, idOffset)-2);
 
-% bundel results in a struct
+%% bundel results in a struct
 obsStruct = struct();
 obsStruct.states = inclStates;
 obsStruct.nObs = nObs;
