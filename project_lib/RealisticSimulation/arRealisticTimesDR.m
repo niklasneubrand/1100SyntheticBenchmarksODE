@@ -53,9 +53,17 @@ for dr = 1:templateNew.nDR
         tDR = repmat(tExp, nReplica(id), 1);
         ar.model.data(d(id)).tExp = tDR;
 
-        nObs = length(ar.model.data(d(id)).yExp);
-        ar.model.data(d(id)).yExp = rand(nReplica(id), nObs);
-        ar.model.data(d(id)).yExpStd = nan(nReplica(id), nObs);
+        nObs = length(ar.model.data(d(id)).y);
+        ySize = [nReplica(id), nObs];
+
+        ar.model.data(d(id)).yExp = rand(ySize);
+        ar.model.data(d(id)).yExpSimu = nan(ySize);
+        
+        ar.model.data(d(id)).yExpStd = nan(ySize);
+        ar.model.data(d(id)).ystdExpSimu = nan(ySize);
+
+        ar.model.data(d(id)).yExpRaw = rand(ySize);
+        ar.model.data(d(id)).yExpStdRaw = nan(ySize);
     end
 
 end
