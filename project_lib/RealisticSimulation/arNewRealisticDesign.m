@@ -55,16 +55,11 @@ ar.model.path = fullfile(pwd(), 'Models');
 
 %% Modify the model parameters and bounds
 if options.qSetPars
-    % multiply parameters by random factor in [1/2, 2]
-    newParams = arRealisticParams(2, 'log-uniform', options.rngSeed);
-    ar.p = round(newParams, 3, 'significant');
-    arFprintf(1, 'Parameters randomized realistically.\n')
+    arSetRealisticParams(projectPath, options.rngSeed);
 else
     % use the parameters from the loaded model
-    arFprintf(1, 'Use parameters from loaded model.\n')  
+    arFprintf(1, 'Use parameters from loaded model.\n')
 end
-% set bounds to +-3 orders of magnitude around the parameters
-arSetParsBounds(3);
 
 %% Set Conditions/Observables
 auxFilesDir = fullfile(projectPath, "Auxillary");

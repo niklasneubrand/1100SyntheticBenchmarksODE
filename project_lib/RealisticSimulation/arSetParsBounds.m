@@ -32,7 +32,5 @@ end
 % round to nearest integers
 ar.lb = floor(ar.lb);
 ar.ub = ceil(ar.ub);
-
-arFprintf(2,'Parameter bounds updated realistically.\n');
     
 end
