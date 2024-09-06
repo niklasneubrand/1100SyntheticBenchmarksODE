@@ -244,10 +244,18 @@ if sum(addObs, "all") > 0
 
             else
                 % no observable or state shows dynamics in this experiment
-                % -> keep at least one constant observable
-                iAdd = find(removeConstObs(exp, :));
-                iAdd = iAdd(randi(length(iAdd)));
-                removeConstObs(exp, iAdd) = 0;
+                % -> add a constant observable
+                if any(removeConstObs(exp, :))
+                    % add again one of the previously removed observables
+                    iAdd = find(removeConstObs(exp, :));
+                    iAdd = iAdd(randi(length(iAdd)));
+                    removeConstObs(exp, iAdd) = 0;
+                else
+                    % no observables has been removed before but addOneMore
+                    % is true, i.e. exp had no observables in the first
+                    % place -> add a random preexisting observable
+                    iAdd = randi(nObs);
+                end
                 CondObsMatrix(exp, iAdd) = 1;
             end
             
