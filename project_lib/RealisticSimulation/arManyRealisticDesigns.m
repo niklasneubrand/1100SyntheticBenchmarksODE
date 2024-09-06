@@ -84,7 +84,7 @@ for idx = 1:nSimus
     logFile = fullfile(projectDir, sprintf([nameFmt '.log'], iSimu));
     diary(logFile);
 
-    options.rngSeed = startSeed + seedStep*(iSimu - 1);
+    options.rngSeed = startSeed + seedStep*(iSimu);
 
     % reshape the options for handing them to "arNewRealisticDesign"
     optionNames = fieldnames(options);
