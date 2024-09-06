@@ -16,6 +16,11 @@ end
 
 global ar
 
+%% remove points at negative times (if any)
+ar.model(m).data(d).tFine(ar.model(m).data(d).tFine < 0) = nan;
+ar.model(m).data(d).yFineSimu(ar.model(m).data(d).tFine < 0, :) = nan;
+
+
 %% rescale y values
 y = ar.model(m).data(d).yFineSimu;
 converty = ones(1, size(y, 2));
