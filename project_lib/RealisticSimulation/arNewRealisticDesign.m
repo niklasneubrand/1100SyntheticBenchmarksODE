@@ -5,6 +5,7 @@ arguments
     % base model
     options.loadPattern (1,:) char
     options.includeCustomSettings (1,1) logical
+    options.calculateRSTemplate (1,1) logical
     % randomization
     options.rngSeed (1,:)
     options.seedStep (1,1) double
