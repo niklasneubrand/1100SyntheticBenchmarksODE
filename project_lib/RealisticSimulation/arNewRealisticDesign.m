@@ -63,13 +63,18 @@ end
 
 %% Set Conditions/Observables
 auxFilesDir = fullfile(projectPath, "Auxillary");
-try
-    load(fullfile("RSTemplate", "RSTemplate.mat"), "RSTemplate");
-    if ~isfield(RSTemplate, 'condObsMatrix')
-        error('RSTemplate is not complete. Calculate it again.')
-    end
-catch
+if options.calculateRSTemplate
     RSTemplate = arCreateRSTemplate(true, true, true);
+else
+    try
+        load(fullfile("RSTemplate", "RSTemplate.mat"), "RSTemplate");
+        if ~isfield(RSTemplate, 'condObsMatrix')
+            error('RSTemplate is not complete. Calculate it again.')
+        end
+    catch
+        warning('RSTemplate not found or incomplete. Calculating it again.')
+        RSTemplate = arCreateRSTemplate(true, true, true);
+    end
 end
 [obsStruct, RSTemplate] = arDrawObservables(1, options, RSTemplate);
 arWriteDataDefFiles(projectName, projectPath, options.rngSeed, ...

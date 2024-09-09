@@ -5,6 +5,7 @@ arguments
     % base model
     options.loadPattern (1,:) char
     options.includeCustomSettings (1,1) logical
+    options.calculateRSTemplate (1,1) logical
     % randomization
     options.rngSeed (1,:)
     options.seedStep (1,1) double
@@ -56,6 +57,14 @@ end
 ar.info.path = pwd();
 for m = 1:length(ar.model)
     ar.model(m).path = fullfile(pwd(), 'Models');
+end
+
+% calculate the RSTemplate
+if options.calculateRSTemplate
+    arFprintf(1, "Calculating the RSTemplate...\n");
+    arCreateRSTemplate(true, true, true);
+    % no need to recalculate it during the simulations
+    options.calculateRSTemplate = false;
 end
 
 % nameformat for the projects

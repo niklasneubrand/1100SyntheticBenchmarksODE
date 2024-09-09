@@ -12,6 +12,7 @@ RSDefault = struct();
 % base model
 RSDefault.loadPattern = 'normal';           % pattern to load the model
 RSDefault.includeCustomSettings = true;     % copy custom settings from base model (or use default ar.config)
+RSDefault.calculateRSTemplate = true;       % calculate RSTemplate
 
 % randomization
 RSDefault.rngSeed = 'shuffle';              % seed for random number generator (or 'shuffle' for random seed)
