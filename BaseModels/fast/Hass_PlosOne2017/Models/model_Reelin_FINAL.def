@@ -55,28 +55,18 @@ DERIVED
 
 OBSERVABLES
 Dab1      C 	au  conc.   0	1   "scale_Dab1_Exp * (ApoER2_Dab1 + ApoER2_Dab1SFK + pApoER2_re_Dab1 + ApoER2_re_Dab1 + ApoER2_re_Dab1SFK + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released) + offset_Dab1_Exp"
-
 pDab1     C 	au  conc.   0   1   "scale_pDab1_Exp * (pApoER2_re_Dab1 + ApoER2_re_Dab1SFK + ApoER2_Dab1SFK) + offset_pDab1_Exp"
-
 pAkt      C 	au  conc.   0	1   "scale_pAkt_Exp * (pApoER2_re_Dab1 + ApoER2_re_Dab1SFK + ApoER2_Dab1SFK) + offset_pAkt_Exp"
-
 pSFK      C 	au  conc.   0	1   "scale_pSFK_Exp * (ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + perc_mes * ApoER2_re_Dab1SFKInh) + offset_pSFK_Exp"
-
 tSFK	  C     au  conc.   0	1   "scale_tSFK_Exp * (ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + SFK + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh) + offset_tSFK_Exp"
-
 tApoER2   C 	au  conc.   0	1   "scale_tApo__Exp * (ApoER2_Dab1 + ApoER2_Dab1SFK + pApoER2_re_Dab1 + ApoER2_re_Dab1 + ApoER2_re_Dab1SFK + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released) + offset_tApo_Exp"
 
 ERRORS
 pAkt    "sd_pAkt"
-
 pDab1   "sd_pDab1"
-
 Dab1    "sd_Dab1"
-
 pSFK    "sd_pSFK"
-
 tApoER2    "sd_tApoER2"
-
 tSFK    "sd_tSFK"
 
 CONDITIONS

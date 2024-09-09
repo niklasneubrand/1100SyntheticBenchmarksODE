@@ -13,13 +13,11 @@ DESCRIPTION
 
 PREDICTOR
 // name, type, unit, string for plotting, lower limit for plotting, upper limit for plotting
-
 t               T   min     time	0	600
 
 COMPARTMENTS
 // name, type, unit, string for plotting, value 
-//compartments defined
-
+// compartments defined
 cell     V   pl      vol.   13.17
 
 STATES
@@ -32,7 +30,7 @@ S3                      C   nmol/l      conc.     cell
 S4                      C   nmol/l      conc.     cell
 S2_S4_S4                C   nmol/l      conc.     cell
 
-// Homotrimere:
+// Homotrimeres:
 ppS2_ppS2_ppS2          C   nmol/l      conc.     cell
 ppS3_ppS3_ppS3          C   nmol/l      conc.     cell
 S4_S4_S4                C   nmol/l      conc.     cell
@@ -51,10 +49,7 @@ ppS2_ppS3_S4            C   nmol/l      conc.     cell
 ppS3_S4_S4              C   nmol/l      conc.     cell        
 ppS2_S4_S4              C   nmol/l      conc.     cell
 
-
-
-
-
+// Genes:
 geneA                   C   nmol/l      conc.     cell
 geneB                   C   nmol/l      conc.     cell
 geneC                   C   nmol/l      conc.     cell
@@ -67,8 +62,6 @@ geneI                   C   nmol/l      conc.     cell
 geneJ                   C   nmol/l      conc.     cell
 geneK                   C   nmol/l      conc.     cell
 geneL                   C   nmol/l      conc.     cell
-
-
 
 
 INPUTS
@@ -198,7 +191,6 @@ init_S4_S4_S4           "0"
 // Homotrimere:
 init_ppS2_ppS2_ppS2          "0"
 init_ppS3_ppS3_ppS3          "0"
-
 
 
 init_S2             "S2tot"
