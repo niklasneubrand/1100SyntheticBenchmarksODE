@@ -28,7 +28,7 @@ for idx = 1:nExp
 
     %% set values for time course or dose response
     if idx <= nTC
-        filename = sprintf('%s_TC%i%s.def', projectName, idx, suffix);
+        filename = sprintf('%s_TC%03d%s.def', projectName, idx, suffix);
         cNumber = sprintf('time course, %i', idx);
         predictor_add = '';
 
@@ -38,7 +38,7 @@ for idx = 1:nExp
         replace = RSTemplate.timeCourse(idx).condReplace;
         
     else
-        filename = sprintf('%s_DR%i%s.def', projectName, idx - nTC, suffix);
+        filename = sprintf('%s_DR%03d%s.def', projectName, idx - nTC, suffix);
         cNumber = sprintf('dose response, %i', idx - nTC);
         predictor_add = sprintf('-DOSERESPONSE %s', RSTemplate.doseResponse(idx - nTC).response_parameter);
 

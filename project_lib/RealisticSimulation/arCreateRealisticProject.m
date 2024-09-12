@@ -155,14 +155,14 @@ for m = 1:length(ar.model)
     if RSTemplate.nTC > 0
         fprintf(fileID, "%% Load the time-course data \n");
         for tc = 1:RSTemplate.nTC
-            fprintf(fileID, "arLoadData('%s_TC%i', 1); \n", projectName, tc);
+            fprintf(fileID, "arLoadData('%s_TC%03d', 1); \n", projectName, tc);
         end
     end
     % load dose-response data
     if RSTemplate.nDR > 0
         fprintf(fileID, "\n%% Load the dose-response data \n");
         for dr = 1:RSTemplate.nDR
-            fprintf(fileID, "arLoadData('%s_DR%i', 1); \n", projectName, dr);
+            fprintf(fileID, "arLoadData('%s_DR%03d', 1); \n", projectName, dr);
         end
     end
 end
@@ -220,14 +220,14 @@ for m = 1:length(ar.model)
     if RSTemplate.nTC > 0
         fprintf(fileID, "%% Load the time-course data \n");
         for tc = 1:RSTemplate.nTC
-            fprintf(fileID, "arLoadData('%s_TC%i_auxillary', 1); \n", projectName, tc);
+            fprintf(fileID, "arLoadData('%s_TC%03d_auxillary', 1); \n", projectName, tc);
         end
     end
     % load dose-response data
     if RSTemplate.nDR > 0
         fprintf(fileID, "\n%% Load the dose-response data \n");
         for dr = 1:RSTemplate.nDR
-            fprintf(fileID, "arLoadData('%s_DR%i_auxillary', 1); \n", projectName, dr);
+            fprintf(fileID, "arLoadData('%s_DR%03d_auxillary', 1); \n", projectName, dr);
         end
     end
 end

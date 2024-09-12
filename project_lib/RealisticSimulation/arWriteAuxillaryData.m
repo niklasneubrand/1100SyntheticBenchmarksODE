@@ -22,7 +22,7 @@ for tc = 1:nTC
 
     % create table and store to file
     dummyData = cell2table(dummyCell, "VariableNames", tableHeader);
-    filePath = fullfile(projectPath, 'Data', sprintf('%s_TC%d_auxillary.csv', projectName, tc));
+    filePath = fullfile(projectPath, 'Data', sprintf('%s_TC%03d_auxillary.csv', projectName, tc));
     writetable(dummyData, filePath);
 
 end
@@ -52,7 +52,7 @@ for dr = 1:nDR
 
     % create table and store to file
     dummyData = cell2table(dummyCell, "VariableNames", tableHeader);
-    filePath = fullfile(projectPath, 'Data', sprintf('%s_DR%d_auxillary.csv', projectName, dr));
+    filePath = fullfile(projectPath, 'Data', sprintf('%s_DR%03d_auxillary.csv', projectName, dr));
     writetable(dummyData, filePath);
 
 end

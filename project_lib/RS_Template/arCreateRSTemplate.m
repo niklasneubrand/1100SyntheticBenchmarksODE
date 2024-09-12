@@ -106,7 +106,7 @@ if RSTemplate.useSteadyState
         srcTC = find([RSTemplate.timeCourse(:).cLink]==srcCond);
         if length(srcTC) == 1
             % exactly one TC found -> we are done
-            srcFind = sprintf('arFindCondition(ar, ''TC%i'')', srcTC);
+            srcFind = sprintf('arFindCondition(ar, ''TC%03d'')', srcTC);
         elseif length(srcTC) > 1
             warning('Multiple TC share a condition. This is not intended.')
         elseif isempty(srcTC)
@@ -118,7 +118,7 @@ if RSTemplate.useSteadyState
                     % exactly one DR found -> we are done
                     response_parameter = RSTemplate.doseResponse(dr).response_parameter;
                     value = RSTemplate.doseResponse(dr).values(srcDR);
-                    srcFind = sprintf('arFindCondition(ar, ''DR%i'', ''%s'', %i)', dr, response_parameter, value);
+                    srcFind = sprintf('arFindCondition(ar, ''DR%03d'', ''%s'', %i)', dr, response_parameter, value);
                     break
                 elseif length(srcDR) > 1
                     warning('Multiple DR share a condition. This is not intended.')

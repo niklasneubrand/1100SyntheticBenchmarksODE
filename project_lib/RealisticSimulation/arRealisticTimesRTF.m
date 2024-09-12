@@ -185,7 +185,7 @@ for d = 1:nData
         [~] = mkdir(figuresPath);
         
         try
-            figFile = fullfile(figuresPath, sprintf('rtfFit_TC%d_%s', tc, yname{iObs}));
+            figFile = fullfile(figuresPath, sprintf('rtfFit_TC%03d_%s', tc, yname{iObs}));
             res = arFitTransientFunction2(dat, figFile);
             rtfParams{iObs,:} = res.pRescaled;
             qFitSuccess(iObs) = true;
@@ -200,7 +200,7 @@ for d = 1:nData
     qFitSuccessAll{tc} = qFitSuccess;
     
     writetable([array2table(yname'), rtfParams], ...
-               sprintf('Auxillary/rtfParams_TC%d.csv', tc));    
+               sprintf('Auxillary/rtfParams_TC%03d.csv', tc));    
     
 end
 
@@ -286,7 +286,7 @@ ar.model(m).data(d).yExpStd = nan(size(yExp)); % errors have to be fitted
 arLink();
 
 tc = sum([ar.model.data(1:d).doseresponse]==0);
-writematrix(tT, sprintf('Auxillary/TimePoints_TC%d.csv', tc));
+writematrix(tT, sprintf('Auxillary/TimePoints_TC%03d.csv', tc));
 fprintf('Realistic time Points are assigned.\n');
 
 end

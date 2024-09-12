@@ -68,7 +68,7 @@ for tc = 1:nTC
 
     header = [{ar.model.t}, ar.model(m).data(d).y];
     data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
-    filePath = fullfile('Data', sprintf('%s_TC%d.csv', projectName, tc));    
+    filePath = fullfile('Data', sprintf('%s_TC%03d.csv', projectName, tc));    
     writecell([header; data], filePath);
 
 end
@@ -96,7 +96,7 @@ for dr = 1:nDR
     yExp = vertcat(ar.model(m).data(d).yExp);
     data = num2cell([tExp, respVal, yExp]);
 
-    filePath = fullfile('Data', sprintf('%s_DR%d.csv', projectName, dr));
+    filePath = fullfile('Data', sprintf('%s_DR%03d.csv', projectName, dr));
     writecell([header; data], filePath);
 
 end
