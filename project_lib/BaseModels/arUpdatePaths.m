@@ -4,6 +4,8 @@ function arUpdatePaths()
 
 global ar
 
+ar.info.ar_path = fileparts(which('arInit'));
+
 arInfoPathOld = ar.info.path;
 ar.info.path = pwd();
 
