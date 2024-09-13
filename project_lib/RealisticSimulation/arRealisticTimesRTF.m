@@ -1,7 +1,8 @@
-function arRealisticTimesRTF(rngSeed)
+function arRealisticTimesRTF(rngSeed, timeFactor)
 
 arguments
     rngSeed (1,:) = 'shuffle'
+    timeFactor = 2
 end
 
 global ar  %#ok<*GVMIS>
@@ -23,7 +24,7 @@ for m = 1:length(ar.model)
     % if I increased the time range more, I had the impression that fitting performance degraded
     % for similar reasons, i did not increase the number of time points
     for d = 1:length(ar.model(m).data)
-        ar.model(m).data(d).tLim(2) = 2*ar.model(m).data(d).tLim(2);
+        ar.model(m).data(d).tLim(2) = timeFactor*ar.model(m).data(d).tLim(2);
     end
 
     % transform all observables to lin scale for RTF fitting
@@ -43,7 +44,14 @@ for m = 1:length(ar.model)
             ar.config.(configs{i}) = configSuccess.(configs{i});
         end
     else
-        error('arSimuMultiTries failed: %s.', errReport)
+        if timeFactor == 2
+            warning('arSimuMultiTries failed. Restart with timeFactor=1. Error was: %s', errReport)
+            ar = arDeepCopy(arBackup); % restore ar from backup
+            arRealisticTimesRTF(rngSeed, 1);
+            return;
+        else
+            error('arSimuMultiTries failed. Error was: %s', errReport)
+        end
     end
        
     % Convert orders of magnitude (be compatible with RTF param bounds)
