@@ -15,6 +15,19 @@ RSTemplate.originalName = ar.info.name;
 
 %% analyze conditions
 condStruct = arModelConditions();
+% remove conditions for observables (not needed for RSTemplate)
+for ip = length(condStruct.modelReplace):-1:1
+    if ismember(condStruct.modelReplace{ip, 1}, ar.model.py)
+        condStruct.modelReplace(ip, :) = [];
+    end
+end
+for ic = 1.length(condStruct.condReplace)
+    for ip = length(condStruct.condReplace{ic}):-1:1
+        if ismember(condStruct.condReplace{ic}{ip, 1}, ar.model.py)
+            condStruct.condReplace{ic}(ip, :) = [];
+        end
+    end
+end
 RSTemplate.condStruct = condStruct;
 
 %% analyze data

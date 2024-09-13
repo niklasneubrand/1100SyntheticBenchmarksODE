@@ -14,7 +14,7 @@ modelfile = fullfile(ar.model.path, ...
 copyfile(modelfile, fullfile(projectPath, 'Models', newName));
 
 % modify model *.def files -> remove observables, parameter, etc.
-arCreateRealisticModelDef(fullfile(projectPath, 'Models'), projectName, rngSeed);
+arCreateRealisticModelDef(fullfile(projectPath, 'Models'), projectName, rngSeed, RSTemplate);
 
 % create a setup file for the new model
 arCreateRealisticSetup(projectName, projectPath, rngSeed, includeCustomSettings, RSTemplate);
@@ -27,7 +27,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function arCreateRealisticModelDef(modelsDir, projectName, rngSeed)
+function arCreateRealisticModelDef(modelsDir, projectName, rngSeed, RSTemplate)
 
 global ar
 
@@ -73,6 +73,14 @@ for i = 1:length(defFileNames)
     if any(headings=="ERRORS")
         sections{find(headings=="ERRORS")+1} = [newline newline];
     end
+
+    % create new conditions section
+    newCondSection = {};
+    modRep = RSTemplate.condStruct.modelReplace;
+    for iRep = 1:size(modRep, 1)
+        newCondSection{end+1} = sprintf('%s\t"%s"', modRep{iRep, :});
+    end
+    sections{find(headings=="CONDITIONS")+1} = strjoin(newCondSection, newline);
     
     % create new parameter section (only include dynamic parameters)
     newParamSection = newline;
