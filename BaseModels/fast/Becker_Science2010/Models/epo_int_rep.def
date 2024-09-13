@@ -17,7 +17,7 @@ dEpo_e          C   pM      conc.	1
 INPUTS
 
 REACTIONS
-Epo + EpoR      ->  Epo_EpoR        CUSTOM "kon * Epo * EpoR"
+Epo + EpoR      ->  Epo_EpoR        CUSTOM "kon_model * Epo * EpoR"
 Epo_EpoR        ->  Epo + EpoR      CUSTOM "koff * Epo_EpoR"
                 ->  EpoR            CUSTOM "kt * init_EpoR"
 EpoR            ->                  CUSTOM "kt * EpoR"
@@ -36,4 +36,4 @@ init_Epo_EpoR_i     "0"
 init_dEpo_i         "0"
 init_dEpo_e         "0"
 init_EpoR           "init_Epo * init_EpoR_rel"
-kon                 "kon / init_Epo"
+kon_model                 "kon / init_Epo"

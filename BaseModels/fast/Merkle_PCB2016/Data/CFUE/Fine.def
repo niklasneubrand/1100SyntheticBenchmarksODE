@@ -16,7 +16,8 @@ ERRORS
 pJAK2_au		"sd_JAK2EpoR_au"
 pEpoR_au		"sd_JAK2EpoR_au"
 
-CONDITIONS// CFUE specific conditions
+CONDITIONS
+// CFUE specific conditions
 step_time           "60"
 
 vol_cyt             "0.4"

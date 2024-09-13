@@ -16,7 +16,8 @@ pSTAT5_rel        C   % frac.     0   0   "100*pSTAT5/(pSTAT5+STAT5)"
 ERRORS
 pSTAT5_rel		"sd_pSTAT5_rel_H838"
 
-CONDITIONS// H838 specific conditions
+CONDITIONS
+// H838 specific conditions
 step_time           "30"
 
 vol_cyt             "11.56"

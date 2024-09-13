@@ -9,12 +9,12 @@ t               T   min     time	0	400
 INPUTS
 
 OBSERVABLES
-SOCS3RNA_foldA         C   au  "fold change"   0   1   "1 + scale_SOCS3RNA_foldA / SOCS3RNAEqc / init_STAT5 * SOCS3RNA"
-SOCS3RNA_foldB         C   au  "fold change"   0   1   "1 + scale_SOCS3RNA_foldB / SOCS3RNAEqc / init_STAT5 * SOCS3RNA"
-SOCS3RNA_foldC         C   au  "fold change"   0   1   "1 + scale_SOCS3RNA_foldC / SOCS3RNAEqc / init_STAT5 * SOCS3RNA"
-CISRNA_foldA           C   au  "fold change"   0   1   "1 + scale_CISRNA_foldA / CISRNAEqc / init_STAT5 * CISRNA"
-CISRNA_foldB           C   au  "fold change"   0   1   "1 + scale_CISRNA_foldB / CISRNAEqc / init_STAT5 * CISRNA"
-CISRNA_foldC           C   au  "fold change"   0   1   "1 + scale_CISRNA_foldC / CISRNAEqc / init_STAT5 * CISRNA"
+SOCS3RNA_foldA         C   au  "fold change"   0   1   "1 + scale_SOCS3RNA_foldA / SOCS3RNAEqc_model / init_STAT5 * SOCS3RNA"
+SOCS3RNA_foldB         C   au  "fold change"   0   1   "1 + scale_SOCS3RNA_foldB / SOCS3RNAEqc_model / init_STAT5 * SOCS3RNA"
+SOCS3RNA_foldC         C   au  "fold change"   0   1   "1 + scale_SOCS3RNA_foldC / SOCS3RNAEqc_model / init_STAT5 * SOCS3RNA"
+CISRNA_foldA           C   au  "fold change"   0   1   "1 + scale_CISRNA_foldA / CISRNAEqc_model / init_STAT5 * CISRNA"
+CISRNA_foldB           C   au  "fold change"   0   1   "1 + scale_CISRNA_foldB / CISRNAEqc_model / init_STAT5 * CISRNA"
+CISRNA_foldC           C   au  "fold change"   0   1   "1 + scale_CISRNA_foldC / CISRNAEqc_model / init_STAT5 * CISRNA"
 
 ERRORS
 SOCS3RNA_foldA		"sd_RNA_fold"

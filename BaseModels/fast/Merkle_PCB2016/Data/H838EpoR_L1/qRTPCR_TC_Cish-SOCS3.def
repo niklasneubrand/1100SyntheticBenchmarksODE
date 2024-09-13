@@ -9,12 +9,12 @@ t               T   min     time	0	800
 INPUTS
 
 OBSERVABLES
-CishRNA_rep1_au          C   au  conc.   0   1   "offset_CISRNA_H838 + scale_CISRNA_H838 / CISHRNAeqm / init_STAT5 * CISHRNA"
-CishRNA_rep2_au          C   au  conc.   0   1   "offset_CISRNA_H838 + scale_CISRNA_H838 / CISHRNAeqm / init_STAT5 * CISHRNA"
-CishRNA_rep3_au          C   au  conc.   0   1   "offset_CISRNA_H838 + scale_CISRNA_H838 / CISHRNAeqm / init_STAT5 * CISHRNA"
-SOCS3RNA_rep1_au         C   au  conc.   0   1   "offset_SOCS3RNA_H838 + scale_SOCS3RNA_H838 / SOCS3RNAeqm / init_STAT5^SOCS3prom * SOCS3RNA"
-SOCS3RNA_rep2_au         C   au  conc.   0   1   "offset_SOCS3RNA_H838 + scale_SOCS3RNA_H838 / SOCS3RNAeqm / init_STAT5^SOCS3prom * SOCS3RNA"
-SOCS3RNA_rep3_au         C   au  conc.   0   1   "offset_SOCS3RNA_H838 + scale_SOCS3RNA_H838 / SOCS3RNAeqm / init_STAT5^SOCS3prom * SOCS3RNA"
+CishRNA_rep1_au          C   au  conc.   0   1   "offset_CISRNA_H838 + scale_CISRNA_H838 / CISHRNAeqm_model / init_STAT5 * CISHRNA"
+CishRNA_rep2_au          C   au  conc.   0   1   "offset_CISRNA_H838 + scale_CISRNA_H838 / CISHRNAeqm_model / init_STAT5 * CISHRNA"
+CishRNA_rep3_au          C   au  conc.   0   1   "offset_CISRNA_H838 + scale_CISRNA_H838 / CISHRNAeqm_model / init_STAT5 * CISHRNA"
+SOCS3RNA_rep1_au         C   au  conc.   0   1   "offset_SOCS3RNA_H838 + scale_SOCS3RNA_H838 / SOCS3RNAeqm_model / init_STAT5^SOCS3prom * SOCS3RNA"
+SOCS3RNA_rep2_au         C   au  conc.   0   1   "offset_SOCS3RNA_H838 + scale_SOCS3RNA_H838 / SOCS3RNAeqm_model / init_STAT5^SOCS3prom * SOCS3RNA"
+SOCS3RNA_rep3_au         C   au  conc.   0   1   "offset_SOCS3RNA_H838 + scale_SOCS3RNA_H838 / SOCS3RNAeqm_model / init_STAT5^SOCS3prom * SOCS3RNA"
 
 ERRORS
 CishRNA_rep1_au     	"sd_RNA_H838"
@@ -24,7 +24,8 @@ SOCS3RNA_rep1_au		"sd_RNA_H838"
 SOCS3RNA_rep2_au		"sd_RNA_H838"
 SOCS3RNA_rep3_au		"sd_RNA_H838"
 
-CONDITIONS// H838 specific conditions
+CONDITIONS
+// H838 specific conditions
 step_time           "30"
 
 vol_cyt             "11.56"

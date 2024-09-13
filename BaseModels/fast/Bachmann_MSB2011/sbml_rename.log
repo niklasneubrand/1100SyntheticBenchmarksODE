@@ -1,0 +1,799 @@
+[Warning: Directory already exists: C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\fast\..\fast_SBML\Bachmann_MSB2011
+] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('arRenameModelCondPars', 'C:\Users\neubrand\Documents\d2d\d2d_mod\arFramework3\ImportExport\arRenameModelCondPars.m', 53)" style="font-weight:bold">arRenameModelCondPars</a> (<a href="matlab: opentoline('C:\Users\neubrand\Documents\d2d\d2d_mod\arFramework3\ImportExport\arRenameModelCondPars.m',53,0)">line 53</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('arSBMLConformBaseModels', 'C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\project_lib\BaseModels\arSBMLConformBaseModels.m', 41)" style="font-weight:bold">arSBMLConformBaseModels</a> (<a href="matlab: opentoline('C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\project_lib\BaseModels\arSBMLConformBaseModels.m',41,0)">line 41</a>)] 
+jak2_stat5_feedbacks.def: did replace model parameters.
+CFUE_ActD.def: did replace model parameters.
+CFUE_CISoe.def: did replace model parameters.
+CFUE_CISoe_pEpoR.def: no replacements. No backup necessary.
+CFUE_Concentrations.def: no replacements. No backup necessary.
+CFUE_DoseResp_30min.def: no replacements. No backup necessary.
+CFUE_DoseResp_7min.def: no replacements. No backup necessary.
+CFUE_DoseResp_CIS_90min.def: did replace model parameters.
+CFUE_DoseResp_pSTAT5_10min_fine.def: no replacements. No backup necessary.
+CFUE_Fine.def: no replacements. No backup necessary.
+CFUE_Long.def: did replace model parameters.
+CFUE_RNA.def: did replace model parameters.
+CFUE_SHP1oe.def: did replace model parameters.
+CFUE_SOCS3oe.def: did replace model parameters.
+CFUE_ActD.xls: no replacements. No backup necessary.
+CFUE_CISoe.xls: no replacements. No backup necessary.
+CFUE_CISoe_pEpoR.xls: no replacements. No backup necessary.
+CFUE_Concentrations.xls: no replacements. No backup necessary.
+CFUE_DoseResp_30min.xls: no replacements. No backup necessary.
+CFUE_DoseResp_7min.xls: no replacements. No backup necessary.
+CFUE_DoseResp_CIS_90min.xls: no replacements. No backup necessary.
+CFUE_DoseResp_pSTAT5_10min_fine.xls: no replacements. No backup necessary.
+CFUE_Fine.xls: no replacements. No backup necessary.
+CFUE_Long.xls: no replacements. No backup necessary.
+CFUE_RNA.xls: no replacements. No backup necessary.
+CFUE_SHP1oe.xls: no replacements. No backup necessary.
+CFUE_SOCS3oe.xls: no replacements. No backup necessary.
+The following setup files were found and will be subsequently used for compiling: 
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\fast_SBML\Bachmann_MSB2011\Setup.m
+
+
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to the parallel pool (number of workers: 4).
+ans = 
+ <a href="matlab: helpPopup parallel.ProcessPool" style="font-weight:bold">ProcessPool</a> with properties: 
+
+            Connected: true
+           NumWorkers: 4
+                 Busy: false
+              Cluster: <a href="matlab: parallel.internal.display.Displayer.displayObject('789CD555CD4EDB4010DEB8898BA516C1A5CA435411CA09F5524210A2555CAA900A0E96C22659C0ED66D7ECDA52B971ECA370EC23F4317AE9BDC73E4277E43119D681B4423D74A4D17AC633DFFCDACB1A6F62E668DDF18DE3D0F19AE34D5652E3F66CB2B87F7804F24BC719375C4A213BA9CA85515C7666A9CD24BFEAEC1752F665619D3A1673A1725DE11F10FCE788DB4239C458553C90DBE5E38F80BCAB18F0BE870BBCC8C3039B9B708117A0CC48BD6BC43F58E24FF369B9FA5B28C309BDA870BEB5FEAC6F50F37E2AC5B1E15926CC788CFED7C47F11AF949F7A79807DBB717FDD3F3DFB00754DE4538887FC157A88EF2B1A5D6582EDF19CB32573BC77E8AC4610EB495D5DA3C61299EA0256AFC7B7A1B44E4EBA6F4DD4D3F9BE20381B28DF96382D4BEF0CF494CB126F3BF8BB7D69A3FCD9F17BA3CFDCE86BF9BED593A35C1B7E2E20509E6A55EADF15F3636D3E0963EFDA0FC565911A610F954C9518A453A16CAACEC17E7461049F79F690F7CE8A3E445E1FA232DFA9B056588273BD0267E0E180DC7F957CB0AE8A44896262B89A25BD2C83FD4A869ACF5DE649CCF30B28D526716F34E8ED26123A3EC6FE8F3FEA894D86DDAD6E7752E5B14DF20857CC21423D66B503FE5BC43F0A1EF60FF0E971717FBDF6FFAFFE77EEEFB51F6FD9BE317677DFFEA5FFB315F9567A46FCFFB77ABFB087EF931346F7A294E97D42FF378FB94F807E033A108F2D')">Processes</a> (Local Cluster)
+        AttachedFiles: {}
+    AutoAddClientPath: true
+            FileStore: [1x1 parallel.FileStore]
+           ValueStore: [1x1 parallel.ValueStore]
+          IdleTimeout: Inf (no automatic shut down)
+          SpmdEnabled: true
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+loading model #1, from file Models/jak2_stat5_feedbacks.def...
+=> Self-substituting derived variables.
+
+loading data #1, from file Data/CFUE_Long.def...
+loading data #1, from file Data/CFUE_Long.xls...
+	            pJAK2_au ->   14 data-points assigned normalized for log-fitting
+	            pEpoR_au ->   14 data-points assigned normalized for log-fitting
+	              CIS_au ->   13 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	            SOCS3_au ->    6 data-points assigned normalized for log-fitting (0 values <=0 removed, 8 NaN values removed)
+	           tSTAT5_au ->   13 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	           pSTAT5_au ->   13 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+
+loading data #2, from file Data/CFUE_Concentrations.def...
+loading data #2, from file Data/CFUE_Concentrations.xls...
+	           STAT5_abs ->    3 data-points assigned for log-fitting (0 values <=0 removed, 8 NaN values removed)
+	            SHP1_abs ->    3 data-points assigned for log-fitting (0 values <=0 removed, 8 NaN values removed)
+	             CIS_abs ->    3 data-points assigned for log-fitting (0 values <=0 removed, 8 NaN values removed)
+	           SOCS3_abs ->    3 data-points assigned for log-fitting (0 values <=0 removed, 8 NaN values removed)
+	         pSTAT5B_rel ->    8 data-points assigned
+
+loading data #3, from file Data/CFUE_RNA.def...
+loading data #3, from file Data/CFUE_RNA.xls...
+	      SOCS3RNA_foldA ->    6 data-points assigned for log-fitting
+	      SOCS3RNA_foldB ->    5 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	      SOCS3RNA_foldC ->    6 data-points assigned for log-fitting
+	        CISRNA_foldA ->    6 data-points assigned for log-fitting
+	        CISRNA_foldB ->    5 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	        CISRNA_foldC ->    6 data-points assigned for log-fitting
+
+loading data #4, from file Data/CFUE_ActD.def...
+loading data #4, from file Data/CFUE_ActD.xls...
+local condition #1:
+	                ActD = 0
+	            pJAK2_au ->    9 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    9 data-points assigned normalized for log-fitting
+	           tSTAT5_au ->    9 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    9 data-points assigned normalized for log-fitting
+	              CIS_au ->    9 data-points assigned normalized for log-fitting
+local condition #2:
+	                ActD = 1
+	            pJAK2_au ->    9 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    9 data-points assigned normalized for log-fitting
+	           tSTAT5_au ->    9 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    9 data-points assigned normalized for log-fitting
+	              CIS_au ->    9 data-points assigned normalized for log-fitting
+
+loading data #6, from file Data/CFUE_Fine.def...
+loading data #6, from file Data/CFUE_Fine.xls...
+	            pJAK2_au ->   30 data-points assigned normalized for log-fitting
+	            pEpoR_au ->   30 data-points assigned normalized for log-fitting
+
+loading data #7, from file Data/CFUE_CISoe.def...
+loading data #7, from file Data/CFUE_CISoe.xls...
+local condition #1:
+	               CISoe = 0
+	            pJAK2_au ->    4 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    4 data-points assigned normalized for log-fitting
+	              CIS_au ->    4 data-points assigned normalized for log-fitting
+	            SOCS3_au ->    4 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    4 data-points assigned normalized for log-fitting
+local condition #2:
+	               CISoe = 1
+	            pJAK2_au ->    4 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    4 data-points assigned normalized for log-fitting
+	              CIS_au ->    4 data-points assigned normalized for log-fitting
+	            SOCS3_au ->    4 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    4 data-points assigned normalized for log-fitting
+
+loading data #9, from file Data/CFUE_CISoe_pEpoR.def...
+loading data #9, from file Data/CFUE_CISoe_pEpoR.xls...
+local condition #1:
+	               CISoe = 0
+	            pEpoR_au ->    5 data-points assigned normalized for log-fitting
+local condition #2:
+	               CISoe = 1
+	            pEpoR_au ->    5 data-points assigned normalized for log-fitting
+
+loading data #11, from file Data/CFUE_SOCS3oe.def...
+loading data #11, from file Data/CFUE_SOCS3oe.xls...
+local condition #1:
+	             SOCS3oe = 0
+	            pJAK2_au ->    4 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    4 data-points assigned normalized for log-fitting
+	              CIS_au ->    4 data-points assigned normalized for log-fitting
+	            SOCS3_au ->    4 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    4 data-points assigned normalized for log-fitting
+local condition #2:
+	             SOCS3oe = 1
+	            pJAK2_au ->    4 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    4 data-points assigned normalized for log-fitting
+	              CIS_au ->    4 data-points assigned normalized for log-fitting
+	            SOCS3_au ->    4 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    4 data-points assigned normalized for log-fitting
+
+loading data #13, from file Data/CFUE_SHP1oe.def...
+loading data #13, from file Data/CFUE_SHP1oe.xls...
+local condition #1:
+	              SHP1oe = 0
+	            pJAK2_au ->    5 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    5 data-points assigned normalized for log-fitting
+	              CIS_au ->    5 data-points assigned normalized for log-fitting
+	           tSTAT5_au ->    5 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    5 data-points assigned normalized for log-fitting
+	            tSHP1_au ->    5 data-points assigned normalized for log-fitting
+local condition #2:
+	              SHP1oe = 1
+	            pJAK2_au ->    5 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    5 data-points assigned normalized for log-fitting
+	              CIS_au ->    5 data-points assigned normalized for log-fitting
+	           tSTAT5_au ->    5 data-points assigned normalized for log-fitting
+	           pSTAT5_au ->    5 data-points assigned normalized for log-fitting
+	            tSHP1_au ->    5 data-points assigned normalized for log-fitting
+
+loading data #15, from file Data/CFUE_DoseResp_7min.def...dose-response to epo_level
+loading data #15, from file Data/CFUE_DoseResp_7min.xls...
+local condition #1:
+	           epo_level = 2.5e-05
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #2:
+	           epo_level = 2.5e-06
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #3:
+	           epo_level = 2.5e-07
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #4:
+	           epo_level = 2.5e-08
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #5:
+	           epo_level = 2.5e-09
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+
+loading data #20, from file Data/CFUE_DoseResp_30min.def...dose-response to epo_level
+loading data #20, from file Data/CFUE_DoseResp_30min.xls...
+local condition #1:
+	           epo_level = 1.25e-06
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #2:
+	           epo_level = 1.25e-07
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #3:
+	           epo_level = 2.5e-06
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #4:
+	           epo_level = 2.5e-07
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #5:
+	           epo_level = 2.5e-08
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+local condition #6:
+	           epo_level = 2.5e-09
+	            pJAK2_au ->    3 data-points assigned normalized for log-fitting
+	            pEpoR_au ->    3 data-points assigned normalized for log-fitting
+
+loading data #26, from file Data/CFUE_DoseResp_pSTAT5_10min_fine.def...dose-response to epo_level
+loading data #26, from file Data/CFUE_DoseResp_pSTAT5_10min_fine.xls...
+local condition #1:
+	           epo_level = 1.25e-07
+	           pSTAT5_au ->    3 data-points assigned normalized for log-fitting
+local condition #2:
+	           epo_level = 1.25e-08
+	           pSTAT5_au ->    3 data-points assigned normalized for log-fitting
+local condition #3:
+	           epo_level = 1.75e-08
+	           pSTAT5_au ->    0 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #4:
+	           epo_level = 1.7675e-07
+	           pSTAT5_au ->    0 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #5:
+	           epo_level = 2.5e-06
+	           pSTAT5_au ->    3 data-points assigned normalized for log-fitting
+local condition #6:
+	           epo_level = 2.5e-07
+	           pSTAT5_au ->    3 data-points assigned normalized for log-fitting
+local condition #7:
+	           epo_level = 2.5e-08
+	           pSTAT5_au ->    3 data-points assigned normalized for log-fitting
+local condition #8:
+	           epo_level = 2.5e-09
+	           pSTAT5_au ->    3 data-points assigned normalized for log-fitting
+local condition #9:
+	           epo_level = 3.95e-08
+	           pSTAT5_au ->    0 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #10:
+	           epo_level = 7.905e-07
+	           pSTAT5_au ->    0 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #11:
+	           epo_level = 7.905e-09
+	           pSTAT5_au ->    0 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #12:
+	           epo_level = 7.9e-08
+	           pSTAT5_au ->    0 data-points assigned normalized for log-fitting (0 values <=0 removed, 1 NaN values removed)
+
+loading data #38, from file Data/CFUE_DoseResp_CIS_90min.def...dose-response to epo_level
+loading data #38, from file Data/CFUE_DoseResp_CIS_90min.xls...
+local condition #1:
+	           epo_level = 1.25e-07
+	             CIS_au1 ->    3 data-points assigned normalized for log-fitting
+	             CIS_au2 ->    3 data-points assigned normalized for log-fitting
+local condition #2:
+	           epo_level = 2.5e-06
+	             CIS_au1 ->    3 data-points assigned normalized for log-fitting
+	             CIS_au2 ->    3 data-points assigned normalized for log-fitting
+local condition #3:
+	           epo_level = 2.5e-07
+	             CIS_au1 ->    3 data-points assigned normalized for log-fitting
+	             CIS_au2 ->    3 data-points assigned normalized for log-fitting
+local condition #4:
+	           epo_level = 2.5e-08
+	             CIS_au1 ->    3 data-points assigned normalized for log-fitting
+	             CIS_au2 ->    3 data-points assigned normalized for log-fitting
+local condition #5:
+	           epo_level = 2.5e-09
+	             CIS_au1 ->    3 data-points assigned normalized for log-fitting
+	             CIS_au2 ->    3 data-points assigned normalized for log-fitting
+
+calculating model m1, jak2_stat5_feedbacks...
+calculating condition m1 c1, jak2_stat5_feedbacks...
+calculating condition m1 c2, jak2_stat5_feedbacks...
+calculating condition m1 c3, jak2_stat5_feedbacks...
+calculating condition m1 c4, jak2_stat5_feedbacks...
+ -> writing condition m1 c2, jak2_stat5_feedbacks...
+ -> writing condition m1 c3, jak2_stat5_feedbacks...
+ -> writing condition m1 c1, jak2_stat5_feedbacks...
+ -> writing condition m1 c4, jak2_stat5_feedbacks...
+calculating condition m1 c8, jak2_stat5_feedbacks...
+calculating condition m1 c10, jak2_stat5_feedbacks...
+calculating condition m1 c6, jak2_stat5_feedbacks...
+calculating condition m1 c12, jak2_stat5_feedbacks...
+ -> writing condition m1 c8, jak2_stat5_feedbacks...
+ -> writing condition m1 c6, jak2_stat5_feedbacks...
+ -> writing condition m1 c10, jak2_stat5_feedbacks...
+ -> writing condition m1 c12, jak2_stat5_feedbacks...
+calculating condition m1 c7, jak2_stat5_feedbacks...
+calculating condition m1 c9, jak2_stat5_feedbacks...
+calculating condition m1 c11, jak2_stat5_feedbacks...
+calculating condition m1 c5, jak2_stat5_feedbacks...
+ -> writing condition m1 c11, jak2_stat5_feedbacks...
+ -> writing condition m1 c7, jak2_stat5_feedbacks...
+ -> writing condition m1 c9, jak2_stat5_feedbacks...
+ -> writing condition m1 c5, jak2_stat5_feedbacks...
+calculating condition m1 c16, jak2_stat5_feedbacks...
+calculating condition m1 c13, jak2_stat5_feedbacks...
+calculating condition m1 c14, jak2_stat5_feedbacks...
+calculating condition m1 c15, jak2_stat5_feedbacks...
+ -> writing condition m1 c16, jak2_stat5_feedbacks...
+ -> writing condition m1 c13, jak2_stat5_feedbacks...
+ -> writing condition m1 c14, jak2_stat5_feedbacks...
+ -> writing condition m1 c15, jak2_stat5_feedbacks...
+calculating condition m1 c17, jak2_stat5_feedbacks...
+calculating condition m1 c18, jak2_stat5_feedbacks...
+calculating condition m1 c19, jak2_stat5_feedbacks...
+calculating condition m1 c20, jak2_stat5_feedbacks...
+ -> writing condition m1 c17, jak2_stat5_feedbacks...
+ -> writing condition m1 c18, jak2_stat5_feedbacks...
+ -> writing condition m1 c19, jak2_stat5_feedbacks...
+ -> writing condition m1 c20, jak2_stat5_feedbacks...
+calculating condition m1 c21, jak2_stat5_feedbacks...
+calculating condition m1 c22, jak2_stat5_feedbacks...
+calculating condition m1 c23, jak2_stat5_feedbacks...
+ -> writing condition m1 c21, jak2_stat5_feedbacks...
+ -> writing condition m1 c22, jak2_stat5_feedbacks...
+ -> writing condition m1 c23, jak2_stat5_feedbacks...
+calculating data m1 d1 -> c1, CFUE_Long...
+calculating data m1 d2 -> c1, CFUE_Concentrations...
+calculating data m1 d3 -> c1, CFUE_RNA...
+calculating data m1 d4 -> c1, CFUE_ActD...
+ -> writing data m1 d2 -> c1, CFUE_Concentrations...
+ -> writing data m1 d4 -> c1, CFUE_ActD...
+calculating data m1 d14 -> c9, CFUE_SHP1oe...
+ -> writing data m1 d3 -> c1, CFUE_RNA...
+calculating data m1 d24 -> c13, CFUE_DoseResp_30min...
+ -> writing data m1 d1 -> c1, CFUE_Long...
+calculating data m1 d19 -> c14, CFUE_DoseResp_7min...
+calculating data m1 d9 -> c4, CFUE_CISoe_pEpoR...
+ -> writing data m1 d19 -> c14, CFUE_DoseResp_7min...
+ -> writing data m1 d24 -> c13, CFUE_DoseResp_30min...
+calculating data m1 d18 -> c13, CFUE_DoseResp_7min...
+calculating data m1 d23 -> c12, CFUE_DoseResp_30min...
+ -> writing data m1 d9 -> c4, CFUE_CISoe_pEpoR...
+calculating data m1 d8 -> c5, CFUE_CISoe...
+ -> writing data m1 d14 -> c9, CFUE_SHP1oe...
+calculating data m1 d13 -> c8, CFUE_SHP1oe...
+ -> writing data m1 d18 -> c13, CFUE_DoseResp_7min...
+ -> writing data m1 d23 -> c12, CFUE_DoseResp_30min...
+calculating data m1 d17 -> c12, CFUE_DoseResp_7min...
+calculating data m1 d22 -> c11, CFUE_DoseResp_30min...
+ -> writing data m1 d8 -> c5, CFUE_CISoe...
+ -> writing data m1 d17 -> c12, CFUE_DoseResp_7min...
+ -> writing data m1 d22 -> c11, CFUE_DoseResp_30min...
+calculating data m1 d7 -> c4, CFUE_CISoe...
+calculating data m1 d21 -> c16, CFUE_DoseResp_30min...
+calculating data m1 d16 -> c11, CFUE_DoseResp_7min...
+ -> writing data m1 d13 -> c8, CFUE_SHP1oe...
+calculating data m1 d12 -> c7, CFUE_SOCS3oe...
+ -> writing data m1 d16 -> c11, CFUE_DoseResp_7min...
+ -> writing data m1 d21 -> c16, CFUE_DoseResp_30min...
+calculating data m1 d20 -> c15, CFUE_DoseResp_30min...
+calculating data m1 d15 -> c10, CFUE_DoseResp_7min...
+ -> writing data m1 d7 -> c4, CFUE_CISoe...
+calculating data m1 d6 -> c3, CFUE_Fine...
+ -> writing data m1 d20 -> c15, CFUE_DoseResp_30min...
+ -> writing data m1 d15 -> c10, CFUE_DoseResp_7min...
+calculating data m1 d28 -> c18, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d30 -> c11, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d12 -> c7, CFUE_SOCS3oe...
+ -> writing data m1 d6 -> c3, CFUE_Fine...
+calculating data m1 d5 -> c2, CFUE_ActD...
+calculating data m1 d11 -> c6, CFUE_SOCS3oe...
+ -> writing data m1 d30 -> c11, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d28 -> c18, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d27 -> c17, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d27 -> c17, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d29 -> c19, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d29 -> c19, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d34 -> c20, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d33 -> c14, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d5 -> c2, CFUE_ActD...
+ -> writing data m1 d11 -> c6, CFUE_SOCS3oe...
+calculating data m1 d32 -> c13, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d10 -> c5, CFUE_CISoe_pEpoR...
+ -> writing data m1 d34 -> c20, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d33 -> c14, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d35 -> c21, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d36 -> c22, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d32 -> c13, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d10 -> c5, CFUE_CISoe_pEpoR...
+ -> writing data m1 d35 -> c21, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d26 -> c16, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d36 -> c22, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d38 -> c16, CFUE_DoseResp_CIS_90min...
+calculating data m1 d39 -> c11, CFUE_DoseResp_CIS_90min...
+calculating data m1 d31 -> c12, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d31 -> c12, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d26 -> c16, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d39 -> c11, CFUE_DoseResp_CIS_90min...
+ -> writing data m1 d38 -> c16, CFUE_DoseResp_CIS_90min...
+calculating data m1 d41 -> c13, CFUE_DoseResp_CIS_90min...
+calculating data m1 d42 -> c14, CFUE_DoseResp_CIS_90min...
+calculating data m1 d37 -> c23, CFUE_DoseResp_pSTAT5_10min_fine...
+ -> writing data m1 d37 -> c23, CFUE_DoseResp_pSTAT5_10min_fine...
+calculating data m1 d25 -> c14, CFUE_DoseResp_30min...
+ -> writing data m1 d25 -> c14, CFUE_DoseResp_30min...
+ -> writing data m1 d41 -> c13, CFUE_DoseResp_CIS_90min...
+calculating data m1 d40 -> c12, CFUE_DoseResp_CIS_90min...
+ -> writing data m1 d42 -> c14, CFUE_DoseResp_CIS_90min...
+ -> writing data m1 d40 -> c12, CFUE_DoseResp_CIS_90min...
+Compiling files...
+compiling KLU(SuiteSparse_config.obj)...skipped
+compiling KLU(klu.obj)...skipped
+compiling KLU(klu_analyze.obj)...skipped
+compiling KLU(klu_analyze_given.obj)...skipped
+compiling KLU(klu_extract.obj)...skipped
+compiling KLU(klu_dump.obj)...skipped
+compiling KLU(klu_diagnostics.obj)...skipped
+compiling KLU(klu_defaults.obj)...skipped
+compiling KLU(amd_dump.obj)...skipped
+compiling KLU(amd_defaults.obj)...skipped
+compiling KLU(klu_kernel.obj)...skipped
+compiling KLU(klu_free_symbolic.obj)...skipped
+compiling KLU(klu_free_numeric.obj)...skipped
+compiling KLU(klu_factor.obj)...skipped
+compiling KLU(amd_post_tree.obj)...skipped
+compiling KLU(amd_order.obj)...skipped
+compiling KLU(klu_solve.obj)...skipped
+compiling KLU(klu_scale.obj)...skipped
+compiling KLU(klu_refactor.obj)...skipped
+compiling KLU(klu_memory.obj)...skipped
+compiling KLU(amd_control.obj)...skipped
+compiling KLU(amd_aat.obj)...skipped
+compiling KLU(amd_postorder.obj)...skipped
+compiling KLU(amd_valid.obj)...skipped
+compiling KLU(btf_order.obj)...skipped
+compiling KLU(colamd.obj)...skipped
+compiling KLU(amd_2.obj)...skipped
+compiling KLU(amd_1.obj)...skipped
+compiling KLU(klu_tsolve.obj)...skipped
+compiling KLU(klu_sort.obj)...skipped
+compiling KLU(amd_info.obj)...skipped
+compiling KLU(amd_global.obj)...skipped
+compiling KLU(amd_preprocess.obj)...skipped
+compiling KLU(btf_maxtrans.obj)...skipped
+compiling KLU(btf_strongcomp.obj)...skipped
+compiling KLU(colamd_global.obj)...skipped
+compiling CVODES(cvodes_bbdpre.obj)...skipped
+compiling CVODES(cvodes_direct.obj)...skipped
+compiling CVODES(cvodes_band.obj)...skipped
+compiling CVODES(cvodes_sparse.obj)...skipped
+compiling CVODES(cvodes_klu.obj)...skipped
+compiling CVODES(cvodes_dense.obj)...skipped
+compiling CVODES(sundials_sparse.obj)...skipped
+compiling CVODES(sundials_nvector.obj)...skipped
+compiling CVODES(sundials_sptfqmr.obj)...skipped
+compiling CVODES(cvodes_bandpre.obj)...skipped
+compiling CVODES(cvodes.obj)...skipped
+compiling CVODES(cvodea.obj)...skipped
+compiling CVODES(cvodes_diag.obj)...skipped
+compiling CVODES(sundials_direct.obj)...skipped
+compiling CVODES(nvector_serial.obj)...skipped
+compiling CVODES(cvodes_spils.obj)...skipped
+compiling CVODES(cvodea_io.obj)...skipped
+compiling CVODES(cvodes_io.obj)...skipped
+compiling CVODES(sundials_band.obj)...skipped
+compiling CVODES(sundials_iterative.obj)...skipped
+compiling CVODES(sundials_spgmr.obj)...skipped
+compiling CVODES(cvodes_sptfqmr.obj)...skipped
+compiling CVODES(cvodes_spgmr.obj)...skipped
+compiling CVODES(cvodes_spbcgs.obj)...skipped
+compiling CVODES(sundials_dense.obj)...skipped
+compiling CVODES(sundials_spbcgs.obj)...skipped
+compiling CVODES(sundials_math.obj)...skipped
+compiling input functions...skipped
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c3, jak2_stat5_feedbacks_DC51E6C9646D66BB442ABCA7869378A2.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c1, jak2_stat5_feedbacks_77223049690EEE782A4AFD7B6056E0C7.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c2, jak2_stat5_feedbacks_E4D41E92B475F2071027F1079AE5223F.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c4, jak2_stat5_feedbacks_1528B5A7F03E7CC356290041A1F8C332.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c6, jak2_stat5_feedbacks_23E4C5DCC99C77FF6F269E1EC196AA93.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c8, jak2_stat5_feedbacks_4AFC290B36ABBBFF615882644904F722.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c10, jak2_stat5_feedbacks_F23F0831E209949C349211C80BF427D6.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c12, jak2_stat5_feedbacks_E7DF9346DE91BF243AE26235AA55893F.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c5, jak2_stat5_feedbacks_0E350CAE2D4128ACCEDAA63A8FF7D02D.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c7, jak2_stat5_feedbacks_E90EEB23FA7584865ADF41277C07EAAA.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c9, jak2_stat5_feedbacks_B1246E0133CB3655797C1667848E59F9.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c11, jak2_stat5_feedbacks_352E36DBACD3B2C1A340A095C0918CCC.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c14, jak2_stat5_feedbacks_226CCD9C7F9B49946A0014E210B043E4.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c15, jak2_stat5_feedbacks_89D8C1698DF7D6872A5ACB026938BF27.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c13, jak2_stat5_feedbacks_CF6BFA3916282B2FED9669AA0AF079BA.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c16, jak2_stat5_feedbacks_DC667D3F785BEC4581438505E1CEE646.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c17, jak2_stat5_feedbacks_E3F0C80833D9098F1DDAED9B2962767C.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c18, jak2_stat5_feedbacks_F289500D58855CB9DB5D40E4549CB2C5.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c19, jak2_stat5_feedbacks_683D119269C62B75A1A38059C40F1707.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c20, jak2_stat5_feedbacks_2E186575DED88E6ED6D6ADCC48518C66.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c22, jak2_stat5_feedbacks_00728D9487AE5BB8F5187E6B825F5625.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c21, jak2_stat5_feedbacks_873EEEA9448BF1765EA47E22C5B58B2C.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c23, jak2_stat5_feedbacks_5E7E79F9309C0B29AF72C439FB4C4902.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d3, CFUE_RNA_22953267B802F5659BD5249C5219541E.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d1, CFUE_Long_517F9CF887B26E554A9E243A713FFE17.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d2, CFUE_Concentrations_664081B41F2BFD0069515EFB4AFEC2CB.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d14, CFUE_SHP1oe_B8B8750AE93704E4442E7B36FC84572E.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d4, CFUE_ActD_AE4C1CA93D99C7D5EFBB3CF6E41A7C64.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d9, CFUE_CISoe_pEpoR_063567C3173CE43F83B1674514B3DDF0.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d8, CFUE_CISoe_9FC6248DB2FD1B3218810E2772DBCCEA.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d13, CFUE_SHP1oe_0ADF9A33AF9B847D9C0F1DB965C01528.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d19, CFUE_DoseResp_7min_E0B331C89408A631527726438716CBAE.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d18, CFUE_DoseResp_7min_9E55EF331DAE23936175C8647D1C10D6.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d17, CFUE_DoseResp_7min_98AA36C591D50317851564D198337C0A.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d24, CFUE_DoseResp_30min_2BA049627785DA33AE8E6B29A94B4E1B.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d23, CFUE_DoseResp_30min_F9B0A5B87F4CE83915F8A0ECE98321FA.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d22, CFUE_DoseResp_30min_190E5E7CD3C37BCA7A72657B716715C5.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d7, CFUE_CISoe_F8F50D673B3F15CD2C5D56E8B57BB34F.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d6, CFUE_Fine_2CB03569EB268D9D9FAB30D514DE5920.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d16, CFUE_DoseResp_7min_9CC27EAE8B9153963C16C0CF4910311E.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d15, CFUE_DoseResp_7min_278B9FE2C49E6F8C8A9A027307B3293F.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d26, CFUE_DoseResp_pSTAT5_10min_fine_8AAC64311AE95F3823EF738C18A94A99.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d25, CFUE_DoseResp_30min_EA523D9F6A67824D770FC3BB7D319161.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d21, CFUE_DoseResp_30min_833794162B3BE8584007EF61615901B3.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d20, CFUE_DoseResp_30min_0CE424736CE1404F22EDCCC508F65FDF.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d5, CFUE_ActD_116E3B5A8F481292B6586C2523E5C615.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d12, CFUE_SOCS3oe_32FA31ACFF953EDB716C685F28AEF996.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d11, CFUE_SOCS3oe_9DBD05385DF953CD5D4D8AEB0E60D7A6.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d33, CFUE_DoseResp_pSTAT5_10min_fine_C917AE24CE00A41BD7C3CDBA1049E76A.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d35, CFUE_DoseResp_pSTAT5_10min_fine_9821C9E434FD5870BF42A60DEAC2EC00.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d30, CFUE_DoseResp_pSTAT5_10min_fine_00DC16840A25884C25AED8C11AD6239C.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d29, CFUE_DoseResp_pSTAT5_10min_fine_CB404B822496F1C935844E325DBEF0AC.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d34, CFUE_DoseResp_pSTAT5_10min_fine_62698EAF1AD36F48CBD1E7C8CAC5C6DF.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d32, CFUE_DoseResp_pSTAT5_10min_fine_B7512E5848DB546CC14DECD8F98E60CF.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d31, CFUE_DoseResp_pSTAT5_10min_fine_42B487251EEFC54B07C141EBB428BAB4.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d10, CFUE_CISoe_pEpoR_6FDD37F2780F0C381F44F2FE5DC9D94D.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d37, CFUE_DoseResp_pSTAT5_10min_fine_AF59739EAEDE5FA72A17A3F5498473FE.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d36, CFUE_DoseResp_pSTAT5_10min_fine_9334AF040D35AED1B103599FCCFD9C60.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d39, CFUE_DoseResp_CIS_90min_54F3E32574DBF459A56426B896E087BE.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d38, CFUE_DoseResp_CIS_90min_95EAFCBFA67E6A8B31105E858B884431.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d28, CFUE_DoseResp_pSTAT5_10min_fine_B5D8F89C7F7D746C3F183C9C4987332E.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d27, CFUE_DoseResp_pSTAT5_10min_fine_942E184AB93301E6222BF6EDB27CD909.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d42, CFUE_DoseResp_CIS_90min_7C33853BC84D5C03804B2EC817A25183.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d40, CFUE_DoseResp_CIS_90min_082824DB7C4CA7FEE784FB0C08A12C60.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d41, CFUE_DoseResp_CIS_90min_7D541C7711A198E297656E202E4334C4.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling and linking arSimuCalcFun_F43DA9EF944C2B0C4326197889840984...done
+
+linking model...
+linking time points...
+linking parameters...
+Automatic plotting disabled for model 1. Please use arPlotter for plotting.
+parameters loaded from file BestFit:
+          assigned ->                 CISEqc   new: p lb ub                          
+          assigned ->               CISEqcOE   new: p lb                             
+          assigned ->                 CISInh   new: p lb ub                          
+          assigned ->            CISRNADelay   new: p lb                             
+          assigned ->              CISRNAEqc   lb                             
+          assigned ->             CISRNATurn   new: p lb                             
+          assigned ->                CISTurn   new: p lb                             
+          assigned ->            EpoRActJAK2   new: p lb ub                          
+          assigned ->             EpoRCISInh   new: p lb ub                          
+          assigned ->          EpoRCISRemove   new: p lb                             
+          assigned ->             JAK2ActEpo   new: p lb ub                          
+          assigned ->        JAK2EpoRDeaSHP1   new: p lb ub                          
+          assigned ->            SHP1ActEpoR   new: p lb                             
+          assigned ->                SHP1Dea   new: p lb                             
+          assigned ->              SHP1ProOE   new: p lb                             
+          assigned ->               SOCS3Eqc   new: p lb                             
+          assigned ->             SOCS3EqcOE   new: p lb                             
+          assigned ->               SOCS3Inh   new: p lb                             
+          assigned ->          SOCS3RNADelay   new: p lb                             
+          assigned ->            SOCS3RNAEqc   lb                             
+          assigned ->           SOCS3RNATurn   new: p lb                             
+          assigned ->              SOCS3Turn   new: p lb ub                          
+          assigned ->           STAT5ActEpoR   new: p lb                             
+          assigned ->           STAT5ActJAK2   new: p lb                             
+          assigned ->               STAT5Exp   new: p lb                             
+          assigned ->               STAT5Imp   new: p lb                             
+          assigned ->          init_EpoRJAK2   new: p lb                             
+          assigned ->              init_SHP1   new: p lb                             
+          assigned ->             init_STAT5   new: p lb                             
+          assigned ->        offset_CIS_actd   new: p lb                             
+          assigned ->       offset_CIS_cisoe   new: p lb                             
+          assigned ->        offset_CIS_long   new: p lb                             
+          assigned ->      offset_CIS_shp1oe   new: p lb                             
+          assigned ->     offset_CIS_socs3oe   new: p lb                             
+          assigned ->     offset_SOCS3_cisoe   new: p lb                             
+          assigned ->      offset_SOCS3_long   new: p lb                             
+          assigned ->   offset_SOCS3_socs3oe   new: p lb                             
+          assigned ->      offset_pEpoR_actd   new: p lb                             
+          assigned ->     offset_pEpoR_cisoe   new: p lb                             
+          assigned -> offset_pEpoR_cisoe_pepor   new: p lb                             
+          assigned ->      offset_pEpoR_dr30   new: p lb                             
+          assigned ->       offset_pEpoR_dr7   new: p lb                             
+          assigned ->      offset_pEpoR_fine   new: p lb                             
+          assigned ->      offset_pEpoR_long   new: p lb                             
+          assigned ->    offset_pEpoR_shp1oe   new: p lb                             
+          assigned ->   offset_pEpoR_socs3oe   new: p lb                             
+          assigned ->      offset_pJAK2_actd   new: p lb                             
+          assigned ->     offset_pJAK2_cisoe   new: p lb                             
+          assigned ->      offset_pJAK2_dr30   new: p lb                             
+          assigned ->       offset_pJAK2_dr7   new: p lb                             
+          assigned ->      offset_pJAK2_fine   new: p lb                             
+          assigned ->      offset_pJAK2_long   new: p lb                             
+          assigned ->    offset_pJAK2_shp1oe   new: p lb                             
+          assigned ->   offset_pJAK2_socs3oe   new: p lb                             
+          assigned ->     offset_pSTAT5_actd   new: p lb                             
+          assigned ->    offset_pSTAT5_cisoe   new: p lb                             
+          assigned ->     offset_pSTAT5_conc   new: p lb                             
+          assigned ->     offset_pSTAT5_long   new: p lb                             
+          assigned ->   offset_pSTAT5_shp1oe   new: p lb                             
+          assigned ->  offset_pSTAT5_socs3oe   new: p lb                             
+          assigned ->        scale1_CIS_dr90   new: p lb                             
+          assigned ->        scale2_CIS_dr90   new: p lb                             
+          assigned ->     scale_CISRNA_foldA   new: p lb                             
+          assigned ->     scale_CISRNA_foldB   new: p lb                             
+          assigned ->     scale_CISRNA_foldC   new: p lb                             
+          assigned ->         scale_CIS_actd   new: p lb                             
+          assigned ->        scale_CIS_cisoe   new: p lb                             
+          assigned ->         scale_CIS_long   new: p lb                             
+          assigned ->       scale_CIS_shp1oe   new: p lb                             
+          assigned ->      scale_CIS_socs3oe   new: p lb                             
+          assigned ->      scale_SHP1_shp1oe   new: p lb                             
+          assigned ->   scale_SOCS3RNA_foldA   new: p lb                             
+          assigned ->   scale_SOCS3RNA_foldB   new: p lb                             
+          assigned ->   scale_SOCS3RNA_foldC   new: p lb                             
+          assigned ->      scale_SOCS3_cisoe   new: p lb                             
+          assigned ->       scale_SOCS3_long   new: p lb                             
+          assigned ->    scale_SOCS3_socs3oe   new: p lb                             
+          assigned ->       scale_pEpoR_actd   new: p lb                             
+          assigned ->      scale_pEpoR_cisoe   new: p lb                             
+          assigned -> scale_pEpoR_cisoe_pepor   new: p lb                             
+          assigned ->       scale_pEpoR_dr30   new: p lb                             
+          assigned ->        scale_pEpoR_dr7   new: p lb                             
+          assigned ->       scale_pEpoR_fine   new: p lb                             
+          assigned ->       scale_pEpoR_long   new: p lb                             
+          assigned ->     scale_pEpoR_shp1oe   new: p lb                             
+          assigned ->    scale_pEpoR_socs3oe   new: p lb                             
+          assigned ->       scale_pJAK2_actd   new: p lb                             
+          assigned ->      scale_pJAK2_cisoe   new: p lb                             
+          assigned ->       scale_pJAK2_dr30   new: p lb                             
+          assigned ->        scale_pJAK2_dr7   new: p lb                             
+          assigned ->       scale_pJAK2_fine   new: p lb                             
+          assigned ->       scale_pJAK2_long   new: p lb                             
+          assigned ->     scale_pJAK2_shp1oe   new: p lb                             
+          assigned ->    scale_pJAK2_socs3oe   new: p lb                             
+          assigned ->      scale_pSTAT5_actd   new: p lb                             
+          assigned ->     scale_pSTAT5_cisoe   new: p lb                             
+          assigned ->      scale_pSTAT5_dr10   new: p lb                             
+          assigned ->      scale_pSTAT5_long   new: p lb                             
+          assigned ->    scale_pSTAT5_shp1oe   new: p lb                             
+          assigned ->   scale_pSTAT5_socs3oe   new: p lb                             
+          assigned ->      scale_tSTAT5_actd   new: p lb                             
+          assigned ->      scale_tSTAT5_long   new: p lb                             
+          assigned ->    scale_tSTAT5_shp1oe   new: p lb                             
+          assigned ->             sd_CIS_abs   new: p lb                             
+          assigned ->              sd_CIS_au   new: p lb                             
+          assigned ->         sd_JAK2EpoR_au   new: p lb                             
+          assigned ->            sd_RNA_fold   new: p lb                             
+          assigned ->            sd_SHP1_abs   new: p lb                             
+          assigned ->             sd_SHP1_au   new: p lb                             
+          assigned ->           sd_SOCS3_abs   new: p lb                             
+          assigned ->            sd_SOCS3_au   new: p lb                             
+          assigned ->           sd_STAT5_abs   new: p lb                             
+          assigned ->            sd_STAT5_au   new: p lb                             
+          assigned ->          sd_pSTAT5_rel   new: p lb                             
+          assigned ->      sd_pSTAT5_socs3oe   new: p lb                             
+All parameters assigned.
+Creating backup.workspace saved to file ./Results/20240913T114557_arCompileAllSetups_normal/workspace.mat

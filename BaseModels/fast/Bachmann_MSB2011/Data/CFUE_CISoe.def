@@ -11,8 +11,8 @@ INPUTS
 OBSERVABLES
 pJAK2_au            C   au  conc.   1   1   "offset_pJAK2_cisoe + scale_pJAK2_cisoe / init_EpoRJAK2 * pJAK2"
 pEpoR_au            C   au  conc.   1   1   "offset_pEpoR_cisoe + scale_pEpoR_cisoe / init_EpoRJAK2 * pEpoR"
-CIS_au              C   au  conc.   1   1   "offset_CIS_cisoe + scale_CIS_cisoe / CISEqc / CISRNAEqc / init_STAT5 * CIS"
-SOCS3_au            C   au  conc.   1   1   "offset_SOCS3_cisoe + scale_SOCS3_cisoe / SOCS3Eqc / SOCS3RNAEqc / init_STAT5 * SOCS3"
+CIS_au              C   au  conc.   1   1   "offset_CIS_cisoe + scale_CIS_cisoe / CISEqc_model / CISRNAEqc_model / init_STAT5 * CIS"
+SOCS3_au            C   au  conc.   1   1   "offset_SOCS3_cisoe + scale_SOCS3_cisoe / SOCS3Eqc_model / SOCS3RNAEqc_model / init_STAT5 * SOCS3"
 pSTAT5_au           C   au  conc.   1   1   "offset_pSTAT5_cisoe + scale_pSTAT5_cisoe / init_STAT5 * pSTAT5"
 
 ERRORS

@@ -9,12 +9,13 @@ t               T   min     time	0	25
 INPUTS
 
 OBSERVABLES
-SOCS3_au            C   au  conc.   1   1   "offset_SOCS3_ib_13 + scale_SOCS3_ib_13 / SOCS3eqm / SOCS3RNAeqm / init_STAT5^SOCS3prom * SOCS3"
+SOCS3_au            C   au  conc.   1   1   "offset_SOCS3_ib_13 + scale_SOCS3_ib_13 / SOCS3eqm_model / SOCS3RNAeqm_model / init_STAT5^SOCS3prom * SOCS3"
 
 ERRORS
 SOCS3_au		"sd_SOCS3_au_H838"
 
-CONDITIONS// H838 specific conditions
+CONDITIONS
+// H838 specific conditions
 step_time           "30"
 
 vol_cyt             "11.56"

@@ -18,7 +18,8 @@ ERRORS
 pJAK2_au		"sd_JAK2EpoR_au_H838"
 pEpoR_au		"sd_JAK2EpoR_au_H838"
 
-CONDITIONS// H838 specific conditions
+CONDITIONS
+// H838 specific conditions
 step_time           "30"
 
 vol_cyt             "11.56"

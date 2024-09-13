@@ -24,7 +24,8 @@ SOCS3_abs		"sd_SOCS3_abs"
 // pSTAT5A_rel		"sd_pSTAT5_rel"
 pSTAT5B_rel		"sd_pSTAT5_rel"
 
-CONDITIONS// CFUE specific conditions
+CONDITIONS
+// CFUE specific conditions
 step_time           "60"
 
 vol_cyt             "0.4"

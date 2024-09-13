@@ -12,14 +12,15 @@ INPUTS
 OBSERVABLES
 // SOCS3RNA_au         C   au  conc.   0   1   "offset_SOCS3RNA_onlyActD + scale_SOCS3RNA_onlyActD / (0.275/0.4*basal_SOCS3RNA/SOCS3RNATurn) * SOCS3RNA"
 // CishRNA_au          C   au  conc.   0   1   "offset_CishRNA_onlyActD + scale_CishRNA_onlyActD / (0.275/0.4*basal_CISRNA/CISRNATurn) * CISHRNA"
-SOCS3RNA_au         C   au  conc.   0   1   "offset_SOCS3RNA_onlyActD + scale_SOCS3RNA_onlyActD / SOCS3RNAeqm / init_STAT5^SOCS3prom * SOCS3RNA"
-CishRNA_au          C   au  conc.   0   1   "offset_CishRNA_onlyActD + scale_CishRNA_onlyActD / CISHRNAeqm / init_STAT5 * CISHRNA"
+SOCS3RNA_au         C   au  conc.   0   1   "offset_SOCS3RNA_onlyActD + scale_SOCS3RNA_onlyActD / SOCS3RNAeqm_model / init_STAT5^SOCS3prom * SOCS3RNA"
+CishRNA_au          C   au  conc.   0   1   "offset_CishRNA_onlyActD + scale_CishRNA_onlyActD / CISHRNAeqm_model / init_STAT5 * CISHRNA"
 
 ERRORS
 CishRNA_au     		"sd_RNA"
 SOCS3RNA_au         "sd_RNA"
 
-CONDITIONS// CFUE specific conditions
+CONDITIONS
+// CFUE specific conditions
 step_time           "60"
 
 vol_cyt             "0.4"

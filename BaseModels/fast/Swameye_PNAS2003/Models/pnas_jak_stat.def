@@ -24,7 +24,7 @@ pEpoR           C   "au"      "conc."   "spline_pos5(t, 0.0, sp1, 5.0, sp2, 10.0
 
 REACTIONS
 STAT             ->  pSTAT            CUSTOM "p1 * pEpoR * STAT"
-pSTAT + pSTAT    ->  pSTAT_pSTAT      CUSTOM "p2 * pSTAT^2"
+pSTAT + pSTAT    ->  pSTAT_pSTAT      CUSTOM "p2_model * pSTAT^2"
 pSTAT_pSTAT      ->  npSTAT_npSTAT    CUSTOM "p3 * pSTAT_pSTAT"
 
 // dissociation, delay and export 
@@ -40,8 +40,8 @@ tSTAT           C   "nM"  "conc."    "STAT + pSTAT + 2*pSTAT_pSTAT"
 tpSTAT          C   "nM"  "conc."    "pSTAT + 2*pSTAT_pSTAT"
         
 OBSERVABLES
-tSTAT_au        C   "au"  "conc."   1   0   "offset_tSTAT + scale_tSTAT * tSTAT"
-pSTAT_au        C   "au"  "conc."   1   0   "offset_pSTAT + scale_pSTAT * tpSTAT"
+tSTAT_au        C   "au"  "conc."   1   0   "offset_tSTAT + scale_tSTAT_model * tSTAT"
+pSTAT_au        C   "au"  "conc."   1   0   "offset_pSTAT + scale_pSTAT_model * tpSTAT"
 pEpoR_au        C   "au"  "conc."   1   0   "pEpoR"
 
 ERRORS
@@ -59,6 +59,6 @@ init_nSTAT3          "0"
 init_nSTAT4          "0"
 init_nSTAT5          "0"
 
-p2                   "p2 / init_STAT"
-scale_tSTAT          "scale_tSTAT / init_STAT"
-scale_pSTAT          "scale_pSTAT / init_STAT"
+p2_model                   "p2 / init_STAT"
+scale_tSTAT_model          "scale_tSTAT / init_STAT"
+scale_pSTAT_model          "scale_pSTAT / init_STAT"

@@ -9,8 +9,8 @@ t               T   min     time	0	100
 INPUTS
 
 OBSERVABLES
-CIS_au1              C   au  conc.   1   1   "scale1_CIS_dr90 / CISEqc / CISRNAEqc / init_STAT5 * CIS"
-CIS_au2              C   au  conc.   1   1   "scale2_CIS_dr90 / CISEqc / CISRNAEqc / init_STAT5 * CIS"
+CIS_au1              C   au  conc.   1   1   "scale1_CIS_dr90 / CISEqc_model / CISRNAEqc_model / init_STAT5 * CIS"
+CIS_au2              C   au  conc.   1   1   "scale2_CIS_dr90 / CISEqc_model / CISRNAEqc_model / init_STAT5 * CIS"
 
 ERRORS
 CIS_au1			"sd_CIS_au"

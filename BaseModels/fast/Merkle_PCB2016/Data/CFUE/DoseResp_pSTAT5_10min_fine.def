@@ -14,7 +14,8 @@ pSTAT5_au         C   au  conc.   1   1   "scale_pSTAT5_dr10 / init_STAT5 * pSTA
 ERRORS
 pSTAT5_au		"sd_STAT5_au"
 
-CONDITIONS// CFUE specific conditions
+CONDITIONS
+// CFUE specific conditions
 step_time           "60"
 
 vol_cyt             "0.4"

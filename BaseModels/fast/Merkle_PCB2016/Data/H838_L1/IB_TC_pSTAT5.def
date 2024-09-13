@@ -16,7 +16,8 @@ pSTAT5_au           C   au  conc.   1   1   "offset_pSTAT5_ib_4 + scale_pSTAT5_i
 ERRORS
 pSTAT5_au		"sd_STAT5_au_H838"
 
-CONDITIONS// H838 specific conditions
+CONDITIONS
+// H838 specific conditions
 step_time           "30"
 
 vol_cyt             "11.56"

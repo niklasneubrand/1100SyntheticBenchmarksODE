@@ -1,0 +1,42 @@
+DESCRIPTION
+"Experimenter: Ruth Merkle"
+"Cells: H838EpoR"
+"Ligand: Epo 0-500 units/ml"
+"Original file: 140909_H838EpoR_onlyActD"
+
+PREDICTOR
+t               T   min     time	0	140
+
+INPUTS
+
+OBSERVABLES
+// SOCS3RNA_au         C   au  conc.   0   1   "offset_SOCS3RNA_onlyActD + scale_SOCS3RNA_onlyActD / (0.275/0.4*basal_SOCS3RNA/SOCS3RNATurn) * SOCS3RNA"
+// CishRNA_au          C   au  conc.   0   1   "offset_CishRNA_onlyActD + scale_CishRNA_onlyActD / (0.275/0.4*basal_CISRNA/CISRNATurn) * CISHRNA"
+SOCS3RNA_au         C   au  conc.   0   1   "offset_SOCS3RNA_onlyActD + scale_SOCS3RNA_onlyActD / SOCS3RNAeqm / init_STAT5^SOCS3prom * SOCS3RNA"
+CishRNA_au          C   au  conc.   0   1   "offset_CishRNA_onlyActD + scale_CishRNA_onlyActD / CISHRNAeqm / init_STAT5 * CISHRNA"
+
+ERRORS
+CishRNA_au     		"sd_RNA"
+SOCS3RNA_au         "sd_RNA"
+
+CONDITIONS// CFUE specific conditions
+step_time           "60"
+
+vol_cyt             "0.4"
+vol_nuc             "0.275"
+
+init_CISHRNA        "0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn"
+init_CIS            "0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn"
+
+init_SOCS3nRNA1     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA2     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA3     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA4     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA5     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3RNA       "0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn"
+init_SOCS3          "0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn"
+
+// experimental conditions
+epo_level           "0"
+ActD				"1"
+SOCS3oe             "0"
