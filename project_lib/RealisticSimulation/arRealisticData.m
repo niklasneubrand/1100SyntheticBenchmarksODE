@@ -7,6 +7,18 @@ end
 
 global ar  %#ok<*GVMIS>
 
+%% Simlate the model at tExp and potentially adjust configs
+[simuSuccess, configSuccess, errReport] = arSimuMultiTries();
+if simuSuccess
+    % replace the previous configs by the successful configs
+    configs = fieldnames(configSuccess);
+    for i = 1:length(configs)
+        ar.config.(configs{i}) = configSuccess.(configs{i});
+    end
+else
+    warning(errReport)
+end
+
 %% simulate data
 for m = 1:length(ar.model)
     % arSimuData arguments:
