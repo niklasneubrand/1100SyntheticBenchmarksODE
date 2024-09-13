@@ -7,6 +7,7 @@ arguments
     options.nCVRestart (1,1) double         % by default: use value from ar.config (if not set, use 10)
     options.tolFactor (1,1) double = 2      % by default: increase tolerances by factor of 2
     options.stepsFactor (1,1) double = 2    % by default: increase maxsteps by 20%
+    options.updateConfig (1,1) logical = false% by default: update ar.config if successful
 end
 
 global ar
@@ -147,11 +148,13 @@ for i = 1:length(configs)
 end
 
 % reset parameters to original values
-ar.config.atol = configOld.atol;
-ar.config.rtol = configOld.rtol;
-ar.config.atolV = configOld.atolV;
-ar.config.atolV_Sens = configOld.atolV_Sens;
-ar.config.maxsteps = configOld.maxsteps;
+if ~options.updateConfig
+    ar.config.atol = configOld.atol;
+    ar.config.rtol = configOld.rtol;
+    ar.config.atolV = configOld.atolV;
+    ar.config.atolV_Sens = configOld.atolV_Sens;
+    ar.config.maxsteps = configOld.maxsteps;
+end
 for m=1:length(ar.model)
     ar.model(m).qPositiveX = qPositiveX{m};
 end
