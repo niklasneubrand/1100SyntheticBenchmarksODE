@@ -34,6 +34,7 @@ for idx = 1:nExp
 
         c = RSTemplate.timeCourse(idx).cLink;
         tLim = max([ar.model(m).data(ar.model(m).condition(c).dLink).tLim], [], 'all');
+        tLim = max(tLim, ar.model(m).tLim);
 
         replace = RSTemplate.timeCourse(idx).condReplace;
         

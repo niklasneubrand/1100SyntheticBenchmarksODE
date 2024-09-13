@@ -26,7 +26,7 @@ y = ar.model(m).data(d).yFineSimu;
 converty = ones(1, size(y, 2));
 for iObs=1:size(y, 2)
     if (max(y(:, iObs)) > 10^(4) || max(y(:, iObs)) < 10^(-4))
-        converty(iObs) = 10.^(floor(log10(range(y(:, iObs)))));
+        converty(iObs) = 10.^(floor(log10(max(y(:, iObs)))));
         y(:, iObs) = y(:, iObs)./converty(iObs);
     end
 end

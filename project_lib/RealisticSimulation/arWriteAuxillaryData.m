@@ -18,6 +18,7 @@ for tc = 1:nTC
     nObs = length(obs);
     dummyCell = num2cell(1+rand(1, nObs+1));
     tLim = max([ar.model.data(RSTemplate.timeCourse(tc).dLink).tLim], [], 'all');
+    tLim = max(tLim, ar.model(m).tLim);
     dummyCell(:, 1) = {tLim};
 
     % create table and store to file
