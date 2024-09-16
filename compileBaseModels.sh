@@ -24,4 +24,4 @@ if [[ ! " ${base_sets[@]} " =~ " ${baseSet} " ]]; then
 fi
 
 # Compile base models 
-nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$baseSet_dir'); arCompileAlLSetups; exit();" </dev/null >/dev/null 2>&1 &
+nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$baseSet_dir'); arCompileAllSetups; exit();" </dev/null >/dev/null 2>&1 &

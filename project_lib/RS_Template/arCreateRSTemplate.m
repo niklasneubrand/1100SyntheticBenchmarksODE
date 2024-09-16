@@ -22,7 +22,7 @@ for ip = length(condStruct.modelReplace):-1:1
     end
 end
 for ic = 1:length(condStruct.condReplace)
-    for ip = length(condStruct.condReplace{ic}):-1:1
+    for ip = size(condStruct.condReplace{ic},1):-1:1
         if isfield(ar.model, 'py') && ismember(condStruct.condReplace{ic}{ip, 1}, ar.model.py)
             condStruct.condReplace{ic}(ip, :) = [];
         end
