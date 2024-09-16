@@ -126,7 +126,12 @@ try
     Setup;
 
     % Export the model to PEtab
-    arExportPEtab();
+    try
+        arExportPEtab();
+    catch ME
+        warning('Error while exporting the model to PEtab.')
+        display(getReport(ME))
+    end
 
     % Plot the observables
     arPlot();
