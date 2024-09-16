@@ -100,6 +100,12 @@ oldPath = cd(projectPath);
 try
     fprintf('Compiling the new model structure.\n')
     SetupAuxillary;
+
+    %% fix bug with nThreads
+    if isfield(ar.config, 'nThreads') && (ar.config.nThreads > ar.config.nMaxThreads)
+        % limit the number of threads to the maximum allowed
+        arSetParallelThreads(ar.config.nMaxThreads)
+    end
     
     %% Generate realistic time points
     arRealisticTimesRTF(options.rngSeed);
