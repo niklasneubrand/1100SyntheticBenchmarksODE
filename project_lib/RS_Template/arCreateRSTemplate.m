@@ -271,6 +271,9 @@ condObsMatrix = zeros(nRows, nCols);
 
 for tc = 1:nTC
     [rowStateSets, ~] = arObsStringRepresent(m, 'expData', RSTemplate.timeCourse(tc).dLink);
+    if isempty(rowStateSets)
+        continue
+    end
     for iCol = 1:nCols
         if ismember(uniqStateSets(iCol), rowStateSets)
             condObsMatrix(tc, iCol) = 1;
@@ -280,6 +283,9 @@ end
 
 for dr = 1:nDR
     [rowStateSets, ~] = arObsStringRepresent(m, 'expData', RSTemplate.doseResponse(dr).dLink);
+    if isempty(rowStateSets)
+        continue
+    end
     for iCol = 1:nCols
         if ismember(uniqStateSets(iCol), rowStateSets)
             condObsMatrix(nTC + dr, iCol) = 1;

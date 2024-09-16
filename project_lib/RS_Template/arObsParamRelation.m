@@ -43,6 +43,11 @@ if isempty(pLabel)
     return
 end
 
+% no observable functions, return zero/empty cells
+if nObs == 0
+    return
+end
+
 %% symbolic calculations
 
 % convert to symbolic variables
