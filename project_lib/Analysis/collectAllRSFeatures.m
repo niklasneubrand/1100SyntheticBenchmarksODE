@@ -33,7 +33,7 @@ for id = 1:length(d2dProjectFolders)
         nameParts = split(modelName, '_');
         modelFeatures.baseModelName = nameParts(1);
 
-        qBaseModel = ~contains(ar.info.name, 'RS');
+        qBaseModel = ~contains(ar.info.name, '_RS');
         if qBaseModel
             modelFeatures.RSIndex = 0;
         else
@@ -54,7 +54,7 @@ end
 baseModelFeats = allFeatures(allFeatures.RSIndex == 0, :);
 rsModelFeats = allFeatures(allFeatures.RSIndex ~= 0, :);
 
-save(fullfile(folder, sprintf('%s_modelFeats.mat', folderName)), 'baseModelFeats', "rsModelFeats")
+save(fullfile(folder, sprintf('%s_modelFeats.mat', folderName)), 'baseModelFeats', 'rsModelFeats', 'allFeatures')
 
 cd(startDir)
 
