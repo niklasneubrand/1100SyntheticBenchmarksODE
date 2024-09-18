@@ -37,7 +37,7 @@ end
 % the dLink is based on the RSTemplateOld model not the newly compiled data
 % therefore, calculate RSTemplate for the new model
 
-templateNew = arCreateRSTemplate(false, false);
+templateNew = arCreateRSTemplate(false, false, false);
 
 for dr = 1:templateNew.nDR
 
