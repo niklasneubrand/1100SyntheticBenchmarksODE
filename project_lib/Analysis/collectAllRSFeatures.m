@@ -1,4 +1,4 @@
-function allFeatures = collectAllRSFeatures(folder)
+function [baseModelFeats, rsModelFeats] = collectAllRSFeatures(folder)
 
 arguments
     folder (1,1) string = pwd()
@@ -8,6 +8,7 @@ global ar
 
 d2dProjectFolders = arListProjectsRecursive(folder, true);
 startDir = cd(folder);
+[~, folderName] = fileparts(folder);
 
 % allFeatures = struct();
 
@@ -49,6 +50,11 @@ for id = 1:length(d2dProjectFolders)
         cd(prevDir)
     end
 end
+
+baseModelFeats = allFeatures(allFeatures.RSIndex == 0, :);
+rsModelFeats = allFeatures(allFeatures.RSIndex ~= 0, :);
+
+save(fullfile(folder, sprintf('%s_modelFeats.mat', folderName)), 'baseModelFeats', "rsModelFeats")
 
 cd(startDir)
 

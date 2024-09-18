@@ -20,7 +20,9 @@ function feats = collectRSFeatures()
 
     % get the condition/data features from ar.model.data
     feats.nConds = length(ar.model.condition);
-    feats.nData = sum([ar.model.data.ndata]);
+    rsTemplate = arCreateRSTemplate(false, false, false);
+    feats.nExp = rsTemplate.nExp;
+    feats.nDataPoints = sum([ar.model.data.ndata]);
 
     %feats.nObsPerCond = cellfun(@length, {ar.model.data.fy});
     %feats.nTimeCourses = sum(feats.nObsPerCond);
