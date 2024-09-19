@@ -28,8 +28,6 @@ function feats = collectRSFeatures()
 
     % analyze condObsMatrix (sparsity of oservations)
     CondObsMatrix = rsTemplate.condObsMatrix;
-    nanSparsity = @(mat) sum(~isnan(mat(:)))/numel(mat);
-    feats.designSparsity = nanSparsity(CondObsMatrix);
-    
+    feats.designSparsity = mean(CondObsMatrix, [1 2]);
 
 end
