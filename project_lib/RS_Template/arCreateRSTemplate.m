@@ -218,6 +218,8 @@ end
 
 function RSTemplate = mergeDoseresponse(RSTemplate)
 
+global ar
+
 % return if there are no dose response conditions
 if isempty(RSTemplate.doseResponse)
     return
@@ -230,8 +232,9 @@ for dr = 1:length(oldDoseResponse)
     response = oldDoseResponse(dr).response_parameter;
     tExp = oldDoseResponse(dr).tExp;
     obsNames = strjoin(oldDoseResponse(dr).yNames, '-');
+    dataName = ar.model.data(oldDoseResponse(dr).dLink).name;
     condRepStr = [oldDoseResponse(dr).condReplaceRest{:}];
-    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s_%s', response, tExp, obsNames, condRepStr);
+    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s_%s_%s', response, tExp, obsNames, dataName, condRepStr);
 end
 
 % find unique DRs
@@ -293,7 +296,13 @@ for dr = 1:nDR
     end
 end
 
+% sort the columns
+[~, sortIdx] = sort(sum(condObsMatrix, 1), 'descend');
+condObsMatrix = condObsMatrix(:, sortIdx);
+uniqStateSets = uniqStateSets(sortIdx);
+
 RSTemplate.condObsMatrix = condObsMatrix;
+RSTemplate.observedStateSets = uniqStateSets;
 
 if qPlot
 
