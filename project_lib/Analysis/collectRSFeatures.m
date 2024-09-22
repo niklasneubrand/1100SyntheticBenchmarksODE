@@ -1,33 +1,36 @@
 function feats = collectRSFeatures()
 
-    global ar
+global ar
 
-    feats = struct();
+feats = struct();
 
-    % get the name of the model
-    feats.modelName = string(ar.info.name);
+% get the name of the model
+feats.modelName = string(ar.info.name);
 
-    % get parameter features from ar
-    feats.nParams = length(ar.p);
-    feats.nParamsDyn = sum(ar.qDynamic);
-    feats.nParamsInit = sum(ar.qInitial);
-    feats.nParamsErr = sum(ar.qError);
-    feats.nParamsFit = sum(ar.qFit~=0);
+% get parameter features from ar
+feats.nParams = length(ar.p);
+feats.nParamsDyn = sum(ar.qDynamic);
+feats.nParamsInit = sum(ar.qInitial);
+feats.nParamsErr = sum(ar.qError);
+feats.nParamsFit = sum(ar.qFit~=0);
 
-    % get model features from ar.model
-    feats.nStates = length(ar.model.x);
-    feats.nInputs = length(ar.model.u);
+% get model features from ar.model
+feats.nStates = length(ar.model.x);
+feats.nInputs = length(ar.model.u);
 
-    % get the condition/data features from ar.model.data
-    
-    rsTemplate = arCreateRSTemplate(true, true, true);
+% get the condition/data features from ar.model.data
 
-    feats.nConds = length(ar.model.condition);
-    feats.nExp = rsTemplate.nExp;
-    feats.nDataPoints = sum([ar.model.data.ndata]);
+rsTemplate = arCreateRSTemplate(true, true, true);
 
-    % analyze condObsMatrix (sparsity of oservations)
-    CondObsMatrix = rsTemplate.condObsMatrix;
-    feats.designSparsity = mean(CondObsMatrix, [1 2]);
+feats.nConds = length(ar.model.condition);
+feats.nExp = rsTemplate.nExp;
+feats.nTC = rsTemplate.nTC;
+feats.nDR = rsTemplate.nDR;
+feats.nDataPoints = sum([ar.model.data.ndata]);
+
+% analyze condObsMatrix
+CondObsMatrix = rsTemplate.condObsMatrix;
+feats.nObsSets = size(CondObsMatrix, 2);
+feats.designSparsity = mean(CondObsMatrix, [1 2]);
 
 end
