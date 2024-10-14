@@ -485,8 +485,7 @@ end
 
 
 %% check the dynamics of the curves
-qDynamicCurves = cellfun(@(x) checkCurveDynamics(x, dynTol), curvesAll, 'UniformOutput', false);
-qDynamicCurves = vertcat(qDynamicCurves{:});
+qDynamicCurves = checkCurveDynamics(curvesAll, dynTol);
 ratioDynCurves = mean(qDynamicCurves, 1);
 
 end
@@ -518,11 +517,13 @@ if iscell(trajectories)
         'UniformOutput', false);
     try
         qDynamic = vertcat(qDynamic{:});
+        return
+    catch
+        error('Trajectories have non-matching dimensions.')
     end
-    return
 end
 
-relRange = range(trajectories)./max(trajectories);
+relRange = range(trajectories, 1)./max(trajectories, [], 1);
 qDynamic = (relRange > rtol);
 
 end
