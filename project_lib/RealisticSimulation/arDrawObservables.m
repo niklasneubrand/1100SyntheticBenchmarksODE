@@ -13,7 +13,7 @@ global ar  %#ok<*GVMIS>
 options = arSetDefaultRSOptions(options);
 rng(options.rngSeed);
 
-%% Simulate the model to get the dynamics (fine and exp time points)
+%% Simulate the model to get the dynamics (fine and iEx time points)
 [simuSuccess, configSuccess, errReport] = arSimuMultiTries(true, [true, false], true);
 if simuSuccess
     % replace the previous configs by the successful configs
@@ -183,25 +183,25 @@ addObs(addOneMore) = addObs(addOneMore) + 1;
 
 % add new observables to the necessary experiments
 if sum(addObs, "all") > 0
-    for exp = 1:nExp
-        for iObs = 1:addObs(exp)
+    for iEx = 1:nExp
+        for iObs = 1:addObs(iEx)
 
             % logical vector for observables not yet included in this experiment
-            expUnobservedObs = CondObsMatrix(exp, :)==0;
+            expUnobservedObs = CondObsMatrix(iEx, :)==0;
 
-            if any(qDynamicObs(exp, expUnobservedObs))
+            if any(qDynamicObs(iEx, expUnobservedObs))
                 % at least one of the existing observable shows dynamics
                 % -> use one of these observables
-                iAdd = find(qDynamicObs(exp, expUnobservedObs));
+                iAdd = find(qDynamicObs(iEx, expUnobservedObs));
                 iAdd = iAdd(randi(length(iAdd)));
                 idExpUnobserved = find(expUnobservedObs);
                 iAdd = idExpUnobserved(iAdd);
-                CondObsMatrix(exp, iAdd) = 1;
+                CondObsMatrix(iEx, iAdd) = 1;
                 
-            elseif any(qDynamicState(exp, idUnobservedState))
+            elseif any(qDynamicState(iEx, idUnobservedState))
                 % at least one unobserved state shows dynamics
                 % -> use one of these states as observable
-                iAdd = find(qDynamicState(exp, idUnobservedState));
+                iAdd = find(qDynamicState(iEx, idUnobservedState));
                 iAdd = iAdd(randi(length(iAdd)));
                 iAdd = idUnobservedState(iAdd);
 
@@ -213,7 +213,7 @@ if sum(addObs, "all") > 0
 
                 % add a new column to CondObsMatrix
                 CondObsMatrix = [CondObsMatrix(:, 1:nDirect-1), zeros(nExp, 1), CondObsMatrix(:, nDirect:end)];
-                CondObsMatrix(exp, nDirect) = 1;
+                CondObsMatrix(iEx, nDirect) = 1;
 
                 % add the new observable to the simulated data and update dynamic flags
                 for ex = 1:nExp
@@ -224,18 +224,18 @@ if sum(addObs, "all") > 0
             else
                 % no observable or state shows dynamics in this experiment
                 % -> add a constant observable
-                if any(removeConstObs(exp, :))
+                if any(removeConstObs(iEx, :))
                     % add again one of the previously removed observables
-                    iAdd = find(removeConstObs(exp, :));
+                    iAdd = find(removeConstObs(iEx, :));
                     iAdd = iAdd(randi(length(iAdd)));
-                    removeConstObs(exp, iAdd) = 0;
+                    removeConstObs(iEx, iAdd) = 0;
                 else
                     % no observables has been removed before but addOneMore
-                    % is true, i.e. exp had no observables in the first
+                    % is true, i.e. iEx had no observables in the first
                     % place -> add a random preexisting observable
                     iAdd = randi(nObs);
                 end
-                CondObsMatrix(exp, iAdd) = 1;
+                CondObsMatrix(iEx, iAdd) = 1;
             end
             
         end
@@ -330,7 +330,12 @@ for ex = 1:nExp
             % -> calculate the mean magnitude of the observable
             %    to transform relative to absolute error
             traj = ySimu(isfinite(ySimu(:, iObs)), iObs);
-            meanMagnitude = log10(mean(traj, 'omitnan'));
+            meanTraj = mean(traj, 'omitnan');
+            if meanTraj > 0
+                meanMagnitude = log10(meanTraj);
+            else
+                meanMagnitude = -Inf;
+            end
             obsMean(ex, iObs) = meanMagnitude;
             if ~qLog(iObs) && isfinite(meanMagnitude)
                 % only possible if meanMagnitude is not NaN or Inf
@@ -344,16 +349,23 @@ end
 
 % check if we have to increase the add_c parameter
 minStdObs = min(stdObs(:));
-add_c = -2.0*log(10^minStdObs);            % exact relation for required add_c
+add_c = -2.0*log(10^minStdObs);         % exact relation for required add_c
 add_c = add_c + 10;                     % add some margin (corresponding to 5 orders of magnitude in std)
 add_c = ceil(add_c/10)*10;              % round to next 10 (to get a nice number)
-add_c = min(add_c, 100);                % maximum value for add_c
+add_c_max = 100;                        % maximum value for add_c
+add_c = min(add_c, add_c_max);                % maximum value for add_c
 add_c = max(add_c, ar.config.add_c);    % minimum value for add_c
 
 if add_c ~= ar.config.add_c
     ar.config.add_c = add_c;
     RSTemplate.customSettings.add_c = add_c; % needed in arCreateRealisticProject
 end
+
+% we impose a maximum value for add_c
+% -> we need a corresponding minimum for stdObs
+std_min = -0.5 * add_c_max * log10(exp(1));
+std_min = round(std_min + 2);  % add some margin (2 orders of magnitude)
+stdObs(~isnan(stdObs)) = max(stdObs(~isnan(stdObs)), std_min, 'omitnan');
 
 % define true values for offset parameters
 % The offset should be 2 order of magnitude smaller than the mean magnitude.

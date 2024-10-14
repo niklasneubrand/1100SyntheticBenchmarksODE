@@ -48,10 +48,11 @@ for ex = 1:nExp
             iObs = sum(0~=obsStruct.CondObsMatrix(ex, 1:iCol));
             traj = ySimu(:, iObs);
             if obsStruct.qLog(iCol)
-                % traj already on log scale, directly calculate the mean
-                meanMagnitude = mean(traj, 'omitnan');
+                % traj is on log scale
+                % -> calculate mean on lin scale and transform back
+                meanMagnitude = log10(mean(10.^traj, 'omitnan'));
             else
-                % transform to log scale and calculate the mean
+                % calculate the mean and transform to log scale
                 meanMagnitude = log10(mean(traj, 'omitnan'));
             end
             obsStruct.obsMean(ex, iCol) = meanMagnitude;
@@ -66,6 +67,11 @@ qUpdateStd = false(size(obsStruct.stdObs));
 qUpdateStd(:, ~obsStruct.qLog) = obsStruct.CondObsMatrix(:, ~obsStruct.qLog)>0;
 qUpdateStd(:, ~obsStruct.qLog) = qUpdateStd(:, ~obsStruct.qLog) & isfinite(obsStruct.obsMean(:, ~obsStruct.qLog));
 obsStruct.stdObs(qUpdateStd) = obsStruct.stdObsRaw(qUpdateStd) + obsStruct.obsMean(qUpdateStd);
+
+% impose the minimum value
+std_min = -0.5 * ar.config.add_c * log10(exp(1));
+std_min = round(std_min + 2);  % add some margin (2 orders of magnitude)
+obsStruct.stdObs(qUpdateStd) = max(obsStruct.stdObs(qUpdateStd), std_min, 'omitnan');
 
 % update values in ar struct
 for ex = 1:nExp
@@ -88,7 +94,7 @@ obsStruct.offsetValOld = obsStruct.offsetVal;
 obsStruct.offsetVal = nan(nExp, nObsTotal);
 obsStruct.offsetVal(:, obsStruct.idOffset) = floor(obsStruct.obsMean(:, obsStruct.idOffset)-2);
 
-% pdate values in ar struct
+% update values in ar struct
 for ex = 1:nExp
     for iObs = 1:nObsTotal
         if obsStruct.CondObsMatrix(ex, iObs)>0 && ismember(iObs, obsStruct.idOffset)
