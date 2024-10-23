@@ -8,7 +8,8 @@ PREDICTOR
 t               T   min     time	-10	110
 
 INPUTS
-ActD    "step1(t,0,-10,input_actd)"
+// ActD    "step1(t,0,-10,input_actd)"
+// This is the default function. We don't need to specify it again.
         
 OBSERVABLES
                 

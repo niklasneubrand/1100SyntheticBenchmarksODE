@@ -8,10 +8,15 @@ PREDICTOR
 t               T   min     time	0	70
 
 INPUTS
-IL6     "step1(t,il6_level,20,0)"
+// IL6     "step1(t,il6_level,20,0)"
 
 OBSERVABLES
         
 ERRORS
         
 CONDITIONS
+// INPUTS
+// IL6
+il6_level1                      "il6_level"
+il6_tStep                       "20"
+input_il6                       "0"
