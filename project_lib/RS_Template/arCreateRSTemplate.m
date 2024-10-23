@@ -30,6 +30,10 @@ for ic = 1:length(condStruct.condReplace)
 end
 RSTemplate.condStruct = condStruct;
 
+%% analyze input functions
+inputConds = arInputConds(1);
+RSTemplate.inputConds = inputConds;
+
 %% analyze data
 nData = length(ar.model.data);
 RSTemplate.timeCourse = struct([]);
@@ -52,7 +56,8 @@ for d = 1:nData
         RSTemplate.timeCourse(tc).cLink = c;
         RSTemplate.timeCourse(tc).dLink = d;
         RSTemplate.timeCourse(tc).condReplace = condStruct.condReplace{c};
-    
+        RSTemplate.timeCourse(tc).inputConds = [inputConds(c).u', inputConds(c).fu'];
+        
     % dose-response data
     else
         dr = dr + 1;
@@ -77,11 +82,12 @@ for d = 1:nData
         RSTemplate.doseResponse(dr).tExp = tExp(1);
         RSTemplate.doseResponse(dr).nReplica = length(tExp);
 
-        % set the replacements for remaining parameters
+        % set the replacements for remaining parameters (and inputs)
         condRep = condStruct.condReplace{c};
         qResp = strcmp(condRep(:, 1), response_parameter);
         condRep = condRep(~qResp, :);
         RSTemplate.doseResponse(dr).condReplaceRest = condRep;
+        RSTemplate.doseResponse(dr).inputConds = [inputConds(c).u', inputConds(c).fu'];
 
     end
 end
@@ -209,6 +215,7 @@ for idx=1:length(condis)
     RSTemplate.timeCourse(idx).cLink = c;
     RSTemplate.timeCourse(idx).dLink = [oldTimecourse(qTC).dLink];
     RSTemplate.timeCourse(idx).condReplace = oldTimecourse(cOld).condReplace;
+    RSTemplate.timeCourse(idx).inputConds = oldTimecourse(cOld).inputConds;
 end
 
 end
@@ -232,9 +239,10 @@ for dr = 1:length(oldDoseResponse)
     response = oldDoseResponse(dr).response_parameter;
     tExp = oldDoseResponse(dr).tExp;
     obsNames = strjoin(oldDoseResponse(dr).yNames, '-');
-    dataName = ar.model.data(oldDoseResponse(dr).dLink).name;
     condRepStr = [oldDoseResponse(dr).condReplaceRest{:}];
-    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s_%s_%s', response, tExp, obsNames, dataName, condRepStr);
+    inputsRepStr = [oldDoseResponse(dr).inputConds{:}];
+    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s_%s_%s', ...
+        response, tExp, obsNames, condRepStr, inputsRepStr);
 end
 
 % find unique DRs
@@ -248,10 +256,19 @@ for dr = 1:max(drUnique)
     RSTemplate.doseResponse(dr).cLink = [oldDoseResponse(qDR).cLink];
     RSTemplate.doseResponse(dr).dLink = [oldDoseResponse(qDR).dLink];
     RSTemplate.doseResponse(dr).condReplaceRest = oldDoseResponse(drOld(dr)).condReplaceRest;
+    RSTemplate.doseResponse(dr).inputConds = oldDoseResponse(drOld(dr)).inputConds;
     RSTemplate.doseResponse(dr).response_parameter = oldDoseResponse(drOld(dr)).response_parameter;
-    RSTemplate.doseResponse(dr).values = [oldDoseResponse(qDR).values];
     RSTemplate.doseResponse(dr).tExp = oldDoseResponse(drOld(dr)).tExp;
-    RSTemplate.doseResponse(dr).nReplica = [oldDoseResponse(qDR).nReplica];
+
+    % merge values and replicas horzontally
+    allValues = [oldDoseResponse(qDR).values];
+    nReplica = [oldDoseResponse(qDR).nReplica];
+    [values, ~, iOld] = unique(allValues);
+    RSTemplate.doseResponse(dr).values = values;
+    for iv = 1:max(iOld)
+        qOld = (iOld==iv);
+        RSTemplate.doseResponse(dr).nReplica(iv) = sum(nReplica(qOld));
+    end
 end
 
 end

@@ -37,6 +37,7 @@ for idx = 1:nExp
         tLim = max(tLim, ar.model(m).tLim(2));
 
         replace = RSTemplate.timeCourse(idx).condReplace;
+        inputs = RSTemplate.timeCourse(idx).inputConds;
         
     else
         filename = sprintf('%s_DR%03d%s.def', projectName, idx - nTC, suffix);
@@ -46,6 +47,7 @@ for idx = 1:nExp
         tLim = ceil(RSTemplate.doseResponse(idx - nTC).tExp*1.1);
 
         replace = RSTemplate.doseResponse(idx - nTC).condReplaceRest;
+        inputs = RSTemplate.doseResponse(idx - nTC).inputConds;
     end
 
     %% create *.def file
@@ -59,11 +61,15 @@ for idx = 1:nExp
     fprintf(fileID, '"Data type, index:\t%s"\n', cNumber);
 
     %% Predictor
-
     fprintf(fileID, '\n\n%s%s\n', 'PREDICTOR', predictor_add);
     fprintf(fileID, '%s\t%s\t%s\t%s\t%i\t%i\n', ...
             'time', ar.model.tUnits{:}, 0, tLim);
-    fprintf(fileID, '\n\n%s\n', 'INPUTS') ;
+
+    %% Inputs (if condition-specific)
+    fprintf(fileID, '\n\n%s\n', 'INPUTS');
+    for iu = 1:size(inputs, 1)
+        fprintf(fileID, '%s\t"%s"\n', inputs{iu, 1}, inputs{iu, 2});
+    end
 
     %% Observables
     fprintf(fileID, '\n\n%s\n', 'OBSERVABLES') ;
