@@ -50,10 +50,15 @@ for ex = 1:nExp
             if obsStruct.qLog(iCol)
                 % traj is on log scale
                 % -> calculate mean on lin scale and transform back
-                meanMagnitude = log10(mean(10.^traj, 'omitnan'));
+                meanTraj = mean(10.^traj, 'omitnan');
             else
                 % calculate the mean and transform to log scale
-                meanMagnitude = log10(mean(traj, 'omitnan'));
+                meanTraj = mean(traj, 'omitnan');
+            end
+            if meanTraj > 0
+                meanMagnitude = log10(meanTraj);
+            else
+                meanMagnitude = -Inf;
             end
             obsStruct.obsMean(ex, iCol) = meanMagnitude;
         end
@@ -89,10 +94,19 @@ end
 
 %% update the offset parameters
 
+% The offset value should be two orders of magnitude below the mean value
+% this ensures that the error parameters still roughly represent the relative error
+% of the observable, even if it is slightly shifted.
+diffOffsetMean = 2;
+
 % update values in obsStruct
 obsStruct.offsetValOld = obsStruct.offsetVal;
 obsStruct.offsetVal = nan(nExp, nObsTotal);
-obsStruct.offsetVal(:, obsStruct.idOffset) = floor(obsStruct.obsMean(:, obsStruct.idOffset)-2);
+obsStruct.offsetVal(:, obsStruct.idOffset) = floor(obsStruct.obsMean(:, obsStruct.idOffset) - diffOffsetMean);
+
+% impose the minimum value
+offset_min = std_min - diffOffsetMean;
+obsStruct.offsetVal(logical(obsStruct.CondObsMatrix)) = max(obsStruct.offsetVal(logical(obsStruct.CondObsMatrix)), offset_min);
 
 % update values in ar struct
 for ex = 1:nExp

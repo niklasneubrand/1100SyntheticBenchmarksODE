@@ -353,7 +353,7 @@ add_c = -2.0*log(10^minStdObs);         % exact relation for required add_c
 add_c = add_c + 10;                     % add some margin (corresponding to 5 orders of magnitude in std)
 add_c = ceil(add_c/10)*10;              % round to next 10 (to get a nice number)
 add_c_max = 100;                        % maximum value for add_c
-add_c = min(add_c, add_c_max);                % maximum value for add_c
+add_c = min(add_c, add_c_max);          % maximum value for add_c
 add_c = max(add_c, ar.config.add_c);    % minimum value for add_c
 
 if add_c ~= ar.config.add_c
@@ -371,8 +371,13 @@ stdObs(~isnan(stdObs)) = max(stdObs(~isnan(stdObs)), std_min, 'omitnan');
 % The offset should be 2 order of magnitude smaller than the mean magnitude.
 % This way the observable is not shifted too much.
 % And the offset does not interfere with calculation of the error model.
+diffOffsetMean = 2;
 offsetVal = nan(nExp, nObs);
-offsetVal(:, idOffset) = floor(obsMean(:, idOffset)-2);
+offsetVal(:, idOffset) = floor(obsMean(:, idOffset)-diffOffsetMean);
+
+% impose the minimum value
+offset_min = std_min - diffOffsetMean;
+offsetVal(logical(CondObsMatrix)) = max(offsetVal(logical(CondObsMatrix)), offset_min);
 
 %% bundel results in a struct
 obsStruct = struct();
