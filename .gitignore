@@ -13,8 +13,12 @@
 pthreadGC2.dll
 pthreadVC2.dll
 
-# ignore RSTemplate in Base Models
+# ignore parts of the Base Models
 /BaseModels/**/**/RSTemplate
+/BaseModels/**/**/RealisticSimulation
+
+/BaseModels/nonSBML
+/BaseModels/fast_nonSBML
 
 # compiled files with "arCompileAllSetups"
 **/Results/*normal
@@ -30,3 +34,4 @@ pthreadVC2.dll
 
 # ignore certain other files
 project_lib/RealisticSimulation/arDrawObservablesNew.m
+/analysisScripts/CRC-Symp_Poster
