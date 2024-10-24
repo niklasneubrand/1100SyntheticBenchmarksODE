@@ -150,7 +150,7 @@ vol_cyt                         "12.67"
 vol_nuc                         "0.5"
 
 
-// INPUTS
+// INPUT FUNCTIONS
 // IL6 (default parameter values)
 il6_level1                      "0"
 il6_tStep                       "0"

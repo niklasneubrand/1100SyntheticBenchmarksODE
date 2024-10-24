@@ -14,7 +14,7 @@ OBSERVABLES
 ERRORS    
         
 CONDITIONS
-// INPUTS
+// INPUT FUNCTIONS
 // IL6
 il6_level1                      "0"
 il6_tStep                       "0"
