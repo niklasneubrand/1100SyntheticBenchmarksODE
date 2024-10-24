@@ -44,12 +44,12 @@ for dr = 1:nDR
     tableHeader = [tVar, respVar, obs];
 
     % table content
-    nData = length(d);
+    nValues = length(RSTemplate.doseResponse(dr).values);
     nObs = length(obs);
-    dummyCell = cell(nData, nObs+2);
+    dummyCell = cell(nValues, nObs+2);
     dummyCell(:, 1) = {RSTemplate.doseResponse(dr).tExp};
     dummyCell(:, 2) = num2cell(RSTemplate.doseResponse(dr).values');
-    dummyCell(:, 3:end) = num2cell(1+rand(nData, nObs));
+    dummyCell(:, 3:end) = num2cell(1+rand(nValues, nObs));
 
     % create table and store to file
     dummyData = cell2table(dummyCell, "VariableNames", tableHeader);
