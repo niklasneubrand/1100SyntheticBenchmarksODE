@@ -1,9 +1,10 @@
-function RSTemplate = arCreateRSTemplate(qCondObsMatrix, qPlot, qSave2File)
+function RSTemplate = arCreateRSTemplate(qCondObsMatrix, qPlot, qSave2File, mergeModeDR)
 
 arguments
     qCondObsMatrix (1,1) logical = true
     qPlot (1,1) logical = false
     qSave2File (1,1) logical = true
+    mergeModeDR (1,1) string {mustBeMember(mergeModeDR, ["observables", "dataFileName"])} = "observables"
 end
 
 global ar  %#ok<*GVMIS>
@@ -94,7 +95,7 @@ end
 
 % merge data in a meaningful way
 RSTemplate = mergeTimecourse(RSTemplate);
-RSTemplate = mergeDoseresponse(RSTemplate);
+RSTemplate = mergeDoseresponse(RSTemplate, mergeModeDR);
 RSTemplate.nTC = length(RSTemplate.timeCourse);
 RSTemplate.nDR = length(RSTemplate.doseResponse);
 RSTemplate.nExp = RSTemplate.nTC + RSTemplate.nDR;
@@ -223,7 +224,12 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function RSTemplate = mergeDoseresponse(RSTemplate)
+function RSTemplate = mergeDoseresponse(RSTemplate, mergeMode)
+
+arguments
+    RSTemplate struct
+    mergeMode (1,1) string = "observables"
+end
 
 global ar
 
@@ -236,17 +242,28 @@ oldDoseResponse = RSTemplate.doseResponse;
 
 % create a string of characteristics for each DR
 for dr = 1:length(oldDoseResponse)
-    response = oldDoseResponse(dr).response_parameter;
-    tExp = oldDoseResponse(dr).tExp;
-    obsNames = strjoin(oldDoseResponse(dr).yNames, '-');
-    condRepStr = [oldDoseResponse(dr).condReplaceRest{:}];
-    inputsRepStr = [oldDoseResponse(dr).inputConds{:}];
-    oldDoseResponse(dr).checkString = sprintf('%s_%i_%s_%s_%s', ...
-        response, tExp, obsNames, condRepStr, inputsRepStr);
+    switch mergeMode
+        case "observables"
+            % match conditions by conditions and observables
+            % potentially, combine data files with different names but same exp. conds.
+            response = oldDoseResponse(dr).response_parameter;
+            tExp = oldDoseResponse(dr).tExp;
+            obsNames = strjoin(oldDoseResponse(dr).yNames, '-');
+            condRepStr = [oldDoseResponse(dr).condReplaceRest{:}];
+            inputsRepStr = [oldDoseResponse(dr).inputConds{:}];
+            oldDoseResponse(dr).checkString = sprintf("%s_%i_%s_%s_%s", ...
+            response, tExp, obsNames, condRepStr, inputsRepStr);
+        case "dataFileName"
+            % match conditions by data file name
+            % this makes sense for the realistic benchmarks (where the file names are auto-generated)
+            d = oldDoseResponse(dr).dLink;
+            oldDoseResponse(dr).checkString = string(ar.model.data(d).name);
+    end
+    
 end
 
 % find unique DRs
-checkStrings = {oldDoseResponse.checkString};
+checkStrings = [oldDoseResponse.checkString];
 [~, drOld, drUnique] = unique(checkStrings, "stable");
 
 % merge DRs

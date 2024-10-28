@@ -67,7 +67,7 @@ end
 
 %% save the data as xls files
 
-RSTemplateNew = arCreateRSTemplate(false, false, false);
+RSTemplateNew = arCreateRSTemplate(false, false, false, 'dataFileName');
 nTC = RSTemplateNew.nTC;
 nDR = RSTemplateNew.nDR;
 

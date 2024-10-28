@@ -34,9 +34,6 @@ end
 % without data files there are not multiple doses, thus not multiple conditions
 for dr = 1:nDR
 
-    % get the data link(s)
-    d = RSTemplate.doseResponse(dr).dLink;
-
     % table header
     tVar = {ar.model.t};
     respVar = {RSTemplate.doseResponse(dr).response_parameter};

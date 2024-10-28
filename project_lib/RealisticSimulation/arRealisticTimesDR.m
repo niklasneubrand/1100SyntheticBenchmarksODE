@@ -37,19 +37,30 @@ end
 % the dLink is based on the RSTemplateOld model not the newly compiled data
 % therefore, calculate RSTemplate for the new model
 
-templateNew = arCreateRSTemplate(false, false, false);
+templateNew = arCreateRSTemplate(false, false, false, 'dataFileName');
 
 for dr = 1:templateNew.nDR
 
     % get the data indices
     d = templateNew.doseResponse(dr).dLink;
+    nDatasets = length(d);
 
     % randomized time point and number of replicas
     tExp = RSTemplateOld.doseResponse(dr).tExp;
     nReplica = RSTemplateOld.doseResponse(dr).nReplica;
 
+    % for some models (e.g. Sobotta) it can happen that "arCreateRSTemplate" merges
+    % the DR in templateNew differently than in RSTemplateOld.
+    % Then, the length of d and nReplica can differ.
+    % In this case, we need to adjust the length of nReplica to match the length of d.
+    if nDatasets ~= length(nReplica)
+        nDoses = length(RSTemplateOld.doseResponse(dr).nReplica);
+        randInd = randi(nDoses, 1, nDatasets);
+        nReplica = RSTemplateOld.doseResponse(dr).nReplica(randInd);
+    end
+
     % set the time points and dummy data
-    for id = 1:length(d)
+    for id = 1:nDatasets
         tDR = repmat(tExp, nReplica(id), 1);
         ar.model.data(d(id)).tExp = tDR;
 
