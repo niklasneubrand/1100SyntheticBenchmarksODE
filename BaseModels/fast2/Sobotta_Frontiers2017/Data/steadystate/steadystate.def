@@ -1,0 +1,33 @@
+DESCRIPTION
+"Steady state simulation"
+        
+PREDICTOR
+t               T   min     time	-1000 2000
+
+INPUTS
+// Ruxolitinib     "0"
+// Stattic         "0"
+// IL6             "0"
+
+OBSERVABLES
+
+ERRORS    
+        
+CONDITIONS
+// INPUT FUNCTIONS
+// IL6
+il6_level1                      "0"
+il6_tStep                       "0"
+input_il6                       "0"
+
+// Ruxolitinib & Stattic
+// input_ruxolitinib               "0"
+// input_stattic                   "0"
+// These inputs are 0 by default (see model.def), no need to specify it again
+
+
+// This file serves as steady state equilibration cosndition
+// Make sure these parameters don't make it into the model
+offset_socs3_qpcr_steadystate_steadystate   "0"
+scale_socs3_qpcr_steadystate_steadystate    "1"
+sd_socs3_qpcr_steadystate_steadystate       "1"

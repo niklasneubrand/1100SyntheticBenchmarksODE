@@ -10,6 +10,9 @@ arLoadData('experimentaldata2',1,'csv');
 arLoadData('experimentaldata3',1,'csv');
 arLoadData('experimentaldata4',1,'csv');
 
+% disable code optimization
+ar.config.no_optimization = 1;
+
 arCompileAll;
 
 %% Parameter settings

@@ -1,0 +1,130 @@
+[Warning: Directory already exists:
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\fast\..\fast_SBML\Becker_Science2010
+] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('arRenameModelCondPars', 'C:\Users\neubrand\Documents\d2d\d2d_mod\arFramework3\ImportExport\arRenameModelCondPars.m', 53)" style="font-weight:bold">arRenameModelCondPars</a> (<a href="matlab: opentoline('C:\Users\neubrand\Documents\d2d\d2d_mod\arFramework3\ImportExport\arRenameModelCondPars.m',53,0)">line 53</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('arSBMLConformBaseModels', 'C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\project_lib\BaseModels\arSBMLConformBaseModels.m', 41)" style="font-weight:bold">arSBMLConformBaseModels</a> (<a href="matlab: opentoline('C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\project_lib\BaseModels\arSBMLConformBaseModels.m',41,0)">line 41</a>)] 
+epo_int_rep.def: did replace model parameters.
+Epo_alpha_BaF3_Exp1_cpm_rep.def: no replacements. No backup necessary.
+Epo_alpha_BaF3_Exp1_cpm_rep.xls: no replacements. No backup necessary.
+The following setup files were found and will be subsequently used for compiling: 
+
+C:\Users\neubrand\Documents\d2d\projects\RealisticBenchmarks\BaseModels\fast_SBML\Becker_Science2010\Setup.m
+
+
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+loading model #1, from file Models/epo_int_rep.def...
+=> Self-substituting derived variables.
+
+loading data #1, from file Data/Epo_alpha_BaF3_Exp1_cpm_rep.def...
+loading data #1, from file Data/Epo_alpha_BaF3_Exp1_cpm_rep.xls...
+	         Epo_ext_cpm ->   24 data-points assigned for log-fitting
+	         Epo_mem_cpm ->   24 data-points assigned for log-fitting
+	         Epo_int_cpm ->   24 data-points assigned for log-fitting
+
+calculating model m1, epo_int_rep...
+calculating condition m1 c1, epo_int_rep...
+ -> writing condition m1 c1, epo_int_rep...
+calculating data m1 d1 -> c1, Epo_alpha_BaF3_Exp1_cpm_rep...
+ -> writing data m1 d1 -> c1, Epo_alpha_BaF3_Exp1_cpm_rep...
+Compiling files...
+compiling KLU(SuiteSparse_config.obj)...skipped
+compiling KLU(klu_extract.obj)...skipped
+compiling KLU(klu_dump.obj)...skipped
+compiling KLU(klu_diagnostics.obj)...skipped
+compiling KLU(klu_defaults.obj)...skipped
+compiling KLU(klu.obj)...skipped
+compiling KLU(klu_kernel.obj)...skipped
+compiling KLU(klu_free_symbolic.obj)...skipped
+compiling KLU(klu_free_numeric.obj)...skipped
+compiling KLU(klu_factor.obj)...skipped
+compiling KLU(amd_post_tree.obj)...skipped
+compiling KLU(amd_order.obj)...skipped
+compiling KLU(klu_analyze.obj)...skipped
+compiling KLU(klu_solve.obj)...skipped
+compiling KLU(klu_scale.obj)...skipped
+compiling KLU(klu_refactor.obj)...skipped
+compiling KLU(klu_memory.obj)...skipped
+compiling KLU(amd_info.obj)...skipped
+compiling KLU(amd_global.obj)...skipped
+compiling KLU(klu_analyze_given.obj)...skipped
+compiling KLU(amd_2.obj)...skipped
+compiling KLU(amd_1.obj)...skipped
+compiling KLU(klu_tsolve.obj)...skipped
+compiling KLU(klu_sort.obj)...skipped
+compiling KLU(amd_dump.obj)...skipped
+compiling KLU(amd_defaults.obj)...skipped
+compiling KLU(amd_control.obj)...skipped
+compiling KLU(amd_aat.obj)...skipped
+compiling KLU(amd_valid.obj)...skipped
+compiling KLU(amd_preprocess.obj)...skipped
+compiling KLU(btf_strongcomp.obj)...skipped
+compiling KLU(amd_postorder.obj)...skipped
+compiling KLU(btf_order.obj)...skipped
+compiling KLU(colamd_global.obj)...skipped
+compiling KLU(btf_maxtrans.obj)...skipped
+compiling KLU(colamd.obj)...skipped
+compiling CVODES(cvodes_band.obj)...skipped
+compiling CVODES(cvodes_bbdpre.obj)...skipped
+compiling CVODES(cvodes_sparse.obj)...skipped
+compiling CVODES(cvodes_klu.obj)...skipped
+compiling CVODES(cvodes_dense.obj)...skipped
+compiling CVODES(sundials_band.obj)...skipped
+compiling CVODES(sundials_nvector.obj)...skipped
+compiling CVODES(sundials_spbcgs.obj)...skipped
+compiling CVODES(cvodes_bandpre.obj)...skipped
+compiling CVODES(cvodes.obj)...skipped
+compiling CVODES(cvodea.obj)...skipped
+compiling CVODES(cvodes_diag.obj)...skipped
+compiling CVODES(sundials_sparse.obj)...skipped
+compiling CVODES(sundials_spgmr.obj)...skipped
+compiling CVODES(cvodes_spils.obj)...skipped
+compiling CVODES(cvodea_io.obj)...skipped
+compiling CVODES(cvodes_io.obj)...skipped
+compiling CVODES(sundials_dense.obj)...skipped
+compiling CVODES(sundials_direct.obj)...skipped
+compiling CVODES(sundials_sptfqmr.obj)...skipped
+compiling CVODES(nvector_serial.obj)...skipped
+compiling CVODES(cvodes_direct.obj)...skipped
+compiling CVODES(cvodes_sptfqmr.obj)...skipped
+compiling CVODES(cvodes_spgmr.obj)...skipped
+compiling CVODES(cvodes_spbcgs.obj)...skipped
+compiling CVODES(sundials_iterative.obj)...skipped
+compiling CVODES(sundials_math.obj)...skipped
+compiling input functions...skipped
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling condition m1 c1, epo_int_rep_4A0556403BB34D3C95124A6BAF72311E.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling data m1 d1, Epo_alpha_BaF3_Exp1_cpm_rep_B4E13395E4811DA1550CCF60D3D4F3DA.c...done
+Building with 'MinGW64 Compiler (C)'.
+MEX completed successfully.
+compiling and linking arSimuCalcFun_8AB2C695591EDEB4E8AAB041DC5DFB07...done
+
+linking model...
+linking time points...
+linking parameters...
+parameters loaded from file BestFit:
+          assigned ->               init_Epo   new: p                                
+          assigned ->          init_EpoR_rel   new: p                                
+          assigned ->                    kde   new: p                                
+          assigned ->                    kdi   new: p                                
+          assigned ->                     ke   new: p                                
+          assigned ->                    kex   new: p                                
+          assigned ->                   koff   new: p                                
+          assigned ->                    kon   new: p                                
+          assigned ->                     kt   new: p                                
+          assigned ->                 offset   new: p                                
+          assigned ->                  scale   new: p                                
+          assigned ->             sd_Epo_ext   new: p                                
+          assigned ->             sd_Epo_int   new: p                                
+          assigned ->             sd_Epo_mem   new: p                                
+All parameters assigned.
+There were 2 more parameters in the loaded struct than in the target model.
+Not assigned from loaded struct are: kD, sd_Epo_bound,  
+Creating backup.workspace saved to file ./Results/20240913T114615_arCompileAllSetups_normal/workspace.mat

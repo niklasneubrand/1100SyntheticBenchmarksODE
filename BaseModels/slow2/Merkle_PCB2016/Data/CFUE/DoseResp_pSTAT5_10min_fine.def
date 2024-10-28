@@ -1,0 +1,37 @@
+DESCRIPTION
+"Experimenter: Julie Bachmann"
+"Cells: CFU-E"
+"Ligand: Epo dose response at 10 minutes"
+
+PREDICTOR-DOSERESPONSE  epo_level
+t               T   min     time	0	15
+
+INPUTS
+
+OBSERVABLES
+pSTAT5_au         C   au  conc.   1   1   "scale_pSTAT5_dr10 / init_STAT5 * pSTAT5"
+        
+ERRORS
+pSTAT5_au		"sd_STAT5_au"
+
+CONDITIONS
+// CFUE specific conditions
+step_time           "60"
+
+vol_cyt             "0.4"
+vol_nuc             "0.275"
+
+init_CISHRNA        "0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn"
+init_CIS            "0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn"
+
+init_SOCS3nRNA1     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA2     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA3     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA4     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA5     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3RNA       "0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn"
+init_SOCS3          "0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn"
+
+// experimental conditions
+ActD				"0"
+SOCS3oe             "0"

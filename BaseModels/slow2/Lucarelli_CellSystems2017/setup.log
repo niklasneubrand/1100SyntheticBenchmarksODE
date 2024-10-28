@@ -1,0 +1,806 @@
+[> In arCompileAllSetups (line 151)] 
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 223)
+In arInit>arInitMain (line 28)
+In arInit (line 17)
+In Setup (line 3)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+[Warning: Could not connect to github. Version checking cancelled.] 
+[> In arCheckVersion (line 54)
+In arInit>arInitMain (line 58)
+In arInit (line 17)
+In Setup (line 3)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+loading model #1, from file Models/Complex_ModelSelectionProfile.def...
+
+loading data #1, from file Data/MSPL2_complexes_all_hepa16_no_single_complex.def...dose-response to init_TGFb
+loading data #1, from file Data/MSPL2_complexes_all_hepa16_no_single_complex.xls...
+local random effect #1:
+	              nExpID = 2
+local condition #1:
+	           init_TGFb = 0
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	            S4IP_tS4 ->    1 data-points assigned
+	           S23IP_tS2 ->    2 data-points assigned
+	           S23IP_tS3 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	             S3IP_S2 ->    0 data-points assigned
+	            S3IP_pS2 ->    0 data-points assigned
+	           S3IP_ppS2 ->    0 data-points assigned
+	            S23IP_S2 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	             S2IP_S3 ->    0 data-points assigned
+	            S2IP_pS3 ->    0 data-points assigned
+	           S2IP_ppS3 ->    0 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+local condition #2:
+	           init_TGFb = 0.1
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	            S4IP_tS4 ->    1 data-points assigned
+	           S23IP_tS2 ->    2 data-points assigned
+	           S23IP_tS3 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	             S3IP_S2 ->    0 data-points assigned
+	            S3IP_pS2 ->    0 data-points assigned
+	           S3IP_ppS2 ->    0 data-points assigned
+	            S23IP_S2 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	             S2IP_S3 ->    0 data-points assigned
+	            S2IP_pS3 ->    0 data-points assigned
+	           S2IP_ppS3 ->    0 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+local condition #3:
+	           init_TGFb = 1
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	            S4IP_tS4 ->    1 data-points assigned
+	           S23IP_tS2 ->    2 data-points assigned
+	           S23IP_tS3 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	             S3IP_S2 ->    1 data-points assigned
+	            S3IP_pS2 ->    1 data-points assigned
+	           S3IP_ppS2 ->    1 data-points assigned
+	            S23IP_S2 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	             S2IP_S3 ->    1 data-points assigned
+	            S2IP_pS3 ->    1 data-points assigned
+	           S2IP_ppS3 ->    1 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+
+loading data #4, from file Data/MSPL2_PL_hepa16_pS2_pS3_time_course.def...
+loading data #4, from file Data/MSPL2_PL_hepa16_pS2_pS3_time_course.xls...
+local random effect #1:
+	              nExpID = 5
+local condition #1:
+	           init_TGFb = 1
+	            S23IP_S2 ->   19 data-points assigned
+	           S23IP_pS2 ->   19 data-points assigned
+	          S23IP_ppS2 ->   19 data-points assigned
+	            S23IP_S3 ->   13 data-points assigned
+	           S23IP_pS3 ->   13 data-points assigned
+	          S23IP_ppS3 ->   13 data-points assigned
+
+loading data #5, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16.def...
+loading data #5, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16.xls...
+local random effect #1:
+	              nExpID = 1
+local condition #1:
+	           init_TGFb = 0
+	           S23IP_tS2 ->   18 data-points assigned
+	            S4IP_tS4 ->   18 data-points assigned
+
+loading data #6, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16_ratios.def...
+loading data #6, from file Data/MSPL2_PL_PN_molecules_per_cell_hepa16_ratios.xls...
+local random effect #1:
+	              nExpID = 10
+local condition #1:
+	           init_TGFb = 1
+	           S23IP_tS2 ->   13 data-points assigned
+	           S23IP_tS3 ->   13 data-points assigned
+
+loading data #7, from file Data/PL_PN_TGFbR_hepa16.def...
+loading data #7, from file Data/PL_PN_TGFbR_hepa16.xls...
+local random effect #1:
+	              nExpID = 11
+local condition #1:
+	           init_TGFb = 0
+	               TGFbR ->    7 data-points assigned
+
+loading data #8, from file Data/gene_expression_OE.def...
+loading data #8, from file Data/gene_expression_OE.xls...
+local random effect #1:
+	              nExpID = 100
+local condition #1:
+	           init_TGFb = 0
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 208.41
+	                 Ski ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Skil ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	              Dnmt3a ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Sox4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                 Jun ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Smad7 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Klf10 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Bmp4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	              Cxcl15 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Dusp5 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Tgfa ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Pdk4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+local condition #2:
+	           init_TGFb = 0
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #3:
+	           init_TGFb = 0
+	               S2tot = 142.34
+	               S3tot = 227.744
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #4:
+	           init_TGFb = 0
+	               S2tot = 284.68
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #5:
+	           init_TGFb = 1
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 208.41
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #6:
+	           init_TGFb = 1
+	               S2tot = 142.34
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #7:
+	           init_TGFb = 1
+	               S2tot = 142.34
+	               S3tot = 227.744
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+local condition #8:
+	           init_TGFb = 1
+	               S2tot = 284.68
+	               S3tot = 14.234
+	               S4tot = 69.47
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Smad7 ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+
+loading data #16, from file Data/MSPL2_complexes_all_hepa16_time_course.def...
+loading data #16, from file Data/MSPL2_complexes_all_hepa16_time_course.xls...
+local random effect #1:
+	              nExpID = 6
+local condition #1:
+	           S23IP_tS2 no data, removed
+	           S23IP_tS3 no data, removed
+	           S23IP_tS4 no data, removed
+	             S3IP_S2 no data, removed
+	            S3IP_pS2 no data, removed
+	           S3IP_ppS2 no data, removed
+	            S23IP_S2 no data, removed
+	           S23IP_pS2 no data, removed
+	          S23IP_ppS2 no data, removed
+	             S2IP_S3 no data, removed
+	            S2IP_pS3 no data, removed
+	           S2IP_ppS3 no data, removed
+	            S23IP_S3 no data, removed
+	           S23IP_pS3 no data, removed
+	          S23IP_ppS3 no data, removed
+	           init_TGFb = 1
+	               S2tot = 142.34
+	             init_S3 = S3tot
+	               S4tot = 69.47
+	            S2IP_tS2 ->    3 data-points assigned
+	            S2IP_tS3 ->    3 data-points assigned
+	            S2IP_tS4 ->    3 data-points assigned
+	            S3IP_tS2 ->    6 data-points assigned
+	            S3IP_tS3 ->    6 data-points assigned
+	            S3IP_tS4 ->    6 data-points assigned
+	            S4IP_tS2 ->    6 data-points assigned
+	            S4IP_tS3 ->    6 data-points assigned
+	            S4IP_tS4 ->    6 data-points assigned
+	             S2IP_S2 ->    3 data-points assigned
+	            S2IP_pS2 ->    3 data-points assigned
+	           S2IP_ppS2 ->    3 data-points assigned
+
+calculating model m1, Complex_ModelSelectionProfile...
+calculating condition m1 c1, Complex_ModelSelectionProfile...
+calculating condition m1 c2, Complex_ModelSelectionProfile...
+calculating condition m1 c3, Complex_ModelSelectionProfile...
+calculating condition m1 c4, Complex_ModelSelectionProfile...
+calculating condition m1 c5, Complex_ModelSelectionProfile...
+calculating condition m1 c6, Complex_ModelSelectionProfile...
+calculating condition m1 c7, Complex_ModelSelectionProfile...
+calculating condition m1 c8, Complex_ModelSelectionProfile...
+calculating condition m1 c9, Complex_ModelSelectionProfile...
+calculating condition m1 c10, Complex_ModelSelectionProfile...
+calculating condition m1 c11, Complex_ModelSelectionProfile...
+calculating condition m1 c12, Complex_ModelSelectionProfile...
+ -> writing condition m1 c6, Complex_ModelSelectionProfile...
+ -> writing condition m1 c10, Complex_ModelSelectionProfile...
+ -> writing condition m1 c9, Complex_ModelSelectionProfile...
+ -> writing condition m1 c8, Complex_ModelSelectionProfile...
+ -> writing condition m1 c4, Complex_ModelSelectionProfile...
+ -> writing condition m1 c5, Complex_ModelSelectionProfile...
+ -> writing condition m1 c7, Complex_ModelSelectionProfile...
+ -> writing condition m1 c11, Complex_ModelSelectionProfile...
+ -> writing condition m1 c12, Complex_ModelSelectionProfile...
+ -> writing condition m1 c2, Complex_ModelSelectionProfile...
+ -> writing condition m1 c1, Complex_ModelSelectionProfile...
+ -> writing condition m1 c3, Complex_ModelSelectionProfile...
+calculating data m1 d1 -> c1, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d2 -> c2, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d3 -> c3, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d4 -> c3, MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5...
+calculating data m1 d5 -> c1, MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1...
+calculating data m1 d6 -> c3, MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10...
+calculating data m1 d7 -> c1, PL_PN_TGFbR_hepa16_nExpID11...
+calculating data m1 d8 -> c4, gene_expression_OE_nExpID100...
+calculating data m1 d9 -> c5, gene_expression_OE_nExpID100...
+calculating data m1 d10 -> c6, gene_expression_OE_nExpID100...
+calculating data m1 d11 -> c7, gene_expression_OE_nExpID100...
+calculating data m1 d12 -> c8, gene_expression_OE_nExpID100...
+ -> writing data m1 d7 -> c1, PL_PN_TGFbR_hepa16_nExpID11...
+ -> writing data m1 d5 -> c1, MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1...
+ -> writing data m1 d6 -> c3, MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10...
+ -> writing data m1 d4 -> c3, MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5...
+calculating data m1 d16 -> c12, MSPL2_complexes_all_hepa16_time_course_nExpID6...
+ -> writing data m1 d10 -> c6, gene_expression_OE_nExpID100...
+ -> writing data m1 d9 -> c5, gene_expression_OE_nExpID100...
+ -> writing data m1 d12 -> c8, gene_expression_OE_nExpID100...
+ -> writing data m1 d11 -> c7, gene_expression_OE_nExpID100...
+ -> writing data m1 d8 -> c4, gene_expression_OE_nExpID100...
+ -> writing data m1 d16 -> c12, MSPL2_complexes_all_hepa16_time_course_nExpID6...
+ -> writing data m1 d2 -> c2, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+ -> writing data m1 d1 -> c1, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+ -> writing data m1 d3 -> c3, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d14 -> c10, gene_expression_OE_nExpID100...
+calculating data m1 d15 -> c11, gene_expression_OE_nExpID100...
+calculating data m1 d13 -> c9, gene_expression_OE_nExpID100...
+ -> writing data m1 d14 -> c10, gene_expression_OE_nExpID100...
+ -> writing data m1 d15 -> c11, gene_expression_OE_nExpID100...
+ -> writing data m1 d13 -> c9, gene_expression_OE_nExpID100...
+Compiling files...
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(SuiteSparse_config.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_dump.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_memory.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_global.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_analyze.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_scale.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_analyze_given.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_defaults.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_sort.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_diagnostics.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_1.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_info.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_extract.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_factor.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_free_numeric.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_control.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_free_symbolic.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_defaults.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_kernel.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_dump.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_refactor.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(colamd_global.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_postorder.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_solve.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_preprocess.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_order.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_tsolve.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(btf_maxtrans.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_2.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(btf_strongcomp.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_aat.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(colamd.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_valid.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_post_tree.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(btf_order.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_dense.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_band.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_spils.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_bandpre.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_spbcgs.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_math.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_bbdpre.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_spgmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_direct.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_sptfqmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_band.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_klu.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_dense.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_sparse.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_sparse.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_diag.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_iterative.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodea.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_io.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_spbcgs.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodea_io.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_spgmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_sptfqmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(nvector_serial.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_nvector.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_direct.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling input functions...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c1, Complex_ModelSelectionProfile_55D55114D20AA7DD0767241E25F5F5BB.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c10, Complex_ModelSelectionProfile_075E8E4037A91BC42B14F37B7A05D184.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c11, Complex_ModelSelectionProfile_CA1F1A66C1A8E39B29044BF8C7F24075.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c3, Complex_ModelSelectionProfile_2F7113748604972C3ECCC0EB2A51279F.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c5, Complex_ModelSelectionProfile_B58D00AAD3C03DE8A92FE4561B324C1D.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c6, Complex_ModelSelectionProfile_6D44E0AFDD5E085F914A412E8F68BC9F.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c8, Complex_ModelSelectionProfile_24C5A3CFE53D7839C3A6D2C27577765F.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c9, Complex_ModelSelectionProfile_3C8D06AA7DE3DAC934C8512B43F6F2C5.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c12, Complex_ModelSelectionProfile_D6DD6D881D0571127082A6A7C38C8E42.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c2, Complex_ModelSelectionProfile_E78BB74D61FDDFACBFB4AF4901C9B85B.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c4, Complex_ModelSelectionProfile_E2A97FB5BEBAEF761081A40B50041EE1.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c7, Complex_ModelSelectionProfile_21555CBB86F66C57B2E4E9D40EC424CD.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d5, MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1_B27EA6A2FE085A75E4DE9C564FC3319A.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d7, PL_PN_TGFbR_hepa16_nExpID11_B2E1FB9F76414B8D3C3D088A543F0874.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d8, gene_expression_OE_nExpID100_E11716B539A1CB4A609567C9A22FEDB5.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d12, gene_expression_OE_nExpID100_2ACE2B778E9EC63C5AF5AED7D8649E0D.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d9, gene_expression_OE_nExpID100_36E30962A8DB58E4FACFD1B36BC22430.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d10, gene_expression_OE_nExpID100_F8AD06A0F729D942AC5B781BE31885B0.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d11, gene_expression_OE_nExpID100_18BD61AE0090B16CFB82E994FED49881.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d6, MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10_B86FE27AEA6B17998BBD73CE0175623C.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d4, MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5_A8017EC6AA237C3F85F7F498F9C3F2FF.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d16, MSPL2_complexes_all_hepa16_time_course_nExpID6_784DDBC146C1647A72E7C44575534D98.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d3, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2_08CD21F1F1ADB8260704DA504893FF2A.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d15, gene_expression_OE_nExpID100_D881802D8956CFE93767781CE21E2872.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d1, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2_B77EDF84DB2AD46DFE3ECBADA2E999D8.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d2, MSPL2_complexes_all_hepa16_no_single_complex_nExpID2_BCD5CD0EFC5EFDAEE1F6B2E7EF5F31A6.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d13, gene_expression_OE_nExpID100_B21C04A67ED6731D0E2F4DF1BF4D541C.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d14, gene_expression_OE_nExpID100_76F9FDC8A51FF99A3BE0A66D511D8012.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling and linking arSimuCalcFun_F7B48612B1516A8022A18FD91F42BF8E...done
+
+linking model...
+linking time points...
+linking parameters...
+parameters loaded from file BestFit:
+          assigned ->                Rec_act   new: p                                
+          assigned ->                  S2tot   new: p                                
+          assigned ->                  S3tot   new: p                                
+          assigned ->                  S4tot   new: p                                
+          assigned ->               S_dephos   new: p                                
+          assigned ->           S_dephosphos   new: p                                
+          assigned ->                 S_phos   new: p                                
+          assigned ->             geneA_act1   new: p                                
+          assigned ->             geneA_act2   new: p                                
+          assigned ->             geneA_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneA_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneA_inh2   new: p                                
+          assigned ->             geneA_inh3   new: p                                
+          assigned ->             geneA_turn   new: p                                
+          assigned ->             geneB_act1   new: p                                
+          assigned ->             geneB_act2   new: p                                
+          assigned ->             geneB_act3   new: p                                
+          assigned ->             geneB_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneB_inh2   new: p                                
+          assigned ->             geneB_inh3   new: p                                
+          assigned ->             geneB_turn   new: p                                
+          assigned ->             geneC_act1   new: p                                
+          assigned ->             geneC_act2   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneC_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneC_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneC_inh2   new: p                                
+          assigned ->             geneC_inh3   new: p                                
+          assigned ->             geneC_turn   new: p                                
+          assigned ->             geneD_act1   new: p                                
+          assigned ->             geneD_act2   new: p                                
+          assigned ->             geneD_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneD_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneD_inh2   new: p                                
+          assigned ->             geneD_inh3   new: p                                
+          assigned ->             geneD_turn   new: p                                
+          assigned ->             geneE_act1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneE_act2   new: p                                
+          assigned ->             geneE_act3   new: p                                
+          assigned ->             geneE_inh1   new: p                                
+          assigned ->             geneE_inh2   new: p                                
+          assigned ->             geneE_inh3   new: p                                
+          assigned ->             geneE_turn   new: p                                
+          assigned ->             geneF_act1   new: p                                
+          assigned ->             geneF_act2   new: p                                
+          assigned ->             geneF_act3   new: p                                
+          assigned ->             geneF_inh1   new: p                                
+          assigned ->             geneF_inh2   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneF_inh3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneF_turn   new: p                                
+          assigned ->             geneG_act1   new: p                                
+          assigned ->             geneG_act2   new: p                                
+          assigned ->             geneG_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneG_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneG_inh2   new: p                                
+          assigned ->             geneG_inh3   new: p                                
+          assigned ->             geneG_turn   new: p                                
+          assigned ->             geneH_act1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneH_act2   new: p                                
+          assigned ->             geneH_act3   new: p                                
+          assigned ->             geneH_inh1   new: p                                
+          assigned ->             geneH_inh2   new: p                                
+          assigned ->             geneH_inh3   new: p                                
+          assigned ->             geneH_turn   new: p                                
+          assigned ->             geneI_act1   new: p                                
+          assigned ->             geneI_act2   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneI_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneI_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneI_inh2   new: p                                
+          assigned ->             geneI_inh3   new: p                                
+          assigned ->             geneI_turn   new: p                                
+          assigned ->             geneJ_act1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneJ_act2   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneJ_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneJ_inh1   new: p                                
+          assigned ->             geneJ_inh2   new: p                                
+          assigned ->             geneJ_inh3   new: p                                
+          assigned ->             geneJ_turn   new: p                                
+          assigned ->             geneK_act1   new: p                                
+          assigned ->             geneK_act2   new: p                                
+          assigned ->             geneK_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneK_inh1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneK_inh2   new: p                                
+          assigned ->             geneK_inh3   new: p                                
+          assigned ->             geneK_turn   new: p                                
+          assigned ->             geneL_act1   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneL_act2   new: p                                
+          assigned ->             geneL_act3   new: p lb ub qFit qLog10      mean    
+          assigned ->             geneL_inh1   new: p                                
+          assigned ->             geneL_inh2   new: p                                
+          assigned ->             geneL_inh3   new: p                                
+          assigned ->             geneL_turn   new: p                                
+          assigned ->               init_Rec   new: p                                
+          assigned ->                  k_223   new: p lb    qFit qLog10              
+          assigned ->                  k_224   new: p lb    qFit qLog10              
+          assigned ->                  k_233   new: p lb                             
+          assigned ->                  k_234   new: p lb                             
+          assigned ->                  k_244   new: p lb                             
+          assigned ->                  k_334   new: p lb    qFit qLog10              
+          assigned ->                  k_344   new: p lb    qFit qLog10              
+          assigned ->                 k_on_u   new: p lb    qFit qLog10              
+          assigned ->               kdiss_SS   new: p lb    qFit qLog10              
+          assigned ->                 khomo2   new: p lb    qFit qLog10              
+          assigned ->                 khomo3   new: p lb    qFit qLog10              
+          assigned ->                 khomo4   new: p lb    qFit qLog10              
+          assigned ->            pRec_degind   new: p                                
+          assigned ->      sd_Bmp4_nExpID100   new: p                                
+          assigned ->    sd_Cxcl15_nExpID100   new: p                                
+          assigned ->    sd_Dnmt3a_nExpID100   new: p                                
+          assigned ->     sd_Dusp5_nExpID100   new: p                                
+          assigned ->       sd_Jun_nExpID100   new: p                                
+          assigned ->     sd_Klf10_nExpID100   new: p                                
+          assigned ->      sd_Pdk4_nExpID100   new: p                                
+          assigned ->       sd_Ski_nExpID100   new: p                                
+          assigned ->      sd_Skil_nExpID100   new: p                                
+          assigned ->     sd_Smad7_nExpID100   new: p                                
+          assigned ->      sd_Sox4_nExpID100   new: p                                
+          assigned ->      sd_Tgfa_nExpID100   new: p                                
+All parameters assigned.

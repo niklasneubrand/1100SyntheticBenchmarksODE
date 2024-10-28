@@ -1,0 +1,40 @@
+DESCRIPTION
+"Experimenter: Marcel Schilling"
+"Cells: CFU-E"
+"Ligand: Epo 50 units/ml (1.25e-6 units/cell)"
+
+PREDICTOR
+t               T   min     time	0	75
+
+INPUTS
+
+OBSERVABLES
+pJAK2_au            C   au  conc.   1   1   "offset_pJAK2_fine + scale_pJAK2_fine / init_EpoRJAK2 * pJAK2"
+pEpoR_au            C   au  conc.   1   1   "offset_pEpoR_fine + scale_pEpoR_fine / init_EpoRJAK2 * pEpoR"
+
+ERRORS
+pJAK2_au		"sd_JAK2EpoR_au"
+pEpoR_au		"sd_JAK2EpoR_au"
+
+CONDITIONS
+// CFUE specific conditions
+step_time           "60"
+
+vol_cyt             "0.4"
+vol_nuc             "0.275"
+
+init_CISHRNA        "0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn"
+init_CIS            "0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn"
+
+init_SOCS3nRNA1     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA2     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA3     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA4     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3nRNA5     "SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay"
+init_SOCS3RNA       "0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn"
+init_SOCS3          "0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn"
+
+// experimental conditions
+epo_level			"1.25e-6"
+ActD				"0"
+SOCS3oe             "0"

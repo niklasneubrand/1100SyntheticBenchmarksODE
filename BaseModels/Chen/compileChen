@@ -1,0 +1,32 @@
+The following setup files were found and will be subsequently used for compiling: 
+
+/dsk/group/imbi/MSB/NiklasNeubrand/projects/RealisticBenchmarkModels/BaseModels/Chen/Chen_MSB2009/Setup.m
+
+
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 223)
+In arInit>arInitMain (line 28)
+In arInit (line 17)
+In Setup (line 2)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+[Warning: There is a newer version available on github! Please check
+http://www.data2dynamics.org for updates or run "arUpdateD2D".] 
+[> In arCheckVersion (line 50)
+In arInit>arInitMain (line 58)
+In arInit (line 17)
+In Setup (line 2)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+loading model #1, from file Models/model_ChenMSB2009.def...

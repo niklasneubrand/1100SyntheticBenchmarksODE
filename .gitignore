@@ -31,6 +31,8 @@ pthreadVC2.dll
 # except those that end with __Final
 **/RealisticSimulation/**/Results/
 !**/RealisticSimulation/**/Results/*__Final/
+**/RealisticSimulation/**/arSimuCalcFun*
+
 
 # ignore certain other files
 project_lib/RealisticSimulation/arDrawObservablesNew.m
