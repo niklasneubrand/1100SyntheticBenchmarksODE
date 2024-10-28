@@ -55,7 +55,7 @@ for ex = 1:nExp
                 % calculate the mean and transform to log scale
                 meanTraj = mean(traj, 'omitnan');
             end
-            if meanTraj > 0
+            if meanTraj > obsStruct.lb_ObsValues
                 meanMagnitude = log10(meanTraj);
             else
                 meanMagnitude = -Inf;
@@ -72,11 +72,7 @@ qUpdateStd = false(size(obsStruct.stdObs));
 qUpdateStd(:, ~obsStruct.qLog) = obsStruct.CondObsMatrix(:, ~obsStruct.qLog)>0;
 qUpdateStd(:, ~obsStruct.qLog) = qUpdateStd(:, ~obsStruct.qLog) & isfinite(obsStruct.obsMean(:, ~obsStruct.qLog));
 obsStruct.stdObs(qUpdateStd) = obsStruct.stdObsRaw(qUpdateStd) + obsStruct.obsMean(qUpdateStd);
-
-% impose the minimum value
-std_min = -0.5 * ar.config.add_c * log10(exp(1));
-std_min = round(std_min + 2);  % add some margin (2 orders of magnitude)
-obsStruct.stdObs(qUpdateStd) = max(obsStruct.stdObs(qUpdateStd), std_min, 'omitnan');
+obsStruct.stdObs(qUpdateStd) = max(obsStruct.stdObs(qUpdateStd), obsStruct.lb_std, 'omitnan');
 
 % update values in ar struct
 for ex = 1:nExp
@@ -93,20 +89,16 @@ end
 
 
 %% update the offset parameters
-
-% The offset value should be two orders of magnitude below the mean value
-% this ensures that the error parameters still roughly represent the relative error
-% of the observable, even if it is slightly shifted.
-diffOffsetMean = 2;
+diffOffsetMean = obsStruct.diffOffsetMean;
+lb_offset = obsStruct.lb_offset;
 
 % update values in obsStruct
 obsStruct.offsetValOld = obsStruct.offsetVal;
-obsStruct.offsetVal = nan(nExp, nObsTotal);
+obsStruct.offsetVal = nan(size(obsStruct.offsetVal));
 obsStruct.offsetVal(:, obsStruct.idOffset) = floor(obsStruct.obsMean(:, obsStruct.idOffset) - diffOffsetMean);
 
 % impose the minimum value
-offset_min = std_min - diffOffsetMean;
-obsStruct.offsetVal(logical(obsStruct.CondObsMatrix)) = max(obsStruct.offsetVal(logical(obsStruct.CondObsMatrix)), offset_min);
+obsStruct.offsetVal(logical(obsStruct.CondObsMatrix)) = max(obsStruct.offsetVal(logical(obsStruct.CondObsMatrix)), lb_offset);
 
 % update values in ar struct
 for ex = 1:nExp

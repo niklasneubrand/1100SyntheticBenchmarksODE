@@ -280,7 +280,12 @@ for iObs = 1:nObs
 end
 
 
-%% Consider Parameters (log, scale, offset, init) for Observables
+%% Draw the kind of Parameters (log, scale, offset, init) for Observables
+
+% First: introduce a multi-purpose lower bound for the observables
+% this is used for multiple decissions and derived lower bounds
+ub_add_c = 100;  % maximum value for add_c (used in merit function)
+lb_ObsValues = ceil(-0.5 * ub_add_c * log10(exp(1)));  % lower bound for obervable values (log scale)
 
 % Draw ratio of variables on log scale
 if options.qLogObs
@@ -312,7 +317,7 @@ idOffset = sort(idScale(randperm(nScale, nOffset)));    % offset observables (su
 % exception if only zero at t=0
 for ex = 1:nExp
     ySimuLog = ySimuAll{ex}(:, qLog);
-    qLog(any(ySimuLog(1,:)<0) | any(ySimuLog(2:end,:)<=0, 1)) = false;
+    qLog(any(ySimuLog(1,:)<0) | any(ySimuLog(2:end,:)<=lb_ObsValues, 1)) = false;
 end
 
 % draw the std of the error model for all observables from mixed-effect model
@@ -331,7 +336,7 @@ for ex = 1:nExp
             %    to transform relative to absolute error
             traj = ySimu(isfinite(ySimu(:, iObs)), iObs);
             meanTraj = mean(traj, 'omitnan');
-            if meanTraj > 0
+            if meanTraj > lb_ObsValues
                 meanMagnitude = log10(meanTraj);
             else
                 meanMagnitude = -Inf;
@@ -346,26 +351,22 @@ for ex = 1:nExp
         end
     end
 end
+% impose lower bound for error parameters
+lb_std = round(lb_ObsValues + 2);  % derived bound for error parameters (log scale)
+stdObs(~isnan(stdObs)) = max(stdObs(~isnan(stdObs)), lb_std, 'omitnan');
 
 % check if we have to increase the add_c parameter
 minStdObs = min(stdObs(:));
 add_c = -2.0*log(10^minStdObs);         % exact relation for required add_c
 add_c = add_c + 10;                     % add some margin (corresponding to 5 orders of magnitude in std)
 add_c = ceil(add_c/10)*10;              % round to next 10 (to get a nice number)
-add_c_max = 100;                        % maximum value for add_c
-add_c = min(add_c, add_c_max);          % maximum value for add_c
+add_c = min(add_c, ub_add_c);           % maximum value for add_c
 add_c = max(add_c, ar.config.add_c);    % minimum value for add_c
 
 if add_c ~= ar.config.add_c
     ar.config.add_c = add_c;
     RSTemplate.customSettings.add_c = add_c; % needed in arCreateRealisticProject
 end
-
-% we impose a maximum value for add_c
-% -> we need a corresponding minimum for stdObs
-std_min = -0.5 * add_c_max * log10(exp(1));
-std_min = round(std_min + 2);  % add some margin (2 orders of magnitude)
-stdObs(~isnan(stdObs)) = max(stdObs(~isnan(stdObs)), std_min, 'omitnan');
 
 % define true values for offset parameters
 % The offset should be 2 order of magnitude smaller than the mean magnitude.
@@ -376,8 +377,8 @@ offsetVal = nan(nExp, nObs);
 offsetVal(:, idOffset) = floor(obsMean(:, idOffset)-diffOffsetMean);
 
 % impose the minimum value
-offset_min = std_min - diffOffsetMean;
-offsetVal(logical(CondObsMatrix)) = max(offsetVal(logical(CondObsMatrix)), offset_min);
+lb_offset = lb_std - diffOffsetMean;
+offsetVal(logical(CondObsMatrix)) = max(offsetVal(logical(CondObsMatrix)), lb_offset);
 
 %% bundel results in a struct
 obsStruct = struct();
@@ -396,6 +397,13 @@ obsStruct.stdObsRaw = stdObsRaw;
 obsStruct.stdObs = stdObs;
 obsStruct.obsMean = obsMean;
 obsStruct.offsetVal = offsetVal;
+
+% add parmater bounds and "magic" numbers
+obsStruct.ub_add_c = ub_add_c;
+obsStruct.lb_ObsValues = lb_ObsValues;
+obsStruct.lb_std = lb_std;
+obsStruct.diffOffsetMean = diffOffsetMean;
+obsStruct.lb_offset = lb_offset;
 
 % create observable names and expressions
 obsStruct = arCreateObsNames(obsStruct);
