@@ -54,6 +54,9 @@ end
 % it is set incorrectly if model folder was moved after compilation
 ar.model.path = fullfile(pwd(), 'Models');
 
+% set parallel threads correctly (in case the model was compiled on another IMBI server)
+arSetParallelThreads();
+
 %% Modify the model parameters and bounds
 if options.qSetPars
     arSetRealisticParams(projectPath, options.rngSeed);
