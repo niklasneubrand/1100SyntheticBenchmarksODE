@@ -74,9 +74,16 @@ baseNameShort = split(ar.info.name, '_');
 baseNameShort = baseNameShort{1};
 nameFmt = sprintf('%s_RS%%0%id', baseNameShort, nDigits);
 
-nSimus = length(iSimus);
+
+% get the machine name for the log files
+if ispc  % Windows
+    machineName = getenv('COMPUTERNAME');
+else     % Linux and macOS
+    machineName = getenv('HOSTNAME');
+end
 
 %% run the simulations
+nSimus = length(iSimus);
 for idx = 1:nSimus
     % explanation of indices:
     % idx starts at 1 and counts the number of simulations
@@ -126,7 +133,7 @@ for idx = 1:nSimus
     duration = string(runtime);
 
     % save the simulation report
-    simuReport = table(projectName, success, startTime, endTime, duration, error);
+    simuReport = table(projectName, machineName, success, startTime, endTime, duration, error);
     writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%010i.csv', startSeed)), "WriteMode", "append");
 end
 
