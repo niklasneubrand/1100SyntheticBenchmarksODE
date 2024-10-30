@@ -81,6 +81,7 @@ if ispc  % Windows
 else     % Linux and macOS
     machineName = getenv('HOSTNAME');
 end
+machineName = string(machineName);
 
 %% run the simulations
 nSimus = length(iSimus);
@@ -132,9 +133,19 @@ for idx = 1:nSimus
     endTime = string(tEnd);
     duration = string(runtime);
 
-    % save the simulation report
+    % create the report
     simuReport = table(projectName, machineName, success, startTime, endTime, duration, error);
-    writetable(simuReport, fullfile(infoDir, sprintf('report_manyRS_%010i.csv', startSeed)), "WriteMode", "append");
+    reportName = sprintf('report_manyRS_%010i.csv', startSeed);
+    reportFile = fullfile(infoDir, reportName);
+    % prepend any existing simulations
+    if isfile(reportFile)
+        OldSimuReport = readtable(reportFile);
+        for key = ["startTime", "endTime", "duration"]
+            OldSimuReport.(key) = string(OldSimuReport.(key));
+        end
+        simuReport = outerjoin(OldSimuReport, simuReport, 'MergeKeys', true);
+    end
+    writetable(simuReport, reportFile, "WriteMode", "overwrite");
 end
 
 end
