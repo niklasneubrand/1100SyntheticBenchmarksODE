@@ -59,7 +59,7 @@ arSetParallelThreads();
 
 %% Modify the model parameters and bounds
 if options.qSetPars
-    arSetRealisticParams(projectPath, options.rngSeed);
+    arSetRealisticParams(options.rngSeed, projectPath);
 else
     % use the parameters from the loaded model
     arFprintf(1, 'Use parameters from loaded model.\n')
