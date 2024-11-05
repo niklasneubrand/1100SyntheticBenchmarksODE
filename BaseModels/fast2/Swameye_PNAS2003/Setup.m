@@ -1,7 +1,7 @@
 % Load models & data from the D2D-version of the Swameye model
 
 arInit
-arLoadModel('pnas_jak_stat');
+arLoadModel('pnas_jak_stat_spline10');
 arLoadData('pnas_data_original');
 arCompileAll;
 
@@ -30,6 +30,10 @@ if(~useErrorModel)
     arSetPars('sd_pSTAT_au',[],2);
     arSetPars('sd_tSTAT_au',[],2);
 end
+
+% refit the model locally, because the 'BestFit' params are based
+% on the original model without the spline modification
+arFit();
 
 % arPlot;
 % arPrint;
