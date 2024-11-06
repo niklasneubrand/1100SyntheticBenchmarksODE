@@ -336,7 +336,7 @@ for ex = 1:nExp
             %    to transform relative to absolute error
             traj = ySimu(isfinite(ySimu(:, iObs)), iObs);
             meanTraj = mean(traj, 'omitnan');
-            if meanTraj > lb_ObsValues
+            if meanTraj > 10^lb_ObsValues
                 meanMagnitude = log10(meanTraj);
             else
                 meanMagnitude = -Inf;
@@ -399,6 +399,7 @@ obsStruct.obsMean = obsMean;
 obsStruct.offsetVal = offsetVal;
 
 % add parmater bounds and "magic" numbers
+obsStruct.add_c = add_c;
 obsStruct.ub_add_c = ub_add_c;
 obsStruct.lb_ObsValues = lb_ObsValues;
 obsStruct.lb_std = lb_std;

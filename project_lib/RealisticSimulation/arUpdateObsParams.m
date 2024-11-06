@@ -55,7 +55,7 @@ for ex = 1:nExp
                 % calculate the mean and transform to log scale
                 meanTraj = mean(traj, 'omitnan');
             end
-            if meanTraj > obsStruct.lb_ObsValues
+            if meanTraj > 10^obsStruct.lb_ObsValues
                 meanMagnitude = log10(meanTraj);
             else
                 meanMagnitude = -Inf;
