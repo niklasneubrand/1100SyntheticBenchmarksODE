@@ -26,7 +26,7 @@ for ii = 1:length(folders)
     
     arUpdatePaths()
 
-    sbmlCompatible = arCheckSBMLCompatibilty(1);
+    sbmlCompatible = arCheckSBMLCompatibility(1);
     if sbmlCompatible
         fprintf('Model %s already SBML compatible\n', names{ii});
         continue
