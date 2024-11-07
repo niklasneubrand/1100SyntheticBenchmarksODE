@@ -30,3 +30,86 @@ In Setup (line 2)
 In arCompileAllSetups>doEvalSetup (line 168)
 In arCompileAllSetups (line 90)] 
 loading model #1, from file Models/model_ChenMSB2009.def...
+=> Self-substituting derived variables.
+[Warning: File: /dsk/home/neubrand/d2d/d2d_mod/arFramework3/arLoadData.m Line:
+576 Column: 37
+Unrecognized pragma "%#OK<AGROW>".] 
+[> In Setup (line 8)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+[Warning: File: /dsk/home/neubrand/d2d/d2d_mod/arFramework3/arLoadData.m Line:
+577 Column: 37
+Unrecognized pragma "%#OK<AGROW>".] 
+[> In Setup (line 8)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+[Warning: File: /dsk/home/neubrand/d2d/d2d_mod/arFramework3/arLoadData.m Line:
+578 Column: 67
+Unrecognized pragma "%#OK<AGROW>".] 
+[> In Setup (line 8)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+[Warning: File: /dsk/home/neubrand/d2d/d2d_mod/arFramework3/arLoadData.m Line:
+619 Column: 37
+Unrecognized pragma "%#OK<AGROW>".] 
+[> In Setup (line 8)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+[Warning: File: /dsk/home/neubrand/d2d/d2d_mod/arFramework3/arLoadData.m Line:
+620 Column: 37
+Unrecognized pragma "%#OK<AGROW>".] 
+[> In Setup (line 8)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+[Warning: File: /dsk/home/neubrand/d2d/d2d_mod/arFramework3/arLoadData.m Line:
+621 Column: 75
+Unrecognized pragma "%#OK<AGROW>".] 
+[> In Setup (line 8)
+In arCompileAllSetups>doEvalSetup (line 168)
+In arCompileAllSetups (line 90)] 
+
+loading data #1, from file Data/experimentaldata1.def...
+loading data #1, from file Data/experimentaldata1.csv...
+local condition #1:
+	                  c1 = 5e-09
+	                c515 = 0
+	                c285 = 0
+	                c514 = 0
+	        ERB_B1_P_tot ->   10 data-points assigned with stds
+	              ERK_PP ->   10 data-points assigned with stds
+	              AKT_PP ->   10 data-points assigned with stds
+
+loading data #2, from file Data/experimentaldata2.def...
+loading data #2, from file Data/experimentaldata2.csv...
+local condition #1:
+	                  c1 = 0
+	                c515 = 0
+	                c285 = 0
+	                c514 = 5e-09
+	        ERB_B1_P_tot ->   10 data-points assigned with stds
+	              ERK_PP ->   10 data-points assigned with stds
+	              AKT_PP ->   10 data-points assigned with stds
+
+loading data #3, from file Data/experimentaldata3.def...
+loading data #3, from file Data/experimentaldata3.csv...
+local condition #1:
+	                  c1 = 1e-11
+	                c515 = 0
+	                c285 = 0
+	                c514 = 0
+	        ERB_B1_P_tot ->   10 data-points assigned with stds
+	              ERK_PP ->   10 data-points assigned with stds
+	              AKT_PP ->   10 data-points assigned with stds
+
+loading data #4, from file Data/experimentaldata4.def...
+loading data #4, from file Data/experimentaldata4.csv...
+local condition #1:
+	                  c1 = 0
+	                c515 = 0
+	                c285 = 0
+	                c514 = 1e-10
+	        ERB_B1_P_tot ->   10 data-points assigned with stds
+	              ERK_PP ->   10 data-points assigned with stds
+	              AKT_PP ->   10 data-points assigned with stds
+
+calculating model m1, model_ChenMSB2009...
