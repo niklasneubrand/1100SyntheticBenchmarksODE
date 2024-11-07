@@ -138,15 +138,16 @@ for idx = 1:nSimus
     simuReport = table(projectName, machineName, success, startTime, endTime, duration, error);
     reportName = sprintf('report_manyRS_%010i.csv', startSeed);
     reportFile = fullfile(infoDir, reportName);
-    % prepend any existing simulations
-    if isfile(reportFile)
-        OldSimuReport = readtable(reportFile);
-        for key = ["startTime", "endTime", "duration"]
-            OldSimuReport.(key) = string(OldSimuReport.(key));
-        end
-        simuReport = outerjoin(OldSimuReport, simuReport, 'MergeKeys', true);
-    end
-    writetable(simuReport, reportFile, "WriteMode", "overwrite");
+    writetable(simuReport, reportFile, "WriteMode", "append");
+    % % prepend any existing simulations
+    % if isfile(reportFile)
+    %     OldSimuReport = readtable(reportFile);
+    %     for key = ["startTime", "endTime", "duration"]
+    %         OldSimuReport.(key) = string(OldSimuReport.(key));
+    %     end
+    %     simuReport = outerjoin(OldSimuReport, simuReport, 'MergeKeys', true);
+    % end
+    % writetable(simuReport, reportFile, "WriteMode", "overwrite");
 end
 
 end
