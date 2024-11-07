@@ -79,7 +79,8 @@ nameFmt = sprintf('%s_RS%%0%id', baseNameShort, nDigits);
 if ispc  % Windows
     machineName = getenv('COMPUTERNAME');
 else     % Linux and macOS
-    machineName = getenv('HOSTNAME');
+    [status, machineName] = system('hostname');
+    machineName = strtrim(machineName);  % Trim any extra whitespace or newline
 end
 machineName = string(machineName);
 
