@@ -284,7 +284,7 @@ end
 
 % First: introduce a multi-purpose lower bound for the observables
 % this is used for multiple decissions and derived lower bounds
-ub_add_c = 100;  % maximum value for add_c (used in merit function)
+ub_add_c = 80;  % maximum value for add_c (used in merit function)
 lb_ObsValues = ceil(-0.5 * ub_add_c * log10(exp(1)));  % lower bound for obervable values (log scale)
 
 % Draw ratio of variables on log scale
