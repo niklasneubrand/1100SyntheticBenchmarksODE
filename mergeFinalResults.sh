@@ -47,14 +47,14 @@ for SRC in "${SOURCE_FOLDERS[@]}"; do
                 mkdir -p "$DEST_SIM"
                 
                 # copy relevant folders (add PEtab in future)
-                cp -r "$simulation/Data" "$DEST_SIM/Data/"
-                cp -r "$simulation/Models" "$DEST_SIM/Models/"
+                cp -r "$simulation/Data" "$DEST_SIM/Data"
+                cp -r "$simulation/Models" "$DEST_SIM/Models"
 
                 # copy relevant files
-                cp "$simulation/Setup.m" "$DEST_SIM/"
+                cp "$simulation/Setup.m" "$DEST_SIM"
 
                 plot_file="${simulation}/${simulation_name}_arPlotFullPage.pdf"
-                cp "$plot_file" "$DEST_SIM/"
+                cp "$plot_file" "$DEST_SIM"
 
             done
         else
