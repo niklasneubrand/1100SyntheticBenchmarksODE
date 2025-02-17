@@ -31,13 +31,20 @@ for SRC in "${SOURCE_FOLDERS[@]}"; do
         
         # Check if the Simulations subfolder exists
         if [ -d "$SIMULATIONS_SUBFOLDER" ]; then
-            # Loop over each simulation directory within the Simulations subfolder
+            # Loop over each directory within the Simulations subfolder
             for simulation in "$SIMULATIONS_SUBFOLDER"/*/; do
+
+                # get folder name and check if it is a simualtion folder (or results folder)
                 simulation_name=$(basename "$simulation")
-                echo "    Copying simulation: $simulation_name"
+                if [[ $simulation_name == 0* ]]; then
+                    echo "    Skipping folder: $simulation_name (starts with 0)"
+                    continue
+                fi
+                echo "    Copying simulation folder: $simulation_name"
                 
                 # Destination for this simulation
                 DEST_SIM="$DEST_FOLDER/$template_name/$simulation_name"
+                mkdir -p "$DEST_SIM"
                 
                 # copy relevant folders (add PEtab in future)
                 cp -r "$simulation/Data" "$DEST_SIM/Data/"
