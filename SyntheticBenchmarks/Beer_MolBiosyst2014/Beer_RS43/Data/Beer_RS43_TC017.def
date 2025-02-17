@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Beer_MolBiosyst2014"
+"RS project name:	Beer_RS43"
+"Random seed:		0000243000"
+"Data type, index:	time course, 17"
+
+
+PREDICTOR
+time	T	min	time	0	4314
+
+
+INPUTS
+
+
+OBSERVABLES
+Bac_Obs	C	n/a	conc.	0	1	Bac
+cGlu_Obs	C	n/a	conc.	0	1	offset17_cGlu_Obs+scale17_cGlu_Obs*(cGlu)
+Ind_Obs	C	n/a	conc.	0	1	offset17_Ind_Obs+scale17_Ind_Obs*(Ind)
+
+
+ERRORS
+Bac_Obs	sd17_Bac_Obs
+cGlu_Obs	sd17_cGlu_Obs
+Ind_Obs	sd17_Ind_Obs
+
+
+CONDITIONS
+Bacmax	"(Bacmax_typeIDT5_ExpID4)"
+Beta	"(beta_typeIDT5_ExpID4)"
+kdegi	"(kdegi_typeIDT5)"
+kdim	"(kdim_typeIDT5)"
+ksyn	"(ksyn_typeIDT5)"
+tau	"(tau_typeIDT5_ExpID4)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd17_Bac_Obs	-1.1099	1	1	-4	1
+sd17_cGlu_Obs	-1.1358	1	1	-4	1
+sd17_Ind_Obs	-1.1654	1	1	-4	1
+
+// Scale and offset parameters
+scale17_cGlu_Obs	0	1	1	-5	5
+offset17_cGlu_Obs	-2	1	1	-4	0
+scale17_Ind_Obs	0	1	1	-5	5
+offset17_Ind_Obs	-5	1	1	-7	-3

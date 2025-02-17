@@ -1,0 +1,101 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS01"
+"Random seed:		0001101010."
+
+"Original description:"
+
+"Final Reelin Model"
+
+
+PREDICTOR
+t	 T	 min	 time	 -30	 240
+
+
+COMPARTMENTS
+DefaultCompartment	 V	 "n/a"	 vol.	 1
+
+
+STATES
+ApoER2_Dab1         C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_Dab1"
+ApoER2_Dab1SFK      C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_Dab1SFK"
+ApoER2_Dab1SFKInh   C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_Dab1SFKInh"
+
+pApoER2_re_Dab1     C	 au      conc.	 DefaultCompartment	 1	 "pApoER2_re_Dab1"
+ApoER2_re_Dab1      C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_re_Dab1"
+ApoER2_re_Dab1SFK   C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_re_Dab1SFK"
+ApoER2_re_Dab1SFKInh   C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_re_Dab1SFKInh"
+ApoER2_Dab1_released      C	 au      conc.	 DefaultCompartment	 1	 "ApoER2_Dab1_released"
+
+SFK             C	 au 	 conc.	 DefaultCompartment	 1	 "SFK"
+
+
+INPUTS
+Reelin_step              C    ng/ml   conc.   "step1(t, 0, 0, Reelin_input)*exp(-0.1*t/(Reelin_input*1.e3+1.e-8))"
+
+
+REACTIONS-AMOUNTBASED
+->  ApoER2_Dab1                 CUSTOM  "Dab1_prod"                                     "v_ApoER2_Dab1_prod"
+
+ApoER2_Dab1 + SFK 	->  ApoER2_Dab1SFK        	CUSTOM  "ApoER2_Dab1_bind_SFK * ApoER2_Dab1 * SFK * (1 + Inh * SFK_inhibition_ratio - Inh)"    "v_ApoER2_Dab1_bind_SFK"
+ApoER2_Dab1 + SFK 	->  ApoER2_Dab1SFKInh     	CUSTOM  "ApoER2_Dab1_bind_SFK * ApoER2_Dab1 * SFK * Inh * (1-SFK_inhibition_ratio)"      	"v_ApoER2_Dab1_SFKInh_bind"
+ApoER2_Dab1SFK		->  ApoER2_Dab1_released + SFK       CUSTOM  "ApoER2_Dab1_SFK_release * ApoER2_Dab1SFK"      			"v_ApoER2_Dab1_SFK_release"
+
+ApoER2_Dab1SFKInh	->  ApoER2_Dab1 + SFK        	CUSTOM  "SFK_inhibition_ratio / ApoER2_Dab1_act * ApoER2_Dab1SFKInh"      				"v_ApoER2_Dab1_SFKInh_unbind"
+
+ApoER2_Dab1SFK  	->  ApoER2_re_Dab1SFK           CUSTOM  "Dab1_bind_Reelin * ApoER2_Dab1SFK * Reelin_step"			"v_ApoER2_Dab1SFK_bind_Reelin"
+ApoER2_Dab1SFKInh  	->  ApoER2_re_Dab1SFKInh        CUSTOM  "Dab1_bind_Reelin * ApoER2_Dab1SFKInh  * Reelin_step" 			"v_ApoER2_Dab1SFKInh_bind_Reelin"
+
+ApoER2_re_Dab1 		->  pApoER2_re_Dab1             CUSTOM	"ApoER2_Dab1_act / SFK_inhibition_ratio * ApoER2_re_Dab1SFK * ApoER2_re_Dab1" 			"v_ApoER2_re_Dab1_activation"
+
+ApoER2_Dab1 		->  ApoER2_re_Dab1              CUSTOM	"Dab1_bind_Reelin * ApoER2_Dab1  * Reelin_step" 			"v_ApoER2_Dab1_bind_Reelin"
+ApoER2_Dab1 + SFK 	->  ApoER2_re_Dab1SFK           CUSTOM	"ApoER2_Dab1_bind_SFK_Reelin * ApoER2_Dab1 * (1 + Inh * SFK_inhibition_ratio - Inh) * SFK * Reelin_step" "v_ApoER2_Dab1_bind_SFK_Reelin"
+
+ApoER2_Dab1 + SFK 	->  ApoER2_re_Dab1SFKInh        CUSTOM	"ApoER2_Dab1_bind_SFK_Reelin * ApoER2_Dab1 * Inh * (1-SFK_inhibition_ratio) * SFK * Reelin_step" "v_ApoER2_Dab1_bind_SFKInh_Reelin"
+ApoER2_re_Dab1SFKInh	->  ApoER2_Dab1 + SFK       	CUSTOM	"SFK_inhibition_ratio / ApoER2_Dab1_act * ApoER2_re_Dab1SFKInh"				"v_ApoER2_re_Dab1SFKInh_unbind"
+
+pApoER2_re_Dab1     	->  ApoER2_Dab1_released             CUSTOM  "Dab1_release * pApoER2_re_Dab1"      				"v_pApoER2_re_Dab1_release"
+ApoER2_re_Dab1SFK 	->  ApoER2_Dab1_released + SFK       CUSTOM	"ApoER2_Dab1_SFK_release * ApoER2_re_Dab1SFK"				"v_ApoER2_re_Dab1SFK_release"
+
+ApoER2_Dab1_released     	->                              CUSTOM  "ApoER2_Dab1_SFK_degrad * ApoER2_Dab1_released"  				"v_Dab1_released_degrad"
+ApoER2_Dab1_released     	->  ApoER2_Dab1                 CUSTOM  "ApoER2_Dab1_SFK_recycle * ApoER2_Dab1_released"  		"v_Dab1_released_recycle"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+Dab1_prod	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK*ApoER2_Dab1_SFK_degrad/(ApoER2_Dab1_SFK_degrad + ApoER2_Dab1_SFK_recycle))"
+init_ApoER2_Dab1SFKInh	"(0)"
+init_ApoER2_Dab1_released	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK/(ApoER2_Dab1_SFK_degrad + ApoER2_Dab1_SFK_recycle))"
+init_ApoER2_re_Dab1	"(0)"
+init_ApoER2_re_Dab1SFK	"(0)"
+init_ApoER2_re_Dab1SFKInh	"(0)"
+init_SFK	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK/(ApoER2_Dab1_bind_SFK*init_ApoER2_Dab1))"
+init_pApoER2_re_Dab1	"(0)"
+
+
+PARAMETERS
+ApoER2_Dab1_SFK_degrad	-2.11	1	1	-6	1
+ApoER2_Dab1_SFK_recycle	0.654	1	1	-3	4
+ApoER2_Dab1_SFK_release	3.34	1	1	0	7
+ApoER2_Dab1_act	4	2	1	1	7
+ApoER2_Dab1_bind_SFK	1.83	1	1	-2	5
+ApoER2_Dab1_bind_SFK_Reelin	4.98	1	1	1	8
+Dab1_bind_Reelin	-1.95	1	1	-5	2
+Dab1_release	-1.37	1	1	-5	2
+SFK_inhibition_ratio	-0.213	1	1	-4	3
+init_ApoER2_Dab1	0	2	1	-3	3
+init_ApoER2_Dab1SFK	-3.82	1	1	-7	0
+
+

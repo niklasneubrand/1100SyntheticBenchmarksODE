@@ -1,0 +1,56 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS34"
+"Random seed:		0001234000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_Obs	C	n/a	conc.	0	0	Rec
+IL13_Rec_Obs	C	n/a	conc.	0	0	IL13_Rec
+p_IL13_Rec_Obs	C	n/a	conc.	0	0	p_IL13_Rec
+STAT5_Obs	C	n/a	conc.	0	0	STAT5
+SOCS3mRNA_Obs	C	n/a	conc.	0	0	SOCS3mRNA
+DecoyR_Obs	C	n/a	conc.	0	0	DecoyR
+IL13_DecoyR_Obs	C	n/a	conc.	0	0	IL13_DecoyR
+SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
+
+
+ERRORS
+Rec_Obs	sd2_Rec_Obs
+IL13_Rec_Obs	sd1_IL13_Rec_Obs
+p_IL13_Rec_Obs	sd1_p_IL13_Rec_Obs
+STAT5_Obs	sd1_STAT5_Obs
+SOCS3mRNA_Obs	sd1_SOCS3mRNA_Obs
+DecoyR_Obs	sd1_DecoyR_Obs
+IL13_DecoyR_Obs	sd2_IL13_DecoyR_Obs
+SOCS3_Obs	sd1_SOCS3_Obs
+
+
+CONDITIONS
+il13_level	"(20)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Rec_Obs	-0.53775	1	1	-3	2
+sd1_IL13_Rec_Obs	-4.7756	1	1	-7	-2
+sd1_p_IL13_Rec_Obs	-1.6409	1	1	-4	1
+sd1_STAT5_Obs	1.1977	1	1	-1	4
+sd1_SOCS3mRNA_Obs	1.9108	1	1	-1	4
+sd1_DecoyR_Obs	-1.8993	1	1	-4	1
+sd2_IL13_DecoyR_Obs	-1.4541	1	1	-4	1
+sd1_SOCS3_Obs	1.0881	1	1	-1	4
+
+// Scale and offset parameters

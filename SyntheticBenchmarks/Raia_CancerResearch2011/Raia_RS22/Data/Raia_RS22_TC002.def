@@ -1,0 +1,55 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS22"
+"Random seed:		0001222000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	scale1_Compound_1_Obs*(p_IL13_Rec+pJAK2)
+Compound_2_Obs	C	n/a	conc.	0	0	scale2_Compound_2_Obs*(p_IL13_Rec_i+STAT5)
+Compound_3_Obs	C	n/a	conc.	0	0	scale2_Compound_3_Obs*(JAK2+CD274mRNA)
+Compound_4_Obs	C	n/a	conc.	0	0	pJAK2+STAT5
+Compound_5_Obs	C	n/a	conc.	0	0	scale1_Compound_5_Obs*(pJAK2+SOCS3)
+Compound_6_Obs	C	n/a	conc.	0	0	scale1_Compound_6_Obs*(pSTAT5+DecoyR)
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd2_Compound_2_Obs
+Compound_3_Obs	sd2_Compound_3_Obs
+Compound_4_Obs	sd2_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+
+
+CONDITIONS
+il13_level	"(20)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-0.39327	1	1	-3	2
+sd2_Compound_2_Obs	1.1618	1	1	-1	4
+sd2_Compound_3_Obs	1.3165	1	1	-1	4
+sd2_Compound_4_Obs	1.1652	1	1	-1	4
+sd1_Compound_5_Obs	1.2626	1	1	-1	4
+sd1_Compound_6_Obs	1.0698	1	1	-1	4
+
+// Scale and offset parameters
+scale1_Compound_1_Obs	0	1	1	-5	5
+scale2_Compound_2_Obs	0	1	1	-5	5
+scale2_Compound_3_Obs	0	1	1	-5	5
+scale1_Compound_5_Obs	0	1	1	-5	5
+scale1_Compound_6_Obs	0	1	1	-5	5

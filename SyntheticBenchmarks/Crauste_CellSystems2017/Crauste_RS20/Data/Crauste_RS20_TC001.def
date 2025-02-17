@@ -1,0 +1,38 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Crauste_CellSystems2017"
+"RS project name:	Crauste_RS20"
+"Random seed:		0000720000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	34
+
+
+INPUTS
+
+
+OBSERVABLES
+Naive_Obs	C	n/a	conc.	0	0	scale1_Naive_Obs*(Naive)
+Memory_Obs	C	n/a	conc.	0	0	Memory
+
+
+ERRORS
+Naive_Obs	sd1_Naive_Obs
+Memory_Obs	sd1_Memory_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Naive_Obs	2.2244	1	1	0	5
+sd1_Memory_Obs	2.9327	1	1	0	5
+
+// Scale and offset parameters
+scale1_Naive_Obs	0	1	1	-5	5

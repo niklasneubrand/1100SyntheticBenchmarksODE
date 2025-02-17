@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Isensee_JCB2018"
+"RS project name:	Isensee_RS34"
+"Random seed:		0002034000"
+"Data type, index:	dose response, 5"
+
+
+PREDICTOR-DOSERESPONSE fourABnOH_time
+time	T	min	time	0	72
+
+
+INPUTS
+
+
+OBSERVABLES
+RIIp_2_Obs	C	n/a	conc.	0	0	RIIp_2
+
+
+ERRORS
+RIIp_2_Obs	sd1_RIIp_2_Obs
+
+
+CONDITIONS
+DMSO_level	"(0)"
+DMSO_time	"(0)"
+Fsk_level	"(10)"
+Fsk_time	"(60)"
+H89_level	"(0)"
+H89_time	"(0)"
+IBMX_level	"(0)"
+IBMX_time	"(0)"
+Rp8_Br_cAMPS_pAB_level	"(0)"
+Rp8_Br_cAMPS_pAB_time	"(0)"
+Rp8_pCPT_cAMPS_pAB_level	"(0)"
+Rp8_pCPT_cAMPS_pAB_time	"(0)"
+Rp_cAMPS_pAB_level	"(0)"
+Rp_cAMPS_pAB_time	"(0)"
+Sp8_Br_cAMPS_AM_level	"(0)"
+Sp8_Br_cAMPS_AM_time	"(0)"
+fourABnOH_level	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_RIIp_2_Obs	-1.1897	1	1	-4	1
+
+// Scale and offset parameters

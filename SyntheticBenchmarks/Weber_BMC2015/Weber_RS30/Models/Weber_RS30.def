@@ -1,0 +1,114 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Weber_BMC2015"
+"RS project name:	Weber_RS30"
+"Random seed:		0001730000."
+
+"Original description:"
+
+trans-Golgi network model A including PKD, PI4K3B and CERT.
+Features a positive feedback mechanism between CERT and PKD.
+
+
+PREDICTOR
+t               T   h         time	0	10
+
+
+COMPARTMENTS
+cyt             V   pl          vol.    1
+
+
+STATES
+PKD        C   muM      conc.   cyt     1    "PKD"
+PKDDAGa    C   muM      conc.   cyt     1    "PKD_p:DAG"
+PI4K3B     C   muM      conc.   cyt     1    "PI4KIII\beta"
+PI4K3Ba    C   muM      conc.   cyt     1    "PI4KIII\beta_p"
+CERTERa    C   muM      conc.   cyt     1    "CERT_{a,ER}"
+CERT       C   muM      conc.   cyt     1    "CERT_{p,ER}"
+CERTTGNa   C   muM      conc.   cyt     1    "CERT_{a,TGN}"
+
+
+INPUTS
+u2    C  flag  conc.  "step1(t,0,0               ,Ect_Expr_PKD_flag      )"
+u3    C  flag  conc.  "step1(t,0,0               ,Ect_Expr_PI4K3beta_flag)"
+u4    C  flag  conc.  "step1(t,0,0               ,Ect_Expr_CERT_flag     )"
+u5    C  muM   conc.  "step1(t,0,PdBu_time       ,PdBu_dose              )"
+u6    C  muM   conc.  "step1(t,0,kb_NB142_70_time,kb_NB142_70_dose       )"
+
+
+REACTIONS
+PKD      -> PKDDAGa      CUSTOM    "p11*PKD*((p31*CERTERa*(PI4K3Ba/(PI4K3Ba+m31)))/((p31*CERTERa*(PI4K3Ba/(PI4K3Ba+m31)))+m11))"
+PKD      -> PKDDAGa      CUSTOM    "p12*PKD*(1+pu5*u5)"   
+PKDDAGa  -> PKD          CUSTOM    "p13*PKDDAGa*(1+pu6*u6)"
+         -> PKD          CUSTOM    "s12"
+         -> PKD          CUSTOM    "pu2*u2"
+PKD      ->              CUSTOM    "a11*PKD"
+PKDDAGa  ->              CUSTOM    "a12*PKDDAGa"
+PI4K3Ba  -> PI4K3B       CUSTOM    "p21*PI4K3Ba"
+PI4K3B   -> PI4K3Ba      CUSTOM    "p22*PI4K3B*(PKDDAGa/(PKDDAGa+m22))"
+         -> PI4K3B       CUSTOM    "s21"
+         -> PI4K3B       CUSTOM    "pu3*u3"
+PI4K3B   ->              CUSTOM    "a21*PI4K3B"
+PI4K3Ba  ->              CUSTOM    "a22*PI4K3Ba"
+CERTERa  -> CERTTGNa     CUSTOM    "p31*CERTERa*(PI4K3Ba/(PI4K3Ba+m31))"
+CERT     -> CERTERa      CUSTOM    "p32*CERT"
+CERTTGNa -> CERT         CUSTOM    "p33*CERTTGNa*(PKDDAGa/(PKDDAGa+m33))"
+         -> CERTERa      CUSTOM    "s31"
+         -> CERTERa      CUSTOM    "pu4*u4"
+CERTERa  ->              CUSTOM    "a31*CERTERa"
+CERT     ->              CUSTOM    "a32*CERT"
+CERTTGNa ->              CUSTOM    "a33*CERTTGNa"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+init_CERT	"(0)"
+init_CERTERa	"(0)"
+init_CERTTGNa	"(0)"
+init_PI4K3B	"(0)"
+init_PI4K3Ba	"(0)"
+init_PKD	"(0)"
+init_PKDDAGa	"(0)"
+
+
+PARAMETERS
+a11	-0.834	1	1	-4	3
+a12	1.29	1	1	-2	5
+a21	0.0037	1	1	-3	4
+a22	-3.94	1	1	-7	0
+a31	-0.738	1	1	-4	3
+a32	-3.85	1	1	-7	0
+a33	-3.77	1	1	-7	0
+m11	9.72	1	1	6	13
+m22	3.53	1	1	0	7
+m31	9.81	1	1	6	13
+m33	7.9	1	1	4	11
+p11	0.524	1	1	-3	4
+p12	-2.03	1	1	-6	1
+p13	-2.88	1	1	-6	1
+p21	0.929	1	1	-3	4
+p22	1.36	1	1	-2	5
+p31	3.68	1	1	0	7
+p32	1.45	1	1	-2	5
+p33	4.47	1	1	1	8
+pu2	0	0	1	-3	3
+pu3	8.1	1	1	5	12
+pu4	7.43	1	1	4	11
+pu5	1.58	1	1	-2	5
+pu6	2.19	1	1	-1	6
+s12	5.18	1	1	2	9
+s21	6.69	1	1	3	10
+s31	6.79	1	1	3	10
+
+

@@ -1,0 +1,37 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Zheng_PNAS2012"
+"RS project name:	Zheng_RS37"
+"Random seed:		0001837000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	31
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	K27me0K36me0+K27me1K36me2
+Compound_2_Obs	C	n/a	conc.	0	0	K27me1K36me0+K27me2K36me0
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-1.3574	1	1	-4	1
+sd1_Compound_2_Obs	-3.3609	1	1	-6	-1
+
+// Scale and offset parameters

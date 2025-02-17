@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fiedler_BMC2016"
+"RS project name:	Fiedler_RS45"
+"Random seed:		0000945000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	12
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	RAF+pRAF+MEK+pMEK+ERK
+Compound_2_Obs	C	n/a	conc.	0	0	RAF+pRAF+MEK+pMEK+pERK
+Compound_3_Obs	C	n/a	conc.	0	0	RAF+pRAF+MEK+ERK+pERK
+Compound_4_Obs	C	n/a	conc.	0	0	RAF+pRAF+pMEK+ERK+pERK
+Compound_5_Obs	C	n/a	conc.	0	0	RAF+MEK+pMEK+ERK+pERK
+Compound_6_Obs	C	n/a	conc.	0	0	pRAF+MEK+pMEK+ERK+pERK
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+
+
+CONDITIONS
+Sorafenib	"(0)"
+UO126	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-0.3229	1	1	-3	2
+sd1_Compound_2_Obs	-0.47444	1	1	-3	2
+sd1_Compound_3_Obs	-0.3339	1	1	-3	2
+sd1_Compound_4_Obs	-0.49402	1	1	-3	2
+sd1_Compound_5_Obs	-0.32794	1	1	-3	2
+sd1_Compound_6_Obs	-0.49527	1	1	-3	2
+
+// Scale and offset parameters

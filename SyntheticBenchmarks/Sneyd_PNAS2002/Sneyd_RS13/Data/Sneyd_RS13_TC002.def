@@ -1,0 +1,45 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sneyd_PNAS2002"
+"RS project name:	Sneyd_RS13"
+"Random seed:		0001413000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	s	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+IPR_O_Obs	C	n/a	conc.	0	0	IPR_O
+IPR_A_Obs	C	n/a	conc.	0	0	IPR_A
+IPR_I2_Obs	C	n/a	conc.	0	0	IPR_I2
+Compound_1_Obs	C	n/a	conc.	0	0	IPR_O+IPR_I1+IPR_A
+
+
+ERRORS
+IPR_O_Obs	sd2_IPR_O_Obs
+IPR_A_Obs	sd2_IPR_A_Obs
+IPR_I2_Obs	sd2_IPR_I2_Obs
+Compound_1_Obs	sd2_Compound_1_Obs
+
+
+CONDITIONS
+Ca	"(0.2)"
+IP3	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_IPR_O_Obs	-2.6297	1	1	-5	0
+sd2_IPR_A_Obs	-1.6554	1	1	-4	1
+sd2_IPR_I2_Obs	-1.7807	1	1	-4	1
+sd2_Compound_1_Obs	-1.6151	1	1	-4	1
+
+// Scale and offset parameters

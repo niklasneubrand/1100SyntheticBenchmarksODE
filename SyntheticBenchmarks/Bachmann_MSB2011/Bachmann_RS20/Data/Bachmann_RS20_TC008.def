@@ -1,0 +1,60 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS20"
+"Random seed:		0001920000"
+"Data type, index:	time course, 8"
+
+
+PREDICTOR
+time	T	min	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	EpoRJAK2+SOCS3nRNA5
+Compound_2_Obs	C	n/a	conc.	0	0	EpoRpJAK2+pSTAT5
+Compound_3_Obs	C	n/a	conc.	0	0	EpoRpJAK2+CISnRNA2
+Compound_6_Obs	C	n/a	conc.	0	0	p1EpoRpJAK2+SOCS3nRNA5
+Compound_9_Obs	C	n/a	conc.	0	0	p12EpoRpJAK2+CIS
+Compound_11_Obs	C	n/a	conc.	0	0	SHP1+CISnRNA3
+Compound_13_Obs	C	n/a	conc.	0	0	CISnRNA1+CISnRNA4
+Compound_14_Obs	C	n/a	conc.	0	0	CISnRNA2+CIS
+
+
+ERRORS
+Compound_1_Obs	sd3_Compound_1_Obs
+Compound_2_Obs	sd8_Compound_2_Obs
+Compound_3_Obs	sd7_Compound_3_Obs
+Compound_6_Obs	sd8_Compound_6_Obs
+Compound_9_Obs	sd7_Compound_9_Obs
+Compound_11_Obs	sd7_Compound_11_Obs
+Compound_13_Obs	sd6_Compound_13_Obs
+Compound_14_Obs	sd6_Compound_14_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_SHP1	"(init_SHP1 * (1 + (0 * SHP1ProOE)))"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_Compound_1_Obs	-0.026075	1	1	-3	2
+sd8_Compound_2_Obs	0.86006	1	1	-2	3
+sd7_Compound_3_Obs	2.2696	1	1	0	5
+sd8_Compound_6_Obs	-2.3068	1	1	-5	0
+sd7_Compound_9_Obs	-0.23799	1	1	-3	2
+sd7_Compound_11_Obs	2.2572	1	1	0	5
+sd6_Compound_13_Obs	2.5735	1	1	0	5
+sd6_Compound_14_Obs	2.2738	1	1	0	5
+
+// Scale and offset parameters

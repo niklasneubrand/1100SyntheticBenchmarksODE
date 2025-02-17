@@ -1,0 +1,44 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS04"
+"Random seed:		0001204000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_Obs	C	n/a	conc.	0	0	Rec
+JAK2_Obs	C	n/a	conc.	0	0	JAK2
+DecoyR_Obs	C	n/a	conc.	0	0	DecoyR
+Rec_i_Obs	C	n/a	conc.	0	0	Rec_i
+
+
+ERRORS
+Rec_Obs	sd1_Rec_Obs
+JAK2_Obs	sd1_JAK2_Obs
+DecoyR_Obs	sd1_DecoyR_Obs
+Rec_i_Obs	sd1_Rec_i_Obs
+
+
+CONDITIONS
+il13_level	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Rec_Obs	-0.87432	1	1	-3	2
+sd1_JAK2_Obs	-0.39111	1	1	-3	2
+sd1_DecoyR_Obs	-1.3007	1	1	-4	1
+sd1_Rec_i_Obs	1.5568	1	1	-1	4
+
+// Scale and offset parameters

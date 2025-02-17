@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS40"
+"Random seed:		0001540000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	min	time	0	220
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_5_Obs	C	n/a	conc.	0	0	pJAK1_pgp130+nSOCS3RNA1+nSOCS3RNA5+SOCS3RNA+SOCS3
+
+
+ERRORS
+Compound_5_Obs	sd4_Compound_5_Obs
+
+
+CONDITIONS
+input_il6	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_Compound_5_Obs	-0.90222	1	1	-3	2
+
+// Scale and offset parameters

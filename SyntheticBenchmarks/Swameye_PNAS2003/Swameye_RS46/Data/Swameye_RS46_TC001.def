@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Swameye_PNAS2003"
+"RS project name:	Swameye_RS46"
+"Random seed:		0001646000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	88
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	offset1_Compound_1_Obs+scale1_Compound_1_Obs*(STAT+pSTAT+nSTAT4)
+Compound_2_Obs	C	n/a	conc.	0	1	STAT+nSTAT2+nSTAT4
+Compound_3_Obs	C	n/a	conc.	0	1	offset1_Compound_3_Obs+scale1_Compound_3_Obs*(pSTAT+npSTAT_npSTAT+nSTAT2)
+Compound_4_Obs	C	n/a	conc.	0	1	pSTAT+nSTAT2+nSTAT4
+Compound_5_Obs	C	n/a	conc.	0	1	scale1_Compound_5_Obs*(nSTAT1+nSTAT2+nSTAT3)
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-1.3243	1	1	-4	1
+sd1_Compound_2_Obs	-1.3131	1	1	-4	1
+sd1_Compound_3_Obs	-1.3285	1	1	-4	1
+sd1_Compound_4_Obs	-1.34	1	1	-4	1
+sd1_Compound_5_Obs	-1.3261	1	1	-4	1
+
+// Scale and offset parameters
+scale1_Compound_1_Obs	0	1	1	-5	5
+offset1_Compound_1_Obs	-3	1	1	-5	-1
+scale1_Compound_3_Obs	0	1	1	-5	5
+offset1_Compound_3_Obs	-3	1	1	-5	-1
+scale1_Compound_5_Obs	0	1	1	-5	5

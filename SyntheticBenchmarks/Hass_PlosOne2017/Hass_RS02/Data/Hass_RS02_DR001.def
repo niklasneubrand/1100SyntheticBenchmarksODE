@@ -1,0 +1,39 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS02"
+"Random seed:		0001102000"
+"Data type, index:	dose response, 1"
+
+
+PREDICTOR-DOSERESPONSE Reelin_input
+time	T	min	time	0	17
+
+
+INPUTS
+
+
+OBSERVABLES
+pApoER2_re_Dab1_Obs	C	n/a	conc.	0	0	scale4_pApoER2_re_Dab1_Obs*(pApoER2_re_Dab1)
+SFK_Obs	C	n/a	conc.	0	0	SFK
+
+
+ERRORS
+pApoER2_re_Dab1_Obs	sd4_pApoER2_re_Dab1_Obs
+SFK_Obs	sd4_SFK_Obs
+
+
+CONDITIONS
+Inh	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_pApoER2_re_Dab1_Obs	-4.3264	1	1	-7	-2
+sd4_SFK_Obs	-3.5384	1	1	-6	-1
+
+// Scale and offset parameters
+scale4_pApoER2_re_Dab1_Obs	0	1	1	-5	5

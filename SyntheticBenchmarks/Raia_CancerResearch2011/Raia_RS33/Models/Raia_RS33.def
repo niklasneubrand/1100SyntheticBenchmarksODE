@@ -1,0 +1,113 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS33"
+"Random seed:		0001233000."
+
+"Original description:"
+
+"JAK2-STAT5 Model"
+"with feedback by SOCS3, CIS and SHP-1"
+
+
+PREDICTOR
+t               T   min         time	0	100
+
+
+COMPARTMENTS
+cyt             V   pl          vol.        100
+nuc             V   pl          vol.        10
+
+
+STATES
+Rec             C   nmol/l      conc.   cyt
+Rec_i           C   nmol/l      conc.   cyt
+IL13_Rec        C   nmol/l      conc.   cyt
+p_IL13_Rec      C   nmol/l      conc.   cyt
+p_IL13_Rec_i    C   nmol/l      conc.   cyt
+JAK2            C   nmol/l      conc.   cyt
+pJAK2           C   nmol/l      conc.   cyt
+STAT5           C   nmol/l      conc.   cyt
+pSTAT5          C   nmol/l      conc.   cyt
+SOCS3mRNA       C   nmol/l      conc.   nuc
+DecoyR          C   nmol/l      conc.   cyt
+IL13_DecoyR     C   nmol/l      conc.   cyt
+SOCS3           C   nmol/l      conc.   cyt
+CD274mRNA       C   nmol/l      conc.   nuc
+
+
+INPUTS
+
+
+REACTIONS
+Rec             ->  IL13_Rec        CUSTOM "il13_level * Kon_IL13Rec * 2.265 * Rec"
+Rec             ->  Rec_i           CUSTOM "Rec_intern * Rec"
+Rec_i           ->  Rec             CUSTOM "Rec_recycle * Rec_i"
+IL13_Rec        ->  p_IL13_Rec      CUSTOM "pJAK2 * Rec_phosphorylation * IL13_Rec"
+JAK2            ->  pJAK2           CUSTOM "IL13_Rec * JAK2 * JAK2_phosphorylation / (1 + SOCS3 * JAK2_p_inhibition)"
+JAK2            ->  pJAK2           CUSTOM "p_IL13_Rec * JAK2_phosphorylation * JAK2 / (1 + SOCS3 * JAK2_p_inhibition)"
+p_IL13_Rec      ->  p_IL13_Rec_i    CUSTOM "pRec_intern * p_IL13_Rec"
+p_IL13_Rec_i    ->                  CUSTOM "pRec_degradation * p_IL13_Rec_i"
+pJAK2           ->  JAK2            CUSTOM "SHP1 * pJAK2_dephosphorylation * pJAK2"
+STAT5           ->  pSTAT5          CUSTOM "pJAK2 * STAT5_phosphorylation * STAT5"
+pSTAT5          ->  STAT5           CUSTOM "SHP1 * pSTAT5_dephosphorylation * pSTAT5"
+DecoyR          ->  IL13_DecoyR     CUSTOM "il13_level * 2.265 * DecoyR_binding * DecoyR"
+                ->  SOCS3mRNA       CUSTOM "pSTAT5 * SOCS3mRNA_production"
+                ->  SOCS3           CUSTOM "SOCS3mRNA * SOCS3_translation / (SOCS3mRNA + SOCS3_accumulation)"
+SOCS3           ->                  CUSTOM "SOCS3_degradation * SOCS3"
+                ->  CD274mRNA       CUSTOM "pSTAT5 * CD274mRNA_production"
+
+
+DERIVED
+IL13_cell       C   nmol/l      conc.   "IL13_Rec + p_IL13_Rec + p_IL13_Rec_i + IL13_DecoyR"
+pIL4Ra          C   nmol/l      conc.   "p_IL13_Rec + p_IL13_Rec_i"
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+SHP1	"(91)"
+il13_level	"(1)"
+init_CD274mRNA	"(0)"
+init_DecoyR	"(0.34)"
+init_IL13_DecoyR	"(0)"
+init_IL13_Rec	"(0)"
+init_JAK2	"(2.8)"
+init_Rec	"(1.3)"
+init_SOCS3	"(0)"
+init_SOCS3mRNA	"(0)"
+init_STAT5	"(165)"
+init_pJAK2	"(0)"
+init_pSTAT5	"(0)"
+init_p_IL13_Rec	"(0)"
+init_p_IL13_Rec_i	"(0)"
+
+
+PARAMETERS
+CD274mRNA_production	-1.51	1	1	-5	2
+DecoyR_binding	-2.49	1	1	-6	1
+JAK2_p_inhibition	-1.23	1	1	-5	2
+JAK2_phosphorylation	-0.287	1	1	-4	3
+Kon_IL13Rec	-2.83	1	1	-6	1
+Rec_intern	-0.587	1	1	-4	3
+Rec_phosphorylation	3.21	1	1	0	7
+Rec_recycle	-2.62	1	1	-6	1
+SOCS3_accumulation	2.7	1	1	-1	6
+SOCS3_degradation	-1.25	1	1	-5	2
+SOCS3_translation	1.2	1	1	-2	5
+SOCS3mRNA_production	-0.568	1	1	-4	3
+STAT5_phosphorylation	-1.5	1	1	-5	2
+init_Rec_i	2.38	1	1	-1	6
+pJAK2_dephosphorylation	-3.83	1	1	-7	0
+pRec_degradation	-0.797	1	1	-4	3
+pRec_intern	-0.397	1	1	-4	3
+pSTAT5_dephosphorylation	-3.28	1	1	-7	0
+
+

@@ -1,0 +1,75 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS41"
+"Random seed:		0002241000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	0	offset5_EpoRJAK2_Obs+scale5_EpoRJAK2_Obs*(EpoRJAK2)
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	offset2_pEpoRpJAK2_Obs+scale2_pEpoRpJAK2_Obs*(pEpoRpJAK2)
+npSTAT5_Obs	C	n/a	conc.	0	0	offset2_npSTAT5_Obs+scale2_npSTAT5_Obs*(npSTAT5)
+CISHnRNA2_Obs	C	n/a	conc.	0	0	CISHnRNA2
+CISHnRNA3_Obs	C	n/a	conc.	0	0	offset3_CISHnRNA3_Obs+scale3_CISHnRNA3_Obs*(CISHnRNA3)
+CISHnRNA5_Obs	C	n/a	conc.	0	0	CISHnRNA5
+SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
+
+
+ERRORS
+EpoRJAK2_Obs	sd5_EpoRJAK2_Obs
+pEpoRpJAK2_Obs	sd2_pEpoRpJAK2_Obs
+npSTAT5_Obs	sd2_npSTAT5_Obs
+CISHnRNA2_Obs	sd3_CISHnRNA2_Obs
+CISHnRNA3_Obs	sd3_CISHnRNA3_Obs
+CISHnRNA5_Obs	sd3_CISHnRNA5_Obs
+SOCS3_Obs	sd2_SOCS3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0 * SOCS3eqmOE * SOCS3eqm + 0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_EpoRJAK2_Obs	-0.36887	1	1	-3	2
+sd2_pEpoRpJAK2_Obs	-1.113	1	1	-4	1
+sd2_npSTAT5_Obs	0.56238	1	1	-2	3
+sd3_CISHnRNA2_Obs	-1.4907	1	1	-4	1
+sd3_CISHnRNA3_Obs	-1.5199	1	1	-4	1
+sd3_CISHnRNA5_Obs	-1.5947	1	1	-4	1
+sd2_SOCS3_Obs	0.46486	1	1	-2	3
+
+// Scale and offset parameters
+scale5_EpoRJAK2_Obs	0	1	1	-5	5
+offset5_EpoRJAK2_Obs	-2	1	1	-4	0
+scale2_pEpoRpJAK2_Obs	0	1	1	-5	5
+offset2_pEpoRpJAK2_Obs	-3	1	1	-5	-1
+scale2_npSTAT5_Obs	0	1	1	-5	5
+offset2_npSTAT5_Obs	-1	1	1	-3	1
+scale3_CISHnRNA3_Obs	0	1	1	-5	5
+offset3_CISHnRNA3_Obs	-4	1	1	-6	-2

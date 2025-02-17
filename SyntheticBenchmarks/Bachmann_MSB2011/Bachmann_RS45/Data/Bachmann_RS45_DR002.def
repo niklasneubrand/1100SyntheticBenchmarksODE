@@ -1,0 +1,40 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS45"
+"Random seed:		0001945000"
+"Data type, index:	dose response, 2"
+
+
+PREDICTOR-DOSERESPONSE epo_level
+time	T	min	time	0	33
+
+
+INPUTS
+
+
+OBSERVABLES
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
+SOCS3nRNA5_Obs	C	n/a	conc.	0	0	SOCS3nRNA5
+
+
+ERRORS
+SOCS3nRNA2_Obs	sd10_SOCS3nRNA2_Obs
+SOCS3nRNA5_Obs	sd10_SOCS3nRNA5_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd10_SOCS3nRNA2_Obs	-4.0755	1	1	-7	-2
+sd10_SOCS3nRNA5_Obs	-4.0925	1	1	-7	-2
+
+// Scale and offset parameters

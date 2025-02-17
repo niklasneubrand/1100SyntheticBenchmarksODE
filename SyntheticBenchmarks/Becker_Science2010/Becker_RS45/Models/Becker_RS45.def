@@ -1,0 +1,70 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Becker_Science2010"
+"RS project name:	Becker_RS45"
+"Random seed:		0000145000."
+
+"Original description:"
+
+"Epo receptor internalization"
+
+
+PREDICTOR
+t               T   min     time	0	100
+
+
+COMPARTMENTS
+
+
+STATES
+Epo             C   pM      conc.	1
+EpoR            C   pM      conc.	1
+Epo_EpoR        C   pM      conc.	1
+Epo_EpoR_i      C   pM      conc.	1
+dEpo_i          C   pM      conc.	1
+dEpo_e          C   pM      conc.	1
+
+
+INPUTS
+
+
+REACTIONS
+Epo + EpoR      ->  Epo_EpoR        CUSTOM "kon_model * Epo * EpoR"
+Epo_EpoR        ->  Epo + EpoR      CUSTOM "koff * Epo_EpoR"
+                ->  EpoR            CUSTOM "kt * init_EpoR"
+EpoR            ->                  CUSTOM "kt * EpoR"
+Epo_EpoR        ->  Epo_EpoR_i      CUSTOM "ke * Epo_EpoR"
+Epo_EpoR_i      ->  EpoR + Epo        CUSTOM "kex * Epo_EpoR_i"
+Epo_EpoR_i      ->  dEpo_i          CUSTOM "kdi * Epo_EpoR_i"
+Epo_EpoR_i      ->  dEpo_e          CUSTOM "kde * Epo_EpoR_i"
+
+
+DERIVED
+Epo_ext         C   pM   conc.   "Epo + dEpo_e"
+Epo_int         C   pM   conc.   "Epo_EpoR_i + dEpo_i"
+
+
+CONDITIONS
+init_EpoR	"(init_Epo * init_EpoR_rel)"
+init_Epo_EpoR	"(0)"
+init_Epo_EpoR_i	"(0)"
+init_dEpo_e	"(0)"
+init_dEpo_i	"(0)"
+kon_model	"(kon / init_Epo)"
+
+
+PARAMETERS
+init_Epo	3.14	1	1	0	7
+init_EpoR_rel	-1.28	1	1	-5	2
+kde	-1.84	1	1	-5	2
+kdi	-2.92	1	1	-6	1
+ke	-1.03	1	1	-5	2
+kex	-3.12	1	1	-7	0
+koff	-1.22	1	1	-5	2
+kon	-0.6	1	1	-4	3
+kt	-1.69	1	1	-5	2
+
+

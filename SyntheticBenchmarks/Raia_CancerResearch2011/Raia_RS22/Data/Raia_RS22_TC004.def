@@ -1,0 +1,39 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS22"
+"Random seed:		0001222000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_3_Obs	C	n/a	conc.	0	0	scale4_Compound_3_Obs*(JAK2+CD274mRNA)
+Compound_4_Obs	C	n/a	conc.	0	0	pJAK2+STAT5
+
+
+ERRORS
+Compound_3_Obs	sd4_Compound_3_Obs
+Compound_4_Obs	sd3_Compound_4_Obs
+
+
+CONDITIONS
+il13_level	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_Compound_3_Obs	1.3087	1	1	-1	4
+sd3_Compound_4_Obs	1.1714	1	1	-1	4
+
+// Scale and offset parameters
+scale4_Compound_3_Obs	0	1	1	-5	5

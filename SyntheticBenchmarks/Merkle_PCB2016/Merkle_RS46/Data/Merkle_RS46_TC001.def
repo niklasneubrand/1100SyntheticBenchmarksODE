@@ -1,0 +1,70 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS46"
+"Random seed:		0002246000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	436
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	0	offset1_EpoRJAK2_Obs+scale1_EpoRJAK2_Obs*(EpoRJAK2)
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	offset1_pEpoRpJAK2_Obs+scale1_pEpoRpJAK2_Obs*(pEpoRpJAK2)
+npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
+CISHnRNA2_Obs	C	n/a	conc.	0	0	offset1_CISHnRNA2_Obs+scale1_CISHnRNA2_Obs*(CISHnRNA2)
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
+SOCS3nRNA3_Obs	C	n/a	conc.	0	0	SOCS3nRNA3
+
+
+ERRORS
+EpoRJAK2_Obs	sd1_EpoRJAK2_Obs
+pEpoRpJAK2_Obs	sd1_pEpoRpJAK2_Obs
+npSTAT5_Obs	sd1_npSTAT5_Obs
+CISHnRNA2_Obs	sd1_CISHnRNA2_Obs
+SOCS3nRNA2_Obs	sd1_SOCS3nRNA2_Obs
+SOCS3nRNA3_Obs	sd1_SOCS3nRNA3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_EpoRJAK2_Obs	-0.5865	1	1	-3	2
+sd1_pEpoRpJAK2_Obs	-1.448	1	1	-4	1
+sd1_npSTAT5_Obs	-0.42316	1	1	-3	2
+sd1_CISHnRNA2_Obs	-2.6822	1	1	-5	0
+sd1_SOCS3nRNA2_Obs	-2.6412	1	1	-5	0
+sd1_SOCS3nRNA3_Obs	-2.6681	1	1	-5	0
+
+// Scale and offset parameters
+scale1_EpoRJAK2_Obs	0	1	1	-5	5
+offset1_EpoRJAK2_Obs	-2	1	1	-4	0
+scale1_pEpoRpJAK2_Obs	0	1	1	-5	5
+offset1_pEpoRpJAK2_Obs	-3	1	1	-5	-1
+scale1_CISHnRNA2_Obs	0	1	1	-5	5
+offset1_CISHnRNA2_Obs	-4	1	1	-6	-2

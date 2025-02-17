@@ -1,0 +1,97 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Elowitz_Nature2000"
+"RS project name:	Elowitz_RS17"
+"Random seed:		0000817000."
+
+"Original description:"
+
+"Repressilator model by Elowitz & Leibler (Nature, 403, 2000) extended
+with a model for the reported to provide a link to experimental data."
+
+
+PREDICTOR
+t	 T	 "n/a"	 time	 0	 100
+
+
+COMPARTMENTS
+cell	 V	 "n/a"	 vol.	 1
+
+
+STATES
+X_protein	 C	 "n/a"	 conc.	 cell	 1	 "LacI protein"
+Y_protein	 C	 "n/a"	 conc.	 cell	 1	 "TetR protein"
+Z_protein	 C	 "n/a"	 conc.	 cell	 1	 "cI protein"
+GFP	 C	 "n/a"	 conc.	 cell	 1	 "GFP"
+X_mRNA	 C	 "n/a"	 conc.	 cell	 1	 "LacI mRNA"
+Y_mRNA	 C	 "n/a"	 conc.	 cell	 1	 "TetR mRNA"
+Z_mRNA	 C	 "n/a"	 conc.	 cell	 1	 "cI mRNA"
+GFP_mRNA	 C	 "n/a"	 conc.	 cell	 1	 "GFP mRNA"
+
+
+INPUTS
+
+
+REACTIONS
+X_mRNA 	->  	 CUSTOM "kd_mRNA*X_mRNA"
+Y_mRNA 	->  	 CUSTOM "kd_mRNA*Y_mRNA"
+Z_mRNA 	->  	 CUSTOM "kd_mRNA*Z_mRNA"
+GFP_mRNA 	->  	 CUSTOM "kd_mRNA_GFP*GFP_mRNA"
+ 	-> X_protein  	 CUSTOM "k_tl*X_mRNA"
+ 	-> Y_protein  	 CUSTOM "k_tl*Y_mRNA"
+ 	-> Z_protein  	 CUSTOM "k_tl*Z_mRNA"
+ 	-> GFP  	 CUSTOM "k_tl_GFP*GFP_mRNA"
+X_protein 	->   	 CUSTOM "kd_prot*X_protein"
+Y_protein 	->   	 CUSTOM "kd_prot*Y_protein"
+Z_protein 	->   	 CUSTOM "kd_prot*Z_protein"
+GFP 	->   	 CUSTOM "kd_prot_GFP*GFP"
+ 	-> X_mRNA  	 CUSTOM "a0_tr+a_tr*KM^n_Hill/(KM^n_Hill+Z_protein^n_Hill)"
+ 	-> Y_mRNA  	 CUSTOM "a0_tr+a_tr*KM^n_Hill/(KM^n_Hill+X_protein^n_Hill)"
+ 	-> Z_mRNA  	 CUSTOM "a0_tr+a_tr*KM^n_Hill/(KM^n_Hill+Y_protein^n_Hill)"
+ 	-> GFP  	 CUSTOM "a0_tr+a_tr*KM^n_Hill/(KM^n_Hill+X_protein^n_Hill)"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+a0_tr	"(tps_repr*60)"
+a_tr	"((tps_active-tps_repr)*60)"
+k_tl	"(eff/tau_mRNA)"
+k_tl_GFP	"(eff_GFP/tau_mRNA_GFP)"
+kd_mRNA	"(log(2)/tau_mRNA)"
+kd_mRNA_GFP	"(log(2)/tau_mRNA_GFP)"
+kd_prot	"(log(2)/tau_prot)"
+kd_prot_GFP	"(log(2)/tau_prot_GFP)"
+
+
+PARAMETERS
+KM	0.67	1	1	-3	4
+eff	1.52	1	1	-2	5
+eff_GFP	0	0	1	-3	3
+init_GFP	-2.82	1	1	-6	1
+init_GFP_mRNA	-4.81	1	1	-8	-1
+init_X_mRNA	2.06	1	1	-1	6
+init_X_protein	-0.145	1	1	-4	3
+init_Y_mRNA	3.29	1	1	0	7
+init_Y_protein	2.95	1	1	-1	6
+init_Z_mRNA	2.98	1	1	-1	6
+init_Z_protein	-4.53	1	1	-8	-1
+n_Hill	0.301	0	1	-3	4
+tau_mRNA	-0.204	1	1	-4	3
+tau_mRNA_GFP	-1.94	1	1	-5	2
+tau_prot	1.26	1	1	-2	5
+tau_prot_GFP	1.57	1	1	-2	5
+tps_active	1.94	1	1	-2	5
+tps_repr	-2.85	1	1	-6	1
+
+

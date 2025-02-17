@@ -1,0 +1,87 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Zheng_PNAS2012"
+"RS project name:	Zheng_RS04"
+"Random seed:		0001804000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	31
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	scale1_Compound_1_Obs*(K27me0K36me0+K27me2K36me0)
+Compound_2_Obs	C	n/a	conc.	0	0	scale1_Compound_2_Obs*(K27me0K36me0+K27me3K36me1)
+Compound_3_Obs	C	n/a	conc.	0	0	scale1_Compound_3_Obs*(K27me0K36me0+K27me3K36me2)
+Compound_4_Obs	C	n/a	conc.	0	0	scale1_Compound_4_Obs*(K27me0K36me1+K27me1K36me1)
+Compound_5_Obs	C	n/a	conc.	0	0	scale1_Compound_5_Obs*(K27me1K36me0+K27me1K36me2)
+Compound_6_Obs	C	n/a	conc.	0	0	scale1_Compound_6_Obs*(K27me1K36me0+K27me3K36me0)
+Compound_7_Obs	C	n/a	conc.	0	0	scale1_Compound_7_Obs*(K27me0K36me2+K27me2K36me0)
+Compound_8_Obs	C	n/a	conc.	0	0	scale1_Compound_8_Obs*(K27me0K36me2+K27me1K36me2)
+Compound_9_Obs	C	n/a	conc.	0	0	scale1_Compound_9_Obs*(K27me1K36me1+K27me0K36me3)
+Compound_10_Obs	C	n/a	conc.	0	0	scale1_Compound_10_Obs*(K27me1K36me1+K27me1K36me2)
+Compound_11_Obs	C	n/a	conc.	0	0	scale1_Compound_11_Obs*(K27me1K36me2+K27me2K36me3)
+Compound_12_Obs	C	n/a	conc.	0	0	scale1_Compound_12_Obs*(K27me2K36me1+K27me1K36me3)
+Compound_13_Obs	C	n/a	conc.	0	0	scale1_Compound_13_Obs*(K27me2K36me1+K27me2K36me2)
+Compound_14_Obs	C	n/a	conc.	0	0	scale1_Compound_14_Obs*(K27me2K36me2+K27me3K36me1)
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+Compound_7_Obs	sd1_Compound_7_Obs
+Compound_8_Obs	sd1_Compound_8_Obs
+Compound_9_Obs	sd1_Compound_9_Obs
+Compound_10_Obs	sd1_Compound_10_Obs
+Compound_11_Obs	sd1_Compound_11_Obs
+Compound_12_Obs	sd1_Compound_12_Obs
+Compound_13_Obs	sd1_Compound_13_Obs
+Compound_14_Obs	sd1_Compound_14_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-3.2326	1	1	-6	-1
+sd1_Compound_2_Obs	-3.2772	1	1	-6	-1
+sd1_Compound_3_Obs	-3.7452	1	1	-6	-1
+sd1_Compound_4_Obs	-2.8369	1	1	-5	0
+sd1_Compound_5_Obs	-1.195	1	1	-4	1
+sd1_Compound_6_Obs	-3.215	1	1	-6	-1
+sd1_Compound_7_Obs	-1.8725	1	1	-4	1
+sd1_Compound_8_Obs	-1.107	1	1	-4	1
+sd1_Compound_9_Obs	-2.1873	1	1	-5	0
+sd1_Compound_10_Obs	-1.2211	1	1	-4	1
+sd1_Compound_11_Obs	-1.1933	1	1	-4	1
+sd1_Compound_12_Obs	-1.9577	1	1	-4	1
+sd1_Compound_13_Obs	-2.3359	1	1	-5	0
+sd1_Compound_14_Obs	-2.4253	1	1	-5	0
+
+// Scale and offset parameters
+scale1_Compound_1_Obs	0	1	1	-5	5
+scale1_Compound_2_Obs	0	1	1	-5	5
+scale1_Compound_3_Obs	0	1	1	-5	5
+scale1_Compound_4_Obs	0	1	1	-5	5
+scale1_Compound_5_Obs	0	1	1	-5	5
+scale1_Compound_6_Obs	0	1	1	-5	5
+scale1_Compound_7_Obs	0	1	1	-5	5
+scale1_Compound_8_Obs	0	1	1	-5	5
+scale1_Compound_9_Obs	0	1	1	-5	5
+scale1_Compound_10_Obs	0	1	1	-5	5
+scale1_Compound_11_Obs	0	1	1	-5	5
+scale1_Compound_12_Obs	0	1	1	-5	5
+scale1_Compound_13_Obs	0	1	1	-5	5
+scale1_Compound_14_Obs	0	1	1	-5	5

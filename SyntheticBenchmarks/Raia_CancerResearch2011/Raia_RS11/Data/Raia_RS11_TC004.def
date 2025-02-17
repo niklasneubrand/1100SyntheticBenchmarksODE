@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS11"
+"Random seed:		0001211000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_6_Obs	C	n/a	conc.	0	0	scale3_Compound_6_Obs*(IL13_Rec+p_IL13_Rec_i+pJAK2+SOCS3mRNA+SOCS3)
+
+
+ERRORS
+Compound_6_Obs	sd3_Compound_6_Obs
+
+
+CONDITIONS
+il13_level	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_Compound_6_Obs	2.5282	1	1	0	5
+
+// Scale and offset parameters
+scale3_Compound_6_Obs	0	1	1	-5	5

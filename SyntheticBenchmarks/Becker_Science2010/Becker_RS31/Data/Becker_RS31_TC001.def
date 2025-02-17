@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Becker_Science2010"
+"RS project name:	Becker_RS31"
+"Random seed:		0000131000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	364
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	Epo+dEpo_e
+Compound_2_Obs	C	n/a	conc.	0	0	Epo+EpoR
+Compound_3_Obs	C	n/a	conc.	0	0	Epo_EpoR+dEpo_e
+Compound_4_Obs	C	n/a	conc.	0	0	Epo_EpoR+dEpo_i
+Compound_5_Obs	C	n/a	conc.	0	0	Epo_EpoR+Epo_EpoR_i
+Compound_6_Obs	C	n/a	conc.	0	0	Epo+Epo_EpoR
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+
+
+CONDITIONS
+init_EpoR	"(4 * init_Epo * init_EpoR_rel)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	2.0634	1	1	0	5
+sd1_Compound_2_Obs	2.0541	1	1	0	5
+sd1_Compound_3_Obs	1.8854	1	1	-1	4
+sd1_Compound_4_Obs	1.1478	1	1	-1	4
+sd1_Compound_5_Obs	1.4591	1	1	-1	4
+sd1_Compound_6_Obs	1.6758	1	1	-1	4
+
+// Scale and offset parameters

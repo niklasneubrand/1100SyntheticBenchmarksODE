@@ -1,0 +1,39 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS21"
+"Random seed:		0001921000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+SOCS3_Obs	C	n/a	conc.	0	0	scale2_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+SOCS3_Obs	sd2_SOCS3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-6)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_SOCS3_Obs	0.31571	1	1	-2	3
+
+// Scale and offset parameters
+scale2_SOCS3_Obs	0	1	1	-5	5

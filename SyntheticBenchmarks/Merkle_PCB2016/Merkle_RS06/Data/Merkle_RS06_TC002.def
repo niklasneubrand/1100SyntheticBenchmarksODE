@@ -1,0 +1,63 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS06"
+"Random seed:		0002206000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_3_Obs	C	n/a	conc.	0	0	PTPAct+SOCS3nRNA3+SOCS3nRNA5
+Compound_4_Obs	C	n/a	conc.	0	0	pSTAT5+CISHnRNA1+CISHnRNA2
+Compound_6_Obs	C	n/a	conc.	0	0	CISHnRNA1+CISHnRNA4+CISHRNA
+Compound_7_Obs	C	n/a	conc.	0	0	CISHnRNA2+CIS+SOCS3nRNA1
+
+
+ERRORS
+Compound_3_Obs	sd2_Compound_3_Obs
+Compound_4_Obs	sd2_Compound_4_Obs
+Compound_6_Obs	sd2_Compound_6_Obs
+Compound_7_Obs	sd2_Compound_7_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAturn)"
+init_CISHnRNA1	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA2	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA3	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA4	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA5	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Compound_3_Obs	-1.9395	1	1	-4	1
+sd2_Compound_4_Obs	-0.37564	1	1	-3	2
+sd2_Compound_6_Obs	-1.9981	1	1	-4	1
+sd2_Compound_7_Obs	-0.20154	1	1	-3	2
+
+// Scale and offset parameters

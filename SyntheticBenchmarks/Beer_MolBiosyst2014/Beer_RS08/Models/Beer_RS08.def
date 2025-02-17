@@ -1,0 +1,122 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Beer_MolBiosyst2014"
+"RS project name:	Beer_RS08"
+"Random seed:		0000208000."
+
+"Original description:"
+
+"Indigoidine synthesis and bacterial growth"
+
+
+PREDICTOR
+timepoint               T   min     time	0	3565
+
+
+COMPARTMENTS
+medium             V   ml      vol.        1
+
+
+STATES
+Bac        C   au  conc.   medium 1
+Glu        C   au  conc.   medium 1
+cGlu       C   au  conc.   medium 1
+Ind        C   au  conc.   medium 1
+
+
+INPUTS
+lag        C   "units"    "a.u."   "step1(timepoint, 0, tau, 1)"
+
+
+ODES
+"(Beta * lag) / Bacmax * Bac * (Bacmax - Bac)"
+"-ksyn * Bac * Glu"
+"ksyn * Glu * Bac - kdim * cGlu * cGlu"
+"kdim * cGlu * cGlu - kdegi * Ind"
+
+
+DERIVED
+
+
+CONDITIONS
+init_Glu	"(10)"
+init_Ind	"(0)"
+init_cGlu	"(0)"
+
+
+PARAMETERS
+Bacmax_typeIDT1_ExpID1	-0.309	1	1	-4	3
+Bacmax_typeIDT1_ExpID2	0.0695	1	1	-3	4
+Bacmax_typeIDT1_ExpID3	0.0519	1	1	-3	4
+Bacmax_typeIDT1_ExpID4	-0.301	1	1	-4	3
+Bacmax_typeIDT1_ExpID5	-0.361	1	1	-4	3
+Bacmax_typeIDT1_ExpID6	-0.178	1	1	-4	3
+Bacmax_typeIDT3_ExpID1	-0.128	1	1	-4	3
+Bacmax_typeIDT3_ExpID2	-0.251	1	1	-4	3
+Bacmax_typeIDT3_ExpID3	-0.132	1	1	-4	3
+Bacmax_typeIDT3_ExpID4	0.0328	1	1	-3	4
+Bacmax_typeIDT3_ExpID5	-0.15	1	1	-4	3
+Bacmax_typeIDT3_ExpID6	0.184	1	1	-3	4
+Bacmax_typeIDT5_ExpID1	0.182	1	1	-3	4
+Bacmax_typeIDT5_ExpID2	-0.319	1	1	-4	3
+Bacmax_typeIDT5_ExpID3	-0.00181	1	1	-4	3
+Bacmax_typeIDT5_ExpID4	-0.301	1	1	-4	3
+Bacmax_typeIDT5_ExpID5	0.0515	1	1	-3	4
+Bacmax_typeIDT5_ExpID6	-0.0722	1	1	-4	3
+Bacmax_typeIDwt_ExpID4	-0.484	1	1	-4	3
+beta_typeIDT1_ExpID1	-2.25	1	1	-6	1
+beta_typeIDT1_ExpID2	-2.54	1	1	-6	1
+beta_typeIDT1_ExpID3	-2.39	1	1	-6	1
+beta_typeIDT1_ExpID4	-2.35	1	1	-6	1
+beta_typeIDT1_ExpID5	-2.32	1	1	-6	1
+beta_typeIDT1_ExpID6	-2.47	1	1	-6	1
+beta_typeIDT3_ExpID1	-2.82	1	1	-6	1
+beta_typeIDT3_ExpID2	-2.88	1	1	-6	1
+beta_typeIDT3_ExpID3	-2.69	1	1	-6	1
+beta_typeIDT3_ExpID4	-2.5	1	1	-6	1
+beta_typeIDT3_ExpID5	-2.81	1	1	-6	1
+beta_typeIDT3_ExpID6	-2.41	1	1	-6	1
+beta_typeIDT5_ExpID1	-2.07	1	1	-6	1
+beta_typeIDT5_ExpID2	-2.11	1	1	-6	1
+beta_typeIDT5_ExpID3	-2.3	1	1	-6	1
+beta_typeIDT5_ExpID4	-2.13	1	1	-6	1
+beta_typeIDT5_ExpID5	-2.09	1	1	-6	1
+beta_typeIDT5_ExpID6	-2.43	1	1	-6	1
+beta_typeIDwt_ExpID4	-2.03	1	1	-6	1
+init_Bac	-1.77	1	1	-5	2
+kdegi_typeIDT1	-2.79	1	1	-6	1
+kdegi_typeIDT3	-2.36	1	1	-6	1
+kdegi_typeIDT5	-0.967	1	1	-4	3
+kdegi_typeIDwt	-1.8	1	1	-5	2
+kdim_typeIDT1	-4	1	1	-7	-1
+kdim_typeIDT3	-2.64	1	1	-6	1
+kdim_typeIDT5	-5.16	1	1	-9	-2
+kdim_typeIDwt	-4.29	1	1	-8	-1
+ksyn_typeIDT1	-1.87	1	1	-5	2
+ksyn_typeIDT3	-3.15	1	1	-7	0
+ksyn_typeIDT5	4.95	1	1	1	8
+ksyn_typeIDwt	-2.1	1	1	-6	1
+tau_typeIDT1_ExpID1	-2.58	1	1	-6	1
+tau_typeIDT1_ExpID2	-2.98	1	1	-6	1
+tau_typeIDT1_ExpID3	-2.46	1	1	-6	1
+tau_typeIDT1_ExpID4	-2.01	1	1	-6	1
+tau_typeIDT1_ExpID5	0.975	1	1	-3	4
+tau_typeIDT1_ExpID6	1.64	1	1	-2	5
+tau_typeIDT3_ExpID1	-2.87	1	1	-6	1
+tau_typeIDT3_ExpID2	1.86	1	1	-2	5
+tau_typeIDT3_ExpID3	1.85	1	1	-2	5
+tau_typeIDT3_ExpID4	2.46	1	1	-1	6
+tau_typeIDT3_ExpID5	-2.85	1	1	-6	1
+tau_typeIDT3_ExpID6	1.9	1	1	-2	5
+tau_typeIDT5_ExpID1	1.65	1	1	-2	5
+tau_typeIDT5_ExpID2	1.82	1	1	-2	5
+tau_typeIDT5_ExpID3	-2.88	1	1	-6	1
+tau_typeIDT5_ExpID4	1.96	1	1	-2	5
+tau_typeIDT5_ExpID5	2	1	1	-1	5
+tau_typeIDT5_ExpID6	1.69	1	1	-2	5
+tau_typeIDwt_ExpID4	2.76	1	1	-1	6
+
+

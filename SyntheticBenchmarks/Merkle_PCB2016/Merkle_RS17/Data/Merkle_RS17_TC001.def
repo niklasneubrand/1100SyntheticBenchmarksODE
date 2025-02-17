@@ -1,0 +1,76 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS17"
+"Random seed:		0002217000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	436
+
+
+INPUTS
+
+
+OBSERVABLES
+PTP_Obs	C	n/a	conc.	0	0	PTP
+STAT5_Obs	C	n/a	conc.	0	0	STAT5
+nSTAT5_Obs	C	n/a	conc.	0	0	nSTAT5
+npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
+CISHnRNA1_Obs	C	n/a	conc.	0	0	CISHnRNA1
+CISHnRNA3_Obs	C	n/a	conc.	0	0	CISHnRNA3
+CISHRNA_Obs	C	n/a	conc.	0	0	CISHRNA
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
+SOCS3nRNA5_Obs	C	n/a	conc.	0	0	SOCS3nRNA5
+SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
+
+
+ERRORS
+PTP_Obs	sd1_PTP_Obs
+STAT5_Obs	sd1_STAT5_Obs
+nSTAT5_Obs	sd1_nSTAT5_Obs
+npSTAT5_Obs	sd1_npSTAT5_Obs
+CISHnRNA1_Obs	sd1_CISHnRNA1_Obs
+CISHnRNA3_Obs	sd1_CISHnRNA3_Obs
+CISHRNA_Obs	sd1_CISHRNA_Obs
+SOCS3nRNA2_Obs	sd1_SOCS3nRNA2_Obs
+SOCS3nRNA5_Obs	sd1_SOCS3nRNA5_Obs
+SOCS3_Obs	sd1_SOCS3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_PTP_Obs	0.83227	1	1	-2	3
+sd1_STAT5_Obs	0.95364	1	1	-2	3
+sd1_nSTAT5_Obs	0.16895	1	1	-2	3
+sd1_npSTAT5_Obs	0.28283	1	1	-2	3
+sd1_CISHnRNA1_Obs	-2.1192	1	1	-5	0
+sd1_CISHnRNA3_Obs	-2.1238	1	1	-5	0
+sd1_CISHRNA_Obs	-1.9572	1	1	-4	1
+sd1_SOCS3nRNA2_Obs	-2.4549	1	1	-5	0
+sd1_SOCS3nRNA5_Obs	-2.4297	1	1	-5	0
+sd1_SOCS3_Obs	0.19143	1	1	-2	3
+
+// Scale and offset parameters

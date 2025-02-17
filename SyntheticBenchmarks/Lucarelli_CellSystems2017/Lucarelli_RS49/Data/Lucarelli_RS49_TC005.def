@@ -1,0 +1,68 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS49"
+"Random seed:		0002149000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+TGFb_Obs	C	n/a	conc.	0	1	offset3_TGFb_Obs+scale3_TGFb_Obs*(TGFb)
+TGFb_pRec_Obs	C	n/a	conc.	0	1	offset3_TGFb_pRec_Obs+scale3_TGFb_pRec_Obs*(TGFb_pRec)
+ppS2_ppS2_ppS2_Obs	C	n/a	conc.	0	1	ppS2_ppS2_ppS2
+geneA_Obs	C	n/a	conc.	0	1	offset3_geneA_Obs+scale3_geneA_Obs*(geneA)
+geneB_Obs	C	n/a	conc.	0	1	offset3_geneB_Obs+scale3_geneB_Obs*(geneB)
+geneD_Obs	C	n/a	conc.	0	1	geneD
+geneF_Obs	C	n/a	conc.	0	1	geneF
+geneH_Obs	C	n/a	conc.	0	1	offset3_geneH_Obs+scale3_geneH_Obs*(geneH)
+
+
+ERRORS
+TGFb_Obs	sd3_TGFb_Obs
+TGFb_pRec_Obs	sd3_TGFb_pRec_Obs
+ppS2_ppS2_ppS2_Obs	sd3_ppS2_ppS2_ppS2_Obs
+geneA_Obs	sd3_geneA_Obs
+geneB_Obs	sd3_geneB_Obs
+geneD_Obs	sd3_geneD_Obs
+geneF_Obs	sd3_geneF_Obs
+geneH_Obs	sd3_geneH_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(227.744)"
+init_S4	"(69.47)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_TGFb_Obs	-0.87081	1	1	-3	2
+sd3_TGFb_pRec_Obs	-0.90063	1	1	-3	2
+sd3_ppS2_ppS2_ppS2_Obs	-0.86859	1	1	-3	2
+sd3_geneA_Obs	-0.87242	1	1	-3	2
+sd3_geneB_Obs	-0.85268	1	1	-3	2
+sd3_geneD_Obs	-0.84544	1	1	-3	2
+sd3_geneF_Obs	-0.8742	1	1	-3	2
+sd3_geneH_Obs	-0.89016	1	1	-3	2
+
+// Scale and offset parameters
+scale3_TGFb_Obs	0	1	1	-5	5
+offset3_TGFb_Obs	-17	1	1	-19	-15
+scale3_TGFb_pRec_Obs	0	1	1	-5	5
+offset3_TGFb_pRec_Obs	-17	1	1	-19	-15
+scale3_geneA_Obs	0	1	1	-5	5
+offset3_geneA_Obs	-2	1	1	-4	0
+scale3_geneB_Obs	0	1	1	-5	5
+offset3_geneB_Obs	-2	1	1	-4	0
+scale3_geneH_Obs	0	1	1	-5	5
+offset3_geneH_Obs	-2	1	1	-4	0

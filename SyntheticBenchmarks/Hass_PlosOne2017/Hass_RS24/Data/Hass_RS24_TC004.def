@@ -1,0 +1,38 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS24"
+"Random seed:		0001124000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	240
+
+
+INPUTS
+
+
+OBSERVABLES
+SFK_Obs	C	n/a	conc.	0	1	offset4_SFK_Obs+scale4_SFK_Obs*(SFK)
+
+
+ERRORS
+SFK_Obs	sd4_SFK_Obs
+
+
+CONDITIONS
+Inh	"(0)"
+Reelin_input	"(0.01)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_SFK_Obs	-1.1015	1	1	-4	1
+
+// Scale and offset parameters
+scale4_SFK_Obs	0	1	1	-5	5
+offset4_SFK_Obs	-5	1	1	-7	-3

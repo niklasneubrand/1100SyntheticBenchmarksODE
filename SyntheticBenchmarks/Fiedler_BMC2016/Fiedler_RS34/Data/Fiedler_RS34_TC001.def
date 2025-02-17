@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fiedler_BMC2016"
+"RS project name:	Fiedler_RS34"
+"Random seed:		0000934000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	12
+
+
+INPUTS
+
+
+OBSERVABLES
+ERK_Obs	C	n/a	conc.	0	1	offset1_ERK_Obs+scale1_ERK_Obs*(ERK)
+Compound_1_Obs	C	n/a	conc.	0	1	RAF+pERK
+Compound_2_Obs	C	n/a	conc.	0	1	offset1_Compound_2_Obs+scale1_Compound_2_Obs*(MEK+ERK)
+
+
+ERRORS
+ERK_Obs	sd1_ERK_Obs
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+
+
+CONDITIONS
+Sorafenib	"(0)"
+UO126	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_ERK_Obs	-0.67559	1	1	-3	2
+sd1_Compound_1_Obs	-0.6751	1	1	-3	2
+sd1_Compound_2_Obs	-0.66736	1	1	-3	2
+
+// Scale and offset parameters
+scale1_ERK_Obs	0	1	1	-5	5
+offset1_ERK_Obs	-3	1	1	-5	-1
+scale1_Compound_2_Obs	0	1	1	-5	5
+offset1_Compound_2_Obs	-2	1	1	-4	0

@@ -1,0 +1,49 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS26"
+"Random seed:		0001926000"
+"Data type, index:	dose response, 3"
+
+
+PREDICTOR-DOSERESPONSE epo_level
+time	T	min	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_3_Obs	C	n/a	conc.	0	1	offset9_Compound_3_Obs+scale9_Compound_3_Obs*(p1EpoRpJAK2+CISnRNA4+SOCS3nRNA3+SOCS3RNA+SOCS3)
+Compound_4_Obs	C	n/a	conc.	0	1	offset8_Compound_4_Obs+scale8_Compound_4_Obs*(EpoRJAK2_CIS+CISnRNA1+CISnRNA4+CISRNA+SOCS3RNA)
+Compound_8_Obs	C	n/a	conc.	0	1	offset8_Compound_8_Obs+scale8_Compound_8_Obs*(CISnRNA1+CISnRNA4+CISnRNA5+CIS+SOCS3nRNA2)
+
+
+ERRORS
+Compound_3_Obs	sd9_Compound_3_Obs
+Compound_4_Obs	sd8_Compound_4_Obs
+Compound_8_Obs	sd8_Compound_8_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd9_Compound_3_Obs	-0.8996	1	1	-3	2
+sd8_Compound_4_Obs	-0.90416	1	1	-3	2
+sd8_Compound_8_Obs	-0.89861	1	1	-3	2
+
+// Scale and offset parameters
+scale9_Compound_3_Obs	0	1	1	-5	5
+offset9_Compound_3_Obs	-1	1	1	-3	1
+scale8_Compound_4_Obs	0	1	1	-5	5
+offset8_Compound_4_Obs	0	1	1	-2	2
+scale8_Compound_8_Obs	0	1	1	-5	5
+offset8_Compound_8_Obs	0	1	1	-2	2

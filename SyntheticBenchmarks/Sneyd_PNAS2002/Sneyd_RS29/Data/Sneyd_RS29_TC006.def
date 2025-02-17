@@ -1,0 +1,54 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sneyd_PNAS2002"
+"RS project name:	Sneyd_RS29"
+"Random seed:		0001429000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	s	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+IPR_O_Obs	C	n/a	conc.	0	1	offset6_IPR_O_Obs+scale6_IPR_O_Obs*(IPR_O)
+IPR_R_Obs	C	n/a	conc.	0	1	offset6_IPR_R_Obs+scale6_IPR_R_Obs*(IPR_R)
+IPR_I1_Obs	C	n/a	conc.	0	1	offset6_IPR_I1_Obs+scale6_IPR_I1_Obs*(IPR_I1)
+IPR_S_Obs	C	n/a	conc.	0	1	IPR_S
+IPR_A_Obs	C	n/a	conc.	0	1	IPR_A
+
+
+ERRORS
+IPR_O_Obs	sd6_IPR_O_Obs
+IPR_R_Obs	sd6_IPR_R_Obs
+IPR_I1_Obs	sd6_IPR_I1_Obs
+IPR_S_Obs	sd6_IPR_S_Obs
+IPR_A_Obs	sd6_IPR_A_Obs
+
+
+CONDITIONS
+Ca	"(3)"
+IP3	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd6_IPR_O_Obs	-0.41025	1	1	-3	2
+sd6_IPR_R_Obs	-0.41953	1	1	-3	2
+sd6_IPR_I1_Obs	-0.41196	1	1	-3	2
+sd6_IPR_S_Obs	-0.40744	1	1	-3	2
+sd6_IPR_A_Obs	-0.4114	1	1	-3	2
+
+// Scale and offset parameters
+scale6_IPR_O_Obs	0	1	1	-5	5
+offset6_IPR_O_Obs	-5	1	1	-7	-3
+scale6_IPR_R_Obs	0	1	1	-5	5
+offset6_IPR_R_Obs	-3	1	1	-5	-1
+scale6_IPR_I1_Obs	0	1	1	-5	5
+offset6_IPR_I1_Obs	-10	1	1	-12	-8

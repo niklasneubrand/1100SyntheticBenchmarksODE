@@ -1,0 +1,79 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Crauste_CellSystems2017"
+"RS project name:	Crauste_RS19"
+"Random seed:		0000719000."
+
+"Original description:"
+
+"Immune Cells "
+
+
+PREDICTOR
+t               T   h         time	0 28
+
+
+COMPARTMENTS
+
+
+STATES
+Naive           C   "number" "number"
+EarlyEffector   C   "number" "number"
+LateEffector    C   "number" "number"
+Memory          C   "number" "number"
+Pathogen        C   "number" "number"
+
+
+INPUTS
+
+
+REACTIONS
+Naive           ->                  CUSTOM "mu_N*Naive"
+Naive           ->  EarlyEffector   CUSTOM "delta_NE*Pathogen*Naive"
+                ->  EarlyEffector   CUSTOM "rho_E*Pathogen*EarlyEffector"
+EarlyEffector   ->                  CUSTOM "mu_EE*EarlyEffector*EarlyEffector"
+EarlyEffector   ->  LateEffector    CUSTOM "delta_EL*EarlyEffector"
+LateEffector    ->                  CUSTOM "mu_LL*LateEffector*LateEffector"
+LateEffector    ->                  CUSTOM "mu_LE*EarlyEffector*LateEffector"
+LateEffector    ->  Memory          CUSTOM "delta_LM*LateEffector"
+                ->  Pathogen        CUSTOM "rho_P*Pathogen*Pathogen"
+Pathogen        ->                  CUSTOM "mu_PE*EarlyEffector*Pathogen"
+Pathogen        ->                  CUSTOM "mu_PL*LateEffector*Pathogen"
+Pathogen        ->                  CUSTOM "mu_P*Pathogen"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+init_EarlyEffector	"(0)"
+init_LateEffector	"(0)"
+init_Memory	"(0)"
+init_Naive	"(8090)"
+init_Pathogen	"(1)"
+
+
+PARAMETERS
+delta_EL	-0.203	1	1	-4	3
+delta_LM	-1.44	1	1	-5	2
+delta_NE	-1.88	1	1	-5	2
+mu_EE	-4.67	1	1	-8	-1
+mu_LE	-10.2	1	1	-14	-7
+mu_LL	-4.98	1	1	-8	-1
+mu_N	-0.428	1	1	-4	3
+mu_P	-4.89	1	1	-8	-1
+mu_PE	-9.79	1	1	-13	-6
+mu_PL	-4.68	1	1	-8	-1
+rho_E	-0.29464	1	1	-4	3
+rho_P	-0.968	1	1	-4	3
+
+

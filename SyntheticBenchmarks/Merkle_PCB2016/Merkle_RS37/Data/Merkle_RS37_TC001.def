@@ -1,0 +1,73 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS37"
+"Random seed:		0002237010"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	436
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT5_Obs	C	n/a	conc.	0	0	scale1_STAT5_Obs*(STAT5)
+pSTAT5_Obs	C	n/a	conc.	0	0	pSTAT5
+CISHnRNA4_Obs	C	n/a	conc.	0	0	scale1_CISHnRNA4_Obs*(CISHnRNA4)
+CISHnRNA5_Obs	C	n/a	conc.	0	0	scale1_CISHnRNA5_Obs*(CISHnRNA5)
+CISHRNA_Obs	C	n/a	conc.	0	0	scale1_CISHRNA_Obs*(CISHRNA)
+SOCS3nRNA3_Obs	C	n/a	conc.	0	0	scale1_SOCS3nRNA3_Obs*(SOCS3nRNA3)
+SOCS3nRNA5_Obs	C	n/a	conc.	0	0	scale1_SOCS3nRNA5_Obs*(SOCS3nRNA5)
+
+
+ERRORS
+STAT5_Obs	sd1_STAT5_Obs
+pSTAT5_Obs	sd1_pSTAT5_Obs
+CISHnRNA4_Obs	sd1_CISHnRNA4_Obs
+CISHnRNA5_Obs	sd1_CISHnRNA5_Obs
+CISHRNA_Obs	sd1_CISHRNA_Obs
+SOCS3nRNA3_Obs	sd1_SOCS3nRNA3_Obs
+SOCS3nRNA5_Obs	sd1_SOCS3nRNA5_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_STAT5_Obs	0.8302	1	1	-2	3
+sd1_pSTAT5_Obs	0.13395	1	1	-2	3
+sd1_CISHnRNA4_Obs	-2.1039	1	1	-5	0
+sd1_CISHnRNA5_Obs	-2.1138	1	1	-5	0
+sd1_CISHRNA_Obs	-2.1939	1	1	-5	0
+sd1_SOCS3nRNA3_Obs	-2.4378	1	1	-5	0
+sd1_SOCS3nRNA5_Obs	-2.4502	1	1	-5	0
+
+// Scale and offset parameters
+scale1_STAT5_Obs	0	1	1	-5	5
+scale1_CISHnRNA4_Obs	0	1	1	-5	5
+scale1_CISHnRNA5_Obs	0	1	1	-5	5
+scale1_CISHRNA_Obs	0	1	1	-5	5
+scale1_SOCS3nRNA3_Obs	0	1	1	-5	5
+scale1_SOCS3nRNA5_Obs	0	1	1	-5	5

@@ -1,0 +1,47 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS41"
+"Random seed:		0001141000"
+"Data type, index:	dose response, 1"
+
+
+PREDICTOR-DOSERESPONSE Reelin_input
+time	T	min	time	0	17
+
+
+INPUTS
+
+
+OBSERVABLES
+ApoER2_Dab1_Obs	C	n/a	conc.	0	1	offset5_ApoER2_Dab1_Obs+scale5_ApoER2_Dab1_Obs*(ApoER2_Dab1)
+ApoER2_re_Dab1_Obs	C	n/a	conc.	0	1	offset4_ApoER2_re_Dab1_Obs+scale4_ApoER2_re_Dab1_Obs*(ApoER2_re_Dab1)
+ApoER2_re_Dab1SFK_Obs	C	n/a	conc.	0	1	offset3_ApoER2_re_Dab1SFK_Obs+scale3_ApoER2_re_Dab1SFK_Obs*(ApoER2_re_Dab1SFK)
+
+
+ERRORS
+ApoER2_Dab1_Obs	sd5_ApoER2_Dab1_Obs
+ApoER2_re_Dab1_Obs	sd4_ApoER2_re_Dab1_Obs
+ApoER2_re_Dab1SFK_Obs	sd3_ApoER2_re_Dab1SFK_Obs
+
+
+CONDITIONS
+Inh	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_ApoER2_Dab1_Obs	-1.2052	1	1	-4	1
+sd4_ApoER2_re_Dab1_Obs	-1.221	1	1	-4	1
+sd3_ApoER2_re_Dab1SFK_Obs	-1.1862	1	1	-4	1
+
+// Scale and offset parameters
+scale5_ApoER2_Dab1_Obs	0	1	1	-5	5
+offset5_ApoER2_Dab1_Obs	-3	1	1	-5	-1
+scale4_ApoER2_re_Dab1_Obs	0	1	1	-5	5
+offset4_ApoER2_re_Dab1_Obs	-8	1	1	-10	-6
+scale3_ApoER2_re_Dab1SFK_Obs	0	1	1	-5	5
+offset3_ApoER2_re_Dab1SFK_Obs	-6	1	1	-8	-4

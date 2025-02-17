@@ -1,0 +1,75 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS42"
+"Random seed:		0002242000"
+"Data type, index:	time course, 16"
+
+
+PREDICTOR
+time	T	min	time	0	100
+
+
+INPUTS
+
+
+OBSERVABLES
+CISHnRNA2_Obs	C	n/a	conc.	0	0	CISHnRNA2
+CISHnRNA4_Obs	C	n/a	conc.	0	0	CISHnRNA4
+SOCS3RNA_Obs	C	n/a	conc.	0	0	SOCS3RNA
+Compound_1_Obs	C	n/a	conc.	0	0	EpoRJAK2+pEpoRpJAK2+PTP+SOCS3nRNA1+SOCS3nRNA3
+Compound_5_Obs	C	n/a	conc.	0	0	pEpoRpJAK2+PTPAct+pSTAT5+CISHnRNA5+SOCS3nRNA2
+Compound_10_Obs	C	n/a	conc.	0	0	PTP+CISHnRNA3+CISHnRNA4+CISHRNA+SOCS3
+
+
+ERRORS
+CISHnRNA2_Obs	sd5_CISHnRNA2_Obs
+CISHnRNA4_Obs	sd4_CISHnRNA4_Obs
+SOCS3RNA_Obs	sd4_SOCS3RNA_Obs
+Compound_1_Obs	sd5_Compound_1_Obs
+Compound_5_Obs	sd5_Compound_5_Obs
+Compound_10_Obs	sd4_Compound_10_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+ActDstrength	"(ActDstrength * Relto_CFUE_ActDstrength)"
+CISHRNAturn	"(CISHRNAturn * Relto_CFUE_CISHRNAturn)"
+EPORactJAK2	"(EPORactJAK2 * Relto_CFUE_EPORactJAK2)"
+JAK2actEPO	"(JAK2actEPO * Relto_CFUE_JAK2actEPO)"
+SOCS3RNAdelay	"(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay)"
+SOCS3oe	"(0)"
+SOCS3prom	"(SOCS3prom * Relto_CFUE_SOCS3prom)"
+STAT5imp	"(STAT5imp * Relto_CFUE_STAT5imp)"
+epo_level	"(0.00092105)"
+init_CIS	"(2.15/11.56*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/(CISHRNAturn * Relto_CFUE_CISHRNAturn))"
+init_CISHRNA	"(2.15/11.56*CISHRNAbasal*CISHRNAeqm/(CISHRNAturn * Relto_CFUE_CISHRNAturn))"
+init_EpoRJAK2	"(ReltoH838_init_EpoRJAK2_H838 * init_EpoRJAK2_H838)"
+init_PTP	"(init_PTP * (1 + (1 * (Relto_H838WT_init_PTP-1))))"
+init_SOCS3	"(2.15/11.56*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(2.15/11.56*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
+init_STAT5	"(init_STAT5 * Relto_CFUE_init_STAT5)"
+nSTAT5deact	"(nSTAT5deact * Relto_CFUE_nSTAT5deact)"
+step_time	"(30)"
+vol_cyt	"(11.56)"
+vol_nuc	"(2.15)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_CISHnRNA2_Obs	-3.821	1	1	-6	-1
+sd4_CISHnRNA4_Obs	-3.8545	1	1	-6	-1
+sd4_SOCS3RNA_Obs	-2.6969	1	1	-5	0
+sd5_Compound_1_Obs	-0.17555	1	1	-3	2
+sd5_Compound_5_Obs	-0.90688	1	1	-3	2
+sd4_Compound_10_Obs	-0.13358	1	1	-3	2
+
+// Scale and offset parameters

@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Crauste_CellSystems2017"
+"RS project name:	Crauste_RS14"
+"Random seed:		0000714000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	34
+
+
+INPUTS
+
+
+OBSERVABLES
+Naive_Obs	C	n/a	conc.	0	0	scale1_Naive_Obs*(Naive)
+EarlyEffector_Obs	C	n/a	conc.	0	0	scale1_EarlyEffector_Obs*(EarlyEffector)
+Memory_Obs	C	n/a	conc.	0	0	Memory
+Pathogen_Obs	C	n/a	conc.	0	0	scale1_Pathogen_Obs*(Pathogen)
+Compound_1_Obs	C	n/a	conc.	0	0	scale1_Compound_1_Obs*(Naive+EarlyEffector+LateEffector+Memory+Pathogen)
+
+
+ERRORS
+Naive_Obs	sd1_Naive_Obs
+EarlyEffector_Obs	sd1_EarlyEffector_Obs
+Memory_Obs	sd1_Memory_Obs
+Pathogen_Obs	sd1_Pathogen_Obs
+Compound_1_Obs	sd1_Compound_1_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Naive_Obs	2.5413	1	1	0	5
+sd1_EarlyEffector_Obs	2.602	1	1	0	5
+sd1_Memory_Obs	2.8756	1	1	0	5
+sd1_Pathogen_Obs	-0.73267	1	1	-3	2
+sd1_Compound_1_Obs	3.2613	1	1	1	6
+
+// Scale and offset parameters
+scale1_Naive_Obs	0	1	1	-5	5
+scale1_EarlyEffector_Obs	0	1	1	-5	5
+scale1_Pathogen_Obs	0	1	1	-5	5
+scale1_Compound_1_Obs	0	1	1	-5	5

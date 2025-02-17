@@ -1,0 +1,48 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Schwen_PlosOne2014"
+"RS project name:	Schwen_RS20"
+"Random seed:		0001320000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	n/a	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	offset2_Compound_1_Obs+scale2_Compound_1_Obs*(Ins+IR1in+InsulinFragments)
+Compound_3_Obs	C	n/a	conc.	0	1	IR1+IR2+Uptake1
+Compound_5_Obs	C	n/a	conc.	0	1	IR2+IR1in+InsulinFragments
+Compound_6_Obs	C	n/a	conc.	0	1	offset4_Compound_6_Obs+scale4_Compound_6_Obs*(IR2in+Uptake1+Uptake2)
+
+
+ERRORS
+Compound_1_Obs	sd2_Compound_1_Obs
+Compound_3_Obs	sd4_Compound_3_Obs
+Compound_5_Obs	sd2_Compound_5_Obs
+Compound_6_Obs	sd4_Compound_6_Obs
+
+
+CONDITIONS
+init_Ins	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Compound_1_Obs	-1.1572	1	1	-4	1
+sd4_Compound_3_Obs	-1.1552	1	1	-4	1
+sd2_Compound_5_Obs	-1.1437	1	1	-4	1
+sd4_Compound_6_Obs	-1.1216	1	1	-4	1
+
+// Scale and offset parameters
+scale2_Compound_1_Obs	0	1	1	-5	5
+offset2_Compound_1_Obs	-2	1	1	-4	0
+scale4_Compound_6_Obs	0	1	1	-5	5
+offset4_Compound_6_Obs	-2	1	1	-4	0

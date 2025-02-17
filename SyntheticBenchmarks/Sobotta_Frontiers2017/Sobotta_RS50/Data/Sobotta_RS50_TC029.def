@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS50"
+"Random seed:		0001550010"
+"Data type, index:	time course, 29"
+
+
+PREDICTOR
+time	T	min	time	0	1584
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT3_Obs	C	n/a	conc.	0	0	STAT3
+
+
+ERRORS
+STAT3_Obs	sd13_STAT3_Obs
+
+
+CONDITIONS
+input_il6	"(50)"
+input_stattic	"(60)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd13_STAT3_Obs	0.20846	1	1	-2	3
+
+// Scale and offset parameters

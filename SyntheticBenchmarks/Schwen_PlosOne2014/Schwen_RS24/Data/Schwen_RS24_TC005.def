@@ -1,0 +1,57 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Schwen_PlosOne2014"
+"RS project name:	Schwen_RS24"
+"Random seed:		0001324000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	n/a	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+Ins_Obs	C	n/a	conc.	0	0	scale3_Ins_Obs*(Ins)
+Rec1_Obs	C	n/a	conc.	0	0	scale3_Rec1_Obs*(Rec1)
+Rec2_Obs	C	n/a	conc.	0	0	Rec2
+IR1_Obs	C	n/a	conc.	0	0	IR1
+Uptake1_Obs	C	n/a	conc.	0	0	scale1_Uptake1_Obs*(Uptake1)
+Uptake2_Obs	C	n/a	conc.	0	0	Uptake2
+BoundUnspec_Obs	C	n/a	conc.	0	0	scale1_BoundUnspec_Obs*(BoundUnspec)
+
+
+ERRORS
+Ins_Obs	sd3_Ins_Obs
+Rec1_Obs	sd3_Rec1_Obs
+Rec2_Obs	sd3_Rec2_Obs
+IR1_Obs	sd1_IR1_Obs
+Uptake1_Obs	sd1_Uptake1_Obs
+Uptake2_Obs	sd1_Uptake2_Obs
+BoundUnspec_Obs	sd1_BoundUnspec_Obs
+
+
+CONDITIONS
+init_Ins	"(100)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_Ins_Obs	0.14996	1	1	-2	3
+sd3_Rec1_Obs	0.99076	1	1	-2	3
+sd3_Rec2_Obs	2.4564	1	1	0	5
+sd1_IR1_Obs	-2.0586	1	1	-5	0
+sd1_Uptake1_Obs	-1.093	1	1	-4	1
+sd1_Uptake2_Obs	0.97334	1	1	-2	3
+sd1_BoundUnspec_Obs	0.01283	1	1	-2	3
+
+// Scale and offset parameters
+scale3_Ins_Obs	0	1	1	-5	5
+scale3_Rec1_Obs	0	1	1	-5	5
+scale1_Uptake1_Obs	0	1	1	-5	5
+scale1_BoundUnspec_Obs	0	1	1	-5	5

@@ -1,0 +1,49 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS34"
+"Random seed:		0002134000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+TGFb_pRec_Obs	C	n/a	conc.	0	0	TGFb_pRec
+S4_Obs	C	n/a	conc.	0	0	S4
+geneB_Obs	C	n/a	conc.	0	0	geneB
+geneD_Obs	C	n/a	conc.	0	0	geneD
+geneJ_Obs	C	n/a	conc.	0	0	geneJ
+
+
+ERRORS
+TGFb_pRec_Obs	sd1_TGFb_pRec_Obs
+S4_Obs	sd2_S4_Obs
+geneB_Obs	sd1_geneB_Obs
+geneD_Obs	sd1_geneD_Obs
+geneJ_Obs	sd2_geneJ_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(14.234)"
+init_S4	"(208.41)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_TGFb_pRec_Obs	-1.0781	1	1	-4	1
+sd2_S4_Obs	1.2207	1	1	-1	4
+sd1_geneB_Obs	-1.0675	1	1	-4	1
+sd1_geneD_Obs	-1.1041	1	1	-4	1
+sd2_geneJ_Obs	-1.103	1	1	-4	1
+
+// Scale and offset parameters

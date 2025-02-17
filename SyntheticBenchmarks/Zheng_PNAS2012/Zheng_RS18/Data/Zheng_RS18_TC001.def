@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Zheng_PNAS2012"
+"RS project name:	Zheng_RS18"
+"Random seed:		0001818000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	31
+
+
+INPUTS
+
+
+OBSERVABLES
+K27me0K36me0_Obs	C	n/a	conc.	0	0	K27me0K36me0
+K27me1K36me0_Obs	C	n/a	conc.	0	0	K27me1K36me0
+K27me3K36me0_Obs	C	n/a	conc.	0	0	K27me3K36me0
+K27me1K36me3_Obs	C	n/a	conc.	0	0	K27me1K36me3
+K27me3K36me1_Obs	C	n/a	conc.	0	0	K27me3K36me1
+
+
+ERRORS
+K27me0K36me0_Obs	sd1_K27me0K36me0_Obs
+K27me1K36me0_Obs	sd1_K27me1K36me0_Obs
+K27me3K36me0_Obs	sd1_K27me3K36me0_Obs
+K27me1K36me3_Obs	sd1_K27me1K36me3_Obs
+K27me3K36me1_Obs	sd1_K27me3K36me1_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_K27me0K36me0_Obs	-4.854	1	1	-7	-2
+sd1_K27me1K36me0_Obs	-4.3713	1	1	-7	-2
+sd1_K27me3K36me0_Obs	-4.0561	1	1	-7	-2
+sd1_K27me1K36me3_Obs	-1.8955	1	1	-4	1
+sd1_K27me3K36me1_Obs	-4.0857	1	1	-7	-2
+
+// Scale and offset parameters

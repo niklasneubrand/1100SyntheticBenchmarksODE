@@ -1,0 +1,96 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS47"
+"Random seed:		0001047000."
+
+"Original description:"
+
+"Fujita2010_Akt_Signalling_EGF (Model 1)"
+
+
+PREDICTOR
+t	 T	 "n/a"	 time	 0	 100
+
+
+COMPARTMENTS
+Cell	 V	 "n/a"	 vol.	 1
+
+
+STATES
+EGFR	 C	 "n/a"	 conc.	 Cell	 1	 "EGFR"
+pEGFR	 C	 "n/a"	 conc.	 Cell	 1	 "pEGFR"
+pEGFR_Akt	 C	 "n/a"	 conc.	 Cell	 1	 "pEGFR_Akt"
+Akt	 C	 "n/a"	 conc.	 Cell	 1	 "Akt"
+pAkt	 C	 "n/a"	 conc.	 Cell	 1	 "pAkt"
+S6	 C	 "n/a"	 conc.	 Cell	 1	 "S6"
+pAkt_S6	 C	 "n/a"	 conc.	 Cell	 1	 "pAkt_S6"
+pS6	 C	 "n/a"	 conc.	 Cell	 1	 "pS6"
+EGF_EGFR	 C	 "n/a"	 conc.	 Cell	 1	 "EGF_EGFR"
+
+
+INPUTS
+EGF	 C	 "n/a"	 conc.	"EGF_conc_step+step1(t,0,pulse_time,EGF_conc_impulse)+EGF_conc_ramp*t/ramp_time"
+
+
+REACTIONS
+EGFR 	<-> EGF_EGFR 	 CUSTOM "EGF*EGFR*reaction_1_k1 - EGF_EGFR*reaction_1_k2" 	"reaction_1"
+pEGFR + Akt 	<-> pEGFR_Akt 	 CUSTOM "Akt*pEGFR*reaction_2_k1 - pEGFR_Akt*reaction_2_k2" 	"reaction_2"
+pEGFR_Akt 	-> pEGFR + pAkt 	 CUSTOM "pEGFR_Akt*reaction_3_k1" 	"reaction_3"
+pEGFR 	->  	 CUSTOM "pEGFR*reaction_4_k1" 	"reaction_4"
+pAkt + S6 	<-> pAkt_S6 	 CUSTOM "S6*pAkt*reaction_5_k1 - pAkt_S6*reaction_5_k2" 	"reaction_5"
+pAkt_S6 	-> pAkt + pS6 	 CUSTOM "pAkt_S6*reaction_6_k1" 	"reaction_6"
+pAkt 	-> Akt 	 CUSTOM "pAkt*reaction_7_k1" 	"reaction_7"
+pS6 	-> S6 	 CUSTOM "pS6*reaction_8_k1" 	"reaction_8"
+EGF_EGFR 	-> pEGFR 	 CUSTOM "EGF_EGFR*reaction_9_k1" 	"reaction_9"
+EGFR 	->  	 CUSTOM "EGFR*EGFR_turnover" 	"reaction_10"
+ 	-> EGFR 	 CUSTOM "EGFR_turnover*pro_EGFR" 	"reaction_11"
+
+
+DERIVED
+pEGFR_tot_abs	C	"n/a"	conc.	"scaleFactor_pEGFR*(pEGFR + pEGFR_Akt)"
+pAkt_tot_abs	C	"n/a"	conc.	"scaleFactor_pAkt*(pAkt + pAkt_S6)"
+pS6_tot_abs	C	"n/a"	conc.	"scaleFactor_pS6*pS6"
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+init_EGF_EGFR	"(0)"
+init_pAkt	"(0)"
+init_pAkt_S6	"(0)"
+init_pEGFR	"(0)"
+init_pEGFR_Akt	"(0)"
+init_pS6	"(0)"
+pro_EGFR	"(6.8190e+04)"
+
+
+PARAMETERS
+EGFR_turnover	-2.96	1	1	-6	1
+init_Akt	-1.81	1	1	-5	2
+init_EGFR	7.5	1	1	4	11
+init_S6	2.55	1	1	-1	6
+reaction_1_k1	-2.35	1	1	-6	1
+reaction_1_k2	-2.79	1	1	-6	1
+reaction_2_k1	-3.02	1	1	-7	0
+reaction_2_k2	4.72	1	1	1	8
+reaction_3_k1	-0.58	1	1	-4	3
+reaction_4_k1	-1.8	1	1	-5	2
+reaction_5_k1	-5.75	1	1	-9	-2
+reaction_5_k2	-3.23	1	1	-7	0
+reaction_6_k1	-5.25	1	1	-9	-2
+reaction_7_k1	-1.93	1	1	-5	2
+reaction_8_k1	-3.11	1	1	-7	0
+reaction_9_k1	-1.44	1	1	-5	2
+scaleFactor_pAkt	1.62	1	1	-2	5
+scaleFactor_pEGFR	-7.05	1	1	-11	-4
+scaleFactor_pS6	4.9	1	1	1	8
+
+

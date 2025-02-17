@@ -1,0 +1,72 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Brannmark_JBC2010"
+"RS project name:	Brannmark_RS07"
+"Random seed:		0000507000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	36
+
+
+INPUTS
+
+
+OBSERVABLES
+IR_Obs	C	n/a	conc.	0	1	offset1_IR_Obs+scale1_IR_Obs*(IR)
+IRins_Obs	C	n/a	conc.	0	1	offset1_IRins_Obs+scale1_IRins_Obs*(IRins)
+IRp_Obs	C	n/a	conc.	0	1	IRp
+IRiP_Obs	C	n/a	conc.	0	1	IRiP
+IRi_Obs	C	n/a	conc.	0	1	IRi
+IRS_Obs	C	n/a	conc.	0	1	IRS
+IRSiP_Obs	C	n/a	conc.	0	1	offset1_IRSiP_Obs+scale1_IRSiP_Obs*(IRSiP)
+XX_Obs	C	n/a	conc.	0	1	offset1_XX_Obs+scale1_XX_Obs*(XX)
+XXp_Obs	C	n/a	conc.	0	1	offset1_XXp_Obs+scale1_XXp_Obs*(XXp)
+
+
+ERRORS
+IR_Obs	sd1_IR_Obs
+IRins_Obs	sd1_IRins_Obs
+IRp_Obs	sd1_IRp_Obs
+IRiP_Obs	sd1_IRiP_Obs
+IRi_Obs	sd1_IRi_Obs
+IRS_Obs	sd1_IRS_Obs
+IRSiP_Obs	sd1_IRSiP_Obs
+XX_Obs	sd1_XX_Obs
+XXp_Obs	sd1_XXp_Obs
+
+
+CONDITIONS
+insulin_dose_1	"(100)"
+insulin_dose_2	"(0)"
+insulin_time_1	"(0)"
+insulin_time_2	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_IR_Obs	-1.1621	1	1	-4	1
+sd1_IRins_Obs	-1.1583	1	1	-4	1
+sd1_IRp_Obs	-1.1625	1	1	-4	1
+sd1_IRiP_Obs	-1.1621	1	1	-4	1
+sd1_IRi_Obs	-1.1419	1	1	-4	1
+sd1_IRS_Obs	-1.1373	1	1	-4	1
+sd1_IRSiP_Obs	-1.1457	1	1	-4	1
+sd1_XX_Obs	-1.1453	1	1	-4	1
+sd1_XXp_Obs	-1.1461	1	1	-4	1
+
+// Scale and offset parameters
+scale1_IR_Obs	0	1	1	-5	5
+offset1_IR_Obs	-2	1	1	-4	0
+scale1_IRins_Obs	0	1	1	-5	5
+offset1_IRins_Obs	-2	1	1	-4	0
+scale1_IRSiP_Obs	0	1	1	-5	5
+offset1_IRSiP_Obs	-2	1	1	-4	0
+scale1_XX_Obs	0	1	1	-5	5
+offset1_XX_Obs	-1	1	1	-3	1
+scale1_XXp_Obs	0	1	1	-5	5
+offset1_XXp_Obs	-5	1	1	-7	-3

@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS31"
+"Random seed:		0001531000"
+"Data type, index:	dose response, 7"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	22
+
+
+INPUTS
+
+
+OBSERVABLES
+JAK1_gp130_Obs	C	n/a	conc.	0	0	scale11_JAK1_gp130_Obs*(JAK1_gp130)
+
+
+ERRORS
+JAK1_gp130_Obs	sd11_JAK1_gp130_Obs
+
+
+CONDITIONS
+input_ruxolitinib	"(500)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd11_JAK1_gp130_Obs	-1.6011	1	1	-4	1
+
+// Scale and offset parameters
+scale11_JAK1_gp130_Obs	0	1	1	-5	5

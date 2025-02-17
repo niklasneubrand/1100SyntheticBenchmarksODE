@@ -1,0 +1,42 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS33"
+"Random seed:		0001233000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+SOCS3mRNA_Obs	C	n/a	conc.	0	0	scale2_SOCS3mRNA_Obs*(SOCS3mRNA)
+Compound_1_Obs	C	n/a	conc.	0	0	Rec_i+p_IL13_Rec_i+pSTAT5+DecoyR+SOCS3
+Compound_2_Obs	C	n/a	conc.	0	0	IL13_Rec+p_IL13_Rec+pJAK2+STAT5+IL13_DecoyR
+
+
+ERRORS
+SOCS3mRNA_Obs	sd2_SOCS3mRNA_Obs
+Compound_1_Obs	sd2_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+
+
+CONDITIONS
+il13_level	"(20)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_SOCS3mRNA_Obs	2.3961	1	1	0	5
+sd2_Compound_1_Obs	1.7427	1	1	-1	4
+sd1_Compound_2_Obs	1.0652	1	1	-1	4
+
+// Scale and offset parameters
+scale2_SOCS3mRNA_Obs	0	1	1	-5	5

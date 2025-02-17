@@ -1,0 +1,65 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS41"
+"Random seed:		0002141000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+S4_Obs	C	n/a	conc.	0	0	scale2_S4_Obs*(S4)
+S2_S4_S4_Obs	C	n/a	conc.	0	0	scale1_S2_S4_S4_Obs*(S2_S4_S4)
+ppS2_ppS2_S4_Obs	C	n/a	conc.	0	0	scale1_ppS2_ppS2_S4_Obs*(ppS2_ppS2_S4)
+ppS3_ppS3_S4_Obs	C	n/a	conc.	0	0	scale1_ppS3_ppS3_S4_Obs*(ppS3_ppS3_S4)
+ppS2_ppS3_S4_Obs	C	n/a	conc.	0	0	scale1_ppS2_ppS3_S4_Obs*(ppS2_ppS3_S4)
+geneF_Obs	C	n/a	conc.	0	0	scale1_geneF_Obs*(geneF)
+geneI_Obs	C	n/a	conc.	0	0	geneI
+geneL_Obs	C	n/a	conc.	0	0	scale2_geneL_Obs*(geneL)
+
+
+ERRORS
+S4_Obs	sd2_S4_Obs
+S2_S4_S4_Obs	sd1_S2_S4_S4_Obs
+ppS2_ppS2_S4_Obs	sd1_ppS2_ppS2_S4_Obs
+ppS3_ppS3_S4_Obs	sd1_ppS3_ppS3_S4_Obs
+ppS2_ppS3_S4_Obs	sd1_ppS2_ppS3_S4_Obs
+geneF_Obs	sd1_geneF_Obs
+geneI_Obs	sd1_geneI_Obs
+geneL_Obs	sd2_geneL_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(14.234)"
+init_S4	"(208.41)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_S4_Obs	1.4408	1	1	-1	4
+sd1_S2_S4_S4_Obs	-0.87994	1	1	-3	2
+sd1_ppS2_ppS2_S4_Obs	-0.88794	1	1	-3	2
+sd1_ppS3_ppS3_S4_Obs	-0.90403	1	1	-3	2
+sd1_ppS2_ppS3_S4_Obs	-0.86395	1	1	-3	2
+sd1_geneF_Obs	-0.86037	1	1	-3	2
+sd1_geneI_Obs	-0.89023	1	1	-3	2
+sd2_geneL_Obs	-0.86385	1	1	-3	2
+
+// Scale and offset parameters
+scale2_S4_Obs	0	1	1	-5	5
+scale1_S2_S4_S4_Obs	0	1	1	-5	5
+scale1_ppS2_ppS2_S4_Obs	0	1	1	-5	5
+scale1_ppS3_ppS3_S4_Obs	0	1	1	-5	5
+scale1_ppS2_ppS3_S4_Obs	0	1	1	-5	5
+scale1_geneF_Obs	0	1	1	-5	5
+scale2_geneL_Obs	0	1	1	-5	5

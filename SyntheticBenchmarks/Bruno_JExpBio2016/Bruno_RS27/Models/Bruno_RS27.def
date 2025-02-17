@@ -1,0 +1,73 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Bruno_JExpBio2016"
+"RS project name:	Bruno_RS27"
+"Random seed:		0000627000."
+
+"Original description:"
+
+"model .def file template"
+
+
+PREDICTOR
+t	T	"min"	"time"	0	100
+
+
+COMPARTMENTS
+cyt	V	"pl"	"vol."	1
+
+
+STATES
+bcar	C	"nM"	"conc."	cyt	1	"beta-carotin" 1
+bcry	C	"nM"	"conc."	cyt	1	"cry" 1
+b10	C	"nM"	"conc."	cyt	1	"beta-10" 1
+bio	C	"nM"	"conc."	cyt	1	"beta-io" 1
+ohb10	C	"nM"	"conc."	cyt	1	"OH-beta-10" 1
+ohbio	C	"nM"	"conc."	cyt	1	"OH-beta-io" 1
+zea	C	"nM"	"conc."	cyt	1	"zea" 1
+
+
+INPUTS
+//Stim1	C	"nM"	"conc."	"k1*exp(-k2*t)"
+
+
+REACTIONS
+bcar	->	b10 + bio 	CUSTOM "kb1*bcar"	"ReactionName"
+b10	->	bio 	    	CUSTOM "kb2*b10"	"ReactionName"
+bcry	->	b10 + ohbio 	CUSTOM "kc1*bcry"	"ReactionName"
+bcry	->	bio + ohb10	CUSTOM "kc2*bcry"	"ReactionName"
+ohb10	->	ohbio 	    	CUSTOM "kc4*ohb10"	"ReactionName"
+zea	->	ohb10 + ohbio 	CUSTOM "k5*zea"		"ReactionName"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+
+
+PARAMETERS
+init_b10	0.874	1	1	-3	4
+init_bcar1	0.635	1	1	-3	4
+init_bcar2	0.484	1	1	-3	4
+init_bcry	0.611	1	1	-3	4
+init_ohb10	0.194	1	1	-3	4
+init_zea	0.672	1	1	-3	4
+k5	-2.56	1	1	-6	1
+kb1	-1.64	1	1	-5	2
+kb2	-1.96	1	1	-5	2
+kc1	-2.49	1	1	-6	1
+kc2	-1.99	1	1	-5	2
+kc4	-2.46	1	1	-6	1
+szea	-0.531	1	1	-4	3
+
+

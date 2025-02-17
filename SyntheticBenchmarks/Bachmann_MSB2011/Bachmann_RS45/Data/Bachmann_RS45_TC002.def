@@ -1,0 +1,47 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS45"
+"Random seed:		0001945000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	0	EpoRJAK2
+STAT5_Obs	C	n/a	conc.	0	0	STAT5
+npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
+EpoRpJAK2_Obs	C	n/a	conc.	0	0	EpoRpJAK2
+
+
+ERRORS
+EpoRJAK2_Obs	sd2_EpoRJAK2_Obs
+STAT5_Obs	sd2_STAT5_Obs
+npSTAT5_Obs	sd2_npSTAT5_Obs
+EpoRpJAK2_Obs	sd1_EpoRpJAK2_Obs
+
+
+CONDITIONS
+ActD	"(1)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_EpoRJAK2_Obs	0.10736	1	1	-2	3
+sd2_STAT5_Obs	1.0699	1	1	-1	4
+sd2_npSTAT5_Obs	0.349	1	1	-2	3
+sd1_EpoRpJAK2_Obs	-1.4727	1	1	-4	1
+
+// Scale and offset parameters

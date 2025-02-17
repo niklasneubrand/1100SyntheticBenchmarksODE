@@ -1,0 +1,45 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Boehm_JProteomeRes2014"
+"RS project name:	Boehm_RS30"
+"Random seed:		0000330000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	330
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT5B_Obs	C	n/a	conc.	0	1	offset1_STAT5B_Obs+scale1_STAT5B_Obs*(STAT5B)
+Compound_1_Obs	C	n/a	conc.	0	1	STAT5B+pApA+pBpB+nucpApA+nucpBpB
+Compound_2_Obs	C	n/a	conc.	0	1	offset1_Compound_2_Obs+scale1_Compound_2_Obs*(STAT5B+pBpB+nucpApA+nucpApB+nucpBpB)
+
+
+ERRORS
+STAT5B_Obs	sd1_STAT5B_Obs
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+
+
+CONDITIONS
+epo_level	"(1.25e-07)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_STAT5B_Obs	-0.69706	1	1	-3	2
+sd1_Compound_1_Obs	-0.67848	1	1	-3	2
+sd1_Compound_2_Obs	-0.66932	1	1	-3	2
+
+// Scale and offset parameters
+scale1_STAT5B_Obs	0	1	1	-5	5
+offset1_STAT5B_Obs	-1	1	1	-3	1
+scale1_Compound_2_Obs	0	1	1	-5	5
+offset1_Compound_2_Obs	0	1	1	-2	2

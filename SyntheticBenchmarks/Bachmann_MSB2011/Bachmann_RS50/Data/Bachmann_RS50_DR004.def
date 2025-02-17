@@ -1,0 +1,38 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS50"
+"Random seed:		0001950000"
+"Data type, index:	dose response, 4"
+
+
+PREDICTOR-DOSERESPONSE epo_level
+time	T	min	time	0	100
+
+
+INPUTS
+
+
+OBSERVABLES
+CISRNA_Obs	C	n/a	conc.	0	0	scale8_CISRNA_Obs*(CISRNA)
+
+
+ERRORS
+CISRNA_Obs	sd8_CISRNA_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd8_CISRNA_Obs	-2.1941	1	1	-5	0
+
+// Scale and offset parameters
+scale8_CISRNA_Obs	0	1	1	-5	5

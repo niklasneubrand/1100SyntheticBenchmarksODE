@@ -1,0 +1,57 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Isensee_JCB2018"
+"RS project name:	Isensee_RS05"
+"Random seed:		0002005000"
+"Data type, index:	dose response, 5"
+
+
+PREDICTOR-DOSERESPONSE fourABnOH_time
+time	T	min	time	0	72
+
+
+INPUTS
+
+
+OBSERVABLES
+pAC_Obs	C	n/a	conc.	0	0	pAC
+pAC_Fsk_Obs	C	n/a	conc.	0	0	pAC_Fsk
+Compound_1_Obs	C	n/a	conc.	0	0	AC+Sp8_Br_cAMPS+RIIp_Rp8_pCPT_cAMPS_C_2+RIIp_Sp8_Br_cAMPS_C_2+RII_2
+
+
+ERRORS
+pAC_Obs	sd2_pAC_Obs
+pAC_Fsk_Obs	sd2_pAC_Fsk_Obs
+Compound_1_Obs	sd3_Compound_1_Obs
+
+
+CONDITIONS
+DMSO_level	"(0)"
+DMSO_time	"(0)"
+Fsk_level	"(10)"
+Fsk_time	"(60)"
+H89_level	"(0)"
+H89_time	"(0)"
+IBMX_level	"(0)"
+IBMX_time	"(0)"
+Rp8_Br_cAMPS_pAB_level	"(0)"
+Rp8_Br_cAMPS_pAB_time	"(0)"
+Rp8_pCPT_cAMPS_pAB_level	"(0)"
+Rp8_pCPT_cAMPS_pAB_time	"(0)"
+Rp_cAMPS_pAB_level	"(0)"
+Rp_cAMPS_pAB_time	"(0)"
+Sp8_Br_cAMPS_AM_level	"(0)"
+Sp8_Br_cAMPS_AM_time	"(0)"
+fourABnOH_level	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_pAC_Obs	-1.0562	1	1	-4	1
+sd2_pAC_Fsk_Obs	-1.0676	1	1	-4	1
+sd3_Compound_1_Obs	-1.3613	1	1	-4	1
+
+// Scale and offset parameters

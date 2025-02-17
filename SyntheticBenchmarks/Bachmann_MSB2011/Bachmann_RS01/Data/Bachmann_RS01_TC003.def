@@ -1,0 +1,40 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS01"
+"Random seed:		0001901000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+CISnRNA5_Obs	C	n/a	conc.	0	1	offset2_CISnRNA5_Obs+scale2_CISnRNA5_Obs*(CISnRNA5)
+
+
+ERRORS
+CISnRNA5_Obs	sd2_CISnRNA5_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-6)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_CISnRNA5_Obs	-1.2527	1	1	-4	1
+
+// Scale and offset parameters
+scale2_CISnRNA5_Obs	0	1	1	-5	5
+offset2_CISnRNA5_Obs	0	1	1	-2	2

@@ -1,0 +1,56 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Weber_BMC2015"
+"RS project name:	Weber_RS32"
+"Random seed:		0001732000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	h	time	0	33
+
+
+INPUTS
+
+
+OBSERVABLES
+PKD_Obs	C	n/a	conc.	0	1	offset3_PKD_Obs+scale3_PKD_Obs*(PKD)
+PI4K3B_Obs	C	n/a	conc.	0	1	PI4K3B
+PI4K3Ba_Obs	C	n/a	conc.	0	1	offset2_PI4K3Ba_Obs+scale2_PI4K3Ba_Obs*(PI4K3Ba)
+CERT_Obs	C	n/a	conc.	0	1	offset2_CERT_Obs+scale2_CERT_Obs*(CERT)
+
+
+ERRORS
+PKD_Obs	sd3_PKD_Obs
+PI4K3B_Obs	sd1_PI4K3B_Obs
+PI4K3Ba_Obs	sd2_PI4K3Ba_Obs
+CERT_Obs	sd2_CERT_Obs
+
+
+CONDITIONS
+Ect_Expr_CERT_flag	"(1)"
+Ect_Expr_PI4K3beta_flag	"(0)"
+Ect_Expr_PKD_flag	"(0)"
+PdBu_dose	"(0)"
+PdBu_time	"(0)"
+kb_NB142_70_dose	"(10)"
+kb_NB142_70_time	"(24)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_PKD_Obs	-0.66836	1	1	-3	2
+sd1_PI4K3B_Obs	-0.64854	1	1	-3	2
+sd2_PI4K3Ba_Obs	-0.63583	1	1	-3	2
+sd2_CERT_Obs	-0.68946	1	1	-3	2
+
+// Scale and offset parameters
+scale3_PKD_Obs	0	1	1	-5	5
+offset3_PKD_Obs	3	1	1	1	5
+scale2_PI4K3Ba_Obs	0	1	1	-5	5
+offset2_PI4K3Ba_Obs	3	1	1	1	5
+scale2_CERT_Obs	0	1	1	-5	5
+offset2_CERT_Obs	2	1	1	0	4

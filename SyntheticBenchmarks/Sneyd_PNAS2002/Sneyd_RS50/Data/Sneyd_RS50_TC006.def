@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sneyd_PNAS2002"
+"RS project name:	Sneyd_RS50"
+"Random seed:		0001450000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	s	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	scale6_Compound_1_Obs*(IPR_O+IPR_R+IPR_I1+IPR_S+IPR_I2)
+Compound_2_Obs	C	n/a	conc.	0	0	scale6_Compound_2_Obs*(IPR_O+IPR_R+IPR_I1+IPR_A+IPR_I2)
+Compound_3_Obs	C	n/a	conc.	0	0	IPR_O+IPR_R+IPR_S+IPR_A+IPR_I2
+Compound_4_Obs	C	n/a	conc.	0	0	scale6_Compound_4_Obs*(IPR_O+IPR_I1+IPR_S+IPR_A+IPR_I2)
+Compound_5_Obs	C	n/a	conc.	0	0	IPR_R+IPR_I1+IPR_S+IPR_A+IPR_I2
+
+
+ERRORS
+Compound_1_Obs	sd6_Compound_1_Obs
+Compound_2_Obs	sd6_Compound_2_Obs
+Compound_3_Obs	sd6_Compound_3_Obs
+Compound_4_Obs	sd6_Compound_4_Obs
+Compound_5_Obs	sd6_Compound_5_Obs
+
+
+CONDITIONS
+Ca	"(3)"
+IP3	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd6_Compound_1_Obs	-1.4866	1	1	-4	1
+sd6_Compound_2_Obs	-1.2866	1	1	-4	1
+sd6_Compound_3_Obs	-1.2665	1	1	-4	1
+sd6_Compound_4_Obs	-1.3467	1	1	-4	1
+sd6_Compound_5_Obs	-1.2737	1	1	-4	1
+
+// Scale and offset parameters
+scale6_Compound_1_Obs	0	1	1	-5	5
+scale6_Compound_2_Obs	0	1	1	-5	5
+scale6_Compound_4_Obs	0	1	1	-5	5

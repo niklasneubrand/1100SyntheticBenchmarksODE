@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS13"
+"Random seed:		0002113000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_2_Obs	C	n/a	conc.	0	0	S3+geneI
+
+
+ERRORS
+Compound_2_Obs	sd2_Compound_2_Obs
+
+
+CONDITIONS
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Compound_2_Obs	0.44172	1	1	-2	3
+
+// Scale and offset parameters

@@ -1,0 +1,47 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS14"
+"Random seed:		0001014000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+Akt_Obs	C	n/a	conc.	0	0	scale2_Akt_Obs*(Akt)
+pAkt_Obs	C	n/a	conc.	0	0	scale2_pAkt_Obs*(pAkt)
+S6_Obs	C	n/a	conc.	0	0	S6
+
+
+ERRORS
+Akt_Obs	sd2_Akt_Obs
+pAkt_Obs	sd2_pAkt_Obs
+S6_Obs	sd2_S6_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(0.3)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Akt_Obs	-2.5516	1	1	-5	0
+sd2_pAkt_Obs	-3.9003	1	1	-6	-1
+sd2_S6_Obs	0.89511	1	1	-2	3
+
+// Scale and offset parameters
+scale2_Akt_Obs	0	1	1	-5	5
+scale2_pAkt_Obs	0	1	1	-5	5

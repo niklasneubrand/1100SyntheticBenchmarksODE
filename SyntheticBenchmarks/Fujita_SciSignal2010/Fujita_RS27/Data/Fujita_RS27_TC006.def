@@ -1,0 +1,47 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS27"
+"Random seed:		0001027000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+EGFR_Obs	C	n/a	conc.	0	0	scale6_EGFR_Obs*(EGFR)
+pEGFR_Obs	C	n/a	conc.	0	0	pEGFR
+Compound_1_Obs	C	n/a	conc.	0	0	scale6_Compound_1_Obs*(EGFR+pEGFR+pEGFR_Akt+Akt+pAkt+S6+pAkt_S6+pS6+EGF_EGFR)
+
+
+ERRORS
+EGFR_Obs	sd6_EGFR_Obs
+pEGFR_Obs	sd6_pEGFR_Obs
+Compound_1_Obs	sd6_Compound_1_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(30)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd6_EGFR_Obs	5.6659	1	1	3	8
+sd6_pEGFR_Obs	5.3944	1	1	3	8
+sd6_Compound_1_Obs	5.9894	1	1	3	8
+
+// Scale and offset parameters
+scale6_EGFR_Obs	0	1	1	-5	5
+scale6_Compound_1_Obs	0	1	1	-5	5

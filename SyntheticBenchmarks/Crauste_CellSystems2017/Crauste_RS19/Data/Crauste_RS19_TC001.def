@@ -1,0 +1,44 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Crauste_CellSystems2017"
+"RS project name:	Crauste_RS19"
+"Random seed:		0000719000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	34
+
+
+INPUTS
+
+
+OBSERVABLES
+EarlyEffector_Obs	C	n/a	conc.	0	1	EarlyEffector
+Memory_Obs	C	n/a	conc.	0	1	offset1_Memory_Obs+scale1_Memory_Obs*(Memory)
+Pathogen_Obs	C	n/a	conc.	0	1	offset1_Pathogen_Obs+scale1_Pathogen_Obs*(Pathogen)
+
+
+ERRORS
+EarlyEffector_Obs	sd1_EarlyEffector_Obs
+Memory_Obs	sd1_Memory_Obs
+Pathogen_Obs	sd1_Pathogen_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_EarlyEffector_Obs	-0.25803	1	1	-3	2
+sd1_Memory_Obs	-0.20187	1	1	-3	2
+sd1_Pathogen_Obs	-0.26524	1	1	-3	2
+
+// Scale and offset parameters
+scale1_Memory_Obs	0	1	1	-5	5
+offset1_Memory_Obs	2	1	1	0	4
+scale1_Pathogen_Obs	0	1	1	-5	5
+offset1_Pathogen_Obs	-2	1	1	-4	0

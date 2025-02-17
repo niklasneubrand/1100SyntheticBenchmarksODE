@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS05"
+"Random seed:		0002105000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+geneI_Obs	C	n/a	conc.	0	0	scale1_geneI_Obs*(geneI)
+
+
+ERRORS
+geneI_Obs	sd1_geneI_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_geneI_Obs	-1.1272	1	1	-4	1
+
+// Scale and offset parameters
+scale1_geneI_Obs	0	1	1	-5	5

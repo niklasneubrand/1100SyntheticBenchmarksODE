@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS11"
+"Random seed:		0001511000"
+"Data type, index:	dose response, 12"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	397
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_6_Obs	C	n/a	conc.	0	1	scale9_Compound_6_Obs*(pJAK1_gp130+STAT3+nSOCS3RNA2)
+Compound_8_Obs	C	n/a	conc.	0	1	offset9_Compound_8_Obs+scale9_Compound_8_Obs*(pJAK1_pgp130+nSOCS3RNA1+nSOCS3RNA5)
+Compound_11_Obs	C	n/a	conc.	0	1	scale9_Compound_11_Obs*(nSTAT3+nSOCS3RNA4+nSOCS3RNA5)
+Compound_12_Obs	C	n/a	conc.	0	1	offset9_Compound_12_Obs+scale9_Compound_12_Obs*(nSOCS3RNA1+nSOCS3RNA2+nSOCS3RNA3)
+
+
+ERRORS
+Compound_6_Obs	sd9_Compound_6_Obs
+Compound_8_Obs	sd9_Compound_8_Obs
+Compound_11_Obs	sd9_Compound_11_Obs
+Compound_12_Obs	sd9_Compound_12_Obs
+
+
+CONDITIONS
+input_ruxolitinib	"(500)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd9_Compound_6_Obs	-1.313	1	1	-4	1
+sd9_Compound_8_Obs	-1.3437	1	1	-4	1
+sd9_Compound_11_Obs	-1.3253	1	1	-4	1
+sd9_Compound_12_Obs	-1.3358	1	1	-4	1
+
+// Scale and offset parameters
+scale9_Compound_6_Obs	0	1	1	-5	5
+scale9_Compound_8_Obs	0	1	1	-5	5
+offset9_Compound_8_Obs	-4	1	1	-6	-2
+scale9_Compound_11_Obs	0	1	1	-5	5
+scale9_Compound_12_Obs	0	1	1	-5	5
+offset9_Compound_12_Obs	-3	1	1	-5	-1

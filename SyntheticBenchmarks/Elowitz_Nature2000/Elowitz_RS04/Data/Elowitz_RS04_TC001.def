@@ -1,0 +1,53 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Elowitz_Nature2000"
+"RS project name:	Elowitz_RS04"
+"Random seed:		0000804000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	scale1_Compound_1_Obs*(X_protein+Z_protein+X_mRNA)
+Compound_2_Obs	C	n/a	conc.	0	0	scale1_Compound_2_Obs*(X_protein+Y_mRNA+GFP_mRNA)
+Compound_3_Obs	C	n/a	conc.	0	0	scale1_Compound_3_Obs*(Y_protein+Y_mRNA+GFP_mRNA)
+Compound_4_Obs	C	n/a	conc.	0	0	Z_protein+GFP+Y_mRNA
+Compound_5_Obs	C	n/a	conc.	0	0	scale1_Compound_5_Obs*(Z_protein+Y_mRNA+GFP_mRNA)
+Compound_6_Obs	C	n/a	conc.	0	0	GFP+Y_mRNA+GFP_mRNA
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	3.0018	1	1	1	6
+sd1_Compound_2_Obs	2.6016	1	1	0	5
+sd1_Compound_3_Obs	2.8672	1	1	0	5
+sd1_Compound_4_Obs	2.806	1	1	0	5
+sd1_Compound_5_Obs	2.7825	1	1	0	5
+sd1_Compound_6_Obs	1.7773	1	1	-1	4
+
+// Scale and offset parameters
+scale1_Compound_1_Obs	0	1	1	-5	5
+scale1_Compound_2_Obs	0	1	1	-5	5
+scale1_Compound_3_Obs	0	1	1	-5	5
+scale1_Compound_5_Obs	0	1	1	-5	5

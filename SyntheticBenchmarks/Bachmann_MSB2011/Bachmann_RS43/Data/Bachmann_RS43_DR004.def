@@ -1,0 +1,38 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS43"
+"Random seed:		0001943000"
+"Data type, index:	dose response, 4"
+
+
+PREDICTOR-DOSERESPONSE epo_level
+time	T	min	time	0	100
+
+
+INPUTS
+
+
+OBSERVABLES
+SOCS3_Obs	C	n/a	conc.	0	0	scale8_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+SOCS3_Obs	sd8_SOCS3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd8_SOCS3_Obs	0.21978	1	1	-2	3
+
+// Scale and offset parameters
+scale8_SOCS3_Obs	0	1	1	-5	5

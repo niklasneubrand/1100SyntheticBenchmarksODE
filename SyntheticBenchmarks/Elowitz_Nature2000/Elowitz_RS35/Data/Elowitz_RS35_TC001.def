@@ -1,0 +1,62 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Elowitz_Nature2000"
+"RS project name:	Elowitz_RS35"
+"Random seed:		0000835000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	offset1_Compound_1_Obs+scale1_Compound_1_Obs*(X_protein+Y_protein+Z_protein+Z_mRNA+GFP_mRNA)
+Compound_2_Obs	C	n/a	conc.	0	1	offset1_Compound_2_Obs+scale1_Compound_2_Obs*(X_protein+Y_protein+GFP+X_mRNA+Y_mRNA)
+Compound_3_Obs	C	n/a	conc.	0	1	offset1_Compound_3_Obs+scale1_Compound_3_Obs*(Y_protein+Z_protein+GFP+Y_mRNA+Z_mRNA)
+Compound_4_Obs	C	n/a	conc.	0	1	Y_protein+Z_protein+GFP+Z_mRNA+GFP_mRNA
+Compound_5_Obs	C	n/a	conc.	0	1	Y_protein+Z_protein+X_mRNA+Y_mRNA+Z_mRNA
+Compound_6_Obs	C	n/a	conc.	0	1	offset1_Compound_6_Obs+scale1_Compound_6_Obs*(Y_protein+GFP+X_mRNA+Y_mRNA+Z_mRNA)
+Compound_7_Obs	C	n/a	conc.	0	1	offset1_Compound_7_Obs+scale1_Compound_7_Obs*(Z_protein+X_mRNA+Y_mRNA+Z_mRNA+GFP_mRNA)
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+Compound_7_Obs	sd1_Compound_7_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-0.84447	1	1	-3	2
+sd1_Compound_2_Obs	-0.87035	1	1	-3	2
+sd1_Compound_3_Obs	-0.83971	1	1	-3	2
+sd1_Compound_4_Obs	-0.86203	1	1	-3	2
+sd1_Compound_5_Obs	-0.8613	1	1	-3	2
+sd1_Compound_6_Obs	-0.8765	1	1	-3	2
+sd1_Compound_7_Obs	-0.86188	1	1	-3	2
+
+// Scale and offset parameters
+scale1_Compound_1_Obs	0	1	1	-5	5
+offset1_Compound_1_Obs	1	1	1	-1	3
+scale1_Compound_2_Obs	0	1	1	-5	5
+offset1_Compound_2_Obs	1	1	1	-1	3
+scale1_Compound_3_Obs	0	1	1	-5	5
+offset1_Compound_3_Obs	1	1	1	-1	3
+scale1_Compound_6_Obs	0	1	1	-5	5
+offset1_Compound_6_Obs	1	1	1	-1	3
+scale1_Compound_7_Obs	0	1	1	-5	5
+offset1_Compound_7_Obs	1	1	1	-1	3

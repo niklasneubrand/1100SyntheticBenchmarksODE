@@ -1,0 +1,60 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS50"
+"Random seed:		0002250000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	0	EpoRJAK2
+nSTAT5_Obs	C	n/a	conc.	0	0	nSTAT5
+Compound_1_Obs	C	n/a	conc.	0	0	nSTAT5+CISHRNA+SOCS3nRNA1
+
+
+ERRORS
+EpoRJAK2_Obs	sd1_EpoRJAK2_Obs
+nSTAT5_Obs	sd1_nSTAT5_Obs
+Compound_1_Obs	sd3_Compound_1_Obs
+
+
+CONDITIONS
+ActD	"(1)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAturn)"
+init_CISHnRNA1	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA2	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA3	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA4	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA5	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_EpoRJAK2_Obs	-0.9807	1	1	-3	2
+sd1_nSTAT5_Obs	0.038856	1	1	-2	3
+sd3_Compound_1_Obs	0.0021362	1	1	-2	3
+
+// Scale and offset parameters

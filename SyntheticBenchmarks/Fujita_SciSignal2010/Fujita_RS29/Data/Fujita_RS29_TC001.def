@@ -1,0 +1,63 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS29"
+"Random seed:		0001029000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	EGFR+pEGFR+Akt
+Compound_2_Obs	C	n/a	conc.	0	0	pAkt+pAkt_S6+pS6
+Compound_3_Obs	C	n/a	conc.	0	0	pEGFR+pEGFR_Akt+Akt
+Compound_4_Obs	C	n/a	conc.	0	0	EGFR+S6+pAkt_S6
+Compound_5_Obs	C	n/a	conc.	0	0	S6+pAkt_S6+EGF_EGFR
+Compound_6_Obs	C	n/a	conc.	0	0	Akt+S6+pS6
+Compound_7_Obs	C	n/a	conc.	0	0	pEGFR_Akt+Akt+pAkt
+Compound_8_Obs	C	n/a	conc.	0	0	pAkt+S6+pS6
+Compound_9_Obs	C	n/a	conc.	0	0	pAkt+S6+pAkt_S6
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+Compound_7_Obs	sd1_Compound_7_Obs
+Compound_8_Obs	sd1_Compound_8_Obs
+Compound_9_Obs	sd1_Compound_9_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(0.1)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	5.7486	1	1	3	8
+sd1_Compound_2_Obs	-3.5071	1	1	-6	-1
+sd1_Compound_3_Obs	4.0548	1	1	2	7
+sd1_Compound_4_Obs	5.7702	1	1	3	8
+sd1_Compound_5_Obs	4.0341	1	1	2	7
+sd1_Compound_6_Obs	1.1824	1	1	-1	4
+sd1_Compound_7_Obs	-2.5985	1	1	-5	0
+sd1_Compound_8_Obs	1.212	1	1	-1	4
+sd1_Compound_9_Obs	1.195	1	1	-1	4
+
+// Scale and offset parameters

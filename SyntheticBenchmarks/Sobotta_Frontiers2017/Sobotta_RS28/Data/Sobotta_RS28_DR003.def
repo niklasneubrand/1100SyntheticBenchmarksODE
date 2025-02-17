@@ -1,0 +1,49 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS28"
+"Random seed:		0001528000"
+"Data type, index:	dose response, 3"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	0
+
+
+INPUTS
+
+
+OBSERVABLES
+pJAK1_gp130_Obs	C	n/a	conc.	0	0	pJAK1_gp130
+pJAK1_pgp130_Obs	C	n/a	conc.	0	0	pJAK1_pgp130
+nSOCS3RNA2_Obs	C	n/a	conc.	0	0	nSOCS3RNA2
+nSOCS3RNA3_Obs	C	n/a	conc.	0	0	nSOCS3RNA3
+nSOCS3RNA5_Obs	C	n/a	conc.	0	0	nSOCS3RNA5
+SOCS3RNA_Obs	C	n/a	conc.	0	0	SOCS3RNA
+
+
+ERRORS
+pJAK1_gp130_Obs	sd25_pJAK1_gp130_Obs
+pJAK1_pgp130_Obs	sd32_pJAK1_pgp130_Obs
+nSOCS3RNA2_Obs	sd7_nSOCS3RNA2_Obs
+nSOCS3RNA3_Obs	sd25_nSOCS3RNA3_Obs
+nSOCS3RNA5_Obs	sd25_nSOCS3RNA5_Obs
+SOCS3RNA_Obs	sd25_SOCS3RNA_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd25_pJAK1_gp130_Obs	-4.6485	1	1	-7	-2
+sd32_pJAK1_pgp130_Obs	-4.3452	1	1	-7	-2
+sd7_nSOCS3RNA2_Obs	-3.3903	1	1	-6	-1
+sd25_nSOCS3RNA3_Obs	-3.3975	1	1	-6	-1
+sd25_nSOCS3RNA5_Obs	-3.3693	1	1	-6	-1
+sd25_SOCS3RNA_Obs	-4.7316	1	1	-7	-2
+
+// Scale and offset parameters

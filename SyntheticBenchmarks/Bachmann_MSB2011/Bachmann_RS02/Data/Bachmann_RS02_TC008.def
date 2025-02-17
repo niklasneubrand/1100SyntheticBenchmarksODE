@@ -1,0 +1,54 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS02"
+"Random seed:		0001902000"
+"Data type, index:	time course, 8"
+
+
+PREDICTOR
+time	T	min	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	0	EpoRJAK2
+SHP1Act_Obs	C	n/a	conc.	0	0	SHP1Act
+STAT5_Obs	C	n/a	conc.	0	0	STAT5
+pSTAT5_Obs	C	n/a	conc.	0	0	pSTAT5
+CISnRNA4_Obs	C	n/a	conc.	0	0	CISnRNA4
+SOCS3nRNA3_Obs	C	n/a	conc.	0	0	SOCS3nRNA3
+
+
+ERRORS
+EpoRJAK2_Obs	sd7_EpoRJAK2_Obs
+SHP1Act_Obs	sd7_SHP1Act_Obs
+STAT5_Obs	sd7_STAT5_Obs
+pSTAT5_Obs	sd7_pSTAT5_Obs
+CISnRNA4_Obs	sd7_CISnRNA4_Obs
+SOCS3nRNA3_Obs	sd2_SOCS3nRNA3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_SHP1	"(init_SHP1 * (1 + (0 * SHP1ProOE)))"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd7_EpoRJAK2_Obs	-0.5168	1	1	-3	2
+sd7_SHP1Act_Obs	-1.6909	1	1	-4	1
+sd7_STAT5_Obs	0.83126	1	1	-2	3
+sd7_pSTAT5_Obs	0.72172	1	1	-2	3
+sd7_CISnRNA4_Obs	2.1752	1	1	0	5
+sd2_SOCS3nRNA3_Obs	-4.027	1	1	-7	-2
+
+// Scale and offset parameters

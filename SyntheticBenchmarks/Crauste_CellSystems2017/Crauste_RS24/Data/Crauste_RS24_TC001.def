@@ -1,0 +1,40 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Crauste_CellSystems2017"
+"RS project name:	Crauste_RS24"
+"Random seed:		0000724000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	34
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	Naive+EarlyEffector+Memory
+Compound_2_Obs	C	n/a	conc.	0	0	Naive+LateEffector+Pathogen
+Compound_3_Obs	C	n/a	conc.	0	0	EarlyEffector+LateEffector+Memory
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	2.5387	1	1	0	5
+sd1_Compound_2_Obs	2.6072	1	1	0	5
+sd1_Compound_3_Obs	2.8377	1	1	0	5
+
+// Scale and offset parameters

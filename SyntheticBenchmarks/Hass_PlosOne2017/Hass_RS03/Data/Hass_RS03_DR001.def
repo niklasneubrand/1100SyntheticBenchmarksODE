@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS03"
+"Random seed:		0001103000"
+"Data type, index:	dose response, 1"
+
+
+PREDICTOR-DOSERESPONSE Reelin_input
+time	T	min	time	0	17
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	ApoER2_Dab1+ApoER2_Dab1SFK+pApoER2_re_Dab1+ApoER2_re_Dab1+SFK
+Compound_2_Obs	C	n/a	conc.	0	1	ApoER2_Dab1+ApoER2_Dab1SFK+pApoER2_re_Dab1+ApoER2_re_Dab1SFKInh+SFK
+Compound_3_Obs	C	n/a	conc.	0	1	offset5_Compound_3_Obs+scale5_Compound_3_Obs*(ApoER2_Dab1+ApoER2_Dab1SFK+ApoER2_re_Dab1SFKInh+ApoER2_Dab1_released+SFK)
+Compound_4_Obs	C	n/a	conc.	0	1	ApoER2_Dab1SFK+ApoER2_Dab1SFKInh+ApoER2_re_Dab1SFK+ApoER2_Dab1_released+SFK
+Compound_5_Obs	C	n/a	conc.	0	1	offset5_Compound_5_Obs+scale5_Compound_5_Obs*(ApoER2_Dab1SFK+pApoER2_re_Dab1+ApoER2_re_Dab1+ApoER2_re_Dab1SFK+SFK)
+
+
+ERRORS
+Compound_1_Obs	sd5_Compound_1_Obs
+Compound_2_Obs	sd5_Compound_2_Obs
+Compound_3_Obs	sd5_Compound_3_Obs
+Compound_4_Obs	sd5_Compound_4_Obs
+Compound_5_Obs	sd5_Compound_5_Obs
+
+
+CONDITIONS
+Inh	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_Compound_1_Obs	-1.1241	1	1	-4	1
+sd5_Compound_2_Obs	-1.1668	1	1	-4	1
+sd5_Compound_3_Obs	-1.151	1	1	-4	1
+sd5_Compound_4_Obs	-1.1452	1	1	-4	1
+sd5_Compound_5_Obs	-1.1784	1	1	-4	1
+
+// Scale and offset parameters
+scale5_Compound_3_Obs	0	1	1	-5	5
+offset5_Compound_3_Obs	-2	1	1	-4	0
+scale5_Compound_5_Obs	0	1	1	-5	5
+offset5_Compound_5_Obs	-5	1	1	-7	-3

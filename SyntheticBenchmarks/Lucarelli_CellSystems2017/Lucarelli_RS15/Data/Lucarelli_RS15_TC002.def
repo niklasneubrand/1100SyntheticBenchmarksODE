@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS15"
+"Random seed:		0002115000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+TGFb_Obs	C	n/a	conc.	0	0	scale2_TGFb_Obs*(TGFb)
+
+
+ERRORS
+TGFb_Obs	sd2_TGFb_Obs
+
+
+CONDITIONS
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_TGFb_Obs	-1.144	1	1	-4	1
+
+// Scale and offset parameters
+scale2_TGFb_Obs	0	1	1	-5	5

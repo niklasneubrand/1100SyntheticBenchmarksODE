@@ -1,0 +1,44 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS27"
+"Random seed:		0001927000"
+"Data type, index:	dose response, 3"
+
+
+PREDICTOR-DOSERESPONSE epo_level
+time	T	min	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+p1EpoRpJAK2_Obs	C	n/a	conc.	0	0	p1EpoRpJAK2
+SHP1_Obs	C	n/a	conc.	0	0	SHP1
+CISnRNA2_Obs	C	n/a	conc.	0	0	scale8_CISnRNA2_Obs*(CISnRNA2)
+
+
+ERRORS
+p1EpoRpJAK2_Obs	sd9_p1EpoRpJAK2_Obs
+SHP1_Obs	sd6_SHP1_Obs
+CISnRNA2_Obs	sd8_CISnRNA2_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd9_p1EpoRpJAK2_Obs	-2.5094	1	1	-5	0
+sd6_SHP1_Obs	0.21527	1	1	-2	3
+sd8_CISnRNA2_Obs	1.4023	1	1	-1	4
+
+// Scale and offset parameters
+scale8_CISnRNA2_Obs	0	1	1	-5	5

@@ -1,0 +1,41 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS38"
+"Random seed:		0002138000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+geneD_Obs	C	n/a	conc.	0	0	geneD
+geneF_Obs	C	n/a	conc.	0	0	geneF
+geneG_Obs	C	n/a	conc.	0	0	geneG
+
+
+ERRORS
+geneD_Obs	sd1_geneD_Obs
+geneF_Obs	sd2_geneF_Obs
+geneG_Obs	sd1_geneG_Obs
+
+
+CONDITIONS
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_geneD_Obs	0.17237	1	1	-2	3
+sd2_geneF_Obs	0.54618	1	1	-2	3
+sd1_geneG_Obs	0.038677	1	1	-2	3
+
+// Scale and offset parameters

@@ -1,0 +1,75 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS32"
+"Random seed:		0002232000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	pEpoRpJAK2
+npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
+CISHnRNA2_Obs	C	n/a	conc.	0	0	CISHnRNA2
+CISHnRNA4_Obs	C	n/a	conc.	0	0	CISHnRNA4
+SOCS3nRNA1_Obs	C	n/a	conc.	0	0	SOCS3nRNA1
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
+SOCS3RNA_Obs	C	n/a	conc.	0	0	SOCS3RNA
+SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
+
+
+ERRORS
+pEpoRpJAK2_Obs	sd2_pEpoRpJAK2_Obs
+npSTAT5_Obs	sd2_npSTAT5_Obs
+CISHnRNA2_Obs	sd2_CISHnRNA2_Obs
+CISHnRNA4_Obs	sd2_CISHnRNA4_Obs
+SOCS3nRNA1_Obs	sd2_SOCS3nRNA1_Obs
+SOCS3nRNA2_Obs	sd2_SOCS3nRNA2_Obs
+SOCS3RNA_Obs	sd2_SOCS3RNA_Obs
+SOCS3_Obs	sd2_SOCS3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAturn)"
+init_CISHnRNA1	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA2	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA3	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA4	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA5	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_pEpoRpJAK2_Obs	-1.5729	1	1	-4	1
+sd2_npSTAT5_Obs	0.054717	1	1	-2	3
+sd2_CISHnRNA2_Obs	-1.6748	1	1	-4	1
+sd2_CISHnRNA4_Obs	-1.757	1	1	-4	1
+sd2_SOCS3nRNA1_Obs	-2.5272	1	1	-5	0
+sd2_SOCS3nRNA2_Obs	-2.5328	1	1	-5	0
+sd2_SOCS3RNA_Obs	-1.8507	1	1	-4	1
+sd2_SOCS3_Obs	0.22228	1	1	-2	3
+
+// Scale and offset parameters

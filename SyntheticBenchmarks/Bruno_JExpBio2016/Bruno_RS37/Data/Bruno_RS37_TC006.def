@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bruno_JExpBio2016"
+"RS project name:	Bruno_RS37"
+"Random seed:		0000637000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+zea_Obs	C	n/a	conc.	0	1	zea
+
+
+ERRORS
+zea_Obs	sd1_zea_Obs
+
+
+CONDITIONS
+init_b10	"(0)"
+init_bcar	"(0)"
+init_bcry	"(0)"
+init_bio	"(0)"
+init_ohb10	"(0)"
+init_ohbio	"(0)"
+k5	"(k5*szea)"
+kb1	"(0)"
+kb2	"(0)"
+kc1	"(0)"
+kc2	"(0)"
+kc4	"(kc4*szea)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_zea_Obs	-0.80826	1	1	-3	2
+
+// Scale and offset parameters

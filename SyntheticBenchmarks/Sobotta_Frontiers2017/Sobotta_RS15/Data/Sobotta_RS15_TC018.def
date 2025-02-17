@@ -1,0 +1,54 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS15"
+"Random seed:		0001515000"
+"Data type, index:	time course, 18"
+
+
+PREDICTOR
+time	T	min	time	0	220
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT3_Obs	C	n/a	conc.	0	0	scale17_STAT3_Obs*(STAT3)
+nSTAT3_Obs	C	n/a	conc.	0	0	scale17_nSTAT3_Obs*(nSTAT3)
+nSOCS3RNA4_Obs	C	n/a	conc.	0	0	scale17_nSOCS3RNA4_Obs*(nSOCS3RNA4)
+SOCS3RNA_Obs	C	n/a	conc.	0	0	scale18_SOCS3RNA_Obs*(SOCS3RNA)
+SOCS3_Obs	C	n/a	conc.	0	0	scale17_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+STAT3_Obs	sd17_STAT3_Obs
+nSTAT3_Obs	sd17_nSTAT3_Obs
+nSOCS3RNA4_Obs	sd17_nSOCS3RNA4_Obs
+SOCS3RNA_Obs	sd18_SOCS3RNA_Obs
+SOCS3_Obs	sd17_SOCS3_Obs
+
+
+CONDITIONS
+il6_level1	"(30)"
+il6_tStep	"(40)"
+input_il6	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd17_STAT3_Obs	0.46818	1	1	-2	3
+sd17_nSTAT3_Obs	0.86197	1	1	-2	3
+sd17_nSOCS3RNA4_Obs	-1.6096	1	1	-4	1
+sd18_SOCS3RNA_Obs	-3.1487	1	1	-6	-1
+sd17_SOCS3_Obs	-0.3325	1	1	-3	2
+
+// Scale and offset parameters
+scale17_STAT3_Obs	0	1	1	-5	5
+scale17_nSTAT3_Obs	0	1	1	-5	5
+scale17_nSOCS3RNA4_Obs	0	1	1	-5	5
+scale18_SOCS3RNA_Obs	0	1	1	-5	5
+scale17_SOCS3_Obs	0	1	1	-5	5

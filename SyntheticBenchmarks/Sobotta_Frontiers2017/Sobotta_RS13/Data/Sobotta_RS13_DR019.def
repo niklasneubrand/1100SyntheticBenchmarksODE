@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS13"
+"Random seed:		0001513000"
+"Data type, index:	dose response, 19"
+
+
+PREDICTOR-DOSERESPONSE input_stattic
+time	T	min	time	0	22
+
+
+INPUTS
+
+
+OBSERVABLES
+tpSTAT3_Obs	C	n/a	conc.	0	0	scale44_tpSTAT3_Obs*(tpSTAT3)
+
+
+ERRORS
+tpSTAT3_Obs	sd44_tpSTAT3_Obs
+
+
+CONDITIONS
+input_il6	"(60)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd44_tpSTAT3_Obs	0.22209	1	1	-2	3
+
+// Scale and offset parameters
+scale44_tpSTAT3_Obs	0	1	1	-5	5

@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS11"
+"Random seed:		0001511000"
+"Data type, index:	time course, 26"
+
+
+PREDICTOR
+time	T	min	time	0	200
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_6_Obs	C	n/a	conc.	0	1	scale3_Compound_6_Obs*(pJAK1_gp130+STAT3+nSOCS3RNA2)
+Compound_8_Obs	C	n/a	conc.	0	1	offset3_Compound_8_Obs+scale3_Compound_8_Obs*(pJAK1_pgp130+nSOCS3RNA1+nSOCS3RNA5)
+Compound_11_Obs	C	n/a	conc.	0	1	scale3_Compound_11_Obs*(nSTAT3+nSOCS3RNA4+nSOCS3RNA5)
+Compound_12_Obs	C	n/a	conc.	0	1	offset3_Compound_12_Obs+scale3_Compound_12_Obs*(nSOCS3RNA1+nSOCS3RNA2+nSOCS3RNA3)
+
+
+ERRORS
+Compound_6_Obs	sd3_Compound_6_Obs
+Compound_8_Obs	sd3_Compound_8_Obs
+Compound_11_Obs	sd3_Compound_11_Obs
+Compound_12_Obs	sd3_Compound_12_Obs
+
+
+CONDITIONS
+input_il6	"(100)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_Compound_6_Obs	-1.3305	1	1	-4	1
+sd3_Compound_8_Obs	-1.3104	1	1	-4	1
+sd3_Compound_11_Obs	-1.3184	1	1	-4	1
+sd3_Compound_12_Obs	-1.3323	1	1	-4	1
+
+// Scale and offset parameters
+scale3_Compound_6_Obs	0	1	1	-5	5
+scale3_Compound_8_Obs	0	1	1	-5	5
+offset3_Compound_8_Obs	-2	1	1	-4	0
+scale3_Compound_11_Obs	0	1	1	-5	5
+scale3_Compound_12_Obs	0	1	1	-5	5
+offset3_Compound_12_Obs	-2	1	1	-4	0

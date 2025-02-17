@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS04"
+"Random seed:		0002104000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_4_Obs	C	n/a	conc.	0	0	scale2_Compound_4_Obs*(Rec+pS2+ppS2+ppS2_ppS3_S4+geneG)
+Compound_6_Obs	C	n/a	conc.	0	0	Rec+ppS3_S4_S4+geneA+geneI+geneL
+Compound_9_Obs	C	n/a	conc.	0	0	S3+S4+ppS2_ppS2_ppS2+geneF+geneK
+Compound_10_Obs	C	n/a	conc.	0	0	scale2_Compound_10_Obs*(S4+pS2+ppS2_S4_S4+geneA+geneD)
+Compound_11_Obs	C	n/a	conc.	0	0	scale1_Compound_11_Obs*(S4_S4_S4+ppS2+geneA+geneE+geneG)
+
+
+ERRORS
+Compound_4_Obs	sd2_Compound_4_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+Compound_9_Obs	sd1_Compound_9_Obs
+Compound_10_Obs	sd2_Compound_10_Obs
+Compound_11_Obs	sd1_Compound_11_Obs
+
+
+CONDITIONS
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Compound_4_Obs	-0.16555	1	1	-3	2
+sd1_Compound_6_Obs	-0.6904	1	1	-3	2
+sd1_Compound_9_Obs	0.65522	1	1	-2	3
+sd2_Compound_10_Obs	0.5865	1	1	-2	3
+sd1_Compound_11_Obs	-0.39417	1	1	-3	2
+
+// Scale and offset parameters
+scale2_Compound_4_Obs	0	1	1	-5	5
+scale2_Compound_10_Obs	0	1	1	-5	5
+scale1_Compound_11_Obs	0	1	1	-5	5

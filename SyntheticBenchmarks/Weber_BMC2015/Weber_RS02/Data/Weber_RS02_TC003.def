@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Weber_BMC2015"
+"RS project name:	Weber_RS02"
+"Random seed:		0001702000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	h	time	0	33
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	PKD+PI4K3B+CERTERa
+Compound_2_Obs	C	n/a	conc.	0	0	PI4K3B+PI4K3Ba+CERTTGNa
+Compound_3_Obs	C	n/a	conc.	0	0	PI4K3Ba+CERTERa+CERT
+Compound_4_Obs	C	n/a	conc.	0	0	CERTERa+CERT+CERTTGNa
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd2_Compound_2_Obs
+Compound_3_Obs	sd3_Compound_3_Obs
+Compound_4_Obs	sd2_Compound_4_Obs
+
+
+CONDITIONS
+Ect_Expr_CERT_flag	"(1)"
+Ect_Expr_PI4K3beta_flag	"(0)"
+Ect_Expr_PKD_flag	"(0)"
+PdBu_dose	"(0)"
+PdBu_time	"(0)"
+kb_NB142_70_dose	"(10)"
+kb_NB142_70_time	"(24)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	7.3767	1	1	5	10
+sd2_Compound_2_Obs	7.0668	1	1	5	10
+sd3_Compound_3_Obs	7.3998	1	1	5	10
+sd2_Compound_4_Obs	7.5695	1	1	5	10
+
+// Scale and offset parameters

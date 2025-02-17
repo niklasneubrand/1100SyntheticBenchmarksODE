@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS48"
+"Random seed:		0001148000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	290
+
+
+INPUTS
+
+
+OBSERVABLES
+ApoER2_re_Dab1_Obs	C	n/a	conc.	0	0	ApoER2_re_Dab1
+
+
+ERRORS
+ApoER2_re_Dab1_Obs	sd2_ApoER2_re_Dab1_Obs
+
+
+CONDITIONS
+Inh	"(1)"
+Reelin_input	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_ApoER2_re_Dab1_Obs	-0.28647	1	1	-3	2
+
+// Scale and offset parameters

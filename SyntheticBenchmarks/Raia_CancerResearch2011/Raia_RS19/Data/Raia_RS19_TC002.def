@@ -1,0 +1,62 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS19"
+"Random seed:		0001219000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_Obs	C	n/a	conc.	0	0	scale2_Rec_Obs*(Rec)
+JAK2_Obs	C	n/a	conc.	0	0	scale2_JAK2_Obs*(JAK2)
+pJAK2_Obs	C	n/a	conc.	0	0	scale1_pJAK2_Obs*(pJAK2)
+STAT5_Obs	C	n/a	conc.	0	0	scale2_STAT5_Obs*(STAT5)
+pSTAT5_Obs	C	n/a	conc.	0	0	pSTAT5
+SOCS3mRNA_Obs	C	n/a	conc.	0	0	SOCS3mRNA
+IL13_DecoyR_Obs	C	n/a	conc.	0	0	scale1_IL13_DecoyR_Obs*(IL13_DecoyR)
+CD274mRNA_Obs	C	n/a	conc.	0	0	scale1_CD274mRNA_Obs*(CD274mRNA)
+
+
+ERRORS
+Rec_Obs	sd2_Rec_Obs
+JAK2_Obs	sd2_JAK2_Obs
+pJAK2_Obs	sd1_pJAK2_Obs
+STAT5_Obs	sd2_STAT5_Obs
+pSTAT5_Obs	sd1_pSTAT5_Obs
+SOCS3mRNA_Obs	sd2_SOCS3mRNA_Obs
+IL13_DecoyR_Obs	sd1_IL13_DecoyR_Obs
+CD274mRNA_Obs	sd1_CD274mRNA_Obs
+
+
+CONDITIONS
+il13_level	"(20)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Rec_Obs	-0.72853	1	1	-3	2
+sd2_JAK2_Obs	-0.47354	1	1	-3	2
+sd1_pJAK2_Obs	-0.82657	1	1	-3	2
+sd2_STAT5_Obs	1.1049	1	1	-1	4
+sd1_pSTAT5_Obs	1.1285	1	1	-1	4
+sd2_SOCS3mRNA_Obs	2.0295	1	1	0	5
+sd1_IL13_DecoyR_Obs	-1.32	1	1	-4	1
+sd1_CD274mRNA_Obs	1.6448	1	1	-1	4
+
+// Scale and offset parameters
+scale2_Rec_Obs	0	1	1	-5	5
+scale2_JAK2_Obs	0	1	1	-5	5
+scale1_pJAK2_Obs	0	1	1	-5	5
+scale2_STAT5_Obs	0	1	1	-5	5
+scale1_IL13_DecoyR_Obs	0	1	1	-5	5
+scale1_CD274mRNA_Obs	0	1	1	-5	5

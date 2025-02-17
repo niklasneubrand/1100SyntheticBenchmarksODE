@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS15"
+"Random seed:		0001515000"
+"Data type, index:	dose response, 3"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	0
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT3_Obs	C	n/a	conc.	0	0	scale26_STAT3_Obs*(STAT3)
+nSTAT3_Obs	C	n/a	conc.	0	0	scale32_nSTAT3_Obs*(nSTAT3)
+nSOCS3RNA4_Obs	C	n/a	conc.	0	0	scale32_nSOCS3RNA4_Obs*(nSOCS3RNA4)
+SOCS3RNA_Obs	C	n/a	conc.	0	0	scale26_SOCS3RNA_Obs*(SOCS3RNA)
+SOCS3_Obs	C	n/a	conc.	0	0	scale25_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+STAT3_Obs	sd26_STAT3_Obs
+nSTAT3_Obs	sd32_nSTAT3_Obs
+nSOCS3RNA4_Obs	sd32_nSOCS3RNA4_Obs
+SOCS3RNA_Obs	sd26_SOCS3RNA_Obs
+SOCS3_Obs	sd25_SOCS3_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd26_STAT3_Obs	0.50045	1	1	-2	3
+sd32_nSTAT3_Obs	0.69364	1	1	-2	3
+sd32_nSOCS3RNA4_Obs	-2.8507	1	1	-5	0
+sd26_SOCS3RNA_Obs	-4.341	1	1	-7	-2
+sd25_SOCS3_Obs	-1.5712	1	1	-4	1
+
+// Scale and offset parameters
+scale26_STAT3_Obs	0	1	1	-5	5
+scale32_nSTAT3_Obs	0	1	1	-5	5
+scale32_nSOCS3RNA4_Obs	0	1	1	-5	5
+scale26_SOCS3RNA_Obs	0	1	1	-5	5
+scale25_SOCS3_Obs	0	1	1	-5	5

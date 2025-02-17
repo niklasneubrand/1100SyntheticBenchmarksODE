@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS17"
+"Random seed:		0001217000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_i_Obs	C	n/a	conc.	0	0	Rec_i
+
+
+ERRORS
+Rec_i_Obs	sd2_Rec_i_Obs
+
+
+CONDITIONS
+il13_level	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Rec_i_Obs	1.4012	1	1	-1	4
+
+// Scale and offset parameters

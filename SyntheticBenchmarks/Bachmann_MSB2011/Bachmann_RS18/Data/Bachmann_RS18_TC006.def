@@ -1,0 +1,82 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS18"
+"Random seed:		0001918000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	1	offset5_EpoRJAK2_Obs+scale5_EpoRJAK2_Obs*(EpoRJAK2)
+p1EpoRpJAK2_Obs	C	n/a	conc.	0	1	offset6_p1EpoRpJAK2_Obs+scale6_p1EpoRpJAK2_Obs*(p1EpoRpJAK2)
+SHP1Act_Obs	C	n/a	conc.	0	1	offset5_SHP1Act_Obs+scale5_SHP1Act_Obs*(SHP1Act)
+CISnRNA2_Obs	C	n/a	conc.	0	1	offset5_CISnRNA2_Obs+scale5_CISnRNA2_Obs*(CISnRNA2)
+CIS_Obs	C	n/a	conc.	0	1	offset5_CIS_Obs+scale5_CIS_Obs*(CIS)
+SOCS3nRNA1_Obs	C	n/a	conc.	0	1	offset5_SOCS3nRNA1_Obs+scale5_SOCS3nRNA1_Obs*(SOCS3nRNA1)
+SOCS3nRNA4_Obs	C	n/a	conc.	0	1	offset6_SOCS3nRNA4_Obs+scale6_SOCS3nRNA4_Obs*(SOCS3nRNA4)
+SOCS3nRNA5_Obs	C	n/a	conc.	0	1	SOCS3nRNA5
+SOCS3RNA_Obs	C	n/a	conc.	0	1	offset5_SOCS3RNA_Obs+scale5_SOCS3RNA_Obs*(SOCS3RNA)
+npSTAT5_Obs	C	n/a	conc.	0	1	npSTAT5
+
+
+ERRORS
+EpoRJAK2_Obs	sd5_EpoRJAK2_Obs
+p1EpoRpJAK2_Obs	sd6_p1EpoRpJAK2_Obs
+SHP1Act_Obs	sd5_SHP1Act_Obs
+CISnRNA2_Obs	sd5_CISnRNA2_Obs
+CIS_Obs	sd5_CIS_Obs
+SOCS3nRNA1_Obs	sd5_SOCS3nRNA1_Obs
+SOCS3nRNA4_Obs	sd6_SOCS3nRNA4_Obs
+SOCS3nRNA5_Obs	sd4_SOCS3nRNA5_Obs
+SOCS3RNA_Obs	sd5_SOCS3RNA_Obs
+npSTAT5_Obs	sd2_npSTAT5_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_EpoRJAK2_Obs	-1.1578	1	1	-4	1
+sd6_p1EpoRpJAK2_Obs	-1.1434	1	1	-4	1
+sd5_SHP1Act_Obs	-1.1605	1	1	-4	1
+sd5_CISnRNA2_Obs	-1.1455	1	1	-4	1
+sd5_CIS_Obs	-1.1534	1	1	-4	1
+sd5_SOCS3nRNA1_Obs	-1.1355	1	1	-4	1
+sd6_SOCS3nRNA4_Obs	-1.1504	1	1	-4	1
+sd4_SOCS3nRNA5_Obs	-1.113	1	1	-4	1
+sd5_SOCS3RNA_Obs	-1.1496	1	1	-4	1
+sd2_npSTAT5_Obs	-1.1584	1	1	-4	1
+
+// Scale and offset parameters
+scale5_EpoRJAK2_Obs	0	1	1	-5	5
+offset5_EpoRJAK2_Obs	-2	1	1	-4	0
+scale6_p1EpoRpJAK2_Obs	0	1	1	-5	5
+offset6_p1EpoRpJAK2_Obs	-4	1	1	-6	-2
+scale5_SHP1Act_Obs	0	1	1	-5	5
+offset5_SHP1Act_Obs	-3	1	1	-5	-1
+scale5_CISnRNA2_Obs	0	1	1	-5	5
+offset5_CISnRNA2_Obs	1	1	1	-1	3
+scale5_CIS_Obs	0	1	1	-5	5
+offset5_CIS_Obs	-1	1	1	-3	1
+scale5_SOCS3nRNA1_Obs	0	1	1	-5	5
+offset5_SOCS3nRNA1_Obs	-5	1	1	-7	-3
+scale6_SOCS3nRNA4_Obs	0	1	1	-5	5
+offset6_SOCS3nRNA4_Obs	-5	1	1	-7	-3
+scale5_SOCS3RNA_Obs	0	1	1	-5	5
+offset5_SOCS3RNA_Obs	-4	1	1	-6	-2

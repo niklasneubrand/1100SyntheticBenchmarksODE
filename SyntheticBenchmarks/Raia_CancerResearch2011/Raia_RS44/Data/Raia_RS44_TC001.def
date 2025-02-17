@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS44"
+"Random seed:		0001244000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_Obs	C	n/a	conc.	0	0	scale1_Rec_Obs*(Rec)
+Rec_i_Obs	C	n/a	conc.	0	0	scale1_Rec_i_Obs*(Rec_i)
+Compound_1_Obs	C	n/a	conc.	0	0	scale1_Compound_1_Obs*(Rec+SOCS3mRNA+CD274mRNA)
+Compound_2_Obs	C	n/a	conc.	0	0	scale1_Compound_2_Obs*(Rec_i+IL13_Rec+CD274mRNA)
+Compound_9_Obs	C	n/a	conc.	0	0	p_IL13_Rec+pSTAT5+SOCS3mRNA
+
+
+ERRORS
+Rec_Obs	sd1_Rec_Obs
+Rec_i_Obs	sd1_Rec_i_Obs
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_9_Obs	sd1_Compound_9_Obs
+
+
+CONDITIONS
+il13_level	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Rec_Obs	-0.82414	1	1	-3	2
+sd1_Rec_i_Obs	1.3995	1	1	-1	4
+sd1_Compound_1_Obs	-0.84237	1	1	-3	2
+sd1_Compound_2_Obs	1.4014	1	1	-1	4
+sd1_Compound_9_Obs	-0.95724	1	1	-3	2
+
+// Scale and offset parameters
+scale1_Rec_Obs	0	1	1	-5	5
+scale1_Rec_i_Obs	0	1	1	-5	5
+scale1_Compound_1_Obs	0	1	1	-5	5
+scale1_Compound_2_Obs	0	1	1	-5	5

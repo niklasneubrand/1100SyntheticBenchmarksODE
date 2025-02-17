@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS40"
+"Random seed:		0001540000"
+"Data type, index:	dose response, 17"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	66
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_2_Obs	C	n/a	conc.	0	0	JAK1_gp130+STAT3+nSOCS3RNA2+nSOCS3RNA3+nSOCS3RNA4
+
+
+ERRORS
+Compound_2_Obs	sd12_Compound_2_Obs
+
+
+CONDITIONS
+input_stattic	"(40)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd12_Compound_2_Obs	0.72586	1	1	-2	3
+
+// Scale and offset parameters

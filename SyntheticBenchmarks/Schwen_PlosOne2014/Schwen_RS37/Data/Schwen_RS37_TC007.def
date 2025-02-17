@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Schwen_PlosOne2014"
+"RS project name:	Schwen_RS37"
+"Random seed:		0001337000"
+"Data type, index:	time course, 7"
+
+
+PREDICTOR
+time	T	n/a	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	Ins+IR1in+BoundUnspec
+Compound_2_Obs	C	n/a	conc.	0	0	Ins+Uptake1+BoundUnspec
+Compound_3_Obs	C	n/a	conc.	0	0	scale3_Compound_3_Obs*(Rec1+IR1in+IR2in)
+Compound_4_Obs	C	n/a	conc.	0	0	scale3_Compound_4_Obs*(Rec1+IR1in+BoundUnspec)
+
+
+ERRORS
+Compound_1_Obs	sd4_Compound_1_Obs
+Compound_2_Obs	sd3_Compound_2_Obs
+Compound_3_Obs	sd3_Compound_3_Obs
+Compound_4_Obs	sd3_Compound_4_Obs
+
+
+CONDITIONS
+init_Ins	"(10000)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_Compound_1_Obs	2.6482	1	1	0	5
+sd3_Compound_2_Obs	2.6822	1	1	0	5
+sd3_Compound_3_Obs	1.7246	1	1	-1	4
+sd3_Compound_4_Obs	2.505	1	1	0	5
+
+// Scale and offset parameters
+scale3_Compound_3_Obs	0	1	1	-5	5
+scale3_Compound_4_Obs	0	1	1	-5	5

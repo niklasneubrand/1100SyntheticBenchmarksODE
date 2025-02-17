@@ -1,0 +1,34 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Swameye_PNAS2003"
+"RS project name:	Swameye_RS32"
+"Random seed:		0001632000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	88
+
+
+INPUTS
+
+
+OBSERVABLES
+nSTAT2_Obs	C	n/a	conc.	0	0	nSTAT2
+
+
+ERRORS
+nSTAT2_Obs	sd1_nSTAT2_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_nSTAT2_Obs	-1.7852	1	1	-4	1
+
+// Scale and offset parameters

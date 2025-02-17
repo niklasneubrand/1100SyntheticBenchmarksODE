@@ -1,0 +1,55 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS03"
+"Random seed:		0001903000"
+"Data type, index:	time course, 7"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+SHP1Act_Obs	C	n/a	conc.	0	0	scale7_SHP1Act_Obs*(SHP1Act)
+CISnRNA2_Obs	C	n/a	conc.	0	0	scale5_CISnRNA2_Obs*(CISnRNA2)
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
+SOCS3nRNA5_Obs	C	n/a	conc.	0	0	scale5_SOCS3nRNA5_Obs*(SOCS3nRNA5)
+Compound_2_Obs	C	n/a	conc.	0	0	scale2_Compound_2_Obs*(EpoRJAK2_CIS+STAT5+CISRNA)
+
+
+ERRORS
+SHP1Act_Obs	sd7_SHP1Act_Obs
+CISnRNA2_Obs	sd5_CISnRNA2_Obs
+SOCS3nRNA2_Obs	sd5_SOCS3nRNA2_Obs
+SOCS3nRNA5_Obs	sd5_SOCS3nRNA5_Obs
+Compound_2_Obs	sd2_Compound_2_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(1)"
+epo_level	"(1.25e-7)"
+init_SOCS3	"(1 * SOCS3EqcOE * SOCS3Eqc)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd7_SHP1Act_Obs	-2.29	1	1	-5	0
+sd5_CISnRNA2_Obs	0.38326	1	1	-2	3
+sd5_SOCS3nRNA2_Obs	-5.0228	1	1	-8	-3
+sd5_SOCS3nRNA5_Obs	-5.0192	1	1	-8	-3
+sd2_Compound_2_Obs	0.84892	1	1	-2	3
+
+// Scale and offset parameters
+scale7_SHP1Act_Obs	0	1	1	-5	5
+scale5_CISnRNA2_Obs	0	1	1	-5	5
+scale5_SOCS3nRNA5_Obs	0	1	1	-5	5
+scale2_Compound_2_Obs	0	1	1	-5	5

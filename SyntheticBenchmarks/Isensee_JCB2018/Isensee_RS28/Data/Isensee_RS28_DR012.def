@@ -1,0 +1,72 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Isensee_JCB2018"
+"RS project name:	Isensee_RS28"
+"Random seed:		0002028000"
+"Data type, index:	dose response, 12"
+
+
+PREDICTOR-DOSERESPONSE Rp_cAMPS_pAB_level
+time	T	min	time	0	39
+
+
+INPUTS
+
+
+OBSERVABLES
+AC_Fsk_Obs	C	n/a	conc.	0	0	AC_Fsk
+RIIp_C_2_Obs	C	n/a	conc.	0	0	RIIp_C_2
+RIIp_cAMP_2_Obs	C	n/a	conc.	0	0	RIIp_cAMP_2
+Rp_cAMPS_Obs	C	n/a	conc.	0	0	Rp_cAMPS
+RIIp_cAMP_C_2_Obs	C	n/a	conc.	0	0	RIIp_cAMP_C_2
+RII_2_Obs	C	n/a	conc.	0	0	RII_2
+RIIp_2_Obs	C	n/a	conc.	0	0	RIIp_2
+Csub_Obs	C	n/a	conc.	0	0	Csub
+
+
+ERRORS
+AC_Fsk_Obs	sd22_AC_Fsk_Obs
+RIIp_C_2_Obs	sd25_RIIp_C_2_Obs
+RIIp_cAMP_2_Obs	sd26_RIIp_cAMP_2_Obs
+Rp_cAMPS_Obs	sd6_Rp_cAMPS_Obs
+RIIp_cAMP_C_2_Obs	sd22_RIIp_cAMP_C_2_Obs
+RII_2_Obs	sd21_RII_2_Obs
+RIIp_2_Obs	sd20_RIIp_2_Obs
+Csub_Obs	sd11_Csub_Obs
+
+
+CONDITIONS
+DMSO_level	"(0)"
+DMSO_time	"(0)"
+Fsk_level	"(0)"
+Fsk_time	"(0)"
+H89_level	"(0)"
+H89_time	"(0)"
+IBMX_level	"(0)"
+IBMX_time	"(0)"
+Rp8_Br_cAMPS_pAB_level	"(0)"
+Rp8_Br_cAMPS_pAB_time	"(0)"
+Rp8_pCPT_cAMPS_pAB_level	"(0)"
+Rp8_pCPT_cAMPS_pAB_time	"(0)"
+Rp_cAMPS_pAB_time	"(0)"
+Sp8_Br_cAMPS_AM_level	"(0)"
+Sp8_Br_cAMPS_AM_time	"(0)"
+fourABnOH_level	"(0)"
+fourABnOH_time	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd22_AC_Fsk_Obs	-0.98262	1	1	-3	2
+sd25_RIIp_C_2_Obs	-1.7511	1	1	-4	1
+sd26_RIIp_cAMP_2_Obs	-4.537	1	1	-7	-2
+sd6_Rp_cAMPS_Obs	-0.38447	1	1	-3	2
+sd22_RIIp_cAMP_C_2_Obs	-3.3335	1	1	-6	-1
+sd21_RII_2_Obs	-2.2146	1	1	-5	0
+sd20_RIIp_2_Obs	-2.1573	1	1	-5	0
+sd11_Csub_Obs	-1.9096	1	1	-4	1
+
+// Scale and offset parameters

@@ -1,0 +1,66 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS14"
+"Random seed:		0001914000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	436
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	scale1_Compound_1_Obs*(p1EpoRpJAK2+EpoRJAK2_CIS)
+Compound_2_Obs	C	n/a	conc.	0	0	scale1_Compound_2_Obs*(SHP1+STAT5)
+Compound_3_Obs	C	n/a	conc.	0	0	scale1_Compound_3_Obs*(SHP1Act+SOCS3nRNA3)
+Compound_4_Obs	C	n/a	conc.	0	0	CISnRNA1+SOCS3nRNA5
+Compound_5_Obs	C	n/a	conc.	0	0	scale1_Compound_5_Obs*(CISnRNA2+SOCS3nRNA1)
+Compound_6_Obs	C	n/a	conc.	0	0	scale1_Compound_6_Obs*(CISnRNA3+CISRNA)
+Compound_7_Obs	C	n/a	conc.	0	0	scale1_Compound_7_Obs*(CISnRNA4+SOCS3nRNA1)
+Compound_8_Obs	C	n/a	conc.	0	0	scale1_Compound_8_Obs*(SOCS3nRNA4+SOCS3)
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd1_Compound_2_Obs
+Compound_3_Obs	sd1_Compound_3_Obs
+Compound_4_Obs	sd1_Compound_4_Obs
+Compound_5_Obs	sd1_Compound_5_Obs
+Compound_6_Obs	sd1_Compound_6_Obs
+Compound_7_Obs	sd1_Compound_7_Obs
+Compound_8_Obs	sd1_Compound_8_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-2.9029	1	1	-5	0
+sd1_Compound_2_Obs	1.1356	1	1	-1	4
+sd1_Compound_3_Obs	-1.5108	1	1	-4	1
+sd1_Compound_4_Obs	1.7166	1	1	-1	4
+sd1_Compound_5_Obs	1.7249	1	1	-1	4
+sd1_Compound_6_Obs	1.6589	1	1	-1	4
+sd1_Compound_7_Obs	1.6457	1	1	-1	4
+sd1_Compound_8_Obs	-0.30362	1	1	-3	2
+
+// Scale and offset parameters
+scale1_Compound_1_Obs	0	1	1	-5	5
+scale1_Compound_2_Obs	0	1	1	-5	5
+scale1_Compound_3_Obs	0	1	1	-5	5
+scale1_Compound_5_Obs	0	1	1	-5	5
+scale1_Compound_6_Obs	0	1	1	-5	5
+scale1_Compound_7_Obs	0	1	1	-5	5
+scale1_Compound_8_Obs	0	1	1	-5	5

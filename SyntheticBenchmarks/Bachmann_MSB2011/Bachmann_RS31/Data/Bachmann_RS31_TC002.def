@@ -1,0 +1,60 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS31"
+"Random seed:		0001931000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	1	offset2_EpoRJAK2_Obs+scale2_EpoRJAK2_Obs*(EpoRJAK2)
+EpoRpJAK2_Obs	C	n/a	conc.	0	1	offset2_EpoRpJAK2_Obs+scale2_EpoRpJAK2_Obs*(EpoRpJAK2)
+p1EpoRpJAK2_Obs	C	n/a	conc.	0	1	offset2_p1EpoRpJAK2_Obs+scale2_p1EpoRpJAK2_Obs*(p1EpoRpJAK2)
+SHP1_Obs	C	n/a	conc.	0	1	SHP1
+SHP1Act_Obs	C	n/a	conc.	0	1	scale2_SHP1Act_Obs*(SHP1Act)
+pSTAT5_Obs	C	n/a	conc.	0	1	pSTAT5
+
+
+ERRORS
+EpoRJAK2_Obs	sd2_EpoRJAK2_Obs
+EpoRpJAK2_Obs	sd2_EpoRpJAK2_Obs
+p1EpoRpJAK2_Obs	sd2_p1EpoRpJAK2_Obs
+SHP1_Obs	sd2_SHP1_Obs
+SHP1Act_Obs	sd2_SHP1Act_Obs
+pSTAT5_Obs	sd2_pSTAT5_Obs
+
+
+CONDITIONS
+ActD	"(1)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_EpoRJAK2_Obs	-1.3958	1	1	-4	1
+sd2_EpoRpJAK2_Obs	-1.3783	1	1	-4	1
+sd2_p1EpoRpJAK2_Obs	-1.3665	1	1	-4	1
+sd2_SHP1_Obs	-1.348	1	1	-4	1
+sd2_SHP1Act_Obs	-1.3774	1	1	-4	1
+sd2_pSTAT5_Obs	-1.3892	1	1	-4	1
+
+// Scale and offset parameters
+scale2_EpoRJAK2_Obs	0	1	1	-5	5
+offset2_EpoRJAK2_Obs	-2	1	1	-4	0
+scale2_EpoRpJAK2_Obs	0	1	1	-5	5
+offset2_EpoRpJAK2_Obs	-4	1	1	-6	-2
+scale2_p1EpoRpJAK2_Obs	0	1	1	-5	5
+offset2_p1EpoRpJAK2_Obs	-5	1	1	-7	-3
+scale2_SHP1Act_Obs	0	1	1	-5	5

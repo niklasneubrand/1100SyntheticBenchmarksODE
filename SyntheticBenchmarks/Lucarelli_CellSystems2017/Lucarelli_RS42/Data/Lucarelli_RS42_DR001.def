@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS42"
+"Random seed:		0002142000"
+"Data type, index:	dose response, 1"
+
+
+PREDICTOR-DOSERESPONSE init_TGFb
+time	T	min	time	0	66
+
+
+INPUTS
+
+
+OBSERVABLES
+TGFb_pRec_Obs	C	n/a	conc.	0	1	scale3_TGFb_pRec_Obs*(TGFb_pRec)
+
+
+ERRORS
+TGFb_pRec_Obs	sd3_TGFb_pRec_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_TGFb_pRec_Obs	-1.3561	1	1	-4	1
+
+// Scale and offset parameters
+scale3_TGFb_pRec_Obs	0	1	1	-5	5

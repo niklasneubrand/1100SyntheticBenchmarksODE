@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Schwen_PlosOne2014"
+"RS project name:	Schwen_RS48"
+"Random seed:		0001348000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	n/a	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+BoundUnspec_Obs	C	n/a	conc.	0	0	BoundUnspec
+
+
+ERRORS
+BoundUnspec_Obs	sd2_BoundUnspec_Obs
+
+
+CONDITIONS
+init_Ins	"(0.1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_BoundUnspec_Obs	-2.1321	1	1	-5	0
+
+// Scale and offset parameters

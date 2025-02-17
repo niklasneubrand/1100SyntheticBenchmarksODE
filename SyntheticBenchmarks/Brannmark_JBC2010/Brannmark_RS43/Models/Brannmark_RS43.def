@@ -1,0 +1,88 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Brannmark_JBC2010"
+"RS project name:	Brannmark_RS43"
+"Random seed:		0000543000."
+
+"Original description:"
+
+
+PREDICTOR
+t               T   min       time	0	10
+
+
+COMPARTMENTS
+cyt             V   pl          vol.    1
+
+
+STATES
+IR      C   nM      conc.   cyt     1    "IR"
+IRins   C   nM      conc.   cyt     1    "IRins"
+IRp     C   nM      conc.   cyt     1    "IRp"
+IRiP    C   nM      conc.   cyt     1    "IRiP"
+IRi     C   nM      conc.   cyt     1    "IRi"
+IRS     C   nM      conc.   cyt     1    "IRS"
+IRSiP   C   nM      conc.   cyt     1    "IRSiP"
+XX      C   nM      conc.   cyt     1    "X"
+XXp     C   nM      conc.   cyt     1    "Xp"
+
+
+INPUTS
+insulin    C  nM  conc.  "step1(t,0,insulin_time_1,insulin_dose_1)+step1(t,0,insulin_time_2,insulin_dose_2)"
+
+
+REACTIONS
+IR    -> IRins       CUSTOM    "k1a*insulin*IR+k1aBasic*IR"
+IRins -> IR          CUSTOM    "k1b*IRins"
+IRins -> IRp         CUSTOM    "k1c*IRins"
+IRp   -> IRiP        CUSTOM    "k1d*IRp"
+IRiP  -> IRi         CUSTOM    "(k1e+k1f*XXp/(1+XXp))*IRiP"
+IRp   -> IR          CUSTOM    "k1g*IRp"
+IRi   -> IR          CUSTOM    "k1r*IRi"
+IRS   -> IRSiP       CUSTOM    "k21*(IRp+k22*IRiP)*IRS"
+IRSiP -> IRS         CUSTOM    "km2*IRSiP"
+XX    -> XXp         CUSTOM    "k3*XX*IRSiP"
+XXp   -> XX          CUSTOM    "km3*XXp"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+init_IR	"(10)"
+init_IRS	"(10)"
+init_IRSiP	"(0)"
+init_IRi	"(0)"
+init_IRiP	"(0)"
+init_IRins	"(0)"
+init_IRp	"(0)"
+init_XX	"(10)"
+init_XXp	"(0)"
+
+
+PARAMETERS
+k1a	-1	1	1	-4	2
+k1aBasic	-3.5	1	1	-7	0
+k1b	-0.727	1	1	-4	3
+k1c	-1.01	1	1	-5	2
+k1d	5.75	1	1	2	9
+k1e	-6.13	1	1	-10	-3
+k1f	5.7	1	1	2	9
+k1g	3.2	1	1	0	7
+k1r	-1.43	1	1	-5	2
+k21	0.101	1	1	-3	4
+k22	2.87	1	1	-1	6
+k3	-4.16	1	1	-8	-1
+km2	0.0712	1	1	-3	4
+km3	-0.425	1	1	-4	3
+
+

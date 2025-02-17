@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Elowitz_Nature2000"
+"RS project name:	Elowitz_RS41"
+"Random seed:		0000841000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+X_protein_Obs	C	n/a	conc.	0	0	X_protein
+Y_protein_Obs	C	n/a	conc.	0	0	Y_protein
+GFP_Obs	C	n/a	conc.	0	0	GFP
+Z_mRNA_Obs	C	n/a	conc.	0	0	Z_mRNA
+GFP_mRNA_Obs	C	n/a	conc.	0	0	GFP_mRNA
+
+
+ERRORS
+X_protein_Obs	sd1_X_protein_Obs
+Y_protein_Obs	sd1_Y_protein_Obs
+GFP_Obs	sd1_GFP_Obs
+Z_mRNA_Obs	sd1_Z_mRNA_Obs
+GFP_mRNA_Obs	sd1_GFP_mRNA_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_X_protein_Obs	2.1417	1	1	0	5
+sd1_Y_protein_Obs	2.4316	1	1	0	5
+sd1_GFP_Obs	1.001	1	1	-1	4
+sd1_Z_mRNA_Obs	1.0285	1	1	-1	4
+sd1_GFP_mRNA_Obs	-6.8915	1	1	-9	-4
+
+// Scale and offset parameters

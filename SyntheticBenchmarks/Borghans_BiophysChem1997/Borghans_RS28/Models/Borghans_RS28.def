@@ -1,0 +1,79 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Borghans_BiophysChem1997"
+"RS project name:	Borghans_RS28"
+"Random seed:		0000428000."
+
+"Original description:"
+
+"Borghans1997 - Calcium Oscillation - Model 3"
+
+
+PREDICTOR
+t	 T	 "n/a"	 time	 0	 10
+
+
+COMPARTMENTS
+extracellular	 V	 "n/a"	 vol.	 1
+cytosol	 V	 "n/a"	 vol.	 1
+intravesicular	 V	 "n/a"	 vol.	 1
+
+
+STATES
+Z_state	 C	 "n/a"	 conc.	 cytosol	 1	 "Ca^{2+} in cytosol"
+Y_state	 C	 "n/a"	 conc.	 intravesicular	 1	 "Ca^{2+} in Ca^{2+}-sensitive pool"
+A_state	 C	 "n/a"	 conc.	 cytosol	 1	 "IP_3 concentration"
+
+
+INPUTS
+
+
+REACTIONS
+-> Z_state 	 CUSTOM "v0+v1*beta_par"
+Z_state 	-> Y_state 	 CUSTOM "Vm2*Z_state^2/(K2^2+Z_state^2)"
+Y_state 	-> Z_state 	 CUSTOM "Vm3*A_state^4*Y_state^2*Z_state^4/((Ka^4+A_state^4)*(Ky^2+Y_state^2)*(Kz^4+Z_state^4))"
+Y_state 	-> Z_state 	 CUSTOM "Kf*Y_state"
+Z_state 	->  	 CUSTOM "K_par*Z_state"
+ 	-> A_state 	 CUSTOM "beta_par*Vp"
+A_state 	->  	 CUSTOM "Vd*A_state^2*Z_state^n_par/((Kp^2+A_state^2)*(Kd^n_par+Z_state^n_par))"
+A_state 	->  	 CUSTOM "epsilon_par*A_state"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+
+
+PARAMETERS
+K2	-1.18	1	1	-5	2
+K_par	0.78	1	1	-3	4
+Ka	-0.886	1	1	-4	3
+Kd	-0.238	1	1	-4	3
+Kf	0.105	1	1	-3	4
+Kp	0.0986	1	1	-3	4
+Ky	-0.997	1	1	-4	3
+Kz	-0.489	1	1	-4	3
+Vd	2.03	1	1	-1	6
+Vm2	0.598	1	1	-3	4
+Vm3	1.09	1	1	-2	5
+Vp	0.443	1	1	-3	4
+beta_par	0.22	1	1	-3	4
+epsilon_par	-1.08	1	1	-5	2
+init_A_state	1.47	1	0	0	1470
+init_Y_state	0.692	1	0	0	692
+init_Z_state	0.063	1	0	0	63
+n_par	0.726	1	1	-3	4
+v0	0.594	1	1	-3	4
+v1	-0.0621	1	1	-4	3
+
+

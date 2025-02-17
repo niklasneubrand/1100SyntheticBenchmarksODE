@@ -1,0 +1,41 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS45"
+"Random seed:		0001245000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+p_IL13_Rec_Obs	C	n/a	conc.	0	0	p_IL13_Rec
+SOCS3mRNA_Obs	C	n/a	conc.	0	0	SOCS3mRNA
+IL13_DecoyR_Obs	C	n/a	conc.	0	0	IL13_DecoyR
+
+
+ERRORS
+p_IL13_Rec_Obs	sd4_p_IL13_Rec_Obs
+SOCS3mRNA_Obs	sd3_SOCS3mRNA_Obs
+IL13_DecoyR_Obs	sd4_IL13_DecoyR_Obs
+
+
+CONDITIONS
+il13_level	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_p_IL13_Rec_Obs	-2.9249	1	1	-5	0
+sd3_SOCS3mRNA_Obs	0.87394	1	1	-2	3
+sd4_IL13_DecoyR_Obs	-2.4152	1	1	-5	0
+
+// Scale and offset parameters

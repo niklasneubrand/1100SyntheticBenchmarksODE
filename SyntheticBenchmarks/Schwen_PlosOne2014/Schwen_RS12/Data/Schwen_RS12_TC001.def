@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Schwen_PlosOne2014"
+"RS project name:	Schwen_RS12"
+"Random seed:		0001312000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+Uptake1_Obs	C	n/a	conc.	0	1	Uptake1
+
+
+ERRORS
+Uptake1_Obs	sd1_Uptake1_Obs
+
+
+CONDITIONS
+init_Ins	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Uptake1_Obs	-1.2198	1	1	-4	1
+
+// Scale and offset parameters

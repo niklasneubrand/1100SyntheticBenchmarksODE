@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS45"
+"Random seed:		0001545000"
+"Data type, index:	dose response, 12"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	397
+
+
+INPUTS
+
+
+OBSERVABLES
+nSOCS3RNA5_Obs	C	n/a	conc.	0	1	nSOCS3RNA5
+
+
+ERRORS
+nSOCS3RNA5_Obs	sd9_nSOCS3RNA5_Obs
+
+
+CONDITIONS
+input_ruxolitinib	"(500)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd9_nSOCS3RNA5_Obs	-1.3798	1	1	-4	1
+
+// Scale and offset parameters

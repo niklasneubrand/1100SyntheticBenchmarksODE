@@ -1,0 +1,86 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS12"
+"Random seed:		0002212000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	436
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT5_Obs	C	n/a	conc.	0	0	scale1_STAT5_Obs*(STAT5)
+pSTAT5_Obs	C	n/a	conc.	0	0	scale1_pSTAT5_Obs*(pSTAT5)
+nSTAT5_Obs	C	n/a	conc.	0	0	scale1_nSTAT5_Obs*(nSTAT5)
+CISHnRNA2_Obs	C	n/a	conc.	0	0	CISHnRNA2
+CISHnRNA3_Obs	C	n/a	conc.	0	0	scale1_CISHnRNA3_Obs*(CISHnRNA3)
+CISHnRNA4_Obs	C	n/a	conc.	0	0	scale1_CISHnRNA4_Obs*(CISHnRNA4)
+CIS_Obs	C	n/a	conc.	0	0	scale1_CIS_Obs*(CIS)
+SOCS3nRNA1_Obs	C	n/a	conc.	0	0	SOCS3nRNA1
+SOCS3nRNA4_Obs	C	n/a	conc.	0	0	SOCS3nRNA4
+SOCS3nRNA5_Obs	C	n/a	conc.	0	0	SOCS3nRNA5
+SOCS3_Obs	C	n/a	conc.	0	0	scale1_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+STAT5_Obs	sd1_STAT5_Obs
+pSTAT5_Obs	sd1_pSTAT5_Obs
+nSTAT5_Obs	sd1_nSTAT5_Obs
+CISHnRNA2_Obs	sd1_CISHnRNA2_Obs
+CISHnRNA3_Obs	sd1_CISHnRNA3_Obs
+CISHnRNA4_Obs	sd1_CISHnRNA4_Obs
+CIS_Obs	sd1_CIS_Obs
+SOCS3nRNA1_Obs	sd1_SOCS3nRNA1_Obs
+SOCS3nRNA4_Obs	sd1_SOCS3nRNA4_Obs
+SOCS3nRNA5_Obs	sd1_SOCS3nRNA5_Obs
+SOCS3_Obs	sd1_SOCS3_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_STAT5_Obs	0.6653	1	1	-2	3
+sd1_pSTAT5_Obs	0.38906	1	1	-2	3
+sd1_nSTAT5_Obs	-0.066425	1	1	-3	2
+sd1_CISHnRNA2_Obs	-2.2197	1	1	-5	0
+sd1_CISHnRNA3_Obs	-2.2164	1	1	-5	0
+sd1_CISHnRNA4_Obs	-2.2104	1	1	-5	0
+sd1_CIS_Obs	0.14761	1	1	-2	3
+sd1_SOCS3nRNA1_Obs	-2.0923	1	1	-5	0
+sd1_SOCS3nRNA4_Obs	-2.0975	1	1	-5	0
+sd1_SOCS3nRNA5_Obs	-2.1438	1	1	-5	0
+sd1_SOCS3_Obs	0.022998	1	1	-2	3
+
+// Scale and offset parameters
+scale1_STAT5_Obs	0	1	1	-5	5
+scale1_pSTAT5_Obs	0	1	1	-5	5
+scale1_nSTAT5_Obs	0	1	1	-5	5
+scale1_CISHnRNA3_Obs	0	1	1	-5	5
+scale1_CISHnRNA4_Obs	0	1	1	-5	5
+scale1_CIS_Obs	0	1	1	-5	5
+scale1_SOCS3_Obs	0	1	1	-5	5

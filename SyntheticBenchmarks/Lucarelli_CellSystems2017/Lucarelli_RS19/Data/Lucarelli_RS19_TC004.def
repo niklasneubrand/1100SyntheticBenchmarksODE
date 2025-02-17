@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS19"
+"Random seed:		0002119000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+S2_Obs	C	n/a	conc.	0	1	S2
+ppS3_Obs	C	n/a	conc.	0	1	offset2_ppS3_Obs+scale2_ppS3_Obs*(ppS3)
+ppS2_ppS3_ppS3_Obs	C	n/a	conc.	0	1	ppS2_ppS3_ppS3
+geneI_Obs	C	n/a	conc.	0	1	offset3_geneI_Obs+scale3_geneI_Obs*(geneI)
+
+
+ERRORS
+S2_Obs	sd2_S2_Obs
+ppS3_Obs	sd2_ppS3_Obs
+ppS2_ppS3_ppS3_Obs	sd2_ppS2_ppS3_ppS3_Obs
+geneI_Obs	sd3_geneI_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(14.234)"
+init_S4	"(69.47)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_S2_Obs	-0.95319	1	1	-3	2
+sd2_ppS3_Obs	-0.95959	1	1	-3	2
+sd2_ppS2_ppS3_ppS3_Obs	-0.9659	1	1	-3	2
+sd3_geneI_Obs	-0.96345	1	1	-3	2
+
+// Scale and offset parameters
+scale2_ppS3_Obs	0	1	1	-5	5
+offset2_ppS3_Obs	-17	1	1	-19	-15
+scale3_geneI_Obs	0	1	1	-5	5
+offset3_geneI_Obs	-2	1	1	-4	0

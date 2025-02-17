@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS47"
+"Random seed:		0002147000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+pS2_Obs	C	n/a	conc.	0	1	pS2
+ppS3_Obs	C	n/a	conc.	0	1	offset4_ppS3_Obs+scale4_ppS3_Obs*(ppS3)
+ppS2_ppS2_ppS3_Obs	C	n/a	conc.	0	1	ppS2_ppS2_ppS3
+ppS3_ppS3_S4_Obs	C	n/a	conc.	0	1	offset4_ppS3_ppS3_S4_Obs+scale4_ppS3_ppS3_S4_Obs*(ppS3_ppS3_S4)
+
+
+ERRORS
+pS2_Obs	sd5_pS2_Obs
+ppS3_Obs	sd4_ppS3_Obs
+ppS2_ppS2_ppS3_Obs	sd4_ppS2_ppS2_ppS3_Obs
+ppS3_ppS3_S4_Obs	sd4_ppS3_ppS3_S4_Obs
+
+
+CONDITIONS
+init_S2	"(284.68)"
+init_S3	"(14.234)"
+init_S4	"(69.47)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_pS2_Obs	-1.0161	1	1	-4	1
+sd4_ppS3_Obs	-1.0401	1	1	-4	1
+sd4_ppS2_ppS2_ppS3_Obs	-1.0325	1	1	-4	1
+sd4_ppS3_ppS3_S4_Obs	-1.0225	1	1	-4	1
+
+// Scale and offset parameters
+scale4_ppS3_Obs	0	1	1	-5	5
+offset4_ppS3_Obs	-17	1	1	-19	-15
+scale4_ppS3_ppS3_S4_Obs	0	1	1	-5	5
+offset4_ppS3_ppS3_S4_Obs	-17	1	1	-19	-15

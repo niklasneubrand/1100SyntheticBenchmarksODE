@@ -1,0 +1,53 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Elowitz_Nature2000"
+"RS project name:	Elowitz_RS29"
+"Random seed:		0000829000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+X_protein_Obs	C	n/a	conc.	0	0	scale1_X_protein_Obs*(X_protein)
+Z_protein_Obs	C	n/a	conc.	0	0	scale1_Z_protein_Obs*(Z_protein)
+GFP_Obs	C	n/a	conc.	0	0	GFP
+X_mRNA_Obs	C	n/a	conc.	0	0	X_mRNA
+Z_mRNA_Obs	C	n/a	conc.	0	0	scale1_Z_mRNA_Obs*(Z_mRNA)
+GFP_mRNA_Obs	C	n/a	conc.	0	0	scale1_GFP_mRNA_Obs*(GFP_mRNA)
+
+
+ERRORS
+X_protein_Obs	sd1_X_protein_Obs
+Z_protein_Obs	sd1_Z_protein_Obs
+GFP_Obs	sd1_GFP_Obs
+X_mRNA_Obs	sd1_X_mRNA_Obs
+Z_mRNA_Obs	sd1_Z_mRNA_Obs
+GFP_mRNA_Obs	sd1_GFP_mRNA_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_X_protein_Obs	2.0922	1	1	0	5
+sd1_Z_protein_Obs	2.0911	1	1	0	5
+sd1_GFP_Obs	0.80126	1	1	-2	3
+sd1_X_mRNA_Obs	0.0029024	1	1	-2	3
+sd1_Z_mRNA_Obs	0.34197	1	1	-2	3
+sd1_GFP_mRNA_Obs	-7.0418	1	1	-10	-5
+
+// Scale and offset parameters
+scale1_X_protein_Obs	0	1	1	-5	5
+scale1_Z_protein_Obs	0	1	1	-5	5
+scale1_Z_mRNA_Obs	0	1	1	-5	5
+scale1_GFP_mRNA_Obs	0	1	1	-5	5

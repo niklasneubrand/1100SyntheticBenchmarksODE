@@ -1,0 +1,55 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Beer_MolBiosyst2014"
+"RS project name:	Beer_RS03"
+"Random seed:		0000203000"
+"Data type, index:	time course, 15"
+
+
+PREDICTOR
+time	T	min	time	0	4314
+
+
+INPUTS
+
+
+OBSERVABLES
+Bac_Obs	C	n/a	conc.	0	1	offset15_Bac_Obs+scale15_Bac_Obs*(Bac)
+Glu_Obs	C	n/a	conc.	0	1	offset15_Glu_Obs+scale15_Glu_Obs*(Glu)
+Ind_Obs	C	n/a	conc.	0	1	offset15_Ind_Obs+scale15_Ind_Obs*(Ind)
+Compound_1_Obs	C	n/a	conc.	0	1	Bac+Glu+Ind
+
+
+ERRORS
+Bac_Obs	sd15_Bac_Obs
+Glu_Obs	sd15_Glu_Obs
+Ind_Obs	sd15_Ind_Obs
+Compound_1_Obs	sd15_Compound_1_Obs
+
+
+CONDITIONS
+Bacmax	"(Bacmax_typeIDT5_ExpID2)"
+Beta	"(beta_typeIDT5_ExpID2)"
+kdegi	"(kdegi_typeIDT5)"
+kdim	"(kdim_typeIDT5)"
+ksyn	"(ksyn_typeIDT5)"
+tau	"(tau_typeIDT5_ExpID2)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd15_Bac_Obs	-1.1689	1	1	-4	1
+sd15_Glu_Obs	-1.1936	1	1	-4	1
+sd15_Ind_Obs	-1.1796	1	1	-4	1
+sd15_Compound_1_Obs	-1.1794	1	1	-4	1
+
+// Scale and offset parameters
+scale15_Bac_Obs	0	1	1	-5	5
+offset15_Bac_Obs	-3	1	1	-5	-1
+scale15_Glu_Obs	0	1	1	-5	5
+offset15_Glu_Obs	-2	1	1	-4	0
+scale15_Ind_Obs	0	1	1	-5	5
+offset15_Ind_Obs	-5	1	1	-7	-3

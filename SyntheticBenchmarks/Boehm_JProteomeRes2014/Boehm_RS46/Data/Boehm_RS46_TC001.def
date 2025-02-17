@@ -1,0 +1,36 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Boehm_JProteomeRes2014"
+"RS project name:	Boehm_RS46"
+"Random seed:		0000346000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	330
+
+
+INPUTS
+
+
+OBSERVABLES
+pApB_Obs	C	n/a	conc.	0	0	scale1_pApB_Obs*(pApB)
+
+
+ERRORS
+pApB_Obs	sd1_pApB_Obs
+
+
+CONDITIONS
+epo_level	"(1.25e-07)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_pApB_Obs	0.10079	1	1	-2	3
+
+// Scale and offset parameters
+scale1_pApB_Obs	0	1	1	-5	5

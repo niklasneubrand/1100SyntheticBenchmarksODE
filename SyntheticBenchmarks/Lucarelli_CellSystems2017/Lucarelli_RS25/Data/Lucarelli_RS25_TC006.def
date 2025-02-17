@@ -1,0 +1,79 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS25"
+"Random seed:		0002125000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	offset4_Compound_1_Obs+scale4_Compound_1_Obs*(Rec+ppS2_ppS3_S4+geneG)
+Compound_3_Obs	C	n/a	conc.	0	0	offset4_Compound_3_Obs+scale4_Compound_3_Obs*(S4+geneI+geneL)
+Compound_4_Obs	C	n/a	conc.	0	1	offset4_Compound_4_Obs+scale4_Compound_4_Obs*(S2_S4_S4+pS3+ppS2_ppS2_S4)
+Compound_7_Obs	C	n/a	conc.	0	1	offset4_Compound_7_Obs+scale4_Compound_7_Obs*(ppS2_ppS2_ppS2+pS2+geneK)
+Compound_8_Obs	C	n/a	conc.	0	1	offset4_Compound_8_Obs+scale4_Compound_8_Obs*(S4_S4_S4+ppS2+geneD)
+Compound_9_Obs	C	n/a	conc.	0	1	offset4_Compound_9_Obs+scale4_Compound_9_Obs*(ppS2_ppS2_ppS3+geneC+geneD)
+Compound_10_Obs	C	n/a	conc.	0	1	offset4_Compound_10_Obs+scale4_Compound_10_Obs*(ppS2_ppS2_ppS3+geneD+geneE)
+Compound_11_Obs	C	n/a	conc.	0	1	offset4_Compound_11_Obs+scale4_Compound_11_Obs*(ppS3_ppS3_S4+geneJ+geneL)
+Compound_12_Obs	C	n/a	conc.	0	1	offset4_Compound_12_Obs+scale4_Compound_12_Obs*(geneG+geneI+geneJ)
+
+
+ERRORS
+Compound_1_Obs	sd4_Compound_1_Obs
+Compound_3_Obs	sd4_Compound_3_Obs
+Compound_4_Obs	sd4_Compound_4_Obs
+Compound_7_Obs	sd4_Compound_7_Obs
+Compound_8_Obs	sd4_Compound_8_Obs
+Compound_9_Obs	sd4_Compound_9_Obs
+Compound_10_Obs	sd4_Compound_10_Obs
+Compound_11_Obs	sd4_Compound_11_Obs
+Compound_12_Obs	sd4_Compound_12_Obs
+
+
+CONDITIONS
+init_S2	"(284.68)"
+init_S3	"(14.234)"
+init_S4	"(69.47)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_Compound_1_Obs	-1.1312	1	1	-4	1
+sd4_Compound_3_Obs	0.70853	1	1	-2	3
+sd4_Compound_4_Obs	-1.153	1	1	-4	1
+sd4_Compound_7_Obs	-1.1354	1	1	-4	1
+sd4_Compound_8_Obs	-1.1478	1	1	-4	1
+sd4_Compound_9_Obs	-1.1366	1	1	-4	1
+sd4_Compound_10_Obs	-1.1284	1	1	-4	1
+sd4_Compound_11_Obs	-1.125	1	1	-4	1
+sd4_Compound_12_Obs	-1.1412	1	1	-4	1
+
+// Scale and offset parameters
+scale4_Compound_1_Obs	0	1	1	-5	5
+offset4_Compound_1_Obs	-2	1	1	-4	0
+scale4_Compound_3_Obs	0	1	1	-5	5
+offset4_Compound_3_Obs	-1	1	1	-3	1
+scale4_Compound_4_Obs	0	1	1	-5	5
+offset4_Compound_4_Obs	-17	1	1	-19	-15
+scale4_Compound_7_Obs	0	1	1	-5	5
+offset4_Compound_7_Obs	-2	1	1	-4	0
+scale4_Compound_8_Obs	0	1	1	-5	5
+offset4_Compound_8_Obs	-2	1	1	-4	0
+scale4_Compound_9_Obs	0	1	1	-5	5
+offset4_Compound_9_Obs	-2	1	1	-4	0
+scale4_Compound_10_Obs	0	1	1	-5	5
+offset4_Compound_10_Obs	-2	1	1	-4	0
+scale4_Compound_11_Obs	0	1	1	-5	5
+offset4_Compound_11_Obs	-2	1	1	-4	0
+scale4_Compound_12_Obs	0	1	1	-5	5
+offset4_Compound_12_Obs	-2	1	1	-4	0

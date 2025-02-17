@@ -1,0 +1,57 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Beer_MolBiosyst2014"
+"RS project name:	Beer_RS12"
+"Random seed:		0000212000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	min	time	0	4314
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	offset5_Compound_1_Obs+scale5_Compound_1_Obs*(Bac+cGlu)
+Compound_2_Obs	C	n/a	conc.	0	1	offset5_Compound_2_Obs+scale5_Compound_2_Obs*(Bac+Ind)
+Compound_3_Obs	C	n/a	conc.	0	1	offset5_Compound_3_Obs+scale5_Compound_3_Obs*(Glu+Ind)
+Compound_4_Obs	C	n/a	conc.	0	1	offset5_Compound_4_Obs+scale5_Compound_4_Obs*(cGlu+Ind)
+
+
+ERRORS
+Compound_1_Obs	sd5_Compound_1_Obs
+Compound_2_Obs	sd5_Compound_2_Obs
+Compound_3_Obs	sd5_Compound_3_Obs
+Compound_4_Obs	sd5_Compound_4_Obs
+
+
+CONDITIONS
+Bacmax	"(Bacmax_typeIDT1_ExpID4)"
+Beta	"(beta_typeIDT1_ExpID4)"
+kdegi	"(kdegi_typeIDT1)"
+kdim	"(kdim_typeIDT1)"
+ksyn	"(ksyn_typeIDT1)"
+tau	"(tau_typeIDT1_ExpID4)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_Compound_1_Obs	-0.77152	1	1	-3	2
+sd5_Compound_2_Obs	-0.79718	1	1	-3	2
+sd5_Compound_3_Obs	-0.80129	1	1	-3	2
+sd5_Compound_4_Obs	-0.80757	1	1	-3	2
+
+// Scale and offset parameters
+scale5_Compound_1_Obs	0	1	1	-5	5
+offset5_Compound_1_Obs	-2	1	1	-4	0
+scale5_Compound_2_Obs	0	1	1	-5	5
+offset5_Compound_2_Obs	-3	1	1	-5	-1
+scale5_Compound_3_Obs	0	1	1	-5	5
+offset5_Compound_3_Obs	-2	1	1	-4	0
+scale5_Compound_4_Obs	0	1	1	-5	5
+offset5_Compound_4_Obs	-2	1	1	-4	0

@@ -1,0 +1,53 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS45"
+"Random seed:		0001545000"
+"Data type, index:	time course, 9"
+
+
+PREDICTOR
+time	T	min	time	0	220
+
+
+INPUTS
+
+
+OBSERVABLES
+JAK1_gp130_Obs	C	n/a	conc.	0	1	offset8_JAK1_gp130_Obs+scale8_JAK1_gp130_Obs*(JAK1_gp130)
+STAT3_Obs	C	n/a	conc.	0	1	scale8_STAT3_Obs*(STAT3)
+tpSTAT3_Obs	C	n/a	conc.	0	1	scale8_tpSTAT3_Obs*(tpSTAT3)
+nSOCS3RNA5_Obs	C	n/a	conc.	0	1	nSOCS3RNA5
+SOCS3_Obs	C	n/a	conc.	0	1	scale6_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+JAK1_gp130_Obs	sd8_JAK1_gp130_Obs
+STAT3_Obs	sd8_STAT3_Obs
+tpSTAT3_Obs	sd8_tpSTAT3_Obs
+nSOCS3RNA5_Obs	sd6_nSOCS3RNA5_Obs
+SOCS3_Obs	sd6_SOCS3_Obs
+
+
+CONDITIONS
+input_actd	"(1)"
+input_il6	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd8_JAK1_gp130_Obs	-1.4008	1	1	-4	1
+sd8_STAT3_Obs	-1.4036	1	1	-4	1
+sd8_tpSTAT3_Obs	-1.4001	1	1	-4	1
+sd6_nSOCS3RNA5_Obs	-1.4036	1	1	-4	1
+sd6_SOCS3_Obs	-1.429	1	1	-4	1
+
+// Scale and offset parameters
+scale8_JAK1_gp130_Obs	0	1	1	-5	5
+offset8_JAK1_gp130_Obs	-4	1	1	-6	-2
+scale8_STAT3_Obs	0	1	1	-5	5
+scale8_tpSTAT3_Obs	0	1	1	-5	5
+scale6_SOCS3_Obs	0	1	1	-5	5

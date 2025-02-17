@@ -1,0 +1,39 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS01"
+"Random seed:		0001501000"
+"Data type, index:	time course, 11"
+
+
+PREDICTOR
+time	T	min	time	0	220
+
+
+INPUTS
+
+
+OBSERVABLES
+nSOCS3RNA2_Obs	C	n/a	conc.	0	0	scale10_nSOCS3RNA2_Obs*(nSOCS3RNA2)
+
+
+ERRORS
+nSOCS3RNA2_Obs	sd10_nSOCS3RNA2_Obs
+
+
+CONDITIONS
+actd_level1	"(1)"
+actd_t1	"(0)"
+actd_t2	"(30)"
+input_il6	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd10_nSOCS3RNA2_Obs	-2.4904	1	1	-5	0
+
+// Scale and offset parameters
+scale10_nSOCS3RNA2_Obs	0	1	1	-5	5

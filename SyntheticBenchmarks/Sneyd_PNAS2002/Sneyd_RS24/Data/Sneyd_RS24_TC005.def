@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sneyd_PNAS2002"
+"RS project name:	Sneyd_RS24"
+"Random seed:		0001424000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	s	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+IPR_O_Obs	C	n/a	conc.	0	0	IPR_O
+IPR_I1_Obs	C	n/a	conc.	0	0	scale5_IPR_I1_Obs*(IPR_I1)
+IPR_S_Obs	C	n/a	conc.	0	0	scale5_IPR_S_Obs*(IPR_S)
+IPR_A_Obs	C	n/a	conc.	0	0	scale5_IPR_A_Obs*(IPR_A)
+IPR_I2_Obs	C	n/a	conc.	0	0	IPR_I2
+
+
+ERRORS
+IPR_O_Obs	sd5_IPR_O_Obs
+IPR_I1_Obs	sd5_IPR_I1_Obs
+IPR_S_Obs	sd5_IPR_S_Obs
+IPR_A_Obs	sd5_IPR_A_Obs
+IPR_I2_Obs	sd5_IPR_I2_Obs
+
+
+CONDITIONS
+Ca	"(10)"
+IP3	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_IPR_O_Obs	-5.511	1	1	-8	-3
+sd5_IPR_I1_Obs	-8.5062	1	1	-11	-6
+sd5_IPR_S_Obs	-5.0335	1	1	-8	-3
+sd5_IPR_A_Obs	-1.5474	1	1	-4	1
+sd5_IPR_I2_Obs	-1.0226	1	1	-4	1
+
+// Scale and offset parameters
+scale5_IPR_I1_Obs	0	1	1	-5	5
+scale5_IPR_S_Obs	0	1	1	-5	5
+scale5_IPR_A_Obs	0	1	1	-5	5

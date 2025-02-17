@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS14"
+"Random seed:		0001914000"
+"Data type, index:	time course, 9"
+
+
+PREDICTOR
+time	T	min	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	scale9_Compound_1_Obs*(p1EpoRpJAK2+EpoRJAK2_CIS)
+Compound_3_Obs	C	n/a	conc.	0	0	scale4_Compound_3_Obs*(SHP1Act+SOCS3nRNA3)
+Compound_4_Obs	C	n/a	conc.	0	0	CISnRNA1+SOCS3nRNA5
+Compound_5_Obs	C	n/a	conc.	0	0	scale8_Compound_5_Obs*(CISnRNA2+SOCS3nRNA1)
+
+
+ERRORS
+Compound_1_Obs	sd9_Compound_1_Obs
+Compound_3_Obs	sd4_Compound_3_Obs
+Compound_4_Obs	sd7_Compound_4_Obs
+Compound_5_Obs	sd8_Compound_5_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_SHP1	"(init_SHP1 * (1 + (1 * SHP1ProOE)))"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd9_Compound_1_Obs	-2.9995	1	1	-5	0
+sd4_Compound_3_Obs	-1.2031	1	1	-4	1
+sd7_Compound_4_Obs	1.6254	1	1	-1	4
+sd8_Compound_5_Obs	1.589	1	1	-1	4
+
+// Scale and offset parameters
+scale9_Compound_1_Obs	0	1	1	-5	5
+scale4_Compound_3_Obs	0	1	1	-5	5
+scale8_Compound_5_Obs	0	1	1	-5	5

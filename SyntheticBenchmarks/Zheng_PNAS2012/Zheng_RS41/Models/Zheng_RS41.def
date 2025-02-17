@@ -1,0 +1,203 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Zheng_PNAS2012"
+"RS project name:	Zheng_RS41"
+"Random seed:		0001841000."
+
+"Original description:"
+
+"Histone Model"
+
+
+PREDICTOR
+t               T   h         time	-10	25
+
+
+COMPARTMENTS
+
+
+STATES
+K27me0K36me0	C   "nM"      "conc." 
+K27me0K36me1	C   "nM"      "conc." 
+K27me1K36me0	C   "nM"      "conc." 
+K27me0K36me2	C   "nM"      "conc." 
+K27me1K36me1	C   "nM"      "conc." 
+K27me2K36me0	C   "nM"      "conc." 
+K27me0K36me3	C   "nM"      "conc." 
+K27me1K36me2	C   "nM"      "conc." 
+K27me2K36me1	C   "nM"      "conc." 
+K27me3K36me0	C   "nM"      "conc." 
+K27me1K36me3	C   "nM"      "conc." 
+K27me2K36me2	C   "nM"      "conc." 
+K27me3K36me1	C   "nM"      "conc." 
+K27me2K36me3	C   "nM"      "conc." 
+K27me3K36me2	C   "nM"      "conc."
+
+
+INPUTS
+inflow           C   nmol/l      conc.   "step1(t,inflowp,0,0)"
+
+
+REACTIONS
+-> K27me0K36me0 CUSTOM "inflow"
+K27me0K36me0 -> K27me0K36me1 CUSTOM "k00_01*K27me0K36me0"
+K27me0K36me1 -> K27me0K36me0 CUSTOM "k01_00*K27me0K36me1"
+
+K27me0K36me0 -> K27me1K36me0 CUSTOM "k00_10*K27me0K36me0"
+K27me1K36me0 -> K27me0K36me0 CUSTOM "k10_00*K27me1K36me0"
+
+K27me1K36me0 -> K27me1K36me1 CUSTOM "k10_11*K27me1K36me0"
+K27me1K36me1 -> K27me1K36me0 CUSTOM "k11_10*K27me1K36me1"
+
+K27me0K36me1 -> K27me1K36me1 CUSTOM "k01_11*K27me0K36me1"
+K27me1K36me1 -> K27me0K36me1 CUSTOM "k11_01*K27me1K36me1"
+
+K27me0K36me1 -> K27me0K36me2 CUSTOM "k01_02*K27me0K36me1"
+K27me0K36me2 -> K27me0K36me1 CUSTOM "k02_01*K27me0K36me2"
+
+K27me1K36me0 -> K27me2K36me0 CUSTOM "k10_20*K27me1K36me0"
+K27me2K36me0 -> K27me1K36me0 CUSTOM "k20_10*K27me2K36me0"
+
+K27me0K36me2 -> K27me1K36me2 CUSTOM "k02_12*K27me0K36me2"
+K27me1K36me2 -> K27me0K36me2 CUSTOM "k12_02*K27me1K36me2"
+
+K27me2K36me0 -> K27me2K36me1 CUSTOM "k20_21*K27me2K36me0"
+K27me2K36me1 -> K27me2K36me0 CUSTOM "k21_20*K27me2K36me1"
+
+K27me0K36me2 -> K27me0K36me3 CUSTOM "k02_03*K27me0K36me2"
+K27me0K36me3 -> K27me0K36me2 CUSTOM "k03_02*K27me0K36me3"
+
+K27me2K36me0 -> K27me3K36me0 CUSTOM "k20_30*K27me2K36me0"
+K27me3K36me0 -> K27me2K36me0 CUSTOM "k30_20*K27me3K36me0"
+
+K27me1K36me1 -> K27me1K36me2 CUSTOM "k11_12*K27me1K36me1"
+K27me1K36me2 -> K27me1K36me1 CUSTOM "k12_11*K27me1K36me2"
+
+K27me1K36me1 -> K27me2K36me1 CUSTOM "k11_21*K27me1K36me1"
+K27me2K36me1 -> K27me1K36me1 CUSTOM "k21_11*K27me2K36me1"
+
+K27me1K36me2 -> K27me2K36me2 CUSTOM "k12_22*K27me1K36me2"
+K27me2K36me2 -> K27me1K36me2 CUSTOM "k22_12*K27me2K36me2"
+
+K27me2K36me1 -> K27me2K36me2 CUSTOM "k21_22*K27me2K36me1"
+K27me2K36me2 -> K27me2K36me1 CUSTOM "k22_21*K27me2K36me2"
+
+K27me2K36me2 -> K27me2K36me3 CUSTOM "k22_23*K27me2K36me2"
+K27me2K36me3 -> K27me2K36me2 CUSTOM "k23_22*K27me2K36me3"
+
+K27me2K36me2 -> K27me3K36me2 CUSTOM "k22_32*K27me2K36me2"
+K27me3K36me2 -> K27me2K36me2 CUSTOM "k32_22*K27me3K36me2"
+
+K27me3K36me0 -> K27me3K36me1 CUSTOM "k30_31*K27me3K36me0"
+K27me3K36me1 -> K27me3K36me0 CUSTOM "k31_30*K27me3K36me1"
+
+K27me0K36me3 -> K27me1K36me3 CUSTOM "k03_13*K27me0K36me3"
+K27me1K36me3 -> K27me0K36me3 CUSTOM "k13_03*K27me1K36me3"
+
+K27me1K36me2 -> K27me1K36me3 CUSTOM "k12_13*K27me1K36me2"
+K27me1K36me3 -> K27me1K36me2 CUSTOM "k13_12*K27me1K36me3"
+
+K27me2K36me1 -> K27me3K36me1 CUSTOM "k21_31*K27me2K36me1"
+K27me3K36me1 -> K27me2K36me1 CUSTOM "k31_21*K27me3K36me1"
+
+K27me3K36me1 -> K27me3K36me2 CUSTOM "k31_32*K27me3K36me1"
+K27me3K36me2 -> K27me3K36me1 CUSTOM "k32_31*K27me3K36me2"
+
+K27me1K36me3 -> K27me2K36me3 CUSTOM "k13_23*K27me1K36me3"
+K27me2K36me3 -> K27me1K36me3 CUSTOM "k23_13*K27me2K36me3"
+
+K27me0K36me0 -> 			 CUSTOM "K27me0K36me0*inflow"
+K27me0K36me1 -> 			 CUSTOM "K27me0K36me1*inflow"
+K27me1K36me0 -> 			 CUSTOM "K27me1K36me0*inflow"
+K27me0K36me2 -> 			 CUSTOM "K27me0K36me2*inflow"
+K27me1K36me1 -> 			 CUSTOM "K27me1K36me1*inflow"
+K27me2K36me0 -> 			 CUSTOM "K27me2K36me0*inflow"
+K27me0K36me3 -> 			 CUSTOM "K27me0K36me3*inflow"
+K27me1K36me2 -> 			 CUSTOM "K27me1K36me2*inflow"
+K27me2K36me1 -> 			 CUSTOM "K27me2K36me1*inflow"
+K27me3K36me0 -> 			 CUSTOM "K27me3K36me0*inflow"
+K27me1K36me3 -> 			 CUSTOM "K27me1K36me3*inflow"
+K27me2K36me2 -> 			 CUSTOM "K27me2K36me2*inflow"
+K27me3K36me1 -> 			 CUSTOM "K27me3K36me1*inflow"
+K27me2K36me3 -> 			 CUSTOM "K27me2K36me3*inflow"
+K27me3K36me2 -> 			 CUSTOM "K27me3K36me2*inflow"
+
+
+DERIVED
+
+
+OBSERVABLES
+
+
+ERRORS
+
+
+CONDITIONS
+init_K27me0K36me0	"(0)"
+init_K27me0K36me1	"(0)"
+init_K27me0K36me2	"(0)"
+init_K27me0K36me3	"(0)"
+init_K27me1K36me0	"(0)"
+init_K27me1K36me1	"(0)"
+init_K27me1K36me2	"(0)"
+init_K27me1K36me3	"(0)"
+init_K27me2K36me0	"(0)"
+init_K27me2K36me1	"(0)"
+init_K27me2K36me2	"(0)"
+init_K27me2K36me3	"(0)"
+init_K27me3K36me0	"(0)"
+init_K27me3K36me1	"(0)"
+init_K27me3K36me2	"(0)"
+
+
+PARAMETERS
+inflowp	-1.58	1	1	-5	2
+k00_01	0.283	1	1	-3	4
+k00_10	0.853	1	1	-3	4
+k01_00	-5.07	1	1	-9	-2
+k01_02	0.00985	1	1	-3	4
+k01_11	-5.04	1	1	-9	-2
+k02_01	-1.36	1	1	-5	2
+k02_03	-1.5	1	1	-5	2
+k02_12	-1.57	1	1	-5	2
+k03_02	-4.7	1	1	-8	-1
+k03_13	-1.29	1	1	-5	2
+k10_00	-5.09	1	1	-9	-2
+k10_11	2.89	1	1	-1	6
+k10_20	-4.97	1	1	-8	-1
+k11_01	-4.92	1	1	-8	-1
+k11_10	2.47	1	1	-1	6
+k11_12	0.908	1	1	-3	4
+k11_21	-0.438	1	1	-4	3
+k12_02	-4.91	1	1	-8	-1
+k12_11	-0.925	1	1	-4	3
+k12_13	-1.88	1	1	-5	2
+k12_22	-2.3	1	1	-6	1
+k13_03	-5.21	1	1	-9	-2
+k13_12	-0.713	1	1	-4	3
+k13_23	-5.02	1	1	-9	-2
+k20_10	-4.97	1	1	-8	-1
+k20_21	-5.23	1	1	-9	-2
+k20_30	-0.776	1	1	-4	3
+k21_11	-5.16	1	1	-9	-2
+k21_20	-0.775	1	1	-4	3
+k21_22	-5.01	1	1	-9	-2
+k21_31	-5.15	1	1	-9	-2
+k22_12	-1.29	1	1	-5	2
+k22_21	-5.08	1	1	-9	-2
+k22_23	-1.33	1	1	-5	2
+k22_32	-5.2	1	1	-9	-2
+k23_13	-0.317	1	1	-4	3
+k23_22	-5.13	1	1	-9	-2
+k30_20	-5.25	1	1	-9	-2
+k30_31	-0.209	1	1	-4	3
+k31_21	-4.85	1	1	-8	-1
+k31_30	-4.76	1	1	-8	-1
+k31_32	-0.186	1	1	-4	3
+k32_22	0.0798	1	1	-3	4
+k32_31	-4.93	1	1	-8	-1
+
+

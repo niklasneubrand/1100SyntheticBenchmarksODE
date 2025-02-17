@@ -1,0 +1,52 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Hass_PlosOne2017"
+"RS project name:	Hass_RS26"
+"Random seed:		0001126000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	240
+
+
+INPUTS
+
+
+OBSERVABLES
+ApoER2_Dab1_Obs	C	n/a	conc.	0	1	offset4_ApoER2_Dab1_Obs+scale4_ApoER2_Dab1_Obs*(ApoER2_Dab1)
+ApoER2_Dab1SFK_Obs	C	n/a	conc.	0	1	scale4_ApoER2_Dab1SFK_Obs*(ApoER2_Dab1SFK)
+ApoER2_re_Dab1SFK_Obs	C	n/a	conc.	0	1	ApoER2_re_Dab1SFK
+SFK_Obs	C	n/a	conc.	0	1	SFK
+pApoER2_re_Dab1_Obs	C	n/a	conc.	0	1	scale2_pApoER2_re_Dab1_Obs*(pApoER2_re_Dab1)
+
+
+ERRORS
+ApoER2_Dab1_Obs	sd4_ApoER2_Dab1_Obs
+ApoER2_Dab1SFK_Obs	sd4_ApoER2_Dab1SFK_Obs
+ApoER2_re_Dab1SFK_Obs	sd3_ApoER2_re_Dab1SFK_Obs
+SFK_Obs	sd4_SFK_Obs
+pApoER2_re_Dab1_Obs	sd2_pApoER2_re_Dab1_Obs
+
+
+CONDITIONS
+Inh	"(0)"
+Reelin_input	"(0.01)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_ApoER2_Dab1_Obs	-1.0402	1	1	-4	1
+sd4_ApoER2_Dab1SFK_Obs	-1.0398	1	1	-4	1
+sd3_ApoER2_re_Dab1SFK_Obs	-1.0241	1	1	-4	1
+sd4_SFK_Obs	-1.0106	1	1	-4	1
+sd2_pApoER2_re_Dab1_Obs	-1.0179	1	1	-4	1
+
+// Scale and offset parameters
+scale4_ApoER2_Dab1_Obs	0	1	1	-5	5
+offset4_ApoER2_Dab1_Obs	-3	1	1	-5	-1
+scale4_ApoER2_Dab1SFK_Obs	0	1	1	-5	5
+scale2_pApoER2_re_Dab1_Obs	0	1	1	-5	5

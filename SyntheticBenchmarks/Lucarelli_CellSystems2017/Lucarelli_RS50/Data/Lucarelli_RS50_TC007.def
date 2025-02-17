@@ -1,0 +1,55 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS50"
+"Random seed:		0002150000"
+"Data type, index:	time course, 7"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+TGFb_pRec_Obs	C	n/a	conc.	0	0	scale6_TGFb_pRec_Obs*(TGFb_pRec)
+pS3_Obs	C	n/a	conc.	0	0	scale5_pS3_Obs*(pS3)
+ppS2_Obs	C	n/a	conc.	0	0	scale5_ppS2_Obs*(ppS2)
+geneD_Obs	C	n/a	conc.	0	0	scale5_geneD_Obs*(geneD)
+geneG_Obs	C	n/a	conc.	0	0	scale2_geneG_Obs*(geneG)
+
+
+ERRORS
+TGFb_pRec_Obs	sd6_TGFb_pRec_Obs
+pS3_Obs	sd5_pS3_Obs
+ppS2_Obs	sd5_ppS2_Obs
+geneD_Obs	sd5_geneD_Obs
+geneG_Obs	sd2_geneG_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(14.234)"
+init_S4	"(208.41)"
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd6_TGFb_pRec_Obs	-1.6426	1	1	-4	1
+sd5_pS3_Obs	-1.1602	1	1	-4	1
+sd5_ppS2_Obs	-0.041107	1	1	-3	2
+sd5_geneD_Obs	-0.50006	1	1	-3	2
+sd2_geneG_Obs	-0.16351	1	1	-3	2
+
+// Scale and offset parameters
+scale6_TGFb_pRec_Obs	0	1	1	-5	5
+scale5_pS3_Obs	0	1	1	-5	5
+scale5_ppS2_Obs	0	1	1	-5	5
+scale5_geneD_Obs	0	1	1	-5	5
+scale2_geneG_Obs	0	1	1	-5	5

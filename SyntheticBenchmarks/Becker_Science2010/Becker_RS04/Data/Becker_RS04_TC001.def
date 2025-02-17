@@ -1,0 +1,35 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Becker_Science2010"
+"RS project name:	Becker_RS04"
+"Random seed:		0000104000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	364
+
+
+INPUTS
+
+
+OBSERVABLES
+Epo_EpoR_i_Obs	C	n/a	conc.	0	0	Epo_EpoR_i
+
+
+ERRORS
+Epo_EpoR_i_Obs	sd1_Epo_EpoR_i_Obs
+
+
+CONDITIONS
+init_EpoR	"(4 * init_Epo * init_EpoR_rel)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Epo_EpoR_i_Obs	1.0585	1	1	-1	4
+
+// Scale and offset parameters

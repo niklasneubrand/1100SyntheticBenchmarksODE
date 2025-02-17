@@ -1,0 +1,53 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS03"
+"Random seed:		0002103000"
+"Data type, index:	time course, 7"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_Obs	C	n/a	conc.	0	1	offset5_Rec_Obs+scale5_Rec_Obs*(Rec)
+TGFb_pRec_Obs	C	n/a	conc.	0	1	TGFb_pRec
+pS3_Obs	C	n/a	conc.	0	1	offset5_pS3_Obs+scale5_pS3_Obs*(pS3)
+geneK_Obs	C	n/a	conc.	0	1	offset5_geneK_Obs+scale5_geneK_Obs*(geneK)
+
+
+ERRORS
+Rec_Obs	sd5_Rec_Obs
+TGFb_pRec_Obs	sd5_TGFb_pRec_Obs
+pS3_Obs	sd5_pS3_Obs
+geneK_Obs	sd5_geneK_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(14.234)"
+init_S4	"(208.41)"
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_Rec_Obs	-1.3542	1	1	-4	1
+sd5_TGFb_pRec_Obs	-1.3548	1	1	-4	1
+sd5_pS3_Obs	-1.3597	1	1	-4	1
+sd5_geneK_Obs	-1.3365	1	1	-4	1
+
+// Scale and offset parameters
+scale5_Rec_Obs	0	1	1	-5	5
+offset5_Rec_Obs	-2	1	1	-4	0
+scale5_pS3_Obs	0	1	1	-5	5
+offset5_pS3_Obs	-3	1	1	-5	-1
+scale5_geneK_Obs	0	1	1	-5	5
+offset5_geneK_Obs	-3	1	1	-5	-1

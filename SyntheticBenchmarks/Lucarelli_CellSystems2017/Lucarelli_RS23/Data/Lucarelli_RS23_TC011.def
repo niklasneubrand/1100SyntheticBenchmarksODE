@@ -1,0 +1,40 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS23"
+"Random seed:		0002123000"
+"Data type, index:	time course, 11"
+
+
+PREDICTOR
+time	T	min	time	0	600
+
+
+INPUTS
+
+
+OBSERVABLES
+S4_Obs	C	n/a	conc.	0	0	S4
+ppS2_S4_S4_Obs	C	n/a	conc.	0	0	ppS2_S4_S4
+
+
+ERRORS
+S4_Obs	sd9_S4_Obs
+ppS2_S4_S4_Obs	sd3_ppS2_S4_S4_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S4	"(69.47)"
+init_TGFb	"(1)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd9_S4_Obs	0.39822	1	1	-2	3
+sd3_ppS2_S4_S4_Obs	-0.1871	1	1	-3	2
+
+// Scale and offset parameters

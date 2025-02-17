@@ -1,0 +1,54 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS17"
+"Random seed:		0001017000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+pEGFR_Akt_Obs	C	n/a	conc.	0	0	scale4_pEGFR_Akt_Obs*(pEGFR_Akt)
+Akt_Obs	C	n/a	conc.	0	0	scale4_Akt_Obs*(Akt)
+S6_Obs	C	n/a	conc.	0	0	S6
+pAkt_S6_Obs	C	n/a	conc.	0	0	scale4_pAkt_S6_Obs*(pAkt_S6)
+EGF_EGFR_Obs	C	n/a	conc.	0	0	EGF_EGFR
+
+
+ERRORS
+pEGFR_Akt_Obs	sd4_pEGFR_Akt_Obs
+Akt_Obs	sd4_Akt_Obs
+S6_Obs	sd4_S6_Obs
+pAkt_S6_Obs	sd4_pAkt_S6_Obs
+EGF_EGFR_Obs	sd4_EGF_EGFR_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(3)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_pEGFR_Akt_Obs	-5.1812	1	1	-8	-3
+sd4_Akt_Obs	-2.4707	1	1	-5	0
+sd4_S6_Obs	1.4719	1	1	-1	4
+sd4_pAkt_S6_Obs	-3.6937	1	1	-6	-1
+sd4_EGF_EGFR_Obs	5.1992	1	1	3	8
+
+// Scale and offset parameters
+scale4_pEGFR_Akt_Obs	0	1	1	-5	5
+scale4_Akt_Obs	0	1	1	-5	5
+scale4_pAkt_S6_Obs	0	1	1	-5	5

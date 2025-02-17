@@ -1,0 +1,43 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Beer_MolBiosyst2014"
+"RS project name:	Beer_RS01"
+"Random seed:		0000201000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	min	time	0	4314
+
+
+INPUTS
+
+
+OBSERVABLES
+Bac_Obs	C	n/a	conc.	0	0	Bac
+Compound_1_Obs	C	n/a	conc.	0	0	Bac+cGlu
+
+
+ERRORS
+Bac_Obs	sd3_Bac_Obs
+Compound_1_Obs	sd3_Compound_1_Obs
+
+
+CONDITIONS
+Bacmax	"(Bacmax_typeIDT1_ExpID2)"
+Beta	"(beta_typeIDT1_ExpID2)"
+kdegi	"(kdegi_typeIDT1)"
+kdim	"(kdim_typeIDT1)"
+ksyn	"(ksyn_typeIDT1)"
+tau	"(tau_typeIDT1_ExpID2)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_Bac_Obs	-1.3406	1	1	-4	1
+sd3_Compound_1_Obs	-0.60258	1	1	-3	2
+
+// Scale and offset parameters

@@ -1,0 +1,63 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS43"
+"Random seed:		0001943000"
+"Data type, index:	time course, 6"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRJAK2_Obs	C	n/a	conc.	0	0	scale6_EpoRJAK2_Obs*(EpoRJAK2)
+p12EpoRpJAK2_Obs	C	n/a	conc.	0	0	scale6_p12EpoRpJAK2_Obs*(p12EpoRpJAK2)
+SOCS3_Obs	C	n/a	conc.	0	0	scale4_SOCS3_Obs*(SOCS3)
+Compound_1_Obs	C	n/a	conc.	0	0	scale5_Compound_1_Obs*(EpoRJAK2+p1EpoRpJAK2)
+Compound_2_Obs	C	n/a	conc.	0	0	scale6_Compound_2_Obs*(p1EpoRpJAK2+SOCS3nRNA5)
+Compound_4_Obs	C	n/a	conc.	0	0	STAT5+SOCS3nRNA3
+Compound_5_Obs	C	n/a	conc.	0	0	scale5_Compound_5_Obs*(CISnRNA1+SOCS3)
+
+
+ERRORS
+EpoRJAK2_Obs	sd6_EpoRJAK2_Obs
+p12EpoRpJAK2_Obs	sd6_p12EpoRpJAK2_Obs
+SOCS3_Obs	sd4_SOCS3_Obs
+Compound_1_Obs	sd5_Compound_1_Obs
+Compound_2_Obs	sd6_Compound_2_Obs
+Compound_4_Obs	sd5_Compound_4_Obs
+Compound_5_Obs	sd5_Compound_5_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd6_EpoRJAK2_Obs	-0.24254	1	1	-3	2
+sd6_p12EpoRpJAK2_Obs	-1.2679	1	1	-4	1
+sd4_SOCS3_Obs	0.23254	1	1	-2	3
+sd5_Compound_1_Obs	-0.2497	1	1	-3	2
+sd6_Compound_2_Obs	-2.2317	1	1	-5	0
+sd5_Compound_4_Obs	0.33303	1	1	-2	3
+sd5_Compound_5_Obs	2.2252	1	1	0	5
+
+// Scale and offset parameters
+scale6_EpoRJAK2_Obs	0	1	1	-5	5
+scale6_p12EpoRpJAK2_Obs	0	1	1	-5	5
+scale4_SOCS3_Obs	0	1	1	-5	5
+scale5_Compound_1_Obs	0	1	1	-5	5
+scale6_Compound_2_Obs	0	1	1	-5	5
+scale5_Compound_5_Obs	0	1	1	-5	5

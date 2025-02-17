@@ -1,0 +1,94 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS15"
+"Random seed:		0002215000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	436
+
+
+INPUTS
+
+
+OBSERVABLES
+EpoRpJAK2_Obs	C	n/a	conc.	0	0	scale1_EpoRpJAK2_Obs*(EpoRpJAK2)
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	scale1_pEpoRpJAK2_Obs*(pEpoRpJAK2)
+PTPAct_Obs	C	n/a	conc.	0	0	scale1_PTPAct_Obs*(PTPAct)
+STAT5_Obs	C	n/a	conc.	0	0	scale1_STAT5_Obs*(STAT5)
+pSTAT5_Obs	C	n/a	conc.	0	0	scale1_pSTAT5_Obs*(pSTAT5)
+npSTAT5_Obs	C	n/a	conc.	0	0	scale1_npSTAT5_Obs*(npSTAT5)
+CISHnRNA4_Obs	C	n/a	conc.	0	0	scale1_CISHnRNA4_Obs*(CISHnRNA4)
+CISHRNA_Obs	C	n/a	conc.	0	0	scale1_CISHRNA_Obs*(CISHRNA)
+CIS_Obs	C	n/a	conc.	0	0	scale1_CIS_Obs*(CIS)
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	scale1_SOCS3nRNA2_Obs*(SOCS3nRNA2)
+SOCS3nRNA3_Obs	C	n/a	conc.	0	0	scale1_SOCS3nRNA3_Obs*(SOCS3nRNA3)
+SOCS3RNA_Obs	C	n/a	conc.	0	0	scale1_SOCS3RNA_Obs*(SOCS3RNA)
+
+
+ERRORS
+EpoRpJAK2_Obs	sd1_EpoRpJAK2_Obs
+pEpoRpJAK2_Obs	sd1_pEpoRpJAK2_Obs
+PTPAct_Obs	sd1_PTPAct_Obs
+STAT5_Obs	sd1_STAT5_Obs
+pSTAT5_Obs	sd1_pSTAT5_Obs
+npSTAT5_Obs	sd1_npSTAT5_Obs
+CISHnRNA4_Obs	sd1_CISHnRNA4_Obs
+CISHRNA_Obs	sd1_CISHRNA_Obs
+CIS_Obs	sd1_CIS_Obs
+SOCS3nRNA2_Obs	sd1_SOCS3nRNA2_Obs
+SOCS3nRNA3_Obs	sd1_SOCS3nRNA3_Obs
+SOCS3RNA_Obs	sd1_SOCS3RNA_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_EpoRpJAK2_Obs	-2.4465	1	1	-5	0
+sd1_pEpoRpJAK2_Obs	-2.1625	1	1	-5	0
+sd1_PTPAct_Obs	-3.6722	1	1	-6	-1
+sd1_STAT5_Obs	0.32037	1	1	-2	3
+sd1_pSTAT5_Obs	-0.04055	1	1	-3	2
+sd1_npSTAT5_Obs	-0.15261	1	1	-3	2
+sd1_CISHnRNA4_Obs	-2.24	1	1	-5	0
+sd1_CISHRNA_Obs	-2.2565	1	1	-5	0
+sd1_CIS_Obs	0.039673	1	1	-2	3
+sd1_SOCS3nRNA2_Obs	-2.691	1	1	-5	0
+sd1_SOCS3nRNA3_Obs	-2.7006	1	1	-5	0
+sd1_SOCS3RNA_Obs	-2.2707	1	1	-5	0
+
+// Scale and offset parameters
+scale1_EpoRpJAK2_Obs	0	1	1	-5	5
+scale1_pEpoRpJAK2_Obs	0	1	1	-5	5
+scale1_PTPAct_Obs	0	1	1	-5	5
+scale1_STAT5_Obs	0	1	1	-5	5
+scale1_pSTAT5_Obs	0	1	1	-5	5
+scale1_npSTAT5_Obs	0	1	1	-5	5
+scale1_CISHnRNA4_Obs	0	1	1	-5	5
+scale1_CISHRNA_Obs	0	1	1	-5	5
+scale1_CIS_Obs	0	1	1	-5	5
+scale1_SOCS3nRNA2_Obs	0	1	1	-5	5
+scale1_SOCS3nRNA3_Obs	0	1	1	-5	5
+scale1_SOCS3RNA_Obs	0	1	1	-5	5

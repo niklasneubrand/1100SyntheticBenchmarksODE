@@ -1,0 +1,61 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Zheng_PNAS2012"
+"RS project name:	Zheng_RS25"
+"Random seed:		0001825000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	h	time	0	31
+
+
+INPUTS
+
+
+OBSERVABLES
+K27me0K36me1_Obs	C	n/a	conc.	0	0	K27me0K36me1
+K27me0K36me2_Obs	C	n/a	conc.	0	0	K27me0K36me2
+K27me2K36me0_Obs	C	n/a	conc.	0	0	K27me2K36me0
+K27me1K36me2_Obs	C	n/a	conc.	0	0	K27me1K36me2
+K27me2K36me1_Obs	C	n/a	conc.	0	0	K27me2K36me1
+K27me3K36me0_Obs	C	n/a	conc.	0	0	K27me3K36me0
+K27me2K36me2_Obs	C	n/a	conc.	0	0	K27me2K36me2
+K27me3K36me1_Obs	C	n/a	conc.	0	0	K27me3K36me1
+K27me2K36me3_Obs	C	n/a	conc.	0	0	K27me2K36me3
+K27me3K36me2_Obs	C	n/a	conc.	0	0	K27me3K36me2
+
+
+ERRORS
+K27me0K36me1_Obs	sd1_K27me0K36me1_Obs
+K27me0K36me2_Obs	sd1_K27me0K36me2_Obs
+K27me2K36me0_Obs	sd1_K27me2K36me0_Obs
+K27me1K36me2_Obs	sd1_K27me1K36me2_Obs
+K27me2K36me1_Obs	sd1_K27me2K36me1_Obs
+K27me3K36me0_Obs	sd1_K27me3K36me0_Obs
+K27me2K36me2_Obs	sd1_K27me2K36me2_Obs
+K27me3K36me1_Obs	sd1_K27me3K36me1_Obs
+K27me2K36me3_Obs	sd1_K27me2K36me3_Obs
+K27me3K36me2_Obs	sd1_K27me3K36me2_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_K27me0K36me1_Obs	-2.941	1	1	-5	0
+sd1_K27me0K36me2_Obs	-1.486	1	1	-4	1
+sd1_K27me2K36me0_Obs	-3.2686	1	1	-6	-1
+sd1_K27me1K36me2_Obs	-1.0743	1	1	-4	1
+sd1_K27me2K36me1_Obs	-3.0496	1	1	-6	-1
+sd1_K27me3K36me0_Obs	-3.3905	1	1	-6	-1
+sd1_K27me2K36me2_Obs	-2.4671	1	1	-5	0
+sd1_K27me3K36me1_Obs	-3.5279	1	1	-6	-1
+sd1_K27me2K36me3_Obs	-3.3745	1	1	-6	-1
+sd1_K27me3K36me2_Obs	-4.0621	1	1	-7	-2
+
+// Scale and offset parameters

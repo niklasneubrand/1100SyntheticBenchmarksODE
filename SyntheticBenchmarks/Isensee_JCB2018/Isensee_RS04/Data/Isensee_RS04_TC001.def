@@ -1,0 +1,67 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Isensee_JCB2018"
+"RS project name:	Isensee_RS04"
+"Random seed:		0002004000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	72
+
+
+INPUTS
+
+
+OBSERVABLES
+AC_Obs	C	n/a	conc.	0	0	AC
+Rp8_Br_cAMPS_Obs	C	n/a	conc.	0	0	Rp8_Br_cAMPS
+RIIp_Sp8_Br_cAMPS_2_Obs	C	n/a	conc.	0	0	RIIp_Sp8_Br_cAMPS_2
+Sp8_Br_cAMPS_Obs	C	n/a	conc.	0	0	Sp8_Br_cAMPS
+RIIp_Sp8_Br_cAMPS_C_2_Obs	C	n/a	conc.	0	0	RIIp_Sp8_Br_cAMPS_C_2
+AC_Fsk_Obs	C	n/a	conc.	0	0	AC_Fsk
+
+
+ERRORS
+AC_Obs	sd1_AC_Obs
+Rp8_Br_cAMPS_Obs	sd1_Rp8_Br_cAMPS_Obs
+RIIp_Sp8_Br_cAMPS_2_Obs	sd1_RIIp_Sp8_Br_cAMPS_2_Obs
+Sp8_Br_cAMPS_Obs	sd1_Sp8_Br_cAMPS_Obs
+RIIp_Sp8_Br_cAMPS_C_2_Obs	sd1_RIIp_Sp8_Br_cAMPS_C_2_Obs
+AC_Fsk_Obs	sd1_AC_Fsk_Obs
+
+
+CONDITIONS
+DMSO_level	"(0)"
+DMSO_time	"(0)"
+Fsk_level	"(0)"
+Fsk_time	"(0)"
+H89_level	"(0)"
+H89_time	"(0)"
+IBMX_level	"(0)"
+IBMX_time	"(0)"
+Rp8_Br_cAMPS_pAB_level	"(0)"
+Rp8_Br_cAMPS_pAB_time	"(0)"
+Rp8_pCPT_cAMPS_pAB_level	"(0)"
+Rp8_pCPT_cAMPS_pAB_time	"(0)"
+Rp_cAMPS_pAB_level	"(0)"
+Rp_cAMPS_pAB_time	"(0)"
+Sp8_Br_cAMPS_AM_level	"(0)"
+Sp8_Br_cAMPS_AM_time	"(0)"
+fourABnOH_level	"(0)"
+fourABnOH_time	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_AC_Obs	-1.472	1	1	-4	1
+sd1_Rp8_Br_cAMPS_Obs	-1.4482	1	1	-4	1
+sd1_RIIp_Sp8_Br_cAMPS_2_Obs	-1.4401	1	1	-4	1
+sd1_Sp8_Br_cAMPS_Obs	-1.4167	1	1	-4	1
+sd1_RIIp_Sp8_Br_cAMPS_C_2_Obs	-1.4796	1	1	-4	1
+sd1_AC_Fsk_Obs	-1.4492	1	1	-4	1
+
+// Scale and offset parameters

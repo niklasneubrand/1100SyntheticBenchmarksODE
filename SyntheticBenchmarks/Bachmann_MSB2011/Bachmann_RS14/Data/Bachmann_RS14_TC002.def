@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bachmann_MSB2011"
+"RS project name:	Bachmann_RS14"
+"Random seed:		0001914000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+SHP1Act_Obs	C	n/a	conc.	0	0	scale1_SHP1Act_Obs*(SHP1Act)
+Compound_1_Obs	C	n/a	conc.	0	0	scale2_Compound_1_Obs*(p1EpoRpJAK2+EpoRJAK2_CIS)
+Compound_2_Obs	C	n/a	conc.	0	0	scale2_Compound_2_Obs*(SHP1+STAT5)
+Compound_3_Obs	C	n/a	conc.	0	0	scale2_Compound_3_Obs*(SHP1Act+SOCS3nRNA3)
+
+
+ERRORS
+SHP1Act_Obs	sd1_SHP1Act_Obs
+Compound_1_Obs	sd2_Compound_1_Obs
+Compound_2_Obs	sd2_Compound_2_Obs
+Compound_3_Obs	sd2_Compound_3_Obs
+
+
+CONDITIONS
+ActD	"(1)"
+CISoe	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_SHP1Act_Obs	-1.4983	1	1	-4	1
+sd2_Compound_1_Obs	-2.6667	1	1	-5	0
+sd2_Compound_2_Obs	1.0781	1	1	-1	4
+sd2_Compound_3_Obs	-1.4691	1	1	-4	1
+
+// Scale and offset parameters
+scale1_SHP1Act_Obs	0	1	1	-5	5
+scale2_Compound_1_Obs	0	1	1	-5	5
+scale2_Compound_2_Obs	0	1	1	-5	5
+scale2_Compound_3_Obs	0	1	1	-5	5

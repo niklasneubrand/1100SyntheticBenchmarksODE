@@ -1,0 +1,43 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS05"
+"Random seed:		0002105000"
+"Data type, index:	dose response, 1"
+
+
+PREDICTOR-DOSERESPONSE init_TGFb
+time	T	min	time	0	66
+
+
+INPUTS
+
+
+OBSERVABLES
+pS2_Obs	C	n/a	conc.	0	0	scale3_pS2_Obs*(pS2)
+ppS3_Obs	C	n/a	conc.	0	0	scale6_ppS3_Obs*(ppS3)
+geneI_Obs	C	n/a	conc.	0	0	scale7_geneI_Obs*(geneI)
+
+
+ERRORS
+pS2_Obs	sd3_pS2_Obs
+ppS3_Obs	sd6_ppS3_Obs
+geneI_Obs	sd7_geneI_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_pS2_Obs	-0.31725	1	1	-3	2
+sd6_ppS3_Obs	-2.0137	1	1	-5	0
+sd7_geneI_Obs	-1.1267	1	1	-4	1
+
+// Scale and offset parameters
+scale3_pS2_Obs	0	1	1	-5	5
+scale6_ppS3_Obs	0	1	1	-5	5
+scale7_geneI_Obs	0	1	1	-5	5

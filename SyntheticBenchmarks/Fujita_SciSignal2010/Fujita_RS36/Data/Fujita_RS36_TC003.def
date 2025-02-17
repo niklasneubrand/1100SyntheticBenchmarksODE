@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS36"
+"Random seed:		0001036000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+pEGFR_Akt_Obs	C	n/a	conc.	0	1	offset3_pEGFR_Akt_Obs+scale3_pEGFR_Akt_Obs*(pEGFR_Akt)
+Akt_Obs	C	n/a	conc.	0	1	offset3_Akt_Obs+scale3_Akt_Obs*(Akt)
+
+
+ERRORS
+pEGFR_Akt_Obs	sd3_pEGFR_Akt_Obs
+Akt_Obs	sd3_Akt_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(1)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_pEGFR_Akt_Obs	-0.73808	1	1	-3	2
+sd3_Akt_Obs	-0.73562	1	1	-3	2
+
+// Scale and offset parameters
+scale3_pEGFR_Akt_Obs	0	1	1	-5	5
+offset3_pEGFR_Akt_Obs	-7	1	1	-9	-5
+scale3_Akt_Obs	0	1	1	-5	5
+offset3_Akt_Obs	-4	1	1	-6	-2

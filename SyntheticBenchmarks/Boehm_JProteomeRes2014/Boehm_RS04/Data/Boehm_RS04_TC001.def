@@ -1,0 +1,56 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Boehm_JProteomeRes2014"
+"RS project name:	Boehm_RS04"
+"Random seed:		0000304000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	330
+
+
+INPUTS
+
+
+OBSERVABLES
+STAT5B_Obs	C	n/a	conc.	0	0	scale1_STAT5B_Obs*(STAT5B)
+pApB_Obs	C	n/a	conc.	0	0	scale1_pApB_Obs*(pApB)
+pBpB_Obs	C	n/a	conc.	0	0	scale1_pBpB_Obs*(pBpB)
+nucpApA_Obs	C	n/a	conc.	0	0	scale1_nucpApA_Obs*(nucpApA)
+nucpApB_Obs	C	n/a	conc.	0	0	scale1_nucpApB_Obs*(nucpApB)
+nucpBpB_Obs	C	n/a	conc.	0	0	scale1_nucpBpB_Obs*(nucpBpB)
+
+
+ERRORS
+STAT5B_Obs	sd1_STAT5B_Obs
+pApB_Obs	sd1_pApB_Obs
+pBpB_Obs	sd1_pBpB_Obs
+nucpApA_Obs	sd1_nucpApA_Obs
+nucpApB_Obs	sd1_nucpApB_Obs
+nucpBpB_Obs	sd1_nucpBpB_Obs
+
+
+CONDITIONS
+epo_level	"(1.25e-07)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_STAT5B_Obs	0.36692	1	1	-2	3
+sd1_pApB_Obs	0.11662	1	1	-2	3
+sd1_pBpB_Obs	-7.2141	1	1	-10	-5
+sd1_nucpApA_Obs	1.0924	1	1	-1	4
+sd1_nucpApB_Obs	0.92882	1	1	-2	3
+sd1_nucpBpB_Obs	0.55705	1	1	-2	3
+
+// Scale and offset parameters
+scale1_STAT5B_Obs	0	1	1	-5	5
+scale1_pApB_Obs	0	1	1	-5	5
+scale1_pBpB_Obs	0	1	1	-5	5
+scale1_nucpApA_Obs	0	1	1	-5	5
+scale1_nucpApB_Obs	0	1	1	-5	5
+scale1_nucpBpB_Obs	0	1	1	-5	5

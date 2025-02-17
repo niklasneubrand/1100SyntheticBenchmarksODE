@@ -1,0 +1,43 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Bruno_JExpBio2016"
+"RS project name:	Bruno_RS41"
+"Random seed:		0000641000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	218
+
+
+INPUTS
+
+
+OBSERVABLES
+ohbio_Obs	C	n/a	conc.	0	1	offset1_ohbio_Obs+scale1_ohbio_Obs*(ohbio)
+
+
+ERRORS
+ohbio_Obs	sd1_ohbio_Obs
+
+
+CONDITIONS
+init_b10	"(0)"
+init_bcar	"(0)"
+init_bio	"(0)"
+init_ohb10	"(0)"
+init_ohbio	"(0)"
+init_zea	"(0)"
+kb1	"(0)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_ohbio_Obs	-0.66832	1	1	-3	2
+
+// Scale and offset parameters
+scale1_ohbio_Obs	0	1	1	-5	5
+offset1_ohbio_Obs	-2	1	1	-4	0

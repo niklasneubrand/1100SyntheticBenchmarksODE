@@ -1,0 +1,67 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS16"
+"Random seed:		0002216000"
+"Data type, index:	time course, 5"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	0	EpoRJAK2+pEpoRpJAK2+CISHnRNA2+CISHRNA+SOCS3nRNA4
+Compound_3_Obs	C	n/a	conc.	0	0	EpoRJAK2+CISHnRNA1+CISHnRNA3+SOCS3nRNA1+SOCS3nRNA3
+Compound_5_Obs	C	n/a	conc.	0	0	PTP+PTPAct+nSTAT5+CISHnRNA3+CISHnRNA4
+Compound_6_Obs	C	n/a	conc.	0	0	PTPAct+pSTAT5+npSTAT5+CISHnRNA2+CISHnRNA3
+Compound_8_Obs	C	n/a	conc.	0	0	STAT5+CISHnRNA1+SOCS3nRNA1+SOCS3nRNA5+SOCS3RNA
+Compound_11_Obs	C	n/a	conc.	0	0	nSTAT5+npSTAT5+CISHnRNA3+CISHnRNA4+SOCS3nRNA4
+Compound_12_Obs	C	n/a	conc.	0	0	CISHnRNA1+CISHnRNA2+CISHnRNA4+SOCS3nRNA2+SOCS3nRNA4
+
+
+ERRORS
+Compound_1_Obs	sd2_Compound_1_Obs
+Compound_3_Obs	sd5_Compound_3_Obs
+Compound_5_Obs	sd5_Compound_5_Obs
+Compound_6_Obs	sd5_Compound_6_Obs
+Compound_8_Obs	sd4_Compound_8_Obs
+Compound_11_Obs	sd4_Compound_11_Obs
+Compound_12_Obs	sd2_Compound_12_Obs
+
+
+CONDITIONS
+ActD	"(0)"
+SOCS3oe	"(0)"
+epo_level	"(1.25e-7)"
+init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
+init_SOCS3	"(0 * SOCS3eqmOE * SOCS3eqm + 0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal/SOCS3RNAturn)"
+init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
+init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
+step_time	"(60)"
+vol_cyt	"(0.4)"
+vol_nuc	"(0.275)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Compound_1_Obs	-0.52026	1	1	-3	2
+sd5_Compound_3_Obs	-0.57632	1	1	-3	2
+sd5_Compound_5_Obs	0.69195	1	1	-2	3
+sd5_Compound_6_Obs	0.65941	1	1	-2	3
+sd4_Compound_8_Obs	0.79587	1	1	-2	3
+sd4_Compound_11_Obs	0.36453	1	1	-2	3
+sd2_Compound_12_Obs	-1.7109	1	1	-4	1
+
+// Scale and offset parameters

@@ -1,0 +1,49 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS45"
+"Random seed:		0001545000"
+"Data type, index:	time course, 12"
+
+
+PREDICTOR
+time	T	min	time	0	220
+
+
+INPUTS
+
+
+OBSERVABLES
+JAK1_gp130_Obs	C	n/a	conc.	0	1	offset11_JAK1_gp130_Obs+scale11_JAK1_gp130_Obs*(JAK1_gp130)
+STAT3_Obs	C	n/a	conc.	0	1	scale11_STAT3_Obs*(STAT3)
+tpSTAT3_Obs	C	n/a	conc.	0	1	scale11_tpSTAT3_Obs*(tpSTAT3)
+
+
+ERRORS
+JAK1_gp130_Obs	sd11_JAK1_gp130_Obs
+STAT3_Obs	sd11_STAT3_Obs
+tpSTAT3_Obs	sd11_tpSTAT3_Obs
+
+
+CONDITIONS
+actd_level1	"(1)"
+actd_t1	"(0)"
+actd_t2	"(30)"
+input_actd	"(1)"
+input_il6	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd11_JAK1_gp130_Obs	-1.4226	1	1	-4	1
+sd11_STAT3_Obs	-1.3992	1	1	-4	1
+sd11_tpSTAT3_Obs	-1.4123	1	1	-4	1
+
+// Scale and offset parameters
+scale11_JAK1_gp130_Obs	0	1	1	-5	5
+offset11_JAK1_gp130_Obs	-4	1	1	-6	-2
+scale11_STAT3_Obs	0	1	1	-5	5
+scale11_tpSTAT3_Obs	0	1	1	-5	5

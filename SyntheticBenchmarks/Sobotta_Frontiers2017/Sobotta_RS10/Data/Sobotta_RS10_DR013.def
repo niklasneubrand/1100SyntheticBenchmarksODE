@@ -1,0 +1,42 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS10"
+"Random seed:		0001510000"
+"Data type, index:	dose response, 13"
+
+
+PREDICTOR-DOSERESPONSE input_il6
+time	T	min	time	0	1585
+
+
+INPUTS
+
+
+OBSERVABLES
+pJAK1_gp130_Obs	C	n/a	conc.	0	1	offset10_pJAK1_gp130_Obs+scale10_pJAK1_gp130_Obs*(pJAK1_gp130)
+nSOCS3RNA2_Obs	C	n/a	conc.	0	1	nSOCS3RNA2
+nSOCS3RNA5_Obs	C	n/a	conc.	0	1	nSOCS3RNA5
+
+
+ERRORS
+pJAK1_gp130_Obs	sd10_pJAK1_gp130_Obs
+nSOCS3RNA2_Obs	sd10_nSOCS3RNA2_Obs
+nSOCS3RNA5_Obs	sd10_nSOCS3RNA5_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd10_pJAK1_gp130_Obs	-1.3457	1	1	-4	1
+sd10_nSOCS3RNA2_Obs	-1.3665	1	1	-4	1
+sd10_nSOCS3RNA5_Obs	-1.3719	1	1	-4	1
+
+// Scale and offset parameters
+scale10_pJAK1_gp130_Obs	0	1	1	-5	5
+offset10_pJAK1_gp130_Obs	-6	1	1	-8	-4

@@ -1,0 +1,179 @@
+DESCRIPTION
+"This is a modified copy of the original model definition file."
+"The original observables and errors have been removed."
+"New, realistically drawn observables are defined in the data definition files."
+
+"Original project:	Merkle_PCB2016"
+"RS project name:	Merkle_RS50"
+"Random seed:		0002250000."
+
+"Original description:"
+
+"Epo induced JAK2-STAT5 signaling in CFU-E and H838 cells"
+"with negative feedback by SOCS3, CIS and PTP"
+
+
+PREDICTOR
+t               T   min     time	0	100
+
+
+COMPARTMENTS
+cyt             V   pl      vol.
+nuc             V   pl      vol.
+
+
+STATES
+EpoRJAK2        C   nM      conc.       cyt 1
+EpoRpJAK2       C   nM      conc.       cyt 1
+pEpoRpJAK2      C   nM      conc.       cyt 1
+PTP             C   nM      conc.       cyt 1
+PTPAct          C   nM      conc.       cyt 1
+STAT5           C   nM      conc.       cyt 1
+pSTAT5          C   nM      conc.       cyt 1
+nSTAT5          C   nM      conc.       nuc 1
+npSTAT5         C   nM      conc.       nuc 1
+CISHnRNA1       C   au      conc.       nuc 0
+CISHnRNA2       C   au      conc.       nuc 0
+CISHnRNA3       C   au      conc.       nuc 0
+CISHnRNA4       C   au      conc.       nuc 0
+CISHnRNA5       C   au      conc.       nuc 0
+CISHRNA         C   au      conc.       cyt 1
+CIS             C   nM      conc.       cyt 1
+SOCS3nRNA1      C   au      conc.       nuc 0
+SOCS3nRNA2      C   au      conc.       nuc 0
+SOCS3nRNA3      C   au      conc.       nuc 0
+SOCS3nRNA4      C   au      conc.       nuc 0
+SOCS3nRNA5      C   au      conc.       nuc 0
+SOCS3RNA        C   au      conc.       cyt 1
+SOCS3           C   nM      conc.       cyt 1
+
+
+INPUTS
+Epo             C   units/cell   conc.   "epo_level"
+step_function   C   on/off       bool    "step1(t,0,step_time,1)"
+
+
+REACTIONS
+EpoRJAK2        ->  EpoRpJAK2   CUSTOM "JAK2actEPO * EpoRJAK2 * Epo / (1 + SOCS3inh_model * SOCS3)"
+EpoRpJAK2       ->  EpoRJAK2    CUSTOM "JAK2EPORdeactPTP_model * EpoRpJAK2 * PTPAct"
+
+EpoRpJAK2       ->  pEpoRpJAK2  CUSTOM "EPORactJAK2 * EpoRpJAK2 / (1 + SOCS3inh_model * SOCS3)"
+pEpoRpJAK2      ->  EpoRJAK2    CUSTOM "JAK2EPORdeactPTP_model * pEpoRpJAK2 * PTPAct"
+        
+PTP             ->  PTPAct      CUSTOM "PTPactEPOR_model * PTP * (EpoRpJAK2 + pEpoRpJAK2)"
+PTPAct          ->  PTP         CUSTOM "PTPdeact * PTPAct"
+        
+STAT5           ->  pSTAT5      CUSTOM "STAT5actJAK2_model * STAT5 * (EpoRpJAK2 + pEpoRpJAK2) / (1 + SOCS3inh_model * SOCS3)"
+STAT5           ->  pSTAT5      CUSTOM "STAT5actEPOR_model * STAT5 * pEpoRpJAK2^2 / (1 + SOCS3inh_model * SOCS3) / (1 + CISinh_model * CIS)"
+
+pSTAT5          ->  npSTAT5     CUSTOM "STAT5imp * pSTAT5"
+npSTAT5         ->  nSTAT5      CUSTOM "nSTAT5deact * npSTAT5"
+nSTAT5          ->  STAT5       CUSTOM "STAT5exp * nSTAT5"
+        
+                ->  CISHnRNA1   CUSTOM "(1-isprediction*ActDstrength_val*step_function) * CISHRNAbasal_model * (1-ActDstrength*ActD)"
+                ->  CISHnRNA1   CUSTOM "(1-isprediction*ActDstrength_val*step_function) * CISHRNAeqm_model * CISHRNAturn * npSTAT5 * (1-ActDstrength*ActD)"
+CISHnRNA1       ->  CISHnRNA2   CUSTOM "CISHRNAdelay * CISHnRNA1"
+CISHnRNA2       ->  CISHnRNA3   CUSTOM "CISHRNAdelay * CISHnRNA2"
+CISHnRNA3       ->  CISHnRNA4   CUSTOM "CISHRNAdelay * CISHnRNA3"
+CISHnRNA4       ->  CISHnRNA5   CUSTOM "CISHRNAdelay * CISHnRNA4"
+CISHnRNA5       ->  CISHRNA     CUSTOM "CISHRNAdelay * CISHnRNA5"
+CISHRNA         ->              CUSTOM "CISHRNAturn * CISHRNA"
+        
+                ->  CIS         CUSTOM "CISeqm_model * CISturn * CISHRNA"
+CIS             ->              CUSTOM "CISturn * CIS"
+        
+                ->  SOCS3nRNA1  CUSTOM "(1-isprediction*ActDstrength_val*step_function) * SOCS3RNAbasal_model * (1-ActDstrength*ActD)"
+                ->  SOCS3nRNA1  CUSTOM "(1-isprediction*ActDstrength_val*step_function) * SOCS3RNAeqm_model * SOCS3RNAturn * npSTAT5^SOCS3prom * (1-ActDstrength*ActD)"
+SOCS3nRNA1      ->  SOCS3nRNA2  CUSTOM "SOCS3RNAdelay * SOCS3nRNA1"
+SOCS3nRNA2      ->  SOCS3nRNA3  CUSTOM "SOCS3RNAdelay * SOCS3nRNA2"
+SOCS3nRNA3      ->  SOCS3nRNA4  CUSTOM "SOCS3RNAdelay * SOCS3nRNA3"
+SOCS3nRNA4      ->  SOCS3nRNA5  CUSTOM "SOCS3RNAdelay * SOCS3nRNA4"
+SOCS3nRNA5      ->  SOCS3RNA    CUSTOM "SOCS3RNAdelay * SOCS3nRNA5"
+SOCS3RNA        ->              CUSTOM "SOCS3RNAturn * SOCS3RNA"
+        
+                ->  SOCS3       CUSTOM "SOCS3eqm_model * SOCS3turn * SOCS3RNA"
+SOCS3           ->              CUSTOM "SOCS3turn * SOCS3"
+        
+                ->  SOCS3       CUSTOM "SOCS3oe * SOCS3eqmOE_model * SOCS3turn"
+
+
+DERIVED
+pJAK2      C   au      conc.    "2 * (EpoRpJAK2 + pEpoRpJAK2)"
+pEpoR      C   au      conc.    "16 * pEpoRpJAK2"
+tSTAT5     C   au      conc.    "STAT5+pSTAT5"
+
+
+CONDITIONS
+CISHRNAbasal_model	"(CISHRNAbasal*CISHRNAeqm)"
+CISHRNAeqm_model	"(CISHRNAeqm / init_STAT5)"
+CISeqm_model	"(CISeqm / CISHRNAeqm)"
+CISinh_model	"(CISinh / CISeqm)"
+JAK2EPORdeactPTP_model	"(JAK2EPORdeactPTP / init_PTP)"
+PTPactEPOR_model	"(PTPactEPOR / init_EpoRJAK2)"
+SOCS3RNAbasal_model	"(SOCS3RNAbasal*SOCS3RNAeqm)"
+SOCS3RNAeqm_model	"(SOCS3RNAeqm / init_STAT5^SOCS3prom)"
+SOCS3eqmOE_model	"(SOCS3eqmOE * SOCS3eqm)"
+SOCS3eqm_model	"(SOCS3eqm / SOCS3RNAeqm)"
+SOCS3inh_model	"(SOCS3inh / SOCS3eqm)"
+STAT5actEPOR_model	"(STAT5actEPOR / init_EpoRJAK2^2)"
+STAT5actJAK2_model	"(STAT5actJAK2 / init_EpoRJAK2)"
+init_CISHnRNA1	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA2	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA3	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA4	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
+init_CISHnRNA5	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
+init_EpoRpJAK2	"(0)"
+init_PTPAct	"(0)"
+init_nSTAT5	"(0)"
+init_npSTAT5	"(0)"
+init_pEpoRpJAK2	"(0)"
+init_pSTAT5	"(0)"
+isprediction	"(0)"
+
+
+PARAMETERS
+ActDstrength	0.3	1	1	-3	4
+CISHRNAbasal	-4.78	1	1	-8	-1
+CISHRNAdelay	-0.427	1	1	-4	3
+CISHRNAeqm	0	2	1	-3	3
+CISHRNAturn	-1.29	1	1	-5	2
+CISeqm	2.26	1	1	-1	6
+CISinh	-5	1	1	-8	-2
+CISturn	-2.14	1	1	-6	1
+EPORactJAK2	0.465	1	1	-3	4
+JAK2EPORdeactPTP	4.42	1	1	1	8
+JAK2actEPO	6.28	1	1	3	10
+PTPactEPOR	-5.12	1	1	-9	-2
+PTPdeact	-1.98	1	1	-5	2
+ReltoH838_init_EpoRJAK2_H838	0.825	1	1	-3	4
+Relto_CFUE_ActDstrength	-0.105	1	1	-4	3
+Relto_CFUE_CISHRNAturn	-0.451	1	1	-4	3
+Relto_CFUE_EPORactJAK2	-1.27	1	1	-5	2
+Relto_CFUE_JAK2actEPO	-0.924	1	1	-4	3
+Relto_CFUE_SOCS3RNAdelay	1.38	1	1	-2	5
+Relto_CFUE_SOCS3prom	0.567	1	1	-3	4
+Relto_CFUE_STAT5imp	0.906	1	1	-3	4
+Relto_CFUE_init_STAT5	-1.29	1	1	-5	2
+Relto_CFUE_nSTAT5deact	1.05	1	1	-2	5
+Relto_H838WT_init_PTP	-0.928	1	1	-4	3
+SHP1proOE	0.555	1	1	-3	4
+SOCS3RNAbasal	-2.66	1	1	-6	1
+SOCS3RNAdelay	-0.935	1	1	-4	3
+SOCS3RNAeqm	0	2	1	-3	3
+SOCS3RNAturn	-0.961	1	1	-4	3
+SOCS3eqm	2.05	1	1	-1	6
+SOCS3eqmOE	0.115	1	1	-3	4
+SOCS3inh	0.79	1	1	-3	4
+SOCS3prom	0.0826	1	1	-3	4
+SOCS3turn	3.78	1	1	0	7
+STAT5actEPOR	0.0755	1	1	-3	4
+STAT5actJAK2	-1.56	1	1	-5	2
+STAT5exp	-0.995	1	1	-4	3
+STAT5imp	-1.72	1	1	-5	2
+init_EpoRJAK2	0.131	1	1	-3	4
+init_EpoRJAK2_H838	-0.624	1	1	-4	3
+init_PTP	1.44	1	1	-2	5
+init_STAT5	1.89	1	1	-2	5
+nSTAT5deact	-1.08	1	1	-5	2
+
+

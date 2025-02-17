@@ -1,0 +1,52 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Raia_CancerResearch2011"
+"RS project name:	Raia_RS30"
+"Random seed:		0001230000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	145
+
+
+INPUTS
+
+
+OBSERVABLES
+Rec_i_Obs	C	n/a	conc.	0	1	offset3_Rec_i_Obs+scale3_Rec_i_Obs*(Rec_i)
+IL13_Rec_Obs	C	n/a	conc.	0	1	offset3_IL13_Rec_Obs+scale3_IL13_Rec_Obs*(IL13_Rec)
+JAK2_Obs	C	n/a	conc.	0	1	offset3_JAK2_Obs+scale3_JAK2_Obs*(JAK2)
+DecoyR_Obs	C	n/a	conc.	0	1	offset3_DecoyR_Obs+scale3_DecoyR_Obs*(DecoyR)
+
+
+ERRORS
+Rec_i_Obs	sd3_Rec_i_Obs
+IL13_Rec_Obs	sd3_IL13_Rec_Obs
+JAK2_Obs	sd3_JAK2_Obs
+DecoyR_Obs	sd3_DecoyR_Obs
+
+
+CONDITIONS
+il13_level	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_Rec_i_Obs	-0.69058	1	1	-3	2
+sd3_IL13_Rec_Obs	-0.66636	1	1	-3	2
+sd3_JAK2_Obs	-0.682	1	1	-3	2
+sd3_DecoyR_Obs	-0.69349	1	1	-3	2
+
+// Scale and offset parameters
+scale3_Rec_i_Obs	0	1	1	-5	5
+offset3_Rec_i_Obs	0	1	1	-2	2
+scale3_IL13_Rec_Obs	0	1	1	-5	5
+offset3_IL13_Rec_Obs	-7	1	1	-9	-5
+scale3_JAK2_Obs	0	1	1	-5	5
+offset3_JAK2_Obs	-3	1	1	-5	-1
+scale3_DecoyR_Obs	0	1	1	-5	5
+offset3_DecoyR_Obs	-4	1	1	-6	-2

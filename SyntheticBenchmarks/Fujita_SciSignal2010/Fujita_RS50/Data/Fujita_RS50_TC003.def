@@ -1,0 +1,57 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS50"
+"Random seed:		0001050000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+pEGFR_Obs	C	n/a	conc.	0	1	offset3_pEGFR_Obs+scale3_pEGFR_Obs*(pEGFR)
+Akt_Obs	C	n/a	conc.	0	1	offset3_Akt_Obs+scale3_Akt_Obs*(Akt)
+pAkt_Obs	C	n/a	conc.	0	1	offset3_pAkt_Obs+scale3_pAkt_Obs*(pAkt)
+pS6_Obs	C	n/a	conc.	0	1	pS6
+EGF_EGFR_Obs	C	n/a	conc.	0	1	EGF_EGFR
+
+
+ERRORS
+pEGFR_Obs	sd3_pEGFR_Obs
+Akt_Obs	sd3_Akt_Obs
+pAkt_Obs	sd3_pAkt_Obs
+pS6_Obs	sd3_pS6_Obs
+EGF_EGFR_Obs	sd3_EGF_EGFR_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(1)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd3_pEGFR_Obs	-0.80983	1	1	-3	2
+sd3_Akt_Obs	-0.78809	1	1	-3	2
+sd3_pAkt_Obs	-0.80061	1	1	-3	2
+sd3_pS6_Obs	-0.82741	1	1	-3	2
+sd3_EGF_EGFR_Obs	-0.79725	1	1	-3	2
+
+// Scale and offset parameters
+scale3_pEGFR_Obs	0	1	1	-5	5
+offset3_pEGFR_Obs	3	1	1	1	5
+scale3_Akt_Obs	0	1	1	-5	5
+offset3_Akt_Obs	-4	1	1	-6	-2
+scale3_pAkt_Obs	0	1	1	-5	5
+offset3_pAkt_Obs	-5	1	1	-7	-3

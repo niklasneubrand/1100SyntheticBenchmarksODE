@@ -1,0 +1,50 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Becker_Science2010"
+"RS project name:	Becker_RS50"
+"Random seed:		0000150000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	min	time	0	364
+
+
+INPUTS
+
+
+OBSERVABLES
+Epo_Obs	C	n/a	conc.	0	0	scale1_Epo_Obs*(Epo)
+EpoR_Obs	C	n/a	conc.	0	0	scale1_EpoR_Obs*(EpoR)
+Epo_EpoR_i_Obs	C	n/a	conc.	0	0	Epo_EpoR_i
+dEpo_i_Obs	C	n/a	conc.	0	0	dEpo_i
+dEpo_e_Obs	C	n/a	conc.	0	0	scale1_dEpo_e_Obs*(dEpo_e)
+
+
+ERRORS
+Epo_Obs	sd1_Epo_Obs
+EpoR_Obs	sd1_EpoR_Obs
+Epo_EpoR_i_Obs	sd1_Epo_EpoR_i_Obs
+dEpo_i_Obs	sd1_dEpo_i_Obs
+dEpo_e_Obs	sd1_dEpo_e_Obs
+
+
+CONDITIONS
+init_EpoR	"(4 * init_Epo * init_EpoR_rel)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Epo_Obs	2.0552	1	1	0	5
+sd1_EpoR_Obs	2.1212	1	1	0	5
+sd1_Epo_EpoR_i_Obs	1.9203	1	1	-1	4
+sd1_dEpo_i_Obs	1.3371	1	1	-1	4
+sd1_dEpo_e_Obs	2.3024	1	1	0	5
+
+// Scale and offset parameters
+scale1_Epo_Obs	0	1	1	-5	5
+scale1_EpoR_Obs	0	1	1	-5	5
+scale1_dEpo_e_Obs	0	1	1	-5	5

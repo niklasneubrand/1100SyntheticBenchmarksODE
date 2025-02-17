@@ -1,0 +1,44 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Borghans_BiophysChem1997"
+"RS project name:	Borghans_RS41"
+"Random seed:		0000441000"
+"Data type, index:	time course, 1"
+
+
+PREDICTOR
+time	T	n/a	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+Z_state_Obs	C	n/a	conc.	0	1	offset1_Z_state_Obs+scale1_Z_state_Obs*(Z_state)
+Y_state_Obs	C	n/a	conc.	0	1	Y_state
+A_state_Obs	C	n/a	conc.	0	1	offset1_A_state_Obs+scale1_A_state_Obs*(A_state)
+
+
+ERRORS
+Z_state_Obs	sd1_Z_state_Obs
+Y_state_Obs	sd1_Y_state_Obs
+A_state_Obs	sd1_A_state_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Z_state_Obs	-1.3447	1	1	-4	1
+sd1_Y_state_Obs	-1.3673	1	1	-4	1
+sd1_A_state_Obs	-1.3259	1	1	-4	1
+
+// Scale and offset parameters
+scale1_Z_state_Obs	0	1	1	-5	5
+offset1_Z_state_Obs	-3	1	1	-5	-1
+scale1_A_state_Obs	0	1	1	-5	5
+offset1_A_state_Obs	-2	1	1	-4	0

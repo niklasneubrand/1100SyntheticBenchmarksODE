@@ -1,0 +1,54 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Fujita_SciSignal2010"
+"RS project name:	Fujita_RS05"
+"Random seed:		0001005000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	n/a	time	0	4356
+
+
+INPUTS
+
+
+OBSERVABLES
+pEGFR_Obs	C	n/a	conc.	0	0	pEGFR
+pEGFR_Akt_Obs	C	n/a	conc.	0	0	pEGFR_Akt
+Akt_Obs	C	n/a	conc.	0	0	scale2_Akt_Obs*(Akt)
+S6_Obs	C	n/a	conc.	0	0	scale2_S6_Obs*(S6)
+pAkt_S6_Obs	C	n/a	conc.	0	0	scale2_pAkt_S6_Obs*(pAkt_S6)
+
+
+ERRORS
+pEGFR_Obs	sd2_pEGFR_Obs
+pEGFR_Akt_Obs	sd2_pEGFR_Akt_Obs
+Akt_Obs	sd2_Akt_Obs
+S6_Obs	sd2_S6_Obs
+pAkt_S6_Obs	sd2_pAkt_S6_Obs
+
+
+CONDITIONS
+EGF_conc_impulse	"(0)"
+EGF_conc_ramp	"(0)"
+EGF_conc_step	"(0.3)"
+pulse_time	"(60)"
+ramp_time	"(3600)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_pEGFR_Obs	4.8504	1	1	2	7
+sd2_pEGFR_Akt_Obs	-5.1216	1	1	-8	-3
+sd2_Akt_Obs	-2.2657	1	1	-5	0
+sd2_S6_Obs	1.7028	1	1	-1	4
+sd2_pAkt_S6_Obs	-3.0891	1	1	-6	-1
+
+// Scale and offset parameters
+scale2_Akt_Obs	0	1	1	-5	5
+scale2_S6_Obs	0	1	1	-5	5
+scale2_pAkt_S6_Obs	0	1	1	-5	5

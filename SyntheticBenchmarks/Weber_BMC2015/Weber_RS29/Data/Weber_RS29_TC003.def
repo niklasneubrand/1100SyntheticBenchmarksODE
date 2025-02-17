@@ -1,0 +1,51 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Weber_BMC2015"
+"RS project name:	Weber_RS29"
+"Random seed:		0001729000"
+"Data type, index:	time course, 3"
+
+
+PREDICTOR
+time	T	h	time	0	33
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	PKD+PKDDAGa+PI4K3B+CERTERa+CERT
+Compound_2_Obs	C	n/a	conc.	0	1	offset3_Compound_2_Obs+scale3_Compound_2_Obs*(PKD+PKDDAGa+PI4K3Ba+CERT+CERTTGNa)
+Compound_3_Obs	C	n/a	conc.	0	1	offset2_Compound_3_Obs+scale2_Compound_3_Obs*(PKDDAGa+PI4K3Ba+CERTERa+CERT+CERTTGNa)
+
+
+ERRORS
+Compound_1_Obs	sd1_Compound_1_Obs
+Compound_2_Obs	sd3_Compound_2_Obs
+Compound_3_Obs	sd2_Compound_3_Obs
+
+
+CONDITIONS
+Ect_Expr_CERT_flag	"(1)"
+Ect_Expr_PI4K3beta_flag	"(0)"
+Ect_Expr_PKD_flag	"(0)"
+PdBu_dose	"(0)"
+PdBu_time	"(0)"
+kb_NB142_70_dose	"(10)"
+kb_NB142_70_time	"(24)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd1_Compound_1_Obs	-1.1714	1	1	-4	1
+sd3_Compound_2_Obs	-1.1939	1	1	-4	1
+sd2_Compound_3_Obs	-1.1777	1	1	-4	1
+
+// Scale and offset parameters
+scale3_Compound_2_Obs	0	1	1	-5	5
+offset3_Compound_2_Obs	6	1	1	4	8
+scale2_Compound_3_Obs	0	1	1	-5	5
+offset2_Compound_3_Obs	6	1	1	4	8

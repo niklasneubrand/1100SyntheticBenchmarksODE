@@ -1,0 +1,71 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Sobotta_Frontiers2017"
+"RS project name:	Sobotta_RS18"
+"Random seed:		0001518000"
+"Data type, index:	time course, 11"
+
+
+PREDICTOR
+time	T	min	time	0	220
+
+
+INPUTS
+
+
+OBSERVABLES
+pJAK1_pgp130_Obs	C	n/a	conc.	0	1	pJAK1_pgp130
+STAT3_Obs	C	n/a	conc.	0	1	STAT3
+nSTAT3_Obs	C	n/a	conc.	0	1	offset10_nSTAT3_Obs+scale10_nSTAT3_Obs*(nSTAT3)
+nSOCS3RNA1_Obs	C	n/a	conc.	0	1	offset10_nSOCS3RNA1_Obs+scale10_nSOCS3RNA1_Obs*(nSOCS3RNA1)
+nSOCS3RNA2_Obs	C	n/a	conc.	0	1	offset11_nSOCS3RNA2_Obs+scale11_nSOCS3RNA2_Obs*(nSOCS3RNA2)
+nSOCS3RNA5_Obs	C	n/a	conc.	0	1	offset10_nSOCS3RNA5_Obs+scale10_nSOCS3RNA5_Obs*(nSOCS3RNA5)
+SOCS3RNA_Obs	C	n/a	conc.	0	1	offset10_SOCS3RNA_Obs+scale10_SOCS3RNA_Obs*(SOCS3RNA)
+SOCS3_Obs	C	n/a	conc.	0	1	offset10_SOCS3_Obs+scale10_SOCS3_Obs*(SOCS3)
+
+
+ERRORS
+pJAK1_pgp130_Obs	sd10_pJAK1_pgp130_Obs
+STAT3_Obs	sd10_STAT3_Obs
+nSTAT3_Obs	sd10_nSTAT3_Obs
+nSOCS3RNA1_Obs	sd10_nSOCS3RNA1_Obs
+nSOCS3RNA2_Obs	sd11_nSOCS3RNA2_Obs
+nSOCS3RNA5_Obs	sd10_nSOCS3RNA5_Obs
+SOCS3RNA_Obs	sd10_SOCS3RNA_Obs
+SOCS3_Obs	sd10_SOCS3_Obs
+
+
+CONDITIONS
+actd_level1	"(1)"
+actd_t1	"(0)"
+actd_t2	"(30)"
+input_il6	"(80)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd10_pJAK1_pgp130_Obs	-1.3126	1	1	-4	1
+sd10_STAT3_Obs	-1.3309	1	1	-4	1
+sd10_nSTAT3_Obs	-1.33	1	1	-4	1
+sd10_nSOCS3RNA1_Obs	-1.3389	1	1	-4	1
+sd11_nSOCS3RNA2_Obs	-1.3516	1	1	-4	1
+sd10_nSOCS3RNA5_Obs	-1.3333	1	1	-4	1
+sd10_SOCS3RNA_Obs	-1.3422	1	1	-4	1
+sd10_SOCS3_Obs	-1.3296	1	1	-4	1
+
+// Scale and offset parameters
+scale10_nSTAT3_Obs	0	1	1	-5	5
+offset10_nSTAT3_Obs	-1	1	1	-3	1
+scale10_nSOCS3RNA1_Obs	0	1	1	-5	5
+offset10_nSOCS3RNA1_Obs	-4	1	1	-6	-2
+scale11_nSOCS3RNA2_Obs	0	1	1	-5	5
+offset11_nSOCS3RNA2_Obs	-4	1	1	-6	-2
+scale10_nSOCS3RNA5_Obs	0	1	1	-5	5
+offset10_nSOCS3RNA5_Obs	-4	1	1	-6	-2
+scale10_SOCS3RNA_Obs	0	1	1	-5	5
+offset10_SOCS3RNA_Obs	-6	1	1	-8	-4
+scale10_SOCS3_Obs	0	1	1	-5	5
+offset10_SOCS3_Obs	-4	1	1	-6	-2

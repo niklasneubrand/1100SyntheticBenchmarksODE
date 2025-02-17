@@ -1,0 +1,46 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS11"
+"Random seed:		0002111000"
+"Data type, index:	dose response, 1"
+
+
+PREDICTOR-DOSERESPONSE init_TGFb
+time	T	min	time	0	66
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_5_Obs	C	n/a	conc.	0	1	offset5_Compound_5_Obs+scale5_Compound_5_Obs*(S2+ppS2_S4_S4)
+Compound_8_Obs	C	n/a	conc.	0	1	offset3_Compound_8_Obs+scale3_Compound_8_Obs*(ppS2_ppS3_S4+geneF)
+Compound_9_Obs	C	n/a	conc.	0	1	offset6_Compound_9_Obs+scale6_Compound_9_Obs*(geneC+geneG)
+
+
+ERRORS
+Compound_5_Obs	sd5_Compound_5_Obs
+Compound_8_Obs	sd3_Compound_8_Obs
+Compound_9_Obs	sd6_Compound_9_Obs
+
+
+CONDITIONS
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd5_Compound_5_Obs	-0.67759	1	1	-3	2
+sd3_Compound_8_Obs	-0.71508	1	1	-3	2
+sd6_Compound_9_Obs	-0.69882	1	1	-3	2
+
+// Scale and offset parameters
+scale5_Compound_5_Obs	0	1	1	-5	5
+offset5_Compound_5_Obs	0	1	1	-2	2
+scale3_Compound_8_Obs	0	1	1	-5	5
+offset3_Compound_8_Obs	-2	1	1	-4	0
+scale6_Compound_9_Obs	0	1	1	-5	5
+offset6_Compound_9_Obs	-2	1	1	-4	0

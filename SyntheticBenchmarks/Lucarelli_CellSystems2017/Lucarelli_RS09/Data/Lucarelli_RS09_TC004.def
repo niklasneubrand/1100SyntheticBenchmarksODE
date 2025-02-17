@@ -1,0 +1,73 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Lucarelli_CellSystems2017"
+"RS project name:	Lucarelli_RS09"
+"Random seed:		0002109000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	min	time	0	726
+
+
+INPUTS
+
+
+OBSERVABLES
+Compound_1_Obs	C	n/a	conc.	0	1	offset2_Compound_1_Obs+scale2_Compound_1_Obs*(TGFb+S4+ppS2_ppS2_ppS2+ppS2_ppS3_ppS3+ppS2_ppS3_S4)
+Compound_3_Obs	C	n/a	conc.	0	1	Rec+ppS2_ppS2_ppS2+ppS3_ppS3_ppS3+pS3+geneC
+Compound_4_Obs	C	n/a	conc.	0	1	offset2_Compound_4_Obs+scale2_Compound_4_Obs*(Rec+ppS3_S4_S4+geneF+geneH+geneK)
+Compound_5_Obs	C	n/a	conc.	0	1	offset2_Compound_5_Obs+scale2_Compound_5_Obs*(TGFb_pRec+S2+S4+geneK+geneL)
+Compound_8_Obs	C	n/a	conc.	0	1	offset2_Compound_8_Obs+scale2_Compound_8_Obs*(S3+ppS2_ppS3_ppS3+ppS3_ppS3_S4+geneB+geneJ)
+Compound_10_Obs	C	n/a	conc.	0	1	offset2_Compound_10_Obs+scale2_Compound_10_Obs*(S2_S4_S4+ppS3_ppS3_ppS3+ppS3+ppS2_ppS3_ppS3+geneG)
+Compound_11_Obs	C	n/a	conc.	0	1	ppS3_ppS3_ppS3+pS3+ppS2+ppS2_ppS2_S4+geneA
+Compound_13_Obs	C	n/a	conc.	0	1	S4_S4_S4+ppS2_ppS2_S4+ppS3_ppS3_S4+geneB+geneJ
+Compound_14_Obs	C	n/a	conc.	0	1	offset2_Compound_14_Obs+scale2_Compound_14_Obs*(ppS3_ppS3_S4+ppS2_S4_S4+geneD+geneJ+geneL)
+
+
+ERRORS
+Compound_1_Obs	sd2_Compound_1_Obs
+Compound_3_Obs	sd2_Compound_3_Obs
+Compound_4_Obs	sd2_Compound_4_Obs
+Compound_5_Obs	sd2_Compound_5_Obs
+Compound_8_Obs	sd2_Compound_8_Obs
+Compound_10_Obs	sd2_Compound_10_Obs
+Compound_11_Obs	sd2_Compound_11_Obs
+Compound_13_Obs	sd2_Compound_13_Obs
+Compound_14_Obs	sd2_Compound_14_Obs
+
+
+CONDITIONS
+init_S2	"(142.34)"
+init_S3	"(14.234)"
+init_S4	"(69.47)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_Compound_1_Obs	-1.3625	1	1	-4	1
+sd2_Compound_3_Obs	-1.3944	1	1	-4	1
+sd2_Compound_4_Obs	-1.3876	1	1	-4	1
+sd2_Compound_5_Obs	-1.3955	1	1	-4	1
+sd2_Compound_8_Obs	-1.3771	1	1	-4	1
+sd2_Compound_10_Obs	-1.3905	1	1	-4	1
+sd2_Compound_11_Obs	-1.356	1	1	-4	1
+sd2_Compound_13_Obs	-1.425	1	1	-4	1
+sd2_Compound_14_Obs	-1.4115	1	1	-4	1
+
+// Scale and offset parameters
+scale2_Compound_1_Obs	0	1	1	-5	5
+offset2_Compound_1_Obs	-1	1	1	-3	1
+scale2_Compound_4_Obs	0	1	1	-5	5
+offset2_Compound_4_Obs	-2	1	1	-4	0
+scale2_Compound_5_Obs	0	1	1	-5	5
+offset2_Compound_5_Obs	0	1	1	-2	2
+scale2_Compound_8_Obs	0	1	1	-5	5
+offset2_Compound_8_Obs	-1	1	1	-3	1
+scale2_Compound_10_Obs	0	1	1	-5	5
+offset2_Compound_10_Obs	-2	1	1	-4	0
+scale2_Compound_14_Obs	0	1	1	-5	5
+offset2_Compound_14_Obs	-2	1	1	-4	0

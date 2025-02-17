@@ -1,0 +1,49 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Schwen_PlosOne2014"
+"RS project name:	Schwen_RS43"
+"Random seed:		0001343000"
+"Data type, index:	time course, 4"
+
+
+PREDICTOR
+time	T	n/a	time	0	110
+
+
+INPUTS
+
+
+OBSERVABLES
+IR1_Obs	C	n/a	conc.	0	1	IR1
+IR2in_Obs	C	n/a	conc.	0	1	offset2_IR2in_Obs+scale2_IR2in_Obs*(IR2in)
+Compound_2_Obs	C	n/a	conc.	0	1	scale2_Compound_2_Obs*(Ins+Rec1+Rec2+IR1+IR2+IR2in+Uptake1+Uptake2+InsulinFragments+BoundUnspec)
+Compound_4_Obs	C	n/a	conc.	0	1	offset4_Compound_4_Obs+scale4_Compound_4_Obs*(Ins+Rec2+IR1+IR2+IR1in+IR2in+Uptake1+Uptake2+InsulinFragments+BoundUnspec)
+
+
+ERRORS
+IR1_Obs	sd4_IR1_Obs
+IR2in_Obs	sd2_IR2in_Obs
+Compound_2_Obs	sd2_Compound_2_Obs
+Compound_4_Obs	sd4_Compound_4_Obs
+
+
+CONDITIONS
+init_Ins	"(10)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd4_IR1_Obs	-1.2388	1	1	-4	1
+sd2_IR2in_Obs	-1.2419	1	1	-4	1
+sd2_Compound_2_Obs	-1.2354	1	1	-4	1
+sd4_Compound_4_Obs	-1.209	1	1	-4	1
+
+// Scale and offset parameters
+scale2_IR2in_Obs	0	1	1	-5	5
+offset2_IR2in_Obs	-2	1	1	-4	0
+scale2_Compound_2_Obs	0	1	1	-5	5
+scale4_Compound_4_Obs	0	1	1	-5	5
+offset4_Compound_4_Obs	0	1	1	-2	2

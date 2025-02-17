@@ -1,0 +1,44 @@
+DESCRIPTION
+"Realisticly Set Observables"
+"Original project:	Brannmark_JBC2010"
+"RS project name:	Brannmark_RS13"
+"Random seed:		0000513000"
+"Data type, index:	time course, 2"
+
+
+PREDICTOR
+time	T	min	time	0	11
+
+
+INPUTS
+
+
+OBSERVABLES
+IRp_Obs	C	n/a	conc.	0	0	IRp
+IRiP_Obs	C	n/a	conc.	0	0	IRiP
+XXp_Obs	C	n/a	conc.	0	0	XXp
+
+
+ERRORS
+IRp_Obs	sd2_IRp_Obs
+IRiP_Obs	sd2_IRiP_Obs
+XXp_Obs	sd2_XXp_Obs
+
+
+CONDITIONS
+insulin_dose_1	"(1.2)"
+insulin_dose_2	"(8.8)"
+insulin_time_1	"(0)"
+insulin_time_2	"(4)"
+
+
+RANDOM
+
+
+PARAMETERS
+// Error parameters
+sd2_IRp_Obs	-7.4203	1	1	-10	-5
+sd2_IRiP_Obs	-4.6895	1	1	-7	-2
+sd2_XXp_Obs	-3.1203	1	1	-6	-1
+
+// Scale and offset parameters
