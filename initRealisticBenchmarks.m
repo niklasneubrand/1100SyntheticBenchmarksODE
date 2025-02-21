@@ -7,11 +7,11 @@ catch
 end
 
 % RTF specific
-arInit();
-rtfPath = fullfile(ar.info.ar_path, ...
-                   'Examples', 'ToyModels', ...
-                   'TransientFunction', 'TransientFunction_library');
-addpath(rtfPath)
+% arInit();
+% rtfPath = fullfile(ar.info.ar_path, ...
+%                    'Examples', 'ToyModels', ...
+%                    'TransientFunction', 'TransientFunction_library');
+% addpath(rtfPath)
 
 
 % project specific
