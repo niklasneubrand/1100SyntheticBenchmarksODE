@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Directory containing the synthetic benchmark folders
-base_dir="$(pwd)/../../SystheticBenchmarks"
+base_dir="$(pwd)/../../SyntheticBenchmarks"
+echo "Processing base directory: $base_dir"
 
 # Loop through all synthetic projects folders in the template directory
 for template_dir in "$base_dir"/*/; do
