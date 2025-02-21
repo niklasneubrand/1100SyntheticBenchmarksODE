@@ -10,6 +10,6 @@ for template_dir in "$base_dir"/*/; do
         echo "Processing directory: $template_dir"
         
         # Run the identifiability analysis in the background
-        nohup matlab-R2021a -r "testIdentifiabilityLocal('$template_dir'); exit;" </dev/null >/dev/null 2>&1 &
+        nohup matlab-R2021a -r "testIdentifyLocalRecursive('$template_dir'); exit;" </dev/null >/dev/null 2>&1 &
     fi
 done
