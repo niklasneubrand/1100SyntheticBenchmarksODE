@@ -111,6 +111,9 @@ for jp = 1:length(ar.model(m).plot)
     
         qLog = vertcat(ar.model(m).data(ar.model(m).plot(jp).dLink).logplotting);
         fys = [ar.model(m).data(ar.model(m).plot(jp).dLink).fy];
+        if isrow(fys)
+            fys = fys';
+        end
 
         if qLog(1, i)
             addTitle = [addTitle 'L'];
