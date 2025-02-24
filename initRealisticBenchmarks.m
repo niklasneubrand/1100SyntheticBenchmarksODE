@@ -6,14 +6,15 @@ try
 catch
 end
 
+arInit();
+
 % RTF specific
-% arInit();
 % rtfPath = fullfile(ar.info.ar_path, ...
 %                    'Examples', 'ToyModels', ...
 %                    'TransientFunction', 'TransientFunction_library');
 % addpath(rtfPath)
 
 
-% project specific
+% realistic simulation specific
 realisticDir = fileparts(mfilename('fullpath'));
 addpath(genpath(fullfile(realisticDir, 'project_lib')));

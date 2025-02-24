@@ -82,7 +82,8 @@ end
 
 %% append the results struct to the results file
 % Define the file paths and names for the results file and lock file
-rsDir = fileparts(which('initRealisticBenchmarks.m'));
+currentDir = fileparts(mfilename('fullpath'));
+rsDir = fullfile(currentDir, '..', '..');
 identifyDir = fullfile(rsDir, 'analysisScripts', 'identifiabilityLocal');
 outputFile = fullfile(identifyDir, sprintf('%s.mat', outputName));
 lockFile = fullfile(identifyDir, sprintf('%s.lock', outputName));
@@ -116,6 +117,9 @@ while exist(lockFile, 'file') == 2
 end
 % Create the lock file to indicate this worker has the lock
 fid = fopen(lockFile, 'w');
+if fid == -1
+    warning('Creating .lock file failed.')
+end
 fclose(fid);
 end
 

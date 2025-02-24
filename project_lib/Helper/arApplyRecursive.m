@@ -45,7 +45,7 @@ end
 cd(startDir)
 
 % save the report table
-if ~isempty(options.reportName)
+if exist('reportTable', 'var') && ~isempty(options.reportName)
     save(options.reportName, 'reportTable')
 end
 
