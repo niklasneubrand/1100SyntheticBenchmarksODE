@@ -1,13 +1,13 @@
-function testIdentifyLocalRecursive(dir)
+function testIdentifyLocalRecursive(folder)
 % TESTIDENTIFYLOCALRECURSIVE Apply identifiability analysis to all projects in a directory
 %
 % INPUTS:
-%   dir: (optional) path to the directory containing the projects
+%   folder: (optional) path to the directory containing the projects
 %        (default: pwd)
 %
 
 arguments
-    dir (1,1) string = pwd()
+    folder (1,1) string = pwd()
 end
 
 % initialize the realistic simulations package 
@@ -17,10 +17,10 @@ initRealisticBenchmarks;
 cd(startDir);
 
 % get the name of the template from the directory
-[~, templateName] = fileparts(dir);
+[~, templateName] = fileparts(folder);
 outputName = sprintf('recursiveReport__testIdentifyLocal__%s', templateName);
 
 % apply identifiability analysis to all projects in the directory
-arApplyRecursive(@testIdentifyLocal, dir, 'resultsIdentifyLocal', reportName=outputName, requireCompiled=false);
+arApplyRecursive(@testIdentifyLocal, folder, 'resultsIdentifyLocal', reportName=outputName, requireCompiled=false);
 
 end
