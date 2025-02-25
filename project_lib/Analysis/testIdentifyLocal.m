@@ -52,8 +52,16 @@ arSave('ITRP_local')
 
 % match identifiable parameters with ar.pLabels
 NI_all = cell2mat(ar.NI(1:end-1));
-qNonIdent = any(cell2mat(cellfun(@(x) strcmp(ar.pLabel, x)', {NI_all.pLabel}, 'UniformOutput', false))');
-qIdent = ~qNonIdent;
+pNonIdent = {NI_all.pLabel};
+if isempty(pNonIdent)
+    qIdent = ones(size(ar.pLabel), "logical");
+elseif length(pNonIdent) == 1
+    qIdent = ~strcmp(ar.pLabel, pNonIdent);
+else
+    qNonIdentCell = cellfun(@(x) strcmp(x, ar.pLabel)', ...
+        pNonIdent, 'UniformOutput', false);
+    qIdent = ~any(cell2mat(qNonIdentCell)');
+end
 
 % create results struct:
 results = struct();
