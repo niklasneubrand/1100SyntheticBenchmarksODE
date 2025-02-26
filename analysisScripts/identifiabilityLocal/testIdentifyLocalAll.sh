@@ -15,6 +15,6 @@ for template_dir in "$base_dir"/*/; do
 
         
         # Run the identifiability analysis in the background
-        nohup matlab-R2021a -r "diary(sprintf('%s_recursiveTest.log', '$folder_name')); testIdentifyLocalRecursive('$template_dir'); diary('off'); exit;" </dev/null >/dev/null 2>&1 &
+        nohup matlab-R2021a -r "diary(sprintf('recursiveTest_%s.log', '$folder_name')); testIdentifyLocalRecursive('$template_dir'); diary('off'); exit;" </dev/null >/dev/null 2>&1 &
     fi
 done
