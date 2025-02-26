@@ -65,7 +65,7 @@ end
 results = struct();
 results.projectName = string(ar.info.name);
 parent = fileparts(ar.info.path);
-[~, results.templateName] = fileparts(parent);
+[~, results.templateName] = string(fileparts(parent));
 
 % collect all subsets that could be interesting to analyze
 results.pLabel = ar.pLabel;
