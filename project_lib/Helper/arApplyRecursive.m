@@ -1,6 +1,5 @@
 function reportTable = arApplyRecursive(func, folder, varargin, options)
 
-
 arguments
     func (1,1) function_handle
     folder (1,1) string = pwd()

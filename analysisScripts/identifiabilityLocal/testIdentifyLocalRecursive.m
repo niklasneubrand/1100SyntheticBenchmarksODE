@@ -21,6 +21,8 @@ cd(startDir);
 outputName = sprintf('recursiveReport__testIdentifyLocal__%s', templateName);
 
 % apply identifiability analysis to all projects in the directory
-arApplyRecursive(@testIdentifyLocal, folder, 'resultsIdentifyLocal', reportName=outputName, requireCompiled=false);
+arApplyRecursive( ...
+    @testIdentifyLocal, folder, 'resultsIdentifyLocal', false, ...
+    reportName=outputName, requireCompiled=false);
 
 end
