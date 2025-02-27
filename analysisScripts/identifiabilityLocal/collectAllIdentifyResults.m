@@ -20,7 +20,7 @@ for i = 1:length(d2dProjectFolders)
     fprintf('Processing project: %s\n', projectName)
 
     % define and load results file
-    reusltsName = sprintf('resultsIdentifyLocal__%s.mat', projectName);
+    resultsName = sprintf('resultsIdentifyLocal__%s.mat', projectName);
     resultsFile = fullfile(subDir, resultsName);
     if ~isfile(resultsFile)
         fprintf("Results file not found: %s\n", resultsName);
