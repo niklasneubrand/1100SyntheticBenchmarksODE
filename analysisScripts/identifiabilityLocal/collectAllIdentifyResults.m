@@ -20,13 +20,13 @@ for i = 1:length(d2dProjectFolders)
     fprintf('Processing project: %s\n', projectName)
 
     % define and load results file
-    reultsName = sprintf('resultsIdentifyLocal__%s.mat', projectName);
-    resultsFile = fullfile(subDir, reultsName);
+    reusltsName = sprintf('resultsIdentifyLocal__%s.mat', projectName);
+    resultsFile = fullfile(subDir, resultsName);
     if ~isfile(resultsFile)
         fprintf("Results file not found: %s\n", resultsName);
         continue
     end
-    load(resultsName, 'resultsTable');
+    load(resultsFile, 'resultsTable');
 
     % append the results to the full table
     allResultsTable(projectName, :) = resultsTable;
