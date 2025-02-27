@@ -50,15 +50,19 @@ end
 
 %% match identifiable parameters with ar.pLabels
 NI_all = cell2mat(ar.NI(1:end-1));
-pNonIdent = {NI_all.pLabel};
-if isempty(pNonIdent)
+if isempty(NI_all)
+    % no non-identifiable parameters
     qIdent = ones(size(ar.pLabel), "logical");
-elseif length(pNonIdent) == 1
-    qIdent = ~strcmp(ar.pLabel, pNonIdent);
 else
-    qNonIdentCell = cellfun(@(x) strcmp(x, ar.pLabel)', ...
-        pNonIdent, 'UniformOutput', false);
-    qIdent = ~any(cell2mat(qNonIdentCell)');
+    % list of non-identifiable parameters
+    pNonIdent = {NI_all.pLabel};
+    if length(pNonIdent) == 1
+        qIdent = ~strcmp(ar.pLabel, pNonIdent);
+    else
+        qNonIdentCell = cellfun(@(x) strcmp(x, ar.pLabel)', ...
+            pNonIdent, 'UniformOutput', false);
+        qIdent = ~any(cell2mat(qNonIdentCell)');
+    end    
 end
 
 % create results struct:
