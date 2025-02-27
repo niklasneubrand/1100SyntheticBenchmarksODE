@@ -2,8 +2,14 @@
 % does not work reliably enough. Therfore, we will collect all results after all
 % tests are performed and then append them to the results file.
 
+% initialize the realistic simulations package
+realDir = fullfile(pwd(), '..', '..');
+startDir = cd(realDir);
+initRealisticBenchmarks;
+cd(startDir);
+
 % get the folders of all synthetic benchmarks
-folder = fullfile(pwd(), '..', '..', 'SyntheticBenchmarks');
+folder = fullfile(realDir, 'SyntheticBenchmarks');
 d2dProjectFolders = arListProjectsRecursive(folder, true, false);
 
 % loop through all projects and collect the results
@@ -27,5 +33,5 @@ for i = 1:length(d2dProjectFolders)
 end
 
 % save the table of all results
-outputName = 'resultsIdentifyLocalAll';
-save('resultsIdentifyLocalAll', 'allResultsTable');
+outputName = 'resultsIdentifyLocalAllCollected';
+save(outputName, 'allResultsTable');
