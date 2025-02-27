@@ -69,19 +69,26 @@ parent = fileparts(ar.info.path);
 results.templateName = string(templateName);
 
 % collect all subsets that could be interesting to analyze
-results.pLabel = ar.pLabel;
-results.qFit = logical(ar.qFit);
-results.qLog10 = logical(ar.qLog10);
-results.qDynamic = logical(ar.qDynamic);
-results.qError = logical(ar.qError);
-results.qInitial = logical(ar.qInitial);
-results.qIdent = logical(qIdent);
+qFit = logical(ar.qFit);
+qLog10 = logical(ar.qLog10);
+qDynamic = logical(ar.qDynamic);
+qError = logical(ar.qError);
+qInitial = logical(ar.qInitial);
 
-% calculate ratios of identifiable parameters 
-results.ratioIdentAll = sum(results.qIdent)/sum(results.qFit);
-results.ratioIdentDyn = sum(results.qDynamic&results.qIdent)/sum(results.qDynamic&results.qFit);
-results.ratioIdentErr = sum(results.qError&results.qIdent)/sum(results.qError&results.qFit);
-results.ratioIdentInit = sum(results.qInitial&results.qIdent)/sum(results.qInitial&results.qFit);
+% store the results in the struct
+results.pLabel = ar.pLabel;
+results.qFit = qFit;
+results.qLog10 = qLog10;
+results.qDynamic = qDynamic;
+results.qError = qError;
+results.qInitial = qInitial;
+results.qIdent = qIdent;
+
+% calculate ratios of identifiable parameters
+results.ratioIdentAll = sum(qFit&qIdent)/sum(qFit);
+results.ratioIdentDyn = sum(qFit&qIdent&qDynamic)/sum(qFit&qDynamic);
+results.ratioIdentErr = sum(qFit&qIdent&qError)/sum(qFit&qError);
+results.ratioIdentInit = sum(qFit&qIdent&qInitial)/sum(qFit&qInitial);
 
 % embed vectors in cell arrays for table formatting
 vectorfields = ["pLabel", "qFit", "qLog10", "qDynamic", "qError", "qInitial", "qIdent"];
