@@ -96,27 +96,36 @@ for i = 1:length(vectorfields)
     results.(vectorfields{i}) = {results.(vectorfields{i})};
 end
 
-%% append the results struct to the results file
+% create a table from the results struct
+resultsTable(results.projectName, :) = struct2table(results);
+
+
+%% save results locally in project folder
+localSavefile = fullfile(ar.info.path, sprintf('%s__%s.mat', outputName, ar.info.name));
+save(localSavefile, 'resultsTable');
+
+
+%% append the results table to the file of all results
 % Define the file paths and names for the results file and lock file
 currentDir = fileparts(mfilename('fullpath'));
 rsDir = fullfile(currentDir, '..', '..');
 identifyDir = fullfile(rsDir, 'analysisScripts', 'identifiabilityLocal');
-outputFile = fullfile(identifyDir, sprintf('%s.mat', outputName));
-lockFile = fullfile(identifyDir, sprintf('%s.lock', outputName));
+outputFile = fullfile(identifyDir, sprintf('%sAll.mat', outputName));
+lockFile = fullfile(identifyDir, sprintf('%sAll.lock', outputName));
 
 % Acquire lock before accessing the result file
 acquireLock(lockFile);
 
 % Load the existing results table from the file
 if exist(outputFile, 'file') == 2
-    load(outputFile, 'resultsTable');
+    load(outputFile, 'allResultsTable');
 end
 
 % create or update the results table
-resultsTable(results.projectName, :) = struct2table(results);
+allResultsTable(results.projectName, :) = resultsTable;
 
 % Save the updated table back to the file and release the lock
-save(outputFile, 'resultsTable');
+save(outputFile, 'allResultsTable');
 releaseLock(lockFile);
 
 end
