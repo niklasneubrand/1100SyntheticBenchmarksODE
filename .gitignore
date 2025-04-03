@@ -17,6 +17,7 @@ pthreadVC2.dll
 /BaseModels/**/**/RSTemplate
 /BaseModels/**/**/RealisticSimulation
 
+# ignore some base model collections
 /BaseModels/nonSBML
 /BaseModels/fast_nonSBML
 
