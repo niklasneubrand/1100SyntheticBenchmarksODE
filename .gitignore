@@ -1,4 +1,4 @@
-# Ignore all content in these folders
+## Ignore all content in these folders
 /IMBI_Cluster
 /Local_Results
 /Benchmark_Models
@@ -8,6 +8,9 @@
 
 /RS_IMBI
 /RS_local
+
+## Ignore matlab autosave files
+*.asv
 
 ## Ignore parts of the d2d project folders
 pthreadGC2.dll
@@ -20,6 +23,7 @@ pthreadVC2.dll
 # ignore some base model collections
 /BaseModels/nonSBML
 /BaseModels/fast_nonSBML
+/BaseModels/test
 
 # compiled files with "arCompileAllSetups"
 **/Results/*normal
@@ -61,4 +65,8 @@ SyntheticBenchmarks/**
 # Un-ignore the Models folder and its contents in each simulation folder
 !SyntheticBenchmarks/*/*/Models/
 !SyntheticBenchmarks/*/*/Models/**
+
+## Ignore the analysis results and logs
+analysisScripts/identifiabilityLocal/recursive*.mat
+analysisScripts/identifiabilityLocal/recursive*.log
 
