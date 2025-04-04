@@ -89,6 +89,7 @@ results.qInitial = qInitial;
 results.qIdent = qIdent;
 
 % calculate ratios of identifiable parameters
+results.nNonIdent = sum(qFit&~qIdent);
 results.ratioIdentAll = sum(qFit&qIdent)/sum(qFit);
 results.ratioIdentDyn = sum(qFit&qIdent&qDynamic)/sum(qFit&qDynamic);
 results.ratioIdentErr = sum(qFit&qIdent&qError)/sum(qFit&qError);
