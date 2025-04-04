@@ -1,11 +1,41 @@
-# bash script to do the simulations of the Isensee model
+#!/bin/bash
 
-folder=$(pwd)
-folder="$folder/RS_IMBI/slow_V2/Isensee_JCB2018"
+# Set the directory for the base models
+real_dir=$(pwd)
+modelName="Isensee_JCB2018"
+baseModels_dir="$real_dir/BaseModels/slow2/$modelName"
+target_dir="$real_dir/RS_IMBI/slow2_V2/$modelName"
 
-# lcreate a loop with index 1 to 50
-for i in {1..50}
-do
-    # Collect Data by calling MATLAB script lhsLogging.m
-    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$folder'); arSlowRealisticDesign($i); exit();" </dev/null >/dev/null 2>&1 &
+# Copy the model to the target directory
+echo "Copying base model from $baseModels_dir to $target_dir..."
+mkdir -p "$target_dir"
+cp -r "$baseModels_dir/"* "$target_dir/"
+echo "Copy complete."
+
+# Compile model on current machine
+# echo "compiling base model"
+# matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); Setup; arSave('normal'); exit();" > "$target_dir/compileBaseModel.log" 2>&1
+# echo "compiled successfully"
+
+# Set initial model index and seed base
+modelIndex=20
+seed_base=100000
+startSeed=$((seed_base * modelIndex))
+
+# Set the number of batches and simulations per batch
+total_batches=25
+simulations_per_batch=2
+
+# Loop through batches
+for batch in $(seq 1 $total_batches); do
+
+    # Calculate the starting and ending numbers for the current batch
+    start_simulation=$(( (batch - 1) * simulations_per_batch + 1 ))
+    end_simulation=$(( batch * simulations_per_batch ))
+
+    echo "Starting batch $batch of $total_batches ($start_simulation:$end_simulation)"
+    
+    # Run MATLAB simulation with the specified seed and range
+    nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); arManyRealisticDesigns($start_simulation:$end_simulation, 'rngSeed', $startSeed); exit();" </dev/null >/dev/null 2>&1 &
+	
 done
