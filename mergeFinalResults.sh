@@ -49,6 +49,7 @@ for SRC in "${SOURCE_FOLDERS[@]}"; do
                 # copy relevant folders (add PEtab in future)
                 cp -r "$simulation/Data" "$DEST_SIM/Data"
                 cp -r "$simulation/Models" "$DEST_SIM/Models"
+                cp -r "$simulation/Auxiliary" "$DEST_SIM/Auxiliary"
 
                 # copy relevant files
                 cp "$simulation/Setup.m" "$DEST_SIM"
