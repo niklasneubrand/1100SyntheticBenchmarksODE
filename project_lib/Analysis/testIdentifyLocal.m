@@ -111,26 +111,26 @@ save(localSavefile, 'resultsTable');
 
 %% append the results table to the file of all results
 % Define the file paths and names for the results file and lock file
-currentDir = fileparts(mfilename('fullpath'));
-rsDir = fullfile(currentDir, '..', '..');
-identifyDir = fullfile(rsDir, 'analysisScripts', 'identifiabilityLocal');
-outputFile = fullfile(identifyDir, sprintf('%sAll.mat', outputName));
-lockFile = fullfile(identifyDir, sprintf('%sAll.lock', outputName));
+% currentDir = fileparts(mfilename('fullpath'));
+% rsDir = fullfile(currentDir, '..', '..');
+% identifyDir = fullfile(rsDir, 'analysisScripts', 'identifiabilityLocal');
+% outputFile = fullfile(identifyDir, sprintf('%sAll.mat', outputName));
+% lockFile = fullfile(identifyDir, sprintf('%sAll.lock', outputName));
 
 % Acquire lock before accessing the result file
-acquireLock(lockFile);
+% acquireLock(lockFile);
 
 % Load the existing results table from the file
-if exist(outputFile, 'file') == 2
-    load(outputFile, 'allResultsTable');
-end
+% if exist(outputFile, 'file') == 2
+%     load(outputFile, 'allResultsTable');
+% end
 
 % create or update the results table
-allResultsTable(results.projectName, :) = resultsTable;
+% allResultsTable(results.projectName, :) = resultsTable;
 
 % Save the updated table back to the file and release the lock
-save(outputFile, 'allResultsTable');
-releaseLock(lockFile);
+% save(outputFile, 'allResultsTable');
+% releaseLock(lockFile);
 
 end
 

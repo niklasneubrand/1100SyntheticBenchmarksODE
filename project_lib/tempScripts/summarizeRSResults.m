@@ -1,6 +1,6 @@
 function summarizeRSResults()
     % Define the problem sets to analyze
-    problemSets = {'fast2_V1', 'slow2_V1'};
+    problemSets = {'fast2_V2', 'slow2_V2'};
     
     % Initialize a results table with an additional column for success percentage
     results = table('Size', [0 7], 'VariableTypes', {'string', 'string', 'double', 'int32', 'int32', 'duration', 'string'}, ...

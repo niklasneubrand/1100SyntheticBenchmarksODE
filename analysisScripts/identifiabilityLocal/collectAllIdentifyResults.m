@@ -2,6 +2,8 @@
 % does not work reliably enough. Therfore, we will collect all results after all
 % tests are performed and then append them to the results file.
 
+diary('collectAllIdentifyResults.log');
+
 % initialize the realistic simulations package
 realDir = fullfile(pwd(), '..', '..');
 startDir = cd(realDir);
@@ -17,21 +19,24 @@ for i = 1:length(d2dProjectFolders)
     % get the project name
     subDir = d2dProjectFolders{i};
     [~, projectName] = fileparts(subDir);
-    fprintf('Processing project: %s\n', projectName)
+    fprintf('processing project %s:\t', projectName)
 
     % define and load results file
     resultsName = sprintf('resultsIdentifyLocal__%s.mat', projectName);
     resultsFile = fullfile(subDir, resultsName);
     if ~isfile(resultsFile)
-        fprintf("Results file not found: %s\n", resultsName);
+        fprintf("results file %s not found\n", resultsName);
         continue
     end
     load(resultsFile, 'resultsTable');
 
     % append the results to the full table
     allResultsTable(projectName, :) = resultsTable;
+    fprintf("done\n");
 end
 
 % save the table of all results
-outputName = 'resultsIdentifyLocalAllCollected';
+outputName = 'collectAllIdentifyResultsData';
 save(outputName, 'allResultsTable');
+
+diary('off');
