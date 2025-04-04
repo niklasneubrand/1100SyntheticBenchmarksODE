@@ -38,29 +38,30 @@ end
 
 %% modify the simulated data
 for m = 1:length(ar.model)
-    for d = 1:length(ar.model(m).data)
+    for dLink = 1:length(ar.model(m).data)
 
         % overwrite time-points that should not have been simulated
-        if isfield(ar.model(m).data(d), 'tT') && ~isempty(ar.model(m).data(d).tT)
-            for iObs = 1:size(ar.model(m).data(d).yExp, 2)
-                tSimu = ar.model(m).data(d).tT(:, iObs);
+        if isfield(ar.model(m).data(dLink), 'tT') && ~isempty(ar.model(m).data(dLink).tT)
+            for iObs = 1:size(ar.model(m).data(dLink).yExp, 2)
+                tSimu = ar.model(m).data(dLink).tT(:, iObs);
                 tSimu = tSimu(~isnan(tSimu));
-                for iExp = 1:length(ar.model(m).data(d).tExp)
+                for iExp = 1:length(ar.model(m).data(dLink).tExp)
                     % if tExp is not in tSimu -> remove the simulated data point
-                    if ~ismember(ar.model(m).data(d).tExp(iExp), tSimu)
-                        ar.model(m).data(d).yExp(iExp, iObs) = NaN;
+                    if ~ismember(ar.model(m).data(dLink).tExp(iExp), tSimu)
+                        ar.model(m).data(dLink).yExp(iExp, iObs) = NaN;
                     end
                 end
             end
         end
 
         % overwrite experimental error bars (have to be fitted)
-        ar.model(m).data(d).yExpStd = nan(size(ar.model(m).data(d).yExp));
+        ar.model(m).data(dLink).yExpStd = nan(size(ar.model(m).data(dLink).yExp));
 
         % make sure the data on the correct scale (lin or log)
         % always store data on the lin scale!
-        log10Obs = logical(ar.model(m).data(d).logplotting);
-        ar.model(m).data(d).yExp(:, log10Obs) = 10.^ar.model(m).data(d).yExp(:, log10Obs);
+        log10Obs = logical(ar.model(m).data(dLink).logplotting);
+        ar.model(m).data(dLink).yExpRaw = ar.model(m).data(dLink).yExp;
+        ar.model(m).data(dLink).yExpRaw(:, log10Obs) = 10.^ar.model(m).data(dLink).yExp(:, log10Obs);
     end
 end
 
@@ -74,40 +75,45 @@ nDR = RSTemplateNew.nDR;
 
 % time-course data
 for tc = 1:nTC
-
     m = 1;
-    d = RSTemplateNew.timeCourse(tc).dLink;
+    dLink = RSTemplateNew.timeCourse(tc).dLink;
 
-    header = [{ar.model.t}, ar.model(m).data(d).y];
-    data = num2cell([ar.model(m).data(d).tExp, ar.model(m).data(d).yExp]);
+    header = [{ar.model.t}, ar.model(m).data(dLink).y];
+    data = [ar.model(m).data(dLink).tExp, ar.model(m).data(dLink).yExpRaw];
+    data = num2cell(sortrows(data));
+    
     filePath = fullfile('Data', sprintf('%s_TC%03d.csv', projectName, tc));    
     writecell([header; data], filePath);
-
 end
 
 % dose-response data
 for dr = 1:nDR
-
     m = 1;
-    d = RSTemplateNew.doseResponse(dr).dLink;
+    dLink = RSTemplateNew.doseResponse(dr).dLink;
 
     tVar = {ar.model.t};
     respVar = {RSTemplateNew.doseResponse(dr).response_parameter};
-    obs = ar.model(m).data(d).y;
+    obs = ar.model(m).data(dLink(1)).y;
     header = [tVar, respVar, obs];
-
-    % response value
-    respVal = [];
-    for id = 1:length(d)
-        val = RSTemplateNew.doseResponse(dr).values(id);
-        nRep = RSTemplateNew.doseResponse(dr).nReplica(id);
-        respVal = [respVal; repmat(val, nRep, 1)];
+    
+    data = [];
+    for id = 1:length(dLink)
+        d = dLink(id);
+        
+        % synthetic time and observable values
+        tExp = ar.model(m).data(d).tExp;
+        yExpRaw = ar.model(m).data(d).yExpRaw;
+        
+        % response variable values
+        respVal = RSTemplateNew.doseResponse(dr).values(id);
+        respVals = repmat(respVal, size(tExp));
+        
+        % append to table
+        rows = [tExp, respVals, yExpRaw];
+        data = [data; rows];
     end
 
-    tExp = vertcat(ar.model(m).data(d).tExp);
-    yExp = vertcat(ar.model(m).data(d).yExp);
-    data = num2cell([tExp, respVal, yExp]);
-
+    data = num2cell(sortrows(data));    
     filePath = fullfile('Data', sprintf('%s_DR%03d.csv', projectName, dr));
     writecell([header; data], filePath);
 

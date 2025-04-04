@@ -280,7 +280,7 @@ for dr = 1:max(drUnique)
     % merge values and replicas horzontally
     allValues = [oldDoseResponse(qDR).values];
     nReplica = [oldDoseResponse(qDR).nReplica];
-    [values, ~, iOld] = unique(allValues);
+    [values, ~, iOld] = unique(allValues, "stable");
     RSTemplate.doseResponse(dr).values = values;
     for iv = 1:max(iOld)
         qOld = (iOld==iv);
