@@ -1,4 +1,5 @@
-% This script is used to fix the dose response datasets in the otherwise completed simulations.
+function fixDoseresponseDataSets()
+% FIXDOSERESPONSEDATASETS Fix the dose response datasets in the otherwise completed simulations.
 % For this, we load the checkpoint "newTimes" and run the rest of the simualtion pipeline,
 % where the bug has been fixed.
 
@@ -39,3 +40,5 @@ end
 % Plot the observables
 arPlot();
 arPlotFullPage(); close all;
+
+end

@@ -26,7 +26,6 @@ d2dProjectFolders = arListProjectsRecursive(pwd(), options.includeFolder, option
 for id = 1:length(d2dProjectFolders)
     subDir = d2dProjectFolders{id};
     [~, projectName] = fileparts(subDir);
-    projectName = string(projectName);
     fprintf('Processing project: %s\n', projectName)
     cd(subDir);
     try
@@ -38,7 +37,7 @@ for id = 1:length(d2dProjectFolders)
         errorReport = string(getReport(ME, "extended", "hyperlinks", "off"));
         display(getReport(ME, "extended", "hyperlinks", "on"));
     end
-    reportTable(id, :) = table(projectName, success, errorReport);
+    reportTable(id, :) = table(string(projectName), success, errorReport);
 end
 
 cd(startDir)
