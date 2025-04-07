@@ -11,9 +11,9 @@ cd(startDir);
 [~, templateName] = fileparts(folder);
 outputName = sprintf('recursiveReport__fixDRdatasets__%s', templateName);
 
-% apply bug fix to all projects in the directory
+% apply bug fix to all projects in the di	rectory
 arApplyRecursive( ...
     @fixDoseresponseDataSets, folder, ...
-    reportName=outputName, requireCompiled=false);
+    reportName=outputName, requireCompiled=false, includeFolder=false);
 
 end

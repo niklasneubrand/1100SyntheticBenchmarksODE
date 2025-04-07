@@ -26,12 +26,8 @@ for base_dir in "${base_dirs[@]}"; do
                 continue
             fi
 
-            simulations_dir="$template_dir/RealisticSimulation"
-
-            echo "Processing directory: $simulations_dir"
-
             # Run the identifiability analysis in the background
-            nohup matlab-R2021a -r "diary(sprintf('recursiveDRfix_%s.log', '$template_name')); fixDRrecursive('$simulations_dir'); diary('off'); exit;" </dev/null >/dev/null 2>&1 &
+            nohup matlab-R2021a -r "diary(sprintf('recursiveDRfix_%s.log', '$template_name')); fixDRrecursive('$template_dir'); diary('off'); exit;" </dev/null >/dev/null 2>&1 &
         fi
     done
 done
