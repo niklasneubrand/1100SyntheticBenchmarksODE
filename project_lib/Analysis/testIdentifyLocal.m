@@ -109,30 +109,6 @@ resultsTable(results.projectName, :) = struct2table(results);
 localSavefile = fullfile(ar.info.path, sprintf('%s__%s.mat', outputName, ar.info.name));
 save(localSavefile, 'resultsTable');
 
-
-%% append the results table to the file of all results
-% Define the file paths and names for the results file and lock file
-% currentDir = fileparts(mfilename('fullpath'));
-% rsDir = fullfile(currentDir, '..', '..');
-% identifyDir = fullfile(rsDir, 'analysisScripts', 'identifiabilityLocal');
-% outputFile = fullfile(identifyDir, sprintf('%sAll.mat', outputName));
-% lockFile = fullfile(identifyDir, sprintf('%sAll.lock', outputName));
-
-% Acquire lock before accessing the result file
-% acquireLock(lockFile);
-
-% Load the existing results table from the file
-% if exist(outputFile, 'file') == 2
-%     load(outputFile, 'allResultsTable');
-% end
-
-% create or update the results table
-% allResultsTable(results.projectName, :) = resultsTable;
-
-% Save the updated table back to the file and release the lock
-% save(outputFile, 'allResultsTable');
-% releaseLock(lockFile);
-
 end
 
 
@@ -156,27 +132,4 @@ end
 % no results loaded
 idx = 4;
 
-end
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Auxillary functions for robust file access
-
-% Function to acquire lock
-function acquireLock(lockFile)
-while exist(lockFile, 'file') == 2
-    % If lock file exists, wait for a short period before retrying
-    pause(0.1);  % Adjust the sleep time as needed
-end
-% Create the lock file to indicate this worker has the lock
-fid = fopen(lockFile, 'w');
-if fid == -1
-    warning('Creating .lock file failed.')
-end
-fclose(fid);
-end
-
-% Function to release lock
-function releaseLock(lockFile)
-delete(lockFile);  % Remove the lock file to release the lock
 end
