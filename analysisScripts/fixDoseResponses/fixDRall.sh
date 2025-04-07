@@ -6,7 +6,7 @@ base_dir2="$(pwd)/../../RS_IMBI/slow2_V2"
 base_dirs=("$base_dir1" "$base_dir2")
 
 # List of projects with DR data
-has_DRdata_list=("Bachmann_MSB2011" "Brannmark_JBC2010" "Hass_PlosOne2017" "Isensee_JCB2018" "Lucarelli_CellSystems2017" "Merkle_PCB2016" "Sobotta_Frontiers2017")
+templatesWithDR=("Bachmann_MSB2011" "Brannmark_JBC2010" "Hass_PlosOne2017" "Isensee_JCB2018" "Lucarelli_CellSystems2017" "Merkle_PCB2016" "Sobotta_Frontiers2017")
 
 
 # Loop through all base directories
@@ -19,18 +19,19 @@ for base_dir in "${base_dirs[@]}"; do
 
             # Remove trailing slash from the template_dir path
             template_dir="${template_dir%/}"
-            folder_name=$(basename "$template_dir")
+            template_name=$(basename "$template_dir")
 
             # Check if the folder name is in the list of projects with DR data
-            if [[ ! " ${has_DRdata_list[@]} " =~ " ${folder_name} " ]]; then
-                echo "Skipping directory: $template_dir (no DR data -> needs no fix)"
+            if [[ ! " ${templatesWithDR[@]} " =~ " ${template_name} " ]]; then
                 continue
             fi
 
-            echo "Processing directory: $template_dir"
+            simulations_dir="$template_dir/RealisticSimulation"
+
+            echo "Processing directory: $simulations_dir"
 
             # Run the identifiability analysis in the background
-            nohup matlab-R2021a -r "diary(sprintf('recursiveDRfix_%s.log', '$folder_name')); fixDRrecursive('$template_dir'); diary('off'); exit;" </dev/null >/dev/null 2>&1 &
+            nohup matlab-R2021a -r "diary(sprintf('recursiveDRfix_%s.log', '$template_name')); fixDRrecursive('$simulations_dir'); diary('off'); exit;" </dev/null >/dev/null 2>&1 &
         fi
     done
 done
