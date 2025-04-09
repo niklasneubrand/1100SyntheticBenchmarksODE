@@ -11,8 +11,8 @@ initRealisticBenchmarks;
 cd(startDir);
 
 % get the folders of all compiled base models
-fast2Folder = fullfile(realDir, 'RS_IMBI', 'fast2');
-slow2Folder = fullfile(realDir, 'RS_IMBI', 'slow2');
+fast2Folder = fullfile(realDir, 'RS_IMBI', 'fast2_V2');
+slow2Folder = fullfile(realDir, 'RS_IMBI', 'slow2_V2');
 
 fast2dir = dir(fast2Folder);
 fast2dir = fast2dir(3:end); % remove . and ..
@@ -30,7 +30,10 @@ for i = 1:length(problemFolders)
     subDir = problemFolders{i};
     [~, templatename] = fileparts(subDir);
     fprintf('processing project %s:\t', templatename)
-
+    
+    cd(subDir);
+    arLoadLatest('normal');
+    
     oldTemplate = arCreateRSTemplate(true, false, false);
     newTemplate = arCreateRSTemplateNew(true, false, false);
 
@@ -42,19 +45,20 @@ for i = 1:length(problemFolders)
     resultsStruct.newTemplate = newTemplate;
 
     % convert to table and add project and template name
-    resultsTab = struct2table(customConfigs, 'AsArray', true);
+    resultsTab = struct2table(resultsStruct, 'AsArray', true);
 
     % If allCustomConfigsTab does not exist, initialize it
     if ~exist('allResultsTable', 'var')
         allResultsTable = resultsTab;
     else
         % Fill missing fields with NaN or empty values
-        allResultsTable = outerjoin(allResultsTable, resultsTab, 'MergeKeys', true, 'Type', 'full');
+        allResultsTable(end+1, :) = resultsTab;
     end
 
-    fprintf("done/n")
+    fprintf("done\n")
 end
 
 % save the table of all results
+cd(startDir);
 outputName = 'allResultsTable';
 save(outputName, 'allResultsTable');
