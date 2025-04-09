@@ -22,11 +22,12 @@ for i = 1:length(d2dProjectFolders)
     % get the project name
     subDir = d2dProjectFolders{i};
     [parentDir, projectName] = fileparts(subDir);
-    [~, templateName] = fileparts(parentDir)
+    [~, templateName] = fileparts(parentDir);
     fprintf('processing project %s:\t', projectName)
 
     % get custom configs
     try
+        cd(subDir);
         customConfigs = getCustomConfigs();
     catch ME
         fprintf("error: %s\n", ME.message);
@@ -51,6 +52,7 @@ for i = 1:length(d2dProjectFolders)
 end
 
 % save the table of all results
+cd(startDir)
 outputName = 'allCustomConfigs';
 save(outputName, 'allCustomConfigsTab');
 
