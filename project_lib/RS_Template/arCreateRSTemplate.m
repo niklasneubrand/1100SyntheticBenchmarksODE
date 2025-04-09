@@ -120,7 +120,7 @@ if RSTemplate.useSteadyState
         
         % c index of source in original ar struct
         srcCond = ar.model.ss_condition(s).src;
-        scrFound = false;
+        srcFound = false;
         % search the source condition in the time course data
         for tc = 1:RSTemplate.nTC
             % find the source condition in the time course data
