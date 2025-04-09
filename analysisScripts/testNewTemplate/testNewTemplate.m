@@ -45,7 +45,7 @@ for i = 1:length(problemFolders)
     resultsTab = struct2table(customConfigs, 'AsArray', true);
 
     % If allCustomConfigsTab does not exist, initialize it
-    if ~exist('allCustomConfigsTab', 'var')
+    if ~exist('allResultsTable', 'var')
         allResultsTable = resultsTab;
     else
         % Fill missing fields with NaN or empty values
@@ -54,3 +54,7 @@ for i = 1:length(problemFolders)
 
     fprintf("done/n")
 end
+
+% save the table of all results
+outputName = 'allResultsTable';
+save(outputName, 'allResultsTable');
