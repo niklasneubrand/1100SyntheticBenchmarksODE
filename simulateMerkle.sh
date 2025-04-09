@@ -33,12 +33,9 @@ for batch in $(seq 1 $total_batches); do
     start_simulation=$(( (batch - 1) * simulations_per_batch + 1 ))
     end_simulation=$(( batch * simulations_per_batch ))
 	
-	echo "Starting batch $batch of $total_batches ($start_simulation:$end_simulation)"
+    echo "Starting batch $batch of $total_batches ($start_simulation:$end_simulation)"
     
     # Run MATLAB simulation with the specified seed and range
     nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); arManyRealisticDesigns($start_simulation:$end_simulation, 'rngSeed', $startSeed); exit();" </dev/null >/dev/null 2>&1 &
-	
-    # Wait for 5 minutes (300 seconds) between batches to avoid overload
-    # echo "Waiting 2,5 minutes before starting the next batch..."
-    # sleep 150
+
 done
