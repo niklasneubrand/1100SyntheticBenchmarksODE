@@ -1,4 +1,4 @@
-function RSTemplate = arCreateRSTemplateNew(qCondObsMatrix, qPlot, qSave2File, mergeModeDR)
+function RSTemplate = arCreateRSTemplateOld(qCondObsMatrix, qPlot, qSave2File, mergeModeDR)
 
 arguments
     qCondObsMatrix (1,1) logical = true
@@ -14,8 +14,8 @@ RSTemplate = struct();
 %% name of the project
 RSTemplate.originalName = ar.info.name;
 
-%% analyze conditions (and evaluate the replacements)
-condStruct = arModelConditions(1, true);
+%% analyze conditions
+condStruct = arModelConditions();
 % remove conditions for observables (not needed for RSTemplate)
 for ip = length(condStruct.modelReplace):-1:1
     if isfield(ar.model, 'py') && ismember(condStruct.modelReplace{ip, 1}, ar.model.py)
@@ -120,27 +120,25 @@ if RSTemplate.useSteadyState
         
         % c index of source in original ar struct
         srcCond = ar.model.ss_condition(s).src;
-        scrFound = false;
-        % search the source condition in the time course data
-        for tc = 1:RSTemplate.nTC
-            % find the source condition in the time course data
-            if ismember(srcCond, RSTemplate.timeCourse(tc).cLink)
-                srcFind = sprintf('arFindCondition(ar, ''TC%03d'')', tc);
-                srcFound = true;
-                break
-            end
-        end
-        % if not found in TC, search in the dose response data
-        if ~srcFound
+        
+        % identify the corresponding experiment
+        % start with tiome courses
+        srcTC = find([RSTemplate.timeCourse(:).cLink]==srcCond);
+        if length(srcTC) == 1
+            % exactly one TC found -> we are done
+            srcFind = sprintf('arFindCondition(ar, ''TC%03d'')', srcTC);
+        elseif length(srcTC) > 1
+            warning('Multiple TC share a condition. This is not intended.')
+        elseif isempty(srcTC)
+            % the source is not a time course
+            % search the dose response experiments
             for dr = 1:RSTemplate.nDR
-                % find the source condition in the dose response data
                 srcDR = find([RSTemplate.doseResponse(dr).cLink]==srcCond);
                 if length(srcDR) == 1
                     % exactly one DR found -> we are done
                     response_parameter = RSTemplate.doseResponse(dr).response_parameter;
                     value = RSTemplate.doseResponse(dr).values(srcDR);
                     srcFind = sprintf('arFindCondition(ar, ''DR%03d'', ''%s'', %i)', dr, response_parameter, value);
-                    srcFound = true;
                     break
                 elseif length(srcDR) > 1
                     warning('Multiple DR share a condition. This is not intended.')
@@ -155,7 +153,6 @@ if RSTemplate.useSteadyState
             targets = 'all';
             RSTemplate.steadyState(s).target = 'all';
         else
-            % Never ocurs for my base models. Might require a fix in the future.
             targets = mat2str(targets);
             RSTemplate.steadyState(s).target = targets;
         end
@@ -207,32 +204,19 @@ end
 
 oldTimecourse = RSTemplate.timeCourse;
 
-% We cannot simply merge by cLink, because there can be redundant condition definitions
-% that we want to remove. This can be caused by equivalet replacements that are not identical.
-% To catch this, we merge by the condition replacements from the condStruct.
+% merge time-course data according to cLink
+condis = unique([oldTimecourse.cLink]);
 
-% define a string of characteristics for each TC
-for tc = 1:length(oldTimecourse)
-    % match conditions by conditions and replacements
-    % potentially, combine data files with different names but same exp. conds.
-    condRepStr = [oldTimecourse(tc).condReplace{:}];
-    inputsRepStr = [oldTimecourse(tc).inputConds{:}];
-    oldTimecourse(tc).checkString = sprintf("%s_%s", condRepStr, inputsRepStr);
-end
-
-% find unique TCs
-checkStrings = [oldTimecourse.checkString];
-[~, tcOld, tcUnique] = unique(checkStrings, "stable");
-
-% merge TCs
 RSTemplate.timeCourse = struct();
 
-for tc = 1:max(tcUnique)
-    qTC = (tcUnique==tc);
-    RSTemplate.timeCourse(tc).cLink = [oldTimecourse(qTC).cLink];
-    RSTemplate.timeCourse(tc).dLink = [oldTimecourse(qTC).dLink];
-    RSTemplate.timeCourse(tc).condReplace = oldTimecourse(tcOld(tc)).condReplace;
-    RSTemplate.timeCourse(tc).inputConds = oldTimecourse(tcOld(tc)).inputConds;
+for idx=1:length(condis)
+    c = condis(idx);
+    qTC = ([oldTimecourse.cLink]==c);
+    cOld = find(qTC, 1);
+    RSTemplate.timeCourse(idx).cLink = c;
+    RSTemplate.timeCourse(idx).dLink = [oldTimecourse(qTC).dLink];
+    RSTemplate.timeCourse(idx).condReplace = oldTimecourse(cOld).condReplace;
+    RSTemplate.timeCourse(idx).inputConds = oldTimecourse(cOld).inputConds;
 end
 
 end
@@ -366,7 +350,7 @@ if qPlot
         nexttile([nTC, 1]);
         imagesc(condObsMatrix(1:nTC, :));
         map = [0.8 0.8 0.8      % 0 -> light grey
-                0.0 0.5 1.0];    % 1 -> blue
+               0.0 0.5 1.0];    % 1 -> blue
         colormap(map);
     
         % Ticks & tick labels for the first subplot
@@ -404,7 +388,7 @@ if qPlot
 
     % save the figure
     [~] = mkdir('RSTemplate');
-    savefig(fullfile('RSTemplate', 'condObsMatrixNew.fig'));
+    savefig(fullfile('RSTemplate', 'condObsMatrix.fig'));
 end
 
 end
