@@ -16,6 +16,15 @@ for template_dir in "$base_dir"/*/; do
         log_file="localOptimzationRecursive_${folder_name}.log"
 
         # Run the fits in background and create log file
-        nohup matlab-R2021a -r "localOptimizationRecursive('$template_dir'); exit;" > $log_file 2>&1 &
+        nohup matlab-R2021a -r "localOptimizationMulti('$template_dir'); exit;" > $log_file 2>&1 &
     fi
 done
+
+# run fits for template models in the background and create log file
+log_file_fast2="localOptimzationRecursive_fast2.log"
+log_file_slow2="localOptimzationRecursive_slow2.log"
+fast2Dir="$(pwd)/../../RS_IMBI/fast2_V2"
+slow2Dir="$(pwd)/../../RS_IMBI/slow2_V2"
+
+nohup matlab-R2021a -r "localOptimizationMulti('$fast2_dir'); exit;" > $log_file 2>&1 &
+nohup matlab-R2021a -r "localOptimizationMulti('$slow2_dir'); exit;" > $log_file 2>&1 &

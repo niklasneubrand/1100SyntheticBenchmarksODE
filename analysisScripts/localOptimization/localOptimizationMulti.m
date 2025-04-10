@@ -1,4 +1,4 @@
-function localOptimizationRecursive(folder)
+function localOptimizationMulti(folder)
 % LOCALOPTIMIZATIONRECURSIVE Apply local optimization to all projects in a directory
 %
 % INPUTS:
@@ -18,16 +18,15 @@ cd(startDir);
 
 % get the name of the template from the directory
 [~, templateName] = fileparts(folder);
-reportName = sprintf('recursiveReport__localOtimization__%s', templateName);
+reportName = sprintf('apply2ProjectsReport__localOptimization__%s', templateName);
 
 % set the name of the load and save files
 loadName = 'Final';
 saveName = 'localOptimization';
 
-% apply identifiability analysis to all projects in the directory
-arApplyRecursive( ...
-    @localOptimization, folder, ...                 % required arguments
-    loadName, saveName, ...                         % optional arguments for the function handle
-    reportName=reportName, requireCompiled=false);  % Name-Value pairs (options)
+arApply2Projects( ...
+    @localOptimization, folder, ...     % required arguments
+    loadName, saveName, ...             % optional arguments for the function handle
+    reportName=reportName);             % Name-Value pairs (options)
 
 end

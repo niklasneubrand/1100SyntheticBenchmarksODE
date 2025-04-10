@@ -19,7 +19,9 @@ arInit;
 arLoadLatest('Final')
 
 %% set the configs
-% ODE solcer tolerances and max steps
+arConfigReset();
+
+% ODE solver tolerances and max steps
 ar.config.atol = config.atol;
 ar.config.rtol = config.rtol;
 ar.config.eq_tol = config.eq_tol;
