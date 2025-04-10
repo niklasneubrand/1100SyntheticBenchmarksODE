@@ -95,7 +95,7 @@ ySimuAll = cell(1, nExp);
 % time-courses
 for tc = 1:nTC
     % Get the simulated data for the states
-    c = RSTemplate.timeCourse(tc).cLink(1);
+    c = RSTemplate.timeCourse(tc).cLink;
     xFineSimu = ar.model(m).condition(c).xFineSimu(:, qInclState);  % species trajectories
     xSimuAll{tc} = xFineSimu;
     % Get the simulated data for the drawn observables
