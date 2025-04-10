@@ -16,7 +16,7 @@ diary('localOptimization.log')
 %% init d2d and load the final version of the RS
 global ar
 arInit;
-arLoadLatest('Final')
+arLoadLatest(loadName)
 
 %% set the configs
 arConfigReset();
