@@ -26,5 +26,5 @@ log_file_slow2="localOptimzationRecursive_slow2.log"
 fast2Dir="$(pwd)/../../RS_IMBI/fast2_V2"
 slow2Dir="$(pwd)/../../RS_IMBI/slow2_V2"
 
-nohup matlab-R2021a -r "localOptimizationMulti('$fast2_dir'); exit;" > $log_file 2>&1 &
-nohup matlab-R2021a -r "localOptimizationMulti('$slow2_dir'); exit;" > $log_file 2>&1 &
+nohup matlab-R2021a -r "localOptimizationMulti('$fast2_dir', 'normal'); exit;" > $log_file 2>&1 &
+nohup matlab-R2021a -r "localOptimizationMulti('$slow2_dir', 'normal'); exit;" > $log_file 2>&1 &

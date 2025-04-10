@@ -1,13 +1,16 @@
-function localOptimizationMulti(folder)
+function localOptimizationMulti(folder, loadName, saveName)
 % LOCALOPTIMIZATIONRECURSIVE Apply local optimization to all projects in a directory
 %
 % INPUTS:
 %   folder: (optional) path to the directory containing the projects
 %        (default: pwd)
-%
+%   loadName: (optional) name of the file to load (default: 'Final')
+%   saveName: (optional) name of the file to save (default: 'localOptimization')
 
 arguments
     folder (1,1) string = pwd()
+    loadName (1,1) string = 'Final'
+    saveName (1,1) string = 'localOptimization'
 end
 
 % initialize the realistic simulations package 
@@ -20,12 +23,8 @@ cd(startDir);
 [~, templateName] = fileparts(folder);
 reportName = sprintf('apply2ProjectsReport__localOptimization__%s', templateName);
 
-% set the name of the load and save files
-loadName = 'Final';
-saveName = 'localOptimization';
-
 arApply2Projects( ...
-    @localOptimization, folder, ...     % required arguments
+    @localOptimization, folder, loadName, saveName, ...     % required arguments
     loadName, saveName, ...             % optional arguments for the function handle
     reportName=reportName);             % Name-Value pairs (options)
 
