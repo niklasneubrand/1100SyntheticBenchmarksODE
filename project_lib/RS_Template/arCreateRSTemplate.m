@@ -230,7 +230,7 @@ RSTemplate.timeCourse = struct();
 for tc = 1:max(tcUnique)
     qTC = (tcUnique==tc);
     RSTemplate.timeCourse(tc).cLinks = [oldTimecourse(qTC).cLink];
-    RSTemplate.timeCourse(tc).cLink = oldTimecourse(qTC).cLink(1);
+    RSTemplate.timeCourse(tc).cLink = RSTemplate.timeCourse(tc).cLinks(1);
     RSTemplate.timeCourse(tc).dLink = [oldTimecourse(qTC).dLink];
     RSTemplate.timeCourse(tc).condReplace = oldTimecourse(tcOld(tc)).condReplace;
     RSTemplate.timeCourse(tc).inputConds = oldTimecourse(tcOld(tc)).inputConds;
