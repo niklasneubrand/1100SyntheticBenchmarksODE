@@ -1,11 +1,11 @@
-function testIdentifyLocal(outputName, forceAnalysis)
+function testIdentifyLocal(loadName, saveName, resultsName)
 % TESTIDENTIFYLOCAL performs identifiability analysis on the locally fitted model
 %
 % INPUTS:
-%   outputName: (optional) name of the output file to save the results
+%   loadName: (optional) name of the ar struct to load (default: 'localOptimization')
+%   saveName: (optional) name of the ar struct to save results (default: 'localIdentifyTest')
+%   outputName: (optional) name of the output file to save the results table
 %               (default: 'resultsIdentifyLocal')
-%   forceAnalysis: (optional) flag to force the analysis even if the results are available
-%               (default: false)
 %
 % USAGE: Execute the function in a synthetic benchmark project folder.
 %        The function will perform identifiability analysis on the locally fitted model
@@ -14,41 +14,28 @@ function testIdentifyLocal(outputName, forceAnalysis)
 %
 
 arguments
-    outputName (1,:) char = 'resultsIdentifyLocal'
-    forceAnalysis (1,1) logical = false
+    loadName (1,:) char = 'localOptimization'
+    saveName (1,:) char = 'localIdentifyTest'
+    resultsName (1,:) char = 'resultsIdentifyLocal'
 end
 
+diary('testIdentifyLocal.log')
+
+%% init d2d and load the locally fitted model
 global ar
 arInit;
-
-%% load previous results if available
-% 4: no results loaded, 3: Final, 2: LocallyFitted, 1: ITRP_local
-% then, perform the tests in the correct order
-
-loadNames = {'ITRP_local', 'LocallyFitted', 'Final'};
-if forceAnalysis
-    loadIdx = 4;
-else
-    loadIdx = tryLoadPreviousResults(loadNames);
-end
-if loadIdx == 4
-    fprintf('Run Setup file.\n')
-    Setup;  % we assume that a Setup.m file exists in the project folder
-end
-if loadIdx >= 3
-    fprintf('Run local fit with arFit.\n')
-    arFit();
-    arSave(loadNames{2})
-end
-if loadIdx >= 2
-    fprintf('Run identifiability test.\n')
-    diary(sprintf('%s_testIdentifyLocal.log', ar.info.name))
-    arIdentifiablityTest_recursive;
-    arSave(loadNames{1})
-    diary off
+loaded = arLoadLatest(loadName);
+if ~loaded
+    error('No Results folder found with loadPattern "%s"', loadName)
 end
 
-%% match identifiable parameters with ar.pLabels
+%% perform identifiability analysis
+fprintf('Run identifiability test.\n')
+arIdentifiablityTest_recursive;
+arSave(saveName)
+
+%% analyze the results
+% match identifiable parameters with ar.pLabels
 NI_all = cell2mat(ar.NI(1:end-1));
 if isempty(NI_all)
     % no non-identifiable parameters
@@ -65,7 +52,7 @@ else
     end    
 end
 
-% create results struct:
+% create results struct
 results = struct();
 results.projectName = string(ar.info.name);
 parent = fileparts(ar.info.path);
@@ -101,35 +88,9 @@ for i = 1:length(vectorfields)
     results.(vectorfields{i}) = {results.(vectorfields{i})};
 end
 
-% create a table from the results struct
+%% save results as table
 resultsTable(results.projectName, :) = struct2table(results);
-
-
-%% save results locally in project folder
-localSavefile = fullfile(ar.info.path, sprintf('%s__%s.mat', outputName, ar.info.name));
+localSavefile = fullfile(ar.info.path, sprintf('%s__%s.mat', resultsName, ar.info.name));
 save(localSavefile, 'resultsTable');
-
-end
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Auxillary functions for loading results
-
-function idx = tryLoadPreviousResults(loadNames)
-% TRYLOADPREVIOUSRESULTS Load the previous results from the Results folder
-
-for idx = 1:length(loadNames)
-    attempt = loadNames{idx};
-    loaded = arLoadLatest(attempt);
-    if loaded
-        fprintf('Previous results "%s" loaded successfully.\n', attempt)
-        return
-    else 
-        fprintf('No results "%s" found.\n', attempt)
-    end
-end
-
-% no results loaded
-idx = 4;
 
 end
