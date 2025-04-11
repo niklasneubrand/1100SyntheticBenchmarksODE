@@ -39,7 +39,7 @@ fitTime = cputime - startTime;
 ar.fit.timing = fitTime; % store the time it took to fit
 
 %% save the results
-arSave(outputName)
+arSave(saveName)
 diary('off')
 
 end
