@@ -18,7 +18,10 @@ global ar
 arInit;
 loaded = arLoadLatest(loadName);
 if ~loaded
-    error('No Results folder found with loadPattern "%s"', loadName)
+    Setup;
+    if ~strcmp(loadName, 'Final')
+        arSave(loadName)
+    end
 end
 
 %% set the configs
