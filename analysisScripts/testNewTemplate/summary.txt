@@ -1,0 +1,5 @@
+For Bachmann and Merkle there are 3 and 2 redundant conditions, respectively.
+This also influences the realistic simulations.
+
+I have redone the realistic simulations and updated the files.
+The problem is resolved! :)
