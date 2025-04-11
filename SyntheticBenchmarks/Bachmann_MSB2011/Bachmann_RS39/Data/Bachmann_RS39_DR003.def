@@ -22,9 +22,9 @@ EpoRpJAK2_Obs	sd3_EpoRpJAK2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_EpoRpJAK2_Obs	-2.2684	1	1	-5	0
+sd3_EpoRpJAK2_Obs	-2.198	1	1	-5	0
 
 // Scale and offset parameters

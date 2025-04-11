@@ -19,14 +19,14 @@ SOCS3RNA_Obs	C	n/a	conc.	0	0	SOCS3RNA
 
 
 ERRORS
-SOCS3nRNA4_Obs	sd9_SOCS3nRNA4_Obs
-SOCS3RNA_Obs	sd9_SOCS3RNA_Obs
+SOCS3nRNA4_Obs	sd6_SOCS3nRNA4_Obs
+SOCS3RNA_Obs	sd6_SOCS3RNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -34,7 +34,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_SOCS3nRNA4_Obs	-4.6682	1	1	-7	-2
-sd9_SOCS3RNA_Obs	-4.3672	1	1	-7	-2
+sd6_SOCS3nRNA4_Obs	-4.6683	1	1	-7	-2
+sd6_SOCS3RNA_Obs	-4.3772	1	1	-7	-2
 
 // Scale and offset parameters

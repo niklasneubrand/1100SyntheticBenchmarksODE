@@ -22,9 +22,9 @@ SHP1_Obs	sd2_SHP1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_SHP1_Obs	-0.80068	1	1	-3	2
+sd2_SHP1_Obs	-0.82907	1	1	-3	2
 
 // Scale and offset parameters

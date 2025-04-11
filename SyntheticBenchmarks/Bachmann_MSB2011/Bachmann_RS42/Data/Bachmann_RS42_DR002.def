@@ -22,17 +22,17 @@ Compound_13_Obs	C	n/a	conc.	0	0	npSTAT5+CIS+SOCS3nRNA5+SOCS3RNA+SOCS3
 
 
 ERRORS
-SOCS3nRNA3_Obs	sd10_SOCS3nRNA3_Obs
-SOCS3nRNA5_Obs	sd10_SOCS3nRNA5_Obs
-Compound_6_Obs	sd11_Compound_6_Obs
-Compound_12_Obs	sd11_Compound_12_Obs
-Compound_13_Obs	sd11_Compound_13_Obs
+SOCS3nRNA3_Obs	sd7_SOCS3nRNA3_Obs
+SOCS3nRNA5_Obs	sd7_SOCS3nRNA5_Obs
+Compound_6_Obs	sd8_Compound_6_Obs
+Compound_12_Obs	sd8_Compound_12_Obs
+Compound_13_Obs	sd8_Compound_13_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -40,10 +40,10 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_SOCS3nRNA3_Obs	-4.5529	1	1	-7	-2
-sd10_SOCS3nRNA5_Obs	-4.558	1	1	-7	-2
-sd11_Compound_6_Obs	0.73384	1	1	-2	3
-sd11_Compound_12_Obs	1.8178	1	1	-1	4
-sd11_Compound_13_Obs	-0.09358	1	1	-3	2
+sd7_SOCS3nRNA3_Obs	-4.5619	1	1	-7	-2
+sd7_SOCS3nRNA5_Obs	-4.5658	1	1	-7	-2
+sd8_Compound_6_Obs	0.73635	1	1	-2	3
+sd8_Compound_12_Obs	1.9351	1	1	-1	4
+sd8_Compound_13_Obs	-0.042542	1	1	-3	2
 
 // Scale and offset parameters

@@ -26,8 +26,6 @@ arLoadData('Merkle_RS50_TC013', 1);
 arLoadData('Merkle_RS50_TC014', 1); 
 arLoadData('Merkle_RS50_TC015', 1); 
 arLoadData('Merkle_RS50_TC016', 1); 
-arLoadData('Merkle_RS50_TC017', 1); 
-arLoadData('Merkle_RS50_TC018', 1); 
 
 % Load the dose-response data 
 arLoadData('Merkle_RS50_DR001', 1); 

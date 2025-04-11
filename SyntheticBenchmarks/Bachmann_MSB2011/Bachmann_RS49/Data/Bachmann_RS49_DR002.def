@@ -20,15 +20,15 @@ SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
 
 
 ERRORS
-EpoRpJAK2_Obs	sd11_EpoRpJAK2_Obs
-STAT5_Obs	sd11_STAT5_Obs
-SOCS3nRNA2_Obs	sd10_SOCS3nRNA2_Obs
+EpoRpJAK2_Obs	sd8_EpoRpJAK2_Obs
+STAT5_Obs	sd8_STAT5_Obs
+SOCS3nRNA2_Obs	sd7_SOCS3nRNA2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -36,8 +36,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd11_EpoRpJAK2_Obs	-1.67	1	1	-4	1
-sd11_STAT5_Obs	0.2373	1	1	-2	3
-sd10_SOCS3nRNA2_Obs	-4.615	1	1	-7	-2
+sd8_EpoRpJAK2_Obs	-1.0025	1	1	-4	1
+sd8_STAT5_Obs	1.0022	1	1	-1	4
+sd7_SOCS3nRNA2_Obs	-3.9837	1	1	-6	-1
 
 // Scale and offset parameters

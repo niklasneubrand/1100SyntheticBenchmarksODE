@@ -19,14 +19,14 @@ Compound_5_Obs	C	n/a	conc.	0	0	STAT5+SOCS3RNA
 
 
 ERRORS
-Compound_4_Obs	sd9_Compound_4_Obs
-Compound_5_Obs	sd10_Compound_5_Obs
+Compound_4_Obs	sd6_Compound_4_Obs
+Compound_5_Obs	sd7_Compound_5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -34,7 +34,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_Compound_4_Obs	-1.4892	1	1	-4	1
-sd10_Compound_5_Obs	0.35339	1	1	-2	3
+sd6_Compound_4_Obs	-1.5003	1	1	-4	1
+sd7_Compound_5_Obs	0.48423	1	1	-2	3
 
 // Scale and offset parameters

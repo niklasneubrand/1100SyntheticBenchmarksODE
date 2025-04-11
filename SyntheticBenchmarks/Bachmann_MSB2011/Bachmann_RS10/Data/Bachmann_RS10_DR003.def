@@ -18,13 +18,13 @@ Compound_1_Obs	C	n/a	conc.	0	0	EpoRJAK2+EpoRpJAK2+EpoRJAK2_CIS+SHP1Act+CISnRNA1+
 
 
 ERRORS
-Compound_1_Obs	sd6_Compound_1_Obs
+Compound_1_Obs	sd4_Compound_1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd6_Compound_1_Obs	1.2566	1	1	-1	4
+sd4_Compound_1_Obs	1.3031	1	1	-1	4
 
 // Scale and offset parameters

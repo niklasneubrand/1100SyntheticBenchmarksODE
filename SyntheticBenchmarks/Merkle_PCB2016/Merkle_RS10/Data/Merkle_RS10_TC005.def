@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	110
 
 
 INPUTS
@@ -22,25 +22,25 @@ SOCS3RNA_Obs	C	n/a	conc.	0	1	SOCS3RNA
 ERRORS
 CIS_Obs	sd5_CIS_Obs
 SOCS3nRNA2_Obs	sd5_SOCS3nRNA2_Obs
-SOCS3RNA_Obs	sd2_SOCS3RNA_Obs
+SOCS3RNA_Obs	sd3_SOCS3RNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(0 * SOCS3eqmOE * SOCS3eqm + 0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"1"
+epo_level	"0.000000125"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"SOCS3eqm*SOCS3eqmOE + (0.6875*SOCS3eqm*SOCS3RNAbasal)/(SOCS3RNAeqm*SOCS3RNAturn)"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -48,12 +48,12 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_CIS_Obs	-1.3703	1	1	-4	1
-sd5_SOCS3nRNA2_Obs	-1.3592	1	1	-4	1
-sd2_SOCS3RNA_Obs	-1.3631	1	1	-4	1
+sd5_CIS_Obs	-1.3633	1	1	-4	1
+sd5_SOCS3nRNA2_Obs	-1.3702	1	1	-4	1
+sd3_SOCS3RNA_Obs	-1.3819	1	1	-4	1
 
 // Scale and offset parameters
 scale5_CIS_Obs	0	1	1	-5	5
-offset5_CIS_Obs	-2	1	1	-4	0
+offset5_CIS_Obs	-3	1	1	-5	-1
 scale5_SOCS3nRNA2_Obs	0	1	1	-5	5
 offset5_SOCS3nRNA2_Obs	-4	1	1	-6	-2

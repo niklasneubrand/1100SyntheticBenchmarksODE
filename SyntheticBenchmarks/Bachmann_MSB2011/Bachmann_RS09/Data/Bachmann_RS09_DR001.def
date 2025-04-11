@@ -14,19 +14,19 @@ INPUTS
 
 
 OBSERVABLES
-p2EpoRpJAK2_Obs	C	n/a	conc.	0	0	scale10_p2EpoRpJAK2_Obs*(p2EpoRpJAK2)
-SOCS3RNA_Obs	C	n/a	conc.	0	0	scale9_SOCS3RNA_Obs*(SOCS3RNA)
+p2EpoRpJAK2_Obs	C	n/a	conc.	0	0	scale7_p2EpoRpJAK2_Obs*(p2EpoRpJAK2)
+SOCS3RNA_Obs	C	n/a	conc.	0	0	scale6_SOCS3RNA_Obs*(SOCS3RNA)
 
 
 ERRORS
-p2EpoRpJAK2_Obs	sd10_p2EpoRpJAK2_Obs
-SOCS3RNA_Obs	sd9_SOCS3RNA_Obs
+p2EpoRpJAK2_Obs	sd7_p2EpoRpJAK2_Obs
+SOCS3RNA_Obs	sd6_SOCS3RNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -34,9 +34,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_p2EpoRpJAK2_Obs	-1.1213	1	1	-4	1
-sd9_SOCS3RNA_Obs	-4.5627	1	1	-7	-2
+sd7_p2EpoRpJAK2_Obs	-1.1364	1	1	-4	1
+sd6_SOCS3RNA_Obs	-3.8461	1	1	-6	-1
 
 // Scale and offset parameters
-scale10_p2EpoRpJAK2_Obs	0	1	1	-5	5
-scale9_SOCS3RNA_Obs	0	1	1	-5	5
+scale7_p2EpoRpJAK2_Obs	0	1	1	-5	5
+scale6_SOCS3RNA_Obs	0	1	1	-5	5

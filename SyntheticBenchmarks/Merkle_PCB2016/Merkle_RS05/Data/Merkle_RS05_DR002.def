@@ -2,7 +2,7 @@ DESCRIPTION
 "Realisticly Set Observables"
 "Original project:	Merkle_PCB2016"
 "RS project name:	Merkle_RS05"
-"Random seed:		0002205000"
+"Random seed:		0002205010"
 "Data type, index:	dose response, 2"
 
 
@@ -14,32 +14,32 @@ INPUTS
 
 
 OBSERVABLES
-Compound_2_Obs	C	n/a	conc.	0	0	EpoRJAK2+pEpoRpJAK2+PTPAct+STAT5+CISHnRNA2+CISHnRNA3+CISHnRNA5+CISHRNA+SOCS3RNA+SOCS3
-Compound_7_Obs	C	n/a	conc.	0	0	PTP+STAT5+pSTAT5+nSTAT5+npSTAT5+CISHnRNA2+CISHnRNA5+CIS+SOCS3nRNA4+SOCS3
-Compound_8_Obs	C	n/a	conc.	0	0	offset12_Compound_8_Obs+scale12_Compound_8_Obs*(nSTAT5+CISHnRNA1+CISHnRNA2+CISHnRNA3+CISHnRNA5+CISHRNA+CIS+SOCS3nRNA2+SOCS3nRNA3+SOCS3nRNA4)
+SOCS3nRNA1_Obs	C	n/a	conc.	0	0	SOCS3nRNA1
+Compound_1_Obs	C	n/a	conc.	0	0	EpoRJAK2+pEpoRpJAK2+STAT5+npSTAT5+SOCS3nRNA3
+Compound_2_Obs	C	n/a	conc.	0	0	EpoRJAK2+pSTAT5+CISHnRNA1+SOCS3nRNA2+SOCS3RNA
 
 
 ERRORS
-Compound_2_Obs	sd12_Compound_2_Obs
-Compound_7_Obs	sd12_Compound_7_Obs
-Compound_8_Obs	sd12_Compound_8_Obs
+SOCS3nRNA1_Obs	sd10_SOCS3nRNA1_Obs
+Compound_1_Obs	sd10_Compound_1_Obs
+Compound_2_Obs	sd10_Compound_2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"0"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -47,10 +47,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd12_Compound_2_Obs	0.629	1	1	-2	3
-sd12_Compound_7_Obs	1.1214	1	1	-1	4
-sd12_Compound_8_Obs	0.5676	1	1	-2	3
+sd10_SOCS3nRNA1_Obs	-2.0109	1	1	-5	0
+sd10_Compound_1_Obs	0.75235	1	1	-2	3
+sd10_Compound_2_Obs	0.42245	1	1	-2	3
 
 // Scale and offset parameters
-scale12_Compound_8_Obs	0	1	1	-5	5
-offset12_Compound_8_Obs	-1	1	1	-3	1

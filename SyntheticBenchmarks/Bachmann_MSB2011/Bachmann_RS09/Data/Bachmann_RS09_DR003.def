@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-SHP1_Obs	C	n/a	conc.	0	0	scale9_SHP1_Obs*(SHP1)
+SHP1_Obs	C	n/a	conc.	0	0	scale6_SHP1_Obs*(SHP1)
 
 
 ERRORS
-SHP1_Obs	sd9_SHP1_Obs
+SHP1_Obs	sd6_SHP1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,7 +32,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_SHP1_Obs	0.74481	1	1	-2	3
+sd6_SHP1_Obs	0.74144	1	1	-2	3
 
 // Scale and offset parameters
-scale9_SHP1_Obs	0	1	1	-5	5
+scale6_SHP1_Obs	0	1	1	-5	5

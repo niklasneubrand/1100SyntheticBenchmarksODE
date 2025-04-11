@@ -22,10 +22,10 @@ pSTAT5_Obs	sd3_pSTAT5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
 
 
 RANDOM
@@ -33,6 +33,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_pSTAT5_Obs	0.32762	1	1	-2	3
+sd3_pSTAT5_Obs	0.32365	1	1	-2	3
 
 // Scale and offset parameters

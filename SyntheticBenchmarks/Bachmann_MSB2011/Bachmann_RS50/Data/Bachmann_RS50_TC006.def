@@ -7,42 +7,36 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
 
 
 OBSERVABLES
-EpoRJAK2_Obs	C	n/a	conc.	0	0	scale5_EpoRJAK2_Obs*(EpoRJAK2)
 SHP1_Obs	C	n/a	conc.	0	0	scale5_SHP1_Obs*(SHP1)
-SHP1Act_Obs	C	n/a	conc.	0	0	scale5_SHP1Act_Obs*(SHP1Act)
-pSTAT5_Obs	C	n/a	conc.	0	0	scale5_pSTAT5_Obs*(pSTAT5)
+STAT5_Obs	C	n/a	conc.	0	0	scale3_STAT5_Obs*(STAT5)
 npSTAT5_Obs	C	n/a	conc.	0	0	scale5_npSTAT5_Obs*(npSTAT5)
 CISnRNA3_Obs	C	n/a	conc.	0	0	CISnRNA3
 CISRNA_Obs	C	n/a	conc.	0	0	scale4_CISRNA_Obs*(CISRNA)
 CIS_Obs	C	n/a	conc.	0	0	scale5_CIS_Obs*(CIS)
-SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
 
 
 ERRORS
-EpoRJAK2_Obs	sd5_EpoRJAK2_Obs
 SHP1_Obs	sd5_SHP1_Obs
-SHP1Act_Obs	sd5_SHP1Act_Obs
-pSTAT5_Obs	sd5_pSTAT5_Obs
+STAT5_Obs	sd3_STAT5_Obs
 npSTAT5_Obs	sd5_npSTAT5_Obs
 CISnRNA3_Obs	sd5_CISnRNA3_Obs
 CISRNA_Obs	sd4_CISRNA_Obs
 CIS_Obs	sd5_CIS_Obs
-SOCS3nRNA2_Obs	sd4_SOCS3nRNA2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_SHP1	"init_SHP1*(SHP1ProOE + 1)"
 
 
 RANDOM
@@ -50,21 +44,16 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_EpoRJAK2_Obs	-0.32228	1	1	-3	2
-sd5_SHP1_Obs	0.58163	1	1	-2	3
-sd5_SHP1Act_Obs	-1.5777	1	1	-4	1
-sd5_pSTAT5_Obs	0.40387	1	1	-2	3
-sd5_npSTAT5_Obs	0.18383	1	1	-2	3
-sd5_CISnRNA3_Obs	1.9583	1	1	-1	4
-sd4_CISRNA_Obs	-2.1283	1	1	-5	0
-sd5_CIS_Obs	0.10898	1	1	-2	3
-sd4_SOCS3nRNA2_Obs	-4.4236	1	1	-7	-2
+sd5_SHP1_Obs	1.0826	1	1	-1	4
+sd3_STAT5_Obs	0.81323	1	1	-2	3
+sd5_npSTAT5_Obs	0.096524	1	1	-2	3
+sd5_CISnRNA3_Obs	1.9143	1	1	-1	4
+sd4_CISRNA_Obs	-2.2313	1	1	-5	0
+sd5_CIS_Obs	-0.037433	1	1	-3	2
 
 // Scale and offset parameters
-scale5_EpoRJAK2_Obs	0	1	1	-5	5
 scale5_SHP1_Obs	0	1	1	-5	5
-scale5_SHP1Act_Obs	0	1	1	-5	5
-scale5_pSTAT5_Obs	0	1	1	-5	5
+scale3_STAT5_Obs	0	1	1	-5	5
 scale5_npSTAT5_Obs	0	1	1	-5	5
 scale4_CISRNA_Obs	0	1	1	-5	5
 scale5_CIS_Obs	0	1	1	-5	5

@@ -14,39 +14,44 @@ INPUTS
 
 
 OBSERVABLES
-Compound_3_Obs	C	n/a	conc.	0	0	scale3_Compound_3_Obs*(npSTAT5+CISHnRNA2+CISHnRNA5)
-Compound_4_Obs	C	n/a	conc.	0	0	scale3_Compound_4_Obs*(pEpoRpJAK2+SOCS3nRNA4+SOCS3nRNA5)
-Compound_5_Obs	C	n/a	conc.	0	0	scale5_Compound_5_Obs*(pSTAT5+CISHnRNA5+SOCS3)
-Compound_6_Obs	C	n/a	conc.	0	0	scale5_Compound_6_Obs*(nSTAT5+SOCS3nRNA5+SOCS3RNA)
-Compound_13_Obs	C	n/a	conc.	0	0	scale6_Compound_13_Obs*(pSTAT5+npSTAT5+SOCS3nRNA3)
-Compound_14_Obs	C	n/a	conc.	0	0	PTPAct+pSTAT5+SOCS3RNA
+Compound_1_Obs	C	n/a	conc.	0	1	offset5_Compound_1_Obs+scale5_Compound_1_Obs*(EpoRpJAK2+PTPAct+CISHnRNA1)
+Compound_5_Obs	C	n/a	conc.	0	1	offset5_Compound_5_Obs+scale5_Compound_5_Obs*(pSTAT5+CISHnRNA5+SOCS3)
+Compound_6_Obs	C	n/a	conc.	0	1	offset3_Compound_6_Obs+scale3_Compound_6_Obs*(nSTAT5+SOCS3nRNA5+SOCS3RNA)
+Compound_7_Obs	C	n/a	conc.	0	1	offset2_Compound_7_Obs+scale2_Compound_7_Obs*(pSTAT5+CISHnRNA4+SOCS3nRNA1)
+Compound_8_Obs	C	n/a	conc.	0	1	offset2_Compound_8_Obs+scale2_Compound_8_Obs*(CISHnRNA3+SOCS3nRNA3+SOCS3)
+Compound_10_Obs	C	n/a	conc.	0	1	offset2_Compound_10_Obs+scale2_Compound_10_Obs*(nSTAT5+CISHnRNA5+SOCS3)
+Compound_13_Obs	C	n/a	conc.	0	1	offset6_Compound_13_Obs+scale6_Compound_13_Obs*(pSTAT5+npSTAT5+SOCS3nRNA3)
+Compound_14_Obs	C	n/a	conc.	0	1	offset6_Compound_14_Obs+scale6_Compound_14_Obs*(PTPAct+pSTAT5+SOCS3RNA)
 
 
 ERRORS
-Compound_3_Obs	sd3_Compound_3_Obs
-Compound_4_Obs	sd3_Compound_4_Obs
+Compound_1_Obs	sd5_Compound_1_Obs
 Compound_5_Obs	sd5_Compound_5_Obs
-Compound_6_Obs	sd5_Compound_6_Obs
+Compound_6_Obs	sd3_Compound_6_Obs
+Compound_7_Obs	sd2_Compound_7_Obs
+Compound_8_Obs	sd2_Compound_8_Obs
+Compound_10_Obs	sd2_Compound_10_Obs
 Compound_13_Obs	sd6_Compound_13_Obs
 Compound_14_Obs	sd6_Compound_14_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(1)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(1 * SOCS3eqmOE * SOCS3eqm + 0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_PTP	"init_PTP*(SHP1proOE + 1)"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -54,16 +59,29 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_Compound_3_Obs	-0.95808	1	1	-3	2
-sd3_Compound_4_Obs	-2.0805	1	1	-5	0
-sd5_Compound_5_Obs	0.76543	1	1	-2	3
-sd5_Compound_6_Obs	-1.3808	1	1	-4	1
-sd6_Compound_13_Obs	-0.59576	1	1	-3	2
-sd6_Compound_14_Obs	-0.82388	1	1	-3	2
+sd5_Compound_1_Obs	-1.2667	1	1	-4	1
+sd5_Compound_5_Obs	-1.2474	1	1	-4	1
+sd3_Compound_6_Obs	-1.2503	1	1	-4	1
+sd2_Compound_7_Obs	-1.2701	1	1	-4	1
+sd2_Compound_8_Obs	-1.2616	1	1	-4	1
+sd2_Compound_10_Obs	-1.2503	1	1	-4	1
+sd6_Compound_13_Obs	-1.2418	1	1	-4	1
+sd6_Compound_14_Obs	-1.26	1	1	-4	1
 
 // Scale and offset parameters
-scale3_Compound_3_Obs	0	1	1	-5	5
-scale3_Compound_4_Obs	0	1	1	-5	5
+scale5_Compound_1_Obs	0	1	1	-5	5
+offset5_Compound_1_Obs	-4	1	1	-6	-2
 scale5_Compound_5_Obs	0	1	1	-5	5
-scale5_Compound_6_Obs	0	1	1	-5	5
+offset5_Compound_5_Obs	-1	1	1	-3	1
+scale3_Compound_6_Obs	0	1	1	-5	5
+offset3_Compound_6_Obs	-2	1	1	-4	0
+scale2_Compound_7_Obs	0	1	1	-5	5
+offset2_Compound_7_Obs	-1	1	1	-3	1
+scale2_Compound_8_Obs	0	1	1	-5	5
+offset2_Compound_8_Obs	-2	1	1	-4	0
+scale2_Compound_10_Obs	0	1	1	-5	5
+offset2_Compound_10_Obs	-2	1	1	-4	0
 scale6_Compound_13_Obs	0	1	1	-5	5
+offset6_Compound_13_Obs	-1	1	1	-3	1
+scale6_Compound_14_Obs	0	1	1	-5	5
+offset6_Compound_14_Obs	-1	1	1	-3	1

@@ -15,20 +15,20 @@ INPUTS
 
 OBSERVABLES
 CISnRNA3_Obs	C	n/a	conc.	0	1	CISnRNA3
-CISnRNA4_Obs	C	n/a	conc.	0	1	offset11_CISnRNA4_Obs+scale11_CISnRNA4_Obs*(CISnRNA4)
+CISnRNA4_Obs	C	n/a	conc.	0	1	offset8_CISnRNA4_Obs+scale8_CISnRNA4_Obs*(CISnRNA4)
 CISRNA_Obs	C	n/a	conc.	0	1	CISRNA
 
 
 ERRORS
-CISnRNA3_Obs	sd10_CISnRNA3_Obs
-CISnRNA4_Obs	sd11_CISnRNA4_Obs
-CISRNA_Obs	sd10_CISRNA_Obs
+CISnRNA3_Obs	sd7_CISnRNA3_Obs
+CISnRNA4_Obs	sd8_CISnRNA4_Obs
+CISRNA_Obs	sd7_CISRNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -36,10 +36,10 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_CISnRNA3_Obs	-0.81456	1	1	-3	2
-sd11_CISnRNA4_Obs	-0.78319	1	1	-3	2
-sd10_CISRNA_Obs	-0.79003	1	1	-3	2
+sd7_CISnRNA3_Obs	-0.8304	1	1	-3	2
+sd8_CISnRNA4_Obs	-0.80436	1	1	-3	2
+sd7_CISRNA_Obs	-0.81456	1	1	-3	2
 
 // Scale and offset parameters
-scale11_CISnRNA4_Obs	0	1	1	-5	5
-offset11_CISnRNA4_Obs	0	1	1	-2	2
+scale8_CISnRNA4_Obs	0	1	1	-5	5
+offset8_CISnRNA4_Obs	0	1	1	-2	2

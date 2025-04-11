@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-SOCS3_Obs	C	n/a	conc.	0	1	offset8_SOCS3_Obs+scale8_SOCS3_Obs*(SOCS3)
+STAT5_Obs	C	n/a	conc.	0	0	scale2_STAT5_Obs*(STAT5)
 
 
 ERRORS
-SOCS3_Obs	sd8_SOCS3_Obs
+STAT5_Obs	sd2_STAT5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,8 +32,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd8_SOCS3_Obs	-1.3736	1	1	-4	1
+sd2_STAT5_Obs	0.51241	1	1	-2	3
 
 // Scale and offset parameters
-scale8_SOCS3_Obs	0	1	1	-5	5
-offset8_SOCS3_Obs	-4	1	1	-6	-2
+scale2_STAT5_Obs	0	1	1	-5	5

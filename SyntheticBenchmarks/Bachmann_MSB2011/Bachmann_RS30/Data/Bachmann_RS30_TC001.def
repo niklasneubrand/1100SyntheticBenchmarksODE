@@ -36,10 +36,10 @@ Compound_4_Obs	sd1_Compound_4_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -48,13 +48,13 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd1_STAT5_Obs	0.47935	1	1	-2	3
-sd1_CISnRNA5_Obs	2.112	1	1	0	5
-sd1_SOCS3nRNA4_Obs	-3.7963	1	1	-6	-1
-sd1_SOCS3nRNA5_Obs	-3.7821	1	1	-6	-1
-sd1_Compound_1_Obs	2.5011	1	1	0	5
-sd1_Compound_2_Obs	2.6404	1	1	0	5
-sd1_Compound_3_Obs	2.6023	1	1	0	5
-sd1_Compound_4_Obs	2.674	1	1	0	5
+sd1_CISnRNA5_Obs	2.1203	1	1	0	5
+sd1_SOCS3nRNA4_Obs	-3.8119	1	1	-6	-1
+sd1_SOCS3nRNA5_Obs	-3.7772	1	1	-6	-1
+sd1_Compound_1_Obs	2.5243	1	1	0	5
+sd1_Compound_2_Obs	2.6382	1	1	0	5
+sd1_Compound_3_Obs	2.6411	1	1	0	5
+sd1_Compound_4_Obs	2.6954	1	1	0	5
 
 // Scale and offset parameters
 scale1_CISnRNA5_Obs	0	1	1	-5	5

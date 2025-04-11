@@ -16,9 +16,6 @@ arLoadData('Bachmann_RS11_TC003', 1);
 arLoadData('Bachmann_RS11_TC004', 1); 
 arLoadData('Bachmann_RS11_TC005', 1); 
 arLoadData('Bachmann_RS11_TC006', 1); 
-arLoadData('Bachmann_RS11_TC007', 1); 
-arLoadData('Bachmann_RS11_TC008', 1); 
-arLoadData('Bachmann_RS11_TC009', 1); 
 
 % Load the dose-response data 
 arLoadData('Bachmann_RS11_DR001', 1); 

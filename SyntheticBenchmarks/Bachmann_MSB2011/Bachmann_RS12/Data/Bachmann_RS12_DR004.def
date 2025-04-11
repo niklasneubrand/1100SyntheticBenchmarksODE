@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-CISnRNA1_Obs	C	n/a	conc.	0	1	CISnRNA1
+CISnRNA1_Obs	C	n/a	conc.	0	0	CISnRNA1
 
 
 ERRORS
-CISnRNA1_Obs	sd8_CISnRNA1_Obs
+CISnRNA1_Obs	sd6_CISnRNA1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd8_CISnRNA1_Obs	-1.0384	1	1	-4	1
+sd6_CISnRNA1_Obs	1.9141	1	1	-1	4
 
 // Scale and offset parameters

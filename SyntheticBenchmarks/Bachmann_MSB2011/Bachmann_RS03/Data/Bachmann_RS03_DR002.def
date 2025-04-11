@@ -14,19 +14,19 @@ INPUTS
 
 
 OBSERVABLES
-SHP1Act_Obs	C	n/a	conc.	0	0	scale11_SHP1Act_Obs*(SHP1Act)
-Compound_2_Obs	C	n/a	conc.	0	0	scale4_Compound_2_Obs*(EpoRJAK2_CIS+STAT5+CISRNA)
+SHP1Act_Obs	C	n/a	conc.	0	1	SHP1Act
+SOCS3nRNA2_Obs	C	n/a	conc.	0	1	offset5_SOCS3nRNA2_Obs+scale5_SOCS3nRNA2_Obs*(SOCS3nRNA2)
 
 
 ERRORS
-SHP1Act_Obs	sd11_SHP1Act_Obs
-Compound_2_Obs	sd4_Compound_2_Obs
+SHP1Act_Obs	sd8_SHP1Act_Obs
+SOCS3nRNA2_Obs	sd5_SOCS3nRNA2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -34,9 +34,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd11_SHP1Act_Obs	-1.9714	1	1	-4	1
-sd4_Compound_2_Obs	0.54605	1	1	-2	3
+sd8_SHP1Act_Obs	-1.1038	1	1	-4	1
+sd5_SOCS3nRNA2_Obs	-1.1024	1	1	-4	1
 
 // Scale and offset parameters
-scale11_SHP1Act_Obs	0	1	1	-5	5
-scale4_Compound_2_Obs	0	1	1	-5	5
+scale5_SOCS3nRNA2_Obs	0	1	1	-5	5
+offset5_SOCS3nRNA2_Obs	-5	1	1	-7	-3

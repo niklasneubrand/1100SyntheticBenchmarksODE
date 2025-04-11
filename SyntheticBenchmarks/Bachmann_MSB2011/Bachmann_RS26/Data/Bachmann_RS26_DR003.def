@@ -14,21 +14,21 @@ INPUTS
 
 
 OBSERVABLES
-Compound_3_Obs	C	n/a	conc.	0	1	offset9_Compound_3_Obs+scale9_Compound_3_Obs*(p1EpoRpJAK2+CISnRNA4+SOCS3nRNA3+SOCS3RNA+SOCS3)
-Compound_4_Obs	C	n/a	conc.	0	1	offset8_Compound_4_Obs+scale8_Compound_4_Obs*(EpoRJAK2_CIS+CISnRNA1+CISnRNA4+CISRNA+SOCS3RNA)
-Compound_8_Obs	C	n/a	conc.	0	1	offset8_Compound_8_Obs+scale8_Compound_8_Obs*(CISnRNA1+CISnRNA4+CISnRNA5+CIS+SOCS3nRNA2)
+Compound_3_Obs	C	n/a	conc.	0	1	offset6_Compound_3_Obs+scale6_Compound_3_Obs*(p1EpoRpJAK2+CISnRNA4+SOCS3nRNA3+SOCS3RNA+SOCS3)
+Compound_4_Obs	C	n/a	conc.	0	1	offset5_Compound_4_Obs+scale5_Compound_4_Obs*(EpoRJAK2_CIS+CISnRNA1+CISnRNA4+CISRNA+SOCS3RNA)
+Compound_8_Obs	C	n/a	conc.	0	1	offset5_Compound_8_Obs+scale5_Compound_8_Obs*(CISnRNA1+CISnRNA4+CISnRNA5+CIS+SOCS3nRNA2)
 
 
 ERRORS
-Compound_3_Obs	sd9_Compound_3_Obs
-Compound_4_Obs	sd8_Compound_4_Obs
-Compound_8_Obs	sd8_Compound_8_Obs
+Compound_3_Obs	sd6_Compound_3_Obs
+Compound_4_Obs	sd5_Compound_4_Obs
+Compound_8_Obs	sd5_Compound_8_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -36,14 +36,14 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_Compound_3_Obs	-0.8996	1	1	-3	2
-sd8_Compound_4_Obs	-0.90416	1	1	-3	2
-sd8_Compound_8_Obs	-0.89861	1	1	-3	2
+sd6_Compound_3_Obs	-0.88869	1	1	-3	2
+sd5_Compound_4_Obs	-0.8849	1	1	-3	2
+sd5_Compound_8_Obs	-0.89031	1	1	-3	2
 
 // Scale and offset parameters
-scale9_Compound_3_Obs	0	1	1	-5	5
-offset9_Compound_3_Obs	-1	1	1	-3	1
-scale8_Compound_4_Obs	0	1	1	-5	5
-offset8_Compound_4_Obs	0	1	1	-2	2
-scale8_Compound_8_Obs	0	1	1	-5	5
-offset8_Compound_8_Obs	0	1	1	-2	2
+scale6_Compound_3_Obs	0	1	1	-5	5
+offset6_Compound_3_Obs	-2	1	1	-4	0
+scale5_Compound_4_Obs	0	1	1	-5	5
+offset5_Compound_4_Obs	0	1	1	-2	2
+scale5_Compound_8_Obs	0	1	1	-5	5
+offset5_Compound_8_Obs	0	1	1	-2	2

@@ -23,7 +23,6 @@ SHP1Act_Obs	C	n/a	conc.	0	0	SHP1Act
 STAT5_Obs	C	n/a	conc.	0	0	STAT5
 pSTAT5_Obs	C	n/a	conc.	0	0	pSTAT5
 npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
-SHP1_Obs	C	n/a	conc.	0	0	SHP1
 
 
 ERRORS
@@ -36,14 +35,13 @@ SHP1Act_Obs	sd2_SHP1Act_Obs
 STAT5_Obs	sd2_STAT5_Obs
 pSTAT5_Obs	sd2_pSTAT5_Obs
 npSTAT5_Obs	sd2_npSTAT5_Obs
-SHP1_Obs	sd1_SHP1_Obs
 
 
 CONDITIONS
-ActD	"(1)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"1"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -51,15 +49,14 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_EpoRJAK2_Obs	-0.47822	1	1	-3	2
-sd2_EpoRpJAK2_Obs	-1.8771	1	1	-4	1
-sd2_p1EpoRpJAK2_Obs	-2.4461	1	1	-5	0
-sd2_p2EpoRpJAK2_Obs	-1.6558	1	1	-4	1
-sd2_p12EpoRpJAK2_Obs	-1.4145	1	1	-4	1
-sd2_SHP1Act_Obs	-2.0937	1	1	-5	0
-sd2_STAT5_Obs	-0.28329	1	1	-3	2
-sd2_pSTAT5_Obs	0.32639	1	1	-2	3
-sd2_npSTAT5_Obs	0.2581	1	1	-2	3
-sd1_SHP1_Obs	0.28687	1	1	-2	3
+sd2_EpoRJAK2_Obs	-0.5654	1	1	-3	2
+sd2_EpoRpJAK2_Obs	-1.9124	1	1	-4	1
+sd2_p1EpoRpJAK2_Obs	-2.5159	1	1	-5	0
+sd2_p2EpoRpJAK2_Obs	-1.7098	1	1	-4	1
+sd2_p12EpoRpJAK2_Obs	-1.4688	1	1	-4	1
+sd2_SHP1Act_Obs	-2.1489	1	1	-5	0
+sd2_STAT5_Obs	-0.32898	1	1	-3	2
+sd2_pSTAT5_Obs	0.27988	1	1	-2	3
+sd2_npSTAT5_Obs	0.24139	1	1	-2	3
 
 // Scale and offset parameters

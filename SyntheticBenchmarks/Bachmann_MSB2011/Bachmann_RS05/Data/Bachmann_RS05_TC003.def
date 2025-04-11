@@ -22,10 +22,10 @@ Compound_3_Obs	sd3_Compound_3_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
 
 
 RANDOM
@@ -33,6 +33,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_Compound_3_Obs	3.3045	1	1	1	6
+sd3_Compound_3_Obs	3.3008	1	1	1	6
 
 // Scale and offset parameters

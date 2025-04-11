@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-Compound_10_Obs	C	n/a	conc.	0	0	pSTAT5+CISnRNA1+CISnRNA4+SOCS3nRNA5+SOCS3RNA
+Compound_8_Obs	C	n/a	conc.	0	0	p1EpoRpJAK2+pSTAT5+CISnRNA4+CISRNA+SOCS3nRNA1
 
 
 ERRORS
-Compound_10_Obs	sd4_Compound_10_Obs
+Compound_8_Obs	sd4_Compound_8_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd4_Compound_10_Obs	2.1382	1	1	0	5
+sd4_Compound_8_Obs	1.9211	1	1	-1	4
 
 // Scale and offset parameters

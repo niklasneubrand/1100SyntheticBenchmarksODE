@@ -28,11 +28,12 @@ SOCS3nRNA5_Obs	sd3_SOCS3nRNA5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0 * CISEqcOE * CISEqc)"
+ActD	"0"
+CISoe	"1"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_CIS	"CISEqc*CISEqcOE"
+init_EpoRJAK2_CIS	"1"
 
 
 RANDOM
@@ -41,9 +42,9 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd4_EpoRpJAK2_Obs	-1.2066	1	1	-4	1
-sd2_CISnRNA5_Obs	-1.2143	1	1	-4	1
-sd3_SOCS3nRNA1_Obs	-1.2017	1	1	-4	1
-sd3_SOCS3nRNA5_Obs	-1.2078	1	1	-4	1
+sd2_CISnRNA5_Obs	-1.2269	1	1	-4	1
+sd3_SOCS3nRNA1_Obs	-1.225	1	1	-4	1
+sd3_SOCS3nRNA5_Obs	-1.2056	1	1	-4	1
 
 // Scale and offset parameters
 scale4_EpoRpJAK2_Obs	0	1	1	-5	5

@@ -1,7 +1,7 @@
 % Setup File For Realistic Simulation
 % Original project:	Merkle_PCB2016 
 % RS project name:	Merkle_RS33 
-% Random seed:		0002233010 
+% Random seed:		0002233000 
 
 % Initialize the d2d toolbox 
 arInit();
@@ -26,8 +26,6 @@ arLoadData('Merkle_RS33_TC013', 1);
 arLoadData('Merkle_RS33_TC014', 1); 
 arLoadData('Merkle_RS33_TC015', 1); 
 arLoadData('Merkle_RS33_TC016', 1); 
-arLoadData('Merkle_RS33_TC017', 1); 
-arLoadData('Merkle_RS33_TC018', 1); 
 
 % Load the dose-response data 
 arLoadData('Merkle_RS33_DR001', 1); 

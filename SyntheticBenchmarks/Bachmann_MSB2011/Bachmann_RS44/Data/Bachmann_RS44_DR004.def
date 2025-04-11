@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
 
 
 ERRORS
-SOCS3_Obs	sd8_SOCS3_Obs
+SOCS3nRNA2_Obs	sd2_SOCS3nRNA2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd8_SOCS3_Obs	0.050553	1	1	-2	3
+sd2_SOCS3nRNA2_Obs	-4.1857	1	1	-7	-2
 
 // Scale and offset parameters

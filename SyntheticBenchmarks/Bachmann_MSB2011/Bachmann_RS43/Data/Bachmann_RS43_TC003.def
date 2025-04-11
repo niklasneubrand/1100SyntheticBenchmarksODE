@@ -28,10 +28,10 @@ Compound_5_Obs	sd2_Compound_5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
 
 
 RANDOM
@@ -40,9 +40,9 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd3_EpoRJAK2_Obs	-0.42343	1	1	-3	2
-sd3_p12EpoRpJAK2_Obs	-1.1663	1	1	-4	1
-sd3_Compound_2_Obs	-1.7147	1	1	-4	1
-sd2_Compound_5_Obs	2.3357	1	1	0	5
+sd3_p12EpoRpJAK2_Obs	-1.1915	1	1	-4	1
+sd3_Compound_2_Obs	-1.7273	1	1	-4	1
+sd2_Compound_5_Obs	2.3308	1	1	0	5
 
 // Scale and offset parameters
 scale3_EpoRJAK2_Obs	0	1	1	-5	5

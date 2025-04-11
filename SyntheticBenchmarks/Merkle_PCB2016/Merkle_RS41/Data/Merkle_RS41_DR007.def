@@ -14,43 +14,43 @@ INPUTS
 
 
 OBSERVABLES
-pEpoRpJAK2_Obs	C	n/a	conc.	0	0	offset6_pEpoRpJAK2_Obs+scale6_pEpoRpJAK2_Obs*(pEpoRpJAK2)
-npSTAT5_Obs	C	n/a	conc.	0	0	offset6_npSTAT5_Obs+scale6_npSTAT5_Obs*(npSTAT5)
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	pEpoRpJAK2
+npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
 SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
 
 
 ERRORS
-pEpoRpJAK2_Obs	sd6_pEpoRpJAK2_Obs
-npSTAT5_Obs	sd6_npSTAT5_Obs
-SOCS3_Obs	sd7_SOCS3_Obs
+pEpoRpJAK2_Obs	sd7_pEpoRpJAK2_Obs
+npSTAT5_Obs	sd7_npSTAT5_Obs
+SOCS3_Obs	sd6_SOCS3_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-ActDstrength	"(ActDstrength * Relto_CFUE_ActDstrength)"
-CISHRNAturn	"(CISHRNAturn * Relto_CFUE_CISHRNAturn)"
-EPORactJAK2	"(EPORactJAK2 * Relto_CFUE_EPORactJAK2)"
-JAK2actEPO	"(JAK2actEPO * Relto_CFUE_JAK2actEPO)"
-SOCS3RNAdelay	"(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay)"
-SOCS3oe	"(0)"
-SOCS3prom	"(SOCS3prom * Relto_CFUE_SOCS3prom)"
-STAT5imp	"(STAT5imp * Relto_CFUE_STAT5imp)"
-init_CIS	"(2.15/11.56*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/(CISHRNAturn * Relto_CFUE_CISHRNAturn))"
-init_CISHRNA	"(2.15/11.56*CISHRNAbasal*CISHRNAeqm/(CISHRNAturn * Relto_CFUE_CISHRNAturn))"
-init_EpoRJAK2	"(ReltoH838_init_EpoRJAK2_H838 * init_EpoRJAK2_H838)"
-init_PTP	"(init_PTP * (1 + (1 * (Relto_H838WT_init_PTP-1))))"
-init_SOCS3	"(2.15/11.56*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(2.15/11.56*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/(SOCS3RNAdelay * Relto_CFUE_SOCS3RNAdelay))"
-init_STAT5	"(init_STAT5 * Relto_CFUE_init_STAT5)"
-nSTAT5deact	"(nSTAT5deact * Relto_CFUE_nSTAT5deact)"
-step_time	"(30)"
-vol_cyt	"(11.56)"
-vol_nuc	"(2.15)"
+ActD	"0"
+ActDstrength	"ActDstrength*Relto_CFUE_ActDstrength"
+CISHRNAturn	"CISHRNAturn*Relto_CFUE_CISHRNAturn"
+EPORactJAK2	"EPORactJAK2*Relto_CFUE_EPORactJAK2"
+JAK2actEPO	"JAK2actEPO*Relto_CFUE_JAK2actEPO"
+SOCS3RNAdelay	"Relto_CFUE_SOCS3RNAdelay*SOCS3RNAdelay"
+SOCS3oe	"0"
+SOCS3prom	"Relto_CFUE_SOCS3prom*SOCS3prom"
+STAT5imp	"Relto_CFUE_STAT5imp*STAT5imp"
+init_CIS	"(0.18598615916955017301038062283737*CISeqm*CISHRNAbasal)/(CISHRNAturn*Relto_CFUE_CISHRNAturn)"
+init_CISHRNA	"(0.18598615916955017301038062283737*CISHRNAeqm*CISHRNAbasal)/(CISHRNAturn*Relto_CFUE_CISHRNAturn)"
+init_EpoRJAK2	"ReltoH838_init_EpoRJAK2_H838*init_EpoRJAK2_H838"
+init_PTP	"Relto_H838WT_init_PTP*init_PTP"
+init_SOCS3	"(0.18598615916955017301038062283737*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.18598615916955017301038062283737*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/(Relto_CFUE_SOCS3RNAdelay*SOCS3RNAdelay)"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/(Relto_CFUE_SOCS3RNAdelay*SOCS3RNAdelay)"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/(Relto_CFUE_SOCS3RNAdelay*SOCS3RNAdelay)"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/(Relto_CFUE_SOCS3RNAdelay*SOCS3RNAdelay)"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/(Relto_CFUE_SOCS3RNAdelay*SOCS3RNAdelay)"
+init_STAT5	"Relto_CFUE_init_STAT5*init_STAT5"
+nSTAT5deact	"Relto_CFUE_nSTAT5deact*nSTAT5deact"
+step_time	"30"
+vol_cyt	"11.56"
+vol_nuc	"2.15"
 
 
 RANDOM
@@ -58,12 +58,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd6_pEpoRpJAK2_Obs	-0.90947	1	1	-3	2
-sd6_npSTAT5_Obs	-0.92297	1	1	-3	2
-sd7_SOCS3_Obs	-0.7776	1	1	-3	2
+sd7_pEpoRpJAK2_Obs	-0.91945	1	1	-3	2
+sd7_npSTAT5_Obs	-0.97537	1	1	-3	2
+sd6_SOCS3_Obs	-0.75422	1	1	-3	2
 
 // Scale and offset parameters
-scale6_pEpoRpJAK2_Obs	0	1	1	-5	5
-offset6_pEpoRpJAK2_Obs	-3	1	1	-5	-1
-scale6_npSTAT5_Obs	0	1	1	-5	5
-offset6_npSTAT5_Obs	-3	1	1	-5	-1

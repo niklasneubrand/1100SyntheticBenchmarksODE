@@ -18,13 +18,13 @@ SOCS3nRNA2_Obs	C	n/a	conc.	0	0	SOCS3nRNA2
 
 
 ERRORS
-SOCS3nRNA2_Obs	sd9_SOCS3nRNA2_Obs
+SOCS3nRNA2_Obs	sd6_SOCS3nRNA2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_SOCS3nRNA2_Obs	3.0745	1	1	1	6
+sd6_SOCS3nRNA2_Obs	3.2765	1	1	1	6
 
 // Scale and offset parameters

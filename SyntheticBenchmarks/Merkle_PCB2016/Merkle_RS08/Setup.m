@@ -26,8 +26,6 @@ arLoadData('Merkle_RS08_TC013', 1);
 arLoadData('Merkle_RS08_TC014', 1); 
 arLoadData('Merkle_RS08_TC015', 1); 
 arLoadData('Merkle_RS08_TC016', 1); 
-arLoadData('Merkle_RS08_TC017', 1); 
-arLoadData('Merkle_RS08_TC018', 1); 
 
 % Load the dose-response data 
 arLoadData('Merkle_RS08_DR001', 1); 
@@ -44,6 +42,9 @@ arLoadData('Merkle_RS08_DR011', 1);
 
 % Compile the project 
 arCompileAll(); 
+
+% Custom settings 
+ar.config.add_c = 80; 
 
 % Pre-equilibration and Events 
 arFindInputs(); 

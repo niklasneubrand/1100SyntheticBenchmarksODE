@@ -7,43 +7,36 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	110
+time	T	min	time	0	100
 
 
 INPUTS
 
 
 OBSERVABLES
-STAT5_Obs	C	n/a	conc.	0	0	STAT5
-npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
 CISHRNA_Obs	C	n/a	conc.	0	0	CISHRNA
-SOCS3nRNA3_Obs	C	n/a	conc.	0	0	SOCS3nRNA3
 
 
 ERRORS
-STAT5_Obs	sd7_STAT5_Obs
-npSTAT5_Obs	sd7_npSTAT5_Obs
-CISHRNA_Obs	sd5_CISHRNA_Obs
-SOCS3nRNA3_Obs	sd5_SOCS3nRNA3_Obs
+CISHRNA_Obs	sd3_CISHRNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_PTP	"(init_PTP * (1 + (0 * SHP1proOE)))"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"1"
+SOCS3oe	"0"
+epo_level	"0"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -51,9 +44,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd7_STAT5_Obs	0.84902	1	1	-2	3
-sd7_npSTAT5_Obs	0.20935	1	1	-2	3
-sd5_CISHRNA_Obs	-1.8017	1	1	-4	1
-sd5_SOCS3nRNA3_Obs	-1.8594	1	1	-4	1
+sd3_CISHRNA_Obs	-5.3488	1	1	-8	-3
 
 // Scale and offset parameters

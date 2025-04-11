@@ -7,38 +7,40 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	110
 
 
 INPUTS
 
 
 OBSERVABLES
-CISHnRNA3_Obs	C	n/a	conc.	0	1	offset5_CISHnRNA3_Obs+scale5_CISHnRNA3_Obs*(CISHnRNA3)
-Compound_2_Obs	C	n/a	conc.	0	1	scale5_Compound_2_Obs*(EpoRpJAK2+PTPAct+SOCS3nRNA1+SOCS3nRNA5+SOCS3)
+CISHnRNA3_Obs	C	n/a	conc.	0	0	CISHnRNA3
+Compound_2_Obs	C	n/a	conc.	0	0	EpoRpJAK2+PTPAct+SOCS3nRNA1+SOCS3nRNA5+SOCS3
+Compound_4_Obs	C	n/a	conc.	0	0	pEpoRpJAK2+CISHnRNA2+CISHnRNA4+SOCS3nRNA3+SOCS3nRNA5
 
 
 ERRORS
 CISHnRNA3_Obs	sd5_CISHnRNA3_Obs
 Compound_2_Obs	sd5_Compound_2_Obs
+Compound_4_Obs	sd4_Compound_4_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(0 * SOCS3eqmOE * SOCS3eqm + 0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"1"
+epo_level	"0.000000125"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"SOCS3eqm*SOCS3eqmOE + (0.6875*SOCS3eqm*SOCS3RNAbasal)/(SOCS3RNAeqm*SOCS3RNAturn)"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -46,10 +48,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_CISHnRNA3_Obs	-1.2532	1	1	-4	1
-sd5_Compound_2_Obs	-1.2909	1	1	-4	1
+sd5_CISHnRNA3_Obs	-4.9068	1	1	-7	-2
+sd5_Compound_2_Obs	0.91472	1	1	-2	3
+sd4_Compound_4_Obs	-2.5209	1	1	-5	0
 
 // Scale and offset parameters
-scale5_CISHnRNA3_Obs	0	1	1	-5	5
-offset5_CISHnRNA3_Obs	-4	1	1	-6	-2
-scale5_Compound_2_Obs	0	1	1	-5	5

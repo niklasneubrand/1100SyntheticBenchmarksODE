@@ -22,9 +22,9 @@ SOCS3nRNA5_Obs	sd2_SOCS3nRNA5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_SOCS3nRNA5_Obs	-4.227	1	1	-7	-2
+sd2_SOCS3nRNA5_Obs	-4.4338	1	1	-7	-2
 
 // Scale and offset parameters

@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
@@ -28,12 +28,11 @@ CIS_Obs	sd4_CIS_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(1)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(1 * CISEqcOE * CISEqc)"
-init_EpoRJAK2_CIS	"(1)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"1"
+epo_level	"0.000000125"
+init_SOCS3	"SOCS3Eqc*SOCS3EqcOE"
 
 
 RANDOM
@@ -41,9 +40,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_p1EpoRpJAK2_Obs	-1.3611	1	1	-4	1
-sd5_SHP1_Obs	0.85465	1	1	-2	3
-sd5_SHP1Act_Obs	-1.7303	1	1	-4	1
-sd4_CIS_Obs	1.7577	1	1	-1	4
+sd5_p1EpoRpJAK2_Obs	-2.8209	1	1	-5	0
+sd5_SHP1_Obs	0.83243	1	1	-2	3
+sd5_SHP1Act_Obs	-2.2449	1	1	-5	0
+sd4_CIS_Obs	-1.1834	1	1	-4	1
 
 // Scale and offset parameters

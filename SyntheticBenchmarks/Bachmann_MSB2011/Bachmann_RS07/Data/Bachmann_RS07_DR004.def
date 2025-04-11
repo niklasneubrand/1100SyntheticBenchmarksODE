@@ -22,9 +22,9 @@ CISnRNA1_Obs	sd2_CISnRNA1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_CISnRNA1_Obs	-1.2443	1	1	-4	1
+sd2_CISnRNA1_Obs	-1.224	1	1	-4	1
 
 // Scale and offset parameters

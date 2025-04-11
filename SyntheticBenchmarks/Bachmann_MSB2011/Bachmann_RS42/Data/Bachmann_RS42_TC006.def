@@ -7,42 +7,46 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
 
 
 OBSERVABLES
+pSTAT5_Obs	C	n/a	conc.	0	0	pSTAT5
+CISnRNA1_Obs	C	n/a	conc.	0	0	CISnRNA1
 SOCS3nRNA3_Obs	C	n/a	conc.	0	0	SOCS3nRNA3
 SOCS3nRNA5_Obs	C	n/a	conc.	0	0	SOCS3nRNA5
+Compound_1_Obs	C	n/a	conc.	0	0	EpoRJAK2+p1EpoRpJAK2+EpoRJAK2_CIS+pSTAT5+SOCS3
 Compound_2_Obs	C	n/a	conc.	0	0	EpoRJAK2+SHP1Act+SOCS3nRNA4+SOCS3RNA+SOCS3
 Compound_3_Obs	C	n/a	conc.	0	0	EpoRJAK2+CISnRNA2+CIS+SOCS3nRNA1+SOCS3nRNA5
-Compound_5_Obs	C	n/a	conc.	0	0	p1EpoRpJAK2+p12EpoRpJAK2+npSTAT5+CISnRNA4+SOCS3nRNA1
 Compound_6_Obs	C	n/a	conc.	0	0	p2EpoRpJAK2+p12EpoRpJAK2+STAT5+pSTAT5+SOCS3
-Compound_11_Obs	C	n/a	conc.	0	0	SHP1+STAT5+CISnRNA1+SOCS3nRNA4+SOCS3RNA
+Compound_10_Obs	C	n/a	conc.	0	0	EpoRJAK2_CIS+pSTAT5+CIS+SOCS3nRNA2+SOCS3
 Compound_12_Obs	C	n/a	conc.	0	0	npSTAT5+CISnRNA1+CISnRNA2+SOCS3nRNA4+SOCS3RNA
 Compound_13_Obs	C	n/a	conc.	0	0	npSTAT5+CIS+SOCS3nRNA5+SOCS3RNA+SOCS3
 
 
 ERRORS
+pSTAT5_Obs	sd3_pSTAT5_Obs
+CISnRNA1_Obs	sd2_CISnRNA1_Obs
 SOCS3nRNA3_Obs	sd5_SOCS3nRNA3_Obs
 SOCS3nRNA5_Obs	sd5_SOCS3nRNA5_Obs
+Compound_1_Obs	sd3_Compound_1_Obs
 Compound_2_Obs	sd5_Compound_2_Obs
 Compound_3_Obs	sd5_Compound_3_Obs
-Compound_5_Obs	sd5_Compound_5_Obs
 Compound_6_Obs	sd6_Compound_6_Obs
-Compound_11_Obs	sd4_Compound_11_Obs
+Compound_10_Obs	sd2_Compound_10_Obs
 Compound_12_Obs	sd6_Compound_12_Obs
 Compound_13_Obs	sd6_Compound_13_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_SHP1	"init_SHP1*(SHP1ProOE + 1)"
 
 
 RANDOM
@@ -50,14 +54,16 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_SOCS3nRNA3_Obs	-4.8638	1	1	-7	-2
-sd5_SOCS3nRNA5_Obs	-4.813	1	1	-7	-2
-sd5_Compound_2_Obs	-0.36317	1	1	-3	2
-sd5_Compound_3_Obs	1.5416	1	1	-1	4
-sd5_Compound_5_Obs	1.4267	1	1	-1	4
-sd6_Compound_6_Obs	0.72582	1	1	-2	3
-sd4_Compound_11_Obs	1.6507	1	1	-1	4
-sd6_Compound_12_Obs	1.8777	1	1	-1	4
-sd6_Compound_13_Obs	-0.029339	1	1	-3	2
+sd3_pSTAT5_Obs	0.11574	1	1	-2	3
+sd2_CISnRNA1_Obs	1.4404	1	1	-1	4
+sd5_SOCS3nRNA3_Obs	-4.894	1	1	-7	-2
+sd5_SOCS3nRNA5_Obs	-4.9206	1	1	-7	-2
+sd3_Compound_1_Obs	0.20468	1	1	-2	3
+sd5_Compound_2_Obs	-0.52597	1	1	-3	2
+sd5_Compound_3_Obs	1.338	1	1	-1	4
+sd6_Compound_6_Obs	0.71591	1	1	-2	3
+sd2_Compound_10_Obs	0.1907	1	1	-2	3
+sd6_Compound_12_Obs	1.6658	1	1	-1	4
+sd6_Compound_13_Obs	-0.22547	1	1	-3	2
 
 // Scale and offset parameters

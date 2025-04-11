@@ -28,11 +28,12 @@ Compound_1_Obs	sd2_Compound_1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0 * CISEqcOE * CISEqc)"
+ActD	"0"
+CISoe	"1"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_CIS	"CISEqc*CISEqcOE"
+init_EpoRJAK2_CIS	"1"
 
 
 RANDOM
@@ -40,9 +41,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_p12EpoRpJAK2_Obs	-2.3264	1	1	-5	0
-sd4_pSTAT5_Obs	0.19481	1	1	-2	3
-sd2_CISnRNA1_Obs	1.35	1	1	-1	4
-sd2_Compound_1_Obs	1.3802	1	1	-1	4
+sd3_p12EpoRpJAK2_Obs	-2.8889	1	1	-5	0
+sd4_pSTAT5_Obs	-0.20484	1	1	-3	2
+sd2_CISnRNA1_Obs	0.97821	1	1	-2	3
+sd2_Compound_1_Obs	1.4614	1	1	-1	4
 
 // Scale and offset parameters

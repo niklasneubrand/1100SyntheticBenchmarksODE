@@ -18,13 +18,13 @@ SHP1Act_Obs	C	n/a	conc.	0	0	SHP1Act
 
 
 ERRORS
-SHP1Act_Obs	sd10_SHP1Act_Obs
+SHP1Act_Obs	sd7_SHP1Act_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_SHP1Act_Obs	-1.1193	1	1	-4	1
+sd7_SHP1Act_Obs	-1.0287	1	1	-4	1
 
 // Scale and offset parameters

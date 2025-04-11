@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-SOCS3nRNA2_Obs	C	n/a	conc.	0	0	scale8_SOCS3nRNA2_Obs*(SOCS3nRNA2)
+SOCS3nRNA2_Obs	C	n/a	conc.	0	0	scale5_SOCS3nRNA2_Obs*(SOCS3nRNA2)
 
 
 ERRORS
-SOCS3nRNA2_Obs	sd8_SOCS3nRNA2_Obs
+SOCS3nRNA2_Obs	sd5_SOCS3nRNA2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,7 +32,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd8_SOCS3nRNA2_Obs	-5.5187	1	1	-8	-3
+sd5_SOCS3nRNA2_Obs	-5.2596	1	1	-8	-3
 
 // Scale and offset parameters
-scale8_SOCS3nRNA2_Obs	0	1	1	-5	5
+scale5_SOCS3nRNA2_Obs	0	1	1	-5	5

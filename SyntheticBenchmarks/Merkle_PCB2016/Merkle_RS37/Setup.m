@@ -1,7 +1,7 @@
 % Setup File For Realistic Simulation
 % Original project:	Merkle_PCB2016 
 % RS project name:	Merkle_RS37 
-% Random seed:		0002237010 
+% Random seed:		0002237000 
 
 % Initialize the d2d toolbox 
 arInit();
@@ -26,8 +26,6 @@ arLoadData('Merkle_RS37_TC013', 1);
 arLoadData('Merkle_RS37_TC014', 1); 
 arLoadData('Merkle_RS37_TC015', 1); 
 arLoadData('Merkle_RS37_TC016', 1); 
-arLoadData('Merkle_RS37_TC017', 1); 
-arLoadData('Merkle_RS37_TC018', 1); 
 
 % Load the dose-response data 
 arLoadData('Merkle_RS37_DR001', 1); 

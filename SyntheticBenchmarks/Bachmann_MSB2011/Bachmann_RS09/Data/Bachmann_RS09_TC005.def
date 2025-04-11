@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
@@ -30,12 +30,11 @@ SOCS3RNA_Obs	sd4_SOCS3RNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(1)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(1 * CISEqcOE * CISEqc)"
-init_EpoRJAK2_CIS	"(1)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"1"
+epo_level	"0.000000125"
+init_SOCS3	"SOCS3Eqc*SOCS3EqcOE"
 
 
 RANDOM
@@ -43,11 +42,11 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd4_EpoRpJAK2_Obs	-1.6134	1	1	-4	1
-sd5_p2EpoRpJAK2_Obs	-1.7859	1	1	-4	1
-sd4_SHP1_Obs	0.69885	1	1	-2	3
-sd3_CISnRNA2_Obs	1.5092	1	1	-1	4
-sd4_SOCS3RNA_Obs	-2.536	1	1	-5	0
+sd4_EpoRpJAK2_Obs	-1.8267	1	1	-4	1
+sd5_p2EpoRpJAK2_Obs	-1.9387	1	1	-4	1
+sd4_SHP1_Obs	0.69747	1	1	-2	3
+sd3_CISnRNA2_Obs	0.70544	1	1	-2	3
+sd4_SOCS3RNA_Obs	-3.3293	1	1	-6	-1
 
 // Scale and offset parameters
 scale4_EpoRpJAK2_Obs	0	1	1	-5	5

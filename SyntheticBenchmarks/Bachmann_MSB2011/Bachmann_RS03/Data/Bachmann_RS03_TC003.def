@@ -14,8 +14,8 @@ INPUTS
 
 
 OBSERVABLES
-SHP1Act_Obs	C	n/a	conc.	0	0	scale3_SHP1Act_Obs*(SHP1Act)
-CISRNA_Obs	C	n/a	conc.	0	0	CISRNA
+SHP1Act_Obs	C	n/a	conc.	0	1	SHP1Act
+CISRNA_Obs	C	n/a	conc.	0	1	offset2_CISRNA_Obs+scale2_CISRNA_Obs*(CISRNA)
 
 
 ERRORS
@@ -24,10 +24,10 @@ CISRNA_Obs	sd2_CISRNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
 
 
 RANDOM
@@ -35,8 +35,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_SHP1Act_Obs	-1.69	1	1	-4	1
-sd2_CISRNA_Obs	-2.1035	1	1	-5	0
+sd3_SHP1Act_Obs	-1.1051	1	1	-4	1
+sd2_CISRNA_Obs	-1.0863	1	1	-4	1
 
 // Scale and offset parameters
-scale3_SHP1Act_Obs	0	1	1	-5	5
+scale2_CISRNA_Obs	0	1	1	-5	5
+offset2_CISRNA_Obs	-3	1	1	-5	-1

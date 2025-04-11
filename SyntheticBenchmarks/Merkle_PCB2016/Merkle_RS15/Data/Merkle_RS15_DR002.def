@@ -14,32 +14,32 @@ INPUTS
 
 
 OBSERVABLES
-pSTAT5_Obs	C	n/a	conc.	0	0	scale12_pSTAT5_Obs*(pSTAT5)
-CISHRNA_Obs	C	n/a	conc.	0	0	scale12_CISHRNA_Obs*(CISHRNA)
-CIS_Obs	C	n/a	conc.	0	0	scale13_CIS_Obs*(CIS)
+pSTAT5_Obs	C	n/a	conc.	0	0	scale10_pSTAT5_Obs*(pSTAT5)
+CISHRNA_Obs	C	n/a	conc.	0	0	scale11_CISHRNA_Obs*(CISHRNA)
+CIS_Obs	C	n/a	conc.	0	0	CIS
 
 
 ERRORS
-pSTAT5_Obs	sd12_pSTAT5_Obs
-CISHRNA_Obs	sd12_CISHRNA_Obs
-CIS_Obs	sd13_CIS_Obs
+pSTAT5_Obs	sd10_pSTAT5_Obs
+CISHRNA_Obs	sd11_CISHRNA_Obs
+CIS_Obs	sd11_CIS_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"0"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -47,11 +47,10 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd12_pSTAT5_Obs	0.075253	1	1	-2	3
-sd12_CISHRNA_Obs	-2.4112	1	1	-5	0
-sd13_CIS_Obs	-0.95622	1	1	-3	2
+sd10_pSTAT5_Obs	0.40086	1	1	-2	3
+sd11_CISHRNA_Obs	-3.8739	1	1	-6	-1
+sd11_CIS_Obs	-2.1636	1	1	-5	0
 
 // Scale and offset parameters
-scale12_pSTAT5_Obs	0	1	1	-5	5
-scale12_CISHRNA_Obs	0	1	1	-5	5
-scale13_CIS_Obs	0	1	1	-5	5
+scale10_pSTAT5_Obs	0	1	1	-5	5
+scale11_CISHRNA_Obs	0	1	1	-5	5

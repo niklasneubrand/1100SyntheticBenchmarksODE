@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	218
+time	T	min	time	0	110
 
 
 INPUTS
@@ -15,41 +15,43 @@ INPUTS
 
 OBSERVABLES
 EpoRJAK2_Obs	C	n/a	conc.	0	0	scale2_EpoRJAK2_Obs*(EpoRJAK2)
-PTPAct_Obs	C	n/a	conc.	0	0	scale2_PTPAct_Obs*(PTPAct)
-CISHnRNA1_Obs	C	n/a	conc.	0	0	scale2_CISHnRNA1_Obs*(CISHnRNA1)
-SOCS3nRNA2_Obs	C	n/a	conc.	0	0	scale2_SOCS3nRNA2_Obs*(SOCS3nRNA2)
-SOCS3nRNA4_Obs	C	n/a	conc.	0	0	scale2_SOCS3nRNA4_Obs*(SOCS3nRNA4)
+PTPAct_Obs	C	n/a	conc.	0	0	PTPAct
+pSTAT5_Obs	C	n/a	conc.	0	0	scale2_pSTAT5_Obs*(pSTAT5)
+nSTAT5_Obs	C	n/a	conc.	0	0	scale1_nSTAT5_Obs*(nSTAT5)
+npSTAT5_Obs	C	n/a	conc.	0	0	npSTAT5
+STAT5_Obs	C	n/a	conc.	0	0	scale1_STAT5_Obs*(STAT5)
 
 
 ERRORS
 EpoRJAK2_Obs	sd2_EpoRJAK2_Obs
 PTPAct_Obs	sd2_PTPAct_Obs
-CISHnRNA1_Obs	sd2_CISHnRNA1_Obs
-SOCS3nRNA2_Obs	sd2_SOCS3nRNA2_Obs
-SOCS3nRNA4_Obs	sd2_SOCS3nRNA4_Obs
+pSTAT5_Obs	sd2_pSTAT5_Obs
+nSTAT5_Obs	sd1_nSTAT5_Obs
+npSTAT5_Obs	sd1_npSTAT5_Obs
+STAT5_Obs	sd1_STAT5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAturn)"
-init_CISHnRNA1	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA2	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA3	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA4	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA5	"(CISHRNAbasal*(1-ActDstrength*0)*CISHRNAeqm/CISHRNAdelay)"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*(1-ActDstrength*0)*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"1"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_CIS	"-(0.6875*CISeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAturn"
+init_CISHRNA	"-(0.6875*CISHRNAeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAturn"
+init_CISHnRNA1	"-(CISHRNAeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAdelay"
+init_CISHnRNA2	"-(CISHRNAeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAdelay"
+init_CISHnRNA3	"-(CISHRNAeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAdelay"
+init_CISHnRNA4	"-(CISHRNAeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAdelay"
+init_CISHnRNA5	"-(CISHRNAeqm*CISHRNAbasal*(ActDstrength - 1))/CISHRNAdelay"
+init_SOCS3	"-(0.6875*SOCS3eqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAturn"
+init_SOCS3RNA	"-(0.6875*SOCS3RNAeqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAturn"
+init_SOCS3nRNA1	"-(SOCS3RNAeqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAdelay"
+init_SOCS3nRNA2	"-(SOCS3RNAeqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAdelay"
+init_SOCS3nRNA3	"-(SOCS3RNAeqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAdelay"
+init_SOCS3nRNA4	"-(SOCS3RNAeqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAdelay"
+init_SOCS3nRNA5	"-(SOCS3RNAeqm*SOCS3RNAbasal*(ActDstrength - 1))/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -57,15 +59,15 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_EpoRJAK2_Obs	-0.65634	1	1	-3	2
-sd2_PTPAct_Obs	-3.8748	1	1	-6	-1
-sd2_CISHnRNA1_Obs	-2.6866	1	1	-5	0
-sd2_SOCS3nRNA2_Obs	-2.2814	1	1	-5	0
-sd2_SOCS3nRNA4_Obs	-2.2991	1	1	-5	0
+sd2_EpoRJAK2_Obs	-0.051699	1	1	-3	2
+sd2_PTPAct_Obs	-3.1452	1	1	-6	-1
+sd2_pSTAT5_Obs	0.79128	1	1	-2	3
+sd1_nSTAT5_Obs	0.49597	1	1	-2	3
+sd1_npSTAT5_Obs	0.47718	1	1	-2	3
+sd1_STAT5_Obs	0.92091	1	1	-2	3
 
 // Scale and offset parameters
 scale2_EpoRJAK2_Obs	0	1	1	-5	5
-scale2_PTPAct_Obs	0	1	1	-5	5
-scale2_CISHnRNA1_Obs	0	1	1	-5	5
-scale2_SOCS3nRNA2_Obs	0	1	1	-5	5
-scale2_SOCS3nRNA4_Obs	0	1	1	-5	5
+scale2_pSTAT5_Obs	0	1	1	-5	5
+scale1_nSTAT5_Obs	0	1	1	-5	5
+scale1_STAT5_Obs	0	1	1	-5	5

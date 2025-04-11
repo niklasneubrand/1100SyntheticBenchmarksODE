@@ -14,25 +14,25 @@ INPUTS
 
 
 OBSERVABLES
-Compound_1_Obs	C	n/a	conc.	0	0	scale10_Compound_1_Obs*(EpoRJAK2+EpoRpJAK2+EpoRJAK2_CIS+STAT5+pSTAT5+npSTAT5+CISnRNA3+CISnRNA5+CIS+SOCS3RNA)
-Compound_2_Obs	C	n/a	conc.	0	0	scale10_Compound_2_Obs*(EpoRpJAK2+p1EpoRpJAK2+p2EpoRpJAK2+p12EpoRpJAK2+EpoRJAK2_CIS+SHP1Act+pSTAT5+CISnRNA3+CISRNA+SOCS3nRNA4)
-Compound_3_Obs	C	n/a	conc.	0	0	scale10_Compound_3_Obs*(EpoRpJAK2+p1EpoRpJAK2+STAT5+npSTAT5+CISnRNA2+CISnRNA5+CISRNA+SOCS3nRNA4+SOCS3nRNA5+SOCS3RNA)
-Compound_4_Obs	C	n/a	conc.	0	0	scale10_Compound_4_Obs*(EpoRpJAK2+p2EpoRpJAK2+p12EpoRpJAK2+EpoRJAK2_CIS+SHP1+pSTAT5+npSTAT5+SOCS3nRNA2+SOCS3nRNA5+SOCS3)
-Compound_5_Obs	C	n/a	conc.	0	0	scale10_Compound_5_Obs*(p2EpoRpJAK2+p12EpoRpJAK2+SHP1Act+pSTAT5+npSTAT5+CISRNA+CIS+SOCS3nRNA1+SOCS3nRNA2+SOCS3)
+Compound_1_Obs	C	n/a	conc.	0	0	scale7_Compound_1_Obs*(EpoRJAK2+EpoRpJAK2+EpoRJAK2_CIS+STAT5+pSTAT5+npSTAT5+CISnRNA3+CISnRNA5+CIS+SOCS3RNA)
+Compound_2_Obs	C	n/a	conc.	0	0	scale7_Compound_2_Obs*(EpoRpJAK2+p1EpoRpJAK2+p2EpoRpJAK2+p12EpoRpJAK2+EpoRJAK2_CIS+SHP1Act+pSTAT5+CISnRNA3+CISRNA+SOCS3nRNA4)
+Compound_3_Obs	C	n/a	conc.	0	0	scale7_Compound_3_Obs*(EpoRpJAK2+p1EpoRpJAK2+STAT5+npSTAT5+CISnRNA2+CISnRNA5+CISRNA+SOCS3nRNA4+SOCS3nRNA5+SOCS3RNA)
+Compound_4_Obs	C	n/a	conc.	0	0	scale7_Compound_4_Obs*(EpoRpJAK2+p2EpoRpJAK2+p12EpoRpJAK2+EpoRJAK2_CIS+SHP1+pSTAT5+npSTAT5+SOCS3nRNA2+SOCS3nRNA5+SOCS3)
+Compound_5_Obs	C	n/a	conc.	0	0	scale7_Compound_5_Obs*(p2EpoRpJAK2+p12EpoRpJAK2+SHP1Act+pSTAT5+npSTAT5+CISRNA+CIS+SOCS3nRNA1+SOCS3nRNA2+SOCS3)
 
 
 ERRORS
-Compound_1_Obs	sd10_Compound_1_Obs
-Compound_2_Obs	sd10_Compound_2_Obs
-Compound_3_Obs	sd10_Compound_3_Obs
-Compound_4_Obs	sd10_Compound_4_Obs
-Compound_5_Obs	sd10_Compound_5_Obs
+Compound_1_Obs	sd7_Compound_1_Obs
+Compound_2_Obs	sd7_Compound_2_Obs
+Compound_3_Obs	sd7_Compound_3_Obs
+Compound_4_Obs	sd7_Compound_4_Obs
+Compound_5_Obs	sd7_Compound_5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -40,15 +40,15 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_Compound_1_Obs	0.59648	1	1	-2	3
-sd10_Compound_2_Obs	0.16138	1	1	-2	3
-sd10_Compound_3_Obs	0.44639	1	1	-2	3
-sd10_Compound_4_Obs	0.49247	1	1	-2	3
-sd10_Compound_5_Obs	0.21293	1	1	-2	3
+sd7_Compound_1_Obs	0.59484	1	1	-2	3
+sd7_Compound_2_Obs	0.17031	1	1	-2	3
+sd7_Compound_3_Obs	0.44609	1	1	-2	3
+sd7_Compound_4_Obs	0.49928	1	1	-2	3
+sd7_Compound_5_Obs	0.18953	1	1	-2	3
 
 // Scale and offset parameters
-scale10_Compound_1_Obs	0	1	1	-5	5
-scale10_Compound_2_Obs	0	1	1	-5	5
-scale10_Compound_3_Obs	0	1	1	-5	5
-scale10_Compound_4_Obs	0	1	1	-5	5
-scale10_Compound_5_Obs	0	1	1	-5	5
+scale7_Compound_1_Obs	0	1	1	-5	5
+scale7_Compound_2_Obs	0	1	1	-5	5
+scale7_Compound_3_Obs	0	1	1	-5	5
+scale7_Compound_4_Obs	0	1	1	-5	5
+scale7_Compound_5_Obs	0	1	1	-5	5

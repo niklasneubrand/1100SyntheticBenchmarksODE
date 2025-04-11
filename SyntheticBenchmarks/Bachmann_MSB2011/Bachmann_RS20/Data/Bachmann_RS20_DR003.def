@@ -20,15 +20,15 @@ Compound_13_Obs	C	n/a	conc.	0	0	CISnRNA1+CISnRNA4
 
 
 ERRORS
-Compound_3_Obs	sd9_Compound_3_Obs
-Compound_11_Obs	sd9_Compound_11_Obs
-Compound_13_Obs	sd8_Compound_13_Obs
+Compound_3_Obs	sd6_Compound_3_Obs
+Compound_11_Obs	sd6_Compound_11_Obs
+Compound_13_Obs	sd5_Compound_13_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -36,8 +36,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_Compound_3_Obs	0.70942	1	1	-2	3
-sd9_Compound_11_Obs	0.80918	1	1	-2	3
-sd8_Compound_13_Obs	1.3872	1	1	-1	4
+sd6_Compound_3_Obs	0.059855	1	1	-2	3
+sd6_Compound_11_Obs	0.78013	1	1	-2	3
+sd5_Compound_13_Obs	0.83288	1	1	-2	3
 
 // Scale and offset parameters

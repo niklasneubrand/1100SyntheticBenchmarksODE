@@ -2,46 +2,41 @@ DESCRIPTION
 "Realisticly Set Observables"
 "Original project:	Merkle_PCB2016"
 "RS project name:	Merkle_RS37"
-"Random seed:		0002237010"
+"Random seed:		0002237000"
 "Data type, index:	time course, 3"
 
 
 PREDICTOR
-time	T	min	time	0	218
+time	T	min	time	0	145
 
 
 INPUTS
 
 
 OBSERVABLES
-STAT5_Obs	C	n/a	conc.	0	0	scale3_STAT5_Obs*(STAT5)
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	pEpoRpJAK2
 
 
 ERRORS
-STAT5_Obs	sd3_STAT5_Obs
+pEpoRpJAK2_Obs	sd3_pEpoRpJAK2_Obs
 
 
 CONDITIONS
-ActD	"(1)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAturn)"
-init_CISHnRNA1	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA2	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA3	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA4	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA5	"(CISHRNAbasal*(1-ActDstrength*1)*CISHRNAeqm/CISHRNAdelay)"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*(1-ActDstrength*1)*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -49,7 +44,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_STAT5_Obs	0.58961	1	1	-2	3
+sd3_pEpoRpJAK2_Obs	-1.2777	1	1	-4	1
 
 // Scale and offset parameters
-scale3_STAT5_Obs	0	1	1	-5	5

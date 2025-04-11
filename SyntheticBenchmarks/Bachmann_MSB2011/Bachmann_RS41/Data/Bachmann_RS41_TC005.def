@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
@@ -32,12 +32,11 @@ Compound_5_Obs	sd5_Compound_5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(1)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_CIS	"(1 * CISEqcOE * CISEqc)"
-init_EpoRJAK2_CIS	"(1)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"1"
+epo_level	"0.000000125"
+init_SOCS3	"SOCS3Eqc*SOCS3EqcOE"
 
 
 RANDOM
@@ -45,12 +44,12 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd3_SOCS3RNA_Obs	-3.7209	1	1	-6	-1
-sd5_Compound_1_Obs	1.1892	1	1	-1	4
-sd5_Compound_2_Obs	0.61483	1	1	-2	3
-sd5_Compound_3_Obs	1.0355	1	1	-1	4
-sd5_Compound_4_Obs	0.21078	1	1	-2	3
-sd5_Compound_5_Obs	0.64988	1	1	-2	3
+sd3_SOCS3RNA_Obs	-5.4547	1	1	-8	-3
+sd5_Compound_1_Obs	0.56855	1	1	-2	3
+sd5_Compound_2_Obs	-1.0937	1	1	-4	1
+sd5_Compound_3_Obs	0.5933	1	1	-2	3
+sd5_Compound_4_Obs	0.70343	1	1	-2	3
+sd5_Compound_5_Obs	0.49874	1	1	-2	3
 
 // Scale and offset parameters
 scale3_SOCS3RNA_Obs	0	1	1	-5	5

@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-EpoRJAK2_Obs	C	n/a	conc.	0	1	offset9_EpoRJAK2_Obs+scale9_EpoRJAK2_Obs*(EpoRJAK2)
+EpoRJAK2_Obs	C	n/a	conc.	0	1	offset6_EpoRJAK2_Obs+scale6_EpoRJAK2_Obs*(EpoRJAK2)
 
 
 ERRORS
-EpoRJAK2_Obs	sd9_EpoRJAK2_Obs
+EpoRJAK2_Obs	sd6_EpoRJAK2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,8 +32,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_EpoRJAK2_Obs	-1.2402	1	1	-4	1
+sd6_EpoRJAK2_Obs	-1.2574	1	1	-4	1
 
 // Scale and offset parameters
-scale9_EpoRJAK2_Obs	0	1	1	-5	5
-offset9_EpoRJAK2_Obs	-2	1	1	-4	0
+scale6_EpoRJAK2_Obs	0	1	1	-5	5
+offset6_EpoRJAK2_Obs	-2	1	1	-4	0

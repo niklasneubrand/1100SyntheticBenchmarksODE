@@ -5,7 +5,7 @@ DESCRIPTION
 
 "Original project:	Merkle_PCB2016"
 "RS project name:	Merkle_RS37"
-"Random seed:		0002237010."
+"Random seed:		0002237000."
 
 "Original description:"
 
@@ -104,76 +104,76 @@ tSTAT5     C   au      conc.    "STAT5+pSTAT5"
 
 
 CONDITIONS
-CISHRNAbasal_model	"(CISHRNAbasal*CISHRNAeqm)"
-CISHRNAeqm_model	"(CISHRNAeqm / init_STAT5)"
-CISeqm_model	"(CISeqm / CISHRNAeqm)"
-CISinh_model	"(CISinh / CISeqm)"
-JAK2EPORdeactPTP_model	"(JAK2EPORdeactPTP / init_PTP)"
-PTPactEPOR_model	"(PTPactEPOR / init_EpoRJAK2)"
-SOCS3RNAbasal_model	"(SOCS3RNAbasal*SOCS3RNAeqm)"
-SOCS3RNAeqm_model	"(SOCS3RNAeqm / init_STAT5^SOCS3prom)"
-SOCS3eqmOE_model	"(SOCS3eqmOE * SOCS3eqm)"
-SOCS3eqm_model	"(SOCS3eqm / SOCS3RNAeqm)"
-SOCS3inh_model	"(SOCS3inh / SOCS3eqm)"
-STAT5actEPOR_model	"(STAT5actEPOR / init_EpoRJAK2^2)"
-STAT5actJAK2_model	"(STAT5actJAK2 / init_EpoRJAK2)"
-init_CISHnRNA1	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA2	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA3	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA4	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
-init_CISHnRNA5	"(CISHRNAbasal*CISHRNAeqm/CISHRNAdelay)"
-init_EpoRpJAK2	"(0)"
-init_PTPAct	"(0)"
-init_nSTAT5	"(0)"
-init_npSTAT5	"(0)"
-init_pEpoRpJAK2	"(0)"
-init_pSTAT5	"(0)"
-isprediction	"(0)"
+CISHRNAbasal_model	"CISHRNAeqm*CISHRNAbasal"
+CISHRNAeqm_model	"CISHRNAeqm/init_STAT5"
+CISeqm_model	"CISeqm/CISHRNAeqm"
+CISinh_model	"CISinh/CISeqm"
+JAK2EPORdeactPTP_model	"JAK2EPORdeactPTP/init_PTP"
+PTPactEPOR_model	"PTPactEPOR/init_EpoRJAK2"
+SOCS3RNAbasal_model	"SOCS3RNAeqm*SOCS3RNAbasal"
+SOCS3RNAeqm_model	"SOCS3RNAeqm/init_STAT5^SOCS3prom"
+SOCS3eqmOE_model	"SOCS3eqm*SOCS3eqmOE"
+SOCS3eqm_model	"SOCS3eqm/SOCS3RNAeqm"
+SOCS3inh_model	"SOCS3inh/SOCS3eqm"
+STAT5actEPOR_model	"STAT5actEPOR/init_EpoRJAK2^2"
+STAT5actJAK2_model	"STAT5actJAK2/init_EpoRJAK2"
+init_CISHnRNA1	"(CISHRNAeqm*CISHRNAbasal)/CISHRNAdelay"
+init_CISHnRNA2	"(CISHRNAeqm*CISHRNAbasal)/CISHRNAdelay"
+init_CISHnRNA3	"(CISHRNAeqm*CISHRNAbasal)/CISHRNAdelay"
+init_CISHnRNA4	"(CISHRNAeqm*CISHRNAbasal)/CISHRNAdelay"
+init_CISHnRNA5	"(CISHRNAeqm*CISHRNAbasal)/CISHRNAdelay"
+init_EpoRpJAK2	"0"
+init_PTPAct	"0"
+init_nSTAT5	"0"
+init_npSTAT5	"0"
+init_pEpoRpJAK2	"0"
+init_pSTAT5	"0"
+isprediction	"0"
 
 
 PARAMETERS
-ActDstrength	0.0622	1	1	-3	4
-CISHRNAbasal	-4.32	1	1	-8	-1
-CISHRNAdelay	-0.922	1	1	-4	3
+ActDstrength	0.145	1	1	-3	4
+CISHRNAbasal	-4.74	1	1	-8	-1
+CISHRNAdelay	-0.716	1	1	-4	3
 CISHRNAeqm	0	2	1	-3	3
-CISHRNAturn	-1.05	1	1	-5	2
-CISeqm	2.49	1	1	-1	6
-CISinh	-5.24	1	1	-9	-2
-CISturn	-1.7	1	1	-5	2
-EPORactJAK2	0.722	1	1	-3	4
-JAK2EPORdeactPTP	3.98	1	1	0	7
-JAK2actEPO	6.27	1	1	3	10
-PTPactEPOR	-5.21	1	1	-9	-2
-PTPdeact	-2.17	1	1	-6	1
-ReltoH838_init_EpoRJAK2_H838	0.875	1	1	-3	4
-Relto_CFUE_ActDstrength	0.0922	1	1	-3	4
-Relto_CFUE_CISHRNAturn	-0.296	1	1	-4	3
-Relto_CFUE_EPORactJAK2	-0.911	1	1	-4	3
-Relto_CFUE_JAK2actEPO	-1.35	1	1	-5	2
-Relto_CFUE_SOCS3RNAdelay	0.993	1	1	-3	4
-Relto_CFUE_SOCS3prom	0.584	1	1	-3	4
-Relto_CFUE_STAT5imp	0.642	1	1	-3	4
-Relto_CFUE_init_STAT5	-1.12	1	1	-5	2
-Relto_CFUE_nSTAT5deact	1.06	1	1	-2	5
-Relto_H838WT_init_PTP	-1.02	1	1	-5	2
-SHP1proOE	0.717	1	1	-3	4
-SOCS3RNAbasal	-2.75	1	1	-6	1
-SOCS3RNAdelay	-0.764	1	1	-4	3
+CISHRNAturn	-0.957	1	1	-4	3
+CISeqm	2.66	1	1	-1	6
+CISinh	-4.97	1	1	-8	-1
+CISturn	-1.86	1	1	-5	2
+EPORactJAK2	0.378	1	1	-3	4
+JAK2EPORdeactPTP	3.89	1	1	0	7
+JAK2actEPO	6.14	1	1	3	10
+PTPactEPOR	-5.26	1	1	-9	-2
+PTPdeact	-1.9	1	1	-5	2
+ReltoH838_init_EpoRJAK2_H838	0.939	1	1	-3	4
+Relto_CFUE_ActDstrength	-0.215	1	1	-4	3
+Relto_CFUE_CISHRNAturn	-0.222	1	1	-4	3
+Relto_CFUE_EPORactJAK2	-1.11	1	1	-5	2
+Relto_CFUE_JAK2actEPO	-1.49	1	1	-5	2
+Relto_CFUE_SOCS3RNAdelay	0.934	1	1	-3	4
+Relto_CFUE_SOCS3prom	0.555	1	1	-3	4
+Relto_CFUE_STAT5imp	0.813	1	1	-3	4
+Relto_CFUE_init_STAT5	-1.05	1	1	-5	2
+Relto_CFUE_nSTAT5deact	1.09	1	1	-2	5
+Relto_H838WT_init_PTP	-0.912	1	1	-4	3
+SHP1proOE	0.702	1	1	-3	4
+SOCS3RNAbasal	-2.49	1	1	-6	1
+SOCS3RNAdelay	-0.618	1	1	-4	3
 SOCS3RNAeqm	0	2	1	-3	3
-SOCS3RNAturn	-1.39	1	1	-5	2
-SOCS3eqm	1.74	1	1	-2	5
-SOCS3eqmOE	0.012	1	1	-3	4
-SOCS3inh	0.834	1	1	-3	4
+SOCS3RNAturn	-1.05	1	1	-5	2
+SOCS3eqm	1.94	1	1	-2	5
+SOCS3eqmOE	0.236	1	1	-3	4
+SOCS3inh	0.704	1	1	-3	4
 SOCS3prom	4.3126e-14	1	1	-3	4
-SOCS3turn	3.97	1	1	0	7
-STAT5actEPOR	0.0455	1	1	-3	4
-STAT5actJAK2	-1.92	1	1	-5	2
-STAT5exp	-0.74	1	1	-4	3
-STAT5imp	-1.21	1	1	-5	2
-init_EpoRJAK2	0.532	1	1	-3	4
-init_EpoRJAK2_H838	-0.615	1	1	-4	3
-init_PTP	1.3	1	1	-2	5
-init_STAT5	1.94	1	1	-2	5
-nSTAT5deact	-0.963	1	1	-4	3
+SOCS3turn	4.06	1	1	1	8
+STAT5actEPOR	0.113	1	1	-3	4
+STAT5actJAK2	-1.69	1	1	-5	2
+STAT5exp	-0.738	1	1	-4	3
+STAT5imp	-1.25	1	1	-5	2
+init_EpoRJAK2	0.171	1	1	-3	4
+init_EpoRJAK2_H838	-0.764	1	1	-4	3
+init_PTP	1.41	1	1	-2	5
+init_STAT5	1.8	1	1	-2	5
+nSTAT5deact	-1.31	1	1	-5	2
 
 

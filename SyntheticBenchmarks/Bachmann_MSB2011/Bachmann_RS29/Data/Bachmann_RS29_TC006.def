@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
@@ -28,11 +28,11 @@ SOCS3RNA_Obs	sd5_SOCS3RNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_SHP1	"init_SHP1*(SHP1ProOE + 1)"
 
 
 RANDOM
@@ -40,9 +40,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_p12EpoRpJAK2_Obs	-2.1462	1	1	-5	0
-sd4_CISnRNA3_Obs	1.4436	1	1	-1	4
-sd5_SOCS3nRNA4_Obs	-4.4137	1	1	-7	-2
-sd5_SOCS3RNA_Obs	-2.7239	1	1	-5	0
+sd5_p12EpoRpJAK2_Obs	-2.5947	1	1	-5	0
+sd4_CISnRNA3_Obs	1.3216	1	1	-1	4
+sd5_SOCS3nRNA4_Obs	-4.5158	1	1	-7	-2
+sd5_SOCS3RNA_Obs	-2.9079	1	1	-5	0
 
 // Scale and offset parameters

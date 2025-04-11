@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
@@ -15,20 +15,24 @@ INPUTS
 
 OBSERVABLES
 p1EpoRpJAK2_Obs	C	n/a	conc.	0	0	scale6_p1EpoRpJAK2_Obs*(p1EpoRpJAK2)
+pSTAT5_Obs	C	n/a	conc.	0	0	scale2_pSTAT5_Obs*(pSTAT5)
 SOCS3nRNA2_Obs	C	n/a	conc.	0	0	scale4_SOCS3nRNA2_Obs*(SOCS3nRNA2)
+Compound_1_Obs	C	n/a	conc.	0	0	scale2_Compound_1_Obs*(CISnRNA1+SOCS3nRNA1+SOCS3)
 
 
 ERRORS
 p1EpoRpJAK2_Obs	sd6_p1EpoRpJAK2_Obs
+pSTAT5_Obs	sd2_pSTAT5_Obs
 SOCS3nRNA2_Obs	sd4_SOCS3nRNA2_Obs
+Compound_1_Obs	sd2_Compound_1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_SHP1	"init_SHP1*(SHP1ProOE + 1)"
 
 
 RANDOM
@@ -36,9 +40,13 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd6_p1EpoRpJAK2_Obs	-2.8452	1	1	-5	0
-sd4_SOCS3nRNA2_Obs	-4.5046	1	1	-7	-2
+sd6_p1EpoRpJAK2_Obs	-3.0214	1	1	-6	-1
+sd2_pSTAT5_Obs	-0.094207	1	1	-3	2
+sd4_SOCS3nRNA2_Obs	-4.6567	1	1	-7	-2
+sd2_Compound_1_Obs	1.051	1	1	-1	4
 
 // Scale and offset parameters
 scale6_p1EpoRpJAK2_Obs	0	1	1	-5	5
+scale2_pSTAT5_Obs	0	1	1	-5	5
 scale4_SOCS3nRNA2_Obs	0	1	1	-5	5
+scale2_Compound_1_Obs	0	1	1	-5	5

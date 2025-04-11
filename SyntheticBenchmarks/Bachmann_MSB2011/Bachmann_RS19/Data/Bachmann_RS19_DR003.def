@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-p1EpoRpJAK2_Obs	C	n/a	conc.	0	1	offset9_p1EpoRpJAK2_Obs+scale9_p1EpoRpJAK2_Obs*(p1EpoRpJAK2)
+p1EpoRpJAK2_Obs	C	n/a	conc.	0	1	offset6_p1EpoRpJAK2_Obs+scale6_p1EpoRpJAK2_Obs*(p1EpoRpJAK2)
 
 
 ERRORS
-p1EpoRpJAK2_Obs	sd9_p1EpoRpJAK2_Obs
+p1EpoRpJAK2_Obs	sd6_p1EpoRpJAK2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,8 +32,8 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd9_p1EpoRpJAK2_Obs	-0.96792	1	1	-3	2
+sd6_p1EpoRpJAK2_Obs	-0.95786	1	1	-3	2
 
 // Scale and offset parameters
-scale9_p1EpoRpJAK2_Obs	0	1	1	-5	5
-offset9_p1EpoRpJAK2_Obs	-4	1	1	-6	-2
+scale6_p1EpoRpJAK2_Obs	0	1	1	-5	5
+offset6_p1EpoRpJAK2_Obs	-4	1	1	-6	-2

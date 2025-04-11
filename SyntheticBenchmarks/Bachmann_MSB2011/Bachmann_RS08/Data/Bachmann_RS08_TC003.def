@@ -26,10 +26,10 @@ CISRNA_Obs	sd2_CISRNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
 
 
 RANDOM
@@ -37,9 +37,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_CISnRNA3_Obs	-0.81072	1	1	-3	2
-sd3_CISnRNA4_Obs	-0.83169	1	1	-3	2
-sd2_CISRNA_Obs	-0.80821	1	1	-3	2
+sd2_CISnRNA3_Obs	-0.81013	1	1	-3	2
+sd3_CISnRNA4_Obs	-0.8459	1	1	-3	2
+sd2_CISRNA_Obs	-0.82379	1	1	-3	2
 
 // Scale and offset parameters
 scale3_CISnRNA4_Obs	0	1	1	-5	5

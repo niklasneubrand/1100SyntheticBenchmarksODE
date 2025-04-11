@@ -7,38 +7,44 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	110
+time	T	min	time	0	145
 
 
 INPUTS
 
 
 OBSERVABLES
-CISHnRNA2_Obs	C	n/a	conc.	0	1	CISHnRNA2
+CISHnRNA2_Obs	C	n/a	conc.	0	1	offset4_CISHnRNA2_Obs+scale4_CISHnRNA2_Obs*(CISHnRNA2)
+CISHnRNA3_Obs	C	n/a	conc.	0	1	offset3_CISHnRNA3_Obs+scale3_CISHnRNA3_Obs*(CISHnRNA3)
+CISHnRNA5_Obs	C	n/a	conc.	0	1	offset3_CISHnRNA5_Obs+scale3_CISHnRNA5_Obs*(CISHnRNA5)
+SOCS3nRNA1_Obs	C	n/a	conc.	0	1	SOCS3nRNA1
 SOCS3nRNA3_Obs	C	n/a	conc.	0	1	SOCS3nRNA3
 
 
 ERRORS
 CISHnRNA2_Obs	sd4_CISHnRNA2_Obs
+CISHnRNA3_Obs	sd3_CISHnRNA3_Obs
+CISHnRNA5_Obs	sd3_CISHnRNA5_Obs
+SOCS3nRNA1_Obs	sd2_SOCS3nRNA1_Obs
 SOCS3nRNA3_Obs	sd4_SOCS3nRNA3_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/(SOCS3RNAeqm*SOCS3RNAturn)"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -46,7 +52,16 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd4_CISHnRNA2_Obs	-1.1221	1	1	-4	1
-sd4_SOCS3nRNA3_Obs	-1.1362	1	1	-4	1
+sd4_CISHnRNA2_Obs	-1.4177	1	1	-4	1
+sd3_CISHnRNA3_Obs	-1.3978	1	1	-4	1
+sd3_CISHnRNA5_Obs	-1.3977	1	1	-4	1
+sd2_SOCS3nRNA1_Obs	-1.407	1	1	-4	1
+sd4_SOCS3nRNA3_Obs	-1.4053	1	1	-4	1
 
 // Scale and offset parameters
+scale4_CISHnRNA2_Obs	0	1	1	-5	5
+offset4_CISHnRNA2_Obs	-4	1	1	-6	-2
+scale3_CISHnRNA3_Obs	0	1	1	-5	5
+offset3_CISHnRNA3_Obs	-4	1	1	-6	-2
+scale3_CISHnRNA5_Obs	0	1	1	-5	5
+offset3_CISHnRNA5_Obs	-4	1	1	-6	-2

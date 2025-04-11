@@ -50,10 +50,10 @@ Compound_15_Obs	sd1_Compound_15_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -62,19 +62,19 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd1_Compound_1_Obs	0.0028688	1	1	-2	3
-sd1_Compound_2_Obs	0.72111	1	1	-2	3
-sd1_Compound_3_Obs	2.2426	1	1	0	5
-sd1_Compound_4_Obs	-1.5776	1	1	-4	1
-sd1_Compound_5_Obs	-1.8356	1	1	-4	1
-sd1_Compound_6_Obs	-2.4507	1	1	-5	0
-sd1_Compound_7_Obs	-2.0353	1	1	-5	0
-sd1_Compound_8_Obs	-1.6164	1	1	-4	1
-sd1_Compound_9_Obs	0.058822	1	1	-2	3
-sd1_Compound_10_Obs	-1.8643	1	1	-4	1
-sd1_Compound_11_Obs	2.2029	1	1	0	5
-sd1_Compound_12_Obs	2.1881	1	1	0	5
-sd1_Compound_13_Obs	2.5047	1	1	0	5
-sd1_Compound_14_Obs	2.2109	1	1	0	5
-sd1_Compound_15_Obs	0.050164	1	1	-2	3
+sd1_Compound_2_Obs	0.70643	1	1	-2	3
+sd1_Compound_3_Obs	2.2133	1	1	0	5
+sd1_Compound_4_Obs	-1.5743	1	1	-4	1
+sd1_Compound_5_Obs	-1.8163	1	1	-4	1
+sd1_Compound_6_Obs	-2.4415	1	1	-5	0
+sd1_Compound_7_Obs	-2.0579	1	1	-5	0
+sd1_Compound_8_Obs	-1.6109	1	1	-4	1
+sd1_Compound_9_Obs	0.077062	1	1	-2	3
+sd1_Compound_10_Obs	-1.8525	1	1	-4	1
+sd1_Compound_11_Obs	2.2345	1	1	0	5
+sd1_Compound_12_Obs	2.1613	1	1	0	5
+sd1_Compound_13_Obs	2.5187	1	1	0	5
+sd1_Compound_14_Obs	2.1814	1	1	0	5
+sd1_Compound_15_Obs	0.036919	1	1	-2	3
 
 // Scale and offset parameters

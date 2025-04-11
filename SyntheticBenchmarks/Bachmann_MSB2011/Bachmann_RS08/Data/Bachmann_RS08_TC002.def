@@ -50,10 +50,10 @@ Compound_1_Obs	sd2_Compound_1_Obs
 
 
 CONDITIONS
-ActD	"(1)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"1"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -62,20 +62,20 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd2_EpoRJAK2_Obs	-0.81004	1	1	-3	2
-sd2_EpoRpJAK2_Obs	-0.80384	1	1	-3	2
-sd2_p12EpoRpJAK2_Obs	-0.80465	1	1	-3	2
-sd2_SHP1_Obs	-0.80746	1	1	-3	2
-sd2_SHP1Act_Obs	-0.80629	1	1	-3	2
-sd2_pSTAT5_Obs	-0.82505	1	1	-3	2
-sd2_npSTAT5_Obs	-0.79103	1	1	-3	2
-sd2_CISnRNA2_Obs	-0.82534	1	1	-3	2
-sd2_CISnRNA4_Obs	-0.80101	1	1	-3	2
-sd2_SOCS3nRNA5_Obs	-0.7978	1	1	-3	2
-sd2_SOCS3_Obs	-0.8108	1	1	-3	2
-sd2_p1EpoRpJAK2_Obs	-0.81235	1	1	-3	2
-sd1_p2EpoRpJAK2_Obs	-0.80534	1	1	-3	2
-sd1_STAT5_Obs	-0.84363	1	1	-3	2
-sd2_Compound_1_Obs	-0.80665	1	1	-3	2
+sd2_EpoRpJAK2_Obs	-0.81367	1	1	-3	2
+sd2_p12EpoRpJAK2_Obs	-0.80849	1	1	-3	2
+sd2_SHP1_Obs	-0.82459	1	1	-3	2
+sd2_SHP1Act_Obs	-0.8099	1	1	-3	2
+sd2_pSTAT5_Obs	-0.83072	1	1	-3	2
+sd2_npSTAT5_Obs	-0.81074	1	1	-3	2
+sd2_CISnRNA2_Obs	-0.83127	1	1	-3	2
+sd2_CISnRNA4_Obs	-0.79666	1	1	-3	2
+sd2_SOCS3nRNA5_Obs	-0.80118	1	1	-3	2
+sd2_SOCS3_Obs	-0.78402	1	1	-3	2
+sd2_p1EpoRpJAK2_Obs	-0.79106	1	1	-3	2
+sd1_p2EpoRpJAK2_Obs	-0.80343	1	1	-3	2
+sd1_STAT5_Obs	-0.81635	1	1	-3	2
+sd2_Compound_1_Obs	-0.80112	1	1	-3	2
 
 // Scale and offset parameters
 scale2_EpoRJAK2_Obs	0	1	1	-5	5

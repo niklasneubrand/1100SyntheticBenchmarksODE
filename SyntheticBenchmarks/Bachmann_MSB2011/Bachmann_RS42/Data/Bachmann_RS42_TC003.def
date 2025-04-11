@@ -30,10 +30,10 @@ Compound_13_Obs	sd3_Compound_13_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-6)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.00000125"
 
 
 RANDOM
@@ -41,10 +41,10 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd2_SOCS3nRNA3_Obs	-4.539	1	1	-7	-2
-sd2_SOCS3nRNA5_Obs	-4.5897	1	1	-7	-2
-sd3_Compound_6_Obs	0.7327	1	1	-2	3
-sd3_Compound_12_Obs	2.0215	1	1	0	5
-sd3_Compound_13_Obs	0.1047	1	1	-2	3
+sd2_SOCS3nRNA3_Obs	-4.5923	1	1	-7	-2
+sd2_SOCS3nRNA5_Obs	-4.5997	1	1	-7	-2
+sd3_Compound_6_Obs	0.70656	1	1	-2	3
+sd3_Compound_12_Obs	1.9998	1	1	-1	4
+sd3_Compound_13_Obs	0.080799	1	1	-2	3
 
 // Scale and offset parameters

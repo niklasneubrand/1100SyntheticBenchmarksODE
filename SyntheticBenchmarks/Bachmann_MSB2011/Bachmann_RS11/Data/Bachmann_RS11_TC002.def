@@ -26,10 +26,10 @@ p12EpoRpJAK2_Obs	sd2_p12EpoRpJAK2_Obs
 
 
 CONDITIONS
-ActD	"(1)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"1"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -38,8 +38,8 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd2_EpoRpJAK2_Obs	-1.2039	1	1	-4	1
-sd2_p1EpoRpJAK2_Obs	-1.2234	1	1	-4	1
-sd2_p12EpoRpJAK2_Obs	-1.2055	1	1	-4	1
+sd2_p1EpoRpJAK2_Obs	-1.2081	1	1	-4	1
+sd2_p12EpoRpJAK2_Obs	-1.2236	1	1	-4	1
 
 // Scale and offset parameters
 scale2_EpoRpJAK2_Obs	0	1	1	-5	5

@@ -2,7 +2,7 @@ DESCRIPTION
 "Realisticly Set Observables"
 "Original project:	Merkle_PCB2016"
 "RS project name:	Merkle_RS33"
-"Random seed:		0002233010"
+"Random seed:		0002233000"
 "Data type, index:	dose response, 1"
 
 
@@ -14,28 +14,32 @@ INPUTS
 
 
 OBSERVABLES
-Compound_2_Obs	C	n/a	conc.	0	0	PTPAct+npSTAT5+CISHnRNA2+CIS+SOCS3nRNA5
+pEpoRpJAK2_Obs	C	n/a	conc.	0	0	scale9_pEpoRpJAK2_Obs*(pEpoRpJAK2)
+STAT5_Obs	C	n/a	conc.	0	0	scale9_STAT5_Obs*(STAT5)
+CISHRNA_Obs	C	n/a	conc.	0	0	CISHRNA
 
 
 ERRORS
-Compound_2_Obs	sd6_Compound_2_Obs
+pEpoRpJAK2_Obs	sd9_pEpoRpJAK2_Obs
+STAT5_Obs	sd9_STAT5_Obs
+CISHRNA_Obs	sd8_CISHRNA_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-SOCS3oe	"(0)"
-init_CIS	"(0.275/0.4*CISeqm/CISHRNAeqm*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_CISHRNA	"(0.275/0.4*CISHRNAbasal*CISHRNAeqm/CISHRNAturn)"
-init_SOCS3	"(0.275/0.4*SOCS3eqm/SOCS3RNAeqm*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3RNA	"(0.275/0.4*SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAturn)"
-init_SOCS3nRNA1	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA2	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA3	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA4	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-init_SOCS3nRNA5	"(SOCS3RNAbasal*SOCS3RNAeqm/SOCS3RNAdelay)"
-step_time	"(60)"
-vol_cyt	"(0.4)"
-vol_nuc	"(0.275)"
+ActD	"0"
+SOCS3oe	"0"
+init_CIS	"(0.6875*CISeqm*CISHRNAbasal)/CISHRNAturn"
+init_CISHRNA	"(0.6875*CISHRNAeqm*CISHRNAbasal)/CISHRNAturn"
+init_SOCS3	"(0.6875*SOCS3eqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3RNA	"(0.6875*SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAturn"
+init_SOCS3nRNA1	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA2	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA3	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA4	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+init_SOCS3nRNA5	"(SOCS3RNAeqm*SOCS3RNAbasal)/SOCS3RNAdelay"
+step_time	"60"
+vol_cyt	"0.4"
+vol_nuc	"0.275"
 
 
 RANDOM
@@ -43,6 +47,10 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd6_Compound_2_Obs	0.038836	1	1	-2	3
+sd9_pEpoRpJAK2_Obs	-0.82807	1	1	-3	2
+sd9_STAT5_Obs	0.12727	1	1	-2	3
+sd8_CISHRNA_Obs	-4.4335	1	1	-7	-2
 
 // Scale and offset parameters
+scale9_pEpoRpJAK2_Obs	0	1	1	-5	5
+scale9_STAT5_Obs	0	1	1	-5	5

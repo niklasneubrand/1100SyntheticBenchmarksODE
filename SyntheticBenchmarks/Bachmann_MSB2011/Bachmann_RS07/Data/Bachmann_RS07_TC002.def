@@ -28,10 +28,10 @@ STAT5_Obs	sd1_STAT5_Obs
 
 
 CONDITIONS
-ActD	"(1)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"1"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -40,9 +40,9 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd2_EpoRJAK2_Obs	-1.241	1	1	-4	1
-sd2_p1EpoRpJAK2_Obs	-1.2384	1	1	-4	1
-sd1_npSTAT5_Obs	-1.2482	1	1	-4	1
-sd1_STAT5_Obs	-1.2455	1	1	-4	1
+sd2_p1EpoRpJAK2_Obs	-1.2402	1	1	-4	1
+sd1_npSTAT5_Obs	-1.2402	1	1	-4	1
+sd1_STAT5_Obs	-1.2404	1	1	-4	1
 
 // Scale and offset parameters
 scale2_EpoRJAK2_Obs	0	1	1	-5	5

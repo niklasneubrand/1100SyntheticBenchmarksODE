@@ -19,14 +19,14 @@ SOCS3_Obs	C	n/a	conc.	0	0	SOCS3
 
 
 ERRORS
-p1EpoRpJAK2_Obs	sd11_p1EpoRpJAK2_Obs
-SOCS3_Obs	sd10_SOCS3_Obs
+p1EpoRpJAK2_Obs	sd8_p1EpoRpJAK2_Obs
+SOCS3_Obs	sd7_SOCS3_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -34,7 +34,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd11_p1EpoRpJAK2_Obs	-2.1402	1	1	-5	0
-sd10_SOCS3_Obs	-0.093344	1	1	-3	2
+sd8_p1EpoRpJAK2_Obs	-1.8764	1	1	-4	1
+sd7_SOCS3_Obs	-0.89213	1	1	-3	2
 
 // Scale and offset parameters

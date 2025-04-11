@@ -34,10 +34,10 @@ SOCS3_Obs	sd1_SOCS3_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -46,11 +46,11 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd1_p1EpoRpJAK2_Obs	-2.4794	1	1	-5	0
-sd1_SHP1_Obs	0.84767	1	1	-2	3
-sd1_SHP1Act_Obs	-1.6635	1	1	-4	1
-sd1_STAT5_Obs	0.82305	1	1	-2	3
-sd1_CIS_Obs	0.66459	1	1	-2	3
-sd1_SOCS3nRNA5_Obs	-3.7939	1	1	-6	-1
-sd1_SOCS3_Obs	0.17535	1	1	-2	3
+sd1_SHP1_Obs	0.85254	1	1	-2	3
+sd1_SHP1Act_Obs	-1.6947	1	1	-4	1
+sd1_STAT5_Obs	0.81535	1	1	-2	3
+sd1_CIS_Obs	0.61271	1	1	-2	3
+sd1_SOCS3nRNA5_Obs	-3.7905	1	1	-6	-1
+sd1_SOCS3_Obs	0.12773	1	1	-2	3
 
 // Scale and offset parameters

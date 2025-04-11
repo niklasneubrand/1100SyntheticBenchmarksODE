@@ -18,13 +18,13 @@ Compound_4_Obs	C	n/a	conc.	0	0	CISnRNA1+SOCS3nRNA5
 
 
 ERRORS
-Compound_4_Obs	sd8_Compound_4_Obs
+Compound_4_Obs	sd5_Compound_4_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd8_Compound_4_Obs	1.968	1	1	-1	4
+sd5_Compound_4_Obs	1.7932	1	1	-1	4
 
 // Scale and offset parameters

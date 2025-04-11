@@ -18,13 +18,13 @@ CISnRNA5_Obs	C	n/a	conc.	0	0	CISnRNA5
 
 
 ERRORS
-CISnRNA5_Obs	sd8_CISnRNA5_Obs
+CISnRNA5_Obs	sd5_CISnRNA5_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd8_CISnRNA5_Obs	0.81244	1	1	-2	3
+sd5_CISnRNA5_Obs	0.0065481	1	1	-2	3
 
 // Scale and offset parameters

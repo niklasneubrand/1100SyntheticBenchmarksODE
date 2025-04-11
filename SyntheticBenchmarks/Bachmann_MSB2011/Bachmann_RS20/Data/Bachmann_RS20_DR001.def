@@ -19,14 +19,14 @@ Compound_6_Obs	C	n/a	conc.	0	0	p1EpoRpJAK2+SOCS3nRNA5
 
 
 ERRORS
-Compound_2_Obs	sd10_Compound_2_Obs
-Compound_6_Obs	sd10_Compound_6_Obs
+Compound_2_Obs	sd7_Compound_2_Obs
+Compound_6_Obs	sd7_Compound_6_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -34,7 +34,7 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_Compound_2_Obs	1.011	1	1	-1	4
-sd10_Compound_6_Obs	-1.5705	1	1	-4	1
+sd7_Compound_2_Obs	0.96722	1	1	-2	3
+sd7_Compound_6_Obs	-1.5913	1	1	-4	1
 
 // Scale and offset parameters

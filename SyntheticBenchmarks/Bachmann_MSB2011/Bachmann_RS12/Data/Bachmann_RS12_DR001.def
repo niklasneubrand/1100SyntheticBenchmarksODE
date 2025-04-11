@@ -14,17 +14,17 @@ INPUTS
 
 
 OBSERVABLES
-pSTAT5_Obs	C	n/a	conc.	0	1	offset5_pSTAT5_Obs+scale5_pSTAT5_Obs*(pSTAT5)
+CISnRNA1_Obs	C	n/a	conc.	0	0	CISnRNA1
 
 
 ERRORS
-pSTAT5_Obs	sd5_pSTAT5_Obs
+CISnRNA1_Obs	sd5_CISnRNA1_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,8 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_pSTAT5_Obs	-1.0216	1	1	-4	1
+sd5_CISnRNA1_Obs	1.1296	1	1	-1	4
 
 // Scale and offset parameters
-scale5_pSTAT5_Obs	0	1	1	-5	5
-offset5_pSTAT5_Obs	-1	1	1	-3	1

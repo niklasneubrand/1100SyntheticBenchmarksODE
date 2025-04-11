@@ -7,7 +7,7 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
@@ -24,11 +24,11 @@ p12EpoRpJAK2_Obs	sd6_p12EpoRpJAK2_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_SHP1	"init_SHP1*(SHP1ProOE + 1)"
 
 
 RANDOM
@@ -36,11 +36,11 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd5_p2EpoRpJAK2_Obs	-1.2684	1	1	-4	1
-sd6_p12EpoRpJAK2_Obs	-1.2671	1	1	-4	1
+sd5_p2EpoRpJAK2_Obs	-1.2569	1	1	-4	1
+sd6_p12EpoRpJAK2_Obs	-1.2555	1	1	-4	1
 
 // Scale and offset parameters
 scale5_p2EpoRpJAK2_Obs	0	1	1	-5	5
 offset5_p2EpoRpJAK2_Obs	-4	1	1	-6	-2
 scale6_p12EpoRpJAK2_Obs	0	1	1	-5	5
-offset6_p12EpoRpJAK2_Obs	-3	1	1	-5	-1
+offset6_p12EpoRpJAK2_Obs	-4	1	1	-6	-2

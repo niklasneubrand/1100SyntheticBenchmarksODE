@@ -21,16 +21,16 @@ CIS_Obs	C	n/a	conc.	0	0	CIS
 
 
 ERRORS
-p1EpoRpJAK2_Obs	sd10_p1EpoRpJAK2_Obs
-SHP1_Obs	sd10_SHP1_Obs
-SHP1Act_Obs	sd10_SHP1Act_Obs
-CIS_Obs	sd9_CIS_Obs
+p1EpoRpJAK2_Obs	sd7_p1EpoRpJAK2_Obs
+SHP1_Obs	sd7_SHP1_Obs
+SHP1Act_Obs	sd7_SHP1Act_Obs
+CIS_Obs	sd6_CIS_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -38,9 +38,9 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_p1EpoRpJAK2_Obs	-1.7162	1	1	-4	1
-sd10_SHP1_Obs	0.87246	1	1	-2	3
-sd10_SHP1Act_Obs	-1.8463	1	1	-4	1
-sd9_CIS_Obs	-2.8778	1	1	-5	0
+sd7_p1EpoRpJAK2_Obs	-1.6403	1	1	-4	1
+sd7_SHP1_Obs	0.82681	1	1	-2	3
+sd7_SHP1Act_Obs	-2.2302	1	1	-5	0
+sd6_CIS_Obs	-5.6131	1	1	-8	-3
 
 // Scale and offset parameters

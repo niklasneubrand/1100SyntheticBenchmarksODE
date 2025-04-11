@@ -28,10 +28,10 @@ SHP1Act_Obs	sd1_SHP1Act_Obs
 
 
 CONDITIONS
-ActD	"(1)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
+ActD	"1"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
 
 
 RANDOM
@@ -40,8 +40,8 @@ RANDOM
 PARAMETERS
 // Error parameters
 sd2_p12EpoRpJAK2_Obs	-2.3754	1	1	-5	0
-sd2_pSTAT5_Obs	0.65757	1	1	-2	3
-sd2_npSTAT5_Obs	0.096685	1	1	-2	3
-sd1_SHP1Act_Obs	-1.7494	1	1	-4	1
+sd2_pSTAT5_Obs	0.67179	1	1	-2	3
+sd2_npSTAT5_Obs	0.091006	1	1	-2	3
+sd1_SHP1Act_Obs	-1.755	1	1	-4	1
 
 // Scale and offset parameters

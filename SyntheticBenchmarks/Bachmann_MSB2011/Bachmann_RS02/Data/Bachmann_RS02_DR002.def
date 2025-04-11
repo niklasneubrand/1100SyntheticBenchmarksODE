@@ -18,13 +18,13 @@ CISnRNA4_Obs	C	n/a	conc.	0	0	CISnRNA4
 
 
 ERRORS
-CISnRNA4_Obs	sd10_CISnRNA4_Obs
+CISnRNA4_Obs	sd7_CISnRNA4_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
 
 
 RANDOM
@@ -32,6 +32,6 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd10_CISnRNA4_Obs	2.2754	1	1	0	5
+sd7_CISnRNA4_Obs	0.64537	1	1	-2	3
 
 // Scale and offset parameters

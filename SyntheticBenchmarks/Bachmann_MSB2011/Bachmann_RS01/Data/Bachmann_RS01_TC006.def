@@ -7,30 +7,32 @@ DESCRIPTION
 
 
 PREDICTOR
-time	T	min	time	0	145
+time	T	min	time	0	100
 
 
 INPUTS
 
 
 OBSERVABLES
-CISnRNA4_Obs	C	n/a	conc.	0	1	CISnRNA4
+SHP1Act_Obs	C	n/a	conc.	0	1	offset3_SHP1Act_Obs+scale3_SHP1Act_Obs*(SHP1Act)
+STAT5_Obs	C	n/a	conc.	0	1	offset3_STAT5_Obs+scale3_STAT5_Obs*(STAT5)
 CISnRNA5_Obs	C	n/a	conc.	0	1	offset5_CISnRNA5_Obs+scale5_CISnRNA5_Obs*(CISnRNA5)
 SOCS3nRNA4_Obs	C	n/a	conc.	0	1	SOCS3nRNA4
 
 
 ERRORS
-CISnRNA4_Obs	sd4_CISnRNA4_Obs
+SHP1Act_Obs	sd3_SHP1Act_Obs
+STAT5_Obs	sd3_STAT5_Obs
 CISnRNA5_Obs	sd5_CISnRNA5_Obs
 SOCS3nRNA4_Obs	sd4_SOCS3nRNA4_Obs
 
 
 CONDITIONS
-ActD	"(0)"
-CISoe	"(0)"
-SOCS3oe	"(0)"
-epo_level	"(1.25e-7)"
-init_SOCS3	"(0 * SOCS3EqcOE * SOCS3Eqc)"
+ActD	"0"
+CISoe	"0"
+SOCS3oe	"0"
+epo_level	"0.000000125"
+init_SHP1	"init_SHP1*(SHP1ProOE + 1)"
 
 
 RANDOM
@@ -38,10 +40,15 @@ RANDOM
 
 PARAMETERS
 // Error parameters
-sd4_CISnRNA4_Obs	-1.2295	1	1	-4	1
-sd5_CISnRNA5_Obs	-1.2511	1	1	-4	1
-sd4_SOCS3nRNA4_Obs	-1.2629	1	1	-4	1
+sd3_SHP1Act_Obs	-1.2593	1	1	-4	1
+sd3_STAT5_Obs	-1.254	1	1	-4	1
+sd5_CISnRNA5_Obs	-1.2187	1	1	-4	1
+sd4_SOCS3nRNA4_Obs	-1.2318	1	1	-4	1
 
 // Scale and offset parameters
+scale3_SHP1Act_Obs	0	1	1	-5	5
+offset3_SHP1Act_Obs	-3	1	1	-5	-1
+scale3_STAT5_Obs	0	1	1	-5	5
+offset3_STAT5_Obs	-1	1	1	-3	1
 scale5_CISnRNA5_Obs	0	1	1	-5	5
 offset5_CISnRNA5_Obs	0	1	1	-2	2
