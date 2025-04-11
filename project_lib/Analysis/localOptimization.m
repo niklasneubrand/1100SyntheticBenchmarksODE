@@ -2,7 +2,7 @@ function localOptimization(loadName, saveName, config)
 
 arguments
     loadName (1,:) char = 'Final'
-    saveName (1,:) char = 'locallyFitted'
+    saveName (1,:) char = 'localOptimization'
     config.atol = 1e-10
     config.rtol = 1e-10
     config.eq_tol = 1e-10
