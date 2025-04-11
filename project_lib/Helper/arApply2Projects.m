@@ -42,6 +42,9 @@ d2dProjectFolders = arListD2DProjects(pwd(), options.method, options.includeFold
 for id = 1:length(d2dProjectFolders)
     subDir = d2dProjectFolders(id);
     [~, projectName] = fileparts(subDir);
+    if strcmp(projectName, "")
+        [~, projectName] = fileparts(folder);
+    end
     fprintf('Processing project: %s\n', projectName)
     cd(subDir);
     try
@@ -53,7 +56,10 @@ for id = 1:length(d2dProjectFolders)
         errorReport = string(getReport(ME, "extended", "hyperlinks", "off"));
         display(getReport(ME, "extended", "hyperlinks", "on"));
     end
-    reportTable(id, :) = table(string(projectName), string(subDir), success, errorReport);
+    projectName = string(projectName);
+    subDir = string(subDir);
+    % create a table to store the results
+    reportTable(projectName, :) = table(projectName, subDir, success, errorReport);
 end
 
 cd(startDir)

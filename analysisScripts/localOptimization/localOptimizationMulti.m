@@ -24,8 +24,8 @@ cd(startDir);
 reportName = sprintf('apply2ProjectsReport__localOptimization__%s', templateName);
 
 arApply2Projects( ...
-    @localOptimization, folder, loadName, saveName, ...     % required arguments
-    loadName, saveName, ...             % optional arguments for the function handle
+    @localOptimization, folder, ...     % required arguments
+    loadName, saveName, ...             % arguments for the function handle
     reportName=reportName);             % Name-Value pairs (options)
 
 end
