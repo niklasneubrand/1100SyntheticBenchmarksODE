@@ -13,9 +13,9 @@ cp -r "$baseModels_dir/"* "$target_dir/"
 echo "Copy complete."
 
 # Compile model on current machine
-echo "compiling base model"
-matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); Setup; arSave('normal'); exit();" > "$target_dir/compileBaseModel.log" 2>&1
-echo "compiled successfully"
+# echo "compiling base model"
+# matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); Setup; arSave('normal'); exit();" > "$target_dir/compileBaseModel.log" 2>&1
+# echo "compiled successfully"
 
 # Set initial model index and seed base
 modelIndex=19

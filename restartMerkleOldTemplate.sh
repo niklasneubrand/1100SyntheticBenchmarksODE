@@ -19,4 +19,6 @@ target_dir="$real_dir/RS_IMBI/slow2_V2/$modelName"
 
 
 # First round of restarts
-nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); arManyRealisticDesigns(5, 'rngSeed', 2200010); exit();" </dev/null >/dev/null 2>&1 &
+nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); arManyRealisticDesigns(33, 'rngSeed', 2200010); exit();" </dev/null >/dev/null 2>&1 &
+nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); arManyRealisticDesigns(37, 'rngSeed', 2200010); exit();" </dev/null >/dev/null 2>&1 &
+nohup matlab-R2021a -r "initRealisticBenchmarks; cd('$target_dir'); arManyRealisticDesigns(48, 'rngSeed', 2200010); exit();" </dev/null >/dev/null 2>&1 &
