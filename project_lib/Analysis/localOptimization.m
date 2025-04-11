@@ -16,9 +16,13 @@ diary('localOptimization.log')
 %% init d2d and load the final version of the RS
 global ar
 arInit;
-arLoadLatest(loadName)
+loaded = arLoadLatest(loadName);
+if ~loaded
+    error('No Results folder found with loadPattern "%s"', loadName)
+end
 
 %% set the configs
+% reset configs
 arConfigReset();
 
 % ODE solver tolerances and max steps
