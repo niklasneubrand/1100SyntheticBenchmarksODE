@@ -1,0 +1,16 @@
+% I will use the strictest tolerances and most compute power required
+% This means, I use the following configs:
+
+% tolerances
+ar.config.atol = 1e-10;
+ar.config.rtol = 1e-10;
+ar.config.eq_tol = 1e-10;
+
+% compute power
+ar.config.maxsteps = 1e5;
+
+% I ignore vector tolerances for now. Let's see if it works.
+% Maybe try explicitely for Hass model
+
+% To avoid using the customized add_c I also use the largest required value:
+ar.config.add_c = 80;
