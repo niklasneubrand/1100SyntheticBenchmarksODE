@@ -26,5 +26,5 @@ log_file_slow2="testIdentifyLocalMulti_slow2.log"
 fast2Dir="$(pwd)/../../RS_IMBI/fast2_V2"
 slow2Dir="$(pwd)/../../RS_IMBI/slow2_V2"
 
-nohup matlab-R2021a -r "testIdentifyLocalMulti('$fast2_dir', 'normal'); exit;" > $log_file_fast2 2>&1 &
-nohup matlab-R2021a -r "testIdentifyLocalMulti('$slow2_dir', 'normal'); exit;" > $log_file_slow2 2>&1 &
+nohup matlab-R2021a -r "testIdentifyLocalMulti('$fast2Dir', 'normal'); exit;" > $log_file_fast2 2>&1 &
+nohup matlab-R2021a -r "testIdentifyLocalMulti('$slow2Dir', 'normal'); exit;" > $log_file_slow2 2>&1 &
