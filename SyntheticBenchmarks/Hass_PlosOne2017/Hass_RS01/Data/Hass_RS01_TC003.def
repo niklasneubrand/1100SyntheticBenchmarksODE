@@ -26,8 +26,8 @@ SFK_Obs	sd3_SFK_Obs
 
 
 CONDITIONS
-Inh	"(1)"
-Reelin_input	"(1)"
+Inh	"1"
+Reelin_input	"1"
 
 
 RANDOM
@@ -41,6 +41,6 @@ sd3_SFK_Obs	-1.1234	1	1	-4	1
 
 // Scale and offset parameters
 scale1_ApoER2_re_Dab1SFKInh_Obs	0	1	1	-5	5
-offset1_ApoER2_re_Dab1SFKInh_Obs	-6	1	1	-8	-4
+offset1_ApoER2_re_Dab1SFKInh_Obs	-5	1	1	-7	-3
 scale3_SFK_Obs	0	1	1	-5	5
 offset3_SFK_Obs	-10	1	1	-12	-8

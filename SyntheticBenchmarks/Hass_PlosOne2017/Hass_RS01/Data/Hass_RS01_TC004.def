@@ -26,8 +26,8 @@ ApoER2_Dab1_Obs	sd3_ApoER2_Dab1_Obs
 
 
 CONDITIONS
-Inh	"(0)"
-Reelin_input	"(0.01)"
+Inh	"0"
+Reelin_input	"0.01"
 
 
 RANDOM
@@ -41,6 +41,6 @@ sd3_ApoER2_Dab1_Obs	-1.141	1	1	-4	1
 
 // Scale and offset parameters
 scale4_SFK_Obs	0	1	1	-5	5
-offset4_SFK_Obs	-6	1	1	-8	-4
+offset4_SFK_Obs	-5	1	1	-7	-3
 scale3_ApoER2_Dab1_Obs	0	1	1	-5	5
 offset3_ApoER2_Dab1_Obs	-3	1	1	-5	-1

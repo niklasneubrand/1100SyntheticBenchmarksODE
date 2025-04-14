@@ -75,14 +75,14 @@ ERRORS
 
 
 CONDITIONS
-Dab1_prod	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK*ApoER2_Dab1_SFK_degrad/(ApoER2_Dab1_SFK_degrad + ApoER2_Dab1_SFK_recycle))"
-init_ApoER2_Dab1SFKInh	"(0)"
-init_ApoER2_Dab1_released	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK/(ApoER2_Dab1_SFK_degrad + ApoER2_Dab1_SFK_recycle))"
-init_ApoER2_re_Dab1	"(0)"
-init_ApoER2_re_Dab1SFK	"(0)"
-init_ApoER2_re_Dab1SFKInh	"(0)"
-init_SFK	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK/(ApoER2_Dab1_bind_SFK*init_ApoER2_Dab1))"
-init_pApoER2_re_Dab1	"(0)"
+Dab1_prod	"(ApoER2_Dab1_SFK_degrad*ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK)/(ApoER2_Dab1_SFK_degrad + ApoER2_Dab1_SFK_recycle)"
+init_ApoER2_Dab1SFKInh	"0"
+init_ApoER2_Dab1_released	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK)/(ApoER2_Dab1_SFK_degrad + ApoER2_Dab1_SFK_recycle)"
+init_ApoER2_re_Dab1	"0"
+init_ApoER2_re_Dab1SFK	"0"
+init_ApoER2_re_Dab1SFKInh	"0"
+init_SFK	"(ApoER2_Dab1_SFK_release*init_ApoER2_Dab1SFK)/(ApoER2_Dab1_bind_SFK*init_ApoER2_Dab1)"
+init_pApoER2_re_Dab1	"0"
 
 
 PARAMETERS

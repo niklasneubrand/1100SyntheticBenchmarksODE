@@ -26,7 +26,7 @@ ApoER2_Dab1_Obs	sd4_ApoER2_Dab1_Obs
 
 
 CONDITIONS
-Inh	"(0)"
+Inh	"0"
 
 
 RANDOM
@@ -40,6 +40,6 @@ sd4_ApoER2_Dab1_Obs	-1.1352	1	1	-4	1
 
 // Scale and offset parameters
 scale5_SFK_Obs	0	1	1	-5	5
-offset5_SFK_Obs	-6	1	1	-8	-4
+offset5_SFK_Obs	-5	1	1	-7	-3
 scale4_ApoER2_Dab1_Obs	0	1	1	-5	5
 offset4_ApoER2_Dab1_Obs	-3	1	1	-5	-1

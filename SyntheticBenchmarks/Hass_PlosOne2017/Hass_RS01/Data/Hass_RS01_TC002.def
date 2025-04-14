@@ -26,8 +26,8 @@ ApoER2_Dab1_Obs	sd2_ApoER2_Dab1_Obs
 
 
 CONDITIONS
-Inh	"(1)"
-Reelin_input	"(0)"
+Inh	"1"
+Reelin_input	"0"
 
 
 RANDOM
