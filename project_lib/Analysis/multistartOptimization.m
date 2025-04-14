@@ -40,6 +40,9 @@ ar.config.maxsteps = config.maxsteps;
 ar.config.add_c = config.add_c;
 ar.config.optim.MaxIter = config.OptimMaxIter;
 
+% number of cores and threads
+arSetParallelThreads();
+
 %% perform the fit
 ar.config.logFitting = 1;  % store optimizer trajectory
 arFitLHS(nLHS, seed, true);
