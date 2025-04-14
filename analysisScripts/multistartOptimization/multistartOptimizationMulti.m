@@ -5,14 +5,14 @@ function multistartOptimizationMulti(folder, loadName, saveName, nLHS, seed)
 %   folder: (optional) path to the directory containing the projects
 %        (default: pwd)
 %   loadName: (optional) name of the file to load (default: 'Final')
-%   saveName: (optional) name of the file to save (default: 'localOptimization')
+%   saveName: (optional) name of the file to save (default: 'multistartOptimization')
 %   nLHS: (optional) number of multistart samples (default: 100)
 %   seed: (optional) random seed for multistart (default: 1)
 
 arguments
     folder (1,1) string = pwd()
     loadName (1,1) string = 'Final'
-    saveName (1,1) string = 'localOptimization'
+    saveName (1,1) string = 'multistartOptimization'
     nLHS (1,1) double = 100
     seed (1,1) double = 1
 end
@@ -25,11 +25,11 @@ cd(startDir);
 
 % get the name of the template from the directory
 [~, templateName] = fileparts(folder);
-reportName = sprintf('apply2ProjectsReport__localOptimization__%s', templateName);
+reportName = sprintf('apply2ProjectsReport__multistartOptimization__%s', templateName);
 
 arApply2Projects( ...
-    @multistartOptimization, folder, ...     % required arguments
-    loadName, saveName, nLHS, seed, ...             % arguments for the function handle
-    reportName=reportName);             % Name-Value pairs (options)
+    @multistartOptimization, folder, ...    % required arguments
+    loadName, saveName, nLHS, seed, ...     % arguments for the function handle
+    reportName=reportName);                 % Name-Value pairs (options)
 
 end

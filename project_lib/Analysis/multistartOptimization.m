@@ -27,8 +27,8 @@ if ~loaded
 end
 
 %% set the configs
-% reset configs
-arConfigReset();
+% here we overwrite all configs that are set "manually" in the Setup files 
+% of the synthetic benchmarks models
 
 % ODE solver tolerances and max steps
 ar.config.atol = config.atol;
