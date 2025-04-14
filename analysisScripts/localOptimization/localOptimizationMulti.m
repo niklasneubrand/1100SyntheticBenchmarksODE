@@ -1,4 +1,4 @@
-function localOptimizationMulti(folder, loadName, saveName)
+function localOptimizationMulti(folder, loadName, saveName, varargin)
 % LOCALOPTIMIZATIONRECURSIVE Apply local optimization to all projects in a directory
 %
 % INPUTS:
@@ -11,6 +11,12 @@ arguments
     folder (1,1) string = pwd()
     loadName (1,1) string = 'Final'
     saveName (1,1) string = 'localOptimization'
+end
+
+% Name Value pairs for localOptimization in form 'config.name', value
+%   e.g. 'config.maxIter', 1e5
+arguments (Repeating)
+    varargin
 end
 
 % initialize the realistic simulations package 
@@ -26,6 +32,7 @@ reportName = sprintf('apply2ProjectsReport__%s__%s', saveName, templateName);
 arApply2Projects( ...
     @localOptimization, folder, ...     % required arguments
     loadName, saveName, ...             % arguments for the function handle
-    reportName=reportName);             % Name-Value pairs (options)
+    varargin{:}, ...                    % Name-Value pairs for localOptimization
+    reportName=reportName)              % Name-Value pairs for arApply2Projects
 
 end
