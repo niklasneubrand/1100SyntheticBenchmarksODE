@@ -21,7 +21,7 @@ cd(startDir);
 
 % get the name of the template from the directory
 [~, templateName] = fileparts(folder);
-reportName = sprintf('apply2ProjectsReport__localOptimization__%s', templateName);
+reportName = sprintf('apply2ProjectsReport__%s__%s', saveName, templateName);
 
 arApply2Projects( ...
     @localOptimization, folder, ...     % required arguments

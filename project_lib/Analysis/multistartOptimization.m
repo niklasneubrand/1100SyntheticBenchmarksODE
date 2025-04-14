@@ -13,7 +13,7 @@ arguments
     config.OptimMaxIter = 1000
 end
 
-diary('multistartOptimization.log')
+diary(sprintf('%s.log', saveName))
 
 %% init d2d and load the final version of the RS
 global ar

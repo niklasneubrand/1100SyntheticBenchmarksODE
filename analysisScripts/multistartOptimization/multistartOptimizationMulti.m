@@ -25,7 +25,7 @@ cd(startDir);
 
 % get the name of the template from the directory
 [~, templateName] = fileparts(folder);
-reportName = sprintf('apply2ProjectsReport__multistartOptimization__%s', templateName);
+reportName = sprintf('apply2ProjectsReport__%s__%s', saveName, templateName);
 
 arApply2Projects( ...
     @multistartOptimization, folder, ...    % required arguments
