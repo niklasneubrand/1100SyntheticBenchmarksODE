@@ -1,4 +1,4 @@
-function localOptimization(loadName, saveName, config)
+function localOptimizationStepwise(loadName, saveName, config)
 
 arguments
     loadName (1,:) char = 'Final'
