@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # save name for Results folder
-savename="localOptimization_V1"
+save_name="localOptimization_V1"
 
 # Directory containing the synthetic benchmark folders
 base_dir="$(pwd)/../../SyntheticBenchmarks"
@@ -16,20 +16,22 @@ for template_dir in "$base_dir"/*/; do
         folder_name=$(basename "$template_dir")
         echo "Processing directory: $template_dir"
 
-        log_file="${saveName}_Apply2Projects_${folder_name}.log"
+        log_file="${save_name}_Apply2Projects_${folder_name}.log"
 
         # Run the fits in background and create log file
-        nohup matlab-R2021a -r "localOptimizationMulti('$template_dir', 'Final', '$savename'); exit;" > $log_file 2>&1 &
+        nohup matlab-R2021a -r "localOptimizationMulti('$template_dir', 'Final', '$save_name'); exit;" > $log_file 2>&1 &
         sleep 5  # add a small delay to avoid overwhelming the system
     fi
 done
 
 # run fits for template models in the background and create log file
-log_file_fast2="${saveName}_Apply2Projects_fast2.log"
-log_file_slow2="${saveName}_Apply2Projects_slow2.log"
+log_file_fast2="${save_name}_Apply2Projects_fast2.log"
+log_file_slow2="${save_name}_Apply2Projects_slow2.log"
 fast2Dir="$(pwd)/../../RS_IMBI/fast2_V2"
 slow2Dir="$(pwd)/../../RS_IMBI/slow2_V2"
 
-nohup matlab-R2021a -r "localOptimizationMulti('$fast2Dir', 'normal', '$savename'); exit;" > $log_file_fast2 2>&1 &
+echo "Processing directory: $fast2Dir"
+nohup matlab-R2021a -r "localOptimizationMulti('$fast2Dir', 'normal', '$save_name'); exit;" > $log_file_fast2 2>&1 &
 sleep 5  # add a small delay to avoid overwhelming the system
-nohup matlab-R2021a -r "localOptimizationMulti('$slow2Dir', 'normal', '$savename'); exit;" > $log_file_slow2 2>&1 &
+echo "Processing directory: $slow2Dir"
+nohup matlab-R2021a -r "localOptimizationMulti('$slow2Dir', 'normal', '$save_name'); exit;" > $log_file_slow2 2>&1 &
