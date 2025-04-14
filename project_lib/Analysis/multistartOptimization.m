@@ -10,7 +10,7 @@ arguments
     config.eq_tol = 1e-10
     config.maxsteps = 1e5
     config.add_c = 80
-    config.OptimMaxIter = 1000
+    config.OptimMaxIter = 1e5
 end
 
 diary(sprintf('%s.log', saveName))
@@ -42,7 +42,7 @@ ar.config.optim.MaxIter = config.OptimMaxIter;
 
 %% perform the fit
 ar.config.logFitting = 1;  % store optimizer trajectory
-arFitLHS(nLHS, seed);
+arFitLHS(nLHS, seed, true);
 
 %% save the results
 arSave(saveName)
