@@ -1,8 +1,9 @@
-function testIdentifyLocal(loadName, saveName, resultsName)
+function testIdentifyLocal(loadNames, saveName, resultsName)
 % TESTIDENTIFYLOCAL performs identifiability analysis on the locally fitted model
 %
 % INPUTS:
-%   loadName: (optional) name of the ar struct to load (default: 'localOptimization')
+%   loadName: (optional) names of the ar struct to load. Multiple names can be provided as
+%       fallbacks in case the first one is not found. (default: 'localOptimization')
 %   saveName: (optional) name of the ar struct to save results (default: 'localIdentifyTest')
 %   outputName: (optional) name of the output file to save the results table
 %               (default: 'resultsIdentifyLocal')
@@ -14,7 +15,7 @@ function testIdentifyLocal(loadName, saveName, resultsName)
 %
 
 arguments
-    loadName (1,:) char = 'localOptimization'
+    loadNames (:,:) char = 'localOptimization'
     saveName (1,:) char = 'localIdentifyTest'
     resultsName (1,:) char = 'resultsIdentifyLocal'
 end
@@ -24,7 +25,15 @@ diary('testIdentifyLocal.log')
 %% init d2d and load the locally fitted model
 global ar
 arInit;
-loaded = arLoadLatest(loadName);
+loaded = false;
+for i = 1:length(loadNames)
+    loadName = loadNames(i);
+    fprintf('Loading ar struct from %s\n', loadName)
+    loaded = arLoadLatest(loadName);
+    if loaded
+        break
+    end
+end
 if ~loaded
     error('No Results folder found with loadPattern "%s"', loadName)
 end
@@ -58,6 +67,7 @@ results.projectName = string(ar.info.name);
 parent = fileparts(ar.info.path);
 [~, templateName] = fileparts(parent);
 results.templateName = string(templateName);
+results.localOptimVariant = string(loadName);
 
 % collect all subsets that could be interesting to analyze
 qFit = logical(ar.qFit);
