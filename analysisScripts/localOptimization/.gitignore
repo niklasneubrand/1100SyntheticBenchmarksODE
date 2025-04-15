@@ -1,0 +1,5 @@
+# ignore log files
+localOptimization_*.log
+
+# ignore report files
+apply2ProjectsReport__localOptimization_*.mat
