@@ -1,0 +1,8 @@
+Unfortunately none of the testet localOptimization approaches performed well on all problems. This is somehow expected, since some problems require looser or stricter tolerances than others.
+The heuristioc approaches with tight optimization bounds or two-step (first dynamic then all parameters) did not perform sufficiently better than other methods. For simplicity in explaining the approach, I do not consider them further.
+The very strict tolerance 1e-10 takes a huige amount of compute power. This is unpractical. We also do not consider it further.
+
+This leaves us with two approaches V2 (tols at 1e-8) and V3 (tols at 1e-6).
+
+For the ITRP analysis we proceed as follows:
+First try to load stricter results V2, if not available fallback to V3.
