@@ -20,7 +20,7 @@ for template_dir in "$base_dir"/*/; do
         log_file="${save_name}_Apply2Projects_${folder_name}.log"
         
         # Run the identifiability analysis in the background
-        nohup matlab-R2021a -r "testIdentifyLocalMulti('$template_dir', $loadNames); exit;" > $log_file 2>&1 &
+        nohup matlab-R2021a -r "testIdentifyLocalMulti('$template_dir', $loadNames, '$save_name'); exit;" > $log_file 2>&1 &
         sleep 5  # add a small delay to avoid overwhelming the system
     fi
 done
@@ -32,7 +32,7 @@ fast2Dir="$(pwd)/../../RS_IMBI/fast2_V2"
 slow2Dir="$(pwd)/../../RS_IMBI/slow2_V2"
 
 echo "Processing directory: $fast2Dir"
-nohup matlab-R2021a -r "testIdentifyLocalMulti('$fast2Dir', $loadNames); exit;" > $log_file_fast2 2>&1 &
+nohup matlab-R2021a -r "testIdentifyLocalMulti('$fast2Dir', $loadNames, '$save_name'); exit;" > $log_file_fast2 2>&1 &
 sleep 5  # add a small delay to avoid overwhelming the system
 echo "Processing directory: $slow2Dir"
-nohup matlab-R2021a -r "testIdentifyLocalMulti('$slow2Dir', $loadNames); exit;" > $log_file_slow2 2>&1 &
+nohup matlab-R2021a -r "testIdentifyLocalMulti('$slow2Dir', $loadNames, '$save_name'); exit;" > $log_file_slow2 2>&1 &

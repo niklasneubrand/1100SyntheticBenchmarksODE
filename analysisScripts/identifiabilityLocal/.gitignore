@@ -1,0 +1,8 @@
+# ignore log files
+testIdentifyLocal_*.log
+
+# ignore report files
+apply2ProjectsReport__testIdentifyLocal_*.mat
+
+# ignore old files
+Old/
