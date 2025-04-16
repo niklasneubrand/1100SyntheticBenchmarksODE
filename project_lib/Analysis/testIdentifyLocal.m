@@ -8,11 +8,6 @@ function testIdentifyLocal(loadNames, saveName, resultsName)
 %   outputName: (optional) name of the output file to save the results table
 %               (default: 'resultsIdentifyLocal')
 %
-% USAGE: Execute the function in a synthetic benchmark project folder.
-%        The function will perform identifiability analysis on the locally fitted model
-%        and append the results to a table in the specified .mat file in the folder:
-%        'analysisScripts/identifiabilityLocal'.
-%
 
 arguments
     loadNames (:,:) char = 'localOptimization'
@@ -20,7 +15,7 @@ arguments
     resultsName (1,:) char = 'resultsIdentifyLocal'
 end
 
-diary('testIdentifyLocal.log')
+diary(sprintf('%s.log', saveName))
 
 %% init d2d and load the locally fitted model
 global ar
