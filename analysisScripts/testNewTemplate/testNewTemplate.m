@@ -2,7 +2,7 @@
 % and compares the number of time-courses.
 % Maybe also compare the condition-observable matrices. But how? Best is graphically.
 
-diary('getAllCustomConfigs.log');
+diary('testNewTemplate.log');
 
 % initialize the realistic simulations package
 realDir = fullfile(pwd(), '..', '..');
