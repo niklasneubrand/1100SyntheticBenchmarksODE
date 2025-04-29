@@ -6,7 +6,7 @@ function d2dProjectFolders = arListD2DProjects(folder, method, includeFolder, re
 
 arguments
     folder (1,:) string = pwd()
-    method (1,1) string {mustBeMember(method, ["subfolders", "recursive"])} = "subfolders"
+    method (1,1) string {mustBeMember(method, ["subfolders", "subsubfolders", "recursive"])} = "subfolders"
     includeFolder (1,1) logical = true
     requireCompiled (1,1) logical = false
 end
@@ -30,7 +30,7 @@ folder = string(folderDir(1).folder);
 
 % get char array of all subdirectories (recursive)
 switch method
-    case "subfolders"
+    case {"subfolders", "subsubfolders"}
         % get char array of all subdirectories (non-recursive)
         subDirs = {folderDir([folderDir.isdir]).name}';
         if includeFolder
@@ -42,6 +42,11 @@ switch method
         end
         % prepend the folder path to each subdirectory
         subDirs = fullfile(folder, subDirs);
+        if strcmp(method, "subsubfolders")
+            % apply recursively
+            d2dProjectFolders = arListD2DProjects(subDirs, "subfolders", true, requireCompiled);
+            return
+        end
     case "recursive"
         % get char array of all subdirectories (recursive)
         subDirs = split(genpath(folder), pathsep);
