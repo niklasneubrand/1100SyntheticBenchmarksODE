@@ -1,6 +1,6 @@
 
 function arSetParsBounds(range)
-% ARSETPASBOUNDS Set upper and lower bounds for parameters
+% ARSETPARSBOUNDS Set upper and lower bounds for parameters
 %
 % The bounds are set symetrically on the log10 scale:
 %   [p*10^(-range), p*10^(+range)]
@@ -8,24 +8,33 @@ function arSetParsBounds(range)
 %   [-range, +range]
 
 arguments
-    range (1,1) double = 2
+    range (1,:) double = 2
 end
 
 global ar
 
-for i = 1:length(ar.p)
+nParams = length(ar.p);
+nRange = length(range);
+
+if nRange == 1
+    range = repmat(range, 1, nParams);
+elseif nRange ~= nParams
+    error('range must be scalar of array of size 1xlength(ar.p).')
+end
+
+for i = 1:nParams
     if ar.qLog10(i)
-        ar.lb(i) = ar.p(i)-range;
-        ar.ub(i) = ar.p(i)+range;
+        ar.lb(i) = ar.p(i)-range(i);
+        ar.ub(i) = ar.p(i)+range(i);
     elseif ar.p(i) > 0
-        ar.lb(i) = ar.p(i)*10^(-range);
-        ar.ub(i) = ar.p(i)*10^(+range);
+        ar.lb(i) = ar.p(i)*10^(-range(i));
+        ar.ub(i) = ar.p(i)*10^(+range(i));
     elseif ar.p(i) < 0
-        ar.lb(i) = ar.p(i)*10^(+range);
-        ar.ub(i) = ar.p(i)*10^(-range);
+        ar.lb(i) = ar.p(i)*10^(+range(i));
+        ar.ub(i) = ar.p(i)*10^(-range(i));
     else % if ar.p == 0 und qLog10 == 0
-        ar.lb(i) = -range;
-        ar.ub(i) = +range;
+        ar.lb(i) = -range(i);
+        ar.ub(i) = +range(i);
     end
 end
 
