@@ -52,8 +52,32 @@ while ~qFeasibleParams
     end
 end
 
-% feasile parameters found -> set bounds correctly before returning
-arSetParsBounds(3);
+%% feasile parameters found -> update bounds of dynamic parameters
+% remember the original bounds
+lb = ar.lb;
+ub = ar.ub;
+p = ar.p;
+qDynamic = logical(ar.qDynamic);
+
+% round the bounds to have a nice number
+lb = round(lb, 2, 'significant');
+ub = round(ub, 2, 'significant');
+
+% increase the bounds if violated
+boundRanges = range([lb; ub]);
+boundIncreaseFactor = 0.1;
+lbViolated = p<lb & qDynamic;
+ubViolated = p>ub & qDynamic;
+lb(lbViolated) = lb(lbViolated) - boundIncreaseFactor*boundRanges(lbViolated);
+ub(ubViolated) = ub(ubViolated) + boundIncreaseFactor*boundRanges(ubViolated);
+
+% round again because of the violation fix
+lb = round(lb, 2, 'significant');
+ub = round(ub, 2, 'significant');
+
+% set the new bounds
+ar.lb = lb;
+ar.ub = ub;
 
 % save outcome variables for traceability
 if exist('projectPath', 'var') && ~isempty(projectPath)
