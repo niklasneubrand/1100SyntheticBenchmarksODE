@@ -10,8 +10,7 @@ startDir = cd(templateFolder);
 
 global ar
 arLoadLatest('normal')
-lb = ar.lb;
-ub = ar.ub;
+arTemplate = arDeepCopy(ar);
 
 templateName = ar.info.name;
 parentDir = fullfile('../../../SyntheticBenchmarks', templateName);
@@ -24,7 +23,7 @@ for i = 1:length(projectDirs)
     fprintf('Fixing parameter bounds in %s\t', projectDirs(i))
 
     % load the project
-    updateParamsInArStruct(lb, ub)
+    updateParamsInArStruct(arTemplate)
     updateParamsInModelDef()
     fprintf('done\n')
 end
@@ -76,11 +75,19 @@ fclose(fid);
 end
 
 
-function updateParamsInArStruct(lb, ub)
+function updateParamsInArStruct(arTemplate)
 
 global ar
 
 % load compiled model
+arLoadLatest('Final')
+
+% apply the bounds of the template model
+arLoadPars(arTemplate);
+lb = ar.lb;
+ub = ar.ub;
+
+% reload the compiled model
 arLoadLatest('Final')
 
 % round the bounds to have a nice number
