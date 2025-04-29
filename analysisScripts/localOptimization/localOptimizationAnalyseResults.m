@@ -21,15 +21,24 @@ mergedTab = reports{1}(~reports{1}.isTemplate, {'projectName', 'success'});
 mergedTab.Properties.VariableNames{'success'} = ['success_' variants{1}];
 
 for i = 2:numel(reports)
-    tmp = reports{i}(~reports{i}.isTemplate, {'projectName', 'success'});
+    tmp = reports{i}(~reports{i}.isTemplate, {'projectName', 'success', 'error'});
     tmp.Properties.VariableNames{'success'} = ['success_' variants{i}];
+    tmp.Properties.VariableNames{'error'} = ['error_' variants{i}];
     mergedTab = outerjoin(mergedTab, tmp, 'Keys', 'projectName', 'MergeKeys', true);
 end
 % define templateName
 projectNameParts = split(mergedTab.projectName, '_', 2);
 mergedTab.templateName = projectNameParts(:, 1);
+
 % move the templateName to the first column
 mergedTab = movevars(mergedTab, 'templateName', 'Before', 'projectName');
+% move the error columns to the end
+varNames = mergedTab.Properties.VariableNames;
+errorVars = varNames(contains(varNames, 'error'));
+successVars = varNames(contains(varNames, 'success'));
+mergedTab = movevars(mergedTab, successVars, 'After', 'projectName'); 
+mergedTab = movevars(mergedTab, errorVars, 'After', successVars(end));
+
 
 %% Add combined success columns
 successVars = mergedTab.Properties.VariableNames(3:end); % all success_* columns

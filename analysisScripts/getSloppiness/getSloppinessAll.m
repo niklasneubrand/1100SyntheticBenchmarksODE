@@ -8,7 +8,6 @@
 % - qSloppy: true if the model is sloppy, false otherwise
 
 mainLog = 'getSloppinessAll.log';
-projectLog ='sloppinessAnalysis_V1.log';
 diary(mainLog);
 
 %% OPTIONS
@@ -28,7 +27,7 @@ slow2Folder = fullfile(realDir, 'RS_IMBI', 'slow2_V2');
 templateFolders = {fast2Folder, slow2Folder};
 templateFolders = arListD2DProjects(templateFolders, "subfolders");
 rsFolders = fullfile(realDir, 'SyntheticBenchmarks');
-rsFolders = arListD2DProjects(rsFolders, "recursive");
+rsFolders = arListD2DProjects(rsFolders, "subsubfolders");
 d2dProjectFolders = [templateFolders; rsFolders];
 
 % loop through all projects and collect the results
@@ -42,11 +41,9 @@ for i = 1:length(d2dProjectFolders)
     % load the model and calculate the sloppiness
     try
         cd(subDir);
-        diary(projectLog)
         sloppyTable = calcSloppiness(loadNames, ... 
             zeroThreshold=zeroThreshold, ...
             sloppyThreshold=sloppyThreshold);
-        diary(mainLog)
     catch ME
         fprintf("error: %s\n", ME.message);
         continue
