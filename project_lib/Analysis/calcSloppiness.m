@@ -7,15 +7,13 @@ function sloppyTable = calcSloppiness(loadNames, options)
 %
 
 arguments
-    loadNames (:,:) char = 'localOptimization'
+    loadNames (1,:) string = 'localOptimization'
 end
 
 arguments
     options.zeroThreshold (1,1) double = -12
     options.sloppyThreshold (1,1) double = -6
 end
-
-diary(sprintf('%s.log', saveName))
 
 %% init d2d and load the locally fitted model
 global ar
@@ -45,18 +43,17 @@ sloppyStruct = arPlotSloppiness();
 close all
 
 fprintf('Create sloppyness table.\n')
-log10HessEigen = log10(sloppyStruct.eigen');
-log10HessEigen = log10HessEigen - max(log10HessEigen);
-log10HessEigen(log10HessEigen < options.zeroThreshold) = -Inf;
+hessEigen = sloppyStruct.eigen';
+hessEigen = hessEigen/max(hessEigen);
+hessEigen(hessEigen < 10^options.zeroThreshold) = 0;
+log10HessEigen = log10(hessEigen);
 
 minLog10HessEigen = min(log10HessEigen(isfinite(log10HessEigen)));
 qSloppy = minLog10HessEigen <= options.sloppyThreshold;
 
 % create reults table
-log10HessEigenRaw = {log10(sloppyStruct.eigen')};
+hessEigenRaw = {sloppyStruct.eigen'};
 log10HessEigen = {log10HessEigen};
-sloppyTable = table(projectName, templateName, minLog10HessEigen, qSloppy, log10HessEigen, log10HessEigenRaw);
-
-diary('off')
+sloppyTable = table(projectName, templateName, minLog10HessEigen, qSloppy, log10HessEigen, hessEigenRaw);
 
 end
