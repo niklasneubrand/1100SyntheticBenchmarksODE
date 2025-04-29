@@ -1,6 +1,12 @@
-function fixAllParamBounds()
+function fixAllParamBounds(templateFolder)
 % This function fixes the parameter bounds in the .def file and in the ar struct.
-% it assumes that we start the function in the folder of the template project.
+% It takes the template folder as input and updates all related synthetic benchmarks.
+
+arguments
+    templateFolder (1,1) string = pwd()
+end
+
+startDir = cd(templateFolder);
 
 global ar
 arLoadLatest('normal')
@@ -8,17 +14,19 @@ lb = ar.lb;
 ub = ar.ub;
 
 templateName = ar.info.name;
-startDir = pwd();
 parentDir = fullfile('../../../SyntheticBenchmarks', templateName);
 projectDirs = arListD2DProjects(parentDir);
 
+fprintf('Fixing parameter bounds for template %s\n', templateName)
+
 for i = 1:length(projectDirs)
     cd(projectDirs(i))
-    fprintf('Fixing parameter bounds in %s\n', projectDirs(i))
+    fprintf('Fixing parameter bounds in %s\t', projectDirs(i))
 
     % load the project
     updateParamsInArStruct(lb, ub)
     updateParamsInModelDef()
+    fprintf('done\n')
 end
 
 cd(startDir)
