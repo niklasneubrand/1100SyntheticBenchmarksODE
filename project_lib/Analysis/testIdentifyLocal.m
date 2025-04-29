@@ -10,7 +10,7 @@ function testIdentifyLocal(loadNames, saveName, resultsName)
 %
 
 arguments
-    loadNames (:,:) char = 'localOptimization'
+    loadNames (1,:) string = 'localOptimization'
     saveName (1,:) char = 'localIdentifyTest'
     resultsName (1,:) char = 'resultsIdentifyLocal'
 end
