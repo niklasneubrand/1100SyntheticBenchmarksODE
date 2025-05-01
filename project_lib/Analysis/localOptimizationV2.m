@@ -29,7 +29,12 @@ diary(sprintf('%s.log', saveName))
 %% init d2d and load the final version of the RS
 global ar
 arInit;
-arLoad(loadName);
+if strcmp(loadName, 'normal')
+    % for template we saved with datestring
+    arLoadLatest(loadName);
+else
+    arLoad(loadName);
+end
 
 %% set the configs
 % here we overwrite all configs that are set "manually" in the Setup files 
@@ -56,7 +61,7 @@ fitTime = cputime - startTime;
 ar.fit.timing = fitTime; % store the time it took to fit
 
 %% save the results
-arSave(saveName)
+arSave(saveName, true, false)
 diary('off')
 
 end
