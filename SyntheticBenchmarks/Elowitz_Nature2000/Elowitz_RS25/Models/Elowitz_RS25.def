@@ -75,23 +75,21 @@ kd_prot_GFP	"(log(2)/tau_prot_GFP)"
 
 
 PARAMETERS
-KM	0.665	1	1	-3	4
-eff	1.48	1	1	-2	5
-eff_GFP	0	0	1	-3	3
-init_GFP	-2.39	1	1	-6	1
-init_GFP_mRNA	-4.71	1	1	-8	-1
-init_X_mRNA	2.45	1	1	-1	6
-init_X_protein	-0.19	1	1	-4	3
-init_Y_mRNA	2.84	1	1	-1	6
-init_Y_protein	2.81	1	1	-1	6
-init_Z_mRNA	2.68	1	1	-1	6
-init_Z_protein	-4.64	1	1	-8	-1
-n_Hill	0.301	0	1	-3	4
-tau_mRNA	-0.171	1	1	-4	3
-tau_mRNA_GFP	-2.11	1	1	-6	1
-tau_prot	1.21	1	1	-2	5
-tau_prot_GFP	1.37	1	1	-2	5
-tps_active	1.68	1	1	-2	5
-tps_repr	-2.84	1	1	-6	1
-
-
+KM	0.665	1	1	-3	5
+eff	1.48	1	1	0	3
+eff_GFP	0	0	1	0	3
+init_GFP	-2.39	1	1	-5	3
+init_GFP_mRNA	-4.71	1	1	-5	3
+init_X_mRNA	2.45	1	1	-5	3
+init_X_protein	-0.19	1	1	-5	3
+init_Y_mRNA	2.84	1	1	-5	3
+init_Y_protein	2.81	1	1	-5	3
+init_Z_mRNA	2.68	1	1	-5	3
+init_Z_protein	-4.64	1	1	-5	3
+n_Hill	0.301	0	1	-5	3
+tau_mRNA	-0.171	1	1	-2	3
+tau_mRNA_GFP	-2.11	1	1	-2.600000e+00	3
+tau_prot	1.21	1	1	-2	3
+tau_prot_GFP	1.37	1	1	0	4
+tps_active	1.68	1	1	-3	5
+tps_repr	-2.84	1	1	-3	5

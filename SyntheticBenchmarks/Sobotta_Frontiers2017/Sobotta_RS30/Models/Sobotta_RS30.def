@@ -113,74 +113,28 @@ tSOCS3              C   nmol/l      conc.   "SOCS3"
 
 npSTAT3             C   au          conc.   "(vol_cyt/vol_nuc) * tpSTAT3 * stat3_imp * ( 1 + f_pstat3_imp )"
 pSTAT3              C   nmol/l      conc.   "tpSTAT3"
-pSTAT3rel           C   %           rel.    "pSTAT3 / (STAT3 + pSTAT3)"
-tSTAT3              C   nmol/l      conc.   "(vol_cyt * STAT3 + vol_cyt * pSTAT3 + vol_nuc * nSTAT3)/(vol_cyt+vol_nuc)"
-ctSTAT3             C   nmol/l      conc.   "STAT3 + pSTAT3"
-ntSTAT3             C   nmol/l      conc.   "nSTAT3"
-
-
-OBSERVABLES
-
-
-ERRORS
-
-
-CONDITIONS
-actd_level1	"(0)"
-actd_t1	"(-11)"
-actd_t2	"(-10)"
-il6_level1	"(0)"
-il6_tStep	"(0)"
-init_JAK1_gp130	"(gp130_pro/gp130_deg)"
-init_SOCS3	"(0)"
-init_SOCS3RNA	"(0)"
-init_STAT3	"(0)"
-init_nSOCS3RNA1	"(0)"
-init_nSOCS3RNA2	"(0)"
-init_nSOCS3RNA3	"(0)"
-init_nSOCS3RNA4	"(0)"
-init_nSOCS3RNA5	"(0)"
-init_nSTAT3	"(total_STAT3)"
-init_pJAK1_gp130	"(0)"
-init_pJAK1_pgp130	"(0)"
-init_tpSTAT3	"(0)"
-input_actd	"(0)"
-input_il6	"(40)"
-input_ruxolitinib	"(0)"
-input_stattic	"(0)"
-jak1_act_basal_model	"(jak1_act_basal / scale_pgp130_wb_bohl_hep_2005_07_26_Pulse5min)"
-jak1_act_il6_model	"(jak1_act_il6 / scale_pgp130_wb_bohl_hep_2005_07_26_Pulse5min)"
-socs3_pro_model	"(socs3_pro * scale_socs3_qpcr_braun_hep_2013_07_08_qPCR_Socs3_Stat3)"
-socs3rna_pro_model	"(socs3rna_pro / scale_socs3_qpcr_braun_hep_2013_07_08_qPCR_Socs3_Stat3)"
-stat3_act_gp130_model	"(stat3_act_gp130 * scale_pgp130_wb_bohl_hep_2005_07_26_Pulse5min)"
-vol_cyt	"(12.67)"
-vol_nuc	"(0.5)"
-
-
-PARAMETERS
-f_pstat3_imp	2.87	1	0	0	2870
-gp130_act_jak1	-0.466	1	1	-4	3
-gp130_deg	-2.61	1	1	-6	1
-gp130_pro	-2.51	1	1	-6	1
-jak1_act_basal	-2.61	1	1	-6	1
-jak1_act_il6	-1.91	1	1	-5	2
-jak1_gp130_dea	-1.17	1	1	-5	2
-jak1_inh_ruxolitinib	-1.99	1	1	-5	2
-rux_degrade	-2.82	1	1	-6	1
-scale_pgp130_wb_bohl_hep_2005_07_26_Pulse5min	0.856	1	1	-3	4
-scale_socs3_qpcr_braun_hep_2013_07_08_qPCR_Socs3_Stat3	1.79	0	1	-2	5
-socs3_assoc	-1.83	1	1	-5	2
-socs3_des	-0.322	1	1	-4	3
-socs3_pro	0.476	1	1	-3	4
-socs3rna_delay	-0.319	1	1	-4	3
-socs3rna_des	-0.795	1	1	-4	3
-socs3rna_hill	1.68	1	0	0	1680
-socs3rna_pro	-2.77	1	1	-6	1
-stat3_act_gp130	-0.33	1	1	-4	3
-stat3_exp	0.587	1	1	-3	4
-stat3_imp	-1.47	1	1	-5	2
-stat3_inh_socs3	-0.122	1	1	-4	3
-stat3_inh_stattic	-0.92	1	1	-4	3
-total_STAT3	3.16	1	1	0	7
-
-
+pSTAT3rel           C   PARAMETERS
+f_pstat3_imp	2.87	1	0	0	100
+gp130_act_jak1	-0.466	1	1	-15	6
+gp130_deg	-2.61	1	1	-5	3
+gp130_pro	-2.51	1	1	-5	3
+jak1_act_basal	-2.61	1	1	-15	6
+jak1_act_il6	-1.91	1	1	-15	6
+jak1_gp130_dea	-1.17	1	1	-15	6
+jak1_inh_ruxolitinib	-1.99	1	1	-15	6
+rux_degrade	-2.82	1	1	-15	6
+scale_pgp130_wb_bohl_hep_2005_07_26_Pulse5min	0.856	1	1	-5	5
+scale_socs3_qpcr_braun_hep_2013_07_08_qPCR_Socs3_Stat3	1.79	0	1	-15	6
+socs3_assoc	-1.83	1	1	-5	3
+socs3_des	-0.322	1	1	-15	6
+socs3_pro	0.476	1	1	-15	6
+socs3rna_delay	-0.319	1	1	-15	6
+socs3rna_des	-0.795	1	1	-15	6
+socs3rna_hill	1.68	1	0	1	3
+socs3rna_pro	-2.77	1	1	-15	10
+stat3_act_gp130	-0.33	1	1	-15	6
+stat3_exp	0.587	1	1	-15	6
+stat3_imp	-1.47	1	1	-15	6
+stat3_inh_socs3	-0.122	1	1	-5	3
+stat3_inh_stattic	-0.92	1	1	-15	6
+total_STAT3	3.16	1	1	-15	6

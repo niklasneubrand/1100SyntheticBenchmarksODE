@@ -57,14 +57,12 @@ kon_model	"(kon / init_Epo)"
 
 
 PARAMETERS
-init_Epo	2.84	1	1	-1	6
-init_EpoR_rel	-1.17	1	1	-5	2
-kde	-1.84	1	1	-5	2
-kdi	-2.76	1	1	-6	1
-ke	-0.981	1	1	-4	3
-kex	-2.95	1	1	-6	1
-koff	-0.978	1	1	-4	3
-kon	-1.05	1	1	-5	2
-kt	-1.83	1	1	-5	2
-
-
+init_Epo	2.84	1	1	-5	4
+init_EpoR_rel	-1.17	1	1	-5	3
+kde	-1.84	1	1	-5	3
+kdi	-2.76	1	1	-5	3
+ke	-0.981	1	1	-5	3
+kex	-2.95	1	1	-5	3
+koff	-0.978	1	1	-5	3
+kon	-1.05	1	1	-5	3
+kt	-1.83	1	1	-5	3

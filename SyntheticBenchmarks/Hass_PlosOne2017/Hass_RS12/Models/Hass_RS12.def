@@ -86,16 +86,14 @@ init_pApoER2_re_Dab1	"(0)"
 
 
 PARAMETERS
-ApoER2_Dab1_SFK_degrad	-2.12	1	1	-6	1
-ApoER2_Dab1_SFK_recycle	0.557	1	1	-3	4
-ApoER2_Dab1_SFK_release	3.39	1	1	0	7
-ApoER2_Dab1_act	4	2	1	1	7
-ApoER2_Dab1_bind_SFK	2.36	1	1	-1	6
-ApoER2_Dab1_bind_SFK_Reelin	4.96	1	1	1	8
-Dab1_bind_Reelin	-2.02	1	1	-6	1
-Dab1_release	-1.16	1	1	-5	2
-SFK_inhibition_ratio	-0.566	1	1	-4	3
-init_ApoER2_Dab1	0	2	1	-3	3
-init_ApoER2_Dab1SFK	-4.28	1	1	-8	-1
-
-
+ApoER2_Dab1_SFK_degrad	-2.12	1	1	-5	3
+ApoER2_Dab1_SFK_recycle	0.557	1	1	-5	3
+ApoER2_Dab1_SFK_release	3.39	1	1	-2	5
+ApoER2_Dab1_act	4	2	1	-2	7
+ApoER2_Dab1_bind_SFK	2.36	1	1	-5	3
+ApoER2_Dab1_bind_SFK_Reelin	4.96	1	1	-2	6
+Dab1_bind_Reelin	-2.02	1	1	-5	3
+Dab1_release	-1.16	1	1	-5	3
+SFK_inhibition_ratio	-0.566	1	1	-10	0
+init_ApoER2_Dab1	0	2	1	-2	3
+init_ApoER2_Dab1SFK	-4.28	1	1	-5	3

@@ -1,76 +1,42 @@
-function fixAllParamBounds(templateFolder)
-% This function fixes the parameter bounds in the .def file and in the ar struct.
-% It takes the template folder as input and updates all related synthetic benchmarks.
+%% This script fixes the parameter bounds in the .def file and in the ar struct
+% it uses a function that fixes all synthetic benchmarks for a given template
+% and loops over all templates
 
-arguments
-    templateFolder (1,1) string = pwd()
-end
-
-startDir = cd(templateFolder);
-
-global ar
-arLoadLatest('normal')
-arTemplate = arDeepCopy(ar);
-
-templateName = ar.info.name;
-parentDir = fullfile('../../../SyntheticBenchmarks', templateName);
-projectDirs = arListD2DProjects(parentDir);
-
-fprintf('Fixing parameter bounds for template %s\n', templateName)
-
-for i = 1:length(projectDirs)
-    cd(projectDirs(i))
-    fprintf('Fixing parameter bounds in %s\t', projectDirs(i))
-
-    % load the project
-    updateParamsInArStruct(arTemplate)
-    updateParamsInModelDef()
-    fprintf('done\n')
-end
-
+% add the project folders to the path
+startDir = cd('../..');
+initRealisticBenchmarks;
 cd(startDir)
-fprintf('Finished fixing parameter bounds for template %s\n', templateName)
 
+% define the template folders
+templateFolders = cellfun(@(x) fullfile('../../RS_IMBI', x), ...
+    {'fast2_V2', 'slow2_V2'}, 'UniformOutput', false);
+templateFolders = arListD2DProjects(templateFolders, "subsubfolders", false);
+
+% loop over all template folders and fix the bounds
+for i=1:length(templateFolders)
+    templateFolder = templateFolders{i};
+    startDir = cd(templateFolder);
+
+    global ar
+    arLoadLatest('normal')
+    arTemplate = arDeepCopy(ar);
+    cd(startDir)
+
+    templateName = arTemplate.info.name;
+    parentDir = fullfile('../../SyntheticBenchmarks', templateName);
+    reportName = sprintf('report_fixBounds_%s.mat', templateName); 
+    
+    arApply2Projects(@fixBounds, parentDir, ... % required arguments
+        arTemplate, ... % arguments for fixBounds
+        'reportName', reportName); % options for arApply2Projects
 end
 
 
-function updateParamsInModelDef()
+function fixBounds(arTemplate)
 
-global ar
-
-% identify def file
-modelsDir = fullfile(pwd(), 'Models');
-defFiles = dir(fullfile(modelsDir, '*.def'));
-defFileName = defFiles.name;
-defFile = fullfile(modelsDir, defFileName);
-
-% Read the content of the def file
-file_content = fileread(defFile);
-
-% Define the heading for the PARAMETERS section
-paramHeading = "PARAMETERS";
-
-% Split the file content into sections
-sections = splitlines(file_content);
-paramStartIdx = find(contains(sections, paramHeading), 1);
-
-% Create new parameter section (only include dynamic parameters)
-newParamSection = {paramHeading};
-for ip = 1:length(ar.p)
-    if ar.qDynamic(ip)
-        newParam = sprintf('%s\t%.5g\t%i\t%i\t%i\t%i', ...
-            ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
-        newParamSection{end+1} = newParam; %#ok<AGROW>
-    end
-end
-
-% Replace the old PARAMETERS section
-sections(paramStartIdx:end) = [newParamSection, {''}];
-
-% Write the modified content back to the file
-fid = fopen(defFile, 'w');
-fprintf(fid, '%s\n', sections{:});
-fclose(fid);
+updateParamsInArStruct(arTemplate)
+updateParamsInModelDef()
+fprintf('done\n')
 
 end
 
@@ -99,8 +65,8 @@ boundRanges = range([lb; ub]);
 boundIncreaseFactor = 0.1;
 lbViolated = ar.p<lb & logical(ar.qDynamic);
 ubViolated = ar.p>ub & logical(ar.qDynamic);
-lb(lbViolated) = lb(lbViolated) - boundIncreaseFactor*boundRanges(lbViolated);
-ub(ubViolated) = ub(ubViolated) + boundIncreaseFactor*boundRanges(ubViolated);
+lb(lbViolated) = ar.p(lbViolated) - boundIncreaseFactor*boundRanges(lbViolated);
+ub(ubViolated) = ar.p(ubViolated) + boundIncreaseFactor*boundRanges(ubViolated);
 
 % round again because of the violation fix
 lb = round(lb, 2, 'significant');
@@ -111,6 +77,46 @@ ar.lb = lb;
 ar.ub = ub;
 
 % save to results folder
-arSave("CompiledProject", true, false);
+arSave('CompiledProject', true, false);
 
 end
+
+
+function updateParamsInModelDef()
+
+global ar
+
+% identify def file
+modelsDir = fullfile(pwd(), 'Models');
+defFiles = dir(fullfile(modelsDir, '*.def'));
+defFileName = defFiles.name;
+defFile = fullfile(modelsDir, defFileName);
+
+% Read the content of the def file
+file_content = fileread(defFile);
+
+% Define the heading for the PARAMETERS section and split content in two parts
+paramHeading = 'PARAMETERS';
+sections = split(file_content, paramHeading);
+
+% Create new parameter section (only include dynamic parameters)
+newParamSection = [paramHeading newline];
+for ip = 1:length(ar.p)
+    if ar.qDynamic(ip)
+        newParam = sprintf('%s\t%.5g\t%i\t%i\t%i\t%i', ...
+            ar.pLabel{ip}, ar.p(ip), ar.qFit(ip), ar.qLog10(ip), ar.lb(ip), ar.ub(ip));
+        newParamSection = [newParamSection newParam newline];
+    end
+end
+
+% Replace the old PARAMETERS section
+sections{2} = newParamSection;
+full_text = join(sections, '');
+
+% Write the modified content back to the file
+fid = fopen(defFile, 'w');
+fprintf(fid, full_text{:});
+fclose(fid);
+    
+end
+    

@@ -74,12 +74,10 @@ init_pBpB	"(0)"
 
 
 PARAMETERS
-Epo_degradation_BaF3	-1.35	1	1	-5	2
-k_exp_hetero	-5.07	1	1	-9	-2
-k_exp_homo	-2.49	1	1	-6	1
-k_imp_hetero	-1.75	1	1	-5	2
-k_imp_homo	4.73	1	1	1	8
-k_phos	4.16	1	1	1	8
-ratio	0.693	0	0	0	693
-
-
+Epo_degradation_BaF3	-1.35	1	1	-5	5
+k_exp_hetero	-5.07	1	1	-6.100000e+00	5
+k_exp_homo	-2.49	1	1	-5	5
+k_imp_hetero	-1.75	1	1	-5	5
+k_imp_homo	4.73	1	1	-5	5
+k_phos	4.16	1	1	-5	5
+ratio	0.693	0	0	-5	5

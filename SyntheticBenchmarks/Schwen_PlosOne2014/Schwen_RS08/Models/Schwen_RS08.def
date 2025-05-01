@@ -81,18 +81,16 @@ init_Uptake2	"(0)"
 
 
 PARAMETERS
-ini_R1	1.85	1	1	-2	5
-ini_R2fold	0.911	1	1	-3	4
-ka1	-2.52	1	1	-6	1
-ka2fold	0.743	1	1	-3	4
-kd1	0.864	1	1	-3	4
-kd2fold	0.76	1	1	-3	4
-kin	-0.153	1	1	-4	3
-kin2	-0.297	1	1	-4	3
-koff_unspec	1.06	1	1	-2	5
-kon_unspec	1.19	1	1	-2	5
-kout	-1.45	1	1	-5	2
-kout2	-1.23	1	1	-5	2
-kout_frag	-1.71	1	1	-5	2
-
-
+ini_R1	1.85	1	1	-5	3
+ini_R2fold	0.911	1	1	-5	3
+ka1	-2.52	1	1	-5	3
+ka2fold	0.743	1	1	-5	3
+kd1	0.864	1	1	-5	3
+kd2fold	0.76	1	1	-5	3
+kin	-0.153	1	1	-5	3
+kin2	-0.297	1	1	-5	3
+koff_unspec	1.06	1	1	-5	3
+kon_unspec	1.19	1	1	-5	3
+kout	-1.45	1	1	-5	3
+kout2	-1.23	1	1	-5	3
+kout_frag	-1.71	1	1	-5	3

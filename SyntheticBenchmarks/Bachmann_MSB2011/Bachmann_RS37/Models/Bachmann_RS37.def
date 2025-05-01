@@ -28,154 +28,33 @@ EpoRpJAK2       C   nM      conc.       cyt 1
 p1EpoRpJAK2     C   nM      conc.       cyt 1
 p2EpoRpJAK2     C   nM      conc.       cyt 1
 p12EpoRpJAK2    C   nM      conc.       cyt 1        
-EpoRJAK2_CIS    X   %       fraction    cyt 0
-SHP1            C   nM      conc.       cyt 1
-SHP1Act         C   nM      conc.       cyt 1
-STAT5           C   nM      conc.       cyt 1
-pSTAT5          C   nM      conc.       cyt 1
-npSTAT5         C   nM      conc.       nuc 1
-CISnRNA1        C   au      conc.       nuc 0
-CISnRNA2        C   au      conc.       nuc 0
-CISnRNA3        C   au      conc.       nuc 0
-CISnRNA4        C   au      conc.       nuc 0
-CISnRNA5        C   au      conc.       nuc 0
-CISRNA          C   au      conc.       cyt 1
-CIS             C   nM      conc.       cyt 1
-SOCS3nRNA1      C   au      conc.       nuc 0
-SOCS3nRNA2      C   au      conc.       nuc 0
-SOCS3nRNA3      C   au      conc.       nuc 0
-SOCS3nRNA4      C   au      conc.       nuc 0
-SOCS3nRNA5      C   au      conc.       nuc 0
-SOCS3RNA        C   au      conc.       cyt 1
-SOCS3           C   nM      conc.       cyt 1
-
-
-INPUTS
-Epo             C   units/cell   conc.   "epo_level"
-
-
-REACTIONS
-EpoRJAK2        ->  EpoRpJAK2    CUSTOM "JAK2ActEpo * EpoRJAK2 * Epo / (1 + SOCS3Inh_model * SOCS3)"
-EpoRpJAK2       ->  EpoRJAK2     CUSTOM "JAK2EpoRDeaSHP1_model * EpoRpJAK2 * SHP1Act"
-EpoRpJAK2       ->  p1EpoRpJAK2  CUSTOM "EpoRActJAK2 * EpoRpJAK2 / (1 + SOCS3Inh_model * SOCS3)"
-EpoRpJAK2       ->  p2EpoRpJAK2  CUSTOM "3*EpoRActJAK2 * EpoRpJAK2 / (1 + SOCS3Inh_model * SOCS3) / (EpoRCISInh * EpoRJAK2_CIS + 1)"
-p1EpoRpJAK2     ->  p12EpoRpJAK2 CUSTOM "3*EpoRActJAK2 * p1EpoRpJAK2 / (1 + SOCS3Inh_model * SOCS3) / (EpoRCISInh * EpoRJAK2_CIS + 1)"
-p2EpoRpJAK2     ->  p12EpoRpJAK2 CUSTOM "EpoRActJAK2 * p2EpoRpJAK2 / (1 + SOCS3Inh_model * SOCS3)"
-
-p1EpoRpJAK2     ->  EpoRJAK2     CUSTOM "JAK2EpoRDeaSHP1_model * p1EpoRpJAK2 * SHP1Act"
-p2EpoRpJAK2     ->  EpoRJAK2     CUSTOM "JAK2EpoRDeaSHP1_model * p2EpoRpJAK2 * SHP1Act"
-p12EpoRpJAK2    ->  EpoRJAK2     CUSTOM "JAK2EpoRDeaSHP1_model * p12EpoRpJAK2 * SHP1Act"
-        
-EpoRJAK2_CIS    ->              CUSTOM "EpoRCISRemove_model * EpoRJAK2_CIS * (p1EpoRpJAK2 + p12EpoRpJAK2)" 
-        
-SHP1            ->  SHP1Act     CUSTOM "SHP1ActEpoR_model * SHP1 * (EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + p12EpoRpJAK2)"
-SHP1Act         ->  SHP1        CUSTOM "SHP1Dea * SHP1Act"
-        
-STAT5           ->  pSTAT5      CUSTOM "STAT5ActJAK2_model * STAT5 * (EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + p12EpoRpJAK2) / (1 + SOCS3Inh_model * SOCS3)"
-STAT5           ->  pSTAT5      CUSTOM "STAT5ActEpoR_model * STAT5 * (p1EpoRpJAK2 + p12EpoRpJAK2)^2 / (1 + SOCS3Inh_model * SOCS3) / (1 + CISInh_model * CIS)"
-pSTAT5          ->  npSTAT5     CUSTOM "STAT5Imp * pSTAT5"
-npSTAT5         ->  STAT5       CUSTOM "STAT5Exp * npSTAT5"
-        
-                ->  CISnRNA1    CUSTOM "CISRNAEqc_model * CISRNATurn * npSTAT5 * (1-ActD)"
-CISnRNA1        ->  CISnRNA2    CUSTOM "CISRNADelay * CISnRNA1"
-CISnRNA2        ->  CISnRNA3    CUSTOM "CISRNADelay * CISnRNA2"
-CISnRNA3        ->  CISnRNA4    CUSTOM "CISRNADelay * CISnRNA3"
-CISnRNA4        ->  CISnRNA5    CUSTOM "CISRNADelay * CISnRNA4"
-CISnRNA5        ->  CISRNA      CUSTOM "CISRNADelay * CISnRNA5"
-CISRNA          ->              CUSTOM "CISRNATurn * CISRNA"
-        
-                ->  CIS         CUSTOM "CISEqc_model * CISTurn * CISRNA"
-CIS             ->              CUSTOM "CISTurn * CIS"
-        
-                ->  CIS         CUSTOM "CISoe * CISEqcOE_model * CISTurn"
-        
-                ->  SOCS3nRNA1  CUSTOM "SOCS3RNAEqc_model * SOCS3RNATurn * npSTAT5 * (1-ActD)"
-SOCS3nRNA1      ->  SOCS3nRNA2  CUSTOM "SOCS3RNADelay * SOCS3nRNA1"
-SOCS3nRNA2      ->  SOCS3nRNA3  CUSTOM "SOCS3RNADelay * SOCS3nRNA2"
-SOCS3nRNA3      ->  SOCS3nRNA4  CUSTOM "SOCS3RNADelay * SOCS3nRNA3"
-SOCS3nRNA4      ->  SOCS3nRNA5  CUSTOM "SOCS3RNADelay * SOCS3nRNA4"
-SOCS3nRNA5      ->  SOCS3RNA    CUSTOM "SOCS3RNADelay * SOCS3nRNA5"
-SOCS3RNA        ->              CUSTOM "SOCS3RNATurn * SOCS3RNA"
-        
-                ->  SOCS3       CUSTOM "SOCS3Eqc_model * SOCS3Turn * SOCS3RNA"
-SOCS3           ->              CUSTOM "SOCS3Turn * SOCS3"
-        
-                ->  SOCS3       CUSTOM "SOCS3oe * SOCS3EqcOE_model * SOCS3Turn"
-
-
-DERIVED
-pJAK2      C   au      conc.    "2 * (EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + p12EpoRpJAK2)"
-pEpoR      C   au      conc.    "16 * (p1EpoRpJAK2 + p2EpoRpJAK2 + p12EpoRpJAK2)"
-tSTAT5     C   au      conc.    "STAT5+pSTAT5"
-
-
-CONDITIONS
-CISEqcOE_model	"CISEqc*CISEqcOE"
-CISEqc_model	"CISEqc/CISRNAEqc"
-CISInh_model	"CISInh/CISEqc"
-CISRNAEqc_model	"CISRNAEqc/init_STAT5"
-EpoRCISRemove_model	"EpoRCISRemove/init_EpoRJAK2"
-JAK2EpoRDeaSHP1_model	"JAK2EpoRDeaSHP1/init_SHP1"
-SHP1ActEpoR_model	"SHP1ActEpoR/init_EpoRJAK2"
-SOCS3EqcOE_model	"SOCS3Eqc*SOCS3EqcOE"
-SOCS3Eqc_model	"SOCS3Eqc/SOCS3RNAEqc"
-SOCS3Inh_model	"SOCS3Inh/SOCS3Eqc"
-SOCS3RNAEqc_model	"SOCS3RNAEqc/init_STAT5"
-STAT5ActEpoR_model	"STAT5ActEpoR/init_EpoRJAK2^2"
-STAT5ActJAK2_model	"STAT5ActJAK2/init_EpoRJAK2"
-init_CIS	"0"
-init_CISRNA	"0"
-init_CISnRNA1	"0"
-init_CISnRNA2	"0"
-init_CISnRNA3	"0"
-init_CISnRNA4	"0"
-init_CISnRNA5	"0"
-init_EpoRJAK2_CIS	"0"
-init_EpoRpJAK2	"0"
-init_SHP1Act	"0"
-init_SOCS3	"0"
-init_SOCS3RNA	"0"
-init_SOCS3nRNA1	"0"
-init_SOCS3nRNA2	"0"
-init_SOCS3nRNA3	"0"
-init_SOCS3nRNA4	"0"
-init_SOCS3nRNA5	"0"
-init_npSTAT5	"0"
-init_p12EpoRpJAK2	"0"
-init_p1EpoRpJAK2	"0"
-init_p2EpoRpJAK2	"0"
-init_pSTAT5	"0"
-
-
-PARAMETERS
-CISEqc	2.64	1	1	-1	6
-CISEqcOE	-0.145	1	1	-4	3
-CISInh	8.84	1	1	5	12
-CISRNADelay	-0.585	1	1	-4	3
+EpoRJAK2_CIS    X   PARAMETERS
+CISEqc	2.64	1	1	-3	4
+CISEqcOE	-0.145	1	1	-3	3
+CISInh	8.84	1	1	-3	12
+CISRNADelay	-0.585	1	1	-3	3
 CISRNAEqc	0	2	1	-3	3
-CISRNATurn	2.95	1	1	-1	6
-CISTurn	-1.8	1	1	-5	2
-EpoRActJAK2	-0.609	1	1	-4	3
-EpoRCISInh	6.22	1	1	3	10
-EpoRCISRemove	0.503	1	1	-3	4
-JAK2ActEpo	5.55	1	1	2	9
-JAK2EpoRDeaSHP1	2.01	1	1	-1	6
-SHP1ActEpoR	-3.23	1	1	-7	0
-SHP1Dea	-2.09	1	1	-6	1
-SHP1ProOE	0.192	1	1	-3	4
-SOCS3Eqc	2.16	1	1	-1	6
-SOCS3EqcOE	0.0775	1	1	-3	4
-SOCS3Inh	1.22	1	1	-2	5
-SOCS3RNADelay	0.266	1	1	-3	4
+CISRNATurn	2.95	1	1	-3	3
+CISTurn	-1.8	1	1	-3	3
+EpoRActJAK2	-0.609	1	1	-3	4
+EpoRCISInh	6.22	1	1	-3	7.100000e+00
+EpoRCISRemove	0.503	1	1	-3	3
+JAK2ActEpo	5.55	1	1	-3	9
+JAK2EpoRDeaSHP1	2.01	1	1	-3	4
+SHP1ActEpoR	-3.23	1	1	-3.800000e+00	3
+SHP1Dea	-2.09	1	1	-3	3
+SHP1ProOE	0.192	1	1	-3	3
+SOCS3Eqc	2.16	1	1	-3	3
+SOCS3EqcOE	0.0775	1	1	-3	3
+SOCS3Inh	1.22	1	1	-3	3
+SOCS3RNADelay	0.266	1	1	-3	3
 SOCS3RNAEqc	0	2	1	-3	3
-SOCS3RNATurn	-1.79	1	1	-5	2
-SOCS3Turn	3.76	1	1	0	7
-STAT5ActEpoR	1.32	1	1	-2	5
-STAT5ActJAK2	-0.93	1	1	-4	3
-STAT5Exp	-1.36	1	1	-5	2
-STAT5Imp	-1.52	1	1	-5	2
-init_EpoRJAK2	0.716	1	1	-3	4
-init_SHP1	1.59	1	1	-2	5
-init_STAT5	1.69	1	1	-2	5
-
-
+SOCS3RNATurn	-1.79	1	1	-3	3
+SOCS3Turn	3.76	1	1	-3	4
+STAT5ActEpoR	1.32	1	1	-3	3
+STAT5ActJAK2	-0.93	1	1	-3	3
+STAT5Exp	-1.36	1	1	-3	3
+STAT5Imp	-1.52	1	1	-3	3
+init_EpoRJAK2	0.716	1	1	-3	3
+init_SHP1	1.59	1	1	-3	3
+init_STAT5	1.69	1	1	-3	3

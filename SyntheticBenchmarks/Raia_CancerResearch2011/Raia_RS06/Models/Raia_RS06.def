@@ -91,23 +91,21 @@ init_p_IL13_Rec_i	"(0)"
 
 
 PARAMETERS
-CD274mRNA_production	-1.65	1	1	-5	2
-DecoyR_binding	-2.64	1	1	-6	1
-JAK2_p_inhibition	-1.15	1	1	-5	2
-JAK2_phosphorylation	-0.0898	1	1	-4	3
-Kon_IL13Rec	-2.51	1	1	-6	1
-Rec_intern	-0.415	1	1	-4	3
-Rec_phosphorylation	2.76	1	1	-1	6
-Rec_recycle	-2.7	1	1	-6	1
-SOCS3_accumulation	2.84	1	1	-1	6
-SOCS3_degradation	-1.27	1	1	-5	2
-SOCS3_translation	1.19	1	1	-2	5
-SOCS3mRNA_production	-0.91	1	1	-4	3
-STAT5_phosphorylation	-1.75	1	1	-5	2
-init_Rec_i	2.15	1	1	-1	6
-pJAK2_dephosphorylation	-3.57	1	1	-7	0
-pRec_degradation	-0.6	1	1	-4	3
-pRec_intern	-0.0693	1	1	-4	3
-pSTAT5_dephosphorylation	-3.44	1	1	-7	0
-
-
+CD274mRNA_production	-1.65	1	1	-5	3
+DecoyR_binding	-2.64	1	1	-5	3
+JAK2_p_inhibition	-1.15	1	1	-5	3
+JAK2_phosphorylation	-0.0898	1	1	-5	3
+Kon_IL13Rec	-2.51	1	1	-5	3
+Rec_intern	-0.415	1	1	-5	3
+Rec_phosphorylation	2.76	1	1	-5	3
+Rec_recycle	-2.7	1	1	-5	3
+SOCS3_accumulation	2.84	1	1	-5	3
+SOCS3_degradation	-1.27	1	1	-5	3
+SOCS3_translation	1.19	1	1	-5	3
+SOCS3mRNA_production	-0.91	1	1	-5	3
+STAT5_phosphorylation	-1.75	1	1	-5	3
+init_Rec_i	2.15	1	1	-5	3
+pJAK2_dephosphorylation	-3.57	1	1	-5	3
+pRec_degradation	-0.6	1	1	-5	3
+pRec_intern	-0.0693	1	1	-5	3
+pSTAT5_dephosphorylation	-3.44	1	1	-5	3

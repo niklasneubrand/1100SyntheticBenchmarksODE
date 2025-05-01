@@ -73,24 +73,22 @@ pro_EGFR	"(6.8190e+04)"
 
 
 PARAMETERS
-EGFR_turnover	-2.93	1	1	-6	1
-init_Akt	-1.45	1	1	-5	2
-init_EGFR	7.51	1	1	4	11
-init_S6	2	1	1	-1	5
-reaction_1_k1	-2.47	1	1	-6	1
-reaction_1_k2	-2.46	1	1	-6	1
-reaction_2_k1	-3.1	1	1	-7	0
-reaction_2_k2	4.86	1	1	1	8
-reaction_3_k1	-0.144	1	1	-4	3
-reaction_4_k1	-1.7	1	1	-5	2
-reaction_5_k1	-5.27	1	1	-9	-2
-reaction_5_k2	-3.44	1	1	-7	0
-reaction_6_k1	-5.06	1	1	-9	-2
-reaction_7_k1	-1.89	1	1	-5	2
-reaction_8_k1	-2.8	1	1	-6	1
-reaction_9_k1	-1.46	1	1	-5	2
-scaleFactor_pAkt	1.54	1	1	-2	5
-scaleFactor_pEGFR	-7.5	1	1	-11	-4
-scaleFactor_pS6	4.71	1	1	1	8
-
-
+EGFR_turnover	-2.93	1	1	-8	8
+init_Akt	-1.45	1	1	-8	8
+init_EGFR	7.51	1	1	-8	8
+init_S6	2	1	1	-8	8
+reaction_1_k1	-2.47	1	1	-8	8
+reaction_1_k2	-2.46	1	1	-8	8
+reaction_2_k1	-3.1	1	1	-8	8
+reaction_2_k2	4.86	1	1	-8	8
+reaction_3_k1	-0.144	1	1	-8	8
+reaction_4_k1	-1.7	1	1	-8	8
+reaction_5_k1	-5.27	1	1	-8	8
+reaction_5_k2	-3.44	1	1	-8	8
+reaction_6_k1	-5.06	1	1	-8	8
+reaction_7_k1	-1.89	1	1	-8	8
+reaction_8_k1	-2.8	1	1	-8	8
+reaction_9_k1	-1.46	1	1	-8	8
+scaleFactor_pAkt	1.54	1	1	-8	8
+scaleFactor_pEGFR	-7.5	1	1	-8	8
+scaleFactor_pS6	4.71	1	1	-8	8

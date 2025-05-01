@@ -68,8 +68,8 @@ boundRanges = range([lb; ub]);
 boundIncreaseFactor = 0.1;
 lbViolated = p<lb & qDynamic;
 ubViolated = p>ub & qDynamic;
-lb(lbViolated) = lb(lbViolated) - boundIncreaseFactor*boundRanges(lbViolated);
-ub(ubViolated) = ub(ubViolated) + boundIncreaseFactor*boundRanges(ubViolated);
+lb(lbViolated) = p(lbViolated) - boundIncreaseFactor*boundRanges(lbViolated);
+ub(ubViolated) = p(ubViolated) + boundIncreaseFactor*boundRanges(ubViolated);
 
 % round again because of the violation fix
 lb = round(lb, 2, 'significant');

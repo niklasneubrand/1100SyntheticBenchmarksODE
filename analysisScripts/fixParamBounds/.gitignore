@@ -1,0 +1,5 @@
+# ignore log files
+fixAllParamBounds_*.log
+
+# ignore report files
+report_fixBounds_*.mat
