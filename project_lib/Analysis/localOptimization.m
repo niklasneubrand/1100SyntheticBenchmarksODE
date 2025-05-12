@@ -8,7 +8,8 @@ arguments
     config.eq_tol = 1e-10
     config.maxsteps = 1e5
     config.add_c = 80
-    config.OptimMaxIter = 1000
+    config.OptimMaxIter = 1e4
+    config.OptimTolFun = 0
 end
 
 diary(sprintf('%s.log', saveName))
@@ -37,6 +38,7 @@ ar.config.maxsteps = config.maxsteps;
 % optimizer settings
 ar.config.add_c = config.add_c;
 ar.config.optim.MaxIter = config.OptimMaxIter;
+ar.config.optim.TolFun = config.OptimTolFun;
 
 % number of cores and threads
 arSetParallelThreads();

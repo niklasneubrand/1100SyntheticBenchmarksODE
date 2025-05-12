@@ -14,6 +14,8 @@ arguments
     d2dConfig.eq_rtol (1,1) double = 1e-8
     d2dConfig.maxsteps (1,1) double = 1e4
     d2dConfig.add_c (1,1) double = 50
+    d2dConfig.atolV (1,1) double = 0
+    d2dConfig.atolV_Sens (1,1) double = 0
 end
 
 % name-value pairs for optimizer configs in ar.config.optim (relevant subset)
