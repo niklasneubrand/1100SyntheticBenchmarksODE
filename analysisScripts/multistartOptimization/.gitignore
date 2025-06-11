@@ -1,0 +1,5 @@
+# ignore log files
+multistartOptimization*_Apply2Projects_*.log
+
+# ignore report files
+apply2ProjectsReport__multistartOptimization*__*.mat

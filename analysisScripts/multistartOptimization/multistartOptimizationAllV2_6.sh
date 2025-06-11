@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # save name for Results folder
-save_name="multistartOptimization_V1"
+save_name="multistartOptimizationV2_6"
+
+# configs
+configs="'atol', 1e-8, 'rtol', 1e-8, 'maxsteps', 1e5, 'add_c', 80, 'MaxIter', 1e5"
 
 # Directory containing the synthetic benchmark folders
 base_dir="$(pwd)/../../SyntheticBenchmarks"
@@ -19,7 +22,7 @@ for template_dir in "$base_dir"/*/; do
         log_file="${save_name}_Apply2Projects_${folder_name}.log"
 
         # Run the fits in background and create log file
-        nohup matlab-R2021a -r "multistartOptimizationMulti('$template_dir', 'Final', '$save_name'); exit;" > $log_file 2>&1 &
+        nohup matlab-R2021a -r "multistartOptimizationMulti('$template_dir', 'CompiledProject', '$save_name', 100, 1, $configs); exit;" > $log_file 2>&1 &
         sleep 5  # add a small delay to avoid overwhelming the system
     fi
 done
@@ -31,7 +34,7 @@ fast2Dir="$(pwd)/../../RS_IMBI/fast2_V2"
 slow2Dir="$(pwd)/../../RS_IMBI/slow2_V2"
 
 echo "Processing directory: $fast2Dir"
-nohup matlab-R2021a -r "multistartOptimizationMulti('$fast2Dir', 'normal', '$save_name'); exit;" > $log_file_fast2 2>&1 &
+nohup matlab-R2021a -r "multistartOptimizationMulti('$fast2Dir', 'normal', '$save_name', 100, 1, $configs); exit;" > $log_file_fast2 2>&1 &
 sleep 5  # add a small delay to avoid overwhelming the system
 echo "Processing directory: $slow2Dir"
-nohup matlab-R2021a -r "multistartOptimizationMulti('$slow2Dir', 'normal', '$save_name'); exit;" > $log_file_slow2 2>&1 &
+nohup matlab-R2021a -r "multistartOptimizationMulti('$slow2Dir', 'normal', '$save_name', 100, 1, $configs); exit;" > $log_file_slow2 2>&1 &
