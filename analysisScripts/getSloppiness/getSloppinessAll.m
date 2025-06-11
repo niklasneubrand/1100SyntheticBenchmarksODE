@@ -7,13 +7,13 @@
 % - minlog10HessEigen: minimum log10 of normalized eigenvalues of Hessian in local optimum
 % - qSloppy: true if the model is sloppy, false otherwise
 
-mainLog = 'getSloppinessAll.log';
-diary(mainLog);
+function getSloppinessAll(loadName, zeroThreshold, sloppyThreshold)
 
-%% OPTIONS
-loadNames = {'localOptimization_V2', 'localOptimization_V3'};
-zeroThreshold = -12;
-sloppyThreshold = -6;
+arguments
+    loadName (1,1) string = "localOptimizationV2_4";
+    zeroThreshold (1,1) double = -12;
+    sloppyThreshold (1,1) double = -6;
+end
 
 % initialize the realistic simulations package
 realDir = fullfile(pwd(), '..', '..');
@@ -41,7 +41,7 @@ for i = 1:length(d2dProjectFolders)
     % load the model and calculate the sloppiness
     try
         cd(subDir);
-        sloppyTable = calcSloppiness(loadNames, ... 
+        sloppyTable = calcSloppiness(loadName, ... 
             zeroThreshold=zeroThreshold, ...
             sloppyThreshold=sloppyThreshold);
     catch ME
@@ -62,7 +62,7 @@ end
 
 % save the table of all results
 cd(startDir);
-outputName = 'allSloppinessTab';
+outputName = sprintf('allSloppinessTab_%s', loadName);
 save(outputName, 'allSloppinessTab');
 
-diary('off')
+end
