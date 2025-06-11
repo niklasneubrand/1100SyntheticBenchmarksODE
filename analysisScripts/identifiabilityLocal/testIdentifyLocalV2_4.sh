@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # save name for Results folder
-save_name="testIdentifyLocal_V1"
-loadNames="{'localOptimization_V2', 'localOptimization_V3'}"
+save_name="testIdentifyLocalV2_4"
+loadNames="{'localOptimizationV2_4'}"
 
 # Directory containing the synthetic benchmark folders
 base_dir="$(pwd)/../../SyntheticBenchmarks"
