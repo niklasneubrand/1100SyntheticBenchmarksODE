@@ -7,6 +7,11 @@ fprintf('importing individual results tables...\t');
 feats = open('../getAllRSFeats/allProjectFeats.mat');
 problemFeautures = feats.allFeatures;
 
+% Read file with times and errors
+timesErrors = open('../getTimesAndErrors/allTimesErrors.mat');
+timesErrors = timesErrors.allTimesErrors;
+timesErrors.templateName = [];
+
 % Read file with identifyability test
 ident = open('../identifiabilityLocal/allIdentifyResults_V2_2.mat');
 identifyResults = ident.allIdentifyResults;
@@ -35,11 +40,16 @@ fprintf('merging tables...\t');
 merged1 = outerjoin(problemFeautures, identifyResults, 'Keys', 'projectName', ...
     'MergeKeys', true, 'Type', 'full');
 
-merged2 = outerjoin(merged1, sloppyResults, 'Keys', 'projectName', ...
+merged2 = outerjoin(merged1, timesErrors, 'Keys', 'projectName', ...
     'MergeKeys', true, 'Type', 'full');
 
-finalMerged = outerjoin(merged2, lhsResults, 'Keys', 'projectName', ...
+merged3 = outerjoin(merged2, sloppyResults, 'Keys', 'projectName', ...
     'MergeKeys', true, 'Type', 'full');
+
+merged4 = outerjoin(merged3, lhsResults, 'Keys', 'projectName', ...
+    'MergeKeys', true, 'Type', 'full');
+
+finalMerged = merged4;
 
 fprintf('done.\n');
 
