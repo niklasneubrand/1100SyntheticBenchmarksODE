@@ -27,7 +27,25 @@ meanUniqueTime = mean(unique(allTimes));
 
 % get Time units
 timeUnit = string(ar.model.tUnits{2});
+if strcmp(timeUnit, 'n/a')
+    % I check this: all missings are in minutes
+    timeUnit = "min";
+end
 
+% transform time to minutes if necessary
+if strcmp(timeUnit, 's')
+    allTimes = allTimes / 60;  % convert seconds to minutes
+    medTime = medTime / 60;
+    meanTime = meanTime / 60;
+    medUniqueTime = medUniqueTime / 60;
+    meanUniqueTime = meanUniqueTime / 60;
+elseif strcmp(timeUnit, 'h')
+    allTimes = allTimes * 60;  % convert hours to minutes
+    medTime = medTime * 60;
+    meanTime = meanTime * 60;
+    medUniqueTime = medUniqueTime * 60;
+    meanUniqueTime = meanUniqueTime * 60;
+end
 
 %% get relative errors
 try
@@ -53,8 +71,8 @@ for d = 1:length(ar.model.data)
 
     % handle log and linear fitting
     qLog10 = logical(ar.model.data(d).logfitting);
-    relErr(:, qLog10) = yStd(:, qLog10);
-    relErr(:, ~qLog10) = yStd(:, ~qLog10) ./ yExp(:, ~qLog10);
+    relErr(:, qLog10) = abs(yStd(:, qLog10));
+    relErr(:, ~qLog10) = abs(yStd(:, ~qLog10) ./ yExp(:, ~qLog10));
 
     % remove empty data entries and flatten the data
     relErr(noData) = [];
