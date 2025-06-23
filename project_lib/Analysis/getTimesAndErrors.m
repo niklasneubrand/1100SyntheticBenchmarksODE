@@ -25,6 +25,9 @@ meanTime = mean(allTimes);
 medUniqueTime = median(unique(allTimes));
 meanUniqueTime = mean(unique(allTimes));
 
+% get Time units
+timeUnit = string(ar.model.tUnits{2});
+
 
 %% get relative errors
 arSimu(1,0,1)
@@ -72,6 +75,7 @@ output.medTime = medTime;
 output.meanTime = meanTime;
 output.medUniqueTime = medUniqueTime;
 output.meanUniqueTime = meanUniqueTime;
+output.timeUnit = timeUnit;
 
 output.medError = medError;
 output.meanError = meanError;
