@@ -30,7 +30,11 @@ timeUnit = string(ar.model.tUnits{2});
 
 
 %% get relative errors
-arSimu(1,0,1)
+try
+    arSimu(1,0,1)
+catch ME
+    fprintf("Error during simulation: %s\n", ME.message);
+end
 
 allErrors = [];
 for d = 1:length(ar.model.data)
