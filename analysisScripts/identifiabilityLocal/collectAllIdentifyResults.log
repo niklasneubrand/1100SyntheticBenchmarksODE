@@ -15,6 +15,13 @@ Website & bug report: http://www.data2dynamics.org
 Copyright 2016 D2D Development Team. All rights reserved.
 
 Clearing old D2D mex files from memory  [OK]
+[Warning: There is a newer version available on github! Please check
+http://www.data2dynamics.org for updates or run "arUpdateD2D".] 
+[> In arCheckVersion (line 50)
+In arInit>arInitMain (line 58)
+In arInit (line 17)
+In initRealisticBenchmarks (line 9)
+In collectAllIdentifyResults (line 4)] 
 Processing project Becker_Science2010:	done
 Processing project Beer_MolBiosyst2014:	done
 Processing project Boehm_JProteomeRes2014:	done
@@ -714,7 +721,7 @@ Processing project Lucarelli_RS24:	done
 Processing project Lucarelli_RS25:	done
 Processing project Lucarelli_RS26:	done
 Processing project Lucarelli_RS27:	done
-Processing project Lucarelli_RS28:	results file resultsIdentifyLocal__Lucarelli_RS28.mat not found
+Processing project Lucarelli_RS28:	done
 Processing project Lucarelli_RS29:	done
 Processing project Lucarelli_RS30:	done
 Processing project Lucarelli_RS31:	done
@@ -723,19 +730,19 @@ Processing project Lucarelli_RS33:	done
 Processing project Lucarelli_RS34:	done
 Processing project Lucarelli_RS35:	done
 Processing project Lucarelli_RS36:	done
-Processing project Lucarelli_RS37:	results file resultsIdentifyLocal__Lucarelli_RS37.mat not found
+Processing project Lucarelli_RS37:	done
 Processing project Lucarelli_RS38:	done
 Processing project Lucarelli_RS39:	done
 Processing project Lucarelli_RS40:	done
 Processing project Lucarelli_RS41:	done
-Processing project Lucarelli_RS42:	results file resultsIdentifyLocal__Lucarelli_RS42.mat not found
-Processing project Lucarelli_RS43:	results file resultsIdentifyLocal__Lucarelli_RS43.mat not found
+Processing project Lucarelli_RS42:	done
+Processing project Lucarelli_RS43:	done
 Processing project Lucarelli_RS44:	error: All tables being vertically concatenated must have the same number of variables.
-Processing project Lucarelli_RS45:	results file resultsIdentifyLocal__Lucarelli_RS45.mat not found
-Processing project Lucarelli_RS46:	results file resultsIdentifyLocal__Lucarelli_RS46.mat not found
-Processing project Lucarelli_RS47:	error: All tables being vertically concatenated must have the same number of variables.
-Processing project Lucarelli_RS48:	error: All tables being vertically concatenated must have the same number of variables.
-Processing project Lucarelli_RS49:	error: All tables being vertically concatenated must have the same number of variables.
+Processing project Lucarelli_RS45:	done
+Processing project Lucarelli_RS46:	done
+Processing project Lucarelli_RS47:	done
+Processing project Lucarelli_RS48:	done
+Processing project Lucarelli_RS49:	done
 Processing project Lucarelli_RS50:	error: All tables being vertically concatenated must have the same number of variables.
 Processing project Merkle_RS01:	done
 Processing project Merkle_RS02:	done
