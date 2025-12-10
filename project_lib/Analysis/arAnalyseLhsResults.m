@@ -78,8 +78,8 @@ else
 
     % Group chi2 values into levels based on the threshold
     for i = 2:length(chi2_sorted_success)
-        % If difference to previous value exceeds threshold, start new level
-        if abs(chi2_sorted_success(i) - chi2_sorted_success(i-1)) > threshold
+        % If difference to previous level exceeds threshold, start new level
+        if abs(chi2_sorted_success(i) - levelVals(end)) > threshold
             nLevels = nLevels + 1;
             levelVals(end+1) = chi2_sorted_success(i); %#ok<AGROW>
             levelPopulation(end+1) = 1;

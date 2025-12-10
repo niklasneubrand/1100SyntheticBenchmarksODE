@@ -15,6 +15,13 @@ Website & bug report: http://www.data2dynamics.org
 Copyright 2016 D2D Development Team. All rights reserved.
 
 Clearing old D2D mex files from memory  [OK]
+[Warning: There is a newer version available on github! Please check
+http://www.data2dynamics.org for updates or run "arUpdateD2D".] 
+[> In arCheckVersion (line 50)
+In arInit>arInitMain (line 58)
+In arInit (line 17)
+In initRealisticBenchmarks (line 9)
+In getTimesAndErrorsAll (line 6)] 
 processing project Becker_Science2010:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
@@ -7429,6 +7436,9 @@ In arLoad (line 49)
 In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
+The following error was reported during thread evaluation: Error code -3 in module CVODES and function CVode:
+At t = 177.859 and h = 5.38174e-05, the error test failed repeatedly or with |h| = hmin.
+Error during simulation: cvodes failed at CV_ERR_FAILURE for model 1, condition 3. Trying arCheckSimu could be an option. 
 processing project Hass_RS32:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
@@ -7498,7 +7508,10 @@ In arLoad (line 49)
 In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
-The following error was reported during thread evaluation: WARNING, check for concentrations <= 0processing project Hass_RS38:	[Warning: Unable to save path to file
+The following error was reported during thread evaluation: WARNING, check for concentrations <= 0The following error was reported during thread evaluation: Error code -3 in module CVODES and function CVode:
+At t = 218.455 and h = 4.01629e-05, the error test failed repeatedly or with |h| = hmin.
+Error during simulation: cvodes failed at CV_ERR_FAILURE for model 1, condition 3. Trying arCheckSimu could be an option. 
+processing project Hass_RS38:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
 specifies the full path. For MATLAB to use that path in future sessions, save
@@ -7556,6 +7569,9 @@ In arLoad (line 49)
 In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
+The following error was reported during thread evaluation: Error code -3 in module CVODES and function CVode:
+At t = 147.364 and h = 0.000148427, the error test failed repeatedly or with |h| = hmin.
+Error during simulation: cvodes failed at CV_ERR_FAILURE for model 1, condition 3. Trying arCheckSimu could be an option. 
 processing project Hass_RS43:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
@@ -8886,7 +8902,7 @@ In arLoad (line 49)
 In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
-The following error was reported during thread evaluation: WARNING, check for concentrations <= 0processing project Merkle_RS12:	[Warning: Unable to save path to file
+The following error was reported during thread evaluation: WARNING, check for concentrations <= 0The following error was reported during thread evaluation: WARNING, check for concentrations <= 0processing project Merkle_RS12:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
 specifies the full path. For MATLAB to use that path in future sessions, save
@@ -8908,7 +8924,7 @@ In arLoad (line 49)
 In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
-The following error was reported during thread evaluation: WARNING, check for concentrations <= 0processing project Merkle_RS14:	[Warning: Unable to save path to file
+The following error was reported during thread evaluation: WARNING, check for concentrations <= 0The following error was reported during thread evaluation: WARNING, check for concentrations <= 0processing project Merkle_RS14:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
 specifies the full path. For MATLAB to use that path in future sessions, save
@@ -11022,7 +11038,7 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 2741.12, mxstep steps taken before reaching tout.
+At t = 2717.84, mxstep steps taken before reaching tout.
 Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 49. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS05:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
@@ -11036,8 +11052,8 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 658.346, mxstep steps taken before reaching tout.
-Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 60. Trying arCheckSimu could be an option. 
+At t = 368.451, mxstep steps taken before reaching tout.
+Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 63. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS06:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
 to a different location by calling SAVEPATH with an input argument that
@@ -11083,7 +11099,7 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 2385.16, mxstep steps taken before reaching tout.
+At t = 1664.26, mxstep steps taken before reaching tout.
 Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 60. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS10:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
@@ -11097,7 +11113,7 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 2127.01, mxstep steps taken before reaching tout.
+At t = 2153.65, mxstep steps taken before reaching tout.
 Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 63. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS11:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
@@ -11365,7 +11381,7 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 1832.09, mxstep steps taken before reaching tout.
+At t = 1821.17, mxstep steps taken before reaching tout.
 Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 60. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS34:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
@@ -11401,7 +11417,7 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 1422.02, mxstep steps taken before reaching tout.
+At t = 1396.63, mxstep steps taken before reaching tout.
 Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 47. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS37:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
@@ -11536,7 +11552,7 @@ In arLoadLatest (line 78)
 In getTimesAndErrorsAll (line 33)] 
 workspace loaded from file CompiledProject
 The following error was reported during thread evaluation: Error code -1 in module CVODES and function CVode:
-At t = 1426.04, mxstep steps taken before reaching tout.
+At t = 1827.87, mxstep steps taken before reaching tout.
 Error during simulation: cvodes failed at CV_TOO_MUCH_WORK for model 1, condition 47. Trying arCheckSimu could be an option. 
 processing project Sobotta_RS49:	[Warning: Unable to save path to file
 '/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path

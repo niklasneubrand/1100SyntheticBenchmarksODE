@@ -31,6 +31,12 @@ multistart = open('../multistartOptimization/allMultistartTab_multistartOptimiza
 lhsResults = multistart.allMultistartTab;
 lhsResults.templateName = [];
 
+% read file with local optimization results
+localOpt = open('../localOptimizationV2/localFitResultsV2_2.mat');
+localFit = localOpt.localFitResultsV2_2;
+localFit.loadSuccess = [];
+
+
 fprintf('done.\n');
 
 
@@ -49,7 +55,10 @@ merged3 = outerjoin(merged2, sloppyResults, 'Keys', 'projectName', ...
 merged4 = outerjoin(merged3, lhsResults, 'Keys', 'projectName', ...
     'MergeKeys', true, 'Type', 'full');
 
-finalMerged = merged4;
+merged5 = outerjoin(merged4, localFit, 'Keys', 'projectName', ...
+    'MergeKeys', true, 'Type', 'full');
+
+finalMerged = merged5;
 
 fprintf('done.\n');
 

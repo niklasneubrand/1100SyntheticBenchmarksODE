@@ -30,7 +30,14 @@ for i = 1:length(d2dProjectFolders)
     % load the model and analyze the multistart results
     try
         cd(subDir);
-        multistartTable = analyseMultistart(loadName, chi2Threshold);
+        try
+            error('force recalculateing lhs analysis');
+            load(sprintf('%s.mat', loadName), 'multistartTable');
+            fprintf("loaded existing multistart results...\t");
+        catch
+            fprintf("analyzing multistart...\t");
+            multistartTable = analyseMultistart(loadName, chi2Threshold);
+        end
     catch ME
         fprintf("error: %s\n", ME.message);
         continue

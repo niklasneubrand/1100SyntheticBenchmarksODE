@@ -47,9 +47,10 @@ elseif strcmp(timeUnit, 'h')
     meanUniqueTime = meanUniqueTime * 60;
 end
 
-%% get relative errors
+%% get relative errors (based on experimental data and errors [if available])
 try
     arSimu(1,0,1)
+    arSimu(1,1,1)
 catch ME
     fprintf("Error during simulation: %s\n", ME.message);
 end
@@ -81,11 +82,46 @@ for d = 1:length(ar.model.data)
 end
 
 % statistics of the relative errors
-medError = median(allErrors);
-meanError = mean(allErrors);
+medErrorExp = median(allErrors);
+meanErrorExp = mean(allErrors);
 
-medLog10Err = median(log10(allErrors));
-meanLog10Err = mean(log10(allErrors));
+medLog10ErrExp = median(log10(allErrors));
+meanLog10ErrExp = mean(log10(allErrors));
+
+%% get relative errors (based on simulated data and errors)
+
+allErrors = [];
+for d = 1:length(ar.model.data)
+
+    % get simulated data
+    ySimu = ar.model.data(d).yExpSimu;
+    noData = isnan(ySimu);
+
+    % get standard deviations (measured and simulated)
+    yStd = ar.model.data(d).yExpStd;
+    noExpErrors = isnan(yStd);
+    yStd(noExpErrors) = ar.model.data(d).ystdExpSimu(noExpErrors);
+
+    % calculate relative errors
+    relErr = NaN(size(ySimu));
+
+    % handle log and linear fitting
+    qLog10 = logical(ar.model.data(d).logfitting);
+    relErr(:, qLog10) = abs(yStd(:, qLog10));
+    relErr(:, ~qLog10) = abs(yStd(:, ~qLog10) ./ ySimu(:, ~qLog10));
+
+    % remove empty data entries and flatten the data
+    relErr(noData) = [];
+    relErr = relErr(:);
+    allErrors = [allErrors; relErr];
+end
+
+% statistics of the relative errors
+medErrorSimu = median(allErrors);
+meanErrorSimu = mean(allErrors);
+
+medLog10ErrSimu = median(log10(allErrors));
+meanLog10ErrSimu = mean(log10(allErrors));
 
 %% create output table
 output = struct();
@@ -99,10 +135,15 @@ output.medUniqueTime = medUniqueTime;
 output.meanUniqueTime = meanUniqueTime;
 output.timeUnit = timeUnit;
 
-output.medError = medError;
-output.meanError = meanError;
-output.medLog10Err = medLog10Err;
-output.meanLog10Err = meanLog10Err;
+output.medErrorExp = medErrorExp;
+output.meanErrorExp = meanErrorExp;
+output.medLog10ErrExp = medLog10ErrExp;
+output.meanLog10ErrExp = meanLog10ErrExp;
+
+output.medErrorSimu = medErrorSimu;
+output.meanErrorSimu = meanErrorSimu;
+output.medLog10ErrSimu = medLog10ErrSimu;
+output.meanLog10ErrSimu = meanLog10ErrSimu;
 
 output = struct2table(output);
 

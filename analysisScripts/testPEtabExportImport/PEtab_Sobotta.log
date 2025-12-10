@@ -1,0 +1,106 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021a Update 8 (9.10.0.2198249) 64-bit (glnxa64)
+                             February 15, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 226)
+In arLoad (line 49)
+In arLoadLatest (line 78)
+In testPEtabExportImport (line 9)] 
+workspace loaded from file 20250414T140337_normal
+-2*log(L) = -3244.42, 2220 data points, 260 free parameters, data chi^2 = 2209.15
+-2*log(L) = -3244.42, 2220 data points, 260 free parameters, data chi^2 = 2209.15
+Deactivating Bessel correction...
+-2*log(L) = -3417.57, 2220 data points, 260 free parameters, data chi^2 = 2036
+Fontconfig warning: "/etc/fonts/fonts.conf", line 82: unknown element "blank"
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+[Warning: Unknown unit %, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: Unknown unit au, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: Unknown unit mumol/l, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: Unknown unit ng/ml, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: Unknown unit nmol/l, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: Unknown unit on/off, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+Document written
+
+str =
+
+  1x1 cell array
+
+    {0x0 char}
+
+{Matrix index is out of range for deletion.
+
+Error in sym/privsubsasgn (line 1151)
+                L_tilde2 =
+                builtin('subsasgn',L_tilde,struct('type','()','subs',{varargin}),R_tilde);
+
+Error in sym/subsasgn (line 972)
+            C = privsubsasgn(L,R,inds{:});
+
+Error in arSym (line 47)
+                    s(i) = arSym(str{i});
+
+Error in arExportPEtab>@(x)string(arSym(x)) (line 91)
+condT = array2table(arrayfun(@(x) string(arSym(x)), condT{:,:}),
+"VariableNames", condT.Properties.VariableNames);
+
+Error in arExportPEtab>writeConditionsTable (line 91)
+condT = array2table(arrayfun(@(x) string(arSym(x)), condT{:,:}),
+"VariableNames", condT.Properties.VariableNames);
+
+Error in arExportPEtab (line 47)
+    IDs = writeConditionsTable(m, IDs);
+
+Error in testPEtabExportImport (line 14)
+arExportPEtab();
+} 

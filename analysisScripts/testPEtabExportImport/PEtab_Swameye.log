@@ -1,0 +1,86 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021a Update 8 (9.10.0.2198249) 64-bit (glnxa64)
+                             February 15, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 226)
+In arLoad (line 49)
+In arLoadLatest (line 78)
+In testPEtabExportImport (line 9)] 
+workspace loaded from file 20241107T143137_arCompileAllSetups_normal
+-2*log(L) = -126.841, 46 data points, 16 free parameters, data chi^2 = 56.0812
+-2*log(L) = -126.841, 46 data points, 16 free parameters, data chi^2 = 56.0812
+Deactivating Bessel correction...
+-2*log(L) = -142.69, 46 data points, 16 free parameters, data chi^2 = 40.2322
+[Warning: Model conditions are not independet and will be represented
+incorrectly in SBML. Consider using "arRenameModelCondPars" to get independent
+model parameters and conditions.] 
+[> In arExportSBML_FullModel (line 36)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+Fontconfig warning: "/etc/fonts/fonts.conf", line 82: unknown element "blank"
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+[Warning: Spline functions are not supported as d2d export, yet!\n] 
+[> In arExportSBML_FullModel>GetInputs (line 720)
+In arExportSBML_FullModel (line 63)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+Found cubic interpolation spline with 10 anchors! Proceeding with export 
+[Warning: The spline will be re-fitted via a MATLAB function! The result might
+diverge slightly from the C function implemented in D2D and thus lead to
+different results when loading the SBML file! \n] 
+[> In arExportSBML_FullModel>GetInputs (line 870)
+In arExportSBML_FullModel (line 63)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: All data points with NaNs or Infs in their site or value will be
+ignored.] 
+[> In chckxywp (line 70)
+In csape>csape1 (line 173)
+In csape (line 163)
+In arExportSBML_FullModel>GetInputs (line 887)
+In arExportSBML_FullModel (line 63)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+{Index in position 1 exceeds array bounds (must not exceed 4).
+
+Error in arExportSBML_FullModel>GetInputs (line 988)
+                        M.event(ixevent).eventAssignment(js).math =
+                        mat2str(pp.coefs(jh,js-1));
+
+Error in arExportSBML_FullModel (line 63)
+    [M] = GetInputs(M,F,m);
+
+Error in arExportSBML (line 34)
+           arExportSBML_FullModel(i,name);
+
+Error in arExportPEtab (line 33)
+    arExportSBML(name);
+
+Error in testPEtabExportImport (line 14)
+arExportPEtab();
+} 

@@ -1,0 +1,717 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+             R2021a Update 8 (9.10.0.2198249) 64-bit (glnxa64)
+                             February 15, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory  [OK]
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 226)
+In arLoad (line 49)
+In arLoadLatest (line 78)
+In testPEtabExportImport (line 9)] 
+workspace loaded from file 20241107T232951_normal
+-2*log(L) = 3453.32, 1755 data points, 84 free parameters, data chi^2 = 2166.91
+-2*log(L) = 3453.32, 1755 data points, 84 free parameters, data chi^2 = 2166.91
+Deactivating Bessel correction...
+-2*log(L) = 3364.42, 1755 data points, 84 free parameters, data chi^2 = 2078.01
+Fontconfig warning: "/etc/fonts/fonts.conf", line 82: unknown element "blank"
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+[Warning: Unknown unit nmol/l, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+[Warning: Unknown unit ratio, may be incorrectly parsed to SBML] 
+[> In arExportSBML_FullModel>GetUnitDefinitions (line 344)
+In arExportSBML_FullModel (line 65)
+In arExportSBML (line 34)
+In arExportPEtab (line 33)
+In testPEtabExportImport (line 14)] 
+Document written
+PEtab/Lucarelli_CellSystems2017_conditions.tsv written for model 1
+PEtab/Lucarelli_CellSystems2017_observables.tsv written for model 1
+PEtab/Lucarelli_CellSystems2017_measurements.tsv written for model 1
+PEtab/Lucarelli_CellSystems2017_parameters.tsv written
+PEtab/Lucarelli_CellSystems2017.yaml written
+-2*log(L) = 3364.42, 1755 data points, 84 free parameters, data chi^2 = 2078.01
+[Warning: Ignoring extra legend entries.] 
+[> In legend>process_inputs (line 587)
+In legend>make_legend (line 315)
+In legend (line 259)
+In arPlotFullPage (line 91)
+In testPEtabExportImport (line 15)] 
+[Warning: Ignoring extra legend entries.] 
+[> In legend>process_inputs (line 587)
+In legend>make_legend (line 315)
+In legend (line 259)
+In arPlotFullPage (line 91)
+In testPEtabExportImport (line 15)] 
+ar struct already contains a model. Re-initializing d2d.
+[Warning: Unable to save path to file
+'/dsk/localall/MATLAB/R2021a/toolbox/local/pathdef.m'. You can save your path
+to a different location by calling SAVEPATH with an input argument that
+specifies the full path. For MATLAB to use that path in future sessions, save
+the path to 'pathdef.m' in your MATLAB startup folder.] 
+[> In savepath (line 179)
+In arCheck (line 226)
+In arInit>arInitMain (line 28)
+In arInit (line 17)
+In arImportPEtab (line 18)
+In testPEtabExportImport (line 17)] 
+Data 2 Dynamics Software
+(arFramework3, def-version 3, c-version code_190517c)
+Website & bug report: http://www.data2dynamics.org
+Copyright 2016 D2D Development Team. All rights reserved.
+
+Clearing old D2D mex files from memory . [OK]
+Import .yaml file with name: PEtab/Lucarelli_CellSystems2017.yaml
+Specified tEnd
+Setup.m already available in the working directory.
+Model definition file created.
+If loading via Setup.m does not work, try to solve issues by adapting the def files by hand.
+The following issues might occur:
+ - In SBML, compartements are often used as a kind of annotation and not for considering volume factors. Then compartement (should) have the same volumes. In D2D, a reaction of compounds located in different compartements might cause an error.
+ - Non-standard function, e.g. something like "stepfunction()", which are not available in C have to be replaced or implemented properly.
+ - The time axis (termed "PREDICTOR") might not assigned properly. Replace the respective variables properly.
+loading model #1, from file Models/Lucarelli_CellSystems2017_model.def...
+Path to the data files
+
+loading data #1, from file DataPEtab/D01_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2.def...
+loading data #1, from file DataPEtab/D01_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2.xls...
+	            S23IP_S2 ->    2 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+	         S23IP_tS2_1 ->    2 data-points assigned
+	         S23IP_tS3_1 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	          S4IP_tS4_1 ->    1 data-points assigned
+Path to the data files
+
+loading data #2, from file DataPEtab/D02_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2.def...
+loading data #2, from file DataPEtab/D02_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2.xls...
+	            S23IP_S2 ->    2 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+	         S23IP_tS2_1 ->    2 data-points assigned
+	         S23IP_tS3_1 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	          S4IP_tS4_1 ->    1 data-points assigned
+Path to the data files
+
+loading data #3, from file DataPEtab/D03_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2.def...
+loading data #3, from file DataPEtab/D03_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2.xls...
+	            S23IP_S2 ->    2 data-points assigned
+	            S23IP_S3 ->    2 data-points assigned
+	           S23IP_pS2 ->    2 data-points assigned
+	           S23IP_pS3 ->    2 data-points assigned
+	          S23IP_ppS2 ->    2 data-points assigned
+	          S23IP_ppS3 ->    2 data-points assigned
+	         S23IP_tS2_1 ->    2 data-points assigned
+	         S23IP_tS3_1 ->    2 data-points assigned
+	           S23IP_tS4 ->    2 data-points assigned
+	             S2IP_S2 ->    2 data-points assigned
+	             S2IP_S3 ->    1 data-points assigned
+	            S2IP_pS2 ->    2 data-points assigned
+	            S2IP_pS3 ->    1 data-points assigned
+	           S2IP_ppS2 ->    2 data-points assigned
+	           S2IP_ppS3 ->    1 data-points assigned
+	            S2IP_tS2 ->    2 data-points assigned
+	            S2IP_tS3 ->    2 data-points assigned
+	            S2IP_tS4 ->    2 data-points assigned
+	             S3IP_S2 ->    1 data-points assigned
+	             S3IP_S3 ->    1 data-points assigned
+	            S3IP_pS2 ->    1 data-points assigned
+	            S3IP_pS3 ->    1 data-points assigned
+	           S3IP_ppS2 ->    1 data-points assigned
+	           S3IP_ppS3 ->    1 data-points assigned
+	            S3IP_tS2 ->    1 data-points assigned
+	            S3IP_tS3 ->    1 data-points assigned
+	            S3IP_tS4 ->    1 data-points assigned
+	            S4IP_tS2 ->    1 data-points assigned
+	            S4IP_tS3 ->    1 data-points assigned
+	          S4IP_tS4_1 ->    1 data-points assigned
+Path to the data files
+
+loading data #4, from file DataPEtab/D04_MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5.def...
+loading data #4, from file DataPEtab/D04_MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5.xls...
+	            S23IP_S2 ->   19 data-points assigned
+	            S23IP_S3 ->   13 data-points assigned
+	           S23IP_pS2 ->   19 data-points assigned
+	           S23IP_pS3 ->   13 data-points assigned
+	          S23IP_ppS2 ->   19 data-points assigned
+	          S23IP_ppS3 ->   13 data-points assigned
+Path to the data files
+
+loading data #5, from file DataPEtab/D05_MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1.def...
+loading data #5, from file DataPEtab/D05_MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1.xls...
+	         S23IP_tS2_3 ->   18 data-points assigned
+	          S4IP_tS4_2 ->   18 data-points assigned
+Path to the data files
+
+loading data #6, from file DataPEtab/D06_MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10.def...
+loading data #6, from file DataPEtab/D06_MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10.xls...
+	         S23IP_tS2_2 ->   13 data-points assigned
+	         S23IP_tS3_2 ->   13 data-points assigned
+Path to the data files
+
+loading data #7, from file DataPEtab/D07_PL_PN_TGFbR_hepa16_nExpID11.def...
+loading data #7, from file DataPEtab/D07_PL_PN_TGFbR_hepa16_nExpID11.xls...
+	               TGFbR ->    7 data-points assigned
+Path to the data files
+
+loading data #8, from file DataPEtab/D08_gene_expression_OE_nExpID100.def...
+loading data #8, from file DataPEtab/D08_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	              Cxcl15 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	              Dnmt3a ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Dusp5 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                 Jun ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Klf10 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Pdk4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                 Ski ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Skil ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	               Smad7 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Sox4 ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+	                Tgfa ->   14 data-points assigned for log-fitting (0 values <=0 removed, 1 NaN values removed)
+Path to the data files
+
+loading data #9, from file DataPEtab/D09_gene_expression_OE_nExpID100.def...
+loading data #9, from file DataPEtab/D09_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #10, from file DataPEtab/D10_gene_expression_OE_nExpID100.def...
+loading data #10, from file DataPEtab/D10_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #11, from file DataPEtab/D11_gene_expression_OE_nExpID100.def...
+loading data #11, from file DataPEtab/D11_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #12, from file DataPEtab/D12_gene_expression_OE_nExpID100.def...
+loading data #12, from file DataPEtab/D12_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   15 data-points assigned for log-fitting
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #13, from file DataPEtab/D13_gene_expression_OE_nExpID100.def...
+loading data #13, from file DataPEtab/D13_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #14, from file DataPEtab/D14_gene_expression_OE_nExpID100.def...
+loading data #14, from file DataPEtab/D14_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #15, from file DataPEtab/D15_gene_expression_OE_nExpID100.def...
+loading data #15, from file DataPEtab/D15_gene_expression_OE_nExpID100.xls...
+	                Bmp4 ->   15 data-points assigned for log-fitting
+	              Cxcl15 ->   15 data-points assigned for log-fitting
+	              Dnmt3a ->   15 data-points assigned for log-fitting
+	               Dusp5 ->   15 data-points assigned for log-fitting
+	                 Jun ->   10 data-points assigned for log-fitting (0 values <=0 removed, 5 NaN values removed)
+	               Klf10 ->   15 data-points assigned for log-fitting
+	                Pdk4 ->   15 data-points assigned for log-fitting
+	                 Ski ->   15 data-points assigned for log-fitting
+	                Skil ->   15 data-points assigned for log-fitting
+	               Smad7 ->   15 data-points assigned for log-fitting
+	                Sox4 ->   15 data-points assigned for log-fitting
+	                Tgfa ->   15 data-points assigned for log-fitting
+Path to the data files
+
+loading data #16, from file DataPEtab/D16_MSPL2_complexes_all_hepa16_time_course_nExpID6.def...
+loading data #16, from file DataPEtab/D16_MSPL2_complexes_all_hepa16_time_course_nExpID6.xls...
+	             S2IP_S2 ->    3 data-points assigned
+	            S2IP_pS2 ->    3 data-points assigned
+	           S2IP_ppS2 ->    3 data-points assigned
+	            S2IP_tS2 ->    3 data-points assigned
+	            S2IP_tS3 ->    3 data-points assigned
+	            S2IP_tS4 ->    3 data-points assigned
+	            S3IP_tS2 ->    6 data-points assigned
+	            S3IP_tS3 ->    6 data-points assigned
+	            S3IP_tS4 ->    6 data-points assigned
+	            S4IP_tS2 ->    6 data-points assigned
+	            S4IP_tS3 ->    6 data-points assigned
+	          S4IP_tS4_1 ->    6 data-points assigned
+
+calculating model m1, Lucarelli_CellSystems2017_model...
+calculating condition m1 c1, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c1, Lucarelli_CellSystems2017_model...
+calculating condition m1 c2, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c2, Lucarelli_CellSystems2017_model...
+calculating condition m1 c3, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c3, Lucarelli_CellSystems2017_model...
+calculating condition m1 c4, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c4, Lucarelli_CellSystems2017_model...
+calculating condition m1 c5, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c5, Lucarelli_CellSystems2017_model...
+calculating condition m1 c6, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c6, Lucarelli_CellSystems2017_model...
+calculating condition m1 c7, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c7, Lucarelli_CellSystems2017_model...
+calculating condition m1 c8, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c8, Lucarelli_CellSystems2017_model...
+calculating condition m1 c9, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c9, Lucarelli_CellSystems2017_model...
+calculating condition m1 c10, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c10, Lucarelli_CellSystems2017_model...
+calculating condition m1 c11, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c11, Lucarelli_CellSystems2017_model...
+calculating condition m1 c12, Lucarelli_CellSystems2017_model...
+ -> writing condition m1 c12, Lucarelli_CellSystems2017_model...
+calculating data m1 d1 -> c1, D01_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+ -> writing data m1 d1 -> c1, D01_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d2 -> c2, D02_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+ -> writing data m1 d2 -> c2, D02_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d3 -> c3, D03_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+ -> writing data m1 d3 -> c3, D03_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2...
+calculating data m1 d4 -> c3, D04_MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5...
+ -> writing data m1 d4 -> c3, D04_MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5...
+calculating data m1 d5 -> c1, D05_MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1...
+ -> writing data m1 d5 -> c1, D05_MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1...
+calculating data m1 d6 -> c3, D06_MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10...
+ -> writing data m1 d6 -> c3, D06_MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10...
+calculating data m1 d7 -> c1, D07_PL_PN_TGFbR_hepa16_nExpID11...
+ -> writing data m1 d7 -> c1, D07_PL_PN_TGFbR_hepa16_nExpID11...
+calculating data m1 d8 -> c4, D08_gene_expression_OE_nExpID100...
+ -> writing data m1 d8 -> c4, D08_gene_expression_OE_nExpID100...
+calculating data m1 d9 -> c5, D09_gene_expression_OE_nExpID100...
+ -> writing data m1 d9 -> c5, D09_gene_expression_OE_nExpID100...
+calculating data m1 d10 -> c6, D10_gene_expression_OE_nExpID100...
+ -> writing data m1 d10 -> c6, D10_gene_expression_OE_nExpID100...
+calculating data m1 d11 -> c7, D11_gene_expression_OE_nExpID100...
+ -> writing data m1 d11 -> c7, D11_gene_expression_OE_nExpID100...
+calculating data m1 d12 -> c8, D12_gene_expression_OE_nExpID100...
+ -> writing data m1 d12 -> c8, D12_gene_expression_OE_nExpID100...
+calculating data m1 d13 -> c9, D13_gene_expression_OE_nExpID100...
+ -> writing data m1 d13 -> c9, D13_gene_expression_OE_nExpID100...
+calculating data m1 d14 -> c10, D14_gene_expression_OE_nExpID100...
+ -> writing data m1 d14 -> c10, D14_gene_expression_OE_nExpID100...
+calculating data m1 d15 -> c11, D15_gene_expression_OE_nExpID100...
+ -> writing data m1 d15 -> c11, D15_gene_expression_OE_nExpID100...
+calculating data m1 d16 -> c12, D16_MSPL2_complexes_all_hepa16_time_course_nExpID6...
+ -> writing data m1 d16 -> c12, D16_MSPL2_complexes_all_hepa16_time_course_nExpID6...
+
+linking model...
+linking time points...
+linking parameters...
+Automatic plotting disabled for model 1. Please use arPlotter for plotting.
+requesting 24 thread(s) for 12 task(s) on 12 core(s).
+request exceeds number of tasks, reset requested threads to 12.
+Compiling files...
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(SuiteSparse_config.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_analyze.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_analyze_given.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_defaults.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_diagnostics.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_dump.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_extract.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_factor.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_free_numeric.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_free_symbolic.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_kernel.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_memory.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_refactor.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_scale.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_solve.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_sort.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(klu_tsolve.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_1.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_2.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_aat.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_control.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_defaults.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_dump.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_global.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_info.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_order.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_post_tree.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_postorder.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_preprocess.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(amd_valid.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(btf_maxtrans.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(btf_order.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(btf_strongcomp.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(colamd.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling KLU(colamd_global.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_band.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_bandpre.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_bbdpre.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_direct.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_dense.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_klu.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_sparse.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_diag.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodea.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_io.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodea_io.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_spils.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_spbcgs.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_spgmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(cvodes_sptfqmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_band.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_dense.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_sparse.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_iterative.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_nvector.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_direct.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_spbcgs.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_spgmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_sptfqmr.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(sundials_math.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling CVODES(nvector_serial.o)...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling input functions...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c1, Lucarelli_CellSystems2017_model_5CDAAA0E23DE02F8CB80E7FF67184B02.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c2, Lucarelli_CellSystems2017_model_91DC9D97142C7CFE86B3BFC7CBCE5F3F.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c3, Lucarelli_CellSystems2017_model_DBA300AF1BCC48B05F1E1606F4AF81D9.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c4, Lucarelli_CellSystems2017_model_D0E7A4605A717A75D8ECE7A8B5E9FFCE.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c5, Lucarelli_CellSystems2017_model_3E78B38A26D69F0FC3F910235F2ACE76.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c6, Lucarelli_CellSystems2017_model_A6CAC00323E225E224DA1D152AA8AD37.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c7, Lucarelli_CellSystems2017_model_FD56461B0835B6BB44C0DCAFE9BE3F83.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c8, Lucarelli_CellSystems2017_model_BAEB2A6CD3DA77ED674CD147C3F06816.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c9, Lucarelli_CellSystems2017_model_3F7070020D8943FB353BE0507C027408.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c10, Lucarelli_CellSystems2017_model_2B54CE55D0D3006D7D8DC4D2E4F2413F.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c11, Lucarelli_CellSystems2017_model_AAEC76E01F40FE0B23B0CB2369D98AEB.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling condition m1 c12, Lucarelli_CellSystems2017_model_5E5CE507C60201B36C3D8365628B1C65.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d1, D01_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2_0D831B2D856A75EFAD5A922116222616.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d2, D02_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2_C2BC30527DEF3925ED0250585037E83E.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d3, D03_MSPL2_complexes_all_hepa16_no_single_complex_nExpID2_0AFD9C47F7AD903E8E42E54F15AAF1FA.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d4, D04_MSPL2_PL_hepa16_pS2_pS3_time_course_nExpID5_5BA5D843AC32E26E17635F8CF35828E5.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d5, D05_MSPL2_PL_PN_molecules_per_cell_hepa16_nExpID1_2A559143848768B3617B41D5FC025AB0.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d6, D06_MSPL2_PL_PN_molecules_per_cell_hepa16_ratios_nExpID10_030708E3F0E191A7FBDCF98E94A942D2.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d7, D07_PL_PN_TGFbR_hepa16_nExpID11_5E1624553A04ED457533E76C0E8CA8F8.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d8, D08_gene_expression_OE_nExpID100_800524D3509C511CD53E387061383DAC.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d9, D09_gene_expression_OE_nExpID100_BC9AED2B7C89A0A0B50764EBCFE54AC4.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d10, D10_gene_expression_OE_nExpID100_660358EC5416DE28C35FBB8469E10137.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d11, D11_gene_expression_OE_nExpID100_AA4A6FD332E5453E1FFD017796D5FD2A.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d12, D12_gene_expression_OE_nExpID100_0F3969A569AE9DC5E9C35AEBE747C53C.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d13, D13_gene_expression_OE_nExpID100_45FB2E20004607AC74CCAAB0539F84B6.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d14, D14_gene_expression_OE_nExpID100_D51B13508BE2C5DCF41BD3F5B9F7351F.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d15, D15_gene_expression_OE_nExpID100_35306047BB8A8BE28A3530312D316B87.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling data m1 d16, D16_MSPL2_complexes_all_hepa16_time_course_nExpID6_B970E608EA90DDF7078AD585AF16B396.c...done
+Building with 'gcc'.
+MEX completed successfully.
+compiling and linking arSimuCalcFun_E8649F7A1DABAA9FE9E3A6EBD699D70A...done
+
+linking model...
+linking time points...
+linking parameters...
+0 input events assigned!
+[Warning: arLink overwrites parameter values by the default ar.pExtern defined
+in the def file.] 
+[> In arLink (line 612)
+In arFindInputs (line 165)
+In arImportPEtab (line 114)
+In arImportPEtab (line 79)
+In testPEtabExportImport (line 17)] 
+-2*log(L) = 3453.32, 1755 data points, 84 free parameters, data chi^2 = 2166.91
+-2*log(L) = 3453.32, 1755 data points, 84 free parameters, data chi^2 = 2166.91
+Merit before export: 3453.319369
+Merit after import: 3453.319429
