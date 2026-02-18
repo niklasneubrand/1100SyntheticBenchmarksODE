@@ -36,7 +36,7 @@ nSTAT5          C   "nM"      "conc."    nuc
 
 INPUTS
 // pEpoR           C   "au"      "conc."   "spline_pos5(t, 0.0, sp1, 5.0, sp2, 10.0, sp3, 20.0, sp4, 60.0, sp5, 0, 0.0)"
-pEpoR           C   "au"      "conc."   "spline_pos10(t, 0.0, sp1, 5.0, sp2, 10.0, sp3, 20.0, sp4, 60.0, sp5, t6, spEq, t7, spEq, t8, spEq, t9, spEq, t10, spEq, 0, 0.0)"
+pEpoR           C   "au"      "conc."   "spline_pos10(t, 0.0, sp1, 5.0, sp2, 10.0, sp3, 20.0, sp4, 60.0, sp5, 80, 1e-5, 100, 1e-5, 120, 1e-5, 140, 1e-5, 160, 1e-5, 0, 0.0)"
 
 
 REACTIONS
@@ -74,12 +74,6 @@ init_npSTAT_npSTAT	"(0)"
 init_pSTAT	"(0)"
 init_pSTAT_pSTAT	"(0)"
 p2	"(p2 / init_STAT)"
-spEq	"(1e-5)"
-t10	"(160)"
-t6	"(80)"
-t7	"(100)"
-t8	"(120)"
-t9	"(140)"
 
 
 PARAMETERS
@@ -93,3 +87,4 @@ sp2	-0.237	1	1	-5	3
 sp3	0.191	1	1	-5	3
 sp4	-0.491	1	1	-5	3
 sp5	-4.12	1	1	-5	3
+
