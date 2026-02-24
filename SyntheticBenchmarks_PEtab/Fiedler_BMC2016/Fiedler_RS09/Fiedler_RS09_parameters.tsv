@@ -1,0 +1,25 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ERK_total	ERK_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+K_1	K_1	log10	1e-05	1000	1.81970085860998e-05	1	parameterScaleUniform	
+K_2	K_2	log10	1e-05	1000	3.03389118419427	1	parameterScaleUniform	
+K_3	K_3	log10	1e-05	1000	1.13266113807679	1	parameterScaleUniform	
+MEK_total	MEK_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+RAF_total	RAF_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+k10	k10	log10	1e-05	100000	0.0141253754462275	1	parameterScaleUniform	
+k11	k11	log10	1e-05	100000	93.3254300796991	1	parameterScaleUniform	
+k2	k2	log10	1e-05	100000	0.695024317588797	1	parameterScaleUniform	
+k3	k3	log10	1e-05	100000	407.380277804113	1	parameterScaleUniform	
+k4	k4	log10	1e-05	100000	5.16416369272071	1	parameterScaleUniform	
+k5	k5	log10	1e-05	100000	257.039578276886	1	parameterScaleUniform	
+k6	k6	log10	1e-05	100000	2.29614864811236	1	parameterScaleUniform	
+offset1_RAF_Obs	offset1_RAF_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset2_RAF_Obs	offset2_RAF_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset3_RAF_Obs	offset3_RAF_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+scale1_RAF_Obs	scale1_RAF_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_RAF_Obs	scale2_RAF_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_RAF_Obs	scale3_RAF_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_RAF_Obs	sd1_RAF_Obs	log10	0.0001	10	0.0674217467576244	1	parameterScaleUniform	
+sd2_RAF_Obs	sd2_RAF_Obs	log10	0.0001	10	0.0666346314469357	1	parameterScaleUniform	
+sd3_RAF_Obs	sd3_RAF_Obs	log10	0.0001	10	0.0683754188933792	1	parameterScaleUniform	
+tau1	tau1	log10	1e-08	100000000	0.125892541179417	1	parameterScaleUniform	
+tau2	tau2	log10	1e-08	100000000	0.0288403150312661	1	parameterScaleUniform	

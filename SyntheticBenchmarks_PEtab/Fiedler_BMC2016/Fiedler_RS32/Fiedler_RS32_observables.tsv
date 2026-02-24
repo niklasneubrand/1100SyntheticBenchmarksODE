@@ -1,0 +1,10 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	RAF + pMEK + pRAF	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	RAF + pMEK + pRAF	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	RAF + pMEK + pRAF	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	ERK + pMEK + pRAF	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	ERK + pMEK + pRAF	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	ERK + pMEK + pRAF	lin	sd3_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	ERK + pERK + pMEK	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	ERK + pERK + pMEK	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	ERK + pERK + pMEK	lin	sd3_Compound_3_Obs	normal

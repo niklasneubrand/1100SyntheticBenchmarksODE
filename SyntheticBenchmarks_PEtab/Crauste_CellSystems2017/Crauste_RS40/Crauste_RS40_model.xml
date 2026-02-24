@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Crauste_RS40">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Naive" name="Naive" compartment="default" initialConcentration="1" substanceUnits="number" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="EarlyEffector" name="EarlyEffector" compartment="default" initialConcentration="1" substanceUnits="number" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="LateEffector" name="LateEffector" compartment="default" initialConcentration="1" substanceUnits="number" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Memory" name="Memory" compartment="default" initialConcentration="1" substanceUnits="number" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Pathogen" name="Pathogen" compartment="default" initialConcentration="1" substanceUnits="number" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="delta_EL" name="delta_EL" value="0.944278279364479" constant="true"/>
+      <parameter id="delta_LM" name="delta_LM" value="0.0117489755493953" constant="true"/>
+      <parameter id="delta_NE" name="delta_NE" value="0.0234422881531992" constant="true"/>
+      <parameter id="init_EarlyEffector" name="init_EarlyEffector" constant="true"/>
+      <parameter id="init_LateEffector" name="init_LateEffector" constant="true"/>
+      <parameter id="init_Memory" name="init_Memory" constant="true"/>
+      <parameter id="init_Naive" name="init_Naive" constant="true"/>
+      <parameter id="init_Pathogen" name="init_Pathogen" constant="true"/>
+      <parameter id="mu_EE" name="mu_EE" value="2.34422881531992e-05" constant="true"/>
+      <parameter id="mu_LE" name="mu_LE" value="6.30957344480194e-11" constant="true"/>
+      <parameter id="mu_LL" name="mu_LL" value="5.88843655355588e-06" constant="true"/>
+      <parameter id="mu_N" name="mu_N" value="0.39719154946944" constant="true"/>
+      <parameter id="mu_P" name="mu_P" value="1.51356124843621e-05" constant="true"/>
+      <parameter id="mu_PE" name="mu_PE" value="1.94984459975804e-10" constant="true"/>
+      <parameter id="mu_PL" name="mu_PL" value="3.63412616064223e-05" constant="true"/>
+      <parameter id="rho_E" name="rho_E" value="0.792501330480472" constant="true"/>
+      <parameter id="rho_P" name="rho_P" value="0.221309470960564" constant="true"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="Naive">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 8090 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="EarlyEffector">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="LateEffector">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Memory">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Pathogen">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 1 </cn>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Naive" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Naive </ci>
+              <ci> mu_N </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Naive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="EarlyEffector" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pathogen"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Naive </ci>
+              <ci> Pathogen </ci>
+              <ci> delta_NE </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfProducts>
+          <speciesReference species="EarlyEffector" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EarlyEffector"/>
+          <modifierSpeciesReference species="Pathogen"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EarlyEffector </ci>
+              <ci> Pathogen </ci>
+              <ci> rho_E </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EarlyEffector" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <ci> EarlyEffector </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <ci> mu_EE </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EarlyEffector" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="LateEffector" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EarlyEffector </ci>
+              <ci> delta_EL </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="LateEffector" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <ci> LateEffector </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <ci> mu_LL </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="LateEffector" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EarlyEffector"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EarlyEffector </ci>
+              <ci> LateEffector </ci>
+              <ci> mu_LE </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="LateEffector" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Memory" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> LateEffector </ci>
+              <ci> delta_LM </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v9_v_8" name="v_8" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Pathogen" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pathogen"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <ci> Pathogen </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <ci> rho_P </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v10_v_9" name="v_9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Pathogen" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EarlyEffector"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EarlyEffector </ci>
+              <ci> Pathogen </ci>
+              <ci> mu_PE </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v11_v_10" name="v_10" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Pathogen" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="LateEffector"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> LateEffector </ci>
+              <ci> Pathogen </ci>
+              <ci> mu_PL </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v12_v_11" name="v_11" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Pathogen" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Pathogen </ci>
+              <ci> mu_P </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

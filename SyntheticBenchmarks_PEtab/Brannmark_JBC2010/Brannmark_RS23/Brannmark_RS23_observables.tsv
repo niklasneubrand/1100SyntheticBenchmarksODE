@@ -1,0 +1,14 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IRS_Obs	IRS_Obs	offset1_IRS_Obs + IRS*scale1_IRS_Obs	log10	sd1_IRS_Obs	normal
+IRSiP_Obs_1	IRSiP_Obs	IRSiP	log10	sd1_IRSiP_Obs	normal
+IRSiP_Obs_2	IRSiP_Obs	IRSiP	log10	sd2_IRSiP_Obs	normal
+IRSiP_Obs_3	IRSiP_Obs	IRSiP	log10	sd3_IRSiP_Obs	normal
+IRiP_Obs_1	IRiP_Obs	offset1_IRiP_Obs + IRiP*scale1_IRiP_Obs	log10	sd1_IRiP_Obs	normal
+IRiP_Obs_2	IRiP_Obs	offset2_IRiP_Obs + IRiP*scale2_IRiP_Obs	log10	sd2_IRiP_Obs	normal
+IRiP_Obs_3	IRiP_Obs	offset3_IRiP_Obs + IRiP*scale3_IRiP_Obs	log10	sd3_IRiP_Obs	normal
+IRp_Obs_1	IRp_Obs	offset1_IRp_Obs + IRp*scale1_IRp_Obs	log10	sd1_IRp_Obs	normal
+IRp_Obs_2	IRp_Obs	offset2_IRp_Obs + IRp*scale2_IRp_Obs	log10	sd2_IRp_Obs	normal
+IRp_Obs_3	IRp_Obs	offset3_IRp_Obs + IRp*scale3_IRp_Obs	log10	sd3_IRp_Obs	normal
+XX_Obs_1	XX_Obs	offset1_XX_Obs + XX*scale1_XX_Obs	log10	sd1_XX_Obs	normal
+XX_Obs_2	XX_Obs	offset2_XX_Obs + XX*scale2_XX_Obs	log10	sd2_XX_Obs	normal
+XX_Obs_3	XX_Obs	offset3_XX_Obs + XX*scale3_XX_Obs	log10	sd3_XX_Obs	normal

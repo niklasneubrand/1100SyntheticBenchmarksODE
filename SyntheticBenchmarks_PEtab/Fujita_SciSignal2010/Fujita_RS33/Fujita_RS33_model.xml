@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Fujita_RS33">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="Cell" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="EGFR" name="EGFR" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pEGFR" name="pEGFR" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pEGFR_Akt" name="pEGFR_Akt" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Akt" name="Akt" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pAkt" name="pAkt" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="S6" name="S6" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pAkt_S6" name="pAkt_S6" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pS6" name="pS6" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="EGF_EGFR" name="EGF_EGFR" compartment="Cell" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="EGFR_turnover" name="EGFR_turnover" value="0.00218776162394955" constant="true"/>
+      <parameter id="EGF_conc_impulse" name="EGF_conc_impulse" constant="true"/>
+      <parameter id="EGF_conc_ramp" name="EGF_conc_ramp" constant="true"/>
+      <parameter id="EGF_conc_step" name="EGF_conc_step" constant="true"/>
+      <parameter id="init_Akt" name="init_Akt" value="0.0398107170553497" constant="true"/>
+      <parameter id="init_EGFR" name="init_EGFR" value="42657951.8801593" constant="true"/>
+      <parameter id="init_EGF_EGFR" name="init_EGF_EGFR" constant="true"/>
+      <parameter id="init_S6" name="init_S6" value="316.227766016838" constant="true"/>
+      <parameter id="init_pAkt" name="init_pAkt" constant="true"/>
+      <parameter id="init_pAkt_S6" name="init_pAkt_S6" constant="true"/>
+      <parameter id="init_pEGFR" name="init_pEGFR" constant="true"/>
+      <parameter id="init_pEGFR_Akt" name="init_pEGFR_Akt" constant="true"/>
+      <parameter id="init_pS6" name="init_pS6" constant="true"/>
+      <parameter id="pro_EGFR" name="pro_EGFR" constant="true"/>
+      <parameter id="pulse_time" name="pulse_time" constant="true"/>
+      <parameter id="ramp_time" name="ramp_time" constant="true"/>
+      <parameter id="reaction_1_k1" name="reaction_1_k1" value="0.00407380277804113" constant="true"/>
+      <parameter id="reaction_1_k2" name="reaction_1_k2" value="0.00398107170553497" constant="true"/>
+      <parameter id="reaction_2_k1" name="reaction_2_k1" value="0.00147910838816821" constant="true"/>
+      <parameter id="reaction_2_k2" name="reaction_2_k2" value="104712.85480509" constant="true"/>
+      <parameter id="reaction_3_k1" name="reaction_3_k1" value="0.288403150312661" constant="true"/>
+      <parameter id="reaction_4_k1" name="reaction_4_k1" value="0.0389045144994281" constant="true"/>
+      <parameter id="reaction_5_k1" name="reaction_5_k1" value="2.88403150312661e-06" constant="true"/>
+      <parameter id="reaction_5_k2" name="reaction_5_k2" value="0.000436515832240166" constant="true"/>
+      <parameter id="reaction_6_k1" name="reaction_6_k1" value="8.51138038202376e-06" constant="true"/>
+      <parameter id="reaction_7_k1" name="reaction_7_k1" value="0.0229086765276777" constant="true"/>
+      <parameter id="reaction_8_k1" name="reaction_8_k1" value="0.000676082975391982" constant="true"/>
+      <parameter id="reaction_9_k1" name="reaction_9_k1" value="0.0446683592150963" constant="true"/>
+      <parameter id="scaleFactor_pAkt" name="scaleFactor_pAkt" value="83.1763771102671" constant="true"/>
+      <parameter id="scaleFactor_pEGFR" name="scaleFactor_pEGFR" value="5.75439937337157e-08" constant="true"/>
+      <parameter id="scaleFactor_pS6" name="scaleFactor_pS6" value="144543.977074593" constant="true"/>
+      <parameter id="EGF" name="EGF" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="pro_EGFR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="e-notation"> 6.819 <sep/> 4 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="EGFR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_EGFR </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pEGFR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pEGFR_Akt">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Akt">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_Akt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pAkt">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="S6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_S6 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pAkt_S6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pS6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="EGF_EGFR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="EGF">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> EGF_conc_step </ci>
+            <apply>
+              <times/>
+              <ci> EGF_conc_impulse </ci>
+              <piecewise>
+                <piece>
+                  <cn type="integer"> 0 </cn>
+                  <apply>
+                    <lt/>
+                    <apply>
+                      <minus/>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                      <ci> pulse_time </ci>
+                    </apply>
+                    <cn type="integer"> 0 </cn>
+                  </apply>
+                </piece>
+                <otherwise>
+                  <cn type="integer"> 1 </cn>
+                </otherwise>
+              </piecewise>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> EGF_conc_ramp </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              </apply>
+              <ci> ramp_time </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="v1_reaction_1" name="reaction_1" reversible="true">
+        <listOfReactants>
+          <speciesReference species="EGFR" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="EGF_EGFR" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EGF_EGFR"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> EGF </ci>
+                  <ci> EGFR </ci>
+                  <ci> reaction_1_k1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> EGF_EGFR </ci>
+                  <ci> reaction_1_k2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_reaction_2" name="reaction_2" reversible="true">
+        <listOfReactants>
+          <speciesReference species="pEGFR" stoichiometry="1"/>
+          <speciesReference species="Akt" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pEGFR_Akt" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pEGFR_Akt"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Akt </ci>
+                  <ci> pEGFR </ci>
+                  <ci> reaction_2_k1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> pEGFR_Akt </ci>
+                  <ci> reaction_2_k2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_reaction_3" name="reaction_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pEGFR_Akt" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pEGFR" stoichiometry="1"/>
+          <speciesReference species="pAkt" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> pEGFR_Akt </ci>
+              <ci> reaction_3_k1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_reaction_4" name="reaction_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pEGFR" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> pEGFR </ci>
+              <ci> reaction_4_k1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_reaction_5" name="reaction_5" reversible="true">
+        <listOfReactants>
+          <speciesReference species="pAkt" stoichiometry="1"/>
+          <speciesReference species="S6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAkt_S6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pAkt_S6"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> S6 </ci>
+                  <ci> pAkt </ci>
+                  <ci> reaction_5_k1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> pAkt_S6 </ci>
+                  <ci> reaction_5_k2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_reaction_6" name="reaction_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAkt_S6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAkt" stoichiometry="1"/>
+          <speciesReference species="pS6" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> pAkt_S6 </ci>
+              <ci> reaction_6_k1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_reaction_7" name="reaction_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAkt" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Akt" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> pAkt </ci>
+              <ci> reaction_7_k1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_reaction_8" name="reaction_8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pS6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S6" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> pS6 </ci>
+              <ci> reaction_8_k1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v9_reaction_9" name="reaction_9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EGF_EGFR" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pEGFR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> EGF_EGFR </ci>
+              <ci> reaction_9_k1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v10_reaction_10" name="reaction_10" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EGFR" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> EGFR </ci>
+              <ci> EGFR_turnover </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v11_reaction_11" name="reaction_11" reversible="false">
+        <listOfProducts>
+          <speciesReference species="EGFR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Cell </ci>
+              <ci> EGFR_turnover </ci>
+              <ci> pro_EGFR </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

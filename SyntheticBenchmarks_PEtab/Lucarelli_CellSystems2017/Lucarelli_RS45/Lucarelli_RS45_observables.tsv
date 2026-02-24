@@ -1,0 +1,56 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	S2_S4_S4 + TGFb + TGFb_pRec + geneD + ppS2_ppS3_ppS3	lin	sd8_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	TGFb_pRec + geneF + pS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2	lin	sd8_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd5_Compound_3_Obs	normal
+Compound_3_Obs_6	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd6_Compound_3_Obs	normal
+Compound_3_Obs_7	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd7_Compound_3_Obs	normal
+Compound_3_Obs_8	Compound_3_Obs	S2 + geneA + geneE + geneI + pS2	lin	sd8_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd3_Compound_4_Obs	normal
+Compound_4_Obs_4	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd4_Compound_4_Obs	normal
+Compound_4_Obs_5	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd5_Compound_4_Obs	normal
+Compound_4_Obs_6	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd6_Compound_4_Obs	normal
+Compound_4_Obs_7	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd7_Compound_4_Obs	normal
+Compound_4_Obs_8	Compound_4_Obs	S4 + S2_S4_S4 + ppS2 + ppS2_ppS2_ppS2 + ppS2_ppS2_ppS3	lin	sd8_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd3_Compound_5_Obs	normal
+Compound_5_Obs_4	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd4_Compound_5_Obs	normal
+Compound_5_Obs_5	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd5_Compound_5_Obs	normal
+Compound_5_Obs_6	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd6_Compound_5_Obs	normal
+Compound_5_Obs_7	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd7_Compound_5_Obs	normal
+Compound_5_Obs_8	Compound_5_Obs	ppS2 + ppS3 + ppS2_ppS3_S4 + ppS2_ppS2_ppS2 + ppS2_ppS3_ppS3	lin	sd8_Compound_5_Obs	normal
+Rec_Obs	Rec_Obs	Rec	lin	sd1_Rec_Obs	normal
+TGFb_Obs_1	TGFb_Obs	TGFb	lin	sd1_TGFb_Obs	normal
+TGFb_Obs_2	TGFb_Obs	TGFb	lin	sd2_TGFb_Obs	normal
+TGFb_Obs_3	TGFb_Obs	TGFb	lin	sd3_TGFb_Obs	normal
+geneF_Obs_1	geneF_Obs	geneF	lin	sd1_geneF_Obs	normal
+geneF_Obs_2	geneF_Obs	geneF	lin	sd2_geneF_Obs	normal
+geneF_Obs_3	geneF_Obs	geneF	lin	sd3_geneF_Obs	normal
+geneL_Obs_1	geneL_Obs	geneL	lin	sd1_geneL_Obs	normal
+geneL_Obs_2	geneL_Obs	geneL	lin	sd2_geneL_Obs	normal
+geneL_Obs_3	geneL_Obs	geneL	lin	sd3_geneL_Obs	normal
+geneL_Obs_4	geneL_Obs	geneL	lin	sd4_geneL_Obs	normal
+geneL_Obs_5	geneL_Obs	geneL	lin	sd5_geneL_Obs	normal
+geneL_Obs_6	geneL_Obs	geneL	lin	sd6_geneL_Obs	normal
+geneL_Obs_7	geneL_Obs	geneL	lin	sd7_geneL_Obs	normal
+geneL_Obs_8	geneL_Obs	geneL	lin	sd8_geneL_Obs	normal

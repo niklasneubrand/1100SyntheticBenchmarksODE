@@ -1,0 +1,14 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+Epo_degradation_BaF3	Epo_degradation_BaF3	log10	1e-05	100000	0.0295120922666639	1	parameterScaleUniform	
+k_exp_hetero	k_exp_hetero	log10	1e-05	100000	1.81970085860998e-05	1	parameterScaleUniform	
+k_exp_homo	k_exp_homo	log10	1e-05	100000	0.00426579518801593	1	parameterScaleUniform	
+k_imp_hetero	k_imp_hetero	log10	1e-05	100000	0.0190546071796325	1	parameterScaleUniform	
+k_imp_homo	k_imp_homo	log10	1e-05	100000	74131.0241300918	1	parameterScaleUniform	
+k_phos	k_phos	log10	1e-05	100000	20417.3794466953	1	parameterScaleUniform	
+offset1_pBpB_Obs	offset1_pBpB_Obs	log10	1e-11	1e-07	1e-09	1	parameterScaleUniform	
+ratio	ratio	lin	-5	5	0.693	0	parameterScaleUniform	
+scale1_nucpApB_Obs	scale1_nucpApB_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_pBpB_Obs	scale1_pBpB_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_nucpApB_Obs	sd1_nucpApB_Obs	log10	0.001	100	0.152117787456503	1	parameterScaleUniform	
+sd1_pApB_Obs	sd1_pApB_Obs	log10	0.001	100	0.172997568852687	1	parameterScaleUniform	
+sd1_pBpB_Obs	sd1_pBpB_Obs	log10	0.001	100	0.151520013376635	1	parameterScaleUniform	

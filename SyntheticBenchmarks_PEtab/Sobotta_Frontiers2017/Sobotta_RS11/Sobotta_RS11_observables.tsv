@@ -1,0 +1,167 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_10_Obs_01	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd10_Compound_10_Obs	normal
+Compound_10_Obs_02	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd11_Compound_10_Obs	normal
+Compound_10_Obs_03	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd12_Compound_10_Obs	normal
+Compound_10_Obs_04	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd13_Compound_10_Obs	normal
+Compound_10_Obs_05	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd14_Compound_10_Obs	normal
+Compound_10_Obs_06	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd15_Compound_10_Obs	normal
+Compound_10_Obs_07	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd16_Compound_10_Obs	normal
+Compound_10_Obs_08	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd17_Compound_10_Obs	normal
+Compound_10_Obs_09	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd18_Compound_10_Obs	normal
+Compound_10_Obs_10	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd19_Compound_10_Obs	normal
+Compound_10_Obs_11	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd1_Compound_10_Obs	normal
+Compound_10_Obs_12	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd20_Compound_10_Obs	normal
+Compound_10_Obs_13	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd21_Compound_10_Obs	normal
+Compound_10_Obs_14	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd22_Compound_10_Obs	normal
+Compound_10_Obs_15	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd23_Compound_10_Obs	normal
+Compound_10_Obs_16	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd24_Compound_10_Obs	normal
+Compound_10_Obs_17	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd25_Compound_10_Obs	normal
+Compound_10_Obs_18	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd26_Compound_10_Obs	normal
+Compound_10_Obs_19	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd27_Compound_10_Obs	normal
+Compound_10_Obs_20	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd28_Compound_10_Obs	normal
+Compound_10_Obs_21	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd29_Compound_10_Obs	normal
+Compound_10_Obs_22	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd2_Compound_10_Obs	normal
+Compound_10_Obs_23	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd30_Compound_10_Obs	normal
+Compound_10_Obs_24	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd31_Compound_10_Obs	normal
+Compound_10_Obs_25	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd32_Compound_10_Obs	normal
+Compound_10_Obs_26	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd33_Compound_10_Obs	normal
+Compound_10_Obs_27	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd34_Compound_10_Obs	normal
+Compound_10_Obs_28	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd35_Compound_10_Obs	normal
+Compound_10_Obs_29	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd36_Compound_10_Obs	normal
+Compound_10_Obs_30	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd37_Compound_10_Obs	normal
+Compound_10_Obs_31	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd38_Compound_10_Obs	normal
+Compound_10_Obs_32	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd39_Compound_10_Obs	normal
+Compound_10_Obs_33	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd3_Compound_10_Obs	normal
+Compound_10_Obs_34	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd40_Compound_10_Obs	normal
+Compound_10_Obs_35	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd41_Compound_10_Obs	normal
+Compound_10_Obs_36	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd42_Compound_10_Obs	normal
+Compound_10_Obs_37	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd4_Compound_10_Obs	normal
+Compound_10_Obs_38	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd5_Compound_10_Obs	normal
+Compound_10_Obs_39	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd6_Compound_10_Obs	normal
+Compound_10_Obs_40	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd7_Compound_10_Obs	normal
+Compound_10_Obs_41	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd8_Compound_10_Obs	normal
+Compound_10_Obs_42	Compound_10_Obs	SOCS3RNA + nSTAT3 + tpSTAT3	log10	sd9_Compound_10_Obs	normal
+Compound_11_Obs_01	Compound_11_Obs	scale10_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd10_Compound_11_Obs	normal
+Compound_11_Obs_02	Compound_11_Obs	scale11_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd11_Compound_11_Obs	normal
+Compound_11_Obs_03	Compound_11_Obs	scale12_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd12_Compound_11_Obs	normal
+Compound_11_Obs_04	Compound_11_Obs	scale1_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd1_Compound_11_Obs	normal
+Compound_11_Obs_05	Compound_11_Obs	scale2_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd2_Compound_11_Obs	normal
+Compound_11_Obs_06	Compound_11_Obs	scale3_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd3_Compound_11_Obs	normal
+Compound_11_Obs_07	Compound_11_Obs	scale4_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd4_Compound_11_Obs	normal
+Compound_11_Obs_08	Compound_11_Obs	scale5_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd5_Compound_11_Obs	normal
+Compound_11_Obs_09	Compound_11_Obs	scale6_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd6_Compound_11_Obs	normal
+Compound_11_Obs_10	Compound_11_Obs	scale7_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd7_Compound_11_Obs	normal
+Compound_11_Obs_11	Compound_11_Obs	scale8_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd8_Compound_11_Obs	normal
+Compound_11_Obs_12	Compound_11_Obs	scale9_Compound_11_Obs*(nSOCS3RNA4 + nSOCS3RNA5 + nSTAT3)	log10	sd9_Compound_11_Obs	normal
+Compound_12_Obs_01	Compound_12_Obs	offset10_Compound_12_Obs + scale10_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd10_Compound_12_Obs	normal
+Compound_12_Obs_02	Compound_12_Obs	offset11_Compound_12_Obs + scale11_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd11_Compound_12_Obs	normal
+Compound_12_Obs_03	Compound_12_Obs	offset12_Compound_12_Obs + scale12_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd12_Compound_12_Obs	normal
+Compound_12_Obs_04	Compound_12_Obs	offset1_Compound_12_Obs + scale1_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd1_Compound_12_Obs	normal
+Compound_12_Obs_05	Compound_12_Obs	offset2_Compound_12_Obs + scale2_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd2_Compound_12_Obs	normal
+Compound_12_Obs_06	Compound_12_Obs	offset3_Compound_12_Obs + scale3_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd3_Compound_12_Obs	normal
+Compound_12_Obs_07	Compound_12_Obs	offset4_Compound_12_Obs + scale4_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd4_Compound_12_Obs	normal
+Compound_12_Obs_08	Compound_12_Obs	offset5_Compound_12_Obs + scale5_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd5_Compound_12_Obs	normal
+Compound_12_Obs_09	Compound_12_Obs	offset6_Compound_12_Obs + scale6_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd6_Compound_12_Obs	normal
+Compound_12_Obs_10	Compound_12_Obs	offset7_Compound_12_Obs + scale7_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd7_Compound_12_Obs	normal
+Compound_12_Obs_11	Compound_12_Obs	offset8_Compound_12_Obs + scale8_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd8_Compound_12_Obs	normal
+Compound_12_Obs_12	Compound_12_Obs	offset9_Compound_12_Obs + scale9_Compound_12_Obs*(nSOCS3RNA1 + nSOCS3RNA2 + nSOCS3RNA3)	log10	sd9_Compound_12_Obs	normal
+Compound_13_Obs_1	Compound_13_Obs	offset1_Compound_13_Obs + scale1_Compound_13_Obs*(SOCS3RNA + nSOCS3RNA1 + nSOCS3RNA3)	log10	sd1_Compound_13_Obs	normal
+Compound_13_Obs_2	Compound_13_Obs	offset2_Compound_13_Obs + scale2_Compound_13_Obs*(SOCS3RNA + nSOCS3RNA1 + nSOCS3RNA3)	log10	sd2_Compound_13_Obs	normal
+Compound_13_Obs_3	Compound_13_Obs	offset3_Compound_13_Obs + scale3_Compound_13_Obs*(SOCS3RNA + nSOCS3RNA1 + nSOCS3RNA3)	log10	sd3_Compound_13_Obs	normal
+Compound_13_Obs_4	Compound_13_Obs	offset4_Compound_13_Obs + scale4_Compound_13_Obs*(SOCS3RNA + nSOCS3RNA1 + nSOCS3RNA3)	log10	sd4_Compound_13_Obs	normal
+Compound_13_Obs_5	Compound_13_Obs	offset5_Compound_13_Obs + scale5_Compound_13_Obs*(SOCS3RNA + nSOCS3RNA1 + nSOCS3RNA3)	log10	sd5_Compound_13_Obs	normal
+Compound_13_Obs_6	Compound_13_Obs	offset6_Compound_13_Obs + scale6_Compound_13_Obs*(SOCS3RNA + nSOCS3RNA1 + nSOCS3RNA3)	log10	sd6_Compound_13_Obs	normal
+Compound_1_Obs	Compound_1_Obs	JAK1_gp130 + STAT3 + pJAK1_gp130	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	offset2_Compound_2_Obs + scale2_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	offset3_Compound_2_Obs + scale3_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	offset4_Compound_2_Obs + scale4_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	offset5_Compound_2_Obs + scale5_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	offset6_Compound_2_Obs + scale6_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	offset7_Compound_2_Obs + scale7_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	offset8_Compound_2_Obs + scale8_Compound_2_Obs*(JAK1_gp130 + nSTAT3 + pJAK1_gp130)	log10	sd8_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(JAK1_gp130 + SOCS3RNA + pJAK1_pgp130)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(JAK1_gp130 + SOCS3RNA + pJAK1_pgp130)	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	offset3_Compound_3_Obs + scale3_Compound_3_Obs*(JAK1_gp130 + SOCS3RNA + pJAK1_pgp130)	log10	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	offset4_Compound_3_Obs + scale4_Compound_3_Obs*(JAK1_gp130 + SOCS3RNA + pJAK1_pgp130)	log10	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	offset5_Compound_3_Obs + scale5_Compound_3_Obs*(JAK1_gp130 + SOCS3RNA + pJAK1_pgp130)	log10	sd5_Compound_3_Obs	normal
+Compound_3_Obs_6	Compound_3_Obs	offset6_Compound_3_Obs + scale6_Compound_3_Obs*(JAK1_gp130 + SOCS3RNA + pJAK1_pgp130)	log10	sd6_Compound_3_Obs	normal
+Compound_4_Obs_01	Compound_4_Obs	offset10_Compound_4_Obs + scale10_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd10_Compound_4_Obs	normal
+Compound_4_Obs_02	Compound_4_Obs	offset11_Compound_4_Obs + scale11_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd11_Compound_4_Obs	normal
+Compound_4_Obs_03	Compound_4_Obs	offset12_Compound_4_Obs + scale12_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd12_Compound_4_Obs	normal
+Compound_4_Obs_04	Compound_4_Obs	offset13_Compound_4_Obs + scale13_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd13_Compound_4_Obs	normal
+Compound_4_Obs_05	Compound_4_Obs	offset14_Compound_4_Obs + scale14_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd14_Compound_4_Obs	normal
+Compound_4_Obs_06	Compound_4_Obs	offset15_Compound_4_Obs + scale15_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd15_Compound_4_Obs	normal
+Compound_4_Obs_07	Compound_4_Obs	offset16_Compound_4_Obs + scale16_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd16_Compound_4_Obs	normal
+Compound_4_Obs_08	Compound_4_Obs	offset17_Compound_4_Obs + scale17_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd17_Compound_4_Obs	normal
+Compound_4_Obs_09	Compound_4_Obs	offset18_Compound_4_Obs + scale18_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd18_Compound_4_Obs	normal
+Compound_4_Obs_10	Compound_4_Obs	offset19_Compound_4_Obs + scale19_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd19_Compound_4_Obs	normal
+Compound_4_Obs_11	Compound_4_Obs	offset1_Compound_4_Obs + scale1_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd1_Compound_4_Obs	normal
+Compound_4_Obs_12	Compound_4_Obs	offset20_Compound_4_Obs + scale20_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd20_Compound_4_Obs	normal
+Compound_4_Obs_13	Compound_4_Obs	offset21_Compound_4_Obs + scale21_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd21_Compound_4_Obs	normal
+Compound_4_Obs_14	Compound_4_Obs	offset22_Compound_4_Obs + scale22_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd22_Compound_4_Obs	normal
+Compound_4_Obs_15	Compound_4_Obs	offset23_Compound_4_Obs + scale23_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd23_Compound_4_Obs	normal
+Compound_4_Obs_16	Compound_4_Obs	offset24_Compound_4_Obs + scale24_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd24_Compound_4_Obs	normal
+Compound_4_Obs_17	Compound_4_Obs	offset25_Compound_4_Obs + scale25_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd25_Compound_4_Obs	normal
+Compound_4_Obs_18	Compound_4_Obs	offset26_Compound_4_Obs + scale26_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd26_Compound_4_Obs	normal
+Compound_4_Obs_19	Compound_4_Obs	offset27_Compound_4_Obs + scale27_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd27_Compound_4_Obs	normal
+Compound_4_Obs_20	Compound_4_Obs	offset28_Compound_4_Obs + scale28_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd28_Compound_4_Obs	normal
+Compound_4_Obs_21	Compound_4_Obs	offset29_Compound_4_Obs + scale29_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd29_Compound_4_Obs	normal
+Compound_4_Obs_22	Compound_4_Obs	offset2_Compound_4_Obs + scale2_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd2_Compound_4_Obs	normal
+Compound_4_Obs_23	Compound_4_Obs	offset30_Compound_4_Obs + scale30_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd30_Compound_4_Obs	normal
+Compound_4_Obs_24	Compound_4_Obs	offset31_Compound_4_Obs + scale31_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd31_Compound_4_Obs	normal
+Compound_4_Obs_25	Compound_4_Obs	offset32_Compound_4_Obs + scale32_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd32_Compound_4_Obs	normal
+Compound_4_Obs_26	Compound_4_Obs	offset33_Compound_4_Obs + scale33_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd33_Compound_4_Obs	normal
+Compound_4_Obs_27	Compound_4_Obs	offset34_Compound_4_Obs + scale34_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd34_Compound_4_Obs	normal
+Compound_4_Obs_28	Compound_4_Obs	offset35_Compound_4_Obs + scale35_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd35_Compound_4_Obs	normal
+Compound_4_Obs_29	Compound_4_Obs	offset36_Compound_4_Obs + scale36_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd36_Compound_4_Obs	normal
+Compound_4_Obs_30	Compound_4_Obs	offset37_Compound_4_Obs + scale37_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd37_Compound_4_Obs	normal
+Compound_4_Obs_31	Compound_4_Obs	offset38_Compound_4_Obs + scale38_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd38_Compound_4_Obs	normal
+Compound_4_Obs_32	Compound_4_Obs	offset39_Compound_4_Obs + scale39_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd39_Compound_4_Obs	normal
+Compound_4_Obs_33	Compound_4_Obs	offset3_Compound_4_Obs + scale3_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd3_Compound_4_Obs	normal
+Compound_4_Obs_34	Compound_4_Obs	offset40_Compound_4_Obs + scale40_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd40_Compound_4_Obs	normal
+Compound_4_Obs_35	Compound_4_Obs	offset41_Compound_4_Obs + scale41_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd41_Compound_4_Obs	normal
+Compound_4_Obs_36	Compound_4_Obs	offset42_Compound_4_Obs + scale42_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd42_Compound_4_Obs	normal
+Compound_4_Obs_37	Compound_4_Obs	offset4_Compound_4_Obs + scale4_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd4_Compound_4_Obs	normal
+Compound_4_Obs_38	Compound_4_Obs	offset5_Compound_4_Obs + scale5_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd5_Compound_4_Obs	normal
+Compound_4_Obs_39	Compound_4_Obs	offset6_Compound_4_Obs + scale6_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd6_Compound_4_Obs	normal
+Compound_4_Obs_40	Compound_4_Obs	offset7_Compound_4_Obs + scale7_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd7_Compound_4_Obs	normal
+Compound_4_Obs_41	Compound_4_Obs	offset8_Compound_4_Obs + scale8_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd8_Compound_4_Obs	normal
+Compound_4_Obs_42	Compound_4_Obs	offset9_Compound_4_Obs + scale9_Compound_4_Obs*(JAK1_gp130 + nSOCS3RNA5 + nSTAT3)	log10	sd9_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	offset1_Compound_5_Obs + scale1_Compound_5_Obs*(nSTAT3 + pJAK1_gp130 + pJAK1_pgp130)	log10	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	offset2_Compound_5_Obs + scale2_Compound_5_Obs*(nSTAT3 + pJAK1_gp130 + pJAK1_pgp130)	log10	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	offset3_Compound_5_Obs + scale3_Compound_5_Obs*(nSTAT3 + pJAK1_gp130 + pJAK1_pgp130)	log10	sd3_Compound_5_Obs	normal
+Compound_5_Obs_4	Compound_5_Obs	offset4_Compound_5_Obs + scale4_Compound_5_Obs*(nSTAT3 + pJAK1_gp130 + pJAK1_pgp130)	log10	sd4_Compound_5_Obs	normal
+Compound_5_Obs_5	Compound_5_Obs	offset5_Compound_5_Obs + scale5_Compound_5_Obs*(nSTAT3 + pJAK1_gp130 + pJAK1_pgp130)	log10	sd5_Compound_5_Obs	normal
+Compound_5_Obs_6	Compound_5_Obs	offset6_Compound_5_Obs + scale6_Compound_5_Obs*(nSTAT3 + pJAK1_gp130 + pJAK1_pgp130)	log10	sd6_Compound_5_Obs	normal
+Compound_6_Obs_01	Compound_6_Obs	scale10_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd10_Compound_6_Obs	normal
+Compound_6_Obs_02	Compound_6_Obs	scale11_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd11_Compound_6_Obs	normal
+Compound_6_Obs_03	Compound_6_Obs	scale12_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd12_Compound_6_Obs	normal
+Compound_6_Obs_04	Compound_6_Obs	scale1_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd1_Compound_6_Obs	normal
+Compound_6_Obs_05	Compound_6_Obs	scale2_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd2_Compound_6_Obs	normal
+Compound_6_Obs_06	Compound_6_Obs	scale3_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd3_Compound_6_Obs	normal
+Compound_6_Obs_07	Compound_6_Obs	scale4_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd4_Compound_6_Obs	normal
+Compound_6_Obs_08	Compound_6_Obs	scale5_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd5_Compound_6_Obs	normal
+Compound_6_Obs_09	Compound_6_Obs	scale6_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd6_Compound_6_Obs	normal
+Compound_6_Obs_10	Compound_6_Obs	scale7_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd7_Compound_6_Obs	normal
+Compound_6_Obs_11	Compound_6_Obs	scale8_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd8_Compound_6_Obs	normal
+Compound_6_Obs_12	Compound_6_Obs	scale9_Compound_6_Obs*(STAT3 + nSOCS3RNA2 + pJAK1_gp130)	log10	sd9_Compound_6_Obs	normal
+Compound_7_Obs_1	Compound_7_Obs	offset1_Compound_7_Obs + scale1_Compound_7_Obs*(nSOCS3RNA3 + nSOCS3RNA4 + pJAK1_gp130)	log10	sd1_Compound_7_Obs	normal
+Compound_7_Obs_2	Compound_7_Obs	offset2_Compound_7_Obs + scale2_Compound_7_Obs*(nSOCS3RNA3 + nSOCS3RNA4 + pJAK1_gp130)	log10	sd2_Compound_7_Obs	normal
+Compound_7_Obs_3	Compound_7_Obs	offset3_Compound_7_Obs + scale3_Compound_7_Obs*(nSOCS3RNA3 + nSOCS3RNA4 + pJAK1_gp130)	log10	sd3_Compound_7_Obs	normal
+Compound_7_Obs_4	Compound_7_Obs	offset4_Compound_7_Obs + scale4_Compound_7_Obs*(nSOCS3RNA3 + nSOCS3RNA4 + pJAK1_gp130)	log10	sd4_Compound_7_Obs	normal
+Compound_7_Obs_5	Compound_7_Obs	offset5_Compound_7_Obs + scale5_Compound_7_Obs*(nSOCS3RNA3 + nSOCS3RNA4 + pJAK1_gp130)	log10	sd5_Compound_7_Obs	normal
+Compound_7_Obs_6	Compound_7_Obs	offset6_Compound_7_Obs + scale6_Compound_7_Obs*(nSOCS3RNA3 + nSOCS3RNA4 + pJAK1_gp130)	log10	sd6_Compound_7_Obs	normal
+Compound_8_Obs_01	Compound_8_Obs	offset10_Compound_8_Obs + scale10_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd10_Compound_8_Obs	normal
+Compound_8_Obs_02	Compound_8_Obs	offset11_Compound_8_Obs + scale11_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd11_Compound_8_Obs	normal
+Compound_8_Obs_03	Compound_8_Obs	offset12_Compound_8_Obs + scale12_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd12_Compound_8_Obs	normal
+Compound_8_Obs_04	Compound_8_Obs	offset1_Compound_8_Obs + scale1_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd1_Compound_8_Obs	normal
+Compound_8_Obs_05	Compound_8_Obs	offset2_Compound_8_Obs + scale2_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd2_Compound_8_Obs	normal
+Compound_8_Obs_06	Compound_8_Obs	offset3_Compound_8_Obs + scale3_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd3_Compound_8_Obs	normal
+Compound_8_Obs_07	Compound_8_Obs	offset4_Compound_8_Obs + scale4_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd4_Compound_8_Obs	normal
+Compound_8_Obs_08	Compound_8_Obs	offset5_Compound_8_Obs + scale5_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd5_Compound_8_Obs	normal
+Compound_8_Obs_09	Compound_8_Obs	offset6_Compound_8_Obs + scale6_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd6_Compound_8_Obs	normal
+Compound_8_Obs_10	Compound_8_Obs	offset7_Compound_8_Obs + scale7_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd7_Compound_8_Obs	normal
+Compound_8_Obs_11	Compound_8_Obs	offset8_Compound_8_Obs + scale8_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd8_Compound_8_Obs	normal
+Compound_8_Obs_12	Compound_8_Obs	offset9_Compound_8_Obs + scale9_Compound_8_Obs*(nSOCS3RNA1 + nSOCS3RNA5 + pJAK1_pgp130)	log10	sd9_Compound_8_Obs	normal
+Compound_9_Obs	Compound_9_Obs	STAT3 + nSOCS3RNA2 + tpSTAT3	log10	sd1_Compound_9_Obs	normal

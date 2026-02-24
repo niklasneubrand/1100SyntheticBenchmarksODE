@@ -1,0 +1,19 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	scale4_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	scale5_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	scale6_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	lin	sd6_Compound_1_Obs	normal
+EGFR_Obs_1	EGFR_Obs	EGFR*scale1_EGFR_Obs	lin	sd1_EGFR_Obs	normal
+EGFR_Obs_2	EGFR_Obs	EGFR*scale2_EGFR_Obs	lin	sd2_EGFR_Obs	normal
+EGFR_Obs_3	EGFR_Obs	EGFR*scale3_EGFR_Obs	lin	sd3_EGFR_Obs	normal
+EGFR_Obs_4	EGFR_Obs	EGFR*scale4_EGFR_Obs	lin	sd4_EGFR_Obs	normal
+EGFR_Obs_5	EGFR_Obs	EGFR*scale5_EGFR_Obs	lin	sd5_EGFR_Obs	normal
+EGFR_Obs_6	EGFR_Obs	EGFR*scale6_EGFR_Obs	lin	sd6_EGFR_Obs	normal
+pEGFR_Obs_1	pEGFR_Obs	pEGFR	lin	sd1_pEGFR_Obs	normal
+pEGFR_Obs_2	pEGFR_Obs	pEGFR	lin	sd2_pEGFR_Obs	normal
+pEGFR_Obs_3	pEGFR_Obs	pEGFR	lin	sd3_pEGFR_Obs	normal
+pEGFR_Obs_4	pEGFR_Obs	pEGFR	lin	sd4_pEGFR_Obs	normal
+pEGFR_Obs_5	pEGFR_Obs	pEGFR	lin	sd5_pEGFR_Obs	normal
+pEGFR_Obs_6	pEGFR_Obs	pEGFR	lin	sd6_pEGFR_Obs	normal

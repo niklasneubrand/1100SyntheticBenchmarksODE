@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Bachmann_RS05_parameters.tsv
+problems:
+  - sbml_files:
+    - Bachmann_RS05_model.xml
+    observable_files:
+    - Bachmann_RS05_observables.tsv
+    condition_files:
+    - Bachmann_RS05_conditions.tsv
+    measurement_files:
+    - Bachmann_RS05_measurements.tsv

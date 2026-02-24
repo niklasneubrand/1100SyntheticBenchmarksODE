@@ -1,0 +1,20 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Ind_Obs_01	Ind_Obs	offset10_Ind_Obs + Ind*scale10_Ind_Obs	log10	sd10_Ind_Obs	normal
+Ind_Obs_02	Ind_Obs	offset11_Ind_Obs + Ind*scale11_Ind_Obs	log10	sd11_Ind_Obs	normal
+Ind_Obs_03	Ind_Obs	offset12_Ind_Obs + Ind*scale12_Ind_Obs	log10	sd12_Ind_Obs	normal
+Ind_Obs_04	Ind_Obs	offset13_Ind_Obs + Ind*scale13_Ind_Obs	log10	sd13_Ind_Obs	normal
+Ind_Obs_05	Ind_Obs	offset14_Ind_Obs + Ind*scale14_Ind_Obs	log10	sd14_Ind_Obs	normal
+Ind_Obs_06	Ind_Obs	offset15_Ind_Obs + Ind*scale15_Ind_Obs	log10	sd15_Ind_Obs	normal
+Ind_Obs_07	Ind_Obs	offset16_Ind_Obs + Ind*scale16_Ind_Obs	log10	sd16_Ind_Obs	normal
+Ind_Obs_08	Ind_Obs	offset17_Ind_Obs + Ind*scale17_Ind_Obs	log10	sd17_Ind_Obs	normal
+Ind_Obs_09	Ind_Obs	offset18_Ind_Obs + Ind*scale18_Ind_Obs	log10	sd18_Ind_Obs	normal
+Ind_Obs_10	Ind_Obs	offset19_Ind_Obs + Ind*scale19_Ind_Obs	log10	sd19_Ind_Obs	normal
+Ind_Obs_11	Ind_Obs	offset1_Ind_Obs + Ind*scale1_Ind_Obs	log10	sd1_Ind_Obs	normal
+Ind_Obs_12	Ind_Obs	offset2_Ind_Obs + Ind*scale2_Ind_Obs	log10	sd2_Ind_Obs	normal
+Ind_Obs_13	Ind_Obs	offset3_Ind_Obs + Ind*scale3_Ind_Obs	log10	sd3_Ind_Obs	normal
+Ind_Obs_14	Ind_Obs	offset4_Ind_Obs + Ind*scale4_Ind_Obs	log10	sd4_Ind_Obs	normal
+Ind_Obs_15	Ind_Obs	offset5_Ind_Obs + Ind*scale5_Ind_Obs	log10	sd5_Ind_Obs	normal
+Ind_Obs_16	Ind_Obs	offset6_Ind_Obs + Ind*scale6_Ind_Obs	log10	sd6_Ind_Obs	normal
+Ind_Obs_17	Ind_Obs	offset7_Ind_Obs + Ind*scale7_Ind_Obs	log10	sd7_Ind_Obs	normal
+Ind_Obs_18	Ind_Obs	offset8_Ind_Obs + Ind*scale8_Ind_Obs	log10	sd8_Ind_Obs	normal
+Ind_Obs_19	Ind_Obs	offset9_Ind_Obs + Ind*scale9_Ind_Obs	log10	sd9_Ind_Obs	normal

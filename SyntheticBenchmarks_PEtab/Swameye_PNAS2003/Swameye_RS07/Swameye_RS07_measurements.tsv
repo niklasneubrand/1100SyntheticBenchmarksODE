@@ -1,0 +1,14 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.962327108124665	0			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.92468506946449	4			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.217889015523428	8			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.448764312582196	10			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.0724893633563742	15			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.263171715163602	20			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.572140371934995	25			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.921645975549145	35			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.944292466432306	40			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	1.13402457861835	45			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.816632533859703	55			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	1.10245892651688	65			normal
+Compound_1_Obs	D1_Swameye_RS07_TC001	0.895670417529955	80			normal

@@ -1,0 +1,23 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+k1	k1	log10	0.001	100000	2.40990542868659	1	parameterScaleUniform	
+k2	k2	log10	0.001	100000	95499.2586021437	1	parameterScaleUniform	
+k3	k3	log10	0.001	100000	9.7050996724549	1	parameterScaleUniform	
+k4	k4	log10	0.001	100000	51286.1383991365	1	parameterScaleUniform	
+k_1	k_1	log10	0.001	100000	1.64058977319954	1	parameterScaleUniform	
+k_2	k_2	log10	0.001	100000	0.00114815362149688	1	parameterScaleUniform	
+k_3	k_3	log10	0.001	100000	3.03389118419427	1	parameterScaleUniform	
+k_4	k_4	log10	0.001	100000	5011.87233627273	1	parameterScaleUniform	
+l2	l2	log10	0.001	100000	1.06389801844698	1	parameterScaleUniform	
+l4	l4	log10	0.001	100000	2.56448403651772	1	parameterScaleUniform	
+l6	l6	log10	0.001	100000	79432.8234724282	1	parameterScaleUniform	
+l_2	l_2	log10	0.001	100000	0.121898959892487	1	parameterScaleUniform	
+l_4	l_4	log10	0.001	100000	0.00812830516164099	1	parameterScaleUniform	
+l_6	l_6	log10	0.000158489319246111	100000	0.00091201083935591	1	parameterScaleUniform	
+sd1_IPR_I2_Obs	sd1_IPR_I2_Obs	log10	1e-06	0.1	0.000358178901348112	1	parameterScaleUniform	
+sd2_IPR_I2_Obs	sd2_IPR_I2_Obs	log10	1e-06	0.1	0.000969616506049464	1	parameterScaleUniform	
+sd3_IPR_I2_Obs	sd3_IPR_I2_Obs	log10	1e-05	1	0.00276057785622034	1	parameterScaleUniform	
+sd4_IPR_I2_Obs	sd4_IPR_I2_Obs	log10	1e-05	1	0.00553859998277357	1	parameterScaleUniform	
+sd5_IPR_I2_Obs	sd5_IPR_I2_Obs	log10	0.0001	10	0.0108592542131263	1	parameterScaleUniform	
+sd6_IPR_I2_Obs	sd6_IPR_I2_Obs	log10	1e-05	1	0.00858618022233599	1	parameterScaleUniform	
+sd7_IPR_I2_Obs	sd7_IPR_I2_Obs	log10	1e-05	1	0.00259956092322393	1	parameterScaleUniform	
+sd8_IPR_I2_Obs	sd8_IPR_I2_Obs	log10	1e-05	1	0.00246093418995258	1	parameterScaleUniform	

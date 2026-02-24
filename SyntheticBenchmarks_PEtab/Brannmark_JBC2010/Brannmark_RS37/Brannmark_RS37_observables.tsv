@@ -1,0 +1,10 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(IR + IRiP + IRins)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(IR + IRiP + IRins)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(IR + IRiP + IRins)	log10	sd3_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(IRi + IRins + XX)	log10	sd1_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(IRS + IRi + IRiP)	log10	sd1_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	offset1_Compound_4_Obs + scale1_Compound_4_Obs*(IRS + IRSiP + IRi)	log10	sd1_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	offset1_Compound_5_Obs + scale1_Compound_5_Obs*(IRS + IRSiP + XXp)	log10	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	offset2_Compound_5_Obs + scale2_Compound_5_Obs*(IRS + IRSiP + XXp)	log10	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	offset3_Compound_5_Obs + scale3_Compound_5_Obs*(IRS + IRSiP + XXp)	log10	sd3_Compound_5_Obs	normal

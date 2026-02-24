@@ -1,0 +1,10 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CERTERa_Obs_1	CERTERa_Obs	CERTERa	lin	sd1_CERTERa_Obs	normal
+CERTERa_Obs_2	CERTERa_Obs	CERTERa	lin	sd2_CERTERa_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	CERT + CERTERa + CERTTGNa + PI4K3B + PI4K3Ba + PKD + PKDDAGa	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	CERT + CERTERa + CERTTGNa + PI4K3B + PI4K3Ba + PKD + PKDDAGa	lin	sd2_Compound_1_Obs	normal
+PI4K3B_Obs_1	PI4K3B_Obs	PI4K3B	lin	sd1_PI4K3B_Obs	normal
+PI4K3B_Obs_2	PI4K3B_Obs	PI4K3B	lin	sd2_PI4K3B_Obs	normal
+PI4K3Ba_Obs	PI4K3Ba_Obs	PI4K3Ba	lin	sd1_PI4K3Ba_Obs	normal
+PKDDAGa_Obs_1	PKDDAGa_Obs	PKDDAGa	lin	sd1_PKDDAGa_Obs	normal
+PKDDAGa_Obs_2	PKDDAGa_Obs	PKDDAGa	lin	sd2_PKDDAGa_Obs	normal

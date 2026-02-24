@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Sneyd_RS32_parameters.tsv
+problems:
+  - sbml_files:
+    - Sneyd_RS32_model.xml
+    observable_files:
+    - Sneyd_RS32_observables.tsv
+    condition_files:
+    - Sneyd_RS32_conditions.tsv
+    measurement_files:
+    - Sneyd_RS32_measurements.tsv

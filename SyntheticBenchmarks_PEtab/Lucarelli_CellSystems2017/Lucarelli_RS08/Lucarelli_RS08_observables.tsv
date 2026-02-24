@@ -1,0 +1,21 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	S4_S4_S4 + geneC + ppS3	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	S4_S4_S4 + geneC + ppS3	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	S4_S4_S4 + geneC + ppS3	lin	sd3_Compound_1_Obs	normal
+S4_S4_S4_Obs_1	S4_S4_S4_Obs	S4_S4_S4	lin	sd1_S4_S4_S4_Obs	normal
+S4_S4_S4_Obs_2	S4_S4_S4_Obs	S4_S4_S4	lin	sd2_S4_S4_S4_Obs	normal
+S4_S4_S4_Obs_3	S4_S4_S4_Obs	S4_S4_S4	lin	sd3_S4_S4_S4_Obs	normal
+S4_S4_S4_Obs_4	S4_S4_S4_Obs	S4_S4_S4	lin	sd4_S4_S4_S4_Obs	normal
+geneJ_Obs_01	geneJ_Obs	geneJ	lin	sd10_geneJ_Obs	normal
+geneJ_Obs_02	geneJ_Obs	geneJ	lin	sd1_geneJ_Obs	normal
+geneJ_Obs_03	geneJ_Obs	geneJ	lin	sd2_geneJ_Obs	normal
+geneJ_Obs_04	geneJ_Obs	geneJ	lin	sd3_geneJ_Obs	normal
+geneJ_Obs_05	geneJ_Obs	geneJ	lin	sd4_geneJ_Obs	normal
+geneJ_Obs_06	geneJ_Obs	geneJ	lin	sd5_geneJ_Obs	normal
+geneJ_Obs_07	geneJ_Obs	geneJ	lin	sd6_geneJ_Obs	normal
+geneJ_Obs_08	geneJ_Obs	geneJ	lin	sd7_geneJ_Obs	normal
+geneJ_Obs_09	geneJ_Obs	geneJ	lin	sd8_geneJ_Obs	normal
+geneJ_Obs_10	geneJ_Obs	geneJ	lin	sd9_geneJ_Obs	normal
+ppS2_S4_S4_Obs_1	ppS2_S4_S4_Obs	ppS2_S4_S4	lin	sd1_ppS2_S4_S4_Obs	normal
+ppS2_S4_S4_Obs_2	ppS2_S4_S4_Obs	ppS2_S4_S4	lin	sd2_ppS2_S4_S4_Obs	normal
+ppS2_S4_S4_Obs_3	ppS2_S4_S4_Obs	ppS2_S4_S4	lin	sd3_ppS2_S4_S4_Obs	normal

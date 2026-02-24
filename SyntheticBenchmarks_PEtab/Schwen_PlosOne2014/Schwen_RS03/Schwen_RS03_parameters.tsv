@@ -1,0 +1,26 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ini_R1	ini_R1	log10	1e-05	1000	40.7380277804113	1	parameterScaleUniform	
+ini_R2fold	ini_R2fold	log10	1e-05	1000	8.6297854776697	1	parameterScaleUniform	
+ka1	ka1	log10	1e-05	1000	0.00194984459975805	1	parameterScaleUniform	
+ka2fold	ka2fold	log10	1e-05	1000	3.28851630875983	1	parameterScaleUniform	
+kd1	kd1	log10	1e-05	1000	8.99497581530035	1	parameterScaleUniform	
+kd2fold	kd2fold	log10	1e-05	1000	12.3026877081238	1	parameterScaleUniform	
+kin	kin	log10	1e-05	1000	0.244343055269397	1	parameterScaleUniform	
+kin2	kin2	log10	1e-05	1000	0.410204102986607	1	parameterScaleUniform	
+koff_unspec	koff_unspec	log10	1e-05	1000	9.77237220955811	1	parameterScaleUniform	
+kon_unspec	kon_unspec	log10	1e-05	1000	11.4815362149688	1	parameterScaleUniform	
+kout	kout	log10	1e-05	1000	0.0512861383991365	1	parameterScaleUniform	
+kout2	kout2	log10	1e-05	1000	0.0204173794466953	1	parameterScaleUniform	
+kout_frag	kout_frag	log10	1e-05	1000	0.010471285480509	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.01	1000	5.3841853250318	1	parameterScaleUniform	
+sd1_Compound_2_Obs	sd1_Compound_2_Obs	log10	0.01	1000	5.88491236575804	1	parameterScaleUniform	
+sd1_Compound_3_Obs	sd1_Compound_3_Obs	log10	1e-05	1	0.00125834578869029	1	parameterScaleUniform	
+sd2_Compound_1_Obs	sd2_Compound_1_Obs	log10	0.01	1000	6.25057542315926	1	parameterScaleUniform	
+sd2_Compound_2_Obs	sd2_Compound_2_Obs	log10	0.01	1000	6.44317608047901	1	parameterScaleUniform	
+sd2_Compound_3_Obs	sd2_Compound_3_Obs	log10	0.01	1000	1.15463840849143	1	parameterScaleUniform	
+sd3_Compound_1_Obs	sd3_Compound_1_Obs	log10	0.01	1000	6.18059092673452	1	parameterScaleUniform	
+sd3_Compound_2_Obs	sd3_Compound_2_Obs	log10	0.01	1000	8.25600600182476	1	parameterScaleUniform	
+sd3_Compound_3_Obs	sd3_Compound_3_Obs	log10	0.01	1000	9.95772205820388	1	parameterScaleUniform	
+sd4_Compound_1_Obs	sd4_Compound_1_Obs	log10	0.01	1000	8.33470052953456	1	parameterScaleUniform	
+sd4_Compound_2_Obs	sd4_Compound_2_Obs	log10	0.1	10000	86.0597341192822	1	parameterScaleUniform	
+sd4_Compound_3_Obs	sd4_Compound_3_Obs	log10	0.1	10000	33.3887376725123	1	parameterScaleUniform	

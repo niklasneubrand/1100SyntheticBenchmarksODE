@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Swameye_RS31">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="nM" name="nM">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="1e-09"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="pl" name="pl">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1e-12"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cyt" spatialDimensions="3" size="1.4" units="pl" constant="true"/>
+      <compartment id="nuc" spatialDimensions="3" size="0.45" units="pl" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="STAT" name="STAT" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pSTAT" name="pSTAT" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pSTAT_pSTAT" name="pSTAT_pSTAT" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="npSTAT_npSTAT" name="npSTAT_npSTAT" compartment="nuc" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="nSTAT1" name="nSTAT1" compartment="nuc" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="nSTAT2" name="nSTAT2" compartment="nuc" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="nSTAT3" name="nSTAT3" compartment="nuc" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="nSTAT4" name="nSTAT4" compartment="nuc" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="nSTAT5" name="nSTAT5" compartment="nuc" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="EventTrigger_dummy" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="init_STAT" name="init_STAT" value="1" constant="true"/>
+      <parameter id="init_nSTAT1" name="init_nSTAT1" constant="true"/>
+      <parameter id="init_nSTAT2" name="init_nSTAT2" constant="true"/>
+      <parameter id="init_nSTAT3" name="init_nSTAT3" constant="true"/>
+      <parameter id="init_nSTAT4" name="init_nSTAT4" constant="true"/>
+      <parameter id="init_nSTAT5" name="init_nSTAT5" constant="true"/>
+      <parameter id="init_npSTAT_npSTAT" name="init_npSTAT_npSTAT" constant="true"/>
+      <parameter id="init_pSTAT" name="init_pSTAT" constant="true"/>
+      <parameter id="init_pSTAT_pSTAT" name="init_pSTAT_pSTAT" constant="true"/>
+      <parameter id="p1" name="p1" value="3.45939377826122" constant="true"/>
+      <parameter id="p2" name="p2" value="1348.96288259165" constant="true"/>
+      <parameter id="p3" name="p3" value="0.18578044550917" constant="true"/>
+      <parameter id="p4" name="p4" value="0.641209576585162" constant="true"/>
+      <parameter id="sp1" name="sp1" value="0.00295120922666639" constant="true"/>
+      <parameter id="sp2" name="sp2" value="0.357272838151929" constant="true"/>
+      <parameter id="sp3" name="sp3" value="1.20060459176126" constant="true"/>
+      <parameter id="sp4" name="sp4" value="0.281190083039894" constant="true"/>
+      <parameter id="sp5" name="sp5" value="7.76247116628691e-05" constant="true"/>
+      <parameter id="pEpoR" value="0" units="au" constant="false"/>
+      <parameter id="spline_t_0" value="0" units="au" constant="false"/>
+      <parameter id="A" value="0" units="au" constant="false"/>
+      <parameter id="B" value="0" units="au" constant="false"/>
+      <parameter id="C" value="0" units="au" constant="false"/>
+      <parameter id="D" value="0" units="au" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="p2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> p2 </ci>
+            <ci> init_STAT </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="STAT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_STAT </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pSTAT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pSTAT_pSTAT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="npSTAT_npSTAT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="nSTAT1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="nSTAT2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="nSTAT3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="nSTAT4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="nSTAT5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="pEpoR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <exp/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> A </ci>
+                <apply>
+                  <power/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <ci> spline_t_0 </ci>
+                  </apply>
+                  <cn type="integer"> 3 </cn>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> B </ci>
+                <apply>
+                  <power/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <ci> spline_t_0 </ci>
+                  </apply>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> C </ci>
+                <apply>
+                  <minus/>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  <ci> spline_t_0 </ci>
+                </apply>
+              </apply>
+              <ci> D </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="STAT" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pSTAT" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> STAT </ci>
+              <ci> p1 </ci>
+              <ci> pEpoR </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pSTAT" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pSTAT_pSTAT" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> p2 </ci>
+              <apply>
+                <power/>
+                <ci> pSTAT </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pSTAT_pSTAT" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="npSTAT_npSTAT" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> p3 </ci>
+              <ci> pSTAT_pSTAT </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="npSTAT_npSTAT" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="nSTAT1" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> nuc </ci>
+              <ci> npSTAT_npSTAT </ci>
+              <ci> p4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="nSTAT1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="nSTAT2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> nuc </ci>
+              <ci> nSTAT1 </ci>
+              <ci> p4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="nSTAT2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="nSTAT3" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> nuc </ci>
+              <ci> nSTAT2 </ci>
+              <ci> p4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="nSTAT3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="nSTAT4" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> nuc </ci>
+              <ci> nSTAT3 </ci>
+              <ci> p4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="nSTAT4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="nSTAT5" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> nuc </ci>
+              <ci> nSTAT4 </ci>
+              <ci> p4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v9_v_8" name="v_8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="nSTAT5" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="STAT" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> nuc </ci>
+              <ci> nSTAT5 </ci>
+              <ci> p4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <listOfEvents>
+      <event id="t_0_event" name="t_0_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 0 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 0 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.0019782413314644 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.104498287901532 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 1.43229235596237 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 5.82554028527494 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_5_event" name="t_5_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 5 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 5 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.00323447685725469 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.0748246679295663 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.535677576806877 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 1.02925553656834 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_10_event" name="t_10_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 10 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 10 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.000879035246397983 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.0263075150707459 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.0300166618053162 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.182825256383727 </cn>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_20_event" name="t_20_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 20 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 20 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="e-notation"> 1.56305401208245 <sep/> -5 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="e-notation"> 6.3542321193568 <sep/> -5 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.232423065690207 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 1.26872438623972 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_60_event" name="t_60_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 60 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 60 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="e-notation"> 2.76597701566968 <sep/> -5 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.00193920713569252 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.152313087414764 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 9.46362473220553 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_80_event" name="t_80_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 80 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 80 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn type="e-notation"> 7.6056972757148 <sep/> -5 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.00359879334509432 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.0415530777990272 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 11.5129254649702 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_100_event" name="t_100_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 100 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 100 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="e-notation"> 2.0405529276308 <sep/> -5 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.00096462502033456 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.011130288696168 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 11.5129254649702 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_120_event" name="t_120_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 120 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 120 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn type="e-notation"> 5.565144348084 <sep/> -6 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.00025970673624392 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 0.0029680769856448 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 11.5129254649702 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="t_140_event" name="t_140_event" useValuesFromTriggerTime="true">
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 140 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="spline_t_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 140 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="A">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="e-notation"> 1.855048116028 <sep/> -6 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="B">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn type="e-notation"> 7.42019246411201 <sep/> -5 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="C">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.000742019246411201 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="D">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <minus/>
+                <cn> 11.5129254649702 </cn>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
+  </model>
+</sbml>

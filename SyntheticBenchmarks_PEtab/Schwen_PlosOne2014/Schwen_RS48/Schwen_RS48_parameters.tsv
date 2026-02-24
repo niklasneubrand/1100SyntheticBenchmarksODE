@@ -1,0 +1,25 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ini_R1	ini_R1	log10	1e-05	1000	30.9029543251359	1	parameterScaleUniform	
+ini_R2fold	ini_R2fold	log10	1e-05	1000	11.2201845430196	1	parameterScaleUniform	
+ka1	ka1	log10	1e-05	1000	0.00295120922666639	1	parameterScaleUniform	
+ka2fold	ka2fold	log10	1e-05	1000	7.16143410212902	1	parameterScaleUniform	
+kd1	kd1	log10	1e-05	1000	7.92501330480472	1	parameterScaleUniform	
+kd2fold	kd2fold	log10	1e-05	1000	12.3026877081238	1	parameterScaleUniform	
+kin	kin	log10	1e-05	1000	0.411149721104522	1	parameterScaleUniform	
+kin2	kin2	log10	1e-05	1000	0.45081670454146	1	parameterScaleUniform	
+koff_unspec	koff_unspec	log10	1e-05	1000	5.58470194736831	1	parameterScaleUniform	
+kon_unspec	kon_unspec	log10	1e-05	1000	12.0226443461741	1	parameterScaleUniform	
+kout	kout	log10	1e-05	1000	0.0776247116628692	1	parameterScaleUniform	
+kout2	kout2	log10	1e-05	1000	0.0537031796370253	1	parameterScaleUniform	
+kout_frag	kout_frag	log10	1e-05	1000	0.0199526231496888	1	parameterScaleUniform	
+sd1_BoundUnspec_Obs	sd1_BoundUnspec_Obs	log10	0.001	100	0.160679325506956	1	parameterScaleUniform	
+sd1_IR2in_Obs	sd1_IR2in_Obs	log10	0.001	100	0.162218357593097	1	parameterScaleUniform	
+sd1_Uptake2_Obs	sd1_Uptake2_Obs	log10	0.01	1000	3.40384675948452	1	parameterScaleUniform	
+sd2_BoundUnspec_Obs	sd2_BoundUnspec_Obs	log10	1e-05	1	0.0073773434096103	1	parameterScaleUniform	
+sd2_IR2in_Obs	sd2_IR2in_Obs	log10	0.001	100	0.141364382349127	1	parameterScaleUniform	
+sd2_Uptake2_Obs	sd2_Uptake2_Obs	log10	0.1	10000	30.2064717004684	1	parameterScaleUniform	
+sd3_BoundUnspec_Obs	sd3_BoundUnspec_Obs	log10	0.0001	10	0.0744046366191919	1	parameterScaleUniform	
+sd3_IR2in_Obs	sd3_IR2in_Obs	log10	0.01	1000	1.45569369177566	1	parameterScaleUniform	
+sd3_Uptake2_Obs	sd3_Uptake2_Obs	log10	0.1	10000	89.7222177672879	1	parameterScaleUniform	
+sd4_BoundUnspec_Obs	sd4_BoundUnspec_Obs	log10	0.001	100	0.762588057977569	1	parameterScaleUniform	
+sd4_IR2in_Obs	sd4_IR2in_Obs	log10	0.1	10000	33.8922186872755	1	parameterScaleUniform	

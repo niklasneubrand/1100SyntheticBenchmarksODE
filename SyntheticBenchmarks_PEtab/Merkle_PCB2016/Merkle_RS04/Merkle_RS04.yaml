@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Merkle_RS04_parameters.tsv
+problems:
+  - sbml_files:
+    - Merkle_RS04_model.xml
+    observable_files:
+    - Merkle_RS04_observables.tsv
+    condition_files:
+    - Merkle_RS04_conditions.tsv
+    measurement_files:
+    - Merkle_RS04_measurements.tsv

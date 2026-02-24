@@ -1,0 +1,24 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+k1a	k1a	log10	1e-06	501187.233627272	0.275422870333817	1	parameterScaleUniform	
+k1aBasic	k1aBasic	log10	1e-06	501187.233627272	0.000295120922666639	1	parameterScaleUniform	
+k1b	k1b	log10	1e-06	501187.233627272	0.301995172040202	1	parameterScaleUniform	
+k1c	k1c	log10	1e-06	501187.233627272	0.0457088189614875	1	parameterScaleUniform	
+k1d	k1d	log10	1e-06	501187.233627272	416869.383470336	1	parameterScaleUniform	
+k1e	k1e	log10	1e-06	501187.233627272	1.41253754462276e-06	1	parameterScaleUniform	
+k1f	k1f	log10	1e-06	7943282.34724282	588843.655355588	1	parameterScaleUniform	
+k1g	k1g	log10	1e-06	501187.233627272	1819.70085860998	1	parameterScaleUniform	
+k1r	k1r	log10	1e-06	501187.233627272	0.0467735141287198	1	parameterScaleUniform	
+k21	k21	log10	1e-06	501187.233627272	2.08449088309729	1	parameterScaleUniform	
+k22	k22	log10	1e-06	501187.233627272	416.869383470335	1	parameterScaleUniform	
+k3	k3	log10	1e-06	501187.233627272	7.41310241300918e-05	1	parameterScaleUniform	
+km2	km2	log10	1e-06	501187.233627272	1.57398286446622	1	parameterScaleUniform	
+km3	km3	log10	1e-06	501187.233627272	0.441570447353313	1	parameterScaleUniform	
+scale1_IRS_Obs	scale1_IRS_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_IR_Obs	scale1_IR_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_IR_Obs	scale2_IR_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_IR_Obs	scale3_IR_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_IRS_Obs	sd1_IRS_Obs	log10	0.001	100	0.362476620411334	1	parameterScaleUniform	
+sd1_IR_Obs	sd1_IR_Obs	log10	0.0001	10	0.0587354093680082	1	parameterScaleUniform	
+sd1_IRiP_Obs	sd1_IRiP_Obs	log10	1e-08	0.001	8.72770382442416e-06	1	parameterScaleUniform	
+sd2_IR_Obs	sd2_IR_Obs	log10	0.001	100	0.123350240333919	1	parameterScaleUniform	
+sd3_IR_Obs	sd3_IR_Obs	log10	0.001	100	0.24373617983783	1	parameterScaleUniform	

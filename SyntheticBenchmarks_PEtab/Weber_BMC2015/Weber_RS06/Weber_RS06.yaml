@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Weber_RS06_parameters.tsv
+problems:
+  - sbml_files:
+    - Weber_RS06_model.xml
+    observable_files:
+    - Weber_RS06_observables.tsv
+    condition_files:
+    - Weber_RS06_conditions.tsv
+    measurement_files:
+    - Weber_RS06_measurements.tsv

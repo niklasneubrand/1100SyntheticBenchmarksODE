@@ -1,0 +1,22 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ERK_total	ERK_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+K_1	K_1	log10	1e-05	1000	1.69824365246175e-05	1	parameterScaleUniform	
+K_2	K_2	log10	1e-05	1000	1.56314764264095	1	parameterScaleUniform	
+K_3	K_3	log10	1e-05	1000	1.99067333898719	1	parameterScaleUniform	
+MEK_total	MEK_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+RAF_total	RAF_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+k10	k10	log10	1e-05	100000	0.0194984459975805	1	parameterScaleUniform	
+k11	k11	log10	1e-05	100000	128.824955169313	1	parameterScaleUniform	
+k2	k2	log10	1e-05	100000	0.481947797625127	1	parameterScaleUniform	
+k3	k3	log10	1e-05	100000	251.188643150958	1	parameterScaleUniform	
+k4	k4	log10	1e-05	100000	5.52077439280757	1	parameterScaleUniform	
+k5	k5	log10	1e-05	100000	223.872113856834	1	parameterScaleUniform	
+k6	k6	log10	1e-05	100000	3.64753946925608	1	parameterScaleUniform	
+sd1_ERK_Obs	sd1_ERK_Obs	log10	0.0001	10	0.0415240781757	1	parameterScaleUniform	
+sd1_pRAF_Obs	sd1_pRAF_Obs	log10	1e-09	0.0001	8.51726186645918e-07	1	parameterScaleUniform	
+sd2_ERK_Obs	sd2_ERK_Obs	log10	0.0001	10	0.0407755661750212	1	parameterScaleUniform	
+sd2_pRAF_Obs	sd2_pRAF_Obs	log10	1e-08	0.001	1.52264969556794e-06	1	parameterScaleUniform	
+sd3_ERK_Obs	sd3_ERK_Obs	log10	0.0001	10	0.0438530697774986	1	parameterScaleUniform	
+sd3_pRAF_Obs	sd3_pRAF_Obs	log10	1e-08	0.001	3.27491475555579e-06	1	parameterScaleUniform	
+tau1	tau1	log10	1e-08	100000000	0.194088587759278	1	parameterScaleUniform	
+tau2	tau2	log10	1e-08	100000000	0.0239883291901949	1	parameterScaleUniform	

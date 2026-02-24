@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Elowitz_RS25_parameters.tsv
+problems:
+  - sbml_files:
+    - Elowitz_RS25_model.xml
+    observable_files:
+    - Elowitz_RS25_observables.tsv
+    condition_files:
+    - Elowitz_RS25_conditions.tsv
+    measurement_files:
+    - Elowitz_RS25_measurements.tsv

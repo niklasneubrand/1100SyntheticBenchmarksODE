@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Crauste_RS09_parameters.tsv
+problems:
+  - sbml_files:
+    - Crauste_RS09_model.xml
+    observable_files:
+    - Crauste_RS09_observables.tsv
+    condition_files:
+    - Crauste_RS09_conditions.tsv
+    measurement_files:
+    - Crauste_RS09_measurements.tsv

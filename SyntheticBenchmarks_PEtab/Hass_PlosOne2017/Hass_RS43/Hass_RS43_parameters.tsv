@@ -1,0 +1,22 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ApoER2_Dab1_SFK_degrad	ApoER2_Dab1_SFK_degrad	log10	1e-05	1000	0.00691830970918936	1	parameterScaleUniform	
+ApoER2_Dab1_SFK_recycle	ApoER2_Dab1_SFK_recycle	log10	1e-05	1000	2.44906324184475	1	parameterScaleUniform	
+ApoER2_Dab1_SFK_release	ApoER2_Dab1_SFK_release	log10	0.01	100000	1023.29299228075	1	parameterScaleUniform	
+ApoER2_Dab1_act	ApoER2_Dab1_act	log10	0.01	10000000	10000	0	parameterScaleUniform	
+ApoER2_Dab1_bind_SFK	ApoER2_Dab1_bind_SFK	log10	1e-05	1000	131.825673855641	1	parameterScaleUniform	
+ApoER2_Dab1_bind_SFK_Reelin	ApoER2_Dab1_bind_SFK_Reelin	log10	0.01	1000000	83176.3771102671	1	parameterScaleUniform	
+Dab1_bind_Reelin	Dab1_bind_Reelin	log10	1e-05	1000	0.0251188643150958	1	parameterScaleUniform	
+Dab1_release	Dab1_release	log10	1e-05	1000	0.0446683592150963	1	parameterScaleUniform	
+SFK_inhibition_ratio	SFK_inhibition_ratio	log10	1e-10	1	0.464515275222749	1	parameterScaleUniform	
+init_ApoER2_Dab1	init_ApoER2_Dab1	log10	0.01	1000	1	0	parameterScaleUniform	
+init_ApoER2_Dab1SFK	init_ApoER2_Dab1SFK	log10	1e-05	1000	4.89778819368447e-05	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.0001	10	0.0487079666492537	1	parameterScaleUniform	
+sd1_SFK_Obs	sd1_SFK_Obs	log10	1e-08	0.001	2.75930685581751e-06	1	parameterScaleUniform	
+sd2_Compound_1_Obs	sd2_Compound_1_Obs	log10	0.0001	10	0.0681082936767638	1	parameterScaleUniform	
+sd2_SFK_Obs	sd2_SFK_Obs	log10	1e-13	1e-08	1.66724721255106e-11	1	parameterScaleUniform	
+sd3_Compound_1_Obs	sd3_Compound_1_Obs	log10	0.0001	10	0.0619726403928227	1	parameterScaleUniform	
+sd3_SFK_Obs	sd3_SFK_Obs	log10	1e-11	1e-06	3.30826278855698e-09	1	parameterScaleUniform	
+sd4_Compound_1_Obs	sd4_Compound_1_Obs	log10	0.0001	10	0.060464435134476	1	parameterScaleUniform	
+sd4_SFK_Obs	sd4_SFK_Obs	log10	1e-07	0.01	2.20597202174733e-05	1	parameterScaleUniform	
+sd5_Compound_1_Obs	sd5_Compound_1_Obs	log10	0.0001	10	0.0643131823635452	1	parameterScaleUniform	
+sd5_SFK_Obs	sd5_SFK_Obs	log10	1e-07	0.01	1.40799139303926e-05	1	parameterScaleUniform	

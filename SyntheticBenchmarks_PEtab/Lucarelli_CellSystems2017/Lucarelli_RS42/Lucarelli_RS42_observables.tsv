@@ -1,0 +1,29 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	offset4_Compound_1_Obs + scale4_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	offset5_Compound_1_Obs + scale5_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	offset6_Compound_1_Obs + scale6_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	offset7_Compound_1_Obs + scale7_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	offset8_Compound_1_Obs + scale8_Compound_1_Obs*(geneH + ppS2 + ppS3_S4_S4)	log10	sd8_Compound_1_Obs	normal
+TGFb_pRec_Obs_1	TGFb_pRec_Obs	TGFb_pRec*scale1_TGFb_pRec_Obs	log10	sd1_TGFb_pRec_Obs	normal
+TGFb_pRec_Obs_2	TGFb_pRec_Obs	TGFb_pRec*scale2_TGFb_pRec_Obs	log10	sd2_TGFb_pRec_Obs	normal
+TGFb_pRec_Obs_3	TGFb_pRec_Obs	TGFb_pRec*scale3_TGFb_pRec_Obs	log10	sd3_TGFb_pRec_Obs	normal
+geneC_Obs_1	geneC_Obs	offset1_geneC_Obs + geneC*scale1_geneC_Obs	log10	sd1_geneC_Obs	normal
+geneC_Obs_2	geneC_Obs	offset2_geneC_Obs + geneC*scale2_geneC_Obs	log10	sd2_geneC_Obs	normal
+geneC_Obs_3	geneC_Obs	offset3_geneC_Obs + geneC*scale3_geneC_Obs	log10	sd3_geneC_Obs	normal
+geneC_Obs_4	geneC_Obs	offset4_geneC_Obs + geneC*scale4_geneC_Obs	log10	sd4_geneC_Obs	normal
+geneC_Obs_5	geneC_Obs	offset5_geneC_Obs + geneC*scale5_geneC_Obs	log10	sd5_geneC_Obs	normal
+geneC_Obs_6	geneC_Obs	offset6_geneC_Obs + geneC*scale6_geneC_Obs	log10	sd6_geneC_Obs	normal
+geneC_Obs_7	geneC_Obs	offset7_geneC_Obs + geneC*scale7_geneC_Obs	log10	sd7_geneC_Obs	normal
+geneC_Obs_8	geneC_Obs	offset8_geneC_Obs + geneC*scale8_geneC_Obs	log10	sd8_geneC_Obs	normal
+geneJ_Obs_1	geneJ_Obs	geneJ	log10	sd1_geneJ_Obs	normal
+geneJ_Obs_2	geneJ_Obs	geneJ	log10	sd2_geneJ_Obs	normal
+geneJ_Obs_3	geneJ_Obs	geneJ	log10	sd3_geneJ_Obs	normal
+geneJ_Obs_4	geneJ_Obs	geneJ	log10	sd4_geneJ_Obs	normal
+geneJ_Obs_5	geneJ_Obs	geneJ	log10	sd5_geneJ_Obs	normal
+geneJ_Obs_6	geneJ_Obs	geneJ	log10	sd6_geneJ_Obs	normal
+geneJ_Obs_7	geneJ_Obs	geneJ	log10	sd7_geneJ_Obs	normal
+geneJ_Obs_8	geneJ_Obs	geneJ	log10	sd8_geneJ_Obs	normal
+geneJ_Obs_9	geneJ_Obs	geneJ	log10	sd9_geneJ_Obs	normal

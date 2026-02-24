@@ -1,0 +1,25 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ERK_total	ERK_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+K_1	K_1	log10	1.58489319246111e-06	1000	9.1201083935591e-06	1	parameterScaleUniform	
+K_2	K_2	log10	1e-05	1000	2.12813904598271	1	parameterScaleUniform	
+K_3	K_3	log10	1e-05	1000	1.18140825192089	1	parameterScaleUniform	
+MEK_total	MEK_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+RAF_total	RAF_total	log10	1e-05	1000	1	0	parameterScaleUniform	
+k10	k10	log10	1e-05	100000	0.0173780082874938	1	parameterScaleUniform	
+k11	k11	log10	1e-05	100000	169.824365246174	1	parameterScaleUniform	
+k2	k2	log10	1e-05	100000	0.579428696426881	1	parameterScaleUniform	
+k3	k3	log10	1e-05	100000	288.403150312661	1	parameterScaleUniform	
+k4	k4	log10	1e-05	100000	4.68813382145265	1	parameterScaleUniform	
+k5	k5	log10	1e-05	100000	741.310241300918	1	parameterScaleUniform	
+k6	k6	log10	1e-05	100000	6.72976656284318	1	parameterScaleUniform	
+scale1_MEK_Obs	scale1_MEK_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_MEK_Obs	scale2_MEK_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_MEK_Obs	scale3_MEK_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_MEK_Obs	sd1_MEK_Obs	log10	0.0001	10	0.0822053343375773	1	parameterScaleUniform	
+sd1_RAF_Obs	sd1_RAF_Obs	log10	0.0001	10	0.0817334817978071	1	parameterScaleUniform	
+sd2_MEK_Obs	sd2_MEK_Obs	log10	0.0001	10	0.0791589454624261	1	parameterScaleUniform	
+sd2_RAF_Obs	sd2_RAF_Obs	log10	0.0001	10	0.0813579505605396	1	parameterScaleUniform	
+sd3_MEK_Obs	sd3_MEK_Obs	log10	0.0001	10	0.0829468695095263	1	parameterScaleUniform	
+sd3_RAF_Obs	sd3_RAF_Obs	log10	0.0001	10	0.081752303794365	1	parameterScaleUniform	
+tau1	tau1	log10	1e-08	100000000	0.206538015581053	1	parameterScaleUniform	
+tau2	tau2	log10	1e-08	100000000	0.0186208713666287	1	parameterScaleUniform	

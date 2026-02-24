@@ -1,0 +1,17 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IPR_A_Obs_1	IPR_A_Obs	offset1_IPR_A_Obs + IPR_A*scale1_IPR_A_Obs	log10	sd1_IPR_A_Obs	normal
+IPR_A_Obs_2	IPR_A_Obs	offset2_IPR_A_Obs + IPR_A*scale2_IPR_A_Obs	log10	sd2_IPR_A_Obs	normal
+IPR_A_Obs_3	IPR_A_Obs	offset3_IPR_A_Obs + IPR_A*scale3_IPR_A_Obs	log10	sd3_IPR_A_Obs	normal
+IPR_A_Obs_4	IPR_A_Obs	offset4_IPR_A_Obs + IPR_A*scale4_IPR_A_Obs	log10	sd4_IPR_A_Obs	normal
+IPR_A_Obs_5	IPR_A_Obs	offset5_IPR_A_Obs + IPR_A*scale5_IPR_A_Obs	log10	sd5_IPR_A_Obs	normal
+IPR_A_Obs_6	IPR_A_Obs	offset6_IPR_A_Obs + IPR_A*scale6_IPR_A_Obs	log10	sd6_IPR_A_Obs	normal
+IPR_A_Obs_7	IPR_A_Obs	offset7_IPR_A_Obs + IPR_A*scale7_IPR_A_Obs	log10	sd7_IPR_A_Obs	normal
+IPR_A_Obs_8	IPR_A_Obs	offset8_IPR_A_Obs + IPR_A*scale8_IPR_A_Obs	log10	sd8_IPR_A_Obs	normal
+IPR_I1_Obs_1	IPR_I1_Obs	offset1_IPR_I1_Obs + IPR_I1*scale1_IPR_I1_Obs	log10	sd1_IPR_I1_Obs	normal
+IPR_I1_Obs_2	IPR_I1_Obs	offset2_IPR_I1_Obs + IPR_I1*scale2_IPR_I1_Obs	log10	sd2_IPR_I1_Obs	normal
+IPR_I1_Obs_3	IPR_I1_Obs	offset3_IPR_I1_Obs + IPR_I1*scale3_IPR_I1_Obs	log10	sd3_IPR_I1_Obs	normal
+IPR_I1_Obs_4	IPR_I1_Obs	offset4_IPR_I1_Obs + IPR_I1*scale4_IPR_I1_Obs	log10	sd4_IPR_I1_Obs	normal
+IPR_I1_Obs_5	IPR_I1_Obs	offset5_IPR_I1_Obs + IPR_I1*scale5_IPR_I1_Obs	log10	sd5_IPR_I1_Obs	normal
+IPR_I1_Obs_6	IPR_I1_Obs	offset6_IPR_I1_Obs + IPR_I1*scale6_IPR_I1_Obs	log10	sd6_IPR_I1_Obs	normal
+IPR_I1_Obs_7	IPR_I1_Obs	offset7_IPR_I1_Obs + IPR_I1*scale7_IPR_I1_Obs	log10	sd7_IPR_I1_Obs	normal
+IPR_I1_Obs_8	IPR_I1_Obs	offset8_IPR_I1_Obs + IPR_I1*scale8_IPR_I1_Obs	log10	sd8_IPR_I1_Obs	normal

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Borghans_RS10">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="extracellular" spatialDimensions="3" size="1" constant="true"/>
+      <compartment id="cytosol" spatialDimensions="3" size="1" constant="true"/>
+      <compartment id="intravesicular" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Z_state" name="Ca^{2+} in cytosol" compartment="cytosol" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Y_state" name="Ca^{2+} in Ca^{2+}-sensitive pool" compartment="intravesicular" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="A_state" name="IP_3 concentration" compartment="cytosol" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="K2" name="K2" value="0.187931681680327" constant="true"/>
+      <parameter id="K_par" name="K_par" value="7.09577767963389" constant="true"/>
+      <parameter id="Ka" name="Ka" value="0.301995172040202" constant="true"/>
+      <parameter id="Kd" name="Kd" value="0.690239803840242" constant="true"/>
+      <parameter id="Kf" name="Kf" value="1.43879857825585" constant="true"/>
+      <parameter id="Kp" name="Kp" value="1.32129563418658" constant="true"/>
+      <parameter id="Ky" name="Ky" value="0.328095293113119" constant="true"/>
+      <parameter id="Kz" name="Kz" value="0.500034534976978" constant="true"/>
+      <parameter id="Vd" name="Vd" value="87.0963589956081" constant="true"/>
+      <parameter id="Vm2" name="Vm2" value="11.7489755493953" constant="true"/>
+      <parameter id="Vm3" name="Vm3" value="29.5120922666639" constant="true"/>
+      <parameter id="Vp" name="Vp" value="5.2239618899912" constant="true"/>
+      <parameter id="beta_par" name="beta_par" value="0.591561634175474" constant="true"/>
+      <parameter id="epsilon_par" name="epsilon_par" value="0.0812830516164099" constant="true"/>
+      <parameter id="init_A_state" name="init_A_state" value="1.07" constant="true"/>
+      <parameter id="init_Y_state" name="init_Y_state" value="1.56" constant="true"/>
+      <parameter id="init_Z_state" name="init_Z_state" value="0.0935" constant="true"/>
+      <parameter id="n_par" name="n_par" value="4.54988060150049" constant="true"/>
+      <parameter id="v0" name="v0" value="3.95366620068128" constant="true"/>
+      <parameter id="v1" name="v1" value="0.788860117618554" constant="true"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="Z_state">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_Z_state </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Y_state">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_Y_state </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="A_state">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_A_state </ci>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Z_state" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <apply>
+                <plus/>
+                <ci> v0 </ci>
+                <apply>
+                  <times/>
+                  <ci> beta_par </ci>
+                  <ci> v1 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Z_state" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Y_state" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> Vm2 </ci>
+                  <apply>
+                    <power/>
+                    <ci> Z_state </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> K2 </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> Z_state </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Y_state" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Z_state" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="A_state"/>
+          <modifierSpeciesReference species="Z_state"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> intravesicular </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <power/>
+                    <ci> A_state </ci>
+                    <cn type="integer"> 4 </cn>
+                  </apply>
+                  <ci> Vm3 </ci>
+                  <apply>
+                    <power/>
+                    <ci> Y_state </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> Z_state </ci>
+                    <cn type="integer"> 4 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> A_state </ci>
+                      <cn type="integer"> 4 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> Ka </ci>
+                      <cn type="integer"> 4 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> Ky </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> Y_state </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> Kz </ci>
+                      <cn type="integer"> 4 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> Z_state </ci>
+                      <cn type="integer"> 4 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Y_state" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Z_state" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> intravesicular </ci>
+              <ci> Kf </ci>
+              <ci> Y_state </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Z_state" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> K_par </ci>
+              <ci> Z_state </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfProducts>
+          <speciesReference species="A_state" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> Vp </ci>
+              <ci> beta_par </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="A_state" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Z_state"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <power/>
+                    <ci> A_state </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <ci> Vd </ci>
+                  <apply>
+                    <power/>
+                    <ci> Z_state </ci>
+                    <ci> n_par </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> Kd </ci>
+                      <ci> n_par </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> Z_state </ci>
+                      <ci> n_par </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> A_state </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> Kp </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="A_state" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cytosol </ci>
+              <ci> A_state </ci>
+              <ci> epsilon_par </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

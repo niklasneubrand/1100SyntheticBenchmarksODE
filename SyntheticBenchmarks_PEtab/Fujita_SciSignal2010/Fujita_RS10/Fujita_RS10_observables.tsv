@@ -1,0 +1,49 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Akt_Obs_1	Akt_Obs	Akt	log10	sd1_Akt_Obs	normal
+Akt_Obs_2	Akt_Obs	Akt	log10	sd2_Akt_Obs	normal
+Akt_Obs_3	Akt_Obs	Akt	log10	sd3_Akt_Obs	normal
+Akt_Obs_4	Akt_Obs	Akt	log10	sd4_Akt_Obs	normal
+Akt_Obs_5	Akt_Obs	Akt	log10	sd5_Akt_Obs	normal
+Akt_Obs_6	Akt_Obs	Akt	log10	sd6_Akt_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	log10	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	offset4_Compound_1_Obs + scale4_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	log10	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	offset5_Compound_1_Obs + scale5_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	log10	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	offset6_Compound_1_Obs + scale6_Compound_1_Obs*(Akt + EGFR + EGF_EGFR + S6 + pAkt + pAkt_S6 + pEGFR + pEGFR_Akt + pS6)	log10	sd6_Compound_1_Obs	normal
+EGFR_Obs_1	EGFR_Obs	EGFR	log10	sd1_EGFR_Obs	normal
+EGFR_Obs_2	EGFR_Obs	EGFR	log10	sd2_EGFR_Obs	normal
+EGFR_Obs_3	EGFR_Obs	EGFR	log10	sd3_EGFR_Obs	normal
+EGFR_Obs_4	EGFR_Obs	EGFR	log10	sd4_EGFR_Obs	normal
+EGFR_Obs_5	EGFR_Obs	EGFR	log10	sd5_EGFR_Obs	normal
+EGFR_Obs_6	EGFR_Obs	EGFR	log10	sd6_EGFR_Obs	normal
+S6_Obs_1	S6_Obs	S6	log10	sd1_S6_Obs	normal
+S6_Obs_2	S6_Obs	S6	log10	sd2_S6_Obs	normal
+S6_Obs_3	S6_Obs	S6	log10	sd3_S6_Obs	normal
+S6_Obs_4	S6_Obs	S6	log10	sd4_S6_Obs	normal
+S6_Obs_5	S6_Obs	S6	log10	sd5_S6_Obs	normal
+S6_Obs_6	S6_Obs	S6	log10	sd6_S6_Obs	normal
+pAkt_S6_Obs_1	pAkt_S6_Obs	pAkt_S6	log10	sd1_pAkt_S6_Obs	normal
+pAkt_S6_Obs_2	pAkt_S6_Obs	pAkt_S6	log10	sd2_pAkt_S6_Obs	normal
+pAkt_S6_Obs_3	pAkt_S6_Obs	pAkt_S6	log10	sd3_pAkt_S6_Obs	normal
+pAkt_S6_Obs_4	pAkt_S6_Obs	pAkt_S6	log10	sd4_pAkt_S6_Obs	normal
+pAkt_S6_Obs_5	pAkt_S6_Obs	pAkt_S6	log10	sd5_pAkt_S6_Obs	normal
+pAkt_S6_Obs_6	pAkt_S6_Obs	pAkt_S6	log10	sd6_pAkt_S6_Obs	normal
+pEGFR_Akt_Obs_1	pEGFR_Akt_Obs	offset1_pEGFR_Akt_Obs + pEGFR_Akt*scale1_pEGFR_Akt_Obs	log10	sd1_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_2	pEGFR_Akt_Obs	offset2_pEGFR_Akt_Obs + pEGFR_Akt*scale2_pEGFR_Akt_Obs	log10	sd2_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_3	pEGFR_Akt_Obs	offset3_pEGFR_Akt_Obs + pEGFR_Akt*scale3_pEGFR_Akt_Obs	log10	sd3_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_4	pEGFR_Akt_Obs	offset4_pEGFR_Akt_Obs + pEGFR_Akt*scale4_pEGFR_Akt_Obs	log10	sd4_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_5	pEGFR_Akt_Obs	offset5_pEGFR_Akt_Obs + pEGFR_Akt*scale5_pEGFR_Akt_Obs	log10	sd5_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_6	pEGFR_Akt_Obs	offset6_pEGFR_Akt_Obs + pEGFR_Akt*scale6_pEGFR_Akt_Obs	log10	sd6_pEGFR_Akt_Obs	normal
+pEGFR_Obs_1	pEGFR_Obs	pEGFR*scale1_pEGFR_Obs	log10	sd1_pEGFR_Obs	normal
+pEGFR_Obs_2	pEGFR_Obs	pEGFR*scale2_pEGFR_Obs	log10	sd2_pEGFR_Obs	normal
+pEGFR_Obs_3	pEGFR_Obs	pEGFR*scale3_pEGFR_Obs	log10	sd3_pEGFR_Obs	normal
+pEGFR_Obs_4	pEGFR_Obs	pEGFR*scale4_pEGFR_Obs	log10	sd4_pEGFR_Obs	normal
+pEGFR_Obs_5	pEGFR_Obs	pEGFR*scale5_pEGFR_Obs	log10	sd5_pEGFR_Obs	normal
+pEGFR_Obs_6	pEGFR_Obs	pEGFR*scale6_pEGFR_Obs	log10	sd6_pEGFR_Obs	normal
+pS6_Obs_1	pS6_Obs	offset1_pS6_Obs + pS6*scale1_pS6_Obs	log10	sd1_pS6_Obs	normal
+pS6_Obs_2	pS6_Obs	offset2_pS6_Obs + pS6*scale2_pS6_Obs	log10	sd2_pS6_Obs	normal
+pS6_Obs_3	pS6_Obs	offset3_pS6_Obs + pS6*scale3_pS6_Obs	log10	sd3_pS6_Obs	normal
+pS6_Obs_4	pS6_Obs	offset4_pS6_Obs + pS6*scale4_pS6_Obs	log10	sd4_pS6_Obs	normal
+pS6_Obs_5	pS6_Obs	offset5_pS6_Obs + pS6*scale5_pS6_Obs	log10	sd5_pS6_Obs	normal
+pS6_Obs_6	pS6_Obs	offset6_pS6_Obs + pS6*scale6_pS6_Obs	log10	sd6_pS6_Obs	normal

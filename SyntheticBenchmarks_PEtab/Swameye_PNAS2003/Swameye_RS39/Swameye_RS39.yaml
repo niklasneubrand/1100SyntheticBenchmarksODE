@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Swameye_RS39_parameters.tsv
+problems:
+  - sbml_files:
+    - Swameye_RS39_model.xml
+    observable_files:
+    - Swameye_RS39_observables.tsv
+    condition_files:
+    - Swameye_RS39_conditions.tsv
+    measurement_files:
+    - Swameye_RS39_measurements.tsv

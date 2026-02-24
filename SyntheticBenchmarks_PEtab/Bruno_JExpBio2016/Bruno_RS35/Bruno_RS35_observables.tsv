@@ -1,0 +1,7 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(bcar + bcry)	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	scale1_Compound_2_Obs*(b10 + ohb10)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	scale2_Compound_2_Obs*(b10 + ohb10)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	scale3_Compound_2_Obs*(b10 + ohb10)	log10	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	scale4_Compound_2_Obs*(b10 + ohb10)	log10	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	scale5_Compound_2_Obs*(b10 + ohb10)	log10	sd5_Compound_2_Obs	normal

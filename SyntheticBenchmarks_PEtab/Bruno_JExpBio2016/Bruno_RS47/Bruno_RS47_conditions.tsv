@@ -1,0 +1,7 @@
+conditionId	b10	bcar	bcry	bio	ohb10	ohbio	zea	k5	kb1	kb2	kc1	kc2	kc4
+D1_Bruno_RS47_TC001	init_b10	0	0	0	0	0	0	0	0	kb2	kc1	0	kc4
+D2_Bruno_RS47_TC002	0	init_bcar1	0	0	0	0	0	k5	kb1	kb2	0	0	0
+D3_Bruno_RS47_TC003	0	init_bcar2	0	0	0	0	0	k5*szea	kb1*szea	kb2*szea	kc1*szea	kc2*szea	kc4*szea
+D4_Bruno_RS47_TC004	0	0	init_bcry	0	0	0	0	k5	0	kb2	kc1	kc2	kc4
+D5_Bruno_RS47_TC005	0	0	0	0	init_ohb10	0	0	0	0	kb2	0	0	kc4
+D6_Bruno_RS47_TC006	0	0	0	0	0	0	init_zea	k5*szea	0	0	0	0	kc4*szea

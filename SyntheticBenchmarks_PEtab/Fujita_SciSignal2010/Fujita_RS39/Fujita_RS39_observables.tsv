@@ -1,0 +1,7 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+EGF_EGFR_Obs_1	EGF_EGFR_Obs	offset1_EGF_EGFR_Obs + EGF_EGFR*scale1_EGF_EGFR_Obs	log10	sd1_EGF_EGFR_Obs	normal
+EGF_EGFR_Obs_2	EGF_EGFR_Obs	offset2_EGF_EGFR_Obs + EGF_EGFR*scale2_EGF_EGFR_Obs	log10	sd2_EGF_EGFR_Obs	normal
+EGF_EGFR_Obs_3	EGF_EGFR_Obs	offset3_EGF_EGFR_Obs + EGF_EGFR*scale3_EGF_EGFR_Obs	log10	sd3_EGF_EGFR_Obs	normal
+EGF_EGFR_Obs_4	EGF_EGFR_Obs	offset4_EGF_EGFR_Obs + EGF_EGFR*scale4_EGF_EGFR_Obs	log10	sd4_EGF_EGFR_Obs	normal
+EGF_EGFR_Obs_5	EGF_EGFR_Obs	offset5_EGF_EGFR_Obs + EGF_EGFR*scale5_EGF_EGFR_Obs	log10	sd5_EGF_EGFR_Obs	normal
+EGF_EGFR_Obs_6	EGF_EGFR_Obs	offset6_EGF_EGFR_Obs + EGF_EGFR*scale6_EGF_EGFR_Obs	log10	sd6_EGF_EGFR_Obs	normal

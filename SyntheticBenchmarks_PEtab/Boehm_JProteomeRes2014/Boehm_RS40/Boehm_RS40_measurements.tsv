@@ -1,0 +1,8 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+pApA_Obs	D1_Boehm_RS40_TC001	1.02632148296085e-08	0			normal
+pApA_Obs	D1_Boehm_RS40_TC001	5.21944713283341e-06	25			normal
+pApA_Obs	D1_Boehm_RS40_TC001	2.85265879065298e-06	55			normal
+pApA_Obs	D1_Boehm_RS40_TC001	2.08536304457387e-06	85			normal
+pApA_Obs	D1_Boehm_RS40_TC001	2.29969213126043e-06	100			normal
+pApA_Obs	D1_Boehm_RS40_TC001	1.14969704036663e-06	150			normal
+pApA_Obs	D1_Boehm_RS40_TC001	6.29003429020004e-07	200			normal

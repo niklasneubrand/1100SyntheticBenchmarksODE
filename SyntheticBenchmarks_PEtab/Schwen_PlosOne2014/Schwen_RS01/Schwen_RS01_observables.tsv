@@ -1,0 +1,14 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IR1 + Ins	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IR1 + Ins	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IR1 + Ins	log10	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	IR1 + Ins	log10	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	IR1 + Ins	log10	sd5_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(Rec1 + Rec2)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	offset2_Compound_2_Obs + scale2_Compound_2_Obs*(Rec1 + Rec2)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	offset3_Compound_2_Obs + scale3_Compound_2_Obs*(Rec1 + Rec2)	log10	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	offset4_Compound_2_Obs + scale4_Compound_2_Obs*(Rec1 + Rec2)	log10	sd4_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(BoundUnspec + Rec2)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(BoundUnspec + Rec2)	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	offset3_Compound_3_Obs + scale3_Compound_3_Obs*(BoundUnspec + Rec2)	log10	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	offset4_Compound_3_Obs + scale4_Compound_3_Obs*(BoundUnspec + Rec2)	log10	sd4_Compound_3_Obs	normal

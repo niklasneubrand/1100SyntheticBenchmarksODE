@@ -1,0 +1,45 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	Rec + ppS2	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	Rec + ppS2_ppS3_ppS3	log10	sd8_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(Rec + geneF)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(Rec + geneF)	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	offset3_Compound_3_Obs + scale3_Compound_3_Obs*(Rec + geneF)	log10	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	offset4_Compound_3_Obs + scale4_Compound_3_Obs*(Rec + geneF)	log10	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	offset5_Compound_3_Obs + scale5_Compound_3_Obs*(Rec + geneF)	log10	sd5_Compound_3_Obs	normal
+Compound_3_Obs_6	Compound_3_Obs	offset6_Compound_3_Obs + scale6_Compound_3_Obs*(Rec + geneF)	log10	sd6_Compound_3_Obs	normal
+Compound_3_Obs_7	Compound_3_Obs	offset7_Compound_3_Obs + scale7_Compound_3_Obs*(Rec + geneF)	log10	sd7_Compound_3_Obs	normal
+Compound_3_Obs_8	Compound_3_Obs	offset8_Compound_3_Obs + scale8_Compound_3_Obs*(Rec + geneF)	log10	sd8_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	offset1_Compound_4_Obs + scale1_Compound_4_Obs*(TGFb_pRec + geneK)	log10	sd1_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	offset1_Compound_5_Obs + scale1_Compound_5_Obs*(S2 + ppS2_S4_S4)	log10	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	offset2_Compound_5_Obs + scale2_Compound_5_Obs*(S2 + ppS2_S4_S4)	log10	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	offset3_Compound_5_Obs + scale3_Compound_5_Obs*(S2 + ppS2_S4_S4)	log10	sd3_Compound_5_Obs	normal
+Compound_5_Obs_4	Compound_5_Obs	offset4_Compound_5_Obs + scale4_Compound_5_Obs*(S2 + ppS2_S4_S4)	log10	sd4_Compound_5_Obs	normal
+Compound_5_Obs_5	Compound_5_Obs	offset5_Compound_5_Obs + scale5_Compound_5_Obs*(S2 + ppS2_S4_S4)	log10	sd5_Compound_5_Obs	normal
+Compound_6_Obs_1	Compound_6_Obs	offset1_Compound_6_Obs + scale1_Compound_6_Obs*(S4_S4_S4 + ppS2_ppS2_ppS2)	log10	sd1_Compound_6_Obs	normal
+Compound_6_Obs_2	Compound_6_Obs	offset2_Compound_6_Obs + scale2_Compound_6_Obs*(S4_S4_S4 + ppS2_ppS2_ppS2)	log10	sd2_Compound_6_Obs	normal
+Compound_6_Obs_3	Compound_6_Obs	offset3_Compound_6_Obs + scale3_Compound_6_Obs*(S4_S4_S4 + ppS2_ppS2_ppS2)	log10	sd3_Compound_6_Obs	normal
+Compound_6_Obs_4	Compound_6_Obs	offset4_Compound_6_Obs + scale4_Compound_6_Obs*(S4_S4_S4 + ppS2_ppS2_ppS2)	log10	sd4_Compound_6_Obs	normal
+Compound_7_Obs_1	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd1_Compound_7_Obs	normal
+Compound_7_Obs_2	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd2_Compound_7_Obs	normal
+Compound_7_Obs_3	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd3_Compound_7_Obs	normal
+Compound_7_Obs_4	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd4_Compound_7_Obs	normal
+Compound_7_Obs_5	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd5_Compound_7_Obs	normal
+Compound_7_Obs_6	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd6_Compound_7_Obs	normal
+Compound_7_Obs_7	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd7_Compound_7_Obs	normal
+Compound_7_Obs_8	Compound_7_Obs	geneH + ppS2_ppS3_ppS3	log10	sd8_Compound_7_Obs	normal
+Compound_8_Obs_1	Compound_8_Obs	offset1_Compound_8_Obs + scale1_Compound_8_Obs*(geneF + ppS2_ppS3_S4)	log10	sd1_Compound_8_Obs	normal
+Compound_8_Obs_2	Compound_8_Obs	offset2_Compound_8_Obs + scale2_Compound_8_Obs*(geneF + ppS2_ppS3_S4)	log10	sd2_Compound_8_Obs	normal
+Compound_8_Obs_3	Compound_8_Obs	offset3_Compound_8_Obs + scale3_Compound_8_Obs*(geneF + ppS2_ppS3_S4)	log10	sd3_Compound_8_Obs	normal
+Compound_9_Obs_1	Compound_9_Obs	offset1_Compound_9_Obs + scale1_Compound_9_Obs*(geneC + geneG)	log10	sd1_Compound_9_Obs	normal
+Compound_9_Obs_2	Compound_9_Obs	offset2_Compound_9_Obs + scale2_Compound_9_Obs*(geneC + geneG)	log10	sd2_Compound_9_Obs	normal
+Compound_9_Obs_3	Compound_9_Obs	offset3_Compound_9_Obs + scale3_Compound_9_Obs*(geneC + geneG)	log10	sd3_Compound_9_Obs	normal
+Compound_9_Obs_4	Compound_9_Obs	offset4_Compound_9_Obs + scale4_Compound_9_Obs*(geneC + geneG)	log10	sd4_Compound_9_Obs	normal
+Compound_9_Obs_5	Compound_9_Obs	offset5_Compound_9_Obs + scale5_Compound_9_Obs*(geneC + geneG)	log10	sd5_Compound_9_Obs	normal
+Compound_9_Obs_6	Compound_9_Obs	offset6_Compound_9_Obs + scale6_Compound_9_Obs*(geneC + geneG)	log10	sd6_Compound_9_Obs	normal

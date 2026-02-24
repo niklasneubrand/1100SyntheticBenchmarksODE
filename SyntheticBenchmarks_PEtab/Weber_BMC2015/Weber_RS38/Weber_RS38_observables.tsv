@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+PI4K3B_Obs_1	PI4K3B_Obs	PI4K3B	log10	sd1_PI4K3B_Obs	normal
+PI4K3B_Obs_2	PI4K3B_Obs	PI4K3B	log10	sd2_PI4K3B_Obs	normal
+PI4K3B_Obs_3	PI4K3B_Obs	PI4K3B	log10	sd3_PI4K3B_Obs	normal
+PI4K3Ba_Obs_1	PI4K3Ba_Obs	offset1_PI4K3Ba_Obs + PI4K3Ba*scale1_PI4K3Ba_Obs	log10	sd1_PI4K3Ba_Obs	normal
+PI4K3Ba_Obs_2	PI4K3Ba_Obs	offset2_PI4K3Ba_Obs + PI4K3Ba*scale2_PI4K3Ba_Obs	log10	sd2_PI4K3Ba_Obs	normal

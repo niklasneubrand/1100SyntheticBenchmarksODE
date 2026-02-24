@@ -1,0 +1,33 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	scale4_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	scale5_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	scale6_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	scale7_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	scale8_Compound_1_Obs*(EpoRJAK2_CIS + p1EpoRpJAK2)	lin	sd8_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	scale1_Compound_2_Obs*(SHP1 + STAT5)	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	scale2_Compound_2_Obs*(SHP1 + STAT5)	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	scale1_Compound_3_Obs*(SHP1Act + SOCS3nRNA3)	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	scale2_Compound_3_Obs*(SHP1Act + SOCS3nRNA3)	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	scale3_Compound_3_Obs*(SHP1Act + SOCS3nRNA3)	lin	sd3_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	CISnRNA1 + SOCS3nRNA5	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	CISnRNA1 + SOCS3nRNA5	lin	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	CISnRNA1 + SOCS3nRNA5	lin	sd3_Compound_4_Obs	normal
+Compound_4_Obs_4	Compound_4_Obs	CISnRNA1 + SOCS3nRNA5	lin	sd4_Compound_4_Obs	normal
+Compound_4_Obs_5	Compound_4_Obs	CISnRNA1 + SOCS3nRNA5	lin	sd5_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	scale1_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	scale2_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	scale3_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd3_Compound_5_Obs	normal
+Compound_5_Obs_4	Compound_5_Obs	scale4_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd4_Compound_5_Obs	normal
+Compound_5_Obs_5	Compound_5_Obs	scale5_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd5_Compound_5_Obs	normal
+Compound_5_Obs_6	Compound_5_Obs	scale6_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd6_Compound_5_Obs	normal
+Compound_5_Obs_7	Compound_5_Obs	scale7_Compound_5_Obs*(CISnRNA2 + SOCS3nRNA1)	lin	sd7_Compound_5_Obs	normal
+Compound_6_Obs	Compound_6_Obs	scale1_Compound_6_Obs*(CISRNA + CISnRNA3)	lin	sd1_Compound_6_Obs	normal
+Compound_7_Obs_1	Compound_7_Obs	scale1_Compound_7_Obs*(CISnRNA4 + SOCS3nRNA1)	lin	sd1_Compound_7_Obs	normal
+Compound_7_Obs_2	Compound_7_Obs	scale2_Compound_7_Obs*(CISnRNA4 + SOCS3nRNA1)	lin	sd2_Compound_7_Obs	normal
+Compound_7_Obs_3	Compound_7_Obs	scale3_Compound_7_Obs*(CISnRNA4 + SOCS3nRNA1)	lin	sd3_Compound_7_Obs	normal
+Compound_8_Obs_1	Compound_8_Obs	scale1_Compound_8_Obs*(SOCS3 + SOCS3nRNA4)	lin	sd1_Compound_8_Obs	normal
+Compound_8_Obs_2	Compound_8_Obs	scale2_Compound_8_Obs*(SOCS3 + SOCS3nRNA4)	lin	sd2_Compound_8_Obs	normal
+SHP1Act_Obs	SHP1Act_Obs	SHP1Act*scale1_SHP1Act_Obs	lin	sd1_SHP1Act_Obs	normal

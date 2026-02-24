@@ -1,0 +1,20 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(IRins + XX)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(IRins + XX)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(IRins + XX)	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	scale1_Compound_2_Obs*(IRp + XXp)	lin	sd1_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	scale1_Compound_3_Obs*(IR + IRi)	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	scale2_Compound_3_Obs*(IR + IRi)	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	scale3_Compound_3_Obs*(IR + IRi)	lin	sd3_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	scale1_Compound_4_Obs*(IRS + XX)	lin	sd1_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	scale1_Compound_5_Obs*(IRSiP + XX)	lin	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	scale2_Compound_5_Obs*(IRSiP + XX)	lin	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	scale3_Compound_5_Obs*(IRSiP + XX)	lin	sd3_Compound_5_Obs	normal
+Compound_6_Obs	Compound_6_Obs	scale1_Compound_6_Obs*(IRS + IRp)	lin	sd1_Compound_6_Obs	normal
+Compound_7_Obs	Compound_7_Obs	scale1_Compound_7_Obs*(IRSiP + XXp)	lin	sd1_Compound_7_Obs	normal
+Compound_8_Obs_1	Compound_8_Obs	scale1_Compound_8_Obs*(IRSiP + IRi)	lin	sd1_Compound_8_Obs	normal
+Compound_8_Obs_2	Compound_8_Obs	scale2_Compound_8_Obs*(IRSiP + IRi)	lin	sd2_Compound_8_Obs	normal
+Compound_8_Obs_3	Compound_8_Obs	scale3_Compound_8_Obs*(IRSiP + IRi)	lin	sd3_Compound_8_Obs	normal
+Compound_9_Obs_1	Compound_9_Obs	scale1_Compound_9_Obs*(IRiP + IRins)	lin	sd1_Compound_9_Obs	normal
+Compound_9_Obs_2	Compound_9_Obs	scale2_Compound_9_Obs*(IRiP + IRins)	lin	sd2_Compound_9_Obs	normal
+Compound_9_Obs_3	Compound_9_Obs	scale3_Compound_9_Obs*(IRiP + IRins)	lin	sd3_Compound_9_Obs	normal

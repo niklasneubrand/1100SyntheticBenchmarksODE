@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Raia_RS20_parameters.tsv
+problems:
+  - sbml_files:
+    - Raia_RS20_model.xml
+    observable_files:
+    - Raia_RS20_observables.tsv
+    condition_files:
+    - Raia_RS20_conditions.tsv
+    measurement_files:
+    - Raia_RS20_measurements.tsv

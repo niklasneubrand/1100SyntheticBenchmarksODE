@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Fiedler_RS22_parameters.tsv
+problems:
+  - sbml_files:
+    - Fiedler_RS22_model.xml
+    observable_files:
+    - Fiedler_RS22_observables.tsv
+    condition_files:
+    - Fiedler_RS22_conditions.tsv
+    measurement_files:
+    - Fiedler_RS22_measurements.tsv

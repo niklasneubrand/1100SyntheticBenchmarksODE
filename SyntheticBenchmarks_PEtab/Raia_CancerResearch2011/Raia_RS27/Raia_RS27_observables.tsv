@@ -1,0 +1,16 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CD274mRNA_Obs	CD274mRNA_Obs	CD274mRNA	log10	sd1_CD274mRNA_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(CD274mRNA + DecoyR + IL13_Rec + IL13_DecoyR + Rec + Rec_i + SOCS3 + pJAK2 + pSTAT5 + p_IL13_Rec)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(CD274mRNA + DecoyR + IL13_Rec + IL13_DecoyR + Rec + Rec_i + SOCS3 + pJAK2 + pSTAT5 + p_IL13_Rec)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(CD274mRNA + DecoyR + IL13_Rec + IL13_DecoyR + Rec + Rec_i + SOCS3 + pJAK2 + pSTAT5 + p_IL13_Rec)	log10	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(CD274mRNA + DecoyR + IL13_Rec + JAK2 + Rec + SOCS3 + STAT5 + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	offset2_Compound_2_Obs + scale2_Compound_2_Obs*(CD274mRNA + DecoyR + IL13_Rec + JAK2 + Rec + SOCS3 + STAT5 + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	offset3_Compound_2_Obs + scale3_Compound_2_Obs*(CD274mRNA + DecoyR + IL13_Rec + JAK2 + Rec + SOCS3 + STAT5 + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i)	log10	sd3_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(CD274mRNA + DecoyR + IL13_DecoyR + Rec_i + SOCS3 + STAT5 + pJAK2 + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(CD274mRNA + DecoyR + IL13_DecoyR + Rec_i + SOCS3 + STAT5 + pJAK2 + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i)	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	offset3_Compound_3_Obs + scale3_Compound_3_Obs*(CD274mRNA + DecoyR + IL13_DecoyR + Rec_i + SOCS3 + STAT5 + pJAK2 + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i)	log10	sd3_Compound_3_Obs	normal
+DecoyR_Obs_1	DecoyR_Obs	offset1_DecoyR_Obs + DecoyR*scale1_DecoyR_Obs	log10	sd1_DecoyR_Obs	normal
+DecoyR_Obs_2	DecoyR_Obs	offset2_DecoyR_Obs + DecoyR*scale2_DecoyR_Obs	log10	sd2_DecoyR_Obs	normal
+Rec_Obs	Rec_Obs	offset1_Rec_Obs + Rec*scale1_Rec_Obs	log10	sd1_Rec_Obs	normal
+p_IL13_Rec_Obs_1	p_IL13_Rec_Obs	p_IL13_Rec	log10	sd1_p_IL13_Rec_Obs	normal
+p_IL13_Rec_Obs_2	p_IL13_Rec_Obs	p_IL13_Rec	log10	sd2_p_IL13_Rec_Obs	normal

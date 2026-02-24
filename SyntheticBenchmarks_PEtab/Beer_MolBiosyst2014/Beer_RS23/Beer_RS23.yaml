@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Beer_RS23_parameters.tsv
+problems:
+  - sbml_files:
+    - Beer_RS23_model.xml
+    observable_files:
+    - Beer_RS23_observables.tsv
+    condition_files:
+    - Beer_RS23_conditions.tsv
+    measurement_files:
+    - Beer_RS23_measurements.tsv

@@ -1,0 +1,24 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+KM	KM	log10	0.001	100000	6.18016400138416	1	parameterScaleUniform	
+eff	eff	log10	1	1000	35.4813389233575	1	parameterScaleUniform	
+eff_GFP	eff_GFP	log10	1	1000	1	0	parameterScaleUniform	
+init_GFP	init_GFP	log10	1e-05	1000	0.0038904514499428	1	parameterScaleUniform	
+init_GFP_mRNA	init_GFP_mRNA	log10	1e-05	1000	1.44543977074593e-05	1	parameterScaleUniform	
+init_X_mRNA	init_X_mRNA	log10	1e-05	1000	213.796208950223	1	parameterScaleUniform	
+init_X_protein	init_X_protein	log10	1e-05	1000	0.706317554262962	1	parameterScaleUniform	
+init_Y_mRNA	init_Y_mRNA	log10	1e-05	1000	616.595001861482	1	parameterScaleUniform	
+init_Y_protein	init_Y_protein	log10	1e-05	10000	1513.56124843621	1	parameterScaleUniform	
+init_Z_mRNA	init_Z_mRNA	log10	1e-05	1000	524.807460249773	1	parameterScaleUniform	
+init_Z_protein	init_Z_protein	log10	1e-05	1000	3.71535229097173e-05	1	parameterScaleUniform	
+n_Hill	n_Hill	log10	1e-05	1000	1.99986186963274	0	parameterScaleUniform	
+scale1_X_mRNA_Obs	scale1_X_mRNA_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Y_protein_Obs	scale1_Y_protein_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_X_mRNA_Obs	sd1_X_mRNA_Obs	log10	0.01	1000	2.10814267625319	1	parameterScaleUniform	
+sd1_X_protein_Obs	sd1_X_protein_Obs	log10	0.1	10000	80.1124475024898	1	parameterScaleUniform	
+sd1_Y_protein_Obs	sd1_Y_protein_Obs	log10	1	100000	108.467592287615	1	parameterScaleUniform	
+tau_mRNA	tau_mRNA	log10	0.01	1000	1.21115576298273	1	parameterScaleUniform	
+tau_mRNA_GFP	tau_mRNA_GFP	log10	0.01	1000	0.0194984459975805	1	parameterScaleUniform	
+tau_prot	tau_prot	log10	0.01	1000	11.7489755493953	1	parameterScaleUniform	
+tau_prot_GFP	tau_prot_GFP	log10	1	10000	35.4813389233575	1	parameterScaleUniform	
+tps_active	tps_active	log10	0.001	100000	54.9540873857625	1	parameterScaleUniform	
+tps_repr	tps_repr	log10	0.001	100000	0.00173780082874938	1	parameterScaleUniform	

@@ -1,0 +1,18 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IR + IRSiP + IRins	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IR + IRSiP + IRins	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IR + IRSiP + IRins	lin	sd3_Compound_1_Obs	normal
+IRS_Obs_1	IRS_Obs	IRS*scale1_IRS_Obs	lin	sd1_IRS_Obs	normal
+IRS_Obs_2	IRS_Obs	IRS*scale2_IRS_Obs	lin	sd2_IRS_Obs	normal
+IRS_Obs_3	IRS_Obs	IRS*scale3_IRS_Obs	lin	sd3_IRS_Obs	normal
+IRSiP_Obs	IRSiP_Obs	IRSiP*scale1_IRSiP_Obs	lin	sd1_IRSiP_Obs	normal
+IR_Obs	IR_Obs	IR*scale1_IR_Obs	lin	sd1_IR_Obs	normal
+IRiP_Obs_1	IRiP_Obs	IRiP*scale1_IRiP_Obs	lin	sd1_IRiP_Obs	normal
+IRiP_Obs_2	IRiP_Obs	IRiP*scale2_IRiP_Obs	lin	sd2_IRiP_Obs	normal
+IRiP_Obs_3	IRiP_Obs	IRiP*scale3_IRiP_Obs	lin	sd3_IRiP_Obs	normal
+IRi_Obs_1	IRi_Obs	IRi*scale1_IRi_Obs	lin	sd1_IRi_Obs	normal
+IRi_Obs_2	IRi_Obs	IRi*scale2_IRi_Obs	lin	sd2_IRi_Obs	normal
+IRi_Obs_3	IRi_Obs	IRi*scale3_IRi_Obs	lin	sd3_IRi_Obs	normal
+IRins_Obs	IRins_Obs	IRins*scale1_IRins_Obs	lin	sd1_IRins_Obs	normal
+IRp_Obs	IRp_Obs	IRp*scale1_IRp_Obs	lin	sd1_IRp_Obs	normal
+XX_Obs	XX_Obs	XX*scale1_XX_Obs	lin	sd1_XX_Obs	normal

@@ -1,0 +1,24 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	Rec_i + SOCS3mRNA	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	Rec_i + SOCS3mRNA	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	Rec_i + SOCS3mRNA	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	CD274mRNA + STAT5	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	CD274mRNA + STAT5	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	DecoyR + pSTAT5	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	DecoyR + pSTAT5	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	DecoyR + pSTAT5	lin	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	DecoyR + pSTAT5	lin	sd4_Compound_3_Obs	normal
+DecoyR_Obs_1	DecoyR_Obs	DecoyR	lin	sd1_DecoyR_Obs	normal
+DecoyR_Obs_2	DecoyR_Obs	DecoyR	lin	sd2_DecoyR_Obs	normal
+JAK2_Obs_1	JAK2_Obs	JAK2	lin	sd1_JAK2_Obs	normal
+JAK2_Obs_2	JAK2_Obs	JAK2	lin	sd2_JAK2_Obs	normal
+Rec_Obs_1	Rec_Obs	Rec	lin	sd1_Rec_Obs	normal
+Rec_Obs_2	Rec_Obs	Rec	lin	sd2_Rec_Obs	normal
+Rec_i_Obs_1	Rec_i_Obs	Rec_i	lin	sd1_Rec_i_Obs	normal
+Rec_i_Obs_2	Rec_i_Obs	Rec_i	lin	sd2_Rec_i_Obs	normal
+STAT5_Obs_1	STAT5_Obs	STAT5	lin	sd1_STAT5_Obs	normal
+STAT5_Obs_2	STAT5_Obs	STAT5	lin	sd2_STAT5_Obs	normal
+p_IL13_Rec_i_Obs_1	p_IL13_Rec_i_Obs	p_IL13_Rec_i	lin	sd1_p_IL13_Rec_i_Obs	normal
+p_IL13_Rec_i_Obs_2	p_IL13_Rec_i_Obs	p_IL13_Rec_i	lin	sd2_p_IL13_Rec_i_Obs	normal
+p_IL13_Rec_i_Obs_3	p_IL13_Rec_i_Obs	p_IL13_Rec_i	lin	sd3_p_IL13_Rec_i_Obs	normal
+p_IL13_Rec_i_Obs_4	p_IL13_Rec_i_Obs	p_IL13_Rec_i	lin	sd4_p_IL13_Rec_i_Obs	normal

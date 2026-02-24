@@ -1,0 +1,24 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_b10	init_b10	log10	1e-05	1000	5.02342589522387	1	parameterScaleUniform	
+init_bcar1	init_bcar1	log10	1e-05	1000	2.2284351492703	1	parameterScaleUniform	
+init_bcar2	init_bcar2	log10	1e-05	1000	3.76703798983909	1	parameterScaleUniform	
+init_bcry	init_bcry	log10	1e-05	1000	7.96159350417319	1	parameterScaleUniform	
+init_ohb10	init_ohb10	log10	1e-05	1000	1.01688068906028	1	parameterScaleUniform	
+init_zea	init_zea	log10	1e-05	1000	3.44349930763339	1	parameterScaleUniform	
+k5	k5	log10	1e-05	1000	0.00501187233627272	1	parameterScaleUniform	
+kb1	kb1	log10	1e-05	1000	0.0275422870333817	1	parameterScaleUniform	
+kb2	kb2	log10	1e-05	1000	0.00416869383470336	1	parameterScaleUniform	
+kc1	kc1	log10	1e-05	1000	0.00323593656929628	1	parameterScaleUniform	
+kc2	kc2	log10	1e-05	1000	0.00831763771102671	1	parameterScaleUniform	
+kc4	kc4	log10	1e-05	1000	0.00416869383470336	1	parameterScaleUniform	
+offset1_ohbio_Obs	offset1_ohbio_Obs	log10	1e-05	0.1	0.001	1	parameterScaleUniform	
+offset2_ohbio_Obs	offset2_ohbio_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+scale1_ohbio_Obs	scale1_ohbio_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_ohbio_Obs	scale2_ohbio_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_b10_Obs	sd1_b10_Obs	log10	0.001	100	0.160044222133694	1	parameterScaleUniform	
+sd1_ohbio_Obs	sd1_ohbio_Obs	log10	0.001	100	0.151890286050054	1	parameterScaleUniform	
+sd2_b10_Obs	sd2_b10_Obs	log10	0.001	100	0.139691506173439	1	parameterScaleUniform	
+sd2_ohbio_Obs	sd2_ohbio_Obs	log10	0.001	100	0.143373867347614	1	parameterScaleUniform	
+sd3_b10_Obs	sd3_b10_Obs	log10	0.001	100	0.149372276538925	1	parameterScaleUniform	
+sd4_b10_Obs	sd4_b10_Obs	log10	0.001	100	0.156433585656962	1	parameterScaleUniform	
+szea	szea	log10	1e-05	1000	0.458141886714533	1	parameterScaleUniform	

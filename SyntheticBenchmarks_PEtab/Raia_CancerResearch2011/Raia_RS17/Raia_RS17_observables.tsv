@@ -1,0 +1,8 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CD274mRNA_Obs	CD274mRNA_Obs	CD274mRNA*scale1_CD274mRNA_Obs	lin	sd1_CD274mRNA_Obs	normal
+Rec_Obs	Rec_Obs	Rec*scale1_Rec_Obs	lin	sd1_Rec_Obs	normal
+Rec_i_Obs_1	Rec_i_Obs	Rec_i	lin	sd1_Rec_i_Obs	normal
+Rec_i_Obs_2	Rec_i_Obs	Rec_i	lin	sd2_Rec_i_Obs	normal
+STAT5_Obs_1	STAT5_Obs	STAT5	lin	sd1_STAT5_Obs	normal
+STAT5_Obs_2	STAT5_Obs	STAT5	lin	sd2_STAT5_Obs	normal
+p_IL13_Rec_Obs	p_IL13_Rec_Obs	p_IL13_Rec*scale1_p_IL13_Rec_Obs	lin	sd1_p_IL13_Rec_Obs	normal

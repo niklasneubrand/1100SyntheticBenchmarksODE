@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Borghans_RS18_parameters.tsv
+problems:
+  - sbml_files:
+    - Borghans_RS18_model.xml
+    observable_files:
+    - Borghans_RS18_observables.tsv
+    condition_files:
+    - Borghans_RS18_conditions.tsv
+    measurement_files:
+    - Borghans_RS18_measurements.tsv

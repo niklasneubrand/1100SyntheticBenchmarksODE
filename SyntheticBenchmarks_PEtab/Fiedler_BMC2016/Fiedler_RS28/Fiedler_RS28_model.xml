@@ -1,0 +1,3524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Fiedler_RS28">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="nM" name="nM">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="1e-09"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="pl" name="pl">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1e-12"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cyt" spatialDimensions="3" size="1" units="pl" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="RAF" name="RAF" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pRAF" name="pRAF" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="MEK" name="MEK" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pMEK" name="pMEK" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="ERK" name="ERK" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pERK" name="pERK" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="K_1" name="K_1" value="1.69824365246175e-05" constant="true"/>
+      <parameter id="K_2" name="K_2" value="0.796159350417319" constant="true"/>
+      <parameter id="K_3" name="K_3" value="0.653130552647472" constant="true"/>
+      <parameter id="Sorafenib" name="Sorafenib" constant="true"/>
+      <parameter id="UO126" name="UO126" constant="true"/>
+      <parameter id="init_ERK" name="init_ERK" constant="true"/>
+      <parameter id="init_MEK" name="init_MEK" constant="true"/>
+      <parameter id="init_RAF" name="init_RAF" constant="true"/>
+      <parameter id="init_pERK" name="init_pERK" constant="true"/>
+      <parameter id="init_pMEK" name="init_pMEK" constant="true"/>
+      <parameter id="init_pRAF" name="init_pRAF" constant="true"/>
+      <parameter id="k10" name="k10" value="0.0218776162394955" constant="true"/>
+      <parameter id="k11" name="k11" value="123.026877081238" constant="true"/>
+      <parameter id="k2" name="k2" value="0.361409862639613" constant="true"/>
+      <parameter id="k3" name="k3" value="602.559586074358" constant="true"/>
+      <parameter id="k4" name="k4" value="6.74528027697922" constant="true"/>
+      <parameter id="k5" name="k5" value="208.929613085404" constant="true"/>
+      <parameter id="k6" name="k6" value="7.17794291271362" constant="true"/>
+      <parameter id="tau1" name="tau1" value="0.112719745617551" constant="true"/>
+      <parameter id="tau2" name="tau2" value="0.0208929613085404" constant="true"/>
+      <parameter id="ERK_total" name="ERK_total" value="1" constant="true"/>
+      <parameter id="MEK_total" name="MEK_total" value="1" constant="true"/>
+      <parameter id="RAF_total" name="RAF_total" value="1" constant="true"/>
+      <parameter id="k1max" name="k1max" value="0" units="nM" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="RAF">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> RAF_total </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <power/>
+                      <apply>
+                        <times/>
+                        <ci> K_1 </ci>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <ci> K_1 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k2 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> K_1 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <ci> K_1 </ci>
+                            <ci> k2 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> K_1 </ci>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <ci> K_1 </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> K_1 </ci>
+                            <apply>
+                              <power/>
+                              <ci> MEK_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k5 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <ci> K_1 </ci>
+                            <ci> MEK_total </ci>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <ci> K_1 </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <ci> K_1 </ci>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 4 </cn>
+                            <ci> ERK_total </ci>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <ci> K_1 </ci>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <ci> k10 </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn type="rational"> 1 <sep/> 2 </cn>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> K_1 </ci>
+                      <ci> k2 </ci>
+                      <ci> k4 </ci>
+                      <ci> k6 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> K_1 </ci>
+                    <ci> k4 </ci>
+                    <ci> k6 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k5 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> K_1 </ci>
+                  <ci> k2 </ci>
+                  <ci> k3 </ci>
+                  <ci> k6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> K_1 </ci>
+                  <ci> k3 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> ERK_total </ci>
+                  <ci> MEK_total </ci>
+                  <ci> k2 </ci>
+                  <ci> k3 </ci>
+                  <ci> k5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> k2 </ci>
+                  <ci> k3 </ci>
+                  <ci> k5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k5 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pRAF">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <times/>
+                      <ci> K_1 </ci>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <times/>
+                          <ci> K_1 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k2 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k4 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> K_1 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k4 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                          <ci> k2 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k4 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k10 </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> K_1 </ci>
+                          <apply>
+                            <power/>
+                            <ci> RAF_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k3 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> K_1 </ci>
+                          <apply>
+                            <power/>
+                            <ci> MEK_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> RAF_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k3 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k5 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                          <ci> MEK_total </ci>
+                          <apply>
+                            <power/>
+                            <ci> RAF_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k3 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k2 </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k10 </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                          <ci> MEK_total </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 4 </cn>
+                          <ci> ERK_total </ci>
+                          <ci> MEK_total </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k2 </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <ci> k10 </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                          <ci> MEK_total </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k2 </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <ci> k10 </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <cn type="rational"> 1 <sep/> 2 </cn>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> K_1 </ci>
+                    <ci> k2 </ci>
+                    <ci> k4 </ci>
+                    <ci> k6 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> k4 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k6 </ci>
+                <ci> k10 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> MEK_total </ci>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k5 </ci>
+                <ci> k10 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> K_1 </ci>
+                <ci> k2 </ci>
+                <ci> k3 </ci>
+                <ci> k6 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> K_1 </ci>
+                <ci> k3 </ci>
+                <ci> k6 </ci>
+                <ci> k10 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> ERK_total </ci>
+                <ci> MEK_total </ci>
+                <ci> k2 </ci>
+                <ci> k3 </ci>
+                <ci> k5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> K_1 </ci>
+                <ci> MEK_total </ci>
+                <ci> k2 </ci>
+                <ci> k3 </ci>
+                <ci> k5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn type="integer"> 2 </cn>
+                <ci> K_1 </ci>
+                <ci> MEK_total </ci>
+                <ci> k3 </ci>
+                <ci> k5 </ci>
+                <ci> k10 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="MEK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> MEK_total </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <times/>
+                      <ci> MEK_total </ci>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k2 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k2 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> RAF_total </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> MEK_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k5 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> MEK_total </ci>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 4 </cn>
+                            <ci> ERK_total </ci>
+                            <ci> K_1 </ci>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <ci> k10 </ci>
+                          </apply>
+                        </apply>
+                        <cn type="rational"> 1 <sep/> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> K_1 </ci>
+                      <ci> MEK_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k4 </ci>
+                      <ci> k6 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> K_1 </ci>
+                    <ci> MEK_total </ci>
+                    <ci> k4 </ci>
+                    <ci> k6 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <apply>
+                    <power/>
+                    <ci> MEK_total </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k5 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k2 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k4 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k4 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> RAF_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k3 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k2 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k4 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> RAF_total </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> MEK_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> RAF_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k3 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k5 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> MEK_total </ci>
+                      <apply>
+                        <power/>
+                        <ci> RAF_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k3 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> RAF_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> MEK_total </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> MEK_total </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 4 </cn>
+                      <ci> ERK_total </ci>
+                      <ci> K_1 </ci>
+                      <ci> MEK_total </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <ci> k10 </ci>
+                    </apply>
+                  </apply>
+                  <cn type="rational"> 1 <sep/> 2 </cn>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> MEK_total </ci>
+                  <ci> k5 </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <ci> K_1 </ci>
+                      <ci> k4 </ci>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k2 </ci>
+                      <ci> k4 </ci>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> ERK_total </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <ci> K_1 </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> K_1 </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k3 </ci>
+                      <ci> k10 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> k2 </ci>
+                  <ci> k4 </ci>
+                  <ci> k6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> k4 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pMEK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> MEK_total </ci>
+                    <apply>
+                      <power/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k2 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k4 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k4 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> RAF_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k3 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k2 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k4 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k10 </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> RAF_total </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> MEK_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> RAF_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k3 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k5 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> MEK_total </ci>
+                          <apply>
+                            <power/>
+                            <ci> RAF_total </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> k3 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> RAF_total </ci>
+                          <ci> k2 </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k6 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> k10 </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> MEK_total </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <apply>
+                            <power/>
+                            <ci> k10 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 2 </cn>
+                          <apply>
+                            <power/>
+                            <ci> K_1 </ci>
+                            <cn type="integer"> 2 </cn>
+                          </apply>
+                          <ci> MEK_total </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k2 </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <ci> k10 </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <cn type="integer"> 4 </cn>
+                          <ci> ERK_total </ci>
+                          <ci> K_1 </ci>
+                          <ci> MEK_total </ci>
+                          <ci> RAF_total </ci>
+                          <ci> k2 </ci>
+                          <ci> k3 </ci>
+                          <ci> k4 </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                          <ci> k10 </ci>
+                        </apply>
+                      </apply>
+                      <cn type="rational"> 1 <sep/> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> K_1 </ci>
+                    <ci> MEK_total </ci>
+                    <ci> k2 </ci>
+                    <ci> k4 </ci>
+                    <ci> k6 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> k4 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> MEK_total </ci>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k6 </ci>
+                <ci> k10 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <apply>
+                  <power/>
+                  <ci> MEK_total </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k5 </ci>
+                <ci> k10 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k2 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k4 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k4 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k10 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> RAF_total </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k3 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k10 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> k2 </ci>
+                    <apply>
+                      <power/>
+                      <ci> k4 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> k10 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> RAF_total </ci>
+                    <ci> k3 </ci>
+                    <ci> k4 </ci>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k10 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> MEK_total </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> RAF_total </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k3 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k5 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k10 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> MEK_total </ci>
+                    <apply>
+                      <power/>
+                      <ci> RAF_total </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k3 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                    <apply>
+                      <power/>
+                      <ci> k10 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> RAF_total </ci>
+                    <ci> k2 </ci>
+                    <ci> k3 </ci>
+                    <ci> k4 </ci>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> k10 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> MEK_total </ci>
+                    <ci> RAF_total </ci>
+                    <ci> k3 </ci>
+                    <ci> k4 </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                    <apply>
+                      <power/>
+                      <ci> k10 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <power/>
+                      <ci> K_1 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <ci> MEK_total </ci>
+                    <ci> RAF_total </ci>
+                    <ci> k2 </ci>
+                    <ci> k3 </ci>
+                    <ci> k4 </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 4 </cn>
+                    <ci> ERK_total </ci>
+                    <ci> K_1 </ci>
+                    <ci> MEK_total </ci>
+                    <ci> RAF_total </ci>
+                    <ci> k2 </ci>
+                    <ci> k3 </ci>
+                    <ci> k4 </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                </apply>
+                <cn type="rational"> 1 <sep/> 2 </cn>
+              </apply>
+              <apply>
+                <times/>
+                <ci> MEK_total </ci>
+                <ci> k5 </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> K_1 </ci>
+                    <ci> k4 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> k2 </ci>
+                    <ci> k4 </ci>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <ci> ERK_total </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <ci> K_1 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> K_1 </ci>
+                    <ci> RAF_total </ci>
+                    <ci> k3 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> k2 </ci>
+                <ci> k4 </ci>
+                <ci> k6 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> k4 </ci>
+                <ci> k6 </ci>
+                <ci> k10 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k6 </ci>
+                <ci> k10 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="ERK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> ERK_total </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <times/>
+                        <ci> ERK_total </ci>
+                        <ci> MEK_total </ci>
+                        <ci> k5 </ci>
+                        <apply>
+                          <power/>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k2 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k4 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k6 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k4 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k6 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k10 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> RAF_total </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k3 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k6 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k10 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> k2 </ci>
+                              <apply>
+                                <power/>
+                                <ci> k4 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k6 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> k10 </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> RAF_total </ci>
+                              <ci> k3 </ci>
+                              <ci> k4 </ci>
+                              <apply>
+                                <power/>
+                                <ci> k6 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k10 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> MEK_total </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> RAF_total </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k3 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k5 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k10 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> MEK_total </ci>
+                              <apply>
+                                <power/>
+                                <ci> RAF_total </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <apply>
+                                <power/>
+                                <ci> k3 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> k5 </ci>
+                              <ci> k6 </ci>
+                              <apply>
+                                <power/>
+                                <ci> k10 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> RAF_total </ci>
+                              <ci> k2 </ci>
+                              <ci> k3 </ci>
+                              <ci> k4 </ci>
+                              <apply>
+                                <power/>
+                                <ci> k6 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> k10 </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> MEK_total </ci>
+                              <ci> RAF_total </ci>
+                              <ci> k3 </ci>
+                              <ci> k4 </ci>
+                              <ci> k5 </ci>
+                              <ci> k6 </ci>
+                              <apply>
+                                <power/>
+                                <ci> k10 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <apply>
+                                <power/>
+                                <ci> K_1 </ci>
+                                <cn type="integer"> 2 </cn>
+                              </apply>
+                              <ci> MEK_total </ci>
+                              <ci> RAF_total </ci>
+                              <ci> k2 </ci>
+                              <ci> k3 </ci>
+                              <ci> k4 </ci>
+                              <ci> k5 </ci>
+                              <ci> k6 </ci>
+                              <ci> k10 </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 4 </cn>
+                              <ci> ERK_total </ci>
+                              <ci> K_1 </ci>
+                              <ci> MEK_total </ci>
+                              <ci> RAF_total </ci>
+                              <ci> k2 </ci>
+                              <ci> k3 </ci>
+                              <ci> k4 </ci>
+                              <ci> k5 </ci>
+                              <ci> k6 </ci>
+                              <ci> k10 </ci>
+                            </apply>
+                          </apply>
+                          <cn type="rational"> 1 <sep/> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> ERK_total </ci>
+                        <ci> K_1 </ci>
+                        <apply>
+                          <power/>
+                          <ci> MEK_total </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> RAF_total </ci>
+                        <ci> k3 </ci>
+                        <apply>
+                          <power/>
+                          <ci> k5 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> k10 </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> ERK_total </ci>
+                      <ci> K_1 </ci>
+                      <ci> MEK_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> ERK_total </ci>
+                    <ci> K_1 </ci>
+                    <ci> MEK_total </ci>
+                    <ci> k4 </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                    <ci> k10 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> ERK_total </ci>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k5 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> k6 </ci>
+                    <apply>
+                      <times/>
+                      <ci> MEK_total </ci>
+                      <ci> k5 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k2 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k4 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k4 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k10 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> RAF_total </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k3 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k10 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> k2 </ci>
+                        <apply>
+                          <power/>
+                          <ci> k4 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> k10 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> RAF_total </ci>
+                        <ci> k3 </ci>
+                        <ci> k4 </ci>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k10 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> MEK_total </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> RAF_total </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k3 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k5 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k10 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> MEK_total </ci>
+                        <apply>
+                          <power/>
+                          <ci> RAF_total </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> k3 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> k5 </ci>
+                        <ci> k6 </ci>
+                        <apply>
+                          <power/>
+                          <ci> k10 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> RAF_total </ci>
+                        <ci> k2 </ci>
+                        <ci> k3 </ci>
+                        <ci> k4 </ci>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> k10 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> MEK_total </ci>
+                        <ci> RAF_total </ci>
+                        <ci> k3 </ci>
+                        <ci> k4 </ci>
+                        <ci> k5 </ci>
+                        <ci> k6 </ci>
+                        <apply>
+                          <power/>
+                          <ci> k10 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> K_1 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <ci> MEK_total </ci>
+                        <ci> RAF_total </ci>
+                        <ci> k2 </ci>
+                        <ci> k3 </ci>
+                        <ci> k4 </ci>
+                        <ci> k5 </ci>
+                        <ci> k6 </ci>
+                        <ci> k10 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 4 </cn>
+                        <ci> ERK_total </ci>
+                        <ci> K_1 </ci>
+                        <ci> MEK_total </ci>
+                        <ci> RAF_total </ci>
+                        <ci> k2 </ci>
+                        <ci> k3 </ci>
+                        <ci> k4 </ci>
+                        <ci> k5 </ci>
+                        <ci> k6 </ci>
+                        <ci> k10 </ci>
+                      </apply>
+                    </apply>
+                    <cn type="rational"> 1 <sep/> 2 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> k4 </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> K_1 </ci>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> k6 </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> MEK_total </ci>
+                          <ci> k5 </ci>
+                          <ci> k6 </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <ci> ERK_total </ci>
+                      <ci> MEK_total </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> k4 </ci>
+                  <ci> k10 </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> MEK_total </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> RAF_total </ci>
+                  <ci> k3 </ci>
+                  <ci> k10 </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> k6 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> MEK_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k5 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <ci> MEK_total </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="pERK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> ERK_total </ci>
+                      <ci> MEK_total </ci>
+                      <ci> k5 </ci>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k2 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k2 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k4 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> RAF_total </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> MEK_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k5 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> MEK_total </ci>
+                            <apply>
+                              <power/>
+                              <ci> RAF_total </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> k3 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k6 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <apply>
+                              <power/>
+                              <ci> k10 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 2 </cn>
+                            <apply>
+                              <power/>
+                              <ci> K_1 </ci>
+                              <cn type="integer"> 2 </cn>
+                            </apply>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <ci> k10 </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <cn type="integer"> 4 </cn>
+                            <ci> ERK_total </ci>
+                            <ci> K_1 </ci>
+                            <ci> MEK_total </ci>
+                            <ci> RAF_total </ci>
+                            <ci> k2 </ci>
+                            <ci> k3 </ci>
+                            <ci> k4 </ci>
+                            <ci> k5 </ci>
+                            <ci> k6 </ci>
+                            <ci> k10 </ci>
+                          </apply>
+                        </apply>
+                        <cn type="rational"> 1 <sep/> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> ERK_total </ci>
+                      <ci> K_1 </ci>
+                      <apply>
+                        <power/>
+                        <ci> MEK_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> RAF_total </ci>
+                      <ci> k3 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k5 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k10 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> ERK_total </ci>
+                    <ci> K_1 </ci>
+                    <ci> MEK_total </ci>
+                    <ci> k2 </ci>
+                    <ci> k4 </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> ERK_total </ci>
+                  <ci> K_1 </ci>
+                  <ci> MEK_total </ci>
+                  <ci> k4 </ci>
+                  <ci> k5 </ci>
+                  <ci> k6 </ci>
+                  <ci> k10 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> ERK_total </ci>
+                <ci> K_1 </ci>
+                <ci> MEK_total </ci>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k5 </ci>
+                <ci> k6 </ci>
+                <ci> k10 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <ci> k6 </ci>
+                  <apply>
+                    <times/>
+                    <ci> MEK_total </ci>
+                    <ci> k5 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k2 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k4 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k4 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> RAF_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k3 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k2 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k4 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> RAF_total </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> MEK_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> RAF_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k3 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k5 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> MEK_total </ci>
+                      <apply>
+                        <power/>
+                        <ci> RAF_total </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> k3 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> RAF_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> MEK_total </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <apply>
+                        <power/>
+                        <ci> k10 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <apply>
+                        <power/>
+                        <ci> K_1 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <ci> MEK_total </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <ci> k10 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 4 </cn>
+                      <ci> ERK_total </ci>
+                      <ci> K_1 </ci>
+                      <ci> MEK_total </ci>
+                      <ci> RAF_total </ci>
+                      <ci> k2 </ci>
+                      <ci> k3 </ci>
+                      <ci> k4 </ci>
+                      <ci> k5 </ci>
+                      <ci> k6 </ci>
+                      <ci> k10 </ci>
+                    </apply>
+                  </apply>
+                  <cn type="rational"> 1 <sep/> 2 </cn>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> k4 </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> K_1 </ci>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> k6 </ci>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> MEK_total </ci>
+                        <ci> k5 </ci>
+                        <ci> k6 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> ERK_total </ci>
+                    <ci> MEK_total </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> k4 </ci>
+                <ci> k10 </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> k6 </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> MEK_total </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> K_1 </ci>
+                <ci> RAF_total </ci>
+                <ci> k3 </ci>
+                <ci> k10 </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> k6 </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <power/>
+                      <ci> MEK_total </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> k5 </ci>
+                      <cn type="integer"> 2 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> MEK_total </ci>
+                    <ci> k5 </ci>
+                    <ci> k6 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="k1max">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> k10 </ci>
+            <apply>
+              <times/>
+              <ci> k11 </ci>
+              <apply>
+                <exp/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  </apply>
+                  <ci> tau2 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <minus/>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    </apply>
+                    <ci> tau1 </ci>
+                  </apply>
+                </apply>
+                <cn type="integer"> 1 </cn>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RAF" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pRAF" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pERK"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> K_1 </ci>
+                  <ci> RAF </ci>
+                  <ci> k1max </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> K_1 </ci>
+                  <ci> pERK </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pRAF" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RAF" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> k2 </ci>
+              <ci> pRAF </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="MEK" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pMEK" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pRAF"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> K_2 </ci>
+                  <ci> MEK </ci>
+                  <ci> k3 </ci>
+                  <ci> pRAF </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> K_2 </ci>
+                  <ci> Sorafenib </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pMEK" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MEK" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> k4 </ci>
+              <ci> pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="ERK" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pERK" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pMEK"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> ERK </ci>
+                  <ci> K_3 </ci>
+                  <ci> k5 </ci>
+                  <ci> pMEK </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> K_3 </ci>
+                  <ci> UO126 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pERK" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ERK" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> k6 </ci>
+              <ci> pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

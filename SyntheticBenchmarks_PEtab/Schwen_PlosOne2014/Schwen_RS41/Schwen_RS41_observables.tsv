@@ -1,0 +1,13 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Rec1_Obs_1	Rec1_Obs	offset1_Rec1_Obs + Rec1*scale1_Rec1_Obs	log10	sd1_Rec1_Obs	normal
+Rec1_Obs_2	Rec1_Obs	offset2_Rec1_Obs + Rec1*scale2_Rec1_Obs	log10	sd2_Rec1_Obs	normal
+Rec1_Obs_3	Rec1_Obs	offset3_Rec1_Obs + Rec1*scale3_Rec1_Obs	log10	sd3_Rec1_Obs	normal
+Rec1_Obs_4	Rec1_Obs	offset4_Rec1_Obs + Rec1*scale4_Rec1_Obs	log10	sd4_Rec1_Obs	normal
+Rec1_Obs_5	Rec1_Obs	offset5_Rec1_Obs + Rec1*scale5_Rec1_Obs	log10	sd5_Rec1_Obs	normal
+Rec1_Obs_6	Rec1_Obs	offset6_Rec1_Obs + Rec1*scale6_Rec1_Obs	log10	sd6_Rec1_Obs	normal
+Uptake1_Obs_1	Uptake1_Obs	offset1_Uptake1_Obs + Uptake1*scale1_Uptake1_Obs	log10	sd1_Uptake1_Obs	normal
+Uptake1_Obs_2	Uptake1_Obs	offset2_Uptake1_Obs + Uptake1*scale2_Uptake1_Obs	log10	sd2_Uptake1_Obs	normal
+Uptake1_Obs_3	Uptake1_Obs	offset3_Uptake1_Obs + Uptake1*scale3_Uptake1_Obs	log10	sd3_Uptake1_Obs	normal
+Uptake2_Obs_1	Uptake2_Obs	offset1_Uptake2_Obs + Uptake2*scale1_Uptake2_Obs	log10	sd1_Uptake2_Obs	normal
+Uptake2_Obs_2	Uptake2_Obs	offset2_Uptake2_Obs + Uptake2*scale2_Uptake2_Obs	log10	sd2_Uptake2_Obs	normal
+Uptake2_Obs_3	Uptake2_Obs	offset3_Uptake2_Obs + Uptake2*scale3_Uptake2_Obs	log10	sd3_Uptake2_Obs	normal

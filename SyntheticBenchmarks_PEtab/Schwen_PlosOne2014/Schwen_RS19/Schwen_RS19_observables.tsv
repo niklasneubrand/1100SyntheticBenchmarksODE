@@ -1,0 +1,8 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+BoundUnspec_Obs_1	BoundUnspec_Obs	BoundUnspec*scale1_BoundUnspec_Obs	lin	sd1_BoundUnspec_Obs	normal
+BoundUnspec_Obs_2	BoundUnspec_Obs	BoundUnspec*scale2_BoundUnspec_Obs	lin	sd2_BoundUnspec_Obs	normal
+BoundUnspec_Obs_3	BoundUnspec_Obs	BoundUnspec*scale3_BoundUnspec_Obs	lin	sd3_BoundUnspec_Obs	normal
+IR1_Obs_1	IR1_Obs	IR1	lin	sd1_IR1_Obs	normal
+IR1_Obs_2	IR1_Obs	IR1	lin	sd2_IR1_Obs	normal
+IR1_Obs_3	IR1_Obs	IR1	lin	sd3_IR1_Obs	normal
+IR1_Obs_4	IR1_Obs	IR1	lin	sd4_IR1_Obs	normal

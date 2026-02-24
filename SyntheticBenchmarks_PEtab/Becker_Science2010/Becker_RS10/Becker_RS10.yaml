@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Becker_RS10_parameters.tsv
+problems:
+  - sbml_files:
+    - Becker_RS10_model.xml
+    observable_files:
+    - Becker_RS10_observables.tsv
+    condition_files:
+    - Becker_RS10_conditions.tsv
+    measurement_files:
+    - Becker_RS10_measurements.tsv

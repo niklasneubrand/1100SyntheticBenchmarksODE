@@ -1,0 +1,7 @@
+conditionId	EGF_conc_impulse	EGF_conc_ramp	EGF_conc_step	pulse_time	ramp_time
+D1_Fujita_RS09_TC001	0	0	0.1	60	3600
+D2_Fujita_RS09_TC002	0	0	0.3	60	3600
+D3_Fujita_RS09_TC003	0	0	1	60	3600
+D4_Fujita_RS09_TC004	0	0	3	60	3600
+D5_Fujita_RS09_TC005	0	0	10	60	3600
+D6_Fujita_RS09_TC006	0	0	30	60	3600

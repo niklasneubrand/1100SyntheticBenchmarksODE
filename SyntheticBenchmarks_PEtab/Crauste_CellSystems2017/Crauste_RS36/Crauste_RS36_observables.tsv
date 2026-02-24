@@ -1,0 +1,3 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+EarlyEffector_Obs	EarlyEffector_Obs	EarlyEffector	lin	sd1_EarlyEffector_Obs	normal
+LateEffector_Obs	LateEffector_Obs	LateEffector	lin	sd1_LateEffector_Obs	normal

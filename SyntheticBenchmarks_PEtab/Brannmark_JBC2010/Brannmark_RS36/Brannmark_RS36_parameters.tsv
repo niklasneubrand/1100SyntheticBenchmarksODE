@@ -1,0 +1,27 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+k1a	k1a	log10	1e-06	501187.233627272	0.293089324525032	1	parameterScaleUniform	
+k1aBasic	k1aBasic	log10	1e-06	501187.233627272	0.000301995172040202	1	parameterScaleUniform	
+k1b	k1b	log10	1e-06	501187.233627272	0.322106879128343	1	parameterScaleUniform	
+k1c	k1c	log10	1e-06	501187.233627272	0.0363078054770101	1	parameterScaleUniform	
+k1d	k1d	log10	1e-06	501187.233627272	426579.518801593	1	parameterScaleUniform	
+k1e	k1e	log10	1e-06	501187.233627272	1.99526231496888e-06	1	parameterScaleUniform	
+k1f	k1f	log10	1e-06	501187.233627272	398107.170553497	1	parameterScaleUniform	
+k1g	k1g	log10	1e-06	501187.233627272	891.250938133746	1	parameterScaleUniform	
+k1r	k1r	log10	1e-06	501187.233627272	0.0138038426460288	1	parameterScaleUniform	
+k21	k21	log10	1e-06	501187.233627272	2.89734358770132	1	parameterScaleUniform	
+k22	k22	log10	1e-06	501187.233627272	1122.01845430196	1	parameterScaleUniform	
+k3	k3	log10	1e-06	501187.233627272	7.94328234724282e-05	1	parameterScaleUniform	
+km2	km2	log10	1e-06	501187.233627272	1.97696964011186	1	parameterScaleUniform	
+km3	km3	log10	1e-06	501187.233627272	0.815642787132787	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.01	1000	2.48021882788645	1	parameterScaleUniform	
+sd1_IR_Obs	sd1_IR_Obs	log10	0.001	100	0.260585352275447	1	parameterScaleUniform	
+sd1_IRi_Obs	sd1_IRi_Obs	log10	0.001	100	0.891131919576175	1	parameterScaleUniform	
+sd1_IRp_Obs	sd1_IRp_Obs	log10	1e-10	1e-05	9.31965852565843e-08	1	parameterScaleUniform	
+sd1_XX_Obs	sd1_XX_Obs	log10	0.01	1000	2.06590335055765	1	parameterScaleUniform	
+sd1_XXp_Obs	sd1_XXp_Obs	log10	1e-06	0.1	0.000449469265262794	1	parameterScaleUniform	
+sd2_Compound_1_Obs	sd2_Compound_1_Obs	log10	0.01	1000	1.81338492065922	1	parameterScaleUniform	
+sd2_IR_Obs	sd2_IR_Obs	log10	0.001	100	0.635023796372426	1	parameterScaleUniform	
+sd2_IRi_Obs	sd2_IRi_Obs	log10	0.001	100	0.276573139763585	1	parameterScaleUniform	
+sd3_Compound_1_Obs	sd3_Compound_1_Obs	log10	0.01	1000	1.99530825811045	1	parameterScaleUniform	
+sd3_IR_Obs	sd3_IR_Obs	log10	0.01	1000	1.26453251248453	1	parameterScaleUniform	
+sd3_IRi_Obs	sd3_IRi_Obs	log10	0.001	100	0.298146695349994	1	parameterScaleUniform	

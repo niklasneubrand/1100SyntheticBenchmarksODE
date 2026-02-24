@@ -1,0 +1,67 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd8_Compound_1_Obs	normal
+Compound_1_Obs_9	Compound_1_Obs	SOCS3 + SOCS3RNA + STAT3 + nSOCS3RNA2 + pJAK1_pgp130	lin	sd9_Compound_1_Obs	normal
+Compound_2_Obs_01	Compound_2_Obs	scale10_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd10_Compound_2_Obs	normal
+Compound_2_Obs_02	Compound_2_Obs	scale11_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd11_Compound_2_Obs	normal
+Compound_2_Obs_03	Compound_2_Obs	scale1_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_04	Compound_2_Obs	scale2_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_05	Compound_2_Obs	scale3_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_06	Compound_2_Obs	scale4_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_07	Compound_2_Obs	scale5_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_08	Compound_2_Obs	scale6_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd6_Compound_2_Obs	normal
+Compound_2_Obs_09	Compound_2_Obs	scale7_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd7_Compound_2_Obs	normal
+Compound_2_Obs_10	Compound_2_Obs	scale8_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd8_Compound_2_Obs	normal
+Compound_2_Obs_11	Compound_2_Obs	scale9_Compound_2_Obs*(SOCS3 + nSOCS3RNA3 + nSOCS3RNA4 + nSOCS3RNA5 + pJAK1_pgp130)	lin	sd9_Compound_2_Obs	normal
+JAK1_gp130_Obs_1	JAK1_gp130_Obs	JAK1_gp130*scale1_JAK1_gp130_Obs	lin	sd1_JAK1_gp130_Obs	normal
+JAK1_gp130_Obs_2	JAK1_gp130_Obs	JAK1_gp130*scale2_JAK1_gp130_Obs	lin	sd2_JAK1_gp130_Obs	normal
+JAK1_gp130_Obs_3	JAK1_gp130_Obs	JAK1_gp130*scale3_JAK1_gp130_Obs	lin	sd3_JAK1_gp130_Obs	normal
+nSOCS3RNA2_Obs_01	nSOCS3RNA2_Obs	nSOCS3RNA2*scale10_nSOCS3RNA2_Obs	lin	sd10_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_02	nSOCS3RNA2_Obs	nSOCS3RNA2*scale11_nSOCS3RNA2_Obs	lin	sd11_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_03	nSOCS3RNA2_Obs	nSOCS3RNA2*scale12_nSOCS3RNA2_Obs	lin	sd12_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_04	nSOCS3RNA2_Obs	nSOCS3RNA2*scale13_nSOCS3RNA2_Obs	lin	sd13_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_05	nSOCS3RNA2_Obs	nSOCS3RNA2*scale14_nSOCS3RNA2_Obs	lin	sd14_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_06	nSOCS3RNA2_Obs	nSOCS3RNA2*scale15_nSOCS3RNA2_Obs	lin	sd15_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_07	nSOCS3RNA2_Obs	nSOCS3RNA2*scale16_nSOCS3RNA2_Obs	lin	sd16_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_08	nSOCS3RNA2_Obs	nSOCS3RNA2*scale17_nSOCS3RNA2_Obs	lin	sd17_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_09	nSOCS3RNA2_Obs	nSOCS3RNA2*scale18_nSOCS3RNA2_Obs	lin	sd18_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_10	nSOCS3RNA2_Obs	nSOCS3RNA2*scale19_nSOCS3RNA2_Obs	lin	sd19_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_11	nSOCS3RNA2_Obs	nSOCS3RNA2*scale1_nSOCS3RNA2_Obs	lin	sd1_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_12	nSOCS3RNA2_Obs	nSOCS3RNA2*scale20_nSOCS3RNA2_Obs	lin	sd20_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_13	nSOCS3RNA2_Obs	nSOCS3RNA2*scale21_nSOCS3RNA2_Obs	lin	sd21_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_14	nSOCS3RNA2_Obs	nSOCS3RNA2*scale22_nSOCS3RNA2_Obs	lin	sd22_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_15	nSOCS3RNA2_Obs	nSOCS3RNA2*scale23_nSOCS3RNA2_Obs	lin	sd23_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_16	nSOCS3RNA2_Obs	nSOCS3RNA2*scale24_nSOCS3RNA2_Obs	lin	sd24_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_17	nSOCS3RNA2_Obs	nSOCS3RNA2*scale25_nSOCS3RNA2_Obs	lin	sd25_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_18	nSOCS3RNA2_Obs	nSOCS3RNA2*scale26_nSOCS3RNA2_Obs	lin	sd26_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_19	nSOCS3RNA2_Obs	nSOCS3RNA2*scale27_nSOCS3RNA2_Obs	lin	sd27_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_20	nSOCS3RNA2_Obs	nSOCS3RNA2*scale28_nSOCS3RNA2_Obs	lin	sd28_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_21	nSOCS3RNA2_Obs	nSOCS3RNA2*scale29_nSOCS3RNA2_Obs	lin	sd29_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_22	nSOCS3RNA2_Obs	nSOCS3RNA2*scale2_nSOCS3RNA2_Obs	lin	sd2_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_23	nSOCS3RNA2_Obs	nSOCS3RNA2*scale30_nSOCS3RNA2_Obs	lin	sd30_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_24	nSOCS3RNA2_Obs	nSOCS3RNA2*scale31_nSOCS3RNA2_Obs	lin	sd31_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_25	nSOCS3RNA2_Obs	nSOCS3RNA2*scale32_nSOCS3RNA2_Obs	lin	sd32_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_26	nSOCS3RNA2_Obs	nSOCS3RNA2*scale33_nSOCS3RNA2_Obs	lin	sd33_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_27	nSOCS3RNA2_Obs	nSOCS3RNA2*scale34_nSOCS3RNA2_Obs	lin	sd34_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_28	nSOCS3RNA2_Obs	nSOCS3RNA2*scale35_nSOCS3RNA2_Obs	lin	sd35_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_29	nSOCS3RNA2_Obs	nSOCS3RNA2*scale36_nSOCS3RNA2_Obs	lin	sd36_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_30	nSOCS3RNA2_Obs	nSOCS3RNA2*scale37_nSOCS3RNA2_Obs	lin	sd37_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_31	nSOCS3RNA2_Obs	nSOCS3RNA2*scale38_nSOCS3RNA2_Obs	lin	sd38_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_32	nSOCS3RNA2_Obs	nSOCS3RNA2*scale39_nSOCS3RNA2_Obs	lin	sd39_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_33	nSOCS3RNA2_Obs	nSOCS3RNA2*scale3_nSOCS3RNA2_Obs	lin	sd3_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_34	nSOCS3RNA2_Obs	nSOCS3RNA2*scale40_nSOCS3RNA2_Obs	lin	sd40_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_35	nSOCS3RNA2_Obs	nSOCS3RNA2*scale41_nSOCS3RNA2_Obs	lin	sd41_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_36	nSOCS3RNA2_Obs	nSOCS3RNA2*scale42_nSOCS3RNA2_Obs	lin	sd42_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_37	nSOCS3RNA2_Obs	nSOCS3RNA2*scale43_nSOCS3RNA2_Obs	lin	sd43_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_38	nSOCS3RNA2_Obs	nSOCS3RNA2*scale4_nSOCS3RNA2_Obs	lin	sd4_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_39	nSOCS3RNA2_Obs	nSOCS3RNA2*scale5_nSOCS3RNA2_Obs	lin	sd5_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_40	nSOCS3RNA2_Obs	nSOCS3RNA2*scale6_nSOCS3RNA2_Obs	lin	sd6_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_41	nSOCS3RNA2_Obs	nSOCS3RNA2*scale7_nSOCS3RNA2_Obs	lin	sd7_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_42	nSOCS3RNA2_Obs	nSOCS3RNA2*scale8_nSOCS3RNA2_Obs	lin	sd8_nSOCS3RNA2_Obs	normal
+nSOCS3RNA2_Obs_43	nSOCS3RNA2_Obs	nSOCS3RNA2*scale9_nSOCS3RNA2_Obs	lin	sd9_nSOCS3RNA2_Obs	normal

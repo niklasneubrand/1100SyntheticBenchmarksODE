@@ -1,0 +1,11 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IR2in_Obs_1	IR2in_Obs	offset1_IR2in_Obs + IR2in*scale1_IR2in_Obs	log10	sd1_IR2in_Obs	normal
+IR2in_Obs_2	IR2in_Obs	offset2_IR2in_Obs + IR2in*scale2_IR2in_Obs	log10	sd2_IR2in_Obs	normal
+IR2in_Obs_3	IR2in_Obs	offset3_IR2in_Obs + IR2in*scale3_IR2in_Obs	log10	sd3_IR2in_Obs	normal
+IR2in_Obs_4	IR2in_Obs	offset4_IR2in_Obs + IR2in*scale4_IR2in_Obs	log10	sd4_IR2in_Obs	normal
+IR2in_Obs_5	IR2in_Obs	offset5_IR2in_Obs + IR2in*scale5_IR2in_Obs	log10	sd5_IR2in_Obs	normal
+InsulinFragments_Obs_1	InsulinFragments_Obs	InsulinFragments	log10	sd1_InsulinFragments_Obs	normal
+InsulinFragments_Obs_2	InsulinFragments_Obs	InsulinFragments	log10	sd2_InsulinFragments_Obs	normal
+InsulinFragments_Obs_3	InsulinFragments_Obs	InsulinFragments	log10	sd3_InsulinFragments_Obs	normal
+InsulinFragments_Obs_4	InsulinFragments_Obs	InsulinFragments	log10	sd4_InsulinFragments_Obs	normal
+InsulinFragments_Obs_5	InsulinFragments_Obs	InsulinFragments	log10	sd5_InsulinFragments_Obs	normal

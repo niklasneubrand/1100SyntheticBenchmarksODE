@@ -1,0 +1,12 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_Epo	init_Epo	log10	1e-05	10000	891.250938133746	1	parameterScaleUniform	
+init_EpoR_rel	init_EpoR_rel	log10	1e-05	1000	0.0616595001861482	1	parameterScaleUniform	
+kde	kde	log10	1e-05	1000	0.00977237220955811	1	parameterScaleUniform	
+kdi	kdi	log10	1e-05	1000	0.00165958690743756	1	parameterScaleUniform	
+ke	ke	log10	1e-05	1000	0.102565192625141	1	parameterScaleUniform	
+kex	kex	log10	1e-05	1000	0.000436515832240166	1	parameterScaleUniform	
+koff	koff	log10	1e-05	1000	0.151008015416415	1	parameterScaleUniform	
+kon	kon	log10	1e-05	1000	0.177827941003892	1	parameterScaleUniform	
+kt	kt	log10	1e-05	1000	0.0181970085860998	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.1	10000	72.4102421792413	1	parameterScaleUniform	
+sd1_dEpo_e_Obs	sd1_dEpo_e_Obs	log10	0.1	10000	39.9300634223162	1	parameterScaleUniform	

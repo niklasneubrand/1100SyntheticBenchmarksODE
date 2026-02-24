@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Fiedler_RS34_parameters.tsv
+problems:
+  - sbml_files:
+    - Fiedler_RS34_model.xml
+    observable_files:
+    - Fiedler_RS34_observables.tsv
+    condition_files:
+    - Fiedler_RS34_conditions.tsv
+    measurement_files:
+    - Fiedler_RS34_measurements.tsv

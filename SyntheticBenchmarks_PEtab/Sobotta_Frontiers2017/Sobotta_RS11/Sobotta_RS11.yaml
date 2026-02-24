@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Sobotta_RS11_parameters.tsv
+problems:
+  - sbml_files:
+    - Sobotta_RS11_model.xml
+    observable_files:
+    - Sobotta_RS11_observables.tsv
+    condition_files:
+    - Sobotta_RS11_conditions.tsv
+    measurement_files:
+    - Sobotta_RS11_measurements.tsv

@@ -1,0 +1,3 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	scale1_Compound_1_Obs*(K27me1K36me2 + K27me2K36me0)	lin	sd1_Compound_1_Obs	normal
+K27me0K36me1_Obs	K27me0K36me1_Obs	K27me0K36me1*scale1_K27me0K36me1_Obs	lin	sd1_K27me0K36me1_Obs	normal

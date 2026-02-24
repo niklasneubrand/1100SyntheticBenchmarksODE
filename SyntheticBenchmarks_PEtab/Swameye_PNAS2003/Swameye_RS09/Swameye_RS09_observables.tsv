@@ -1,0 +1,2 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+npSTAT_npSTAT_Obs	npSTAT_npSTAT_Obs	npSTAT_npSTAT	lin	sd1_npSTAT_npSTAT_Obs	normal

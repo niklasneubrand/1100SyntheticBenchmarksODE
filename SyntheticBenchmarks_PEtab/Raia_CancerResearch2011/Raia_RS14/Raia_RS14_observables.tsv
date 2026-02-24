@@ -1,0 +1,11 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IL13_DecoyR + Rec_i	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IL13_DecoyR + Rec_i	lin	sd2_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	JAK2 + SOCS3mRNA	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	JAK2 + SOCS3mRNA	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	SOCS3 + pJAK2	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	SOCS3 + pJAK2	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	SOCS3 + pJAK2	lin	sd3_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	IL13_DecoyR + SOCS3mRNA	lin	sd1_Compound_4_Obs	normal
+Rec_Obs	Rec_Obs	Rec	lin	sd1_Rec_Obs	normal
+Rec_i_Obs	Rec_i_Obs	Rec_i	lin	sd1_Rec_i_Obs	normal

@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Borghans_RS08_parameters.tsv
+problems:
+  - sbml_files:
+    - Borghans_RS08_model.xml
+    observable_files:
+    - Borghans_RS08_observables.tsv
+    condition_files:
+    - Borghans_RS08_conditions.tsv
+    measurement_files:
+    - Borghans_RS08_measurements.tsv

@@ -1,0 +1,27 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Naive_Obs	D1_Crauste_RS37_TC001	7891.00463628678	0			normal
+Naive_Obs	D1_Crauste_RS37_TC001	877.906624130864	2.5			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	3			normal
+Naive_Obs	D1_Crauste_RS37_TC001	6.02086842608271	5			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	5.5			normal
+Naive_Obs	D1_Crauste_RS37_TC001	252.855302233507	8			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	9			normal
+Naive_Obs	D1_Crauste_RS37_TC001	12.3169638179723	10			normal
+Naive_Obs	D1_Crauste_RS37_TC001	-222.627957208045	15			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	20			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	25			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	30			normal
+Naive_Obs	D1_Crauste_RS37_TC001	NaN	40			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	1.06949697425859	0			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	NaN	2.5			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	1.40363422950348	3			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	NaN	5			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	2.00727579311376	5.5			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	NaN	8			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	1.88919742339016	9			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	1.25873362574392	10			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	0.192962168372143	15			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	-0.268888234628012	20			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	-0.198698320507329	25			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	0.162746694222389	30			normal
+Pathogen_Obs	D1_Crauste_RS37_TC001	-0.0581683974758645	40			normal

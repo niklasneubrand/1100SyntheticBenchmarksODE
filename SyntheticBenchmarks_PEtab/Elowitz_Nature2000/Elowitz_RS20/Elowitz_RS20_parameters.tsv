@@ -1,0 +1,25 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+KM	KM	log10	0.001	100000	6.22300285169159	1	parameterScaleUniform	
+eff	eff	log10	1	1000	32.3593656929628	1	parameterScaleUniform	
+eff_GFP	eff_GFP	log10	1	1000	1	0	parameterScaleUniform	
+init_GFP	init_GFP	log10	1e-05	1000	0.00281838293126445	1	parameterScaleUniform	
+init_GFP_mRNA	init_GFP_mRNA	log10	1e-05	1000	1.20226443461741e-05	1	parameterScaleUniform	
+init_X_mRNA	init_X_mRNA	log10	1e-05	1000	223.872113856834	1	parameterScaleUniform	
+init_X_protein	init_X_protein	log10	1e-05	1000	1.30918192299941	1	parameterScaleUniform	
+init_Y_mRNA	init_Y_mRNA	log10	1e-05	1000	691.830970918936	1	parameterScaleUniform	
+init_Y_protein	init_Y_protein	log10	1e-05	7943.28234724281	1348.96288259165	1	parameterScaleUniform	
+init_Z_mRNA	init_Z_mRNA	log10	1e-05	1000	501.187233627272	1	parameterScaleUniform	
+init_Z_protein	init_Z_protein	log10	1e-05	1000	2.88403150312661e-05	1	parameterScaleUniform	
+n_Hill	n_Hill	log10	1e-05	1000	1.99986186963274	0	parameterScaleUniform	
+scale1_X_mRNA_Obs	scale1_X_mRNA_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_X_protein_Obs	scale1_X_protein_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Z_protein_Obs	scale1_Z_protein_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_X_mRNA_Obs	sd1_X_mRNA_Obs	log10	0.01	1000	3.04088502567628	1	parameterScaleUniform	
+sd1_X_protein_Obs	sd1_X_protein_Obs	log10	1	100000	245.52741983788	1	parameterScaleUniform	
+sd1_Z_protein_Obs	sd1_Z_protein_Obs	log10	1	100000	371.620788095142	1	parameterScaleUniform	
+tau_mRNA	tau_mRNA	log10	0.01	1000	0.566239289038253	1	parameterScaleUniform	
+tau_mRNA_GFP	tau_mRNA_GFP	log10	0.00316227766016838	1000	0.00977237220955811	1	parameterScaleUniform	
+tau_prot	tau_prot	log10	0.01	1000	33.1131121482591	1	parameterScaleUniform	
+tau_prot_GFP	tau_prot_GFP	log10	1	10000	34.6736850452532	1	parameterScaleUniform	
+tps_active	tps_active	log10	0.001	100000	48.9778819368446	1	parameterScaleUniform	
+tps_repr	tps_repr	log10	0.000125892541179417	100000	0.000741310241300918	1	parameterScaleUniform	

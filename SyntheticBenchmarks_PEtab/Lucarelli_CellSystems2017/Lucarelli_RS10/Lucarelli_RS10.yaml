@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Lucarelli_RS10_parameters.tsv
+problems:
+  - sbml_files:
+    - Lucarelli_RS10_model.xml
+    observable_files:
+    - Lucarelli_RS10_observables.tsv
+    condition_files:
+    - Lucarelli_RS10_conditions.tsv
+    measurement_files:
+    - Lucarelli_RS10_measurements.tsv

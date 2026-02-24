@@ -1,0 +1,37 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(S3 + geneF + ppS3_ppS3_ppS3)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(S3 + geneF + ppS3_ppS3_ppS3)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(S3 + geneF + ppS3_ppS3_ppS3)	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	scale4_Compound_1_Obs*(S3 + geneF + ppS3_ppS3_ppS3)	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	scale5_Compound_1_Obs*(S3 + geneF + ppS3_ppS3_ppS3)	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	scale6_Compound_1_Obs*(S3 + geneF + ppS3_ppS3_ppS3)	lin	sd6_Compound_1_Obs	normal
+TGFb_Obs_1	TGFb_Obs	TGFb	lin	sd1_TGFb_Obs	normal
+TGFb_Obs_2	TGFb_Obs	TGFb	lin	sd2_TGFb_Obs	normal
+TGFb_Obs_3	TGFb_Obs	TGFb	lin	sd3_TGFb_Obs	normal
+TGFb_Obs_4	TGFb_Obs	TGFb	lin	sd4_TGFb_Obs	normal
+TGFb_Obs_5	TGFb_Obs	TGFb	lin	sd5_TGFb_Obs	normal
+TGFb_Obs_6	TGFb_Obs	TGFb	lin	sd6_TGFb_Obs	normal
+TGFb_Obs_7	TGFb_Obs	TGFb	lin	sd7_TGFb_Obs	normal
+TGFb_Obs_8	TGFb_Obs	TGFb	lin	sd8_TGFb_Obs	normal
+geneB_Obs_1	geneB_Obs	geneB*scale1_geneB_Obs	lin	sd1_geneB_Obs	normal
+geneB_Obs_2	geneB_Obs	geneB*scale2_geneB_Obs	lin	sd2_geneB_Obs	normal
+geneB_Obs_3	geneB_Obs	geneB*scale3_geneB_Obs	lin	sd3_geneB_Obs	normal
+geneB_Obs_4	geneB_Obs	geneB*scale4_geneB_Obs	lin	sd4_geneB_Obs	normal
+geneB_Obs_5	geneB_Obs	geneB*scale5_geneB_Obs	lin	sd5_geneB_Obs	normal
+geneB_Obs_6	geneB_Obs	geneB*scale6_geneB_Obs	lin	sd6_geneB_Obs	normal
+geneB_Obs_7	geneB_Obs	geneB*scale7_geneB_Obs	lin	sd7_geneB_Obs	normal
+geneB_Obs_8	geneB_Obs	geneB*scale8_geneB_Obs	lin	sd8_geneB_Obs	normal
+geneB_Obs_9	geneB_Obs	geneB*scale9_geneB_Obs	lin	sd9_geneB_Obs	normal
+geneC_Obs_1	geneC_Obs	geneC*scale1_geneC_Obs	lin	sd1_geneC_Obs	normal
+geneC_Obs_2	geneC_Obs	geneC*scale2_geneC_Obs	lin	sd2_geneC_Obs	normal
+geneC_Obs_3	geneC_Obs	geneC*scale3_geneC_Obs	lin	sd3_geneC_Obs	normal
+geneC_Obs_4	geneC_Obs	geneC*scale4_geneC_Obs	lin	sd4_geneC_Obs	normal
+geneC_Obs_5	geneC_Obs	geneC*scale5_geneC_Obs	lin	sd5_geneC_Obs	normal
+geneC_Obs_6	geneC_Obs	geneC*scale6_geneC_Obs	lin	sd6_geneC_Obs	normal
+geneC_Obs_7	geneC_Obs	geneC*scale7_geneC_Obs	lin	sd7_geneC_Obs	normal
+geneC_Obs_8	geneC_Obs	geneC*scale8_geneC_Obs	lin	sd8_geneC_Obs	normal
+ppS2_ppS2_S4_Obs_1	ppS2_ppS2_S4_Obs	ppS2_ppS2_S4	lin	sd1_ppS2_ppS2_S4_Obs	normal
+ppS2_ppS2_S4_Obs_2	ppS2_ppS2_S4_Obs	ppS2_ppS2_S4	lin	sd2_ppS2_ppS2_S4_Obs	normal
+ppS2_ppS2_S4_Obs_3	ppS2_ppS2_S4_Obs	ppS2_ppS2_S4	lin	sd3_ppS2_ppS2_S4_Obs	normal
+ppS2_ppS2_S4_Obs_4	ppS2_ppS2_S4_Obs	ppS2_ppS2_S4	lin	sd4_ppS2_ppS2_S4_Obs	normal
+ppS2_ppS2_S4_Obs_5	ppS2_ppS2_S4_Obs	ppS2_ppS2_S4	lin	sd5_ppS2_ppS2_S4_Obs	normal

@@ -1,0 +1,24 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+KM	KM	log10	0.001	100000	6.5765783735542	1	parameterScaleUniform	
+eff	eff	log10	1	1000	14.4543977074593	1	parameterScaleUniform	
+eff_GFP	eff_GFP	log10	1	1000	1	0	parameterScaleUniform	
+init_GFP	init_GFP	log10	1e-05	1000	0.00194984459975805	1	parameterScaleUniform	
+init_GFP_mRNA	init_GFP_mRNA	log10	1e-05	1000	1.17489755493953e-05	1	parameterScaleUniform	
+init_X_mRNA	init_X_mRNA	log10	1e-05	1000	218.776162394955	1	parameterScaleUniform	
+init_X_protein	init_X_protein	log10	1e-05	1000	1.29717927098396	1	parameterScaleUniform	
+init_Y_mRNA	init_Y_mRNA	log10	1e-05	12589.2541179417	1862.08713666287	1	parameterScaleUniform	
+init_Y_protein	init_Y_protein	log10	1e-05	1000	977.237220955811	1	parameterScaleUniform	
+init_Z_mRNA	init_Z_mRNA	log10	1e-05	6309.57344480193	1071.51930523761	1	parameterScaleUniform	
+init_Z_protein	init_Z_protein	log10	1e-05	1000	3.01995172040202e-05	1	parameterScaleUniform	
+n_Hill	n_Hill	log10	1e-05	1000	1.99986186963274	0	parameterScaleUniform	
+scale1_X_mRNA_Obs	scale1_X_mRNA_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Z_protein_Obs	scale1_Z_protein_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_X_mRNA_Obs	sd1_X_mRNA_Obs	log10	0.01	1000	5.13795149525618	1	parameterScaleUniform	
+sd1_Z_mRNA_Obs	sd1_Z_mRNA_Obs	log10	0.1	10000	24.5414376313743	1	parameterScaleUniform	
+sd1_Z_protein_Obs	sd1_Z_protein_Obs	log10	1	100000	769.13044028661	1	parameterScaleUniform	
+tau_mRNA	tau_mRNA	log10	0.01	1000	0.597035286583837	1	parameterScaleUniform	
+tau_mRNA_GFP	tau_mRNA_GFP	log10	0.01	1000	0.0138038426460288	1	parameterScaleUniform	
+tau_prot	tau_prot	log10	0.01	1000	46.7735141287198	1	parameterScaleUniform	
+tau_prot_GFP	tau_prot_GFP	log10	1	10000	75.8577575029184	1	parameterScaleUniform	
+tps_active	tps_active	log10	0.001	100000	114.815362149688	1	parameterScaleUniform	
+tps_repr	tps_repr	log10	0.000125892541179417	100000	0.000812830516164099	1	parameterScaleUniform	

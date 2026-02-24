@@ -1,0 +1,24 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+pRAF_Obs_1	D1_Fiedler_RS25_TC001	1.79562795285937e-05	0			normal
+pRAF_Obs_1	D1_Fiedler_RS25_TC001	1.14362019370689e-05	4.5			normal
+pRAF_Obs_1	D1_Fiedler_RS25_TC001	1.06026850552968e-05	9.5			normal
+pRAF_Obs_1	D1_Fiedler_RS25_TC001	1.31118154228624e-05	15			normal
+pRAF_Obs_1	D1_Fiedler_RS25_TC001	1.93041765807308e-05	25			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	1.47853380383843e-05	0			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	2.00800157253086e-05	2			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	1.93630439887995e-05	4			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	2.35822526112898e-05	6			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	2.32017950667845e-05	8.5			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	2.06215674227621e-05	10			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	2.4018160529913e-05	15			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	3.49341739530016e-05	20			normal
+pRAF_Obs_2	D2_Fiedler_RS25_TC002	4.05629312310548e-05	25			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	1.05989918575415e-06	0			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	4.95677321769205e-05	2			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	8.07937592473956e-05	4			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	6.17092014372037e-05	6.5			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	5.11350235953512e-05	9			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	7.40144197366714e-05	10			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	7.45343411966957e-05	15			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	7.87302760050219e-05	20			normal
+pRAF_Obs_3	D3_Fiedler_RS25_TC003	5.37553826589639e-05	25			normal

@@ -1,0 +1,11 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+ApoER2_re_Dab1SFKInh_Obs	ApoER2_re_Dab1SFKInh_Obs	offset1_ApoER2_re_Dab1SFKInh_Obs + ApoER2_re_Dab1SFKInh*scale1_ApoER2_re_Dab1SFKInh_Obs	log10	sd1_ApoER2_re_Dab1SFKInh_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + SFK)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + SFK)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + SFK)	log10	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	offset4_Compound_1_Obs + scale4_Compound_1_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + SFK)	log10	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	offset5_Compound_1_Obs + scale5_Compound_1_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + SFK)	log10	sd5_Compound_1_Obs	normal
+SFK_Obs_1	SFK_Obs	offset1_SFK_Obs + SFK*scale1_SFK_Obs	log10	sd1_SFK_Obs	normal
+SFK_Obs_2	SFK_Obs	offset2_SFK_Obs + SFK*scale2_SFK_Obs	log10	sd2_SFK_Obs	normal
+SFK_Obs_3	SFK_Obs	offset3_SFK_Obs + SFK*scale3_SFK_Obs	log10	sd3_SFK_Obs	normal
+SFK_Obs_4	SFK_Obs	offset4_SFK_Obs + SFK*scale4_SFK_Obs	log10	sd4_SFK_Obs	normal

@@ -1,0 +1,26 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_b10	init_b10	log10	1e-05	1000	3.71535229097173	1	parameterScaleUniform	
+init_bcar1	init_bcar1	log10	1e-05	1000	2.46603933723434	1	parameterScaleUniform	
+init_bcar2	init_bcar2	log10	1e-05	1000	3.86366977054069	1	parameterScaleUniform	
+init_bcry	init_bcry	log10	1e-05	1000	3.98107170553497	1	parameterScaleUniform	
+init_ohb10	init_ohb10	log10	1e-05	1000	1.78648757485205	1	parameterScaleUniform	
+init_zea	init_zea	log10	1e-05	1000	2.10377843976648	1	parameterScaleUniform	
+k5	k5	log10	1e-05	1000	0.00309029543251359	1	parameterScaleUniform	
+kb1	kb1	log10	1e-05	1000	0.00954992586021436	1	parameterScaleUniform	
+kb2	kb2	log10	1e-05	1000	0.00707945784384138	1	parameterScaleUniform	
+kc1	kc1	log10	1e-05	1000	0.00194984459975805	1	parameterScaleUniform	
+kc2	kc2	log10	1e-05	1000	0.00691830970918936	1	parameterScaleUniform	
+kc4	kc4	log10	1e-05	1000	0.00741310241300918	1	parameterScaleUniform	
+offset1_b10_Obs	offset1_b10_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset2_b10_Obs	offset2_b10_Obs	log10	1e-05	0.1	0.001	1	parameterScaleUniform	
+offset3_b10_Obs	offset3_b10_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+scale1_b10_Obs	scale1_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_b10_Obs	scale2_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_b10_Obs	scale3_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_b10_Obs	sd1_b10_Obs	log10	0.001	100	0.149726957613185	1	parameterScaleUniform	
+sd1_ohb10_Obs	sd1_ohb10_Obs	log10	0.001	100	0.163323997077116	1	parameterScaleUniform	
+sd2_b10_Obs	sd2_b10_Obs	log10	0.001	100	0.162689678154309	1	parameterScaleUniform	
+sd2_ohb10_Obs	sd2_ohb10_Obs	log10	0.001	100	0.168403068272427	1	parameterScaleUniform	
+sd3_b10_Obs	sd3_b10_Obs	log10	0.001	100	0.16060904509587	1	parameterScaleUniform	
+sd3_ohb10_Obs	sd3_ohb10_Obs	log10	0.001	100	0.154425849827198	1	parameterScaleUniform	
+szea	szea	log10	1e-05	1000	0.672976656284318	1	parameterScaleUniform	

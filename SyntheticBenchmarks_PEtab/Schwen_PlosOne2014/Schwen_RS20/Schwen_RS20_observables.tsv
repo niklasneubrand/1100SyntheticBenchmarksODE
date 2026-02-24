@@ -1,0 +1,23 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(IR1in + Ins + InsulinFragments)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(IR1in + Ins + InsulinFragments)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(IR1in + Ins + InsulinFragments)	log10	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	offset4_Compound_1_Obs + scale4_Compound_1_Obs*(IR1in + Ins + InsulinFragments)	log10	sd4_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(Ins + InsulinFragments + Uptake2)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	offset2_Compound_2_Obs + scale2_Compound_2_Obs*(Ins + InsulinFragments + Uptake2)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	offset3_Compound_2_Obs + scale3_Compound_2_Obs*(Ins + InsulinFragments + Uptake2)	log10	sd3_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	IR1 + IR2 + Uptake1	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	IR1 + IR2 + Uptake1	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	IR1 + IR2 + Uptake1	log10	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	IR1 + IR2 + Uptake1	log10	sd4_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	IR1 + IR2in + Uptake1	log10	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	IR1 + IR2in + Uptake1	log10	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	IR1 + IR2in + Uptake1	log10	sd3_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	IR2 + IR1in + InsulinFragments	log10	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	IR2 + IR1in + InsulinFragments	log10	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	IR2 + IR1in + InsulinFragments	log10	sd3_Compound_5_Obs	normal
+Compound_5_Obs_4	Compound_5_Obs	IR2 + IR1in + InsulinFragments	log10	sd4_Compound_5_Obs	normal
+Compound_6_Obs_1	Compound_6_Obs	offset1_Compound_6_Obs + scale1_Compound_6_Obs*(IR2in + Uptake1 + Uptake2)	log10	sd1_Compound_6_Obs	normal
+Compound_6_Obs_2	Compound_6_Obs	offset2_Compound_6_Obs + scale2_Compound_6_Obs*(IR2in + Uptake1 + Uptake2)	log10	sd2_Compound_6_Obs	normal
+Compound_6_Obs_3	Compound_6_Obs	offset3_Compound_6_Obs + scale3_Compound_6_Obs*(IR2in + Uptake1 + Uptake2)	log10	sd3_Compound_6_Obs	normal
+Compound_6_Obs_4	Compound_6_Obs	offset4_Compound_6_Obs + scale4_Compound_6_Obs*(IR2in + Uptake1 + Uptake2)	log10	sd4_Compound_6_Obs	normal

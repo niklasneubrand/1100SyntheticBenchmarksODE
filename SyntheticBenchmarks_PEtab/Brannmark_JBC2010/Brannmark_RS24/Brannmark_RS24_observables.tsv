@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IRi_Obs_1	IRi_Obs	IRi	lin	sd1_IRi_Obs	normal
+IRi_Obs_2	IRi_Obs	IRi	lin	sd2_IRi_Obs	normal
+IRi_Obs_3	IRi_Obs	IRi	lin	sd3_IRi_Obs	normal

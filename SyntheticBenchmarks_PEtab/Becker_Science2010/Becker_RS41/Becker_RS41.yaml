@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Becker_RS41_parameters.tsv
+problems:
+  - sbml_files:
+    - Becker_RS41_model.xml
+    observable_files:
+    - Becker_RS41_observables.tsv
+    condition_files:
+    - Becker_RS41_conditions.tsv
+    measurement_files:
+    - Becker_RS41_measurements.tsv

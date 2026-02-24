@@ -1,0 +1,16 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+delta_EL	delta_EL	log10	1e-05	1000	0.293764965196153	1	parameterScaleUniform	
+delta_LM	delta_LM	log10	1e-05	1000	0.0194984459975805	1	parameterScaleUniform	
+delta_NE	delta_NE	log10	1e-05	1000	0.0154881661891248	1	parameterScaleUniform	
+mu_EE	mu_EE	log10	1e-05	1000	2.57039578276886e-05	1	parameterScaleUniform	
+mu_LE	mu_LE	log10	1e-10	1000	1.73780082874938e-10	1	parameterScaleUniform	
+mu_LL	mu_LL	log10	1e-10	1000	1.20226443461741e-05	1	parameterScaleUniform	
+mu_N	mu_N	log10	1e-05	1000	1.13736536761606	1	parameterScaleUniform	
+mu_P	mu_P	log10	1e-05	1000	1.14815362149688e-05	1	parameterScaleUniform	
+mu_PE	mu_PE	log10	1e-10	1000	1e-10	1	parameterScaleUniform	
+mu_PL	mu_PL	log10	1e-05	1000	3.8904514499428e-05	1	parameterScaleUniform	
+offset1_Compound_1_Obs	offset1_Compound_1_Obs	log10	1	10000	100	1	parameterScaleUniform	
+rho_E	rho_E	log10	1e-05	1000	0.273526872630671	1	parameterScaleUniform	
+rho_P	rho_P	log10	1e-05	1000	0.0691830970918937	1	parameterScaleUniform	
+scale1_Compound_1_Obs	scale1_Compound_1_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.0001	10	0.0619441075076781	1	parameterScaleUniform	

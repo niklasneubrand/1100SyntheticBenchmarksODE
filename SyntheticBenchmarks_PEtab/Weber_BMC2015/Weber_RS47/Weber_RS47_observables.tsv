@@ -1,0 +1,5 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CERTERa_Obs	CERTERa_Obs	CERTERa*scale1_CERTERa_Obs	lin	sd1_CERTERa_Obs	normal
+PI4K3Ba_Obs_1	PI4K3Ba_Obs	PI4K3Ba	lin	sd1_PI4K3Ba_Obs	normal
+PI4K3Ba_Obs_2	PI4K3Ba_Obs	PI4K3Ba	lin	sd2_PI4K3Ba_Obs	normal
+PI4K3Ba_Obs_3	PI4K3Ba_Obs	PI4K3Ba	lin	sd3_PI4K3Ba_Obs	normal

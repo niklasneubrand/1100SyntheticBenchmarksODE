@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CERT_Obs_1	CERT_Obs	CERT*scale1_CERT_Obs	lin	sd1_CERT_Obs	normal
+CERT_Obs_2	CERT_Obs	CERT*scale2_CERT_Obs	lin	sd2_CERT_Obs	normal
+CERT_Obs_3	CERT_Obs	CERT*scale3_CERT_Obs	lin	sd3_CERT_Obs	normal

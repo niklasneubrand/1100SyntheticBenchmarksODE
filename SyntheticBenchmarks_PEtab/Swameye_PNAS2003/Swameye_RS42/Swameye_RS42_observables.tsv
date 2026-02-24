@@ -1,0 +1,5 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+STAT_Obs	STAT_Obs	offset1_STAT_Obs + STAT*scale1_STAT_Obs	log10	sd1_STAT_Obs	normal
+nSTAT1_Obs	nSTAT1_Obs	nSTAT1	log10	sd1_nSTAT1_Obs	normal
+nSTAT2_Obs	nSTAT2_Obs	nSTAT2	log10	sd1_nSTAT2_Obs	normal
+nSTAT4_Obs	nSTAT4_Obs	offset1_nSTAT4_Obs + nSTAT4*scale1_nSTAT4_Obs	log10	sd1_nSTAT4_Obs	normal

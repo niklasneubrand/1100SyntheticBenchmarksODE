@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Bruno_RS30">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="nM" name="nM">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="1e-09"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="pl" name="pl">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1e-12"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cyt" spatialDimensions="3" size="1" units="pl" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="bcar" name="beta-carotin" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="bcry" name="cry" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="b10" name="beta-10" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="bio" name="beta-io" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="ohb10" name="OH-beta-10" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="ohbio" name="OH-beta-io" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="zea" name="zea" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="init_b10" name="init_b10" value="5.68852930843842" constant="true"/>
+      <parameter id="init_bcar" name="init_bcar" constant="true"/>
+      <parameter id="init_bcry" name="init_bcry" value="2.7478941531024" constant="true"/>
+      <parameter id="init_bio" name="init_bio" constant="true"/>
+      <parameter id="init_ohb10" name="init_ohb10" value="2.05116217882557" constant="true"/>
+      <parameter id="init_ohbio" name="init_ohbio" constant="true"/>
+      <parameter id="init_zea" name="init_zea" value="3.74110588272053" constant="true"/>
+      <parameter id="k5" name="k5" value="0.00436515832240166" constant="true"/>
+      <parameter id="kb1" name="kb1" value="0.0134896288259165" constant="true"/>
+      <parameter id="kb2" name="kb2" value="0.0038904514499428" constant="true"/>
+      <parameter id="kc1" name="kc1" value="0.00107151930523761" constant="true"/>
+      <parameter id="kc2" name="kc2" value="0.01" constant="true"/>
+      <parameter id="kc4" name="kc4" value="0.00954992586021436" constant="true"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="bcar">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_bcar </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="bcry">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_bcry </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="b10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_b10 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="bio">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_bio </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="ohb10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_ohb10 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="ohbio">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_ohbio </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="zea">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_zea </ci>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfReactions>
+      <reaction id="v1_ReactionName" name="ReactionName" reversible="false">
+        <listOfReactants>
+          <speciesReference species="bcar" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="b10" stoichiometry="1"/>
+          <speciesReference species="bio" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> bcar </ci>
+              <ci> kb1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_ReactionName" name="ReactionName" reversible="false">
+        <listOfReactants>
+          <speciesReference species="b10" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="bio" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> b10 </ci>
+              <ci> kb2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_ReactionName" name="ReactionName" reversible="false">
+        <listOfReactants>
+          <speciesReference species="bcry" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="b10" stoichiometry="1"/>
+          <speciesReference species="ohbio" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> bcry </ci>
+              <ci> kc1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_ReactionName" name="ReactionName" reversible="false">
+        <listOfReactants>
+          <speciesReference species="bcry" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="bio" stoichiometry="1"/>
+          <speciesReference species="ohb10" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> bcry </ci>
+              <ci> kc2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_ReactionName" name="ReactionName" reversible="false">
+        <listOfReactants>
+          <speciesReference species="ohb10" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ohbio" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> kc4 </ci>
+              <ci> ohb10 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_ReactionName" name="ReactionName" reversible="false">
+        <listOfReactants>
+          <speciesReference species="zea" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ohb10" stoichiometry="1"/>
+          <speciesReference species="ohbio" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> k5 </ci>
+              <ci> zea </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

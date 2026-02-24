@@ -1,0 +1,19 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	ERK + MEK + RAF + pMEK + pRAF	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	ERK + MEK + RAF + pMEK + pRAF	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	ERK + MEK + RAF + pMEK + pRAF	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	MEK + RAF + pERK + pMEK + pRAF	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	MEK + RAF + pERK + pMEK + pRAF	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	MEK + RAF + pERK + pMEK + pRAF	lin	sd3_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	ERK + MEK + RAF + pERK + pRAF	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	ERK + MEK + RAF + pERK + pRAF	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	ERK + MEK + RAF + pERK + pRAF	lin	sd3_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	ERK + RAF + pERK + pMEK + pRAF	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	ERK + RAF + pERK + pMEK + pRAF	lin	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	ERK + RAF + pERK + pMEK + pRAF	lin	sd3_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	ERK + MEK + RAF + pERK + pMEK	lin	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	ERK + MEK + RAF + pERK + pMEK	lin	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	ERK + MEK + RAF + pERK + pMEK	lin	sd3_Compound_5_Obs	normal
+Compound_6_Obs_1	Compound_6_Obs	ERK + MEK + pERK + pMEK + pRAF	lin	sd1_Compound_6_Obs	normal
+Compound_6_Obs_2	Compound_6_Obs	ERK + MEK + pERK + pMEK + pRAF	lin	sd2_Compound_6_Obs	normal
+Compound_6_Obs_3	Compound_6_Obs	ERK + MEK + pERK + pMEK + pRAF	lin	sd3_Compound_6_Obs	normal

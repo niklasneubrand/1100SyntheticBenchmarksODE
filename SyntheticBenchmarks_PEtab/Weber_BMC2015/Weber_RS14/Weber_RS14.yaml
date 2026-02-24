@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Weber_RS14_parameters.tsv
+problems:
+  - sbml_files:
+    - Weber_RS14_model.xml
+    observable_files:
+    - Weber_RS14_observables.tsv
+    condition_files:
+    - Weber_RS14_conditions.tsv
+    measurement_files:
+    - Weber_RS14_measurements.tsv

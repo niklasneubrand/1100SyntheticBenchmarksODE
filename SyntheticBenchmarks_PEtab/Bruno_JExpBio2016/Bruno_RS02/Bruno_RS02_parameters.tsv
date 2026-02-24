@@ -1,0 +1,27 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_b10	init_b10	log10	1e-05	1000	3.01995172040202	1	parameterScaleUniform	
+init_bcar1	init_bcar1	log10	1e-05	1000	5.26017266390706	1	parameterScaleUniform	
+init_bcar2	init_bcar2	log10	1e-05	1000	5.52077439280757	1	parameterScaleUniform	
+init_bcry	init_bcry	log10	1e-05	1000	3.45939377826122	1	parameterScaleUniform	
+init_ohb10	init_ohb10	log10	1e-05	1000	2.04173794466953	1	parameterScaleUniform	
+init_zea	init_zea	log10	1e-05	1000	1.73380399775414	1	parameterScaleUniform	
+k5	k5	log10	1e-05	1000	0.00616595001861482	1	parameterScaleUniform	
+kb1	kb1	log10	1e-05	1000	0.0229086765276777	1	parameterScaleUniform	
+kb2	kb2	log10	1e-05	1000	0.00323593656929628	1	parameterScaleUniform	
+kc1	kc1	log10	1e-05	1000	0.00288403150312661	1	parameterScaleUniform	
+kc2	kc2	log10	1e-05	1000	0.010471285480509	1	parameterScaleUniform	
+kc4	kc4	log10	1e-05	1000	0.0114815362149688	1	parameterScaleUniform	
+offset1_bcry_Obs	offset1_bcry_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset1_bio_Obs	offset1_bio_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset2_bio_Obs	offset2_bio_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+scale1_bcry_Obs	scale1_bcry_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_bio_Obs	scale1_bio_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_bio_Obs	scale2_bio_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_bcar_Obs	sd1_bcar_Obs	log10	0.001	100	0.139386271138484	1	parameterScaleUniform	
+sd1_bcry_Obs	sd1_bcry_Obs	log10	0.001	100	0.142942047948243	1	parameterScaleUniform	
+sd1_bio_Obs	sd1_bio_Obs	log10	0.001	100	0.13546590415422	1	parameterScaleUniform	
+sd1_ohb10_Obs	sd1_ohb10_Obs	log10	0.001	100	0.137110274400742	1	parameterScaleUniform	
+sd2_bcar_Obs	sd2_bcar_Obs	log10	0.001	100	0.144950594196627	1	parameterScaleUniform	
+sd2_bio_Obs	sd2_bio_Obs	log10	0.001	100	0.140734313831835	1	parameterScaleUniform	
+sd2_ohb10_Obs	sd2_ohb10_Obs	log10	0.001	100	0.136150738075424	1	parameterScaleUniform	
+szea	szea	log10	1e-05	1000	0.418793565117918	1	parameterScaleUniform	

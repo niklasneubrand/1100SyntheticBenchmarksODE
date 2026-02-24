@@ -1,0 +1,8 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(GFP_mRNA + X_protein + Y_protein + Z_mRNA + Z_protein)	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(GFP + X_mRNA + X_protein + Y_mRNA + Y_protein)	log10	sd1_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(GFP + Y_mRNA + Y_protein + Z_mRNA + Z_protein)	log10	sd1_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	GFP + GFP_mRNA + Y_protein + Z_mRNA + Z_protein	log10	sd1_Compound_4_Obs	normal
+Compound_5_Obs	Compound_5_Obs	X_mRNA + Y_mRNA + Y_protein + Z_mRNA + Z_protein	log10	sd1_Compound_5_Obs	normal
+Compound_6_Obs	Compound_6_Obs	offset1_Compound_6_Obs + scale1_Compound_6_Obs*(GFP + X_mRNA + Y_mRNA + Y_protein + Z_mRNA)	log10	sd1_Compound_6_Obs	normal
+Compound_7_Obs	Compound_7_Obs	offset1_Compound_7_Obs + scale1_Compound_7_Obs*(GFP_mRNA + X_mRNA + Y_mRNA + Z_mRNA + Z_protein)	log10	sd1_Compound_7_Obs	normal

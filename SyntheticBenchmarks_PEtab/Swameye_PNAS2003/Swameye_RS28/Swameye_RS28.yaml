@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Swameye_RS28_parameters.tsv
+problems:
+  - sbml_files:
+    - Swameye_RS28_model.xml
+    observable_files:
+    - Swameye_RS28_observables.tsv
+    condition_files:
+    - Swameye_RS28_conditions.tsv
+    measurement_files:
+    - Swameye_RS28_measurements.tsv

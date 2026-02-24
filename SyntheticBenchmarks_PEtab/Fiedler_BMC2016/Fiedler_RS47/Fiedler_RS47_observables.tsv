@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+pRAF_Obs_1	pRAF_Obs	pRAF*scale1_pRAF_Obs	lin	sd1_pRAF_Obs	normal
+pRAF_Obs_2	pRAF_Obs	pRAF*scale2_pRAF_Obs	lin	sd2_pRAF_Obs	normal
+pRAF_Obs_3	pRAF_Obs	pRAF*scale3_pRAF_Obs	lin	sd3_pRAF_Obs	normal

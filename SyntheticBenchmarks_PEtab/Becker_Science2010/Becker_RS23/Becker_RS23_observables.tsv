@@ -1,0 +1,7 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	Epo_EpoR_i + dEpo_e + dEpo_i	lin	sd1_Compound_1_Obs	normal
+EpoR_Obs	EpoR_Obs	EpoR	lin	sd1_EpoR_Obs	normal
+Epo_EpoR_Obs	Epo_EpoR_Obs	Epo_EpoR	lin	sd1_Epo_EpoR_Obs	normal
+Epo_EpoR_i_Obs	Epo_EpoR_i_Obs	Epo_EpoR_i	lin	sd1_Epo_EpoR_i_Obs	normal
+Epo_Obs	Epo_Obs	Epo	lin	sd1_Epo_Obs	normal
+dEpo_e_Obs	dEpo_e_Obs	dEpo_e	lin	sd1_dEpo_e_Obs	normal

@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Bruno_RS21_parameters.tsv
+problems:
+  - sbml_files:
+    - Bruno_RS21_model.xml
+    observable_files:
+    - Bruno_RS21_observables.tsv
+    condition_files:
+    - Bruno_RS21_conditions.tsv
+    measurement_files:
+    - Bruno_RS21_measurements.tsv

@@ -1,0 +1,2 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Pathogen_Obs	Pathogen_Obs	offset1_Pathogen_Obs + Pathogen*scale1_Pathogen_Obs	log10	sd1_Pathogen_Obs	normal

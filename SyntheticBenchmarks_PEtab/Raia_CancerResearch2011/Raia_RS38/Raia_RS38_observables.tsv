@@ -1,0 +1,10 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+DecoyR_Obs_1	DecoyR_Obs	DecoyR*scale1_DecoyR_Obs	lin	sd1_DecoyR_Obs	normal
+DecoyR_Obs_2	DecoyR_Obs	DecoyR*scale2_DecoyR_Obs	lin	sd2_DecoyR_Obs	normal
+Rec_Obs_1	Rec_Obs	Rec*scale1_Rec_Obs	lin	sd1_Rec_Obs	normal
+Rec_Obs_2	Rec_Obs	Rec*scale2_Rec_Obs	lin	sd2_Rec_Obs	normal
+Rec_i_Obs	Rec_i_Obs	Rec_i*scale1_Rec_i_Obs	lin	sd1_Rec_i_Obs	normal
+STAT5_Obs_1	STAT5_Obs	STAT5*scale1_STAT5_Obs	lin	sd1_STAT5_Obs	normal
+STAT5_Obs_2	STAT5_Obs	STAT5*scale2_STAT5_Obs	lin	sd2_STAT5_Obs	normal
+STAT5_Obs_3	STAT5_Obs	STAT5*scale3_STAT5_Obs	lin	sd3_STAT5_Obs	normal
+pJAK2_Obs	pJAK2_Obs	pJAK2*scale1_pJAK2_Obs	lin	sd1_pJAK2_Obs	normal

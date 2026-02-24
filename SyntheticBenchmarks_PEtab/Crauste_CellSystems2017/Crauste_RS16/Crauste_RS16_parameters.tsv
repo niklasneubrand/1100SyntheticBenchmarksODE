@@ -1,0 +1,23 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+delta_EL	delta_EL	log10	1e-05	1000	0.645654229034656	1	parameterScaleUniform	
+delta_LM	delta_LM	log10	1e-05	1000	0.0128824955169313	1	parameterScaleUniform	
+delta_NE	delta_NE	log10	1e-05	1000	0.0173780082874938	1	parameterScaleUniform	
+mu_EE	mu_EE	log10	1e-05	1000	2.51188643150958e-05	1	parameterScaleUniform	
+mu_LE	mu_LE	log10	1e-10	1000	1.23026877081238e-10	1	parameterScaleUniform	
+mu_LL	mu_LL	log10	1e-10	1000	7.94328234724282e-06	1	parameterScaleUniform	
+mu_N	mu_N	log10	1e-05	1000	0.846837341322241	1	parameterScaleUniform	
+mu_P	mu_P	log10	1e-06	1000	7.07945784384137e-06	1	parameterScaleUniform	
+mu_PE	mu_PE	log10	1e-10	1000	2.45470891568503e-10	1	parameterScaleUniform	
+mu_PL	mu_PL	log10	1e-05	1000	6.76082975391982e-05	1	parameterScaleUniform	
+offset1_EarlyEffector_Obs	offset1_EarlyEffector_Obs	log10	0.1	1000	10	1	parameterScaleUniform	
+offset1_LateEffector_Obs	offset1_LateEffector_Obs	log10	0.1	1000	10	1	parameterScaleUniform	
+offset1_Naive_Obs	offset1_Naive_Obs	log10	0.1	1000	10	1	parameterScaleUniform	
+rho_E	rho_E	log10	1e-05	1000	0.314050869387622	1	parameterScaleUniform	
+rho_P	rho_P	log10	1e-05	1000	0.0851138038202376	1	parameterScaleUniform	
+scale1_EarlyEffector_Obs	scale1_EarlyEffector_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_LateEffector_Obs	scale1_LateEffector_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Naive_Obs	scale1_Naive_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_EarlyEffector_Obs	sd1_EarlyEffector_Obs	log10	0.001	100	0.13314657520503	1	parameterScaleUniform	
+sd1_LateEffector_Obs	sd1_LateEffector_Obs	log10	0.001	100	0.138796974672647	1	parameterScaleUniform	
+sd1_Memory_Obs	sd1_Memory_Obs	log10	0.001	100	0.139952287067858	1	parameterScaleUniform	
+sd1_Naive_Obs	sd1_Naive_Obs	log10	0.001	100	0.136138198706496	1	parameterScaleUniform	

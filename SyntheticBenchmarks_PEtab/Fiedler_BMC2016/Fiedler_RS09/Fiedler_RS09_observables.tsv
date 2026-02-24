@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+RAF_Obs_1	RAF_Obs	offset1_RAF_Obs + RAF*scale1_RAF_Obs	log10	sd1_RAF_Obs	normal
+RAF_Obs_2	RAF_Obs	offset2_RAF_Obs + RAF*scale2_RAF_Obs	log10	sd2_RAF_Obs	normal
+RAF_Obs_3	RAF_Obs	offset3_RAF_Obs + RAF*scale3_RAF_Obs	log10	sd3_RAF_Obs	normal

@@ -1,0 +1,11 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Z_state_Obs	D1_Borghans_RS10_TC001	0.0711683034737426	0			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.276129716400594	0.15			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.183109632206953	0.3			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.250461123919406	0.45			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	1.59936984527287	0.6			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.868847413792947	0.8			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.788246838747585	1			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.675446043208575	1.5			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.604477171554732	2			normal
+Z_state_Obs	D1_Borghans_RS10_TC001	0.604095853916682	2.5			normal

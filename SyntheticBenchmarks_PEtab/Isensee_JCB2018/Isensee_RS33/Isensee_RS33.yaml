@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Isensee_RS33_parameters.tsv
+problems:
+  - sbml_files:
+    - Isensee_RS33_model.xml
+    observable_files:
+    - Isensee_RS33_observables.tsv
+    condition_files:
+    - Isensee_RS33_conditions.tsv
+    measurement_files:
+    - Isensee_RS33_measurements.tsv

@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Bruno_RS29_parameters.tsv
+problems:
+  - sbml_files:
+    - Bruno_RS29_model.xml
+    observable_files:
+    - Bruno_RS29_observables.tsv
+    condition_files:
+    - Bruno_RS29_conditions.tsv
+    measurement_files:
+    - Bruno_RS29_measurements.tsv

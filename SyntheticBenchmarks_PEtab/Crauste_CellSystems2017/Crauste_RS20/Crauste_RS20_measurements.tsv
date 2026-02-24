@@ -1,0 +1,27 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Naive_Obs	D1_Crauste_RS20_TC001	7939.7766097267	0			normal
+Naive_Obs	D1_Crauste_RS20_TC001	1346.47043949112	2			normal
+Naive_Obs	D1_Crauste_RS20_TC001	77.3778865763319	4			normal
+Naive_Obs	D1_Crauste_RS20_TC001	-8.59196364551361	6			normal
+Naive_Obs	D1_Crauste_RS20_TC001	NaN	8			normal
+Naive_Obs	D1_Crauste_RS20_TC001	-75.5539147698048	8.5			normal
+Naive_Obs	D1_Crauste_RS20_TC001	-81.4186503052076	10			normal
+Naive_Obs	D1_Crauste_RS20_TC001	98.9033142000771	15			normal
+Naive_Obs	D1_Crauste_RS20_TC001	NaN	20			normal
+Naive_Obs	D1_Crauste_RS20_TC001	NaN	25			normal
+Naive_Obs	D1_Crauste_RS20_TC001	NaN	30			normal
+Naive_Obs	D1_Crauste_RS20_TC001	NaN	40			normal
+Naive_Obs	D1_Crauste_RS20_TC001	NaN	50			normal
+Memory_Obs	D1_Crauste_RS20_TC001	-1347.72917008912	0			normal
+Memory_Obs	D1_Crauste_RS20_TC001	NaN	2			normal
+Memory_Obs	D1_Crauste_RS20_TC001	180.241366678995	4			normal
+Memory_Obs	D1_Crauste_RS20_TC001	NaN	6			normal
+Memory_Obs	D1_Crauste_RS20_TC001	1043.97345966902	8			normal
+Memory_Obs	D1_Crauste_RS20_TC001	NaN	8.5			normal
+Memory_Obs	D1_Crauste_RS20_TC001	NaN	10			normal
+Memory_Obs	D1_Crauste_RS20_TC001	6771.99637950349	15			normal
+Memory_Obs	D1_Crauste_RS20_TC001	9681.86199944046	20			normal
+Memory_Obs	D1_Crauste_RS20_TC001	10381.3304819884	25			normal
+Memory_Obs	D1_Crauste_RS20_TC001	9543.50644513116	30			normal
+Memory_Obs	D1_Crauste_RS20_TC001	11338.1893593491	40			normal
+Memory_Obs	D1_Crauste_RS20_TC001	10188.3681257622	50			normal

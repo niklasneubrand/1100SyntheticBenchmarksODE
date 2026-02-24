@@ -1,0 +1,24 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+DecoyR_Obs_1	DecoyR_Obs	offset1_DecoyR_Obs + DecoyR*scale1_DecoyR_Obs	log10	sd1_DecoyR_Obs	normal
+DecoyR_Obs_2	DecoyR_Obs	offset2_DecoyR_Obs + DecoyR*scale2_DecoyR_Obs	log10	sd2_DecoyR_Obs	normal
+DecoyR_Obs_3	DecoyR_Obs	offset3_DecoyR_Obs + DecoyR*scale3_DecoyR_Obs	log10	sd3_DecoyR_Obs	normal
+IL13_Rec_Obs_1	IL13_Rec_Obs	offset1_IL13_Rec_Obs + IL13_Rec*scale1_IL13_Rec_Obs	log10	sd1_IL13_Rec_Obs	normal
+IL13_Rec_Obs_2	IL13_Rec_Obs	offset2_IL13_Rec_Obs + IL13_Rec*scale2_IL13_Rec_Obs	log10	sd2_IL13_Rec_Obs	normal
+IL13_Rec_Obs_3	IL13_Rec_Obs	offset3_IL13_Rec_Obs + IL13_Rec*scale3_IL13_Rec_Obs	log10	sd3_IL13_Rec_Obs	normal
+JAK2_Obs_1	JAK2_Obs	offset1_JAK2_Obs + JAK2*scale1_JAK2_Obs	log10	sd1_JAK2_Obs	normal
+JAK2_Obs_2	JAK2_Obs	offset2_JAK2_Obs + JAK2*scale2_JAK2_Obs	log10	sd2_JAK2_Obs	normal
+JAK2_Obs_3	JAK2_Obs	offset3_JAK2_Obs + JAK2*scale3_JAK2_Obs	log10	sd3_JAK2_Obs	normal
+Rec_Obs_1	Rec_Obs	Rec	log10	sd1_Rec_Obs	normal
+Rec_Obs_2	Rec_Obs	Rec	log10	sd2_Rec_Obs	normal
+Rec_Obs_3	Rec_Obs	Rec	log10	sd3_Rec_Obs	normal
+Rec_i_Obs_1	Rec_i_Obs	offset1_Rec_i_Obs + Rec_i*scale1_Rec_i_Obs	log10	sd1_Rec_i_Obs	normal
+Rec_i_Obs_2	Rec_i_Obs	offset2_Rec_i_Obs + Rec_i*scale2_Rec_i_Obs	log10	sd2_Rec_i_Obs	normal
+Rec_i_Obs_3	Rec_i_Obs	offset3_Rec_i_Obs + Rec_i*scale3_Rec_i_Obs	log10	sd3_Rec_i_Obs	normal
+SOCS3_Obs_1	SOCS3_Obs	SOCS3	log10	sd1_SOCS3_Obs	normal
+SOCS3_Obs_2	SOCS3_Obs	SOCS3	log10	sd2_SOCS3_Obs	normal
+SOCS3mRNA_Obs_1	SOCS3mRNA_Obs	offset1_SOCS3mRNA_Obs + SOCS3mRNA*scale1_SOCS3mRNA_Obs	log10	sd1_SOCS3mRNA_Obs	normal
+SOCS3mRNA_Obs_2	SOCS3mRNA_Obs	offset2_SOCS3mRNA_Obs + SOCS3mRNA*scale2_SOCS3mRNA_Obs	log10	sd2_SOCS3mRNA_Obs	normal
+STAT5_Obs_1	STAT5_Obs	STAT5	log10	sd1_STAT5_Obs	normal
+STAT5_Obs_2	STAT5_Obs	STAT5	log10	sd2_STAT5_Obs	normal
+p_IL13_Rec_Obs_1	p_IL13_Rec_Obs	p_IL13_Rec	log10	sd1_p_IL13_Rec_Obs	normal
+p_IL13_Rec_Obs_2	p_IL13_Rec_Obs	p_IL13_Rec	log10	sd2_p_IL13_Rec_Obs	normal

@@ -1,0 +1,17 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	IPR_A + IPR_I1 + IPR_I2	lin	sd8_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	IPR_A + IPR_I2 + IPR_S	lin	sd8_Compound_2_Obs	normal

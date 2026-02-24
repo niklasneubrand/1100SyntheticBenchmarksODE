@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IRS_Obs	IRS_Obs	IRS*scale1_IRS_Obs	lin	sd1_IRS_Obs	normal
+IR_Obs_1	IR_Obs	IR*scale1_IR_Obs	lin	sd1_IR_Obs	normal
+IR_Obs_2	IR_Obs	IR*scale2_IR_Obs	lin	sd2_IR_Obs	normal
+IR_Obs_3	IR_Obs	IR*scale3_IR_Obs	lin	sd3_IR_Obs	normal
+IRiP_Obs	IRiP_Obs	IRiP	lin	sd1_IRiP_Obs	normal

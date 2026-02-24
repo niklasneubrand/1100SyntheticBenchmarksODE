@@ -1,0 +1,27 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Epo_Obs	D1_Becker_RS16_TC001	1668.08395941074	0			normal
+Epo_Obs	D1_Becker_RS16_TC001	1300.03441296784	10			normal
+Epo_Obs	D1_Becker_RS16_TC001	812.436446501119	25			normal
+Epo_Obs	D1_Becker_RS16_TC001	954.902492810749	40			normal
+Epo_Obs	D1_Becker_RS16_TC001	NaN	50			normal
+Epo_Obs	D1_Becker_RS16_TC001	885.618343923943	55			normal
+Epo_Obs	D1_Becker_RS16_TC001	NaN	65			normal
+Epo_Obs	D1_Becker_RS16_TC001	536.321970387408	75			normal
+Epo_Obs	D1_Becker_RS16_TC001	NaN	85			normal
+Epo_Obs	D1_Becker_RS16_TC001	343.981771674266	100			normal
+Epo_Obs	D1_Becker_RS16_TC001	232.975822785468	150			normal
+Epo_Obs	D1_Becker_RS16_TC001	NaN	200			normal
+Epo_Obs	D1_Becker_RS16_TC001	NaN	250			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	1.0585896335929	0			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	806.568533937508	10			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	325.151888148217	25			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	251.798973295154	40			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	272.350929373559	50			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	NaN	55			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	177.800323039947	65			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	NaN	75			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	116.119646686785	85			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	139.502943577956	100			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	74.3035695981539	150			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	45.4218918395501	200			normal
+Epo_EpoR_Obs	D1_Becker_RS16_TC001	14.4443087933582	250			normal

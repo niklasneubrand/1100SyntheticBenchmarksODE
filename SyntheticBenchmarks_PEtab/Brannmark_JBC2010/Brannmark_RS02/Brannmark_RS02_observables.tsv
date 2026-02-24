@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IR + IRiP + IRins	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IR + IRiP + IRins	lin	sd2_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	IRS + IRp + XX	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	IRS + IRp + XX	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	IRSiP + IRi + XX	lin	sd1_Compound_3_Obs	normal

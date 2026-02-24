@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Isensee_RS45_parameters.tsv
+problems:
+  - sbml_files:
+    - Isensee_RS45_model.xml
+    observable_files:
+    - Isensee_RS45_observables.tsv
+    condition_files:
+    - Isensee_RS45_conditions.tsv
+    measurement_files:
+    - Isensee_RS45_measurements.tsv

@@ -1,0 +1,20 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Glu_Obs_01	Glu_Obs	offset10_Glu_Obs + Glu*scale10_Glu_Obs	log10	sd10_Glu_Obs	normal
+Glu_Obs_02	Glu_Obs	offset11_Glu_Obs + Glu*scale11_Glu_Obs	log10	sd11_Glu_Obs	normal
+Glu_Obs_03	Glu_Obs	offset12_Glu_Obs + Glu*scale12_Glu_Obs	log10	sd12_Glu_Obs	normal
+Glu_Obs_04	Glu_Obs	offset13_Glu_Obs + Glu*scale13_Glu_Obs	log10	sd13_Glu_Obs	normal
+Glu_Obs_05	Glu_Obs	offset14_Glu_Obs + Glu*scale14_Glu_Obs	log10	sd14_Glu_Obs	normal
+Glu_Obs_06	Glu_Obs	offset15_Glu_Obs + Glu*scale15_Glu_Obs	log10	sd15_Glu_Obs	normal
+Glu_Obs_07	Glu_Obs	offset16_Glu_Obs + Glu*scale16_Glu_Obs	log10	sd16_Glu_Obs	normal
+Glu_Obs_08	Glu_Obs	offset17_Glu_Obs + Glu*scale17_Glu_Obs	log10	sd17_Glu_Obs	normal
+Glu_Obs_09	Glu_Obs	offset18_Glu_Obs + Glu*scale18_Glu_Obs	log10	sd18_Glu_Obs	normal
+Glu_Obs_10	Glu_Obs	offset19_Glu_Obs + Glu*scale19_Glu_Obs	log10	sd19_Glu_Obs	normal
+Glu_Obs_11	Glu_Obs	offset1_Glu_Obs + Glu*scale1_Glu_Obs	log10	sd1_Glu_Obs	normal
+Glu_Obs_12	Glu_Obs	offset2_Glu_Obs + Glu*scale2_Glu_Obs	log10	sd2_Glu_Obs	normal
+Glu_Obs_13	Glu_Obs	offset3_Glu_Obs + Glu*scale3_Glu_Obs	log10	sd3_Glu_Obs	normal
+Glu_Obs_14	Glu_Obs	offset4_Glu_Obs + Glu*scale4_Glu_Obs	log10	sd4_Glu_Obs	normal
+Glu_Obs_15	Glu_Obs	offset5_Glu_Obs + Glu*scale5_Glu_Obs	log10	sd5_Glu_Obs	normal
+Glu_Obs_16	Glu_Obs	offset6_Glu_Obs + Glu*scale6_Glu_Obs	log10	sd6_Glu_Obs	normal
+Glu_Obs_17	Glu_Obs	offset7_Glu_Obs + Glu*scale7_Glu_Obs	log10	sd7_Glu_Obs	normal
+Glu_Obs_18	Glu_Obs	offset8_Glu_Obs + Glu*scale8_Glu_Obs	log10	sd8_Glu_Obs	normal
+Glu_Obs_19	Glu_Obs	offset9_Glu_Obs + Glu*scale9_Glu_Obs	log10	sd9_Glu_Obs	normal

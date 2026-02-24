@@ -1,0 +1,9 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CERT_Obs_1	CERT_Obs	CERT*scale1_CERT_Obs	lin	sd1_CERT_Obs	normal
+CERT_Obs_2	CERT_Obs	CERT*scale2_CERT_Obs	lin	sd2_CERT_Obs	normal
+CERT_Obs_3	CERT_Obs	CERT*scale3_CERT_Obs	lin	sd3_CERT_Obs	normal
+PI4K3B_Obs_1	PI4K3B_Obs	PI4K3B*scale1_PI4K3B_Obs	lin	sd1_PI4K3B_Obs	normal
+PI4K3B_Obs_2	PI4K3B_Obs	PI4K3B*scale2_PI4K3B_Obs	lin	sd2_PI4K3B_Obs	normal
+PI4K3Ba_Obs_1	PI4K3Ba_Obs	PI4K3Ba*scale1_PI4K3Ba_Obs	lin	sd1_PI4K3Ba_Obs	normal
+PI4K3Ba_Obs_2	PI4K3Ba_Obs	PI4K3Ba*scale2_PI4K3Ba_Obs	lin	sd2_PI4K3Ba_Obs	normal
+PKD_Obs	PKD_Obs	PKD	lin	sd1_PKD_Obs	normal

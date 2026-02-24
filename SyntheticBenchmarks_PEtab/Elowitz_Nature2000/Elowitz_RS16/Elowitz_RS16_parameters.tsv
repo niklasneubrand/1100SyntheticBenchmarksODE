@@ -1,0 +1,24 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+KM	KM	log10	0.001	100000	10.9647819614319	1	parameterScaleUniform	
+eff	eff	log10	1	1000	16.9824365246174	1	parameterScaleUniform	
+eff_GFP	eff_GFP	log10	1	1000	1	0	parameterScaleUniform	
+init_GFP	init_GFP	log10	1e-05	1000	0.00239883291901949	1	parameterScaleUniform	
+init_GFP_mRNA	init_GFP_mRNA	log10	1e-06	1000	5.75439937337157e-06	1	parameterScaleUniform	
+init_X_mRNA	init_X_mRNA	log10	1e-05	1000	169.824365246174	1	parameterScaleUniform	
+init_X_protein	init_X_protein	log10	1e-05	1000	1.07398941234124	1	parameterScaleUniform	
+init_Y_mRNA	init_Y_mRNA	log10	1e-05	10000	1659.58690743756	1	parameterScaleUniform	
+init_Y_protein	init_Y_protein	log10	1e-05	7943.28234724281	1230.26877081238	1	parameterScaleUniform	
+init_Z_mRNA	init_Z_mRNA	log10	1e-05	1000	457.088189614875	1	parameterScaleUniform	
+init_Z_protein	init_Z_protein	log10	1e-05	1000	3.38844156139203e-05	1	parameterScaleUniform	
+n_Hill	n_Hill	log10	1e-05	1000	1.99986186963274	0	parameterScaleUniform	
+scale1_X_mRNA_Obs	scale1_X_mRNA_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Z_protein_Obs	scale1_Z_protein_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_X_mRNA_Obs	sd1_X_mRNA_Obs	log10	0.001	100	0.968884481674017	1	parameterScaleUniform	
+sd1_Z_mRNA_Obs	sd1_Z_mRNA_Obs	log10	0.01	1000	2.17195088404063	1	parameterScaleUniform	
+sd1_Z_protein_Obs	sd1_Z_protein_Obs	log10	1	100000	125.834578869029	1	parameterScaleUniform	
+tau_mRNA	tau_mRNA	log10	0.01	1000	1.84501541917947	1	parameterScaleUniform	
+tau_mRNA_GFP	tau_mRNA_GFP	log10	0.01	1000	0.0120226443461741	1	parameterScaleUniform	
+tau_prot	tau_prot	log10	0.01	1000	30.1995172040202	1	parameterScaleUniform	
+tau_prot_GFP	tau_prot_GFP	log10	1	10000	85.1138038202376	1	parameterScaleUniform	
+tps_active	tps_active	log10	0.001	100000	138.038426460289	1	parameterScaleUniform	
+tps_repr	tps_repr	log10	0.0001	100000	0.000602559586074357	1	parameterScaleUniform	

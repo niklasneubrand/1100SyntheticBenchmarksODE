@@ -1,0 +1,27 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ApoER2_Dab1_SFK_degrad	ApoER2_Dab1_SFK_degrad	log10	1e-05	1000	0.0194984459975805	1	parameterScaleUniform	
+ApoER2_Dab1_SFK_recycle	ApoER2_Dab1_SFK_recycle	log10	1e-05	1000	2.07014134879104	1	parameterScaleUniform	
+ApoER2_Dab1_SFK_release	ApoER2_Dab1_SFK_release	log10	0.01	100000	1348.96288259165	1	parameterScaleUniform	
+ApoER2_Dab1_act	ApoER2_Dab1_act	log10	0.01	10000000	10000	0	parameterScaleUniform	
+ApoER2_Dab1_bind_SFK	ApoER2_Dab1_bind_SFK	log10	1e-05	1000	104.71285480509	1	parameterScaleUniform	
+ApoER2_Dab1_bind_SFK_Reelin	ApoER2_Dab1_bind_SFK_Reelin	log10	0.01	1000000	158489.319246111	1	parameterScaleUniform	
+Dab1_bind_Reelin	Dab1_bind_Reelin	log10	1e-05	1000	0.0144543977074593	1	parameterScaleUniform	
+Dab1_release	Dab1_release	log10	1e-05	1000	0.113762728582343	1	parameterScaleUniform	
+SFK_inhibition_ratio	SFK_inhibition_ratio	log10	1e-10	1	0.719448978003699	1	parameterScaleUniform	
+init_ApoER2_Dab1	init_ApoER2_Dab1	log10	0.01	1000	1	0	parameterScaleUniform	
+init_ApoER2_Dab1SFK	init_ApoER2_Dab1SFK	log10	1e-05	1000	0.000123026877081238	1	parameterScaleUniform	
+sd1_ApoER2_Dab1SFK_Obs	sd1_ApoER2_Dab1SFK_Obs	log10	1e-13	1e-08	5.14043651582426e-11	1	parameterScaleUniform	
+sd1_ApoER2_Dab1_Obs	sd1_ApoER2_Dab1_Obs	log10	0.001	100	0.33769139954761	1	parameterScaleUniform	
+sd1_ApoER2_Dab1_released_Obs	sd1_ApoER2_Dab1_released_Obs	log10	0.0001	10	0.0670810728799227	1	parameterScaleUniform	
+sd1_ApoER2_re_Dab1SFK_Obs	sd1_ApoER2_re_Dab1SFK_Obs	log10	1e-07	0.01	8.82470101075655e-05	1	parameterScaleUniform	
+sd1_pApoER2_re_Dab1_Obs	sd1_pApoER2_re_Dab1_Obs	log10	1e-06	0.1	0.000238451467745295	1	parameterScaleUniform	
+sd2_ApoER2_Dab1_released_Obs	sd2_ApoER2_Dab1_released_Obs	log10	1e-10	1e-05	2.2824433121735e-08	1	parameterScaleUniform	
+sd2_ApoER2_re_Dab1SFK_Obs	sd2_ApoER2_re_Dab1SFK_Obs	log10	1e-13	1e-08	4.62381021399259e-11	1	parameterScaleUniform	
+sd2_pApoER2_re_Dab1_Obs	sd2_pApoER2_re_Dab1_Obs	log10	1e-08	0.001	4.28745919733766e-06	1	parameterScaleUniform	
+sd3_ApoER2_Dab1_released_Obs	sd3_ApoER2_Dab1_released_Obs	log10	1e-09	0.0001	1.91513767546747e-07	1	parameterScaleUniform	
+sd3_ApoER2_re_Dab1SFK_Obs	sd3_ApoER2_re_Dab1SFK_Obs	log10	1e-07	0.01	5.24686632777617e-05	1	parameterScaleUniform	
+sd3_pApoER2_re_Dab1_Obs	sd3_pApoER2_re_Dab1_Obs	log10	1e-07	0.01	3.30217435267076e-05	1	parameterScaleUniform	
+sd4_ApoER2_Dab1_released_Obs	sd4_ApoER2_Dab1_released_Obs	log10	0.0001	10	0.0417926586721306	1	parameterScaleUniform	
+sd4_ApoER2_re_Dab1SFK_Obs	sd4_ApoER2_re_Dab1SFK_Obs	log10	1e-06	0.1	0.000116493045699045	1	parameterScaleUniform	
+sd4_pApoER2_re_Dab1_Obs	sd4_pApoER2_re_Dab1_Obs	log10	1e-06	0.1	0.000253863346062737	1	parameterScaleUniform	
+sd5_ApoER2_Dab1_released_Obs	sd5_ApoER2_Dab1_released_Obs	log10	0.0001	10	0.0910542035595527	1	parameterScaleUniform	

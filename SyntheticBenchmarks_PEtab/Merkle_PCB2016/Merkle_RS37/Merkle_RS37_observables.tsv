@@ -1,0 +1,45 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CISHRNA_Obs_1	CISHRNA_Obs	CISHRNA	lin	sd1_CISHRNA_Obs	normal
+CISHRNA_Obs_2	CISHRNA_Obs	CISHRNA	lin	sd2_CISHRNA_Obs	normal
+CISHRNA_Obs_3	CISHRNA_Obs	CISHRNA	lin	sd3_CISHRNA_Obs	normal
+CISHRNA_Obs_4	CISHRNA_Obs	CISHRNA	lin	sd4_CISHRNA_Obs	normal
+CISHRNA_Obs_5	CISHRNA_Obs	CISHRNA	lin	sd5_CISHRNA_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	CISHnRNA2 + CISHnRNA5 + SOCS3	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	CISHnRNA2 + CISHnRNA5 + SOCS3	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	CISHnRNA2 + CISHnRNA5 + SOCS3	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	CISHnRNA2 + CISHnRNA5 + SOCS3	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	CISHnRNA2 + CISHnRNA5 + SOCS3	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	CISHnRNA2 + CISHnRNA5 + SOCS3	lin	sd6_Compound_1_Obs	normal
+PTP_Obs_1	PTP_Obs	PTP	lin	sd1_PTP_Obs	normal
+PTP_Obs_2	PTP_Obs	PTP	lin	sd2_PTP_Obs	normal
+SOCS3nRNA2_Obs_1	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd1_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_2	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd2_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_3	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd3_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_4	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd4_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_5	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd5_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_6	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd6_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_7	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd7_SOCS3nRNA2_Obs	normal
+SOCS3nRNA2_Obs_8	SOCS3nRNA2_Obs	SOCS3nRNA2	lin	sd8_SOCS3nRNA2_Obs	normal
+SOCS3nRNA4_Obs_1	SOCS3nRNA4_Obs	SOCS3nRNA4	lin	sd1_SOCS3nRNA4_Obs	normal
+SOCS3nRNA4_Obs_2	SOCS3nRNA4_Obs	SOCS3nRNA4	lin	sd2_SOCS3nRNA4_Obs	normal
+SOCS3nRNA4_Obs_3	SOCS3nRNA4_Obs	SOCS3nRNA4	lin	sd3_SOCS3nRNA4_Obs	normal
+pEpoRpJAK2_Obs_01	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd10_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_02	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd11_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_03	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd12_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_04	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd13_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_05	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd14_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_06	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd1_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_07	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd2_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_08	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd3_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_09	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd4_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_10	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd5_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_11	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd6_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_12	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd7_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_13	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd8_pEpoRpJAK2_Obs	normal
+pEpoRpJAK2_Obs_14	pEpoRpJAK2_Obs	pEpoRpJAK2	lin	sd9_pEpoRpJAK2_Obs	normal
+pSTAT5_Obs_1	pSTAT5_Obs	pSTAT5	lin	sd1_pSTAT5_Obs	normal
+pSTAT5_Obs_2	pSTAT5_Obs	pSTAT5	lin	sd2_pSTAT5_Obs	normal
+pSTAT5_Obs_3	pSTAT5_Obs	pSTAT5	lin	sd3_pSTAT5_Obs	normal
+pSTAT5_Obs_4	pSTAT5_Obs	pSTAT5	lin	sd4_pSTAT5_Obs	normal
+pSTAT5_Obs_5	pSTAT5_Obs	pSTAT5	lin	sd5_pSTAT5_Obs	normal
+pSTAT5_Obs_6	pSTAT5_Obs	pSTAT5	lin	sd6_pSTAT5_Obs	normal

@@ -1,0 +1,15 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	DecoyR + Rec_i + SOCS3 + pSTAT5 + p_IL13_Rec_i	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	DecoyR + Rec_i + SOCS3 + pSTAT5 + p_IL13_Rec_i	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	DecoyR + Rec_i + SOCS3 + pSTAT5 + p_IL13_Rec_i	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	IL13_Rec + IL13_DecoyR + STAT5 + pJAK2 + p_IL13_Rec	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	IL13_Rec + IL13_DecoyR + STAT5 + pJAK2 + p_IL13_Rec	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	IL13_Rec + IL13_DecoyR + STAT5 + pJAK2 + p_IL13_Rec	lin	sd3_Compound_2_Obs	normal
+Rec_Obs	Rec_Obs	Rec*scale1_Rec_Obs	lin	sd1_Rec_Obs	normal
+Rec_i_Obs	Rec_i_Obs	Rec_i*scale1_Rec_i_Obs	lin	sd1_Rec_i_Obs	normal
+SOCS3_Obs_1	SOCS3_Obs	SOCS3*scale1_SOCS3_Obs	lin	sd1_SOCS3_Obs	normal
+SOCS3_Obs_2	SOCS3_Obs	SOCS3*scale2_SOCS3_Obs	lin	sd2_SOCS3_Obs	normal
+SOCS3mRNA_Obs_1	SOCS3mRNA_Obs	SOCS3mRNA*scale1_SOCS3mRNA_Obs	lin	sd1_SOCS3mRNA_Obs	normal
+SOCS3mRNA_Obs_2	SOCS3mRNA_Obs	SOCS3mRNA*scale2_SOCS3mRNA_Obs	lin	sd2_SOCS3mRNA_Obs	normal
+SOCS3mRNA_Obs_3	SOCS3mRNA_Obs	SOCS3mRNA*scale3_SOCS3mRNA_Obs	lin	sd3_SOCS3mRNA_Obs	normal
+SOCS3mRNA_Obs_4	SOCS3mRNA_Obs	SOCS3mRNA*scale4_SOCS3mRNA_Obs	lin	sd4_SOCS3mRNA_Obs	normal

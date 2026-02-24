@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Merkle_RS08_parameters.tsv
+problems:
+  - sbml_files:
+    - Merkle_RS08_model.xml
+    observable_files:
+    - Merkle_RS08_observables.tsv
+    condition_files:
+    - Merkle_RS08_conditions.tsv
+    measurement_files:
+    - Merkle_RS08_measurements.tsv

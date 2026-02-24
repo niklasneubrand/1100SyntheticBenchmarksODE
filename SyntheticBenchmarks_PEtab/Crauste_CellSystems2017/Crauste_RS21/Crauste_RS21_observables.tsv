@@ -1,0 +1,3 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	EarlyEffector + LateEffector + Memory + Naive + Pathogen	log10	sd1_Compound_1_Obs	normal
+EarlyEffector_Obs	EarlyEffector_Obs	offset1_EarlyEffector_Obs + EarlyEffector*scale1_EarlyEffector_Obs	lin	sd1_EarlyEffector_Obs	normal

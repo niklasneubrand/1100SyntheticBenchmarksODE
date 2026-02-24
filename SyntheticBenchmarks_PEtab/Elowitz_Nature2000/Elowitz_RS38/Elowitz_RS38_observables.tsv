@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+GFP_Obs	GFP_Obs	offset1_GFP_Obs + GFP*scale1_GFP_Obs	log10	sd1_GFP_Obs	normal
+X_protein_Obs	X_protein_Obs	offset1_X_protein_Obs + X_protein*scale1_X_protein_Obs	log10	sd1_X_protein_Obs	normal
+Y_mRNA_Obs	Y_mRNA_Obs	Y_mRNA	log10	sd1_Y_mRNA_Obs	normal

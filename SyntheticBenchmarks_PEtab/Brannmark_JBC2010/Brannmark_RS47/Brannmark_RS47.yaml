@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Brannmark_RS47_parameters.tsv
+problems:
+  - sbml_files:
+    - Brannmark_RS47_model.xml
+    observable_files:
+    - Brannmark_RS47_observables.tsv
+    condition_files:
+    - Brannmark_RS47_conditions.tsv
+    measurement_files:
+    - Brannmark_RS47_measurements.tsv

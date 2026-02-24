@@ -1,0 +1,15 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+TGFb_Obs_01	TGFb_Obs	TGFb	log10	sd10_TGFb_Obs	normal
+TGFb_Obs_02	TGFb_Obs	TGFb	log10	sd1_TGFb_Obs	normal
+TGFb_Obs_03	TGFb_Obs	TGFb	log10	sd2_TGFb_Obs	normal
+TGFb_Obs_04	TGFb_Obs	TGFb	log10	sd3_TGFb_Obs	normal
+TGFb_Obs_05	TGFb_Obs	TGFb	log10	sd4_TGFb_Obs	normal
+TGFb_Obs_06	TGFb_Obs	TGFb	log10	sd5_TGFb_Obs	normal
+TGFb_Obs_07	TGFb_Obs	TGFb	log10	sd6_TGFb_Obs	normal
+TGFb_Obs_08	TGFb_Obs	TGFb	log10	sd7_TGFb_Obs	normal
+TGFb_Obs_09	TGFb_Obs	TGFb	log10	sd8_TGFb_Obs	normal
+TGFb_Obs_10	TGFb_Obs	TGFb	log10	sd9_TGFb_Obs	normal
+geneL_Obs	geneL_Obs	offset1_geneL_Obs + geneL*scale1_geneL_Obs	log10	sd1_geneL_Obs	normal
+ppS2_ppS3_S4_Obs_1	ppS2_ppS3_S4_Obs	offset1_ppS2_ppS3_S4_Obs + ppS2_ppS3_S4*scale1_ppS2_ppS3_S4_Obs	lin	sd1_ppS2_ppS3_S4_Obs	normal
+ppS2_ppS3_S4_Obs_2	ppS2_ppS3_S4_Obs	offset2_ppS2_ppS3_S4_Obs + ppS2_ppS3_S4*scale2_ppS2_ppS3_S4_Obs	lin	sd2_ppS2_ppS3_S4_Obs	normal
+ppS3_S4_S4_Obs	ppS3_S4_S4_Obs	ppS3_S4_S4	log10	sd1_ppS3_S4_S4_Obs	normal

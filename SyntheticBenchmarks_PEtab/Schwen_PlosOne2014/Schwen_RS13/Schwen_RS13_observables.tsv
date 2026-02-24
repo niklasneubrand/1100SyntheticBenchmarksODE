@@ -1,0 +1,20 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+BoundUnspec_Obs_1	BoundUnspec_Obs	BoundUnspec	lin	sd1_BoundUnspec_Obs	normal
+BoundUnspec_Obs_2	BoundUnspec_Obs	BoundUnspec	lin	sd2_BoundUnspec_Obs	normal
+BoundUnspec_Obs_3	BoundUnspec_Obs	BoundUnspec	lin	sd3_BoundUnspec_Obs	normal
+BoundUnspec_Obs_4	BoundUnspec_Obs	BoundUnspec	lin	sd4_BoundUnspec_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	IR2 + IR2in + Ins + InsulinFragments + Uptake1	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IR2 + IR2in + Ins + InsulinFragments + Uptake1	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IR2 + IR2in + Ins + InsulinFragments + Uptake1	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	BoundUnspec + IR2in + Ins + Uptake1 + Uptake2	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	BoundUnspec + IR2in + Ins + Uptake1 + Uptake2	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	BoundUnspec + IR2in + Ins + Uptake1 + Uptake2	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	BoundUnspec + IR2in + Ins + Uptake1 + Uptake2	lin	sd4_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	IR1 + IR1in + IR2in + InsulinFragments + Uptake2	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	IR1 + IR1in + IR2in + InsulinFragments + Uptake2	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	IR1 + IR1in + IR2in + InsulinFragments + Uptake2	lin	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	IR1 + IR1in + IR2in + InsulinFragments + Uptake2	lin	sd4_Compound_3_Obs	normal
+Uptake1_Obs_1	Uptake1_Obs	Uptake1	lin	sd1_Uptake1_Obs	normal
+Uptake1_Obs_2	Uptake1_Obs	Uptake1	lin	sd2_Uptake1_Obs	normal
+Uptake1_Obs_3	Uptake1_Obs	Uptake1	lin	sd3_Uptake1_Obs	normal
+Uptake1_Obs_4	Uptake1_Obs	Uptake1	lin	sd4_Uptake1_Obs	normal

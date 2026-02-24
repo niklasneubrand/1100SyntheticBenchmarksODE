@@ -1,0 +1,14 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	IL13_Rec + Rec + Rec_i	lin	sd1_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	JAK2 + Rec_i + p_IL13_Rec	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	JAK2 + Rec_i + p_IL13_Rec	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	JAK2 + Rec_i + p_IL13_Rec	lin	sd3_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	IL13_Rec + pJAK2 + p_IL13_Rec	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	IL13_Rec + pJAK2 + p_IL13_Rec	lin	sd2_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	JAK2 + p_IL13_Rec + p_IL13_Rec_i	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	JAK2 + p_IL13_Rec + p_IL13_Rec_i	lin	sd2_Compound_4_Obs	normal
+Compound_5_Obs	Compound_5_Obs	pJAK2 + pSTAT5 + p_IL13_Rec_i	lin	sd1_Compound_5_Obs	normal
+Compound_6_Obs_1	Compound_6_Obs	IL13_DecoyR + pJAK2 + pSTAT5	lin	sd1_Compound_6_Obs	normal
+Compound_6_Obs_2	Compound_6_Obs	IL13_DecoyR + pJAK2 + pSTAT5	lin	sd2_Compound_6_Obs	normal
+Rec_Obs	Rec_Obs	Rec	lin	sd1_Rec_Obs	normal
+Rec_i_Obs	Rec_i_Obs	Rec_i	lin	sd1_Rec_i_Obs	normal

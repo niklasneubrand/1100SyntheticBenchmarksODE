@@ -1,0 +1,23 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+delta_EL	delta_EL	log10	1e-05	1000	0.277971326775929	1	parameterScaleUniform	
+delta_LM	delta_LM	log10	1e-05	1000	0.0239883291901949	1	parameterScaleUniform	
+delta_NE	delta_NE	log10	1e-05	1000	0.0072443596007499	1	parameterScaleUniform	
+mu_EE	mu_EE	log10	1e-05	1000	5.12861383991365e-05	1	parameterScaleUniform	
+mu_LE	mu_LE	log10	1e-10	1000	1.0715193052376e-10	1	parameterScaleUniform	
+mu_LL	mu_LL	log10	1e-10	1000	4.46683592150963e-06	1	parameterScaleUniform	
+mu_N	mu_N	log10	1e-05	1000	0.68233869414167	1	parameterScaleUniform	
+mu_P	mu_P	log10	1e-05	1000	1.73780082874938e-05	1	parameterScaleUniform	
+mu_PE	mu_PE	log10	1e-10	1000	1.25892541179417e-10	1	parameterScaleUniform	
+mu_PL	mu_PL	log10	1e-05	1000	2.34422881531992e-05	1	parameterScaleUniform	
+rho_E	rho_E	log10	1e-05	1000	0.34276778654645	1	parameterScaleUniform	
+rho_P	rho_P	log10	1e-05	1000	0.0707945784384138	1	parameterScaleUniform	
+scale1_EarlyEffector_Obs	scale1_EarlyEffector_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_LateEffector_Obs	scale1_LateEffector_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Memory_Obs	scale1_Memory_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Naive_Obs	scale1_Naive_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Pathogen_Obs	scale1_Pathogen_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_EarlyEffector_Obs	sd1_EarlyEffector_Obs	log10	10	1000000	2592.98497341253	1	parameterScaleUniform	
+sd1_LateEffector_Obs	sd1_LateEffector_Obs	log10	10	1000000	2536.29636923773	1	parameterScaleUniform	
+sd1_Memory_Obs	sd1_Memory_Obs	log10	10	1000000	1778.27941003892	1	parameterScaleUniform	
+sd1_Naive_Obs	sd1_Naive_Obs	log10	1	100000	334.118097633043	1	parameterScaleUniform	
+sd1_Pathogen_Obs	sd1_Pathogen_Obs	log10	0.001	100	0.62214268619908	1	parameterScaleUniform	

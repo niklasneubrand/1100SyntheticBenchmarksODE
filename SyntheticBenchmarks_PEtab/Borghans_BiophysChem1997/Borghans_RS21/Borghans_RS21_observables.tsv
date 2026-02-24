@@ -1,0 +1,2 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Z_state_Obs	Z_state_Obs	Z_state*scale1_Z_state_Obs	lin	sd1_Z_state_Obs	normal

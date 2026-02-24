@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	scale1_Compound_1_Obs*(GFP + X_protein + Y_mRNA)	lin	sd1_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	scale1_Compound_2_Obs*(GFP + X_protein + Z_mRNA)	lin	sd1_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	scale1_Compound_3_Obs*(Y_protein + Z_mRNA + Z_protein)	lin	sd1_Compound_3_Obs	normal

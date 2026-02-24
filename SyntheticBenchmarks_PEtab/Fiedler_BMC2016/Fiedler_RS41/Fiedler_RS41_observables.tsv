@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+pMEK_Obs_1	pMEK_Obs	offset1_pMEK_Obs + pMEK*scale1_pMEK_Obs	log10	sd1_pMEK_Obs	normal
+pMEK_Obs_2	pMEK_Obs	offset2_pMEK_Obs + pMEK*scale2_pMEK_Obs	log10	sd2_pMEK_Obs	normal
+pMEK_Obs_3	pMEK_Obs	offset3_pMEK_Obs + pMEK*scale3_pMEK_Obs	log10	sd3_pMEK_Obs	normal

@@ -1,0 +1,18 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+Epo_degradation_BaF3	Epo_degradation_BaF3	log10	1e-05	100000	0.0346736850452532	1	parameterScaleUniform	
+k_exp_hetero	k_exp_hetero	log10	1e-05	100000	1.51356124843621e-05	1	parameterScaleUniform	
+k_exp_homo	k_exp_homo	log10	1e-05	100000	0.00407380277804113	1	parameterScaleUniform	
+k_imp_hetero	k_imp_hetero	log10	1e-05	100000	0.0208929613085404	1	parameterScaleUniform	
+k_imp_homo	k_imp_homo	log10	1e-05	1584893.19246111	151356.124843621	1	parameterScaleUniform	
+k_phos	k_phos	log10	1e-05	100000	15488.1661891248	1	parameterScaleUniform	
+ratio	ratio	lin	-5	5	0.693	0	parameterScaleUniform	
+scale1_Compound_1_Obs	scale1_Compound_1_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Compound_3_Obs	scale1_Compound_3_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Compound_5_Obs	scale1_Compound_5_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Compound_6_Obs	scale1_Compound_6_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.01	1000	1.77361764194955	1	parameterScaleUniform	
+sd1_Compound_2_Obs	sd1_Compound_2_Obs	log10	0.01	1000	1.50321118992962	1	parameterScaleUniform	
+sd1_Compound_3_Obs	sd1_Compound_3_Obs	log10	0.01	1000	3.42752001869996	1	parameterScaleUniform	
+sd1_Compound_4_Obs	sd1_Compound_4_Obs	log10	0.01	1000	3.58872351172413	1	parameterScaleUniform	
+sd1_Compound_5_Obs	sd1_Compound_5_Obs	log10	0.001	100	0.939731965776042	1	parameterScaleUniform	
+sd1_Compound_6_Obs	sd1_Compound_6_Obs	log10	0.01	1000	5.51378718906474	1	parameterScaleUniform	

@@ -1,0 +1,21 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + SFK + pApoER2_re_Dab1	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + SFK + pApoER2_re_Dab1	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + SFK + pApoER2_re_Dab1	log10	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + SFK + pApoER2_re_Dab1	log10	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFK + SFK + pApoER2_re_Dab1	log10	sd5_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + pApoER2_re_Dab1)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	offset2_Compound_2_Obs + scale2_Compound_2_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + pApoER2_re_Dab1)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	offset3_Compound_2_Obs + scale3_Compound_2_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + pApoER2_re_Dab1)	log10	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	offset4_Compound_2_Obs + scale4_Compound_2_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + pApoER2_re_Dab1)	log10	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	offset5_Compound_2_Obs + scale5_Compound_2_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + pApoER2_re_Dab1)	log10	sd5_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	ApoER2_Dab1 + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + SFK	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	ApoER2_Dab1 + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + SFK	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	ApoER2_Dab1 + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + SFK	log10	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	ApoER2_Dab1 + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + SFK	log10	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	ApoER2_Dab1 + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + SFK	log10	sd5_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	offset1_Compound_4_Obs + scale1_Compound_4_Obs*(ApoER2_Dab1SFK + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + pApoER2_re_Dab1)	log10	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	offset2_Compound_4_Obs + scale2_Compound_4_Obs*(ApoER2_Dab1SFK + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + pApoER2_re_Dab1)	log10	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	offset3_Compound_4_Obs + scale3_Compound_4_Obs*(ApoER2_Dab1SFK + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + pApoER2_re_Dab1)	log10	sd3_Compound_4_Obs	normal
+Compound_4_Obs_4	Compound_4_Obs	offset4_Compound_4_Obs + scale4_Compound_4_Obs*(ApoER2_Dab1SFK + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + pApoER2_re_Dab1)	log10	sd4_Compound_4_Obs	normal
+Compound_4_Obs_5	Compound_4_Obs	offset5_Compound_4_Obs + scale5_Compound_4_Obs*(ApoER2_Dab1SFK + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + pApoER2_re_Dab1)	log10	sd5_Compound_4_Obs	normal

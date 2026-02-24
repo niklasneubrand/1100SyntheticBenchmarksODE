@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Sobotta_RS44_parameters.tsv
+problems:
+  - sbml_files:
+    - Sobotta_RS44_model.xml
+    observable_files:
+    - Sobotta_RS44_observables.tsv
+    condition_files:
+    - Sobotta_RS44_conditions.tsv
+    measurement_files:
+    - Sobotta_RS44_measurements.tsv

@@ -1,0 +1,11 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IR1in_Obs_1	IR1in_Obs	IR1in	lin	sd1_IR1in_Obs	normal
+IR1in_Obs_2	IR1in_Obs	IR1in	lin	sd2_IR1in_Obs	normal
+IR1in_Obs_3	IR1in_Obs	IR1in	lin	sd3_IR1in_Obs	normal
+Uptake1_Obs_1	Uptake1_Obs	Uptake1	lin	sd1_Uptake1_Obs	normal
+Uptake1_Obs_2	Uptake1_Obs	Uptake1	lin	sd2_Uptake1_Obs	normal
+Uptake1_Obs_3	Uptake1_Obs	Uptake1	lin	sd3_Uptake1_Obs	normal
+Uptake2_Obs_1	Uptake2_Obs	Uptake2	lin	sd1_Uptake2_Obs	normal
+Uptake2_Obs_2	Uptake2_Obs	Uptake2	lin	sd2_Uptake2_Obs	normal
+Uptake2_Obs_3	Uptake2_Obs	Uptake2	lin	sd3_Uptake2_Obs	normal
+Uptake2_Obs_4	Uptake2_Obs	Uptake2	lin	sd4_Uptake2_Obs	normal

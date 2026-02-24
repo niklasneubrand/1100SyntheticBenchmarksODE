@@ -1,0 +1,7 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	CERT + CERTERa + PI4K3B + PKD + PKDDAGa	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(CERT + CERTTGNa + PI4K3Ba + PKD + PKDDAGa)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	offset2_Compound_2_Obs + scale2_Compound_2_Obs*(CERT + CERTTGNa + PI4K3Ba + PKD + PKDDAGa)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	offset3_Compound_2_Obs + scale3_Compound_2_Obs*(CERT + CERTTGNa + PI4K3Ba + PKD + PKDDAGa)	log10	sd3_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(CERT + CERTERa + CERTTGNa + PI4K3Ba + PKDDAGa)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(CERT + CERTERa + CERTTGNa + PI4K3Ba + PKDDAGa)	log10	sd2_Compound_3_Obs	normal

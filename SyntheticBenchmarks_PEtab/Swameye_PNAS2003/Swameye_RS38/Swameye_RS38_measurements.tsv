@@ -1,0 +1,12 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.000624642912993067	0			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.00811774515331915	4			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.235984045849828	8.5			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.254363486197409	15			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.177181737863252	20			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.159492677927532	25			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.247088681483386	30			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.138573068354833	35			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.126751654955546	45			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.0156956886447976	55			normal
+nSTAT4_Obs	D1_Swameye_RS38_TC001	0.00437429016456593	65			normal

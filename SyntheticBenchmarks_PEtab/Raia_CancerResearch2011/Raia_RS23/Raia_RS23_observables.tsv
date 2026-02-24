@@ -1,0 +1,10 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+JAK2_Obs_1	JAK2_Obs	JAK2	lin	sd1_JAK2_Obs	normal
+JAK2_Obs_2	JAK2_Obs	JAK2	lin	sd2_JAK2_Obs	normal
+Rec_i_Obs_1	Rec_i_Obs	Rec_i	lin	sd1_Rec_i_Obs	normal
+Rec_i_Obs_2	Rec_i_Obs	Rec_i	lin	sd2_Rec_i_Obs	normal
+Rec_i_Obs_3	Rec_i_Obs	Rec_i	lin	sd3_Rec_i_Obs	normal
+SOCS3_Obs_1	SOCS3_Obs	SOCS3	lin	sd1_SOCS3_Obs	normal
+SOCS3_Obs_2	SOCS3_Obs	SOCS3	lin	sd2_SOCS3_Obs	normal
+pSTAT5_Obs_1	pSTAT5_Obs	pSTAT5	lin	sd1_pSTAT5_Obs	normal
+pSTAT5_Obs_2	pSTAT5_Obs	pSTAT5	lin	sd2_pSTAT5_Obs	normal

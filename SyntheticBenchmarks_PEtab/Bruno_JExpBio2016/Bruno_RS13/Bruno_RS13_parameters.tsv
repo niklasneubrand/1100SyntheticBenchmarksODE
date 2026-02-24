@@ -1,0 +1,27 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_b10	init_b10	log10	1e-05	1000	7.29457510254569	1	parameterScaleUniform	
+init_bcar1	init_bcar1	log10	1e-05	1000	3.47536161443206	1	parameterScaleUniform	
+init_bcar2	init_bcar2	log10	1e-05	1000	2.72897778280804	1	parameterScaleUniform	
+init_bcry	init_bcry	log10	1e-05	1000	6.51628394060843	1	parameterScaleUniform	
+init_ohb10	init_ohb10	log10	1e-05	1000	1.28528665994362	1	parameterScaleUniform	
+init_zea	init_zea	log10	1e-05	1000	2.72897778280804	1	parameterScaleUniform	
+k5	k5	log10	1e-05	1000	0.00288403150312661	1	parameterScaleUniform	
+kb1	kb1	log10	1e-05	1000	0.0288403150312661	1	parameterScaleUniform	
+kb2	kb2	log10	1e-05	1000	0.00407380277804113	1	parameterScaleUniform	
+kc1	kc1	log10	1e-05	1000	0.00316227766016838	1	parameterScaleUniform	
+kc2	kc2	log10	1e-05	1000	0.00457088189614875	1	parameterScaleUniform	
+kc4	kc4	log10	1e-05	1000	0.0102329299228075	1	parameterScaleUniform	
+scale1_b10_Obs	scale1_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_bcar_Obs	scale1_bcar_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_b10_Obs	scale2_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_bcar_Obs	scale2_bcar_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_b10_Obs	scale3_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_b10_Obs	sd1_b10_Obs	log10	0.001	100	0.391318157493928	1	parameterScaleUniform	
+sd1_bcar_Obs	sd1_bcar_Obs	log10	0.001	100	0.10391302794242	1	parameterScaleUniform	
+sd1_ohbio_Obs	sd1_ohbio_Obs	log10	0.001	100	0.282286429117909	1	parameterScaleUniform	
+sd2_b10_Obs	sd2_b10_Obs	log10	0.001	100	0.150938489665495	1	parameterScaleUniform	
+sd2_bcar_Obs	sd2_bcar_Obs	log10	0.0001	10	0.0471194269420276	1	parameterScaleUniform	
+sd2_ohbio_Obs	sd2_ohbio_Obs	log10	0.0001	10	0.085211851137923	1	parameterScaleUniform	
+sd3_b10_Obs	sd3_b10_Obs	log10	0.001	100	0.127241857385093	1	parameterScaleUniform	
+sd3_ohbio_Obs	sd3_ohbio_Obs	log10	0.001	100	0.136081785836246	1	parameterScaleUniform	
+szea	szea	log10	1e-05	1000	0.853296570195112	1	parameterScaleUniform	

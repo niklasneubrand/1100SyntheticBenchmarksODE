@@ -1,0 +1,42 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+AC_Fsk_Obs_1	AC_Fsk_Obs	AC_Fsk	lin	sd1_AC_Fsk_Obs	normal
+AC_Fsk_Obs_2	AC_Fsk_Obs	AC_Fsk	lin	sd2_AC_Fsk_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	Csub_H89 + RIIp_Rp8_pCPT_cAMPS_C_2 + Rp8_Br_cAMPS + Rp8_pCPT_cAMPS + pAC	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	Csub_H89 + RIIp_Rp8_pCPT_cAMPS_C_2 + Rp8_Br_cAMPS + Rp8_pCPT_cAMPS + pAC	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	Csub_H89 + RIIp_Rp8_pCPT_cAMPS_C_2 + Rp8_Br_cAMPS + Rp8_pCPT_cAMPS + pAC	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	AC_Fsk + PDE + RIIp_2 + RIIp_Rp8_pCPT_cAMPS_C_2 + cAMP	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	AC_Fsk + PDE + RIIp_2 + RIIp_Rp8_pCPT_cAMPS_C_2 + cAMP	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs_01	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd10_Compound_3_Obs	normal
+Compound_3_Obs_02	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd11_Compound_3_Obs	normal
+Compound_3_Obs_03	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd12_Compound_3_Obs	normal
+Compound_3_Obs_04	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd13_Compound_3_Obs	normal
+Compound_3_Obs_05	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd14_Compound_3_Obs	normal
+Compound_3_Obs_06	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd15_Compound_3_Obs	normal
+Compound_3_Obs_07	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd16_Compound_3_Obs	normal
+Compound_3_Obs_08	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd17_Compound_3_Obs	normal
+Compound_3_Obs_09	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd18_Compound_3_Obs	normal
+Compound_3_Obs_10	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd19_Compound_3_Obs	normal
+Compound_3_Obs_11	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_12	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd20_Compound_3_Obs	normal
+Compound_3_Obs_13	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd21_Compound_3_Obs	normal
+Compound_3_Obs_14	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd22_Compound_3_Obs	normal
+Compound_3_Obs_15	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd23_Compound_3_Obs	normal
+Compound_3_Obs_16	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd24_Compound_3_Obs	normal
+Compound_3_Obs_17	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd25_Compound_3_Obs	normal
+Compound_3_Obs_18	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd26_Compound_3_Obs	normal
+Compound_3_Obs_19	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_20	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd3_Compound_3_Obs	normal
+Compound_3_Obs_21	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd4_Compound_3_Obs	normal
+Compound_3_Obs_22	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd5_Compound_3_Obs	normal
+Compound_3_Obs_23	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd6_Compound_3_Obs	normal
+Compound_3_Obs_24	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd7_Compound_3_Obs	normal
+Compound_3_Obs_25	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd8_Compound_3_Obs	normal
+Compound_3_Obs_26	Compound_3_Obs	Csub + RIIp_2 + RIIp_Rp8_Br_cAMPS_C_2 + Rp_cAMPS + pPDE	lin	sd9_Compound_3_Obs	normal
+RIIp_Rp8_pCPT_cAMPS_C_2_Obs	RIIp_Rp8_pCPT_cAMPS_C_2_Obs	RIIp_Rp8_pCPT_cAMPS_C_2	lin	sd1_RIIp_Rp8_pCPT_cAMPS_C_2_Obs	normal
+RIIp_Sp8_Br_cAMPS_C_2_Obs_1	RIIp_Sp8_Br_cAMPS_C_2_Obs	RIIp_Sp8_Br_cAMPS_C_2	lin	sd1_RIIp_Sp8_Br_cAMPS_C_2_Obs	normal
+RIIp_Sp8_Br_cAMPS_C_2_Obs_2	RIIp_Sp8_Br_cAMPS_C_2_Obs	RIIp_Sp8_Br_cAMPS_C_2	lin	sd2_RIIp_Sp8_Br_cAMPS_C_2_Obs	normal
+pAC_Fsk_Obs_1	pAC_Fsk_Obs	pAC_Fsk	lin	sd1_pAC_Fsk_Obs	normal
+pAC_Fsk_Obs_2	pAC_Fsk_Obs	pAC_Fsk	lin	sd2_pAC_Fsk_Obs	normal
+pAC_Fsk_Obs_3	pAC_Fsk_Obs	pAC_Fsk	lin	sd3_pAC_Fsk_Obs	normal
+pAC_Fsk_Obs_4	pAC_Fsk_Obs	pAC_Fsk	lin	sd4_pAC_Fsk_Obs	normal
+pAC_Fsk_Obs_5	pAC_Fsk_Obs	pAC_Fsk	lin	sd5_pAC_Fsk_Obs	normal

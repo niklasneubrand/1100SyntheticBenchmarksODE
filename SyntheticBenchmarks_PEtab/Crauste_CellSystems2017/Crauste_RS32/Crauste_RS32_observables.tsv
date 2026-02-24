@@ -1,0 +1,5 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+EarlyEffector_Obs	EarlyEffector_Obs	EarlyEffector	lin	sd1_EarlyEffector_Obs	normal
+Memory_Obs	Memory_Obs	Memory	lin	sd1_Memory_Obs	normal
+Naive_Obs	Naive_Obs	Naive	lin	sd1_Naive_Obs	normal
+Pathogen_Obs	Pathogen_Obs	Pathogen	lin	sd1_Pathogen_Obs	normal

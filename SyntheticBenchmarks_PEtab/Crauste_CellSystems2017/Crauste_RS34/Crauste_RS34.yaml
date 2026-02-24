@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Crauste_RS34_parameters.tsv
+problems:
+  - sbml_files:
+    - Crauste_RS34_model.xml
+    observable_files:
+    - Crauste_RS34_observables.tsv
+    condition_files:
+    - Crauste_RS34_conditions.tsv
+    measurement_files:
+    - Crauste_RS34_measurements.tsv

@@ -1,0 +1,4 @@
+conditionId	Ect_Expr_CERT_flag	Ect_Expr_PI4K3beta_flag	Ect_Expr_PKD_flag	PdBu_dose	PdBu_time	kb_NB142_70_dose	kb_NB142_70_time
+D1_Weber_RS20_TC001	0	0	0	0	0	0	0
+D2_Weber_RS20_TC002	0	1	0	1	24	0	0
+D3_Weber_RS20_TC003	1	0	0	0	0	10	24

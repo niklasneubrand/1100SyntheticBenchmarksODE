@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CERTTGNa_Obs_1	CERTTGNa_Obs	offset1_CERTTGNa_Obs + CERTTGNa*scale1_CERTTGNa_Obs	log10	sd1_CERTTGNa_Obs	normal
+CERTTGNa_Obs_2	CERTTGNa_Obs	offset2_CERTTGNa_Obs + CERTTGNa*scale2_CERTTGNa_Obs	log10	sd2_CERTTGNa_Obs	normal
+PKDDAGa_Obs_1	PKDDAGa_Obs	offset1_PKDDAGa_Obs + PKDDAGa*scale1_PKDDAGa_Obs	log10	sd1_PKDDAGa_Obs	normal
+PKDDAGa_Obs_2	PKDDAGa_Obs	offset2_PKDDAGa_Obs + PKDDAGa*scale2_PKDDAGa_Obs	log10	sd2_PKDDAGa_Obs	normal
+PKDDAGa_Obs_3	PKDDAGa_Obs	offset3_PKDDAGa_Obs + PKDDAGa*scale3_PKDDAGa_Obs	log10	sd3_PKDDAGa_Obs	normal

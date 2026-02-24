@@ -1,0 +1,29 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+BoundUnspec_Obs_1	BoundUnspec_Obs	BoundUnspec	log10	sd1_BoundUnspec_Obs	normal
+BoundUnspec_Obs_2	BoundUnspec_Obs	BoundUnspec	log10	sd2_BoundUnspec_Obs	normal
+BoundUnspec_Obs_3	BoundUnspec_Obs	BoundUnspec	log10	sd3_BoundUnspec_Obs	normal
+BoundUnspec_Obs_4	BoundUnspec_Obs	BoundUnspec	log10	sd4_BoundUnspec_Obs	normal
+IR2in_Obs_1	IR2in_Obs	offset1_IR2in_Obs + IR2in*scale1_IR2in_Obs	log10	sd1_IR2in_Obs	normal
+IR2in_Obs_2	IR2in_Obs	offset2_IR2in_Obs + IR2in*scale2_IR2in_Obs	log10	sd2_IR2in_Obs	normal
+IR2in_Obs_3	IR2in_Obs	offset3_IR2in_Obs + IR2in*scale3_IR2in_Obs	log10	sd3_IR2in_Obs	normal
+IR2in_Obs_4	IR2in_Obs	offset4_IR2in_Obs + IR2in*scale4_IR2in_Obs	log10	sd4_IR2in_Obs	normal
+Ins_Obs_1	Ins_Obs	offset1_Ins_Obs + Ins*scale1_Ins_Obs	log10	sd1_Ins_Obs	normal
+Ins_Obs_2	Ins_Obs	offset2_Ins_Obs + Ins*scale2_Ins_Obs	log10	sd2_Ins_Obs	normal
+Ins_Obs_3	Ins_Obs	offset3_Ins_Obs + Ins*scale3_Ins_Obs	log10	sd3_Ins_Obs	normal
+Ins_Obs_4	Ins_Obs	offset4_Ins_Obs + Ins*scale4_Ins_Obs	log10	sd4_Ins_Obs	normal
+InsulinFragments_Obs_1	InsulinFragments_Obs	InsulinFragments	log10	sd1_InsulinFragments_Obs	normal
+InsulinFragments_Obs_2	InsulinFragments_Obs	InsulinFragments	log10	sd2_InsulinFragments_Obs	normal
+InsulinFragments_Obs_3	InsulinFragments_Obs	InsulinFragments	log10	sd3_InsulinFragments_Obs	normal
+Rec1_Obs_1	Rec1_Obs	Rec1*scale1_Rec1_Obs	log10	sd1_Rec1_Obs	normal
+Rec1_Obs_2	Rec1_Obs	Rec1*scale2_Rec1_Obs	log10	sd2_Rec1_Obs	normal
+Rec1_Obs_3	Rec1_Obs	Rec1*scale3_Rec1_Obs	log10	sd3_Rec1_Obs	normal
+Rec2_Obs_1	Rec2_Obs	Rec2*scale1_Rec2_Obs	log10	sd1_Rec2_Obs	normal
+Rec2_Obs_2	Rec2_Obs	Rec2*scale2_Rec2_Obs	log10	sd2_Rec2_Obs	normal
+Rec2_Obs_3	Rec2_Obs	Rec2*scale3_Rec2_Obs	log10	sd3_Rec2_Obs	normal
+Uptake1_Obs_1	Uptake1_Obs	offset1_Uptake1_Obs + Uptake1*scale1_Uptake1_Obs	log10	sd1_Uptake1_Obs	normal
+Uptake1_Obs_2	Uptake1_Obs	offset2_Uptake1_Obs + Uptake1*scale2_Uptake1_Obs	log10	sd2_Uptake1_Obs	normal
+Uptake1_Obs_3	Uptake1_Obs	offset3_Uptake1_Obs + Uptake1*scale3_Uptake1_Obs	log10	sd3_Uptake1_Obs	normal
+Uptake1_Obs_4	Uptake1_Obs	offset4_Uptake1_Obs + Uptake1*scale4_Uptake1_Obs	log10	sd4_Uptake1_Obs	normal
+Uptake2_Obs_1	Uptake2_Obs	Uptake2*scale1_Uptake2_Obs	log10	sd1_Uptake2_Obs	normal
+Uptake2_Obs_2	Uptake2_Obs	Uptake2*scale2_Uptake2_Obs	log10	sd2_Uptake2_Obs	normal
+Uptake2_Obs_3	Uptake2_Obs	Uptake2*scale3_Uptake2_Obs	log10	sd3_Uptake2_Obs	normal

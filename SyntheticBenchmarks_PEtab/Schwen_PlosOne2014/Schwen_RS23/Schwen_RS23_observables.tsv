@@ -1,0 +1,19 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IR1 + IR2	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IR1 + IR2	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IR1 + IR2	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	IR1 + IR2	lin	sd4_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	IR2 + IR1in	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	IR2 + IR1in	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	IR2 + IR1in	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	IR2 + IR1in	lin	sd4_Compound_2_Obs	normal
+IR1in_Obs_1	IR1in_Obs	IR1in	lin	sd1_IR1in_Obs	normal
+IR1in_Obs_2	IR1in_Obs	IR1in	lin	sd2_IR1in_Obs	normal
+IR1in_Obs_3	IR1in_Obs	IR1in	lin	sd3_IR1in_Obs	normal
+IR1in_Obs_4	IR1in_Obs	IR1in	lin	sd4_IR1in_Obs	normal
+InsulinFragments_Obs_1	InsulinFragments_Obs	InsulinFragments	lin	sd1_InsulinFragments_Obs	normal
+InsulinFragments_Obs_2	InsulinFragments_Obs	InsulinFragments	lin	sd2_InsulinFragments_Obs	normal
+InsulinFragments_Obs_3	InsulinFragments_Obs	InsulinFragments	lin	sd3_InsulinFragments_Obs	normal
+Rec1_Obs_1	Rec1_Obs	Rec1	lin	sd1_Rec1_Obs	normal
+Rec1_Obs_2	Rec1_Obs	Rec1	lin	sd2_Rec1_Obs	normal
+Rec1_Obs_3	Rec1_Obs	Rec1	lin	sd3_Rec1_Obs	normal

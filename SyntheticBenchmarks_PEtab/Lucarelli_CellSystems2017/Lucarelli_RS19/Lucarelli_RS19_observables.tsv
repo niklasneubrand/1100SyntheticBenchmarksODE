@@ -1,0 +1,39 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+S2_Obs_1	S2_Obs	S2	log10	sd1_S2_Obs	normal
+S2_Obs_2	S2_Obs	S2	log10	sd2_S2_Obs	normal
+S2_Obs_3	S2_Obs	S2	log10	sd3_S2_Obs	normal
+S2_Obs_4	S2_Obs	S2	log10	sd4_S2_Obs	normal
+S2_Obs_5	S2_Obs	S2	log10	sd5_S2_Obs	normal
+S2_Obs_6	S2_Obs	S2	log10	sd6_S2_Obs	normal
+S2_Obs_7	S2_Obs	S2	log10	sd7_S2_Obs	normal
+S2_Obs_8	S2_Obs	S2	log10	sd8_S2_Obs	normal
+TGFb_Obs_1	TGFb_Obs	offset1_TGFb_Obs + TGFb*scale1_TGFb_Obs	log10	sd1_TGFb_Obs	normal
+TGFb_Obs_2	TGFb_Obs	offset2_TGFb_Obs + TGFb*scale2_TGFb_Obs	log10	sd2_TGFb_Obs	normal
+geneC_Obs_1	geneC_Obs	geneC	log10	sd1_geneC_Obs	normal
+geneC_Obs_2	geneC_Obs	geneC	log10	sd2_geneC_Obs	normal
+geneC_Obs_3	geneC_Obs	geneC	log10	sd3_geneC_Obs	normal
+geneI_Obs_1	geneI_Obs	offset1_geneI_Obs + geneI*scale1_geneI_Obs	log10	sd1_geneI_Obs	normal
+geneI_Obs_2	geneI_Obs	offset2_geneI_Obs + geneI*scale2_geneI_Obs	log10	sd2_geneI_Obs	normal
+geneI_Obs_3	geneI_Obs	offset3_geneI_Obs + geneI*scale3_geneI_Obs	log10	sd3_geneI_Obs	normal
+geneI_Obs_4	geneI_Obs	offset4_geneI_Obs + geneI*scale4_geneI_Obs	log10	sd4_geneI_Obs	normal
+geneI_Obs_5	geneI_Obs	offset5_geneI_Obs + geneI*scale5_geneI_Obs	log10	sd5_geneI_Obs	normal
+geneI_Obs_6	geneI_Obs	offset6_geneI_Obs + geneI*scale6_geneI_Obs	log10	sd6_geneI_Obs	normal
+geneI_Obs_7	geneI_Obs	offset7_geneI_Obs + geneI*scale7_geneI_Obs	log10	sd7_geneI_Obs	normal
+geneI_Obs_8	geneI_Obs	offset8_geneI_Obs + geneI*scale8_geneI_Obs	log10	sd8_geneI_Obs	normal
+geneI_Obs_9	geneI_Obs	offset9_geneI_Obs + geneI*scale9_geneI_Obs	log10	sd9_geneI_Obs	normal
+ppS2_ppS3_ppS3_Obs_1	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd1_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_2	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd2_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_3	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd3_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_4	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd4_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_5	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd5_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_6	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd6_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_7	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd7_ppS2_ppS3_ppS3_Obs	normal
+ppS2_ppS3_ppS3_Obs_8	ppS2_ppS3_ppS3_Obs	ppS2_ppS3_ppS3	log10	sd8_ppS2_ppS3_ppS3_Obs	normal
+ppS3_Obs_1	ppS3_Obs	offset1_ppS3_Obs + ppS3*scale1_ppS3_Obs	log10	sd1_ppS3_Obs	normal
+ppS3_Obs_2	ppS3_Obs	offset2_ppS3_Obs + ppS3*scale2_ppS3_Obs	log10	sd2_ppS3_Obs	normal
+ppS3_Obs_3	ppS3_Obs	offset3_ppS3_Obs + ppS3*scale3_ppS3_Obs	log10	sd3_ppS3_Obs	normal
+ppS3_Obs_4	ppS3_Obs	offset4_ppS3_Obs + ppS3*scale4_ppS3_Obs	log10	sd4_ppS3_Obs	normal
+ppS3_Obs_5	ppS3_Obs	offset5_ppS3_Obs + ppS3*scale5_ppS3_Obs	log10	sd5_ppS3_Obs	normal
+ppS3_Obs_6	ppS3_Obs	offset6_ppS3_Obs + ppS3*scale6_ppS3_Obs	log10	sd6_ppS3_Obs	normal
+ppS3_Obs_7	ppS3_Obs	offset7_ppS3_Obs + ppS3*scale7_ppS3_Obs	log10	sd7_ppS3_Obs	normal
+ppS3_Obs_8	ppS3_Obs	offset8_ppS3_Obs + ppS3*scale8_ppS3_Obs	log10	sd8_ppS3_Obs	normal

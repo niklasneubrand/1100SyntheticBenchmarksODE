@@ -1,0 +1,33 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	IPR_A + IPR_I1 + IPR_O	lin	sd8_Compound_1_Obs	normal
+IPR_A_Obs_1	IPR_A_Obs	IPR_A	lin	sd1_IPR_A_Obs	normal
+IPR_A_Obs_2	IPR_A_Obs	IPR_A	lin	sd2_IPR_A_Obs	normal
+IPR_A_Obs_3	IPR_A_Obs	IPR_A	lin	sd3_IPR_A_Obs	normal
+IPR_A_Obs_4	IPR_A_Obs	IPR_A	lin	sd4_IPR_A_Obs	normal
+IPR_A_Obs_5	IPR_A_Obs	IPR_A	lin	sd5_IPR_A_Obs	normal
+IPR_A_Obs_6	IPR_A_Obs	IPR_A	lin	sd6_IPR_A_Obs	normal
+IPR_A_Obs_7	IPR_A_Obs	IPR_A	lin	sd7_IPR_A_Obs	normal
+IPR_A_Obs_8	IPR_A_Obs	IPR_A	lin	sd8_IPR_A_Obs	normal
+IPR_I2_Obs_1	IPR_I2_Obs	IPR_I2	lin	sd1_IPR_I2_Obs	normal
+IPR_I2_Obs_2	IPR_I2_Obs	IPR_I2	lin	sd2_IPR_I2_Obs	normal
+IPR_I2_Obs_3	IPR_I2_Obs	IPR_I2	lin	sd3_IPR_I2_Obs	normal
+IPR_I2_Obs_4	IPR_I2_Obs	IPR_I2	lin	sd4_IPR_I2_Obs	normal
+IPR_I2_Obs_5	IPR_I2_Obs	IPR_I2	lin	sd5_IPR_I2_Obs	normal
+IPR_I2_Obs_6	IPR_I2_Obs	IPR_I2	lin	sd6_IPR_I2_Obs	normal
+IPR_I2_Obs_7	IPR_I2_Obs	IPR_I2	lin	sd7_IPR_I2_Obs	normal
+IPR_I2_Obs_8	IPR_I2_Obs	IPR_I2	lin	sd8_IPR_I2_Obs	normal
+IPR_O_Obs_1	IPR_O_Obs	IPR_O	lin	sd1_IPR_O_Obs	normal
+IPR_O_Obs_2	IPR_O_Obs	IPR_O	lin	sd2_IPR_O_Obs	normal
+IPR_O_Obs_3	IPR_O_Obs	IPR_O	lin	sd3_IPR_O_Obs	normal
+IPR_O_Obs_4	IPR_O_Obs	IPR_O	lin	sd4_IPR_O_Obs	normal
+IPR_O_Obs_5	IPR_O_Obs	IPR_O	lin	sd5_IPR_O_Obs	normal
+IPR_O_Obs_6	IPR_O_Obs	IPR_O	lin	sd6_IPR_O_Obs	normal
+IPR_O_Obs_7	IPR_O_Obs	IPR_O	lin	sd7_IPR_O_Obs	normal
+IPR_O_Obs_8	IPR_O_Obs	IPR_O	lin	sd8_IPR_O_Obs	normal

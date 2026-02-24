@@ -1,0 +1,4 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+pERK_Obs_1	pERK_Obs	pERK	lin	sd1_pERK_Obs	normal
+pERK_Obs_2	pERK_Obs	pERK	lin	sd2_pERK_Obs	normal
+pERK_Obs_3	pERK_Obs	pERK	lin	sd3_pERK_Obs	normal

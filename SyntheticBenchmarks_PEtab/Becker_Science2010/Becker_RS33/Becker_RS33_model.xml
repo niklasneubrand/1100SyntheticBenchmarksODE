@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Becker_RS33">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Epo" name="Epo" compartment="default" initialConcentration="1" substanceUnits="pM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="EpoR" name="EpoR" compartment="default" initialConcentration="1" substanceUnits="pM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Epo_EpoR" name="Epo_EpoR" compartment="default" initialConcentration="1" substanceUnits="pM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Epo_EpoR_i" name="Epo_EpoR_i" compartment="default" initialConcentration="1" substanceUnits="pM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="dEpo_i" name="dEpo_i" compartment="default" initialConcentration="1" substanceUnits="pM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="dEpo_e" name="dEpo_e" compartment="default" initialConcentration="1" substanceUnits="pM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="init_Epo" name="init_Epo" value="776.247116628692" constant="true"/>
+      <parameter id="init_EpoR" name="init_EpoR" constant="true"/>
+      <parameter id="init_Epo_EpoR" name="init_Epo_EpoR" constant="true"/>
+      <parameter id="init_Epo_EpoR_i" name="init_Epo_EpoR_i" constant="true"/>
+      <parameter id="init_dEpo_e" name="init_dEpo_e" constant="true"/>
+      <parameter id="init_dEpo_i" name="init_dEpo_i" constant="true"/>
+      <parameter id="kde" name="kde" value="0.0213796208950223" constant="true"/>
+      <parameter id="kdi" name="kdi" value="0.000776247116628692" constant="true"/>
+      <parameter id="ke" name="ke" value="0.0562341325190349" constant="true"/>
+      <parameter id="kex" name="kex" value="0.000741310241300918" constant="true"/>
+      <parameter id="koff" name="koff" value="0.0954992586021436" constant="true"/>
+      <parameter id="kon_model" name="kon_model" constant="true"/>
+      <parameter id="kt" name="kt" value="0.0120226443461741" constant="true"/>
+      <parameter id="init_EpoR_rel" name="init_EpoR_rel" value="0.0741310241300918" constant="true"/>
+      <parameter id="kon" name="kon" value="0.198609491735737" constant="true"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="init_EpoR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> init_Epo </ci>
+            <ci> init_EpoR_rel </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kon_model">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> kon </ci>
+            <ci> init_Epo </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Epo">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_Epo </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="EpoR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> init_Epo </ci>
+            <ci> init_EpoR_rel </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Epo_EpoR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Epo_EpoR_i">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="dEpo_i">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="dEpo_e">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Epo" stoichiometry="1"/>
+          <speciesReference species="EpoR" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Epo_EpoR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Epo </ci>
+              <ci> EpoR </ci>
+              <ci> kon_model </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Epo_EpoR" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Epo" stoichiometry="1"/>
+          <speciesReference species="EpoR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Epo_EpoR </ci>
+              <ci> koff </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfProducts>
+          <speciesReference species="EpoR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> init_EpoR </ci>
+              <ci> kt </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="EpoR" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> EpoR </ci>
+              <ci> kt </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Epo_EpoR" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Epo_EpoR_i" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Epo_EpoR </ci>
+              <ci> ke </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Epo_EpoR_i" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Epo" stoichiometry="1"/>
+          <speciesReference species="EpoR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Epo_EpoR_i </ci>
+              <ci> kex </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Epo_EpoR_i" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="dEpo_i" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Epo_EpoR_i </ci>
+              <ci> kdi </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Epo_EpoR_i" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="dEpo_e" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Epo_EpoR_i </ci>
+              <ci> kde </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

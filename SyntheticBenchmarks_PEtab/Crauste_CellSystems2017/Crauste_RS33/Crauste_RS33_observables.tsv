@@ -1,0 +1,3 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Memory_Obs	Memory_Obs	Memory	log10	sd1_Memory_Obs	normal
+Naive_Obs	Naive_Obs	offset1_Naive_Obs + Naive*scale1_Naive_Obs	log10	sd1_Naive_Obs	normal

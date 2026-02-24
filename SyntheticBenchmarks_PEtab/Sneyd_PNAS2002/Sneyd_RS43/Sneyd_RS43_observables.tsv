@@ -1,0 +1,25 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	scale4_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	scale5_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	scale6_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	scale7_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	scale8_Compound_1_Obs*(IPR_A + IPR_I1 + IPR_O + IPR_R + IPR_S)	lin	sd8_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	IPR_A + IPR_I1 + IPR_I2 + IPR_O + IPR_R	lin	sd8_Compound_2_Obs	normal
+IPR_I2_Obs_1	IPR_I2_Obs	IPR_I2*scale1_IPR_I2_Obs	lin	sd1_IPR_I2_Obs	normal
+IPR_I2_Obs_2	IPR_I2_Obs	IPR_I2*scale2_IPR_I2_Obs	lin	sd2_IPR_I2_Obs	normal
+IPR_I2_Obs_3	IPR_I2_Obs	IPR_I2*scale3_IPR_I2_Obs	lin	sd3_IPR_I2_Obs	normal
+IPR_I2_Obs_4	IPR_I2_Obs	IPR_I2*scale4_IPR_I2_Obs	lin	sd4_IPR_I2_Obs	normal
+IPR_I2_Obs_5	IPR_I2_Obs	IPR_I2*scale5_IPR_I2_Obs	lin	sd5_IPR_I2_Obs	normal
+IPR_I2_Obs_6	IPR_I2_Obs	IPR_I2*scale6_IPR_I2_Obs	lin	sd6_IPR_I2_Obs	normal
+IPR_I2_Obs_7	IPR_I2_Obs	IPR_I2*scale7_IPR_I2_Obs	lin	sd7_IPR_I2_Obs	normal
+IPR_I2_Obs_8	IPR_I2_Obs	IPR_I2*scale8_IPR_I2_Obs	lin	sd8_IPR_I2_Obs	normal

@@ -1,0 +1,21 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+ini_R1	ini_R1	log10	1e-05	1000	52.4807460249773	1	parameterScaleUniform	
+ini_R2fold	ini_R2fold	log10	1e-05	1000	23.4422881531992	1	parameterScaleUniform	
+ka1	ka1	log10	1e-05	1000	0.00562341325190349	1	parameterScaleUniform	
+ka2fold	ka2fold	log10	1e-05	1000	3.99944749761097	1	parameterScaleUniform	
+kd1	kd1	log10	1e-05	1000	7.78036551039804	1	parameterScaleUniform	
+kd2fold	kd2fold	log10	1e-05	1000	6.35330931851744	1	parameterScaleUniform	
+kin	kin	log10	1e-05	1000	0.601173737483278	1	parameterScaleUniform	
+kin2	kin2	log10	1e-05	1000	0.278612116862977	1	parameterScaleUniform	
+koff_unspec	koff_unspec	log10	1e-05	1000	12.5892541179417	1	parameterScaleUniform	
+kon_unspec	kon_unspec	log10	1e-05	1000	19.9526231496888	1	parameterScaleUniform	
+kout	kout	log10	1e-05	1000	0.0354813389233576	1	parameterScaleUniform	
+kout2	kout2	log10	1e-05	1000	0.0371535229097173	1	parameterScaleUniform	
+kout_frag	kout_frag	log10	1e-05	1000	0.0141253754462275	1	parameterScaleUniform	
+sd1_IR2in_Obs	sd1_IR2in_Obs	log10	0.01	1000	7.48565831955331	1	parameterScaleUniform	
+sd1_Rec2_Obs	sd1_Rec2_Obs	log10	1	100000	317.687407064977	1	parameterScaleUniform	
+sd2_IR2in_Obs	sd2_IR2in_Obs	log10	0.1	10000	67.0193173723764	1	parameterScaleUniform	
+sd2_Rec2_Obs	sd2_Rec2_Obs	log10	1	100000	321.218093398799	1	parameterScaleUniform	
+sd3_IR2in_Obs	sd3_IR2in_Obs	log10	1	100000	212.960962021551	1	parameterScaleUniform	
+sd3_Rec2_Obs	sd3_Rec2_Obs	log10	1	100000	327.944234432135	1	parameterScaleUniform	
+sd4_Rec2_Obs	sd4_Rec2_Obs	log10	1	100000	334.348977972379	1	parameterScaleUniform	

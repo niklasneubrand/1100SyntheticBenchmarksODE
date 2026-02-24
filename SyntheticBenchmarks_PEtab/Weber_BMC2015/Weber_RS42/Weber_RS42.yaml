@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Weber_RS42_parameters.tsv
+problems:
+  - sbml_files:
+    - Weber_RS42_model.xml
+    observable_files:
+    - Weber_RS42_observables.tsv
+    condition_files:
+    - Weber_RS42_conditions.tsv
+    measurement_files:
+    - Weber_RS42_measurements.tsv

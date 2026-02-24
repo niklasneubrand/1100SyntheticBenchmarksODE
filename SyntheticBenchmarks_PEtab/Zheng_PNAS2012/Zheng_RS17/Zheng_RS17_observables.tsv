@@ -1,0 +1,11 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(K27me0K36me0 + K27me0K36me1 + K27me0K36me2 + K27me3K36me0 + K27me3K36me2)	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(K27me0K36me1 + K27me0K36me2 + K27me0K36me3 + K27me1K36me2 + K27me3K36me0)	log10	sd1_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(K27me0K36me1 + K27me1K36me1 + K27me1K36me2 + K27me2K36me0 + K27me2K36me3)	log10	sd1_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	K27me0K36me1 + K27me1K36me1 + K27me1K36me3 + K27me3K36me0 + K27me3K36me1	log10	sd1_Compound_4_Obs	normal
+Compound_5_Obs	Compound_5_Obs	offset1_Compound_5_Obs + scale1_Compound_5_Obs*(K27me0K36me3 + K27me1K36me0 + K27me2K36me0 + K27me3K36me1 + K27me3K36me2)	log10	sd1_Compound_5_Obs	normal
+Compound_6_Obs	Compound_6_Obs	offset1_Compound_6_Obs + scale1_Compound_6_Obs*(K27me1K36me0 + K27me2K36me0 + K27me3K36me0 + K27me3K36me1 + K27me3K36me2)	log10	sd1_Compound_6_Obs	normal
+K27me1K36me0_Obs	K27me1K36me0_Obs	K27me1K36me0	log10	sd1_K27me1K36me0_Obs	normal
+K27me2K36me1_Obs	K27me2K36me1_Obs	offset1_K27me2K36me1_Obs + K27me2K36me1*scale1_K27me2K36me1_Obs	log10	sd1_K27me2K36me1_Obs	normal
+K27me3K36me0_Obs	K27me3K36me0_Obs	offset1_K27me3K36me0_Obs + K27me3K36me0*scale1_K27me3K36me0_Obs	log10	sd1_K27me3K36me0_Obs	normal
+K27me3K36me2_Obs	K27me3K36me2_Obs	offset1_K27me3K36me2_Obs + K27me3K36me2*scale1_K27me3K36me2_Obs	log10	sd1_K27me3K36me2_Obs	normal

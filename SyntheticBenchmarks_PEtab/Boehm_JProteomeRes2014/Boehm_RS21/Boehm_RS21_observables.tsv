@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+STAT5A_Obs	STAT5A_Obs	STAT5A	lin	sd1_STAT5A_Obs	normal
+nucpApA_Obs	nucpApA_Obs	nucpApA	lin	sd1_nucpApA_Obs	normal
+nucpApB_Obs	nucpApB_Obs	nucpApB	lin	sd1_nucpApB_Obs	normal
+nucpBpB_Obs	nucpBpB_Obs	nucpBpB	lin	sd1_nucpBpB_Obs	normal
+pApA_Obs	pApA_Obs	pApA	lin	sd1_pApA_Obs	normal

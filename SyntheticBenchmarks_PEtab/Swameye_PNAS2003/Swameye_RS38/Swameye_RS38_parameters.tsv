@@ -1,0 +1,14 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_STAT	init_STAT	log10	1e-05	1000	1	0	parameterScaleUniform	
+offset1_nSTAT4_Obs	offset1_nSTAT4_Obs	log10	1e-05	0.1	0.001	1	parameterScaleUniform	
+p1	p1	log10	1e-05	1000	1.59955802861467	1	parameterScaleUniform	
+p2	p2	log10	1e-05	1000	537.031796370253	1	parameterScaleUniform	
+p3	p3	log10	1e-05	1000	0.173380399775414	1	parameterScaleUniform	
+p4	p4	log10	1e-05	1000	1.40604752412991	1	parameterScaleUniform	
+scale1_nSTAT4_Obs	scale1_nSTAT4_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_nSTAT4_Obs	sd1_nSTAT4_Obs	log10	0.0001	10	0.0988097953941127	1	parameterScaleUniform	
+sp1	sp1	log10	1e-05	1000	0.00295120922666639	1	parameterScaleUniform	
+sp2	sp2	log10	1e-05	1000	0.526017266390706	1	parameterScaleUniform	
+sp3	sp3	log10	1e-05	1000	0.914955558721381	1	parameterScaleUniform	
+sp4	sp4	log10	1e-05	1000	0.376703798983909	1	parameterScaleUniform	
+sp5	sp5	log10	1e-05	1000	0.000117489755493953	1	parameterScaleUniform	

@@ -1,0 +1,59 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	scale4_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	scale5_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	scale6_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd6_Compound_1_Obs	normal
+Compound_1_Obs_7	Compound_1_Obs	scale7_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd7_Compound_1_Obs	normal
+Compound_1_Obs_8	Compound_1_Obs	scale8_Compound_1_Obs*(CIS + CISnRNA3 + CISnRNA5 + EpoRJAK2 + EpoRpJAK2 + EpoRJAK2_CIS + SOCS3RNA + STAT5 + npSTAT5 + pSTAT5)	lin	sd8_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	scale1_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	scale2_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	scale3_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	scale4_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	scale5_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	scale6_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	scale7_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	scale8_Compound_2_Obs*(CISRNA + CISnRNA3 + EpoRpJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA4 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd8_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	scale1_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	scale2_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	scale3_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	scale4_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	scale5_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd5_Compound_3_Obs	normal
+Compound_3_Obs_6	Compound_3_Obs	scale6_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd6_Compound_3_Obs	normal
+Compound_3_Obs_7	Compound_3_Obs	scale7_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd7_Compound_3_Obs	normal
+Compound_3_Obs_8	Compound_3_Obs	scale8_Compound_3_Obs*(CISRNA + CISnRNA2 + CISnRNA5 + EpoRpJAK2 + SOCS3RNA + SOCS3nRNA4 + SOCS3nRNA5 + STAT5 + npSTAT5 + p1EpoRpJAK2)	lin	sd8_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	scale1_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	scale2_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	scale3_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd3_Compound_4_Obs	normal
+Compound_4_Obs_4	Compound_4_Obs	scale4_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd4_Compound_4_Obs	normal
+Compound_4_Obs_5	Compound_4_Obs	scale5_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd5_Compound_4_Obs	normal
+Compound_4_Obs_6	Compound_4_Obs	scale6_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd6_Compound_4_Obs	normal
+Compound_4_Obs_7	Compound_4_Obs	scale7_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd7_Compound_4_Obs	normal
+Compound_4_Obs_8	Compound_4_Obs	scale8_Compound_4_Obs*(EpoRpJAK2 + EpoRJAK2_CIS + SHP1 + SOCS3 + SOCS3nRNA2 + SOCS3nRNA5 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd8_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	scale1_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	scale2_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	scale3_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd3_Compound_5_Obs	normal
+Compound_5_Obs_4	Compound_5_Obs	scale4_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd4_Compound_5_Obs	normal
+Compound_5_Obs_5	Compound_5_Obs	scale5_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd5_Compound_5_Obs	normal
+Compound_5_Obs_6	Compound_5_Obs	scale6_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd6_Compound_5_Obs	normal
+Compound_5_Obs_7	Compound_5_Obs	scale7_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd7_Compound_5_Obs	normal
+Compound_5_Obs_8	Compound_5_Obs	scale8_Compound_5_Obs*(CIS + CISRNA + SHP1Act + SOCS3 + SOCS3nRNA1 + SOCS3nRNA2 + npSTAT5 + p12EpoRpJAK2 + p2EpoRpJAK2 + pSTAT5)	lin	sd8_Compound_5_Obs	normal
+Compound_6_Obs_1	Compound_6_Obs	scale1_Compound_6_Obs*(CISnRNA2 + CISnRNA3 + CISnRNA5 + EpoRJAK2_CIS + SOCS3 + SOCS3nRNA1 + SOCS3nRNA4 + SOCS3nRNA5 + p2EpoRpJAK2 + pSTAT5)	lin	sd1_Compound_6_Obs	normal
+Compound_6_Obs_2	Compound_6_Obs	scale2_Compound_6_Obs*(CISnRNA2 + CISnRNA3 + CISnRNA5 + EpoRJAK2_CIS + SOCS3 + SOCS3nRNA1 + SOCS3nRNA4 + SOCS3nRNA5 + p2EpoRpJAK2 + pSTAT5)	lin	sd2_Compound_6_Obs	normal
+Compound_6_Obs_3	Compound_6_Obs	scale3_Compound_6_Obs*(CISnRNA2 + CISnRNA3 + CISnRNA5 + EpoRJAK2_CIS + SOCS3 + SOCS3nRNA1 + SOCS3nRNA4 + SOCS3nRNA5 + p2EpoRpJAK2 + pSTAT5)	lin	sd3_Compound_6_Obs	normal
+SHP1Act_Obs_1	SHP1Act_Obs	SHP1Act*scale1_SHP1Act_Obs	lin	sd1_SHP1Act_Obs	normal
+SHP1Act_Obs_2	SHP1Act_Obs	SHP1Act*scale2_SHP1Act_Obs	lin	sd2_SHP1Act_Obs	normal
+SHP1Act_Obs_3	SHP1Act_Obs	SHP1Act*scale3_SHP1Act_Obs	lin	sd3_SHP1Act_Obs	normal
+SOCS3RNA_Obs_1	SOCS3RNA_Obs	SOCS3RNA*scale1_SOCS3RNA_Obs	lin	sd1_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_2	SOCS3RNA_Obs	SOCS3RNA*scale2_SOCS3RNA_Obs	lin	sd2_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_3	SOCS3RNA_Obs	SOCS3RNA*scale3_SOCS3RNA_Obs	lin	sd3_SOCS3RNA_Obs	normal
+SOCS3nRNA3_Obs	SOCS3nRNA3_Obs	SOCS3nRNA3*scale1_SOCS3nRNA3_Obs	lin	sd1_SOCS3nRNA3_Obs	normal
+npSTAT5_Obs_1	npSTAT5_Obs	npSTAT5*scale1_npSTAT5_Obs	lin	sd1_npSTAT5_Obs	normal
+npSTAT5_Obs_2	npSTAT5_Obs	npSTAT5*scale2_npSTAT5_Obs	lin	sd2_npSTAT5_Obs	normal
+npSTAT5_Obs_3	npSTAT5_Obs	npSTAT5*scale3_npSTAT5_Obs	lin	sd3_npSTAT5_Obs	normal
+p12EpoRpJAK2_Obs_1	p12EpoRpJAK2_Obs	p12EpoRpJAK2*scale1_p12EpoRpJAK2_Obs	lin	sd1_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_2	p12EpoRpJAK2_Obs	p12EpoRpJAK2*scale2_p12EpoRpJAK2_Obs	lin	sd2_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_3	p12EpoRpJAK2_Obs	p12EpoRpJAK2*scale3_p12EpoRpJAK2_Obs	lin	sd3_p12EpoRpJAK2_Obs	normal
+p2EpoRpJAK2_Obs_1	p2EpoRpJAK2_Obs	p2EpoRpJAK2*scale1_p2EpoRpJAK2_Obs	lin	sd1_p2EpoRpJAK2_Obs	normal
+p2EpoRpJAK2_Obs_2	p2EpoRpJAK2_Obs	p2EpoRpJAK2*scale2_p2EpoRpJAK2_Obs	lin	sd2_p2EpoRpJAK2_Obs	normal

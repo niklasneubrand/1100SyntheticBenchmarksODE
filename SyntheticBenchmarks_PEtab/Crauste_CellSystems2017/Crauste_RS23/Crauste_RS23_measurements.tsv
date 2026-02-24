@@ -1,0 +1,7 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Naive_Obs	D1_Crauste_RS23_TC001	8279.71290185088	0			normal
+Naive_Obs	D1_Crauste_RS23_TC001	941.952697136264	2.5			normal
+Naive_Obs	D1_Crauste_RS23_TC001	111.353055361582	5.5			normal
+Naive_Obs	D1_Crauste_RS23_TC001	23.8518568880785	8.5			normal
+Naive_Obs	D1_Crauste_RS23_TC001	10.5490708700682	15			normal
+Naive_Obs	D1_Crauste_RS23_TC001	11.4953758902102	20			normal

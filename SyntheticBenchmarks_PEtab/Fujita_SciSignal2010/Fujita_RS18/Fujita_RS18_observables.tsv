@@ -1,0 +1,13 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+pAkt_Obs_1	pAkt_Obs	pAkt	lin	sd1_pAkt_Obs	normal
+pAkt_Obs_2	pAkt_Obs	pAkt	lin	sd2_pAkt_Obs	normal
+pAkt_Obs_3	pAkt_Obs	pAkt	lin	sd3_pAkt_Obs	normal
+pAkt_Obs_4	pAkt_Obs	pAkt	lin	sd4_pAkt_Obs	normal
+pAkt_Obs_5	pAkt_Obs	pAkt	lin	sd5_pAkt_Obs	normal
+pAkt_Obs_6	pAkt_Obs	pAkt	lin	sd6_pAkt_Obs	normal
+pEGFR_Obs_1	pEGFR_Obs	pEGFR	lin	sd1_pEGFR_Obs	normal
+pEGFR_Obs_2	pEGFR_Obs	pEGFR	lin	sd2_pEGFR_Obs	normal
+pEGFR_Obs_3	pEGFR_Obs	pEGFR	lin	sd3_pEGFR_Obs	normal
+pEGFR_Obs_4	pEGFR_Obs	pEGFR	lin	sd4_pEGFR_Obs	normal
+pEGFR_Obs_5	pEGFR_Obs	pEGFR	lin	sd5_pEGFR_Obs	normal
+pEGFR_Obs_6	pEGFR_Obs	pEGFR	lin	sd6_pEGFR_Obs	normal

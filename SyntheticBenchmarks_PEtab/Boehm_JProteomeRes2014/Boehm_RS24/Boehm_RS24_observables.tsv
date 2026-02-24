@@ -1,0 +1,2 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+pApA_Obs	pApA_Obs	pApA	lin	sd1_pApA_Obs	normal

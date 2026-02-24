@@ -1,0 +1,23 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Naive_Obs	D1_Crauste_RS05_TC001	7873.27834748274	0			normal
+Naive_Obs	D1_Crauste_RS05_TC001	1839.06516068375	2			normal
+Naive_Obs	D1_Crauste_RS05_TC001	561.115973302207	3.5			normal
+Naive_Obs	D1_Crauste_RS05_TC001	NaN	5.5			normal
+Naive_Obs	D1_Crauste_RS05_TC001	65.0883442687136	6			normal
+Naive_Obs	D1_Crauste_RS05_TC001	NaN	8			normal
+Naive_Obs	D1_Crauste_RS05_TC001	-7.66172190852505	8.5			normal
+Naive_Obs	D1_Crauste_RS05_TC001	-88.3915085021263	10			normal
+Naive_Obs	D1_Crauste_RS05_TC001	-132.909140207207	15			normal
+Naive_Obs	D1_Crauste_RS05_TC001	NaN	20			normal
+Naive_Obs	D1_Crauste_RS05_TC001	NaN	25			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	-540.845025000149	0			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	-94.9647177311595	2			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	1091.4294589174	3.5			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	156.356994416129	5.5			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	NaN	6			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	19592.9781228256	8			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	NaN	8.5			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	37446.0920829233	10			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	10120.7141941715	15			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	6710.98698090979	20			normal
+LateEffector_Obs	D1_Crauste_RS05_TC001	3465.70355277656	25			normal

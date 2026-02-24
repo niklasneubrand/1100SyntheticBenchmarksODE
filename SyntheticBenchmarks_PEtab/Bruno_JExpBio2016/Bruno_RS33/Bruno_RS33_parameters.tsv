@@ -1,0 +1,26 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+init_b10	init_b10	log10	1e-05	1000	4.04575891697443	1	parameterScaleUniform	
+init_bcar1	init_bcar1	log10	1e-05	1000	3.1988951096914	1	parameterScaleUniform	
+init_bcar2	init_bcar2	log10	1e-05	1000	4.19758983991008	1	parameterScaleUniform	
+init_bcry	init_bcry	log10	1e-05	1000	7.46448758410066	1	parameterScaleUniform	
+init_ohb10	init_ohb10	log10	1e-05	1000	1.16305432332847	1	parameterScaleUniform	
+init_zea	init_zea	log10	1e-05	1000	3.80189396320561	1	parameterScaleUniform	
+k5	k5	log10	1e-05	1000	0.00436515832240166	1	parameterScaleUniform	
+kb1	kb1	log10	1e-05	1000	0.01	1	parameterScaleUniform	
+kb2	kb2	log10	1e-05	1000	0.00851138038202377	1	parameterScaleUniform	
+kc1	kc1	log10	1e-05	1000	0.00251188643150958	1	parameterScaleUniform	
+kc2	kc2	log10	1e-05	1000	0.00676082975391982	1	parameterScaleUniform	
+kc4	kc4	log10	1e-05	1000	0.00467735141287198	1	parameterScaleUniform	
+scale1_b10_Obs	scale1_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_ohbio_Obs	scale1_ohbio_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_b10_Obs	scale2_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_ohbio_Obs	scale2_ohbio_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_b10_Obs	scale3_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale4_b10_Obs	scale4_b10_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_b10_Obs	sd1_b10_Obs	log10	0.0001	10	0.0843528965126529	1	parameterScaleUniform	
+sd1_ohbio_Obs	sd1_ohbio_Obs	log10	0.0001	10	0.0318273148217078	1	parameterScaleUniform	
+sd2_b10_Obs	sd2_b10_Obs	log10	0.0001	10	0.0445964203179319	1	parameterScaleUniform	
+sd2_ohbio_Obs	sd2_ohbio_Obs	log10	0.0001	10	0.06908758310498	1	parameterScaleUniform	
+sd3_b10_Obs	sd3_b10_Obs	log10	0.0001	10	0.0594565903295839	1	parameterScaleUniform	
+sd4_b10_Obs	sd4_b10_Obs	log10	0.0001	10	0.0285495981690041	1	parameterScaleUniform	
+szea	szea	log10	1e-05	1000	0.446683592150963	1	parameterScaleUniform	

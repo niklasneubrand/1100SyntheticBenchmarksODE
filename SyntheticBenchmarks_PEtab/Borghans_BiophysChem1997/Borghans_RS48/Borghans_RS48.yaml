@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Borghans_RS48_parameters.tsv
+problems:
+  - sbml_files:
+    - Borghans_RS48_model.xml
+    observable_files:
+    - Borghans_RS48_observables.tsv
+    condition_files:
+    - Borghans_RS48_conditions.tsv
+    measurement_files:
+    - Borghans_RS48_measurements.tsv

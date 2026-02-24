@@ -1,0 +1,29 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CISnRNA5_Obs	CISnRNA5_Obs	CISnRNA5*scale1_CISnRNA5_Obs	lin	sd1_CISnRNA5_Obs	normal
+Compound_1_Obs	Compound_1_Obs	CISnRNA2 + CISnRNA4 + EpoRJAK2 + EpoRJAK2_CIS + SHP1Act + SOCS3nRNA3 + SOCS3nRNA4 + STAT5 + npSTAT5 + p2EpoRpJAK2	lin	sd1_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	CISnRNA2 + CISnRNA3 + CISnRNA4 + EpoRpJAK2 + SHP1Act + SOCS3 + SOCS3nRNA2 + SOCS3nRNA4 + STAT5 + pSTAT5	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	CISnRNA2 + CISnRNA3 + CISnRNA4 + EpoRpJAK2 + SHP1Act + SOCS3 + SOCS3nRNA2 + SOCS3nRNA4 + STAT5 + pSTAT5	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	scale1_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	scale2_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	scale3_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	scale4_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	scale5_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd5_Compound_3_Obs	normal
+Compound_3_Obs_6	Compound_3_Obs	scale6_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd6_Compound_3_Obs	normal
+Compound_3_Obs_7	Compound_3_Obs	scale7_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd7_Compound_3_Obs	normal
+Compound_3_Obs_8	Compound_3_Obs	scale8_Compound_3_Obs*(CISnRNA3 + CISnRNA4 + CISnRNA5 + EpoRJAK2_CIS + SHP1 + SHP1Act + SOCS3nRNA4 + STAT5 + p12EpoRpJAK2 + p1EpoRpJAK2)	lin	sd8_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	scale1_Compound_4_Obs*(CIS + CISnRNA1 + CISnRNA2 + CISnRNA4 + SHP1Act + SOCS3 + SOCS3RNA + SOCS3nRNA1 + npSTAT5 + pSTAT5)	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	scale2_Compound_4_Obs*(CIS + CISnRNA1 + CISnRNA2 + CISnRNA4 + SHP1Act + SOCS3 + SOCS3RNA + SOCS3nRNA1 + npSTAT5 + pSTAT5)	lin	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	scale3_Compound_4_Obs*(CIS + CISnRNA1 + CISnRNA2 + CISnRNA4 + SHP1Act + SOCS3 + SOCS3RNA + SOCS3nRNA1 + npSTAT5 + pSTAT5)	lin	sd3_Compound_4_Obs	normal
+Compound_4_Obs_4	Compound_4_Obs	scale4_Compound_4_Obs*(CIS + CISnRNA1 + CISnRNA2 + CISnRNA4 + SHP1Act + SOCS3 + SOCS3RNA + SOCS3nRNA1 + npSTAT5 + pSTAT5)	lin	sd4_Compound_4_Obs	normal
+Compound_4_Obs_5	Compound_4_Obs	scale5_Compound_4_Obs*(CIS + CISnRNA1 + CISnRNA2 + CISnRNA4 + SHP1Act + SOCS3 + SOCS3RNA + SOCS3nRNA1 + npSTAT5 + pSTAT5)	lin	sd5_Compound_4_Obs	normal
+Compound_4_Obs_6	Compound_4_Obs	scale6_Compound_4_Obs*(CIS + CISnRNA1 + CISnRNA2 + CISnRNA4 + SHP1Act + SOCS3 + SOCS3RNA + SOCS3nRNA1 + npSTAT5 + pSTAT5)	lin	sd6_Compound_4_Obs	normal
+SOCS3nRNA4_Obs_1	SOCS3nRNA4_Obs	SOCS3nRNA4*scale1_SOCS3nRNA4_Obs	lin	sd1_SOCS3nRNA4_Obs	normal
+SOCS3nRNA4_Obs_2	SOCS3nRNA4_Obs	SOCS3nRNA4*scale2_SOCS3nRNA4_Obs	lin	sd2_SOCS3nRNA4_Obs	normal
+SOCS3nRNA5_Obs_1	SOCS3nRNA5_Obs	SOCS3nRNA5*scale1_SOCS3nRNA5_Obs	lin	sd1_SOCS3nRNA5_Obs	normal
+SOCS3nRNA5_Obs_2	SOCS3nRNA5_Obs	SOCS3nRNA5*scale2_SOCS3nRNA5_Obs	lin	sd2_SOCS3nRNA5_Obs	normal
+STAT5_Obs_1	STAT5_Obs	STAT5	lin	sd1_STAT5_Obs	normal
+STAT5_Obs_2	STAT5_Obs	STAT5	lin	sd2_STAT5_Obs	normal
+STAT5_Obs_3	STAT5_Obs	STAT5	lin	sd3_STAT5_Obs	normal
+STAT5_Obs_4	STAT5_Obs	STAT5	lin	sd4_STAT5_Obs	normal
+STAT5_Obs_5	STAT5_Obs	STAT5	lin	sd5_STAT5_Obs	normal
+STAT5_Obs_6	STAT5_Obs	STAT5	lin	sd6_STAT5_Obs	normal

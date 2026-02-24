@@ -1,0 +1,25 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+K2	K2	log10	0.001	100000	0.0602559586074358	1	parameterScaleUniform	
+K_par	K_par	log10	0.001	100000	11.2201845430196	1	parameterScaleUniform	
+Ka	Ka	log10	0.001	100000	0.119949930314938	1	parameterScaleUniform	
+Kd	Kd	log10	0.001	100000	0.274157417192788	1	parameterScaleUniform	
+Kf	Kf	log10	0.001	100000	1.22574463204981	1	parameterScaleUniform	
+Kp	Kp	log10	0.001	100000	0.783429642766212	1	parameterScaleUniform	
+Ky	Ky	log10	0.001	100000	0.167109061431071	1	parameterScaleUniform	
+Kz	Kz	log10	0.001	100000	0.295120922666639	1	parameterScaleUniform	
+Vd	Vd	log10	0.001	100000	144.543977074593	1	parameterScaleUniform	
+Vm2	Vm2	log10	0.001	100000	12.3026877081238	1	parameterScaleUniform	
+Vm3	Vm3	log10	0.001	100000	43.6515832240166	1	parameterScaleUniform	
+Vp	Vp	log10	0.001	100000	1.91866874067029	1	parameterScaleUniform	
+beta_par	beta_par	log10	0.001	100000	0.856446028890057	1	parameterScaleUniform	
+epsilon_par	epsilon_par	log10	0.001	100000	0.0660693448007596	1	parameterScaleUniform	
+init_A_state	init_A_state	lin	0	1.7	1.59	1	parameterScaleUniform	
+init_Y_state	init_Y_state	lin	0	1.3	1.24	1	parameterScaleUniform	
+init_Z_state	init_Z_state	lin	0	1	0.152	1	parameterScaleUniform	
+n_par	n_par	log10	0.001	100000	3.61409862639613	1	parameterScaleUniform	
+offset1_A_state_Obs	offset1_A_state_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+scale1_A_state_Obs	scale1_A_state_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_A_state_Obs	sd1_A_state_Obs	log10	0.0001	10	0.0487865379197478	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.0001	10	0.0488990025046493	1	parameterScaleUniform	
+v0	v0	log10	0.001	100000	1.80717412601093	1	parameterScaleUniform	
+v1	v1	log10	0.001	100000	0.712853030126519	1	parameterScaleUniform	

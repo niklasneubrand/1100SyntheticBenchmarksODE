@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Hass_RS07_parameters.tsv
+problems:
+  - sbml_files:
+    - Hass_RS07_model.xml
+    observable_files:
+    - Hass_RS07_observables.tsv
+    condition_files:
+    - Hass_RS07_conditions.tsv
+    measurement_files:
+    - Hass_RS07_measurements.tsv

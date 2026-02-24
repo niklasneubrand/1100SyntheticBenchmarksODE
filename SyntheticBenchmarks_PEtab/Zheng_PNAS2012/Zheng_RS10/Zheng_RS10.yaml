@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Zheng_RS10_parameters.tsv
+problems:
+  - sbml_files:
+    - Zheng_RS10_model.xml
+    observable_files:
+    - Zheng_RS10_observables.tsv
+    condition_files:
+    - Zheng_RS10_conditions.tsv
+    measurement_files:
+    - Zheng_RS10_measurements.tsv

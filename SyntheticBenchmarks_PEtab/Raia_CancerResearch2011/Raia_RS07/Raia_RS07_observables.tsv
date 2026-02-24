@@ -1,0 +1,27 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+DecoyR_Obs_1	DecoyR_Obs	offset1_DecoyR_Obs + DecoyR*scale1_DecoyR_Obs	log10	sd1_DecoyR_Obs	normal
+DecoyR_Obs_2	DecoyR_Obs	offset2_DecoyR_Obs + DecoyR*scale2_DecoyR_Obs	log10	sd2_DecoyR_Obs	normal
+DecoyR_Obs_3	DecoyR_Obs	offset3_DecoyR_Obs + DecoyR*scale3_DecoyR_Obs	log10	sd3_DecoyR_Obs	normal
+IL13_DecoyR_Obs_1	IL13_DecoyR_Obs	offset1_IL13_DecoyR_Obs + IL13_DecoyR*scale1_IL13_DecoyR_Obs	log10	sd1_IL13_DecoyR_Obs	normal
+IL13_DecoyR_Obs_2	IL13_DecoyR_Obs	offset2_IL13_DecoyR_Obs + IL13_DecoyR*scale2_IL13_DecoyR_Obs	log10	sd2_IL13_DecoyR_Obs	normal
+IL13_Rec_Obs_1	IL13_Rec_Obs	IL13_Rec	log10	sd1_IL13_Rec_Obs	normal
+IL13_Rec_Obs_2	IL13_Rec_Obs	IL13_Rec	log10	sd2_IL13_Rec_Obs	normal
+Rec_Obs_1	Rec_Obs	offset1_Rec_Obs + Rec*scale1_Rec_Obs	log10	sd1_Rec_Obs	normal
+Rec_Obs_2	Rec_Obs	offset2_Rec_Obs + Rec*scale2_Rec_Obs	log10	sd2_Rec_Obs	normal
+Rec_Obs_3	Rec_Obs	offset3_Rec_Obs + Rec*scale3_Rec_Obs	log10	sd3_Rec_Obs	normal
+Rec_Obs_4	Rec_Obs	offset4_Rec_Obs + Rec*scale4_Rec_Obs	log10	sd4_Rec_Obs	normal
+Rec_i_Obs_1	Rec_i_Obs	Rec_i	log10	sd1_Rec_i_Obs	normal
+Rec_i_Obs_2	Rec_i_Obs	Rec_i	log10	sd2_Rec_i_Obs	normal
+SOCS3_Obs_1	SOCS3_Obs	offset1_SOCS3_Obs + SOCS3*scale1_SOCS3_Obs	log10	sd1_SOCS3_Obs	normal
+SOCS3_Obs_2	SOCS3_Obs	offset2_SOCS3_Obs + SOCS3*scale2_SOCS3_Obs	log10	sd2_SOCS3_Obs	normal
+SOCS3_Obs_3	SOCS3_Obs	offset3_SOCS3_Obs + SOCS3*scale3_SOCS3_Obs	log10	sd3_SOCS3_Obs	normal
+STAT5_Obs_1	STAT5_Obs	offset1_STAT5_Obs + STAT5*scale1_STAT5_Obs	log10	sd1_STAT5_Obs	normal
+STAT5_Obs_2	STAT5_Obs	offset2_STAT5_Obs + STAT5*scale2_STAT5_Obs	log10	sd2_STAT5_Obs	normal
+STAT5_Obs_3	STAT5_Obs	offset3_STAT5_Obs + STAT5*scale3_STAT5_Obs	log10	sd3_STAT5_Obs	normal
+pJAK2_Obs_1	pJAK2_Obs	pJAK2	log10	sd1_pJAK2_Obs	normal
+pJAK2_Obs_2	pJAK2_Obs	pJAK2	log10	sd2_pJAK2_Obs	normal
+pJAK2_Obs_3	pJAK2_Obs	pJAK2	log10	sd3_pJAK2_Obs	normal
+pJAK2_Obs_4	pJAK2_Obs	pJAK2	log10	sd4_pJAK2_Obs	normal
+p_IL13_Rec_Obs_1	p_IL13_Rec_Obs	offset1_p_IL13_Rec_Obs + p_IL13_Rec*scale1_p_IL13_Rec_Obs	log10	sd1_p_IL13_Rec_Obs	normal
+p_IL13_Rec_Obs_2	p_IL13_Rec_Obs	offset2_p_IL13_Rec_Obs + p_IL13_Rec*scale2_p_IL13_Rec_Obs	log10	sd2_p_IL13_Rec_Obs	normal
+p_IL13_Rec_Obs_3	p_IL13_Rec_Obs	offset3_p_IL13_Rec_Obs + p_IL13_Rec*scale3_p_IL13_Rec_Obs	log10	sd3_p_IL13_Rec_Obs	normal

@@ -1,0 +1,25 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_10_Obs	Compound_10_Obs	IL13_DecoyR + pSTAT5 + p_IL13_Rec	lin	sd1_Compound_10_Obs	normal
+Compound_11_Obs_1	Compound_11_Obs	IL13_DecoyR + STAT5 + pSTAT5	lin	sd1_Compound_11_Obs	normal
+Compound_11_Obs_2	Compound_11_Obs	IL13_DecoyR + STAT5 + pSTAT5	lin	sd2_Compound_11_Obs	normal
+Compound_11_Obs_3	Compound_11_Obs	IL13_DecoyR + STAT5 + pSTAT5	lin	sd3_Compound_11_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(CD274mRNA + Rec + SOCS3mRNA)	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(CD274mRNA + Rec + SOCS3mRNA)	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(CD274mRNA + Rec + SOCS3mRNA)	lin	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	scale1_Compound_2_Obs*(CD274mRNA + IL13_Rec + Rec_i)	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	scale2_Compound_2_Obs*(CD274mRNA + IL13_Rec + Rec_i)	lin	sd2_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	scale1_Compound_3_Obs*(IL13_Rec + JAK2 + STAT5)	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	scale2_Compound_3_Obs*(IL13_Rec + JAK2 + STAT5)	lin	sd2_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	IL13_Rec + JAK2 + pSTAT5	lin	sd1_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	scale1_Compound_5_Obs*(IL13_Rec + JAK2 + SOCS3mRNA)	lin	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	scale2_Compound_5_Obs*(IL13_Rec + JAK2 + SOCS3mRNA)	lin	sd2_Compound_5_Obs	normal
+Compound_6_Obs	Compound_6_Obs	scale1_Compound_6_Obs*(IL13_Rec + SOCS3 + pSTAT5)	lin	sd1_Compound_6_Obs	normal
+Compound_7_Obs_1	Compound_7_Obs	SOCS3mRNA + pJAK2 + p_IL13_Rec	lin	sd1_Compound_7_Obs	normal
+Compound_7_Obs_2	Compound_7_Obs	SOCS3mRNA + pJAK2 + p_IL13_Rec	lin	sd2_Compound_7_Obs	normal
+Compound_8_Obs_1	Compound_8_Obs	scale1_Compound_8_Obs*(DecoyR + STAT5 + p_IL13_Rec)	lin	sd1_Compound_8_Obs	normal
+Compound_8_Obs_2	Compound_8_Obs	scale2_Compound_8_Obs*(DecoyR + STAT5 + p_IL13_Rec)	lin	sd2_Compound_8_Obs	normal
+Compound_9_Obs_1	Compound_9_Obs	SOCS3mRNA + pSTAT5 + p_IL13_Rec	lin	sd1_Compound_9_Obs	normal
+Compound_9_Obs_2	Compound_9_Obs	SOCS3mRNA + pSTAT5 + p_IL13_Rec	lin	sd2_Compound_9_Obs	normal
+Compound_9_Obs_3	Compound_9_Obs	SOCS3mRNA + pSTAT5 + p_IL13_Rec	lin	sd3_Compound_9_Obs	normal
+Rec_Obs	Rec_Obs	Rec*scale1_Rec_Obs	lin	sd1_Rec_Obs	normal
+Rec_i_Obs	Rec_i_Obs	Rec_i*scale1_Rec_i_Obs	lin	sd1_Rec_i_Obs	normal

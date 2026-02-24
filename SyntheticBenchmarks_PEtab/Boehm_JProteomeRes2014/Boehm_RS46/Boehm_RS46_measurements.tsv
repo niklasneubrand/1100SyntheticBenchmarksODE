@@ -1,0 +1,12 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+pApB_Obs	D1_Boehm_RS46_TC001	0.0426317274789578	0			normal
+pApB_Obs	D1_Boehm_RS46_TC001	20.4955066048529	15			normal
+pApB_Obs	D1_Boehm_RS46_TC001	15.7861159503235	35			normal
+pApB_Obs	D1_Boehm_RS46_TC001	12.3590645091779	55			normal
+pApB_Obs	D1_Boehm_RS46_TC001	9.84576992927042	70			normal
+pApB_Obs	D1_Boehm_RS46_TC001	7.50589983323597	95			normal
+pApB_Obs	D1_Boehm_RS46_TC001	8.82087792983434	100			normal
+pApB_Obs	D1_Boehm_RS46_TC001	3.84862931120031	150			normal
+pApB_Obs	D1_Boehm_RS46_TC001	2.59061043325088	200			normal
+pApB_Obs	D1_Boehm_RS46_TC001	0.00320160295597283	250			normal
+pApB_Obs	D1_Boehm_RS46_TC001	1.18510749976237	300			normal

@@ -1,0 +1,7 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	scale1_Compound_1_Obs*(ApoER2_Dab1 + ApoER2_Dab1SFK + ApoER2_re_Dab1 + ApoER2_Dab1SFKInh + ApoER2_re_Dab1SFK + ApoER2_re_Dab1SFKInh + ApoER2_Dab1_released + SFK + pApoER2_re_Dab1)	log10	sd1_Compound_1_Obs	normal
+SFK_Obs_1	SFK_Obs	offset1_SFK_Obs + SFK*scale1_SFK_Obs	log10	sd1_SFK_Obs	normal
+SFK_Obs_2	SFK_Obs	offset2_SFK_Obs + SFK*scale2_SFK_Obs	log10	sd2_SFK_Obs	normal
+SFK_Obs_3	SFK_Obs	offset3_SFK_Obs + SFK*scale3_SFK_Obs	log10	sd3_SFK_Obs	normal
+SFK_Obs_4	SFK_Obs	offset4_SFK_Obs + SFK*scale4_SFK_Obs	log10	sd4_SFK_Obs	normal
+SFK_Obs_5	SFK_Obs	offset5_SFK_Obs + SFK*scale5_SFK_Obs	log10	sd5_SFK_Obs	normal

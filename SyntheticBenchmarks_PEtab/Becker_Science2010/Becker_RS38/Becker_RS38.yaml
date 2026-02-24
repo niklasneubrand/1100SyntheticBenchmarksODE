@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Becker_RS38_parameters.tsv
+problems:
+  - sbml_files:
+    - Becker_RS38_model.xml
+    observable_files:
+    - Becker_RS38_observables.tsv
+    condition_files:
+    - Becker_RS38_conditions.tsv
+    measurement_files:
+    - Becker_RS38_measurements.tsv

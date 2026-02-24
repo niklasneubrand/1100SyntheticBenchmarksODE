@@ -1,0 +1,27 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+CD274mRNA_production	CD274mRNA_production	log10	1e-05	1000	0.0204173794466953	1	parameterScaleUniform	
+DecoyR_binding	DecoyR_binding	log10	1e-05	1000	0.00257039578276886	1	parameterScaleUniform	
+JAK2_p_inhibition	JAK2_p_inhibition	log10	1e-05	1000	0.0562341325190349	1	parameterScaleUniform	
+JAK2_phosphorylation	JAK2_phosphorylation	log10	1e-05	1000	0.512861383991365	1	parameterScaleUniform	
+Kon_IL13Rec	Kon_IL13Rec	log10	1e-05	1000	0.00354813389233575	1	parameterScaleUniform	
+Rec_intern	Rec_intern	log10	1e-05	1000	0.648634433548238	1	parameterScaleUniform	
+Rec_phosphorylation	Rec_phosphorylation	log10	1e-05	10000	1548.81661891248	1	parameterScaleUniform	
+Rec_recycle	Rec_recycle	log10	1e-05	1000	0.00229086765276777	1	parameterScaleUniform	
+SOCS3_accumulation	SOCS3_accumulation	log10	1e-05	1000	346.736850452532	1	parameterScaleUniform	
+SOCS3_degradation	SOCS3_degradation	log10	1e-05	1000	0.0741310241300918	1	parameterScaleUniform	
+SOCS3_translation	SOCS3_translation	log10	1e-05	1000	23.4422881531992	1	parameterScaleUniform	
+SOCS3mRNA_production	SOCS3mRNA_production	log10	1e-05	1000	0.0870963589956081	1	parameterScaleUniform	
+STAT5_phosphorylation	STAT5_phosphorylation	log10	1e-05	1000	0.0158489319246111	1	parameterScaleUniform	
+init_Rec_i	init_Rec_i	log10	1e-05	1000	169.824365246174	1	parameterScaleUniform	
+pJAK2_dephosphorylation	pJAK2_dephosphorylation	log10	1e-05	1000	0.000181970085860998	1	parameterScaleUniform	
+pRec_degradation	pRec_degradation	log10	1e-05	1000	0.200447202736516	1	parameterScaleUniform	
+pRec_intern	pRec_intern	log10	1e-05	1000	0.584790084144481	1	parameterScaleUniform	
+pSTAT5_dephosphorylation	pSTAT5_dephosphorylation	log10	1e-05	1000	0.000194984459975805	1	parameterScaleUniform	
+scale1_Compound_1_Obs	scale1_Compound_1_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_Rec_i_Obs	scale1_Rec_i_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_Compound_1_Obs	scale2_Compound_1_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_Compound_1_Obs	scale3_Compound_1_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_Compound_1_Obs	sd1_Compound_1_Obs	log10	0.1	10000	13.5394181140507	1	parameterScaleUniform	
+sd1_Rec_i_Obs	sd1_Rec_i_Obs	log10	0.1	10000	13.7246096100756	1	parameterScaleUniform	
+sd2_Compound_1_Obs	sd2_Compound_1_Obs	log10	0.1	10000	13.4431176667131	1	parameterScaleUniform	
+sd3_Compound_1_Obs	sd3_Compound_1_Obs	log10	0.1	10000	12.8973355789875	1	parameterScaleUniform	

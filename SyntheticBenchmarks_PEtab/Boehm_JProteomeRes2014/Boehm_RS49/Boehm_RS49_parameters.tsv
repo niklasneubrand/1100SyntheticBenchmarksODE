@@ -1,0 +1,26 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+Epo_degradation_BaF3	Epo_degradation_BaF3	log10	1e-05	100000	0.0331131121482591	1	parameterScaleUniform	
+k_exp_hetero	k_exp_hetero	log10	1e-05	100000	1.94984459975805e-05	1	parameterScaleUniform	
+k_exp_homo	k_exp_homo	log10	1e-05	100000	0.01	1	parameterScaleUniform	
+k_imp_hetero	k_imp_hetero	log10	1e-05	100000	0.0091201083935591	1	parameterScaleUniform	
+k_imp_homo	k_imp_homo	log10	1e-05	1584893.19246111	173780.082874938	1	parameterScaleUniform	
+k_phos	k_phos	log10	1e-05	100000	10964.7819614319	1	parameterScaleUniform	
+offset1_STAT5A_Obs	offset1_STAT5A_Obs	log10	0.001	10	0.1	1	parameterScaleUniform	
+offset1_STAT5B_Obs	offset1_STAT5B_Obs	log10	0.001	10	0.1	1	parameterScaleUniform	
+offset1_nucpApA_Obs	offset1_nucpApA_Obs	log10	0.001	10	0.1	1	parameterScaleUniform	
+offset1_pApA_Obs	offset1_pApA_Obs	log10	1e-10	1e-06	1e-08	1	parameterScaleUniform	
+offset1_pApB_Obs	offset1_pApB_Obs	log10	0.001	10	0.1	1	parameterScaleUniform	
+offset1_pBpB_Obs	offset1_pBpB_Obs	log10	1e-11	1e-07	1e-09	1	parameterScaleUniform	
+ratio	ratio	lin	-5	5	0.693	0	parameterScaleUniform	
+scale1_STAT5A_Obs	scale1_STAT5A_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_STAT5B_Obs	scale1_STAT5B_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_nucpApA_Obs	scale1_nucpApA_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_pApA_Obs	scale1_pApA_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_pApB_Obs	scale1_pApB_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale1_pBpB_Obs	scale1_pBpB_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_STAT5A_Obs	sd1_STAT5A_Obs	log10	0.0001	10	0.0887769049411735	1	parameterScaleUniform	
+sd1_STAT5B_Obs	sd1_STAT5B_Obs	log10	0.0001	10	0.0888177976319248	1	parameterScaleUniform	
+sd1_nucpApA_Obs	sd1_nucpApA_Obs	log10	0.0001	10	0.0918332596483581	1	parameterScaleUniform	
+sd1_pApA_Obs	sd1_pApA_Obs	log10	0.0001	10	0.0893716960850198	1	parameterScaleUniform	
+sd1_pApB_Obs	sd1_pApB_Obs	log10	0.0001	10	0.0904898774394414	1	parameterScaleUniform	
+sd1_pBpB_Obs	sd1_pBpB_Obs	log10	0.0001	10	0.0947763545262961	1	parameterScaleUniform	

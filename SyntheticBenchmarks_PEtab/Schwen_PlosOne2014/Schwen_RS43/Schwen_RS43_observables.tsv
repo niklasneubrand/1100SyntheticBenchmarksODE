@@ -1,0 +1,32 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+BoundUnspec_Obs_1	BoundUnspec_Obs	offset1_BoundUnspec_Obs + BoundUnspec*scale1_BoundUnspec_Obs	log10	sd1_BoundUnspec_Obs	normal
+BoundUnspec_Obs_2	BoundUnspec_Obs	offset2_BoundUnspec_Obs + BoundUnspec*scale2_BoundUnspec_Obs	log10	sd2_BoundUnspec_Obs	normal
+BoundUnspec_Obs_3	BoundUnspec_Obs	offset3_BoundUnspec_Obs + BoundUnspec*scale3_BoundUnspec_Obs	log10	sd3_BoundUnspec_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	scale1_Compound_1_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	scale2_Compound_1_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	scale3_Compound_1_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1)	log10	sd3_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	scale1_Compound_2_Obs*(BoundUnspec + IR1 + IR2 + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	scale2_Compound_2_Obs*(BoundUnspec + IR1 + IR2 + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	scale3_Compound_2_Obs*(BoundUnspec + IR1 + IR2 + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	scale4_Compound_2_Obs*(BoundUnspec + IR1 + IR2 + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd4_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(BoundUnspec + IR1 + IR1in + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(BoundUnspec + IR1 + IR1in + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	offset3_Compound_3_Obs + scale3_Compound_3_Obs*(BoundUnspec + IR1 + IR1in + IR2in + Ins + InsulinFragments + Rec1 + Rec2 + Uptake1 + Uptake2)	log10	sd3_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	offset1_Compound_4_Obs + scale1_Compound_4_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec2 + Uptake1 + Uptake2)	log10	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	offset2_Compound_4_Obs + scale2_Compound_4_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec2 + Uptake1 + Uptake2)	log10	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	offset3_Compound_4_Obs + scale3_Compound_4_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec2 + Uptake1 + Uptake2)	log10	sd3_Compound_4_Obs	normal
+Compound_4_Obs_4	Compound_4_Obs	offset4_Compound_4_Obs + scale4_Compound_4_Obs*(BoundUnspec + IR1 + IR2 + IR1in + IR2in + Ins + InsulinFragments + Rec2 + Uptake1 + Uptake2)	log10	sd4_Compound_4_Obs	normal
+IR1_Obs_1	IR1_Obs	IR1	log10	sd1_IR1_Obs	normal
+IR1_Obs_2	IR1_Obs	IR1	log10	sd2_IR1_Obs	normal
+IR1_Obs_3	IR1_Obs	IR1	log10	sd3_IR1_Obs	normal
+IR1_Obs_4	IR1_Obs	IR1	log10	sd4_IR1_Obs	normal
+IR2in_Obs_1	IR2in_Obs	offset1_IR2in_Obs + IR2in*scale1_IR2in_Obs	log10	sd1_IR2in_Obs	normal
+IR2in_Obs_2	IR2in_Obs	offset2_IR2in_Obs + IR2in*scale2_IR2in_Obs	log10	sd2_IR2in_Obs	normal
+IR2in_Obs_3	IR2in_Obs	offset3_IR2in_Obs + IR2in*scale3_IR2in_Obs	log10	sd3_IR2in_Obs	normal
+IR2in_Obs_4	IR2in_Obs	offset4_IR2in_Obs + IR2in*scale4_IR2in_Obs	log10	sd4_IR2in_Obs	normal
+InsulinFragments_Obs_1	InsulinFragments_Obs	InsulinFragments	log10	sd1_InsulinFragments_Obs	normal
+InsulinFragments_Obs_2	InsulinFragments_Obs	InsulinFragments	log10	sd2_InsulinFragments_Obs	normal
+InsulinFragments_Obs_3	InsulinFragments_Obs	InsulinFragments	log10	sd3_InsulinFragments_Obs	normal
+Uptake1_Obs_1	Uptake1_Obs	Uptake1*scale1_Uptake1_Obs	log10	sd1_Uptake1_Obs	normal
+Uptake1_Obs_2	Uptake1_Obs	Uptake1*scale2_Uptake1_Obs	log10	sd2_Uptake1_Obs	normal
+Uptake1_Obs_3	Uptake1_Obs	Uptake1*scale3_Uptake1_Obs	log10	sd3_Uptake1_Obs	normal

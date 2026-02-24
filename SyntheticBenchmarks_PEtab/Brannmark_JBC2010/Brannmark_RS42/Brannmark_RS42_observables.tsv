@@ -1,0 +1,16 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(IR + IRS + IRi)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(IR + IRS + IRi)	log10	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	offset3_Compound_1_Obs + scale3_Compound_1_Obs*(IR + IRS + IRi)	log10	sd3_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(IR + XX + XXp)	log10	sd1_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(IRiP + IRins + IRp)	log10	sd1_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	offset1_Compound_4_Obs + scale1_Compound_4_Obs*(IRiP + IRins + XXp)	log10	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	offset2_Compound_4_Obs + scale2_Compound_4_Obs*(IRiP + IRins + XXp)	log10	sd2_Compound_4_Obs	normal
+Compound_4_Obs_3	Compound_4_Obs	offset3_Compound_4_Obs + scale3_Compound_4_Obs*(IRiP + IRins + XXp)	log10	sd3_Compound_4_Obs	normal
+Compound_5_Obs_1	Compound_5_Obs	offset1_Compound_5_Obs + scale1_Compound_5_Obs*(IRiP + IRp + XX)	log10	sd1_Compound_5_Obs	normal
+Compound_5_Obs_2	Compound_5_Obs	offset2_Compound_5_Obs + scale2_Compound_5_Obs*(IRiP + IRp + XX)	log10	sd2_Compound_5_Obs	normal
+Compound_5_Obs_3	Compound_5_Obs	offset3_Compound_5_Obs + scale3_Compound_5_Obs*(IRiP + IRp + XX)	log10	sd3_Compound_5_Obs	normal
+Compound_6_Obs	Compound_6_Obs	offset1_Compound_6_Obs + scale1_Compound_6_Obs*(IRS + IRSiP + IRp)	log10	sd1_Compound_6_Obs	normal
+Compound_7_Obs_1	Compound_7_Obs	offset1_Compound_7_Obs + scale1_Compound_7_Obs*(IRSiP + IRi + IRiP)	log10	sd1_Compound_7_Obs	normal
+Compound_7_Obs_2	Compound_7_Obs	offset2_Compound_7_Obs + scale2_Compound_7_Obs*(IRSiP + IRi + IRiP)	log10	sd2_Compound_7_Obs	normal
+Compound_7_Obs_3	Compound_7_Obs	offset3_Compound_7_Obs + scale3_Compound_7_Obs*(IRSiP + IRi + IRiP)	log10	sd3_Compound_7_Obs	normal

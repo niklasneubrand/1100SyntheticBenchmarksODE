@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Swameye_RS32_parameters.tsv
+problems:
+  - sbml_files:
+    - Swameye_RS32_model.xml
+    observable_files:
+    - Swameye_RS32_observables.tsv
+    condition_files:
+    - Swameye_RS32_conditions.tsv
+    measurement_files:
+    - Swameye_RS32_measurements.tsv

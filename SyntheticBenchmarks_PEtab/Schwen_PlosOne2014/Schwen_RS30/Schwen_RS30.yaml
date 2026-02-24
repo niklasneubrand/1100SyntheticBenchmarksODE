@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Schwen_RS30_parameters.tsv
+problems:
+  - sbml_files:
+    - Schwen_RS30_model.xml
+    observable_files:
+    - Schwen_RS30_observables.tsv
+    condition_files:
+    - Schwen_RS30_conditions.tsv
+    measurement_files:
+    - Schwen_RS30_measurements.tsv

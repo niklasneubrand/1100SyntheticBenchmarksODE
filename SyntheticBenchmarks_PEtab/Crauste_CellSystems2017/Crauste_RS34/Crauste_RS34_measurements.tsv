@@ -1,0 +1,11 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Compound_1_Obs	D1_Crauste_RS34_TC001	8330.19321316305	0			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	1015.51013628513	2			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	1908.45358704458	4			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	57251.5220369497	6.5			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	55923.8494547115	9			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	51806.3587133816	10			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	21568.0393847592	15			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	14962.128090255	20			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	15853.8085771116	25			normal
+Compound_1_Obs	D1_Crauste_RS34_TC001	13326.5778989165	30			normal

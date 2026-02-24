@@ -1,0 +1,47 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	CISHnRNA5 + PTP	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	CISHnRNA5 + PTP	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	CISHnRNA5 + PTP	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	CISHnRNA5 + PTP	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	CISHnRNA5 + PTP	lin	sd5_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd6_Compound_2_Obs	normal
+Compound_2_Obs_7	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd7_Compound_2_Obs	normal
+Compound_2_Obs_8	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd8_Compound_2_Obs	normal
+Compound_2_Obs_9	Compound_2_Obs	PTP + SOCS3nRNA5	lin	sd9_Compound_2_Obs	normal
+PTP_Obs_01	PTP_Obs	PTP	lin	sd10_PTP_Obs	normal
+PTP_Obs_02	PTP_Obs	PTP	lin	sd11_PTP_Obs	normal
+PTP_Obs_03	PTP_Obs	PTP	lin	sd12_PTP_Obs	normal
+PTP_Obs_04	PTP_Obs	PTP	lin	sd1_PTP_Obs	normal
+PTP_Obs_05	PTP_Obs	PTP	lin	sd2_PTP_Obs	normal
+PTP_Obs_06	PTP_Obs	PTP	lin	sd3_PTP_Obs	normal
+PTP_Obs_07	PTP_Obs	PTP	lin	sd4_PTP_Obs	normal
+PTP_Obs_08	PTP_Obs	PTP	lin	sd5_PTP_Obs	normal
+PTP_Obs_09	PTP_Obs	PTP	lin	sd6_PTP_Obs	normal
+PTP_Obs_10	PTP_Obs	PTP	lin	sd7_PTP_Obs	normal
+PTP_Obs_11	PTP_Obs	PTP	lin	sd8_PTP_Obs	normal
+PTP_Obs_12	PTP_Obs	PTP	lin	sd9_PTP_Obs	normal
+SOCS3RNA_Obs_1	SOCS3RNA_Obs	SOCS3RNA	lin	sd1_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_2	SOCS3RNA_Obs	SOCS3RNA	lin	sd2_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_3	SOCS3RNA_Obs	SOCS3RNA	lin	sd3_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_4	SOCS3RNA_Obs	SOCS3RNA	lin	sd4_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_5	SOCS3RNA_Obs	SOCS3RNA	lin	sd5_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_6	SOCS3RNA_Obs	SOCS3RNA	lin	sd6_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_7	SOCS3RNA_Obs	SOCS3RNA	lin	sd7_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_8	SOCS3RNA_Obs	SOCS3RNA	lin	sd8_SOCS3RNA_Obs	normal
+nSTAT5_Obs_01	nSTAT5_Obs	nSTAT5	lin	sd10_nSTAT5_Obs	normal
+nSTAT5_Obs_02	nSTAT5_Obs	nSTAT5	lin	sd11_nSTAT5_Obs	normal
+nSTAT5_Obs_03	nSTAT5_Obs	nSTAT5	lin	sd12_nSTAT5_Obs	normal
+nSTAT5_Obs_04	nSTAT5_Obs	nSTAT5	lin	sd1_nSTAT5_Obs	normal
+nSTAT5_Obs_05	nSTAT5_Obs	nSTAT5	lin	sd2_nSTAT5_Obs	normal
+nSTAT5_Obs_06	nSTAT5_Obs	nSTAT5	lin	sd3_nSTAT5_Obs	normal
+nSTAT5_Obs_07	nSTAT5_Obs	nSTAT5	lin	sd4_nSTAT5_Obs	normal
+nSTAT5_Obs_08	nSTAT5_Obs	nSTAT5	lin	sd5_nSTAT5_Obs	normal
+nSTAT5_Obs_09	nSTAT5_Obs	nSTAT5	lin	sd6_nSTAT5_Obs	normal
+nSTAT5_Obs_10	nSTAT5_Obs	nSTAT5	lin	sd7_nSTAT5_Obs	normal
+nSTAT5_Obs_11	nSTAT5_Obs	nSTAT5	lin	sd8_nSTAT5_Obs	normal
+nSTAT5_Obs_12	nSTAT5_Obs	nSTAT5	lin	sd9_nSTAT5_Obs	normal

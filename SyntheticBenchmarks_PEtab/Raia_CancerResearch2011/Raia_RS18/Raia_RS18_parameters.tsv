@@ -1,0 +1,26 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+CD274mRNA_production	CD274mRNA_production	log10	1e-05	1000	0.0218776162394955	1	parameterScaleUniform	
+DecoyR_binding	DecoyR_binding	log10	1e-05	1000	0.00316227766016838	1	parameterScaleUniform	
+JAK2_p_inhibition	JAK2_p_inhibition	log10	1e-05	1000	0.0776247116628692	1	parameterScaleUniform	
+JAK2_phosphorylation	JAK2_phosphorylation	log10	1e-05	1000	1.24193824151992	1	parameterScaleUniform	
+Kon_IL13Rec	Kon_IL13Rec	log10	1e-05	1000	0.00229086765276777	1	parameterScaleUniform	
+Rec_intern	Rec_intern	log10	1e-05	1000	0.542000890401624	1	parameterScaleUniform	
+Rec_phosphorylation	Rec_phosphorylation	log10	1e-05	1000	870.963589956081	1	parameterScaleUniform	
+Rec_recycle	Rec_recycle	log10	1e-05	1000	0.00117489755493953	1	parameterScaleUniform	
+SOCS3_accumulation	SOCS3_accumulation	log10	1e-05	1000	426.579518801593	1	parameterScaleUniform	
+SOCS3_degradation	SOCS3_degradation	log10	1e-05	1000	0.0316227766016838	1	parameterScaleUniform	
+SOCS3_translation	SOCS3_translation	log10	1e-05	1000	19.4984459975805	1	parameterScaleUniform	
+SOCS3mRNA_production	SOCS3mRNA_production	log10	1e-05	1000	0.204173794466953	1	parameterScaleUniform	
+STAT5_phosphorylation	STAT5_phosphorylation	log10	1e-05	1000	0.0190546071796325	1	parameterScaleUniform	
+init_Rec_i	init_Rec_i	log10	1e-05	1000	208.929613085404	1	parameterScaleUniform	
+pJAK2_dephosphorylation	pJAK2_dephosphorylation	log10	1e-05	1000	0.000263026799189538	1	parameterScaleUniform	
+pRec_degradation	pRec_degradation	log10	1e-05	1000	0.361409862639613	1	parameterScaleUniform	
+pRec_intern	pRec_intern	log10	1e-05	1000	0.532108259266794	1	parameterScaleUniform	
+pSTAT5_dephosphorylation	pSTAT5_dephosphorylation	log10	1e-05	1000	0.000141253754462275	1	parameterScaleUniform	
+sd1_JAK2_Obs	sd1_JAK2_Obs	log10	0.001	100	0.107718426297427	1	parameterScaleUniform	
+sd1_Rec_Obs	sd1_Rec_Obs	log10	0.0001	10	0.0321514082483269	1	parameterScaleUniform	
+sd1_Rec_i_Obs	sd1_Rec_i_Obs	log10	0.1	10000	12.5141109180239	1	parameterScaleUniform	
+sd1_STAT5_Obs	sd1_STAT5_Obs	log10	0.01	1000	5.29066179268306	1	parameterScaleUniform	
+sd1_p_IL13_Rec_i_Obs	sd1_p_IL13_Rec_i_Obs	log10	1e-05	1	0.00121310948952092	1	parameterScaleUniform	
+sd2_STAT5_Obs	sd2_STAT5_Obs	log10	0.01	1000	6.90001444623353	1	parameterScaleUniform	
+sd2_p_IL13_Rec_i_Obs	sd2_p_IL13_Rec_i_Obs	log10	0.0001	10	0.01472651553948	1	parameterScaleUniform	

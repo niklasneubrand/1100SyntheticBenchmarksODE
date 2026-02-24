@@ -1,0 +1,26 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+k1a	k1a	log10	1e-06	501187.233627272	0.154881661891248	1	parameterScaleUniform	
+k1aBasic	k1aBasic	log10	1e-06	501187.233627272	0.000660693448007596	1	parameterScaleUniform	
+k1b	k1b	log10	1e-06	501187.233627272	0.0954992586021436	1	parameterScaleUniform	
+k1c	k1c	log10	1e-06	501187.233627272	0.0512861383991365	1	parameterScaleUniform	
+k1d	k1d	log10	1e-06	501187.233627272	251188.643150958	1	parameterScaleUniform	
+k1e	k1e	log10	1e-06	501187.233627272	1.25892541179417e-06	1	parameterScaleUniform	
+k1f	k1f	log10	1e-06	12589254.1179417	870963.589956081	1	parameterScaleUniform	
+k1g	k1g	log10	1e-06	501187.233627272	1174.89755493953	1	parameterScaleUniform	
+k1r	k1r	log10	1e-06	501187.233627272	0.0380189396320561	1	parameterScaleUniform	
+k21	k21	log10	1e-06	501187.233627272	3.6897759857015	1	parameterScaleUniform	
+k22	k22	log10	1e-06	501187.233627272	676.082975391982	1	parameterScaleUniform	
+k3	k3	log10	1e-06	501187.233627272	4.36515832240166e-05	1	parameterScaleUniform	
+km2	km2	log10	1e-06	501187.233627272	0.663743070401909	1	parameterScaleUniform	
+km3	km3	log10	1e-06	501187.233627272	0.831380817915622	1	parameterScaleUniform	
+sd1_IRS_Obs	sd1_IRS_Obs	log10	0.001	100	0.840612802485085	1	parameterScaleUniform	
+sd1_IRSiP_Obs	sd1_IRSiP_Obs	log10	0.001	100	0.503651347237	1	parameterScaleUniform	
+sd1_IRp_Obs	sd1_IRp_Obs	log10	1e-09	0.0001	1.50383434796136e-07	1	parameterScaleUniform	
+sd1_XX_Obs	sd1_XX_Obs	log10	0.01	1000	1.36810679525249	1	parameterScaleUniform	
+sd1_XXp_Obs	sd1_XXp_Obs	log10	1e-06	0.1	0.000249689339200737	1	parameterScaleUniform	
+sd2_IRS_Obs	sd2_IRS_Obs	log10	0.001	100	0.903027549623386	1	parameterScaleUniform	
+sd2_IRp_Obs	sd2_IRp_Obs	log10	1e-09	0.0001	1.40410633892045e-07	1	parameterScaleUniform	
+sd2_XX_Obs	sd2_XX_Obs	log10	0.01	1000	1.41318819200706	1	parameterScaleUniform	
+sd3_IRS_Obs	sd3_IRS_Obs	log10	0.01	1000	1.05850277276918	1	parameterScaleUniform	
+sd3_IRp_Obs	sd3_IRp_Obs	log10	1e-10	1e-05	7.58577575029184e-08	1	parameterScaleUniform	
+sd3_XX_Obs	sd3_XX_Obs	log10	0.01	1000	1.35956507581272	1	parameterScaleUniform	

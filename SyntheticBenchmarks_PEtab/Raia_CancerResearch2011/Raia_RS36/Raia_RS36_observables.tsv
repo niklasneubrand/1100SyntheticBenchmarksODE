@@ -1,0 +1,11 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	DecoyR + Rec + SOCS3 + STAT5 + pJAK2	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	DecoyR + Rec + SOCS3 + STAT5 + pJAK2	lin	sd2_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	IL13_DecoyR + Rec_i + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	IL13_DecoyR + Rec_i + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	IL13_DecoyR + Rec_i + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	IL13_DecoyR + Rec_i + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i	lin	sd4_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	CD274mRNA + IL13_DecoyR + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i	lin	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	CD274mRNA + IL13_DecoyR + pSTAT5 + p_IL13_Rec + p_IL13_Rec_i	lin	sd2_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	CD274mRNA + IL13_DecoyR + JAK2 + pSTAT5 + p_IL13_Rec	lin	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	CD274mRNA + IL13_DecoyR + JAK2 + pSTAT5 + p_IL13_Rec	lin	sd2_Compound_4_Obs	normal

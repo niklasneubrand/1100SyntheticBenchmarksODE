@@ -1,0 +1,25 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+k1a	k1a	log10	1e-06	501187.233627272	0.1	1	parameterScaleUniform	
+k1aBasic	k1aBasic	log10	1e-06	501187.233627272	0.000316227766016838	1	parameterScaleUniform	
+k1b	k1b	log10	1e-06	501187.233627272	0.187499450806742	1	parameterScaleUniform	
+k1c	k1c	log10	1e-06	501187.233627272	0.0977237220955811	1	parameterScaleUniform	
+k1d	k1d	log10	1e-06	7943282.34724282	562341.325190349	1	parameterScaleUniform	
+k1e	k1e	log10	5.01187233627272e-08	501187.233627272	7.41310241300918e-07	1	parameterScaleUniform	
+k1f	k1f	log10	1e-06	501187.233627272	501187.233627272	1	parameterScaleUniform	
+k1g	k1g	log10	1e-06	501187.233627272	1584.89319246111	1	parameterScaleUniform	
+k1r	k1r	log10	1e-06	501187.233627272	0.0371535229097173	1	parameterScaleUniform	
+k21	k21	log10	1e-06	501187.233627272	1.26182753459067	1	parameterScaleUniform	
+k22	k22	log10	1e-06	501187.233627272	741.310241300918	1	parameterScaleUniform	
+k3	k3	log10	1e-06	501187.233627272	6.91830970918936e-05	1	parameterScaleUniform	
+km2	km2	log10	1e-06	501187.233627272	1.17814840600293	1	parameterScaleUniform	
+km3	km3	log10	1e-06	501187.233627272	0.375837404288444	1	parameterScaleUniform	
+offset1_IR_Obs	offset1_IR_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset2_IR_Obs	offset2_IR_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+offset3_IR_Obs	offset3_IR_Obs	log10	0.0001	1	0.01	1	parameterScaleUniform	
+scale1_IR_Obs	scale1_IR_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale2_IR_Obs	scale2_IR_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+scale3_IR_Obs	scale3_IR_Obs	log10	1e-05	100000	1	1	parameterScaleUniform	
+sd1_IR_Obs	sd1_IR_Obs	log10	0.001	100	0.227049212537739	1	parameterScaleUniform	
+sd1_IRi_Obs	sd1_IRi_Obs	log10	0.001	100	0.217575504896043	1	parameterScaleUniform	
+sd2_IR_Obs	sd2_IR_Obs	log10	0.001	100	0.227950211766932	1	parameterScaleUniform	
+sd3_IR_Obs	sd3_IR_Obs	log10	0.001	100	0.216585810172013	1	parameterScaleUniform	

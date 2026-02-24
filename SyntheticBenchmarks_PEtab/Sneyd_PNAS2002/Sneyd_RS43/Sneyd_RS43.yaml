@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Sneyd_RS43_parameters.tsv
+problems:
+  - sbml_files:
+    - Sneyd_RS43_model.xml
+    observable_files:
+    - Sneyd_RS43_observables.tsv
+    condition_files:
+    - Sneyd_RS43_conditions.tsv
+    measurement_files:
+    - Sneyd_RS43_measurements.tsv

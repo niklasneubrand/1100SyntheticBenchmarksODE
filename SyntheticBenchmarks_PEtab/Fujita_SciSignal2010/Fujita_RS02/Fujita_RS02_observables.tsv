@@ -1,0 +1,19 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+S6_Obs_1	S6_Obs	S6	log10	sd1_S6_Obs	normal
+S6_Obs_2	S6_Obs	S6	log10	sd2_S6_Obs	normal
+S6_Obs_3	S6_Obs	S6	log10	sd3_S6_Obs	normal
+S6_Obs_4	S6_Obs	S6	log10	sd4_S6_Obs	normal
+S6_Obs_5	S6_Obs	S6	log10	sd5_S6_Obs	normal
+S6_Obs_6	S6_Obs	S6	log10	sd6_S6_Obs	normal
+pAkt_Obs_1	pAkt_Obs	offset1_pAkt_Obs + pAkt*scale1_pAkt_Obs	log10	sd1_pAkt_Obs	normal
+pAkt_Obs_2	pAkt_Obs	offset2_pAkt_Obs + pAkt*scale2_pAkt_Obs	log10	sd2_pAkt_Obs	normal
+pAkt_Obs_3	pAkt_Obs	offset3_pAkt_Obs + pAkt*scale3_pAkt_Obs	log10	sd3_pAkt_Obs	normal
+pAkt_Obs_4	pAkt_Obs	offset4_pAkt_Obs + pAkt*scale4_pAkt_Obs	log10	sd4_pAkt_Obs	normal
+pAkt_Obs_5	pAkt_Obs	offset5_pAkt_Obs + pAkt*scale5_pAkt_Obs	log10	sd5_pAkt_Obs	normal
+pAkt_Obs_6	pAkt_Obs	offset6_pAkt_Obs + pAkt*scale6_pAkt_Obs	log10	sd6_pAkt_Obs	normal
+pEGFR_Akt_Obs_1	pEGFR_Akt_Obs	offset1_pEGFR_Akt_Obs + pEGFR_Akt*scale1_pEGFR_Akt_Obs	log10	sd1_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_2	pEGFR_Akt_Obs	offset2_pEGFR_Akt_Obs + pEGFR_Akt*scale2_pEGFR_Akt_Obs	log10	sd2_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_3	pEGFR_Akt_Obs	offset3_pEGFR_Akt_Obs + pEGFR_Akt*scale3_pEGFR_Akt_Obs	log10	sd3_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_4	pEGFR_Akt_Obs	offset4_pEGFR_Akt_Obs + pEGFR_Akt*scale4_pEGFR_Akt_Obs	log10	sd4_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_5	pEGFR_Akt_Obs	offset5_pEGFR_Akt_Obs + pEGFR_Akt*scale5_pEGFR_Akt_Obs	log10	sd5_pEGFR_Akt_Obs	normal
+pEGFR_Akt_Obs_6	pEGFR_Akt_Obs	offset6_pEGFR_Akt_Obs + pEGFR_Akt*scale6_pEGFR_Akt_Obs	log10	sd6_pEGFR_Akt_Obs	normal

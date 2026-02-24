@@ -1,0 +1,25 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+IPR_O_Obs_1	IPR_O_Obs	offset1_IPR_O_Obs + IPR_O*scale1_IPR_O_Obs	log10	sd1_IPR_O_Obs	normal
+IPR_O_Obs_2	IPR_O_Obs	offset2_IPR_O_Obs + IPR_O*scale2_IPR_O_Obs	log10	sd2_IPR_O_Obs	normal
+IPR_O_Obs_3	IPR_O_Obs	offset3_IPR_O_Obs + IPR_O*scale3_IPR_O_Obs	log10	sd3_IPR_O_Obs	normal
+IPR_O_Obs_4	IPR_O_Obs	offset4_IPR_O_Obs + IPR_O*scale4_IPR_O_Obs	log10	sd4_IPR_O_Obs	normal
+IPR_O_Obs_5	IPR_O_Obs	offset5_IPR_O_Obs + IPR_O*scale5_IPR_O_Obs	log10	sd5_IPR_O_Obs	normal
+IPR_O_Obs_6	IPR_O_Obs	offset6_IPR_O_Obs + IPR_O*scale6_IPR_O_Obs	log10	sd6_IPR_O_Obs	normal
+IPR_O_Obs_7	IPR_O_Obs	offset7_IPR_O_Obs + IPR_O*scale7_IPR_O_Obs	log10	sd7_IPR_O_Obs	normal
+IPR_O_Obs_8	IPR_O_Obs	offset8_IPR_O_Obs + IPR_O*scale8_IPR_O_Obs	log10	sd8_IPR_O_Obs	normal
+IPR_R_Obs_1	IPR_R_Obs	IPR_R	log10	sd1_IPR_R_Obs	normal
+IPR_R_Obs_2	IPR_R_Obs	IPR_R	log10	sd2_IPR_R_Obs	normal
+IPR_R_Obs_3	IPR_R_Obs	IPR_R	log10	sd3_IPR_R_Obs	normal
+IPR_R_Obs_4	IPR_R_Obs	IPR_R	log10	sd4_IPR_R_Obs	normal
+IPR_R_Obs_5	IPR_R_Obs	IPR_R	log10	sd5_IPR_R_Obs	normal
+IPR_R_Obs_6	IPR_R_Obs	IPR_R	log10	sd6_IPR_R_Obs	normal
+IPR_R_Obs_7	IPR_R_Obs	IPR_R	log10	sd7_IPR_R_Obs	normal
+IPR_R_Obs_8	IPR_R_Obs	IPR_R	log10	sd8_IPR_R_Obs	normal
+IPR_S_Obs_1	IPR_S_Obs	offset1_IPR_S_Obs + IPR_S*scale1_IPR_S_Obs	log10	sd1_IPR_S_Obs	normal
+IPR_S_Obs_2	IPR_S_Obs	offset2_IPR_S_Obs + IPR_S*scale2_IPR_S_Obs	log10	sd2_IPR_S_Obs	normal
+IPR_S_Obs_3	IPR_S_Obs	offset3_IPR_S_Obs + IPR_S*scale3_IPR_S_Obs	log10	sd3_IPR_S_Obs	normal
+IPR_S_Obs_4	IPR_S_Obs	offset4_IPR_S_Obs + IPR_S*scale4_IPR_S_Obs	log10	sd4_IPR_S_Obs	normal
+IPR_S_Obs_5	IPR_S_Obs	offset5_IPR_S_Obs + IPR_S*scale5_IPR_S_Obs	log10	sd5_IPR_S_Obs	normal
+IPR_S_Obs_6	IPR_S_Obs	offset6_IPR_S_Obs + IPR_S*scale6_IPR_S_Obs	log10	sd6_IPR_S_Obs	normal
+IPR_S_Obs_7	IPR_S_Obs	offset7_IPR_S_Obs + IPR_S*scale7_IPR_S_Obs	log10	sd7_IPR_S_Obs	normal
+IPR_S_Obs_8	IPR_S_Obs	offset8_IPR_S_Obs + IPR_S*scale8_IPR_S_Obs	log10	sd8_IPR_S_Obs	normal

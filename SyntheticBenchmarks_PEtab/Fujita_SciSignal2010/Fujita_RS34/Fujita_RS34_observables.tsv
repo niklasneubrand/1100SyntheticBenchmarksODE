@@ -1,0 +1,19 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	Akt + EGFR + pAkt + pEGFR + pEGFR_Akt	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	Akt + EGFR + pAkt + pEGFR + pEGFR_Akt	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	Akt + EGFR + pAkt + pEGFR + pEGFR_Akt	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	Akt + EGFR + pAkt + pEGFR + pEGFR_Akt	lin	sd4_Compound_1_Obs	normal
+Compound_1_Obs_5	Compound_1_Obs	Akt + EGFR + pAkt + pEGFR + pEGFR_Akt	lin	sd5_Compound_1_Obs	normal
+Compound_1_Obs_6	Compound_1_Obs	Akt + EGFR + pAkt + pEGFR + pEGFR_Akt	lin	sd6_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	EGF_EGFR + S6 + pAkt + pEGFR + pEGFR_Akt	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	EGF_EGFR + S6 + pAkt + pEGFR + pEGFR_Akt	lin	sd2_Compound_2_Obs	normal
+Compound_2_Obs_3	Compound_2_Obs	EGF_EGFR + S6 + pAkt + pEGFR + pEGFR_Akt	lin	sd3_Compound_2_Obs	normal
+Compound_2_Obs_4	Compound_2_Obs	EGF_EGFR + S6 + pAkt + pEGFR + pEGFR_Akt	lin	sd4_Compound_2_Obs	normal
+Compound_2_Obs_5	Compound_2_Obs	EGF_EGFR + S6 + pAkt + pEGFR + pEGFR_Akt	lin	sd5_Compound_2_Obs	normal
+Compound_2_Obs_6	Compound_2_Obs	EGF_EGFR + S6 + pAkt + pEGFR + pEGFR_Akt	lin	sd6_Compound_2_Obs	normal
+pAkt_S6_Obs_1	pAkt_S6_Obs	pAkt_S6	lin	sd1_pAkt_S6_Obs	normal
+pAkt_S6_Obs_2	pAkt_S6_Obs	pAkt_S6	lin	sd2_pAkt_S6_Obs	normal
+pAkt_S6_Obs_3	pAkt_S6_Obs	pAkt_S6	lin	sd3_pAkt_S6_Obs	normal
+pAkt_S6_Obs_4	pAkt_S6_Obs	pAkt_S6	lin	sd4_pAkt_S6_Obs	normal
+pAkt_S6_Obs_5	pAkt_S6_Obs	pAkt_S6	lin	sd5_pAkt_S6_Obs	normal
+pAkt_S6_Obs_6	pAkt_S6_Obs	pAkt_S6	lin	sd6_pAkt_S6_Obs	normal

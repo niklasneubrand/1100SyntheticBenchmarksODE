@@ -1,0 +1,22 @@
+parameterId	parameterName	parameterScale	lowerBound	upperBound	nominalValue	estimate	objectivePriorType	objectivePriorParameters
+KM	KM	log10	0.001	100000	8.33681184619634	1	parameterScaleUniform	
+eff	eff	log10	1	1000	19.4984459975805	1	parameterScaleUniform	
+eff_GFP	eff_GFP	log10	1	1000	1	0	parameterScaleUniform	
+init_GFP	init_GFP	log10	1e-05	1000	0.00208929613085404	1	parameterScaleUniform	
+init_GFP_mRNA	init_GFP_mRNA	log10	1e-05	1000	1.69824365246175e-05	1	parameterScaleUniform	
+init_X_mRNA	init_X_mRNA	log10	1e-05	1000	309.029543251359	1	parameterScaleUniform	
+init_X_protein	init_X_protein	log10	1e-05	1000	0.909284943853064	1	parameterScaleUniform	
+init_Y_mRNA	init_Y_mRNA	log10	1e-05	7943.28234724281	1148.15362149688	1	parameterScaleUniform	
+init_Y_protein	init_Y_protein	log10	1e-05	1000	707.945784384138	1	parameterScaleUniform	
+init_Z_mRNA	init_Z_mRNA	log10	1e-05	6309.57344480193	1071.51930523761	1	parameterScaleUniform	
+init_Z_protein	init_Z_protein	log10	1e-05	1000	6.16595001861482e-05	1	parameterScaleUniform	
+n_Hill	n_Hill	log10	1e-05	1000	1.99986186963274	0	parameterScaleUniform	
+sd1_GFP_Obs	sd1_GFP_Obs	log10	0.01	1000	4.69137338834597	1	parameterScaleUniform	
+sd1_X_mRNA_Obs	sd1_X_mRNA_Obs	log10	0.01	1000	2.88058039109113	1	parameterScaleUniform	
+sd1_Y_protein_Obs	sd1_Y_protein_Obs	log10	1	100000	298.74455606053	1	parameterScaleUniform	
+tau_mRNA	tau_mRNA	log10	0.01	1000	0.519995996533516	1	parameterScaleUniform	
+tau_mRNA_GFP	tau_mRNA_GFP	log10	0.01	1000	0.0125892541179417	1	parameterScaleUniform	
+tau_prot	tau_prot	log10	0.01	1000	26.3026799189538	1	parameterScaleUniform	
+tau_prot_GFP	tau_prot_GFP	log10	1	10000	50.1187233627272	1	parameterScaleUniform	
+tps_active	tps_active	log10	0.001	100000	151.356124843621	1	parameterScaleUniform	
+tps_repr	tps_repr	log10	7.94328234724282e-05	100000	0.000549540873857625	1	parameterScaleUniform	

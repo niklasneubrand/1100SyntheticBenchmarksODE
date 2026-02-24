@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(X_protein + Y_protein)	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	offset1_Compound_2_Obs + scale1_Compound_2_Obs*(X_protein + Z_protein)	log10	sd1_Compound_2_Obs	normal
+Compound_3_Obs	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(X_protein + Z_mRNA)	log10	sd1_Compound_3_Obs	normal
+Compound_4_Obs	Compound_4_Obs	GFP_mRNA + X_mRNA	log10	sd1_Compound_4_Obs	normal
+Compound_5_Obs	Compound_5_Obs	Y_mRNA + Z_mRNA	log10	sd1_Compound_5_Obs	normal

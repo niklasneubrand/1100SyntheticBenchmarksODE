@@ -1,0 +1,11 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Compound_1_Obs	D1_Borghans_RS50_TC001	1.38514898510241	0			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	2.40169994414052	0.15			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	2.98177030961115	0.25			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	1.45461342377795	0.4			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	0.982350236603113	0.55			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	1.03893821958152	0.7			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	0.883409570832596	0.85			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	1.04464100767748	1			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	0.929201221559961	1.5			normal
+Compound_1_Obs	D1_Borghans_RS50_TC001	0.806573877709718	2			normal

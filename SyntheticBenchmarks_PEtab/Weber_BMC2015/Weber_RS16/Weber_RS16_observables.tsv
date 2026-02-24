@@ -1,0 +1,6 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+PKDDAGa_Obs_1	PKDDAGa_Obs	PKDDAGa	lin	sd1_PKDDAGa_Obs	normal
+PKDDAGa_Obs_2	PKDDAGa_Obs	PKDDAGa	lin	sd2_PKDDAGa_Obs	normal
+PKD_Obs_1	PKD_Obs	PKD	lin	sd1_PKD_Obs	normal
+PKD_Obs_2	PKD_Obs	PKD	lin	sd2_PKD_Obs	normal
+PKD_Obs_3	PKD_Obs	PKD	lin	sd3_PKD_Obs	normal

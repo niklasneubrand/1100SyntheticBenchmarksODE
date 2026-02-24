@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Bruno_RS38_parameters.tsv
+problems:
+  - sbml_files:
+    - Bruno_RS38_model.xml
+    observable_files:
+    - Bruno_RS38_observables.tsv
+    condition_files:
+    - Bruno_RS38_conditions.tsv
+    measurement_files:
+    - Bruno_RS38_measurements.tsv

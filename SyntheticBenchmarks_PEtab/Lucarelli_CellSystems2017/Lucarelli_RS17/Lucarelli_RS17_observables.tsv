@@ -1,0 +1,13 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(TGFb + geneK + pS3)	log10	sd1_Compound_1_Obs	normal
+Compound_2_Obs	Compound_2_Obs	S2_S4_S4 + TGFb_pRec + ppS3_S4_S4	log10	sd1_Compound_2_Obs	normal
+Compound_3_Obs_1	Compound_3_Obs	offset1_Compound_3_Obs + scale1_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd1_Compound_3_Obs	normal
+Compound_3_Obs_2	Compound_3_Obs	offset2_Compound_3_Obs + scale2_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd2_Compound_3_Obs	normal
+Compound_3_Obs_3	Compound_3_Obs	offset3_Compound_3_Obs + scale3_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd3_Compound_3_Obs	normal
+Compound_3_Obs_4	Compound_3_Obs	offset4_Compound_3_Obs + scale4_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd4_Compound_3_Obs	normal
+Compound_3_Obs_5	Compound_3_Obs	offset5_Compound_3_Obs + scale5_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd5_Compound_3_Obs	normal
+Compound_3_Obs_6	Compound_3_Obs	offset6_Compound_3_Obs + scale6_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd6_Compound_3_Obs	normal
+Compound_3_Obs_7	Compound_3_Obs	offset7_Compound_3_Obs + scale7_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd7_Compound_3_Obs	normal
+Compound_3_Obs_8	Compound_3_Obs	offset8_Compound_3_Obs + scale8_Compound_3_Obs*(S4_S4_S4 + TGFb_pRec + ppS2_ppS3_ppS3)	log10	sd8_Compound_3_Obs	normal
+Compound_4_Obs_1	Compound_4_Obs	scale1_Compound_4_Obs*(S4 + ppS2_ppS2_S4 + ppS3_ppS3_ppS3)	log10	sd1_Compound_4_Obs	normal
+Compound_4_Obs_2	Compound_4_Obs	scale2_Compound_4_Obs*(S4 + ppS2_ppS2_S4 + ppS3_ppS3_ppS3)	log10	sd2_Compound_4_Obs	normal

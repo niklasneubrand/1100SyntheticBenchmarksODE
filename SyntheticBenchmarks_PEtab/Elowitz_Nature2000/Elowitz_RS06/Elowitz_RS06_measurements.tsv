@@ -1,0 +1,10 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	8.72218929034029e-06	0			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	1.15452880918129e-08	6			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	8.44002378354409e-08	10			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	-4.61055257532286e-08	20			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	1.34169044098415e-07	25			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	2.3408803531416e-08	35			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	7.45290906583376e-08	45			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	-1.61731953781999e-08	55			normal
+GFP_mRNA_Obs	D1_Elowitz_RS06_TC001	-3.85472931104188e-08	70			normal

@@ -1,0 +1,9 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+Compound_1_Obs_1	Compound_1_Obs	IL13_Rec + JAK2 + Rec + SOCS3 + SOCS3mRNA	lin	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	IL13_Rec + JAK2 + Rec + SOCS3 + SOCS3mRNA	lin	sd2_Compound_1_Obs	normal
+Compound_1_Obs_3	Compound_1_Obs	IL13_Rec + JAK2 + Rec + SOCS3 + SOCS3mRNA	lin	sd3_Compound_1_Obs	normal
+Compound_1_Obs_4	Compound_1_Obs	IL13_Rec + JAK2 + Rec + SOCS3 + SOCS3mRNA	lin	sd4_Compound_1_Obs	normal
+Compound_2_Obs_1	Compound_2_Obs	scale1_Compound_2_Obs*(IL13_Rec + Rec + STAT5 + pJAK2 + pSTAT5)	lin	sd1_Compound_2_Obs	normal
+Compound_2_Obs_2	Compound_2_Obs	scale2_Compound_2_Obs*(IL13_Rec + Rec + STAT5 + pJAK2 + pSTAT5)	lin	sd2_Compound_2_Obs	normal
+pSTAT5_Obs_1	pSTAT5_Obs	pSTAT5*scale1_pSTAT5_Obs	lin	sd1_pSTAT5_Obs	normal
+pSTAT5_Obs_2	pSTAT5_Obs	pSTAT5*scale2_pSTAT5_Obs	lin	sd2_pSTAT5_Obs	normal

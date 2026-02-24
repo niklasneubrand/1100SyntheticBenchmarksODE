@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="Beer_RS22">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="medium" spatialDimensions="3" size="1" units="ml" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Bac" name="Bac" compartment="medium" initialConcentration="1" substanceUnits="au" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Glu" name="Glu" compartment="medium" initialConcentration="1" substanceUnits="au" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cGlu" name="cGlu" compartment="medium" initialConcentration="1" substanceUnits="au" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Ind" name="Ind" compartment="medium" initialConcentration="1" substanceUnits="au" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="Bacmax" name="Bacmax" constant="true"/>
+      <parameter id="Beta" name="Beta" constant="true"/>
+      <parameter id="init_Bac" name="init_Bac" value="0.0263026799189538" constant="true"/>
+      <parameter id="init_Glu" name="init_Glu" constant="true"/>
+      <parameter id="init_Ind" name="init_Ind" constant="true"/>
+      <parameter id="init_cGlu" name="init_cGlu" constant="true"/>
+      <parameter id="kdegi" name="kdegi" constant="true"/>
+      <parameter id="kdim" name="kdim" constant="true"/>
+      <parameter id="ksyn" name="ksyn" constant="true"/>
+      <parameter id="tau" name="tau" constant="true"/>
+      <parameter id="lag" name="lag" value="0" units="units" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="Bac">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_Bac </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Glu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 10 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="cGlu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Ind">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="lag">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <piecewise>
+            <piece>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <lt/>
+                <apply>
+                  <minus/>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  <ci> tau </ci>
+                </apply>
+                <cn type="integer"> 0 </cn>
+              </apply>
+            </piece>
+            <otherwise>
+              <cn type="integer"> 1 </cn>
+            </otherwise>
+          </piecewise>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="reaction1" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Bac" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Bac"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> medium </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> Bac </ci>
+                    <ci> Beta </ci>
+                    <ci> lag </ci>
+                    <apply>
+                      <minus/>
+                      <ci> Bac </ci>
+                      <ci> Bacmax </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Bacmax </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction2" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Glu" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Bac"/>
+          <modifierSpeciesReference species="Glu"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> medium </ci>
+              <apply>
+                <minus/>
+                <ci> Bac </ci>
+              </apply>
+              <ci> Glu </ci>
+              <ci> ksyn </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction3" reversible="false">
+        <listOfProducts>
+          <speciesReference species="cGlu" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Bac"/>
+          <modifierSpeciesReference species="Glu"/>
+          <modifierSpeciesReference species="cGlu"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> medium </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Bac </ci>
+                  <ci> Glu </ci>
+                  <ci> ksyn </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <power/>
+                    <ci> cGlu </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <ci> kdim </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction4" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Ind" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Ind"/>
+          <modifierSpeciesReference species="cGlu"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> medium </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <power/>
+                    <ci> cGlu </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                  <ci> kdim </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Ind </ci>
+                  <ci> kdegi </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

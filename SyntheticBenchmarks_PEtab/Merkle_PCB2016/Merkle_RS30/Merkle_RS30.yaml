@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Merkle_RS30_parameters.tsv
+problems:
+  - sbml_files:
+    - Merkle_RS30_model.xml
+    observable_files:
+    - Merkle_RS30_observables.tsv
+    condition_files:
+    - Merkle_RS30_conditions.tsv
+    measurement_files:
+    - Merkle_RS30_measurements.tsv

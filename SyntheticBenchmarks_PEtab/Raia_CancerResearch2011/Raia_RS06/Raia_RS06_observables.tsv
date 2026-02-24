@@ -1,0 +1,10 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+DecoyR_Obs	DecoyR_Obs	DecoyR	lin	sd1_DecoyR_Obs	normal
+IL13_DecoyR_Obs_1	IL13_DecoyR_Obs	IL13_DecoyR	lin	sd1_IL13_DecoyR_Obs	normal
+IL13_DecoyR_Obs_2	IL13_DecoyR_Obs	IL13_DecoyR	lin	sd2_IL13_DecoyR_Obs	normal
+IL13_Rec_Obs_1	IL13_Rec_Obs	IL13_Rec	lin	sd1_IL13_Rec_Obs	normal
+IL13_Rec_Obs_2	IL13_Rec_Obs	IL13_Rec	lin	sd2_IL13_Rec_Obs	normal
+Rec_Obs	Rec_Obs	Rec	lin	sd1_Rec_Obs	normal
+Rec_i_Obs	Rec_i_Obs	Rec_i	lin	sd1_Rec_i_Obs	normal
+p_IL13_Rec_i_Obs_1	p_IL13_Rec_i_Obs	p_IL13_Rec_i	lin	sd1_p_IL13_Rec_i_Obs	normal
+p_IL13_Rec_i_Obs_2	p_IL13_Rec_i_Obs	p_IL13_Rec_i	lin	sd2_p_IL13_Rec_i_Obs	normal

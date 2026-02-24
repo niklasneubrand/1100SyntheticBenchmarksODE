@@ -1,0 +1,27 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	296.240341676591	0			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	-0.260056190756612	25			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	45			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	-1.16431714728345	50			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	70			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	-0.991765226293335	75			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	-0.224289611712785	100			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	2.22278871182833	150			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	-1.16971887975187	200			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	-0.0609385106818542	250			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	3.34838449364262	300			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	350			normal
+X_mRNA_Obs	D1_Elowitz_RS05_TC001	1.81678591650923	400			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	386.4712838534	0			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	0.723469479203915	25			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	0.762084938651536	45			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	50			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	0.57805256466517	70			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	75			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	-0.778368472565848	100			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	0.624828131881759	150			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	5.55274210706434	200			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	1.17009184962849	250			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	300			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	1.35390414523752	350			normal
+Z_mRNA_Obs	D1_Elowitz_RS05_TC001	NaN	400			normal

@@ -1,0 +1,93 @@
+observableId	observableName	observableFormula	observableTransformation	noiseFormula	noiseDistribution
+CISRNA_Obs_1	CISRNA_Obs	CISRNA	log10	sd1_CISRNA_Obs	normal
+CISRNA_Obs_2	CISRNA_Obs	CISRNA	log10	sd2_CISRNA_Obs	normal
+CISRNA_Obs_3	CISRNA_Obs	CISRNA	log10	sd3_CISRNA_Obs	normal
+CISRNA_Obs_4	CISRNA_Obs	CISRNA	log10	sd4_CISRNA_Obs	normal
+CISRNA_Obs_5	CISRNA_Obs	CISRNA	log10	sd5_CISRNA_Obs	normal
+CISRNA_Obs_6	CISRNA_Obs	CISRNA	log10	sd6_CISRNA_Obs	normal
+CISRNA_Obs_7	CISRNA_Obs	CISRNA	log10	sd7_CISRNA_Obs	normal
+CIS_Obs	CIS_Obs	offset1_CIS_Obs + CIS*scale1_CIS_Obs	log10	sd1_CIS_Obs	normal
+CISnRNA1_Obs_1	CISnRNA1_Obs	offset1_CISnRNA1_Obs + CISnRNA1*scale1_CISnRNA1_Obs	log10	sd1_CISnRNA1_Obs	normal
+CISnRNA1_Obs_2	CISnRNA1_Obs	offset2_CISnRNA1_Obs + CISnRNA1*scale2_CISnRNA1_Obs	log10	sd2_CISnRNA1_Obs	normal
+CISnRNA2_Obs_1	CISnRNA2_Obs	offset1_CISnRNA2_Obs + CISnRNA2*scale1_CISnRNA2_Obs	log10	sd1_CISnRNA2_Obs	normal
+CISnRNA2_Obs_2	CISnRNA2_Obs	offset2_CISnRNA2_Obs + CISnRNA2*scale2_CISnRNA2_Obs	log10	sd2_CISnRNA2_Obs	normal
+CISnRNA2_Obs_3	CISnRNA2_Obs	offset3_CISnRNA2_Obs + CISnRNA2*scale3_CISnRNA2_Obs	log10	sd3_CISnRNA2_Obs	normal
+CISnRNA3_Obs_1	CISnRNA3_Obs	CISnRNA3	log10	sd1_CISnRNA3_Obs	normal
+CISnRNA3_Obs_2	CISnRNA3_Obs	CISnRNA3	log10	sd2_CISnRNA3_Obs	normal
+CISnRNA3_Obs_3	CISnRNA3_Obs	CISnRNA3	log10	sd3_CISnRNA3_Obs	normal
+CISnRNA3_Obs_4	CISnRNA3_Obs	CISnRNA3	log10	sd4_CISnRNA3_Obs	normal
+CISnRNA3_Obs_5	CISnRNA3_Obs	CISnRNA3	log10	sd5_CISnRNA3_Obs	normal
+CISnRNA3_Obs_6	CISnRNA3_Obs	CISnRNA3	log10	sd6_CISnRNA3_Obs	normal
+CISnRNA3_Obs_7	CISnRNA3_Obs	CISnRNA3	log10	sd7_CISnRNA3_Obs	normal
+CISnRNA4_Obs_1	CISnRNA4_Obs	offset1_CISnRNA4_Obs + CISnRNA4*scale1_CISnRNA4_Obs	log10	sd1_CISnRNA4_Obs	normal
+CISnRNA4_Obs_2	CISnRNA4_Obs	offset2_CISnRNA4_Obs + CISnRNA4*scale2_CISnRNA4_Obs	log10	sd2_CISnRNA4_Obs	normal
+CISnRNA4_Obs_3	CISnRNA4_Obs	offset3_CISnRNA4_Obs + CISnRNA4*scale3_CISnRNA4_Obs	log10	sd3_CISnRNA4_Obs	normal
+CISnRNA4_Obs_4	CISnRNA4_Obs	offset4_CISnRNA4_Obs + CISnRNA4*scale4_CISnRNA4_Obs	log10	sd4_CISnRNA4_Obs	normal
+CISnRNA4_Obs_5	CISnRNA4_Obs	offset5_CISnRNA4_Obs + CISnRNA4*scale5_CISnRNA4_Obs	log10	sd5_CISnRNA4_Obs	normal
+CISnRNA4_Obs_6	CISnRNA4_Obs	offset6_CISnRNA4_Obs + CISnRNA4*scale6_CISnRNA4_Obs	log10	sd6_CISnRNA4_Obs	normal
+CISnRNA4_Obs_7	CISnRNA4_Obs	offset7_CISnRNA4_Obs + CISnRNA4*scale7_CISnRNA4_Obs	log10	sd7_CISnRNA4_Obs	normal
+CISnRNA4_Obs_8	CISnRNA4_Obs	offset8_CISnRNA4_Obs + CISnRNA4*scale8_CISnRNA4_Obs	log10	sd8_CISnRNA4_Obs	normal
+CISnRNA5_Obs_1	CISnRNA5_Obs	offset1_CISnRNA5_Obs + CISnRNA5*scale1_CISnRNA5_Obs	log10	sd1_CISnRNA5_Obs	normal
+CISnRNA5_Obs_2	CISnRNA5_Obs	offset2_CISnRNA5_Obs + CISnRNA5*scale2_CISnRNA5_Obs	log10	sd2_CISnRNA5_Obs	normal
+Compound_1_Obs_1	Compound_1_Obs	offset1_Compound_1_Obs + scale1_Compound_1_Obs*(SHP1Act + STAT5)	log10	sd1_Compound_1_Obs	normal
+Compound_1_Obs_2	Compound_1_Obs	offset2_Compound_1_Obs + scale2_Compound_1_Obs*(SHP1Act + STAT5)	log10	sd2_Compound_1_Obs	normal
+EpoRJAK2_Obs_1	EpoRJAK2_Obs	offset1_EpoRJAK2_Obs + EpoRJAK2*scale1_EpoRJAK2_Obs	log10	sd1_EpoRJAK2_Obs	normal
+EpoRJAK2_Obs_2	EpoRJAK2_Obs	offset2_EpoRJAK2_Obs + EpoRJAK2*scale2_EpoRJAK2_Obs	log10	sd2_EpoRJAK2_Obs	normal
+EpoRpJAK2_Obs_1	EpoRpJAK2_Obs	offset1_EpoRpJAK2_Obs + EpoRpJAK2*scale1_EpoRpJAK2_Obs	log10	sd1_EpoRpJAK2_Obs	normal
+EpoRpJAK2_Obs_2	EpoRpJAK2_Obs	offset2_EpoRpJAK2_Obs + EpoRpJAK2*scale2_EpoRpJAK2_Obs	log10	sd2_EpoRpJAK2_Obs	normal
+EpoRpJAK2_Obs_3	EpoRpJAK2_Obs	offset3_EpoRpJAK2_Obs + EpoRpJAK2*scale3_EpoRpJAK2_Obs	log10	sd3_EpoRpJAK2_Obs	normal
+EpoRpJAK2_Obs_4	EpoRpJAK2_Obs	offset4_EpoRpJAK2_Obs + EpoRpJAK2*scale4_EpoRpJAK2_Obs	log10	sd4_EpoRpJAK2_Obs	normal
+EpoRpJAK2_Obs_5	EpoRpJAK2_Obs	offset5_EpoRpJAK2_Obs + EpoRpJAK2*scale5_EpoRpJAK2_Obs	log10	sd5_EpoRpJAK2_Obs	normal
+EpoRpJAK2_Obs_6	EpoRpJAK2_Obs	offset6_EpoRpJAK2_Obs + EpoRpJAK2*scale6_EpoRpJAK2_Obs	log10	sd6_EpoRpJAK2_Obs	normal
+SHP1Act_Obs_1	SHP1Act_Obs	offset1_SHP1Act_Obs + SHP1Act*scale1_SHP1Act_Obs	log10	sd1_SHP1Act_Obs	normal
+SHP1Act_Obs_2	SHP1Act_Obs	offset2_SHP1Act_Obs + SHP1Act*scale2_SHP1Act_Obs	log10	sd2_SHP1Act_Obs	normal
+SHP1Act_Obs_3	SHP1Act_Obs	offset3_SHP1Act_Obs + SHP1Act*scale3_SHP1Act_Obs	log10	sd3_SHP1Act_Obs	normal
+SHP1Act_Obs_4	SHP1Act_Obs	offset4_SHP1Act_Obs + SHP1Act*scale4_SHP1Act_Obs	log10	sd4_SHP1Act_Obs	normal
+SHP1Act_Obs_5	SHP1Act_Obs	offset5_SHP1Act_Obs + SHP1Act*scale5_SHP1Act_Obs	log10	sd5_SHP1Act_Obs	normal
+SHP1Act_Obs_6	SHP1Act_Obs	offset6_SHP1Act_Obs + SHP1Act*scale6_SHP1Act_Obs	log10	sd6_SHP1Act_Obs	normal
+SHP1_Obs_1	SHP1_Obs	offset1_SHP1_Obs + SHP1*scale1_SHP1_Obs	log10	sd1_SHP1_Obs	normal
+SHP1_Obs_2	SHP1_Obs	offset2_SHP1_Obs + SHP1*scale2_SHP1_Obs	log10	sd2_SHP1_Obs	normal
+SHP1_Obs_3	SHP1_Obs	offset3_SHP1_Obs + SHP1*scale3_SHP1_Obs	log10	sd3_SHP1_Obs	normal
+SHP1_Obs_4	SHP1_Obs	offset4_SHP1_Obs + SHP1*scale4_SHP1_Obs	log10	sd4_SHP1_Obs	normal
+SHP1_Obs_5	SHP1_Obs	offset5_SHP1_Obs + SHP1*scale5_SHP1_Obs	log10	sd5_SHP1_Obs	normal
+SHP1_Obs_6	SHP1_Obs	offset6_SHP1_Obs + SHP1*scale6_SHP1_Obs	log10	sd6_SHP1_Obs	normal
+SOCS3RNA_Obs_1	SOCS3RNA_Obs	SOCS3RNA	log10	sd1_SOCS3RNA_Obs	normal
+SOCS3RNA_Obs_2	SOCS3RNA_Obs	SOCS3RNA	log10	sd2_SOCS3RNA_Obs	normal
+SOCS3_Obs_1	SOCS3_Obs	offset1_SOCS3_Obs + SOCS3*scale1_SOCS3_Obs	log10	sd1_SOCS3_Obs	normal
+SOCS3_Obs_2	SOCS3_Obs	offset2_SOCS3_Obs + SOCS3*scale2_SOCS3_Obs	log10	sd2_SOCS3_Obs	normal
+SOCS3_Obs_3	SOCS3_Obs	offset3_SOCS3_Obs + SOCS3*scale3_SOCS3_Obs	log10	sd3_SOCS3_Obs	normal
+SOCS3nRNA1_Obs_1	SOCS3nRNA1_Obs	SOCS3nRNA1	log10	sd1_SOCS3nRNA1_Obs	normal
+SOCS3nRNA1_Obs_2	SOCS3nRNA1_Obs	SOCS3nRNA1	log10	sd2_SOCS3nRNA1_Obs	normal
+SOCS3nRNA1_Obs_3	SOCS3nRNA1_Obs	SOCS3nRNA1	log10	sd3_SOCS3nRNA1_Obs	normal
+SOCS3nRNA1_Obs_4	SOCS3nRNA1_Obs	SOCS3nRNA1	log10	sd4_SOCS3nRNA1_Obs	normal
+SOCS3nRNA1_Obs_5	SOCS3nRNA1_Obs	SOCS3nRNA1	log10	sd5_SOCS3nRNA1_Obs	normal
+SOCS3nRNA2_Obs	SOCS3nRNA2_Obs	offset1_SOCS3nRNA2_Obs + SOCS3nRNA2*scale1_SOCS3nRNA2_Obs	log10	sd1_SOCS3nRNA2_Obs	normal
+SOCS3nRNA3_Obs_1	SOCS3nRNA3_Obs	SOCS3nRNA3	log10	sd1_SOCS3nRNA3_Obs	normal
+SOCS3nRNA3_Obs_2	SOCS3nRNA3_Obs	SOCS3nRNA3	log10	sd2_SOCS3nRNA3_Obs	normal
+SOCS3nRNA3_Obs_3	SOCS3nRNA3_Obs	SOCS3nRNA3	log10	sd3_SOCS3nRNA3_Obs	normal
+SOCS3nRNA4_Obs	SOCS3nRNA4_Obs	offset1_SOCS3nRNA4_Obs + SOCS3nRNA4*scale1_SOCS3nRNA4_Obs	log10	sd1_SOCS3nRNA4_Obs	normal
+SOCS3nRNA5_Obs_1	SOCS3nRNA5_Obs	offset1_SOCS3nRNA5_Obs + SOCS3nRNA5*scale1_SOCS3nRNA5_Obs	log10	sd1_SOCS3nRNA5_Obs	normal
+SOCS3nRNA5_Obs_2	SOCS3nRNA5_Obs	offset2_SOCS3nRNA5_Obs + SOCS3nRNA5*scale2_SOCS3nRNA5_Obs	log10	sd2_SOCS3nRNA5_Obs	normal
+SOCS3nRNA5_Obs_3	SOCS3nRNA5_Obs	offset3_SOCS3nRNA5_Obs + SOCS3nRNA5*scale3_SOCS3nRNA5_Obs	log10	sd3_SOCS3nRNA5_Obs	normal
+STAT5_Obs	STAT5_Obs	offset1_STAT5_Obs + STAT5*scale1_STAT5_Obs	log10	sd1_STAT5_Obs	normal
+npSTAT5_Obs_1	npSTAT5_Obs	offset1_npSTAT5_Obs + npSTAT5*scale1_npSTAT5_Obs	log10	sd1_npSTAT5_Obs	normal
+npSTAT5_Obs_2	npSTAT5_Obs	offset2_npSTAT5_Obs + npSTAT5*scale2_npSTAT5_Obs	log10	sd2_npSTAT5_Obs	normal
+npSTAT5_Obs_3	npSTAT5_Obs	offset3_npSTAT5_Obs + npSTAT5*scale3_npSTAT5_Obs	log10	sd3_npSTAT5_Obs	normal
+npSTAT5_Obs_4	npSTAT5_Obs	offset4_npSTAT5_Obs + npSTAT5*scale4_npSTAT5_Obs	log10	sd4_npSTAT5_Obs	normal
+npSTAT5_Obs_5	npSTAT5_Obs	offset5_npSTAT5_Obs + npSTAT5*scale5_npSTAT5_Obs	log10	sd5_npSTAT5_Obs	normal
+npSTAT5_Obs_6	npSTAT5_Obs	offset6_npSTAT5_Obs + npSTAT5*scale6_npSTAT5_Obs	log10	sd6_npSTAT5_Obs	normal
+p12EpoRpJAK2_Obs_1	p12EpoRpJAK2_Obs	offset1_p12EpoRpJAK2_Obs + p12EpoRpJAK2*scale1_p12EpoRpJAK2_Obs	log10	sd1_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_2	p12EpoRpJAK2_Obs	offset2_p12EpoRpJAK2_Obs + p12EpoRpJAK2*scale2_p12EpoRpJAK2_Obs	log10	sd2_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_3	p12EpoRpJAK2_Obs	offset3_p12EpoRpJAK2_Obs + p12EpoRpJAK2*scale3_p12EpoRpJAK2_Obs	log10	sd3_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_4	p12EpoRpJAK2_Obs	offset4_p12EpoRpJAK2_Obs + p12EpoRpJAK2*scale4_p12EpoRpJAK2_Obs	log10	sd4_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_5	p12EpoRpJAK2_Obs	offset5_p12EpoRpJAK2_Obs + p12EpoRpJAK2*scale5_p12EpoRpJAK2_Obs	log10	sd5_p12EpoRpJAK2_Obs	normal
+p12EpoRpJAK2_Obs_6	p12EpoRpJAK2_Obs	offset6_p12EpoRpJAK2_Obs + p12EpoRpJAK2*scale6_p12EpoRpJAK2_Obs	log10	sd6_p12EpoRpJAK2_Obs	normal
+p1EpoRpJAK2_Obs_1	p1EpoRpJAK2_Obs	p1EpoRpJAK2	log10	sd1_p1EpoRpJAK2_Obs	normal
+p1EpoRpJAK2_Obs_2	p1EpoRpJAK2_Obs	p1EpoRpJAK2	log10	sd2_p1EpoRpJAK2_Obs	normal
+p2EpoRpJAK2_Obs	p2EpoRpJAK2_Obs	offset1_p2EpoRpJAK2_Obs + p2EpoRpJAK2*scale1_p2EpoRpJAK2_Obs	log10	sd1_p2EpoRpJAK2_Obs	normal
+pSTAT5_Obs_1	pSTAT5_Obs	offset1_pSTAT5_Obs + pSTAT5*scale1_pSTAT5_Obs	log10	sd1_pSTAT5_Obs	normal
+pSTAT5_Obs_2	pSTAT5_Obs	offset2_pSTAT5_Obs + pSTAT5*scale2_pSTAT5_Obs	log10	sd2_pSTAT5_Obs	normal
+pSTAT5_Obs_3	pSTAT5_Obs	offset3_pSTAT5_Obs + pSTAT5*scale3_pSTAT5_Obs	log10	sd3_pSTAT5_Obs	normal
+pSTAT5_Obs_4	pSTAT5_Obs	offset4_pSTAT5_Obs + pSTAT5*scale4_pSTAT5_Obs	log10	sd4_pSTAT5_Obs	normal
+pSTAT5_Obs_5	pSTAT5_Obs	offset5_pSTAT5_Obs + pSTAT5*scale5_pSTAT5_Obs	log10	sd5_pSTAT5_Obs	normal
+pSTAT5_Obs_6	pSTAT5_Obs	offset6_pSTAT5_Obs + pSTAT5*scale6_pSTAT5_Obs	log10	sd6_pSTAT5_Obs	normal

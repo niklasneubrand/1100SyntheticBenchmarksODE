@@ -1,0 +1,23 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+A_state_Obs	D1_Borghans_RS45_TC001	1.76628937055948	0			normal
+A_state_Obs	D1_Borghans_RS45_TC001	3.23429727728717	1.5			normal
+A_state_Obs	D1_Borghans_RS45_TC001	NaN	3			normal
+A_state_Obs	D1_Borghans_RS45_TC001	0.105855684218323	3.5			normal
+A_state_Obs	D1_Borghans_RS45_TC001	NaN	5			normal
+A_state_Obs	D1_Borghans_RS45_TC001	1.20925500646774	5.5			normal
+A_state_Obs	D1_Borghans_RS45_TC001	NaN	7			normal
+A_state_Obs	D1_Borghans_RS45_TC001	0.101118063272521	7.5			normal
+A_state_Obs	D1_Borghans_RS45_TC001	NaN	9.5			normal
+A_state_Obs	D1_Borghans_RS45_TC001	1.2513002035573	10			normal
+A_state_Obs	D1_Borghans_RS45_TC001	0.47087814568127	15			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	3.27896899589779	0			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	7.64954743268257	1.5			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	10.3444871903634	3			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	NaN	3.5			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	3.73996713679952	5			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	NaN	5.5			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	7.29020393151897	7			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	NaN	7.5			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	6.32608925627174	9.5			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	6.60869260440934	10			normal
+Compound_1_Obs	D1_Borghans_RS45_TC001	7.7636473444838	15			normal

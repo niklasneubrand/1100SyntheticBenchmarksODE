@@ -1,0 +1,12 @@
+observableId	simulationConditionId	measurement	time	observableParameters	noiseParameters	noiseDistribution
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	0.115616760162976	0			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	151.767121597622	30			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	124.118018949649	60			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	115.918148644102	90			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	81.2724121224175	150			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	38.5793904861519	200			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	25.0191429728655	250			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	11.7299185025921	300			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	3.31543450187168	400			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	1.83448917218168	450			normal
+Epo_EpoR_Obs	D1_Becker_RS42_TC001	0.66397952647139	550			normal

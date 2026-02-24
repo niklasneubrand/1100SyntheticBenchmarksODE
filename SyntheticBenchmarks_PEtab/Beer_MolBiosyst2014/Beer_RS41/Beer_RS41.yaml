@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: Beer_RS41_parameters.tsv
+problems:
+  - sbml_files:
+    - Beer_RS41_model.xml
+    observable_files:
+    - Beer_RS41_observables.tsv
+    condition_files:
+    - Beer_RS41_conditions.tsv
+    measurement_files:
+    - Beer_RS41_measurements.tsv
