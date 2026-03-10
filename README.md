@@ -5,8 +5,16 @@ We present a collection of 1100 synthetic benchmark problems that have been gene
 ## Contents:
 * `BaseModels`: Data2Dynamics (D2D) implementation of the 22 experimental modeling problems.
 * `HelperScripts`: Scripts and functions that have been used to apply the algorithm on our specific compute cluster. Not needed for your own calculations, but could be helpful as a reference.
+* `Examples`: Currently this folder contains a single example, how to use the problem generating algorithm on one of the provided template problems.
 * `SyntheticBenchmarks`: The final collection of 1100 synthetic benchmark problems in D2D format.
 * `SyntheticBenchmarks_PEtab`: Same as above, but in the PEtab model exchange format. These files are generated automatically by D2D export functions and were not manually checked. Unfortunately, not all modeling problems will be working correctly in this format.
 * `analysisScipts`: Scripts and functions to perform further analyses on the final benchmark models (e.g. parameter estimation and identifiability analysis; see manuscript for results).
 * `project_lib`: main matlab functions to use the pprojects code for generating new synthetic problems.
 * `initRealisticBenchmarks.m`: Matlab function to set up your matlab installation (D2D already required) to run the synthetic problem generation algorithm.
+
+## Installation and usage:
+1. Install a current MATLAB version (at least version 2021a).
+2. Install the Data2Dynamics modeling toolbox (see: https://github.com/Data2Dynamics/d2d/wiki/Installation)
+3. Open MATLAB and run the script `initRealisticBenchmarks.m` to add the problem generating algorithm to the path of the current session.
+4. Go to a D2D project folder and compile or load a model.
+5. Run functions `arNewRealisticDesign` or `arManyRealisticDesigns` to generate a single or multiple new benchmark problems. Use the documented name-value arguments to controll the output (e.g. random seeds, names, flags, ...) 
