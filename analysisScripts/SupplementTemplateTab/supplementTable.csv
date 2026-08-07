@@ -1,0 +1,23 @@
+templateName,nStates,nExp,nObsSets,nParamsFit,nDataPoints,medErrorExp,medTime
+Bachmann,25,6 / 10,10,29 / 115,541,15,30 s
+Becker,6,1 / 1,3,9 / 14,72,5,2 min
+Beer,4,19 / 19,2,70 / 72,27132,8,30 min
+Boehm,8,1 / 1,3,6 / 9,48,9,45 s
+Borghans,3,1 / 1,1,20 / 23,111,11,5 s
+Brannmark,9,2 / 3,2,14 / 22,43,12,5 s
+Bruno,7,6 / 6,5,13 / 13,77,11,1 min
+Crauste,5,1 / 1,4,12 / 12,21,44,13 min
+Elowitz,8,1 / 1,1,16 / 19,58,11,5 min
+Fiedler,6,3 / 3,2,12 / 22,72,82,6 min
+Fujita,9,6 / 6,3,19 / 22,144,27,8 min
+Hass,9,4 / 5,4,0 / 72,221,7,15 s
+Isensee,25,15 / 31,2,34 / 46,687,7,1 min
+Lucarelli,33,11 / 12,21,72 / 84,1755,12,3 min
+Merkle,23,16 / 27,11,43 / 199,1137,13,30 s
+Raia,14,4 / 4,8,18 / 39,205,25,35 s
+Schwen,11,7 / 7,4,13 / 30,286,26,8 s
+Sneyd,6,8 / 8,1,14 / 15,135,72,8 ms
+Sobotta,13,32 / 53,8,23 / 260,2222,18,20 s
+Swameye,9,1 / 1,3,10 / 17,46,7,15 s
+Weber,7,3 / 3,4,26 / 36,135,23,24 min
+Zheng,15,1 / 1,1,45 / 46,60,29,8 min
