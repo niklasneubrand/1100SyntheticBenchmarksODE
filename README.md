@@ -20,6 +20,8 @@ We present a collection of 1,100 synthetic benchmark problems generated using a 
 
 ## Citation
 
-If you use the code or benchmark problems, please cite the associated publication:
+Please cite the associated publication and archived software:
 
-> Neubrand et al. 1100 Synthetic Benchmark Problems for Dynamic Modeling of Cellular Processes. *Bioinformatics Advances*. Publication details to be added.
+> Neubrand et al. 1100 Synthetic Benchmark Problems for Dynamic Modeling of Cellular Processes. *Bioinformatics Advances*.
+>
+> Software archive: https://doi.org/10.5281/zenodo.23211070
